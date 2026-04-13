@@ -1,0 +1,516 @@
+@tailwind base;
+
+@layer base {
+    html {
+        @apply text-primary-950;
+    }
+}
+
+@tailwind components;
+@tailwind utilities;
+
+/* navbar */
+.aquarius-navbar-main {
+    @apply flex flex-wrap lg:justify-start lg:flex-nowrap bg-white border-b border-gray-200 shadow;
+}
+
+.aquarius-navbar-content-area {
+    @apply relative container w-full mx-auto lg:flex lg:items-center lg:justify-between lg:gap-3 py-2 px-4 lg:py-3;
+
+    .navbar-mobile {
+        @apply flex justify-between items-center gap-x-1;
+
+        .navbar-brand {
+            @apply flex flex-row items-center font-semibold text-xl text-black focus:outline-none focus:opacity-80 w-80;
+        }
+
+        .navbar-btn-close {
+            @apply lg:hidden relative size-9 flex justify-center items-center font-medium text-[12px] rounded-lg border border-gray-200 text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none;
+        }
+    }
+
+    .aquarius-navbar-nav {
+        @apply overflow-hidden transition-all duration-300 grow lg:block;
+
+        .aquarius-nav-main {
+            @apply overflow-hidden overflow-y-auto max-h-[75vh] [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300;
+
+            .nav-flex {
+                @apply py-2 lg:py-0 flex flex-col lg:flex-row lg:items-center gap-0.5 lg:gap-1;
+
+                .nav-content {
+                    @apply grow;
+
+                    .nav-content-details {
+                        @apply flex flex-col lg:flex-row lg:justify-end lg:items-center gap-0.5 lg:gap-1 lg:flex-wrap text-sm;
+
+                        .nav-link {
+                            @apply p-2 lg:px-3 flex items-center text-gray-800 hover:bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-100;
+                        }
+
+                        .nav-link-active {
+                            @apply bg-gray-100 text-primary-800 font-bold;
+                        }
+
+                        .nav-dropdown-btn {
+                            @apply w-full p-2 flex items-center text-gray-800 hover:bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-100;
+                        }
+                    }
+                }
+
+                .nav-divider {
+                    @apply max-lg:my-3 lg:mx-3;
+
+                    .nav-divider-line {
+                        @apply w-full h-px lg:w-px lg:h-8 bg-gray-100 lg:bg-gray-300;
+                    }
+                }
+
+                .nav-get-quote {
+                    @apply flex flex-wrap items-center gap-x-1.5 text-sm;
+
+                    .quote-btn {
+                        @apply max-lg:w-full max-lg:justify-center text-center py-2 px-5 inline-flex items-center font-medium rounded-xl text-black bg-secondary hover:bg-secondary-600 focus:outline-none focus:bg-secondary-600 disabled:opacity-50 disabled:pointer-events-none transition;
+                    }
+                }
+
+                /* language selector */
+                .aquarius-lang-select {
+                    @apply max-lg:mt-2 text-sm lg:ml-2 relative inline-flex;
+                }
+
+                .aquarius-lang-select-btn {
+                    @apply max-lg:w-full px-3 py-2 inline-flex items-center gap-x-2 text-sm font-medium rounded-xl text-primary-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition;
+                }
+
+                .aquarius-lang-select-dropdown {
+                    @apply min-w-60 bg-white shadow-md rounded-lg mt-2;
+                }
+
+                .lang-select-dropdown-card {
+                    @apply p-1 space-y-0.5;
+                }
+
+                .aquarius-lang-select-item {
+                    @apply w-full text-left flex items-center gap-x-3 py-2 px-3 rounded-xl text-sm text-primary-800 hover:bg-gray-100;
+                }
+            }
+        }
+    }
+}
+
+
+
+/* homepage hero section */
+.aquarius-hero-page-content-section {
+    @apply relative overflow-hidden flex items-center max-sm:h-[64rem] max-lg:h-[58rem] h-[50rem] bg-gray-950;
+
+    .hero-video-bg {
+        @apply absolute top-0 left-0 w-full h-full object-cover;
+    }
+
+    .hero-video-overlay {
+        @apply absolute inset-0 opacity-70 bg-gradient-to-tl from-cyan-500 to-sky-900;
+    }
+
+    .hero-video-toggle {
+        @apply absolute bottom-4 right-4 z-30;
+
+        .hero-video-toast {
+            @apply hs-removing:translate-x-5 hs-removing:opacity-0 transition duration-300 max-w-xs bg-white border border-gray-200 rounded-full shadow-lg;
+
+            .hero-video-toast-label {
+                @apply text-sm text-gray-700;
+            }
+
+            .toast-close-btn {
+                @apply inline-flex shrink-0 justify-center items-center size-4 rounded-lg text-gray-800 opacity-50 hover:opacity-100 focus:outline-none focus:opacity-100;
+            }
+        }
+
+        .hero-video-toggle-btn {
+            @apply bg-gray-800 text-white p-2 rounded-full flex items-center;
+        }
+    }
+
+    .aquarius-hero-contents {
+        @apply relative z-10 flex flex-col lg:flex-row container px-4 lg:pb-20 lg:pt-28 mx-auto;
+
+        .aquarius-left-hero-content {
+            @apply lg:w-[62%] lg:mr-40 flex items-center;
+        }
+
+        .left-content-gap-small {
+            @apply max-lg:mb-12 max-lg:text-center;
+        }
+
+        .aquarius-main-heading {
+            @apply text-4xl lg:text-6xl font-extrabold uppercase mb-8 text-white drop-shadow-md;
+        }
+
+        .aquarius-secondary-heading {
+            @apply text-lg lg:text-xl font-medium mb-2 text-gray-100 drop-shadow-md;
+        }
+
+        .aquarius-features-heading {
+            @apply text-lg lg:text-xl mb-6 text-gray-100 drop-shadow-md;
+        }
+
+        .aquarius-cta-buttons {
+            @apply flex flex-wrap max-lg:justify-center gap-4;
+        }
+
+        .aquarius-cta-primary {
+            @apply py-3 px-6 inline-flex items-center gap-4 text-base lg:text-lg rounded-xl border border-transparent bg-primary text-white hover:bg-primary-600 focus:outline-none focus:bg-primary-600 disabled:opacity-50 disabled:pointer-events-none transition drop-shadow-md;
+        }
+
+        .aquarius-cta-secondary {
+            @apply py-3 px-6 inline-flex items-center gap-4 text-base lg:text-lg rounded-xl border border-secondary-100 text-secondary-100 hover:border-secondary hover:bg-secondary hover:text-black focus:outline-none focus:border-secondary focus:bg-secondary focus:text-secondary-900 disabled:opacity-50 disabled:pointer-events-none transition drop-shadow-md;
+        }
+
+        .aquarius-right-hero-content {
+            @apply lg:w-[38%];
+        }
+
+        .aquarius-swiper-carousel {
+            @apply h-[20rem] lg:h-[37.5rem] rounded-xl overflow-hidden shadow-md bg-purple-50 border-4 border-white;
+        }
+
+        .aquarius-swiper-image img {
+            @apply w-full h-full object-cover;
+        }
+    }
+}
+
+/* HOMEPAGE OUR POOLS */
+.aquarius-our-pools-tab-main {
+    @apply mt-10 flex max-lg:flex-col lg:justify-between;
+}
+
+.aquarius-our-pools-tablist {
+    @apply flex max-lg:pb-2 max-lg:mb-3 max-lg:gap-x-3 max-lg:overflow-x-auto max-lg:[&::-webkit-scrollbar]:h-2 max-lg:[&::-webkit-scrollbar-thumb]:rounded-full max-lg:[&::-webkit-scrollbar-track]:bg-gray-100 max-lg:[&::-webkit-scrollbar-thumb]:bg-gray-300 lg:flex-col lg:space-y-6;
+}
+
+.aquarius-our-pools-tab {
+    @apply text-gray-800 bg-gray-50 border border-gray-200 text-xl font-semibold uppercase shadow-sm hover:shadow-lg transition-all rounded-xl px-4 py-8 inline-flex items-center hover:text-white hover:bg-primary-600 focus:text-white focus:bg-primary-600 hs-tab-active:text-white hs-tab-active:bg-primary max-lg:text-lg max-lg:whitespace-nowrap max-lg:justify-center max-lg:px-6 max-lg:py-3 max-lg:basis-0 max-lg:grow;
+}
+
+.aquarius-our-pools-tab-content {
+    @apply bg-gray-50 border border-gray-200 shadow-sm hover:shadow-lg transition-all rounded-xl p-4 h-full;
+}
+
+.aquarius-our-pools-tab-desc {
+    @apply text-gray-800 leading-relaxed mb-4;
+}
+
+.aquarius-our-pools-image-grid {
+    @apply grid grid-cols-1 h-60 lg:grid-cols-3 lg:gap-4 lg:h-[11.25rem];
+}
+
+.aquarius-our-pools-image-content {
+    @apply bg-primary-300 rounded-xl overflow-hidden;
+
+    img {
+        @apply w-full h-full object-cover;
+    }
+}
+
+.aquarius-our-pools-link {
+    @apply text-center lg:text-end mt-5;
+
+    a.link-text {
+        @apply text-lg inline-flex items-center gap-x-1 font-semibold underline hover:no-underline transition text-primary;
+
+        svg {
+            @apply shrink-0 size-6 transition ease-in-out group-hover:translate-x-1 group-focus:translate-x-1;
+        }
+    }
+}
+
+/* HOPMEPAGE SHOWCASE */
+.aquarius-homepage-showcase-grid {
+    @apply grid grid-cols-1 gap-4 lg:grid-cols-3 lg:grid-rows-4 mt-10;
+
+    .showcase-grid-content {
+        @apply w-full h-48 lg:h-80 bg-secondary-400 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow border-2 border-gray-300;
+
+        img {
+            @apply w-full h-full object-cover hover:scale-125 transition-all;
+        }
+    }
+
+    .wide-col-content {
+        @apply lg:col-span-2;
+    }
+
+    .start-row-3-content {
+        @apply lg:row-start-3;
+    }
+
+    .middle-content {
+        @apply lg:!h-auto lg:row-span-2 lg:col-start-2 lg:row-start-2;
+    }
+}
+.aquarius-showcase-btn {
+    @apply py-4 px-12 inline-flex items-center gap-4 text-lg lg:text-xl rounded-xl border border-transparent bg-primary text-white hover:bg-primary-600 focus:outline-none focus:bg-primary-600 disabled:opacity-50 disabled:pointer-events-none;
+}
+
+/* SERVICES HOMEPAGE */
+.aquarius-service-grid-homepage {
+    @apply grid sm:grid-cols-2 lg:grid-cols-3 items-center gap-6;
+
+
+    .service-content-link {
+        @apply flex gap-y-6 size-full hover:bg-gray-100 focus:outline-none focus:bg-gray-100 rounded-lg p-5;
+    }
+}
+
+/* REVIEWS HOMEPAGE */
+.aquarius-review-grid-homepage {
+    @apply grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-16;
+
+    .aquarius-review-card {
+        @apply grid h-auto;
+
+        .review-card-content {
+            @apply flex flex-col bg-white rounded-xl;
+
+            .review-area {
+                @apply flex-auto p-4 md:p-6;
+
+                .review-text {
+                    @apply text-base italic md:text-lg text-gray-800;
+                }
+            }
+
+            .reviewer-area {
+                @apply p-4 bg-gray-100 rounded-b-xl md:px-7;
+
+                .reviewer-detail {
+                    @apply flex items-center gap-x-3;
+
+                    .reviewer-image {
+                        @apply shrink-0;
+
+                        img {
+                            @apply size-12 rounded-full bg-primary;
+                        }
+                    }
+
+                    .reviewer-data {
+                        @apply grow;
+
+                        .reviewer-name {
+                            @apply text-base font-semibold text-gray-800;
+                        }
+
+                        .reviewer-location {
+                            @apply text-sm text-gray-500;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* HOMEPAGE CONTACT */
+.aquarius-contact-main {
+    @apply flex lg:justify-between max-lg:flex-col;
+
+    .aquarius-contact-col-left {
+        @apply lg:w-[32%];
+    }
+
+    .aquarius-contact-col-right {
+        @apply lg:w-[62%];
+    }
+}
+
+.aquarius-contact-form-card {
+    @apply p-4 bg-gray-50 border border-gray-200 rounded-xl shadow-sm;
+}
+
+/* FOOTER */
+footer {
+    .aquarius-footer-heading {
+        @apply text-base font-bold text-primary-900 uppercase;
+    }
+
+    .aquarius-footer-links {
+        @apply text-sm inline-flex gap-x-2 text-gray-600 underline hover:no-underline hover:text-gray-800 transition focus:outline-none focus:text-gray-800;
+    }
+
+    .aquarius-social-icons {
+        @apply inline-block text-lg lg:text-xl text-gray-500 hover:text-gray-800 focus:outline-none focus:text-gray-800;
+    }
+}
+
+/* back to top button */
+.aquarius-back-top-btn {
+    @apply fixed z-50 bottom-6 right-6 lg:bottom-12 lg:right-12 p-4 border-0 w-[3.25rem] h-[3.25rem] rounded-full shadow-md bg-secondary hover:bg-secondary-600 text-white text-lg font-semibold transition-colors duration-300;
+}
+
+/* CONTAINER */
+.main-container {
+    @apply container mx-auto px-4 py-12 lg:py-16;
+}
+
+/* HOMEPAGE HEADING */
+.aquarius-homepage-heading {
+    @apply text-3xl lg:text-5xl font-semibold uppercase text-center text-primary-900;
+}
+
+/* FAQ */
+.aquarius-accordion-group-faq {
+    .aquarius-accordion {
+        @apply hs-accordion-active:bg-primary-100 rounded-xl max-lg:p-4 p-6 transition;
+    }
+
+    .aquarius-accordion-toggle {
+        @apply inline-flex items-center justify-between gap-x-4 w-full lg:text-lg font-semibold text-start text-primary-800 rounded-lg transition hover:text-primary-700 focus:outline-none focus:text-primary-700;
+    }
+
+    .toggle-icon {
+        @apply shrink-0 size-5 text-primary-800 group-hover:text-primary-700;
+    }
+
+    .aquarius-accordion-content {
+        @apply w-full overflow-hidden transition-[height] duration-300;
+    }
+}
+
+/* CONTACT */
+.aquarius-contact-card {
+    @apply bg-gray-50 border border-gray-200 shadow-sm rounded-xl p-4 h-full break-before-avoid;
+}
+
+/* OUR POOLS */
+.aquarius-our-pools-title,
+.aquarius-our-pools-compare-title {
+    @apply text-primary-800 text-2xl lg:text-4xl uppercase text-center;
+}
+
+.aquarius-our-pools-card {
+    @apply bg-gray-50 border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300 rounded-xl h-full overflow-hidden my-8;
+
+    .aquarius-our-pools-card-content {
+        @apply lg:relative block lg:flex items-center overflow-hidden h-[inherit];
+
+        .aquarius-our-pools-card-img {
+            @apply w-full h-60 lg:w-72 lg:h-full lg:absolute inset-0 object-cover !m-0;
+        }
+
+        .aquarius-our-pools-card-body {
+            @apply grow p-4 max-lg:mt-3 lg:ms-80;
+
+            .our-pools-type-title {
+                @apply font-semibold mt-0 text-primary-800 text-xl lg:text-2xl;
+            }
+        }
+    }
+}
+
+/* POOL COMPARASION TABLE */
+.aquarius-pool-compare-content {
+    @apply relative overflow-x-auto shadow-md rounded-xl mt-6
+}
+
+.aquarius-pool-compare-table {
+    @apply w-full text-left text-gray-500 !my-0;
+}
+
+.aquarius-pool-compare-table__head {
+    @apply text-gray-800 uppercase bg-gray-50 block lg:table-header-group;
+}
+
+.table-row-large {
+    @apply hidden lg:table-row;
+}
+
+.table-head-keypoints,
+.table-head-concrete,
+.table-head-vinyl,
+.table-head-fibreglass {
+    @apply px-6 py-3;
+}
+
+.aquarius-pool-compare-table__body {
+    @apply block lg:table-row-group;
+}
+
+.body-table-row {
+    @apply bg-white border-b text-gray-700 hover:bg-gray-50 block lg:table-row max-lg:pb-2;
+}
+
+.table-row-keypoint {
+    @apply px-6 pt-4 pb-2 lg:py-4 font-semibold text-gray-800 whitespace-nowrap block relative max-lg:text-lg lg:table-cell lg:static;
+}
+
+.table-row-concrete,
+.table-row-vinyl,
+.table-row-fibreglass {
+    @apply px-6 py-3 lg:py-4 flex relative lg:table-cell lg:static;
+}
+
+.pool-name-title-small {
+    @apply lg:hidden font-semibold max-lg:w-[8.5rem];
+}
+
+/* POOL TYPES - CONCRETE, VINYL, FIBREGLASS */
+.pool-creation-steps-title,
+.pool-type-advantage-title,
+.pool-type-disadvantage-title {
+    @apply text-primary-800 text-2xl lg:text-4xl;
+}
+
+.pool-creation-grid {
+    @apply grid gap-4;
+}
+
+/* POOL SERVICES PAGE */
+.aquarius-pool-service-content {
+    @apply grid gap-16 lg:gap-24 mt-12;
+
+    .pool-service-body {
+        @apply flex max-lg:flex-col lg:justify-between;
+    }
+
+    .pool-service-image-side {
+        @apply w-full lg:w-[38%] lg:flex lg:justify-center lg:items-center max-lg:order-2;
+
+        .pool-service-relative {
+            @apply relative shadow-md hover:shadow-xl transition-shadow w-full max-lg:aspect-[4/3] lg:w-[32rem] lg:!aspect-video rounded-xl overflow-hidden;
+        }
+
+        .pool-service-absolute {
+            @apply absolute inset-0 bg-primary;
+        }
+
+        .pool-service-img-content {
+            @apply !m-0 object-cover w-auto h-full hover:scale-125 transition;
+        }
+    }
+
+    .pool-service-content-side {
+        @apply w-full lg:w-[55%] lg:flex lg:items-center max-lg:order-1;
+
+        .pool-service-title {
+            @apply mt-0 text-2xl lg:text-4xl text-primary-800;
+        }
+    
+    }
+}
+
+/* POOL ESSENTIALS */
+.pool-item-title {
+    @apply text-2xl lg:text-4xl text-primary-800;
+}
+
+.pool-item-title-secondary {
+    @apply text-primary-800 text-xl lg:text-3xl;
+}
+
+.pool-item-card {
+    @apply bg-gray-50 border border-gray-200 shadow-sm hover:shadow-xl transition-shadow rounded-xl h-full overflow-hidden;
+}

@@ -1,0 +1,83 @@
+<?php
+
+namespace App\Providers\Filament;
+
+use App\Filament\Widgets\adminPanelMetadata;
+use App\Filament\Widgets\ImageGalleryWidget;
+use App\Filament\Widgets\PromotionsWidget;
+use App\Filament\Widgets\ReviewsWidget;
+use App\View\Components\admin\adminPanelLogo;
+use Filament\Http\Middleware\Authenticate;
+use Filament\Http\Middleware\DisableBladeIconComponents;
+use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use Filament\Pages;
+use Filament\Panel;
+use Filament\PanelProvider;
+use Filament\Support\Colors\Color;
+use Filament\Widgets;
+use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
+use Illuminate\Cookie\Middleware\EncryptCookies;
+use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
+use Illuminate\Routing\Middleware\SubstituteBindings;
+use Illuminate\Session\Middleware\AuthenticateSession;
+use Illuminate\Session\Middleware\StartSession;
+use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Filament\Enums\ThemeMode;
+use Filament\Support\Assets\Css;
+
+class AdminPanelProvider extends PanelProvider
+{
+    public function panel(Panel $panel): Panel
+    {
+        return $panel
+            ->default()
+            ->id('admin')
+            ->path('admin')
+            ->login()
+            ->registration()
+            ->passwordReset()
+            ->emailVerification()
+            ->profile()
+            ->colors([
+                'primary' => Color::Blue,
+            ])
+            ->unsavedChangesAlerts()
+            ->favicon(asset('assets/favicon/favicon-16x16.png'))
+            ->brandName('Aquarius Admin Panel')
+            ->brandLogo(fn() => view('components.logo')) //USE THIS IN VIEWS FOLDER
+            ->brandLogoHeight('3rem')
+            ->defaultThemeMode(ThemeMode::Light)
+            ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
+            ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
+            ->pages([])
+            // ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
+            ->widgets([
+                // Widgets\AccountWidget::class,
+                // Widgets\FilamentInfoWidget::class,
+                // adminPanelMetadata::class,
+                ImageGalleryWidget::class,
+                PromotionsWidget::class,
+                ReviewsWidget::class,
+            ])
+            ->middleware([
+                EncryptCookies::class,
+                AddQueuedCookiesToResponse::class,
+                StartSession::class,
+                AuthenticateSession::class,
+                ShareErrorsFromSession::class,
+                VerifyCsrfToken::class,
+                SubstituteBindings::class,
+                DisableBladeIconComponents::class,
+                DispatchServingFilamentEvent::class,
+            ])
+            ->authMiddleware([
+                Authenticate::class,
+            ])
+            ->plugins([
+                \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make(),
+            ])
+            ->assets([
+                Css::make('custom-stylesheet', resource_path('css/app/custom-stylesheet.css')),
+            ]);
+    }
+}
