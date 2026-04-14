@@ -1,5 +1,8 @@
 import './bootstrap';
 import 'preline';
+import Alpine from 'alpinejs';
+window.Alpine = Alpine;
+Alpine.start();
 import 'fslightbox';
 
 // core version + navigation, pagination modules:

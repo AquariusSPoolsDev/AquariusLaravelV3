@@ -40,26 +40,20 @@
         </div>
 
         <div class="container">
-            <div class="hs-accordion-group aquarius-accordion-group-faq">
+            <div class="aquarius-accordion-group-faq">
 
                 {{-- ACCORDION CONTENT --}}
-                <div class="hs-accordion aquarius-accordion active" id="accordion-content-1">
-                    <button class="hs-accordion-toggle group aquarius-accordion-toggle" aria-expanded="true"
-                        aria-controls="accordion-content-detail-1">
+                <div class="aquarius-accordion" :class="open && 'accordion-active'" x-data="{ open: true }">
+                    <button class="aquarius-accordion-toggle group" :aria-expanded="open" @click="open = !open">
                         {{ __('strings.faq_choose_concrete') }}
-                        <svg class="hs-accordion-active:hidden block toggle-icon" xmlns="http://www.w3.org/2000/svg"
-                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="toggle-icon" :style="open ? 'transform: rotate(-180deg)' : ''"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="m6 9 6 6 6-6" />
                         </svg>
-                        <svg class="hs-accordion-active:block hidden toggle-icon" xmlns="http://www.w3.org/2000/svg"
-                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="m18 15-6-6-6 6" />
-                        </svg>
                     </button>
-                    <div id="accordion-content-detail-1" class="hs-accordion-content aquarius-accordion-content"
-                        role="region" aria-labelledby="accordion-content-1">
+                    <div class="aquarius-accordion-content" x-show="open" x-cloak
+                        role="region">
                         <div class="pt-6 pr-8 text-primary-900">
                             <p class="mb-3">
                                 {{ __('strings.faq_choose_concrete_answer') }}
@@ -95,23 +89,17 @@
                 {{-- ACCORDION CONTENT --}}
 
                 {{-- ACCORDION CONTENT --}}
-                <div class="hs-accordion aquarius-accordion" id="accordion-content-2">
-                    <button class="hs-accordion-toggle group aquarius-accordion-toggle" aria-expanded="false"
-                        aria-controls="accordion-content-detail-2">
+                <div class="aquarius-accordion" :class="open && 'accordion-active'" x-data="{ open: false }">
+                    <button class="aquarius-accordion-toggle group" :aria-expanded="open" @click="open = !open">
                         {{ __('strings.faq_coping') }}
-                        <svg class="hs-accordion-active:hidden block toggle-icon" xmlns="http://www.w3.org/2000/svg"
-                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="toggle-icon" :style="open ? 'transform: rotate(-180deg)' : ''"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="m6 9 6 6 6-6" />
                         </svg>
-                        <svg class="hs-accordion-active:block hidden toggle-icon" xmlns="http://www.w3.org/2000/svg"
-                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="m18 15-6-6-6 6" />
-                        </svg>
                     </button>
-                    <div id="accordion-content-detail-2" class="hs-accordion-content hidden aquarius-accordion-content"
-                        role="region" aria-labelledby="accordion-content-2">
+                    <div class="aquarius-accordion-content" x-show="open" x-cloak
+                        role="region">
                         <div class="pt-6 pr-8 text-primary-900">
                             <p class="mb-3">
                                 {{ __('strings.faq_coping_answer_1') }}</p>
@@ -123,23 +111,17 @@
                 {{-- ACCORDION CONTENT --}}
 
                 {{-- ACCORDION CONTENT --}}
-                <div class="hs-accordion aquarius-accordion" id="accordion-content-3">
-                    <button class="hs-accordion-toggle group aquarius-accordion-toggle" aria-expanded="false"
-                        aria-controls="accordion-content-detail-3">
+                <div class="aquarius-accordion" :class="open && 'accordion-active'" x-data="{ open: false }">
+                    <button class="aquarius-accordion-toggle group" :aria-expanded="open" @click="open = !open">
                         {{ __('strings.faq_popular_pool_size') }}
-                        <svg class="hs-accordion-active:hidden block toggle-icon" xmlns="http://www.w3.org/2000/svg"
-                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="toggle-icon" :style="open ? 'transform: rotate(-180deg)' : ''"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="m6 9 6 6 6-6" />
                         </svg>
-                        <svg class="hs-accordion-active:block hidden toggle-icon" xmlns="http://www.w3.org/2000/svg"
-                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="m18 15-6-6-6 6" />
-                        </svg>
                     </button>
-                    <div id="accordion-content-detail-3" class="hs-accordion-content hidden aquarius-accordion-content"
-                        role="region" aria-labelledby="accordion-content-3">
+                    <div class="aquarius-accordion-content" x-show="open" x-cloak
+                        role="region">
                         <div class="pt-6 pr-8 text-primary-900">
                             <p class="mb-3">
                                 {{ __('strings.faq_popular_pool_size_answer_1') }}
@@ -165,23 +147,17 @@
                 {{-- ACCORDION CONTENT --}}
 
                 {{-- ACCORDION CONTENT --}}
-                <div class="hs-accordion aquarius-accordion" id="accordion-content-4">
-                    <button class="hs-accordion-toggle group aquarius-accordion-toggle" aria-expanded="false"
-                        aria-controls="accordion-content-detail-4">
+                <div class="aquarius-accordion" :class="open && 'accordion-active'" x-data="{ open: false }">
+                    <button class="aquarius-accordion-toggle group" :aria-expanded="open" @click="open = !open">
                         {{ __('strings.faq_pool_safe_kids') }}
-                        <svg class="hs-accordion-active:hidden block toggle-icon" xmlns="http://www.w3.org/2000/svg"
-                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="toggle-icon" :style="open ? 'transform: rotate(-180deg)' : ''"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="m6 9 6 6 6-6" />
                         </svg>
-                        <svg class="hs-accordion-active:block hidden toggle-icon" xmlns="http://www.w3.org/2000/svg"
-                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="m18 15-6-6-6 6" />
-                        </svg>
                     </button>
-                    <div id="accordion-content-detail-4" class="hs-accordion-content hidden aquarius-accordion-content"
-                        role="region" aria-labelledby="accordion-content-4">
+                    <div class="aquarius-accordion-content" x-show="open" x-cloak
+                        role="region">
                         <div class="pt-6 pr-8 text-primary-900">
                             <p class="mb-3">
                                 {{ __('strings.faq_pool_safe_kids_answer_1') }}
@@ -227,23 +203,17 @@
                 {{-- ACCORDION CONTENT --}}
 
                 {{-- ACCORDION CONTENT --}}
-                <div class="hs-accordion aquarius-accordion" id="accordion-content-5">
-                    <button class="hs-accordion-toggle group aquarius-accordion-toggle" aria-expanded="false"
-                        aria-controls="accordion-content-detail-5">
+                <div class="aquarius-accordion" :class="open && 'accordion-active'" x-data="{ open: false }">
+                    <button class="aquarius-accordion-toggle group" :aria-expanded="open" @click="open = !open">
                         {{ __('strings.faq_different_material_avail') }}
-                        <svg class="hs-accordion-active:hidden block toggle-icon" xmlns="http://www.w3.org/2000/svg"
-                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="toggle-icon" :style="open ? 'transform: rotate(-180deg)' : ''"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="m6 9 6 6 6-6" />
                         </svg>
-                        <svg class="hs-accordion-active:block hidden toggle-icon" xmlns="http://www.w3.org/2000/svg"
-                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="m18 15-6-6-6 6" />
-                        </svg>
                     </button>
-                    <div id="accordion-content-detail-5" class="hs-accordion-content hidden aquarius-accordion-content"
-                        role="region" aria-labelledby="accordion-content-5">
+                    <div class="aquarius-accordion-content" x-show="open" x-cloak
+                        role="region">
                         <div class="pt-6 pr-8 text-primary-900">
                             <p class="">
                                 {!!__('strings.faq_different_material_avail_answer')!!}
@@ -254,23 +224,17 @@
                 {{-- ACCORDION CONTENT --}}
 
                 {{-- ACCORDION CONTENT --}}
-                <div class="hs-accordion aquarius-accordion" id="accordion-content-6">
-                    <button class="hs-accordion-toggle group aquarius-accordion-toggle" aria-expanded="false"
-                        aria-controls="accordion-content-detail-6">
+                <div class="aquarius-accordion" :class="open && 'accordion-active'" x-data="{ open: false }">
+                    <button class="aquarius-accordion-toggle group" :aria-expanded="open" @click="open = !open">
                         {{ __('strings.faq_kind_maintenance') }}
-                        <svg class="hs-accordion-active:hidden block toggle-icon" xmlns="http://www.w3.org/2000/svg"
-                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="toggle-icon" :style="open ? 'transform: rotate(-180deg)' : ''"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="m6 9 6 6 6-6" />
                         </svg>
-                        <svg class="hs-accordion-active:block hidden toggle-icon" xmlns="http://www.w3.org/2000/svg"
-                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="m18 15-6-6-6 6" />
-                        </svg>
                     </button>
-                    <div id="accordion-content-detail-6" class="hs-accordion-content hidden aquarius-accordion-content"
-                        role="region" aria-labelledby="accordion-content-6">
+                    <div class="aquarius-accordion-content" x-show="open" x-cloak
+                        role="region">
                         <div class="pt-6 pr-8 text-primary-900">
                             <p class="mb-3">
                                 {{ __('strings.faq_kind_maintenance_answer_1') }}

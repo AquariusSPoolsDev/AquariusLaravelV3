@@ -1,17 +1,20 @@
-<section id="our-pools" class="main-container">
+<section id="our-pools" class="main-container" x-data="{ activeTab: 'concrete' }">
     <h2 class="aquarius-homepage-heading">{{__('strings.pools_heading')}}</h2>
     <div class="aquarius-our-pools-tab-main">
-        <div class="lg:w-[32%]">          
+        <div class="lg:w-[32%]">
             <nav class="aquarius-our-pools-tablist" aria-label="Our Pools Tabs" role="tablist" aria-orientation="horizontal">
-                <button type="button" class="aquarius-our-pools-tab active" id="aquarius-concrete-pools-content" aria-selected="true" data-hs-tab="#aquarius-concrete-pools" aria-controls="aquarius-concrete-pools" role="tab">
+                <button type="button" class="aquarius-our-pools-tab" :class="activeTab === 'concrete' && 'tab-active'"
+                    :aria-selected="activeTab === 'concrete'" @click="activeTab = 'concrete'" role="tab">
                     {{__('strings.pools_concrete')}}
                 </button>
 
-                <button type="button" class="aquarius-our-pools-tab" id="aquarius-vinyl-pools-content" aria-selected="false" data-hs-tab="#aquarius-vinyl-pools" aria-controls="aquarius-vinyl-pools" role="tab">
+                <button type="button" class="aquarius-our-pools-tab" :class="activeTab === 'vinyl' && 'tab-active'"
+                    :aria-selected="activeTab === 'vinyl'" @click="activeTab = 'vinyl'" role="tab">
                     {{__('strings.pools_vinyl')}}
                 </button>
 
-                <button type="button" class="aquarius-our-pools-tab" id="aquarius-fiberglass-pools-content" aria-selected="false" data-hs-tab="#aquarius-fiberglass-pools" aria-controls="aquarius-fiberglass-pools" role="tab">
+                <button type="button" class="aquarius-our-pools-tab" :class="activeTab === 'fibreglass' && 'tab-active'"
+                    :aria-selected="activeTab === 'fibreglass'" @click="activeTab = 'fibreglass'" role="tab">
                     {{__('strings.pools_fibreglass')}}
                 </button>
             </nav>
@@ -19,7 +22,7 @@
 
         <div class="w-full lg:w-[62%]">
             {{-- CONCRETE POOL CARD --}}
-            <div id="aquarius-concrete-pools" class="aquarius-our-pools-tab-content" role="tabpanel" aria-labelledby="aquarius-concrete-pools-content">
+            <div x-show="activeTab === 'concrete'" class="aquarius-our-pools-tab-content" role="tabpanel">
                 <p class="aquarius-our-pools-tab-desc">
                     {!!__('strings.pools_concrete_desc')!!}
                 </p>
@@ -48,7 +51,7 @@
             {{-- CONCRETE POOL CARD --}}
 
             {{-- VINYL POOL CARD --}}
-            <div id="aquarius-vinyl-pools" class="hidden aquarius-our-pools-tab-content" role="tabpanel" aria-labelledby="aquarius-vinyl-pools-content">
+            <div x-show="activeTab === 'vinyl'" x-cloak class="aquarius-our-pools-tab-content" role="tabpanel">
                 <p class="aquarius-our-pools-tab-desc">
                     {!!__('strings.pools_vinyl_desc')!!}
                 </p>
@@ -77,7 +80,7 @@
             {{-- VINYL POOL CARD --}}
 
             {{-- FIBREGLASS POOL CARD --}}
-            <div id="aquarius-fiberglass-pools" class="hidden aquarius-our-pools-tab-content" role="tabpanel" aria-labelledby="aquarius-fiberglass-pools-content">
+            <div x-show="activeTab === 'fibreglass'" x-cloak class="aquarius-our-pools-tab-content" role="tabpanel">
                 <p class="aquarius-our-pools-tab-desc">
                     {!! trans('strings.pools_fibreglass_desc')!!}
                 </p>

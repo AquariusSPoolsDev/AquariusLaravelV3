@@ -7,16 +7,14 @@
 
     <div class="hero-video-toggle">
         <div class="flex gap-3 items-center m-auto">
-            <div id="dismiss-toast" class="hero-video-toast" role="alert" tabindex="-1"
-                aria-labelledby="hs-toast-dismiss-button-label">
+            <div x-data="{ show: true }" x-show="show" class="hero-video-toast" role="alert" tabindex="-1">
                 <div class="flex p-1 px-3 gap-2">
-                    <p id="hs-toast-dismiss-button-label" class="hero-video-toast-label">
+                    <p class="hero-video-toast-label">
                         Toggle autoplay
                     </p>
 
                     <div class="ms-auto">
-                        <button type="button" class="toast-close-btn" aria-label="Close"
-                            data-hs-remove-element="#dismiss-toast">
+                        <button type="button" class="toast-close-btn" aria-label="Close" @click="show = false">
                             <span class="sr-only">Close</span>
                             <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24"
                                 height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"

@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+[x-cloak] { display: none !important; }
+
 @source "../../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php";
 @source "../../../storage/framework/views/*.php";
 @source "../../**/*.blade.php";
@@ -87,80 +89,110 @@ body {
 
 /* navbar */
 .aquarius-navbar-main {
-    @apply flex flex-wrap lg:justify-start lg:flex-nowrap bg-white border-b border-gray-200 shadow;
+    @apply flex flex-wrap lg:justify-start lg:flex-nowrap bg-white border-b border-b-neutral-200 shadow;
 }
 
-.aquarius-navbar-content-area {
-    @apply relative container w-full mx-auto lg:flex lg:items-center lg:justify-between lg:gap-3 py-2 px-4 lg:py-3;
+.aquarius-navbar-container{
+    @apply relative container w-full mx-auto lg:flex lg:items-center lg:justify-between md:gap-x-6 lg:gap-x-8 px-4 md:px-6 lg:px-8 py-2.5 lg:py-4;
 
     .navbar-mobile {
-        @apply flex justify-between items-center gap-x-1;
+        @apply flex justify-between items-center;
 
         .navbar-brand {
-            @apply flex flex-row items-center font-semibold text-xl text-black focus:outline-none focus:opacity-80 w-80;
+            @apply flex flex-row items-center focus:outline-none focus:opacity-80 gap-x-2 w-64;
+        }
+
+        img.aquarius-logo {
+            @apply w-16 h-auto shrink-0;
+        }
+
+        .aquarius-branding-name {
+            @apply flex flex-col text-primary-900 uppercase font-heading;
+
+            .name-1 {
+                @apply font-bold text-[2rem] -mb-[0.3rem];
+            }
+
+            .name-2 {
+                @apply font-semibold text-[1.2rem] -mt-[0.3rem];
+            }
         }
 
         .navbar-btn-close {
-            @apply lg:hidden relative size-9 flex justify-center items-center font-medium text-[12px] rounded-lg border border-gray-200 text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none;
+            @apply lg:hidden relative w-10 h-10 overflow-hidden text-neutral-600 flex justify-center items-center cursor-pointer rounded-lg hover:text-primary-600 hover:bg-primary-50 active:scale-95 active:text-primary-600 active:bg-primary-50 focus:text-primary-600 focus:bg-primary-50 disabled:opacity-50 disabled:pointer-events-none;
+
+            svg { @apply size-8; }
         }
     }
 
     .aquarius-navbar-nav {
-        @apply overflow-hidden transition-all duration-300 grow lg:block;
+        @apply overflow-hidden lg:overflow-visible transition-all duration-500 grow lg:block;
 
         .aquarius-nav-main {
-            @apply overflow-hidden overflow-y-auto max-h-[75vh] [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300;
+            @apply overflow-y-auto lg:overflow-visible max-lg:h-[calc(100dvh-57px)] [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300;
 
             .nav-flex {
-                @apply py-2 lg:py-0 flex flex-col lg:flex-row lg:items-center gap-0.5 lg:gap-1;
+                @apply pt-4 lg:py-0 flex flex-col lg:flex-row lg:items-center lg:gap-x-8;
 
                 .nav-content {
                     @apply grow;
 
                     .nav-content-details {
-                        @apply flex flex-col lg:flex-row lg:justify-end lg:items-center gap-0.5 lg:gap-1 lg:flex-wrap text-sm;
+                        @apply flex flex-col lg:flex-row lg:justify-center lg:items-center gap-1 lg:gap-2 lg:flex-wrap;
 
-                        .nav-link {
-                            @apply p-2 lg:px-3 flex items-center text-gray-800 hover:bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-100;
+                        .nav-link,
+                        .nav-dropdown-btn {
+                            @apply p-2 lg:px-4 text-neutral-600 rounded-lg font-bold transition-all cursor-pointer hover:text-primary-600 hover:bg-primary-50 active:text-primary-600 active:bg-primary-50 focus:text-primary-600 focus:bg-primary-50 focus:outline-none;
                         }
+
+                        .nav-link { @apply block;}
+                        .nav-dropdown-btn { @apply inline-flex w-full items-center gap-x-1;}
 
                         .nav-link-active {
-                            @apply bg-gray-100 text-primary-800 font-bold;
+                            @apply text-primary-600 bg-primary-50;
                         }
 
-                        .nav-dropdown-btn {
-                            @apply w-full p-2 flex items-center text-gray-800 hover:bg-gray-100 rounded-lg focus:outline-none focus:bg-gray-100;
+                        /* Custom dropdown */
+                        .nav-dropdown {
+                            @apply relative;
+                        }
+
+                        .nav-dropdown-menu {
+                            @apply ps-7 space-y-0.5 relative lg:absolute lg:top-full lg:inset-s-0 lg:w-60 lg:bg-white lg:rounded-lg lg:shadow-md lg:p-1.5 lg:z-50 lg:space-y-0;
+                        }
+
+                        .nav-dropdown-menu::after {
+                            @apply content-[''] lg:hidden absolute top-1 start-4.5 w-0.5 h-[calc(100%-0.25rem)] bg-gray-100;
+                        }
+
+                        .nav-dropdown-chevron {
+                            @apply duration-300 shrink-0 size-4 ms-auto lg:ms-1;
+                            transition: transform 0.3s;
                         }
                     }
                 }
 
-                .nav-divider {
-                    @apply max-lg:my-3 lg:mx-3;
-
-                    .nav-divider-line {
-                        @apply w-full h-px lg:w-px lg:h-8 bg-gray-100 lg:bg-gray-300;
-                    }
+                .side-nav-content {
+                    @apply flex flex-col gap-2 lg:flex-row mt-4 pt-4 lg:mt-0 lg:pt-0 border-t border-t-neutral-100 lg:border-t-0;
                 }
 
-                .nav-get-quote {
-                    @apply flex flex-wrap items-center gap-x-1.5 text-sm;
-
-                    .quote-btn {
-                        @apply max-lg:w-full max-lg:justify-center text-center py-2 px-5 inline-flex items-center font-medium rounded-xl text-black bg-secondary hover:bg-secondary-600 focus:outline-none focus:bg-secondary-600 disabled:opacity-50 disabled:pointer-events-none transition;
-                    }
+                .nav-get-quote .quote-btn {
+                    @apply block text-center py-2.5 px-5.5 font-bold rounded-lg transition-all text-black bg-secondary-400 hover:bg-secondary-300 active:bg-secondary-500 active:scale-95 focus:outline-none focus:bg-secondary-300 disabled:opacity-50 disabled:pointer-events-none;
                 }
 
                 /* language selector */
                 .aquarius-lang-select {
-                    @apply max-lg:mt-2 text-sm lg:ml-2 relative inline-flex;
+                    @apply relative inline-flex max-lg:w-full max-lg:flex-col;
                 }
 
                 .aquarius-lang-select-btn {
-                    @apply max-lg:w-full px-3 py-2 inline-flex items-center gap-x-2 text-sm font-medium rounded-xl text-primary-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition;
+                    @apply inline-flex py-2.5 px-4 items-center gap-x-2 font-medium rounded-xl transition-all hover:cursor-pointer hover:text-primary-600 hover:bg-primary-50 active:text-primary-600 active:bg-primary-50 focus:text-primary-600 focus:bg-primary-50 focus:outline-none;
+                    @apply max-lg:w-full max-lg:rounded-lg;
                 }
 
                 .aquarius-lang-select-dropdown {
-                    @apply min-w-60 bg-white shadow-md rounded-lg mt-2;
+                    @apply absolute top-full end-0 min-w-60 bg-white shadow-md rounded-lg mt-2 z-50;
+                    @apply max-lg:static max-lg:mt-1 max-lg:w-full max-lg:shadow-none max-lg:bg-gray-50 max-lg:rounded-lg;
                 }
 
                 .lang-select-dropdown-card {
@@ -168,7 +200,7 @@ body {
                 }
 
                 .aquarius-lang-select-item {
-                    @apply w-full text-left flex items-center gap-x-3 py-2 px-3 rounded-xl text-sm text-primary-800 hover:bg-gray-100;
+                    @apply w-full text-left flex items-center gap-x-3 py-2 px-3 rounded-lg transition-all hover:text-primary-600 hover:bg-primary-50 active:text-primary-600 active:bg-primary-50 focus:text-primary-600 focus:bg-primary-50 cursor-pointer;
                 }
             }
         }
@@ -176,6 +208,38 @@ body {
 }
 
 
+
+/* mobile nav slide-in animation */
+.slide-in-top {
+    -webkit-animation: slide-in-top 500ms ease-out both;
+            animation: slide-in-top 500ms ease-out both;
+}
+
+@-webkit-keyframes slide-in-top {
+    0% {
+        -webkit-transform: translateY(-1000px);
+                transform: translateY(-1000px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-top {
+    0% {
+        -webkit-transform: translateY(-1000px);
+                transform: translateY(-1000px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateY(0);
+                transform: translateY(0);
+        opacity: 1;
+    }
+}
 
 /* homepage hero section */
 .aquarius-hero-page-content-section {
@@ -268,7 +332,11 @@ body {
 }
 
 .aquarius-our-pools-tab {
-    @apply text-gray-800 bg-gray-50 border border-gray-200 text-xl font-semibold uppercase shadow-sm hover:shadow-lg transition-all rounded-xl px-4 py-8 inline-flex items-center hover:text-white hover:bg-primary-600 focus:text-white focus:bg-primary-600 hs-tab-active:text-white hs-tab-active:bg-primary max-lg:text-lg max-lg:whitespace-nowrap max-lg:justify-center max-lg:px-6 max-lg:py-3 max-lg:basis-0 max-lg:grow;
+    @apply text-gray-800 bg-gray-50 border border-gray-200 text-xl font-semibold uppercase shadow-sm hover:shadow-lg transition-all rounded-xl px-4 py-8 inline-flex items-center hover:text-white hover:bg-primary-600 focus:text-white focus:bg-primary-600 max-lg:text-lg max-lg:whitespace-nowrap max-lg:justify-center max-lg:px-6 max-lg:py-3 max-lg:basis-0 max-lg:grow;
+
+    &.tab-active {
+        @apply text-white bg-primary;
+    }
 }
 
 .aquarius-our-pools-tab-content {
@@ -429,7 +497,7 @@ footer {
 
 /* CONTAINER */
 .main-container {
-    @apply container mx-auto px-4 py-12 lg:py-16;
+    @apply container mx-auto px-4 md:px-6 lg:px-8 py-12 lg:py-16;
 }
 
 /* HOMEPAGE HEADING */
@@ -440,7 +508,11 @@ footer {
 /* FAQ */
 .aquarius-accordion-group-faq {
     .aquarius-accordion {
-        @apply hs-accordion-active:bg-primary-100 rounded-xl max-lg:p-4 p-6 transition;
+        @apply rounded-xl max-lg:p-4 p-6 transition;
+
+        &.accordion-active {
+            @apply bg-primary-100;
+        }
     }
 
     .aquarius-accordion-toggle {
@@ -448,11 +520,11 @@ footer {
     }
 
     .toggle-icon {
-        @apply shrink-0 size-5 text-primary-800 group-hover:text-primary-700;
+        @apply shrink-0 size-5 text-primary-800 group-hover:text-primary-700 transition-transform duration-300;
     }
 
     .aquarius-accordion-content {
-        @apply w-full overflow-hidden transition-[height] duration-300;
+        @apply w-full overflow-hidden;
     }
 }
 

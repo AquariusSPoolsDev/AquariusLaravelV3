@@ -4,11 +4,13 @@
     <head>
         <x-head-metadata />
     </head>
-    <body class="antialiased scroll-mt-20 lg:scroll-mt-[5.5rem]">
+    <body class="antialiased scroll-mt-22 lg:scroll-mt-25">
         <x-navbar-menu-top />
-        <div class="mt-20 lg:mt-[5.5rem]">
+        
+        <main class="mt-22 lg:mt-25 text-base lg:text-lg">
             @yield('content')
-        </div>
+        </main>
+
         <x-footer-bottom />
         <x-back-to-top-btn />
         <x-chat-btn-wa />
