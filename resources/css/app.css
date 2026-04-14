@@ -1,13 +1,52 @@
-@tailwind base;
+@import "tailwindcss";
+
+@source "../../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php";
+@source "../../../storage/framework/views/*.php";
+@source "../../**/*.blade.php";
+@source "../../**/*.js";
+@source "../../../node_modules/preline/dist/*.js";
+@source "../../../node_modules/preline/src/**/*.{js,ts}";
+
+@import "preline/variants.css";
+
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms";
+
+@theme {
+    --font-family-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+    --color-primary: #3370B9;
+    --color-primary-50: #DCE7F5;
+    --color-primary-100: #C8D9F0;
+    --color-primary-200: #A0BEE5;
+    --color-primary-300: #78A3DA;
+    --color-primary-400: #5089CF;
+    --color-primary-500: #3370B9;
+    --color-primary-600: #285991;
+    --color-primary-700: #1D4169;
+    --color-primary-800: #122941;
+    --color-primary-900: #071019;
+    --color-primary-950: #010305;
+
+    --color-secondary: #FC8C1F;
+    --color-secondary-50: #FFF5EB;
+    --color-secondary-100: #FEEAD4;
+    --color-secondary-200: #FED4A7;
+    --color-secondary-300: #FDBD7A;
+    --color-secondary-400: #FDA54C;
+    --color-secondary-500: #FC8C1F;
+    --color-secondary-600: #EA7303;
+    --color-secondary-700: #BD5B03;
+    --color-secondary-800: #8F4402;
+    --color-secondary-900: #622E01;
+    --color-secondary-950: #4B2301;
+}
 
 @layer base {
     html {
         @apply text-primary-950;
     }
 }
-
-@tailwind components;
-@tailwind utilities;
 
 /* navbar */
 .aquarius-navbar-main {
