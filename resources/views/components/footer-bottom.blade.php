@@ -8,7 +8,7 @@
                 <div class="w-16 h-16 rounded-full bg-blue-500 mr-2">
                     <img class="w-auto h-auto" src="{{ asset('assets/favicon/aquarius-logo-192.png') }}" alt="Aquarius Swimming Pools">
                 </div>
-                <div class="flex flex-col text-secondary-900 uppercase">
+                <div class="flex flex-col text-secondary-900 uppercase font-heading">
                     <div class="text-3xl">Aquarius</div>
                     <div class="text-lg -mt-2">Swimming Pools</div>
                 </div>

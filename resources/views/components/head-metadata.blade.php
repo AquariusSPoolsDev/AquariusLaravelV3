@@ -12,10 +12,10 @@
     <link rel="alternate" hreflang="en" href="{{ url('/en') }}" />
     <link rel="alternate" hreflang="ms" href="{{ url('/ms') }}" />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    {{-- <link href="https://fonts.bunny.net/css?family=be-vietnam-pro:100,200,300,400,500,600,700,800,900" rel="stylesheet" /> --}}
-    <link href="https://fonts.bunny.net/css?family=inter:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+    {{-- Fonts V3.0 --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
 
     <!-- Styles / Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])

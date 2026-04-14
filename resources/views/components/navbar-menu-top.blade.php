@@ -8,7 +8,7 @@
                     <div class="w-16 h-16 rounded-full bg-blue-500 mr-2">
                         <img class="w-auto h-auto" src="{{ asset('assets/favicon/aquarius-logo-192.png') }}" alt="Aquarius Swimming Pools">
                     </div>
-                    <div class="flex flex-col text-secondary-900 uppercase">
+                    <div class="flex flex-col text-secondary-900 uppercase font-heading">
                         <div class="text-3xl">Aquarius</div>
                         <div class="text-lg -mt-2">Swimming Pools</div>
                     </div>
@@ -160,10 +160,14 @@
                                 class="hs-dropdown-toggle aquarius-lang-select-btn" aria-haspopup="menu"
                                 aria-expanded="false" aria-label="Dropdown">
 
+                                <x-flag-icons :lang="app()->getLocale()" class="inline-block" />
+
                                 @if (app()->getLocale() === 'en_MY')
-                                <span class="fi fi-gb"></span><span class="lg:hidden max-lg:grow max-lg:text-left">Language: EN (English)</span> <span class="hidden lg:block">EN</span>
+                                    <span class="lg:hidden max-lg:grow max-lg:text-left">Language: EN (English)</span> 
+                                    <span class="hidden lg:block">EN</span>
                                 @else
-                                <span class="fi fi-my"></span><span class="lg:hidden max-lg:grow max-lg:text-left">Bahasa: MS (Melayu)</span> <span class="hidden lg:block">MS</span>
+                                    <span class="lg:hidden max-lg:grow max-lg:text-left">Bahasa: MS (Melayu)</span> 
+                                    <span class="hidden lg:block">MS</span>
                                 @endif
 
                                 <svg class="hs-dropdown-open:rotate-180 size-4" xmlns="http://www.w3.org/2000/svg"
@@ -181,7 +185,7 @@
                                         @csrf
                                         <button type="submit" name="language" value="en"
                                             class="aquarius-lang-select-item">
-                                            <span class="fi fi-gb"></span> <span class="text-gray-500">EN</span> English
+                                            <x-flag-icons lang="en_MY" /> <span class="text-gray-500">EN</span> English
                                         </button>
                                     </form>
 
@@ -189,18 +193,12 @@
                                         @csrf
                                         <button type="submit" name="language" value="ms"
                                             class="aquarius-lang-select-item">
-                                            <span class="fi fi-my"></span> <span class="text-gray-500">MS</span> Melayu
+                                            <x-flag-icons lang="ms_MY" /> <span class="text-gray-500">MS</span> Melayu
                                         </button>
                                     </form>
                                 </div>
                             </div>
                         </div>
-
-
-
-
-
-
                     </div>
                 </div>
             </div>
@@ -209,8 +207,6 @@
     </div>
 
     {{-- ANNOUCEMENT BANNER --}}
-    <x-navbar-annoucement-banner>
-
-    </x-navbar-annoucement-banner>
+    <x-navbar-annoucement-banner />
 
 </header>
