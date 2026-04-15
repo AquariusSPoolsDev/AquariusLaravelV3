@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="bg-gradient-to-b from-sky-200 to-blue-300 w-screen h-screen font-[Inter] relative">
+    <div class="bg-linear-to-b from-sky-200 to-blue-300 w-screen h-screen font-[Inter] relative">
         <div class="absolute inset-0 container mx-auto p-6 flex flex-col items-center justify-center">
             <div class="text-center text-blue-950">
                 <h1 class="text-7xl lg:text-9xl font-bold">@yield('code')</h1>
