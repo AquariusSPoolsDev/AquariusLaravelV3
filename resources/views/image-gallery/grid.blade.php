@@ -1,9 +1,11 @@
 @foreach($images as $image)
-<div class="bg-gray-50 border border-gray-200 shadow-sm hover:shadow-lg transition-all rounded-xl overflow-hidden">
+<div class="bg-neutral-50 border-2 border-neutral-200 shadow-sm hover:shadow-lg transition-all rounded-lg overflow-hidden
+    hover:border-primary-600 active:border-primary-600 active:scale-97 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none focus-visible:ring-offset-4">
+
     <a data-fslightbox="{{ $galleryId }}" href="{{ asset('storage/' . $image->image_path) }}">
-    <img loading="lazy" src="{{ asset('storage/' . $image->image_path) }}" alt="{{ $image->image_name }}" title="{{ $image->image_name }}" class="w-full h-60 object-cover">
+        <img loading="lazy" src="{{ asset('storage/' . $image->image_path) }}" alt="{{ $image->image_name }}" title="{{ $image->image_name }}" class="w-full h-60 object-cover">
     </a>
-    {{-- <div class="p-4">
+    <div class="sr-only">
         <h3 class="font-semibold text-lg text-gray-800">{{ $image->image_name }}</h3>
         <p class="text-sm text-gray-600">{{ $image->image_description }}</p>
         
@@ -16,6 +18,6 @@
             @endforeach
         </div>
         @endif
-    </div> --}}
+    </div>
 </div>
 @endforeach

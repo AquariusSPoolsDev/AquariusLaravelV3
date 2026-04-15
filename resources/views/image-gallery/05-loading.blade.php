@@ -1,4 +1,5 @@
-<div id="loading-indicator" style="display:none;" class="mt-4">
+{{-- <div id="loading-indicator" style="display:none;" class="mt-4"> --}}
+<div id="loading-indicator" class="mt-4">
     <div class="relative">
         <div class="bg-blue-50 border border-primary-200 rounded-xl py-2 px-4">
             <div class="flex">
@@ -23,9 +24,9 @@
             </div>
         </div>
 
-        <div class="absolute top-0 start-0 size-full bg-white/50 rounded-lg"></div>
+        <div class="absolute top-0 inset-s-0 size-full bg-white/50 rounded-lg"></div>
 
-        <div class="absolute top-1/2 start-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <div class="absolute top-1/2 inset-s-1/2 transform -translate-x-1/2 -translate-y-1/2">
             <div class="animate-spin inline-block size-6 border-[3px] border-current border-t-transparent text-primary-600 rounded-full"
                 role="status" aria-label="loading">
                 <span class="sr-only">{{__('strings.showcase_search_loading')}}</span>
