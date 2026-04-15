@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
-[x-cloak] { display: none !important; }
+[x-cloak] {
+    display: none !important;
+}
 
 @source "../../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php";
 @source "../../../storage/framework/views/*.php";
@@ -19,8 +21,8 @@
     --font-body: "Lato", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
     /* Primary — blue */
-    --color-primary: oklch(0.541 0.131 254); /* Primary Brand Color */
-    --color-primary-50:  oklch(0.960 0.018 254);
+    --color-primary: oklch(0.541 0.131 254);
+    --color-primary-50: oklch(0.960 0.018 254);
     --color-primary-100: oklch(0.920 0.038 254);
     --color-primary-200: oklch(0.850 0.067 254);
     --color-primary-300: oklch(0.760 0.096 254);
@@ -33,20 +35,20 @@
     --color-primary-950: oklch(0.210 0.055 254);
 
     /* Secondary — orange */
-    --color-secondary: oklch(0.748 0.173 57); /* Secondary Brand Color. BG only */
-    --color-secondary-50:  oklch(0.970 0.025 57);
+    --color-secondary: oklch(0.748 0.173 57);
+    --color-secondary-50: oklch(0.970 0.025 57);
     --color-secondary-100: oklch(0.930 0.065 57);
     --color-secondary-200: oklch(0.870 0.110 57);
     --color-secondary-300: oklch(0.810 0.148 57);
     --color-secondary-400: oklch(0.748 0.173 57);
     --color-secondary-500: oklch(0.650 0.160 57);
     --color-secondary-600: oklch(0.560 0.142 57);
-    --color-secondary-700: oklch(0.460 0.118 57); /* WCAG AA text */
+    --color-secondary-700: oklch(0.460 0.118 57);
     --color-secondary-800: oklch(0.370 0.095 57);
     --color-secondary-900: oklch(0.290 0.072 57);
 
     /* Neutral — blue-slate */
-    --color-neutral-50:  oklch(0.970 0.008 240);
+    --color-neutral-50: oklch(0.970 0.008 240);
     --color-neutral-100: oklch(0.930 0.010 240);
     --color-neutral-200: oklch(0.870 0.013 240);
     --color-neutral-300: oklch(0.770 0.016 240);
@@ -59,38 +61,43 @@
     --color-neutral-950: oklch(0.160 0.008 240);
 
     /* Semantic */
-    --color-success-100: #ecfdf5;  /* was -bg     */
-    --color-success-200: #a7f3d0;  /* was -border */
-    --color-success-300: #10b981;  /* was base    */
-    --color-success-400: #065f46;  /* was -text   */
+    --color-success-100: #ecfdf5;
+    --color-success-200: #a7f3d0;
+    --color-success-300: #10b981;
+    --color-success-400: #065f46;
 
-    --color-error-100:   #fef2f2;  /* was -bg     */
-    --color-error-200:   #fecaca;  /* was -border */
-    --color-error-300:   #dc2626;  /* was base    */
-    --color-error-400:   #991b1b;  /* was -text   */
+    --color-error-100: #fef2f2;
+    --color-error-200: #fecaca;
+    --color-error-300: #dc2626;
+    --color-error-400: #991b1b;
 
-    --color-warning-100: #fffbeb;  /* was -bg     */
-    --color-warning-200: #fde68a;  /* was -border */
-    --color-warning-300: #f59e0b;  /* was base    */
-    --color-warning-400: #92400e;  /* was -text   */
+    --color-warning-100: #fffbeb;
+    --color-warning-200: #fde68a;
+    --color-warning-300: #f59e0b;
+    --color-warning-400: #92400e;
 
-    --color-info-bg:      var(--color-primary-50);
-    --color-info-text:    var(--color-primary-800);
+    --color-info-bg: var(--color-primary-50);
+    --color-info-text: var(--color-primary-800);
 }
 
 @layer base {
     html {
-        @apply text-primary-950;
+        @apply scroll-pt-22 lg:scroll-pt-25;
     }
 }
 
 /* BASIC TYPOGRAPHY */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     @apply font-heading;
 }
 
 body {
-    @apply font-body;
+    @apply font-body text-neutral-600;
 }
 
 /* REUSABLE COMPONENTS - START */
@@ -105,7 +112,7 @@ body {
 
 /* SUBHEADING */
 .aquarius-subheading {
-    @apply text-2xl lg:text-4xl uppercase text-neutral-900 font-extrabold mb-2.5 lg:mb-4 tracking-tight;
+    @apply text-2xl lg:text-4xl text-neutral-900 font-extrabold mb-2.5 lg:mb-4 tracking-tight;
 }
 
 /* ALERT */
@@ -114,6 +121,21 @@ body {
 }
 
 /* REUSABLE COMPONENTS - END */
+
+/* FORM INPUTS - START */
+
+.form-input {
+    @apply text-neutral-800 bg-white rounded-lg px-3.5 py-2.5 w-full outline-none transition-all leading-normal placeholder:text-neutral-400;
+    border: 1.5px solid var(--color-neutral-200);
+
+    &:focus {
+        border-color: var(--color-primary-600);
+        box-shadow: 0 0 0 3px var(--color-primary-50);
+    }
+}
+
+/* FORM INPUTS - END */
+
 /* brand logo component */
 .brand {
     @apply flex flex-row items-center focus:outline-none focus:opacity-80 gap-x-2;
@@ -125,8 +147,13 @@ body {
     .aquarius-branding-name {
         @apply flex flex-col text-primary-900 uppercase font-heading;
 
-        .name-1 { @apply font-bold text-[2rem] -mb-[0.3rem]; }
-        .name-2 { @apply font-semibold text-[1.2rem] -mt-[0.3rem]; }
+        .name-1 {
+            @apply font-bold text-[2rem] -mb-[0.3rem];
+        }
+
+        .name-2 {
+            @apply font-semibold text-[1.2rem] -mt-[0.3rem];
+        }
     }
 }
 
@@ -135,10 +162,18 @@ body {
 }
 
 .footer-brand {
-    img.aquarius-logo { @apply w-12; }
+    img.aquarius-logo {
+        @apply w-12;
+    }
+
     .aquarius-branding-name {
-        .name-1 { @apply text-[1.5rem]; }
-        .name-2 { @apply text-[0.9rem]; }
+        .name-1 {
+            @apply text-[1.5rem];
+        }
+
+        .name-2 {
+            @apply text-[0.9rem];
+        }
     }
 }
 
@@ -147,7 +182,7 @@ body {
     @apply flex flex-wrap lg:justify-start lg:flex-nowrap bg-white border-b border-b-neutral-200 shadow;
 }
 
-.aquarius-navbar-container{
+.aquarius-navbar-container {
     @apply relative container w-full mx-auto lg:flex lg:items-center lg:justify-between md:gap-x-6 lg:gap-x-8 px-4 md:px-6 lg:px-8 py-2.5 lg:py-4;
 
     .navbar-mobile {
@@ -156,7 +191,9 @@ body {
         .navbar-btn-close {
             @apply lg:hidden relative w-10 h-10 overflow-hidden text-neutral-600 flex justify-center items-center cursor-pointer rounded-lg hover:text-primary-600 hover:bg-primary-50 active:scale-95 active:text-primary-600 active:bg-primary-50 focus:text-primary-600 focus:bg-primary-50 disabled:opacity-50 disabled:pointer-events-none;
 
-            svg { @apply size-8; }
+            svg {
+                @apply size-8;
+            }
         }
     }
 
@@ -177,14 +214,19 @@ body {
 
                         .nav-link,
                         .nav-dropdown-btn {
-                            @apply p-2 lg:px-4 text-neutral-600 rounded-lg font-bold transition-all cursor-pointer hover:text-primary-600 hover:bg-primary-50 active:text-primary-600 active:bg-primary-50 focus:text-primary-600 focus:bg-primary-50 focus:outline-none;
+                            @apply p-2 lg:px-4 text-neutral-600 rounded-lg font-bold transition-all cursor-pointer hover:text-primary-800 hover:bg-primary-50 active:text-primary-800 active:bg-primary-50 focus:text-primary-800 focus:bg-primary-50 focus:outline-none;
                         }
 
-                        .nav-link { @apply block;}
-                        .nav-dropdown-btn { @apply inline-flex w-full items-center gap-x-1;}
+                        .nav-link {
+                            @apply block;
+                        }
+
+                        .nav-dropdown-btn {
+                            @apply inline-flex w-full items-center gap-x-1;
+                        }
 
                         .nav-link-active {
-                            @apply text-primary-600 bg-primary-50;
+                            @apply text-primary-800 bg-primary-50;
                         }
 
                         /* Custom dropdown */
@@ -221,7 +263,7 @@ body {
                 }
 
                 .aquarius-lang-select-btn {
-                    @apply inline-flex py-2.5 px-4 items-center gap-x-2 font-medium rounded-xl transition-all hover:cursor-pointer hover:text-primary-600 hover:bg-primary-50 active:text-primary-600 active:bg-primary-50 focus:text-primary-600 focus:bg-primary-50 focus:outline-none;
+                    @apply inline-flex py-2.5 px-4 items-center gap-x-2 font-medium rounded-lg transition-all hover:cursor-pointer hover:text-primary-800 hover:bg-primary-50 active:text-primary-800 active:bg-primary-50 focus:text-primary-800 focus:bg-primary-50 focus:outline-none;
                     @apply max-lg:w-full max-lg:rounded-lg;
                 }
 
@@ -235,7 +277,7 @@ body {
                 }
 
                 .aquarius-lang-select-item {
-                    @apply w-full text-left flex items-center gap-x-3 py-2 px-3 rounded-lg transition-all hover:text-primary-600 hover:bg-primary-50 active:text-primary-600 active:bg-primary-50 focus:text-primary-600 focus:bg-primary-50 cursor-pointer;
+                    @apply w-full text-left flex items-center gap-x-3 py-2 px-3 rounded-lg transition-all hover:text-primary-800 hover:bg-primary-50 active:text-primary-800 active:bg-primary-50 focus:text-primary-800 focus:bg-primary-50 cursor-pointer;
                 }
             }
         }
@@ -247,18 +289,19 @@ body {
 /* mobile nav slide-in animation */
 .slide-in-top {
     -webkit-animation: slide-in-top 500ms ease-out both;
-            animation: slide-in-top 500ms ease-out both;
+    animation: slide-in-top 500ms ease-out both;
 }
 
 @-webkit-keyframes slide-in-top {
     0% {
         -webkit-transform: translateY(-1000px);
-                transform: translateY(-1000px);
+        transform: translateY(-1000px);
         opacity: 0;
     }
+
     100% {
         -webkit-transform: translateY(0);
-                transform: translateY(0);
+        transform: translateY(0);
         opacity: 1;
     }
 }
@@ -266,12 +309,13 @@ body {
 @keyframes slide-in-top {
     0% {
         -webkit-transform: translateY(-1000px);
-                transform: translateY(-1000px);
+        transform: translateY(-1000px);
         opacity: 0;
     }
+
     100% {
         -webkit-transform: translateY(0);
-                transform: translateY(0);
+        transform: translateY(0);
         opacity: 1;
     }
 }
@@ -336,11 +380,11 @@ body {
         }
 
         .aquarius-cta-primary {
-            @apply py-3 px-6 inline-flex items-center gap-4 text-base lg:text-lg rounded-xl border border-transparent bg-primary text-white hover:bg-primary-600 focus:outline-none focus:bg-primary-600 disabled:opacity-50 disabled:pointer-events-none transition drop-shadow-md;
+            @apply py-3 px-6 inline-flex items-center gap-4 text-base lg:text-lg rounded-lg border border-transparent bg-primary-700 text-white hover:bg-primary-800 focus:outline-none focus:bg-primary-800 disabled:opacity-50 disabled:pointer-events-none transition drop-shadow-md;
         }
 
         .aquarius-cta-secondary {
-            @apply py-3 px-6 inline-flex items-center gap-4 text-base lg:text-lg rounded-xl border border-secondary-100 text-secondary-100 hover:border-secondary hover:bg-secondary hover:text-black focus:outline-none focus:border-secondary focus:bg-secondary focus:text-secondary-900 disabled:opacity-50 disabled:pointer-events-none transition drop-shadow-md;
+            @apply py-3 px-6 inline-flex items-center gap-4 text-base lg:text-lg rounded-lg border border-secondary-100 text-secondary-100 hover:border-secondary hover:bg-secondary hover:text-black focus:outline-none focus:border-secondary focus:bg-secondary focus:text-secondary-900 disabled:opacity-50 disabled:pointer-events-none transition drop-shadow-md;
         }
 
         .aquarius-right-hero-content {
@@ -348,7 +392,7 @@ body {
         }
 
         .aquarius-swiper-carousel {
-            @apply h-[20rem] lg:h-[37.5rem] rounded-xl overflow-hidden shadow-md bg-purple-50 border-4 border-white;
+            @apply h-[20rem] lg:h-[37.5rem] rounded-lg overflow-hidden shadow-md bg-purple-50 border-4 border-white;
         }
 
         .aquarius-swiper-image img {
@@ -367,15 +411,15 @@ body {
 }
 
 .aquarius-our-pools-tab {
-    @apply text-gray-800 bg-gray-50 border border-gray-200 text-xl font-semibold uppercase shadow-sm hover:shadow-lg transition-all rounded-xl px-4 py-8 inline-flex items-center hover:text-white hover:bg-primary-600 focus:text-white focus:bg-primary-600 max-lg:text-lg max-lg:whitespace-nowrap max-lg:justify-center max-lg:px-6 max-lg:py-3 max-lg:basis-0 max-lg:grow;
+    @apply text-gray-800 bg-gray-50 border border-gray-200 text-xl font-semibold uppercase shadow-sm hover:shadow-lg transition-all rounded-lg px-4 py-8 inline-flex items-center hover:text-white hover:bg-primary-700 focus:text-white focus:bg-primary-700 max-lg:text-lg max-lg:whitespace-nowrap max-lg:justify-center max-lg:px-6 max-lg:py-3 max-lg:basis-0 max-lg:grow;
 
     &.tab-active {
-        @apply text-white bg-primary;
+        @apply text-white bg-primary-700;
     }
 }
 
 .aquarius-our-pools-tab-content {
-    @apply bg-gray-50 border border-gray-200 shadow-sm hover:shadow-lg transition-all rounded-xl p-4 h-full;
+    @apply bg-gray-50 border border-gray-200 shadow-sm hover:shadow-lg transition-all rounded-lg p-4 h-full;
 }
 
 .aquarius-our-pools-tab-desc {
@@ -387,7 +431,7 @@ body {
 }
 
 .aquarius-our-pools-image-content {
-    @apply bg-primary-300 rounded-xl overflow-hidden;
+    @apply bg-primary-300 rounded-lg overflow-hidden;
 
     img {
         @apply w-full h-full object-cover;
@@ -411,7 +455,7 @@ body {
     @apply grid grid-cols-1 gap-4 lg:grid-cols-3 lg:grid-rows-4 mt-10;
 
     .showcase-grid-content {
-        @apply w-full h-48 lg:h-80 bg-secondary-400 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow border-2 border-gray-300;
+        @apply w-full h-48 lg:h-80 bg-secondary-400 rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow border-2 border-gray-300;
 
         img {
             @apply w-full h-full object-cover hover:scale-125 transition-all;
@@ -427,11 +471,12 @@ body {
     }
 
     .middle-content {
-        @apply lg:!h-auto lg:row-span-2 lg:col-start-2 lg:row-start-2;
+        @apply lg:h-auto! lg:row-span-2 lg:col-start-2 lg:row-start-2;
     }
 }
+
 .aquarius-showcase-btn {
-    @apply py-4 px-12 inline-flex items-center gap-4 text-lg lg:text-xl rounded-xl border border-transparent bg-primary text-white hover:bg-primary-600 focus:outline-none focus:bg-primary-600 disabled:opacity-50 disabled:pointer-events-none;
+    @apply py-4 px-12 inline-flex items-center gap-4 text-lg lg:text-xl rounded-lg border border-transparent bg-primary-700 text-white hover:bg-primary-800 focus:outline-none focus:bg-primary-800 disabled:opacity-50 disabled:pointer-events-none;
 }
 
 /* SERVICES HOMEPAGE */
@@ -452,7 +497,7 @@ body {
         @apply grid h-auto;
 
         .review-card-content {
-            @apply flex flex-col bg-white rounded-xl;
+            @apply flex flex-col bg-white rounded-lg;
 
             .review-area {
                 @apply flex-auto p-4 md:p-6;
@@ -507,7 +552,7 @@ body {
 }
 
 .aquarius-contact-form-card {
-    @apply p-4 bg-gray-50 border border-gray-200 rounded-xl shadow-sm;
+    @apply p-4 bg-gray-50 border border-gray-200 rounded-lg shadow-sm;
 }
 
 /* FOOTER */
@@ -554,7 +599,7 @@ footer.aquarius-footer {
 /* FAQ */
 .aquarius-accordion-group-faq {
     .aquarius-accordion {
-        @apply rounded-xl max-lg:p-4 p-6 transition;
+        @apply rounded-lg max-lg:p-4 p-6 transition;
 
         &.accordion-active {
             @apply bg-primary-100;
@@ -580,14 +625,14 @@ footer.aquarius-footer {
 }
 
 .aquarius-contact-card {
-    @apply bg-white border border-neutral-200 rounded-xl p-4 lg:p-6 h-full break-before-avoid;
+    @apply bg-white border border-neutral-200 rounded-lg p-4 lg:p-6 h-full break-before-avoid transition-all duration-300 hover:-translate-y-1 hover:border-primary-300 hover:shadow-lg hover:shadow-primary-100;
 
     .aquarius-contact-card-title {
         @apply text-xl lg:text-2xl uppercase font-semibold mb-4 text-primary-900;
     }
 
     p {
-        @apply text-neutral-600 leading-relaxed;
+        @apply leading-relaxed;
     }
 
     strong {
@@ -596,13 +641,9 @@ footer.aquarius-footer {
 }
 
 /* OUR POOLS */
-.aquarius-our-pools-title,
-.aquarius-our-pools-compare-title {
-    @apply text-primary-800 text-2xl lg:text-4xl uppercase text-center;
-}
 
 .aquarius-our-pools-card {
-    @apply bg-gray-50 border border-gray-200 shadow-sm hover:shadow-lg transition-shadow duration-300 rounded-xl h-full overflow-hidden my-8;
+    @apply bg-white border border-neutral-200 rounded-lg h-full overflow-hidden my-8 transition-all duration-300 hover:-translate-y-1 hover:border-primary-300 hover:shadow-lg hover:shadow-primary-100;
 
     .aquarius-our-pools-card-content {
         @apply lg:relative block lg:flex items-center overflow-hidden h-[inherit];
@@ -612,18 +653,22 @@ footer.aquarius-footer {
         }
 
         .aquarius-our-pools-card-body {
-            @apply grow p-4 max-lg:mt-3 lg:ms-80;
+            @apply grow p-4 lg:p-6 max-lg:mt-3 lg:ms-80;
 
             .our-pools-type-title {
-                @apply font-semibold mt-0 text-primary-800 text-xl lg:text-2xl;
+                @apply text-xl lg:text-2xl font-semibold mb-4 mt-0 text-primary-900;
+            }
+
+            p {
+                @apply leading-relaxed;
             }
         }
     }
 }
 
-/* POOL COMPARASION TABLE */
+/* POOL COMPARISON TABLE */
 .aquarius-pool-compare-content {
-    @apply relative overflow-x-auto shadow-md rounded-xl mt-6
+    @apply relative overflow-x-auto shadow-md rounded-lg mt-6
 }
 
 .aquarius-pool-compare-table {
@@ -683,18 +728,18 @@ footer.aquarius-footer {
     @apply grid gap-16 lg:gap-24 mt-12;
 
     .pool-service-body {
-        @apply flex max-lg:flex-col lg:justify-between;
+        @apply flex max-lg:flex-col lg:justify-between lg:gap-16;
     }
 
     .pool-service-image-side {
-        @apply w-full lg:w-[38%] lg:flex lg:justify-center lg:items-center max-lg:order-2;
+        @apply w-full lg:w-1/3 max-lg:order-2;
 
         .pool-service-relative {
-            @apply relative shadow-md hover:shadow-xl transition-shadow w-full max-lg:aspect-[4/3] lg:w-[32rem] lg:!aspect-video rounded-xl overflow-hidden;
+            @apply relative shadow-md hover:shadow-xl transition w-full max-lg:aspect-4/3 lg:aspect-video! rounded-lg overflow-hidden active:scale-97;
         }
 
         .pool-service-absolute {
-            @apply absolute inset-0 bg-primary;
+            @apply absolute inset-0;
         }
 
         .pool-service-img-content {
@@ -703,12 +748,11 @@ footer.aquarius-footer {
     }
 
     .pool-service-content-side {
-        @apply w-full lg:w-[55%] lg:flex lg:items-center max-lg:order-1;
+        @apply w-full lg:w-2/3 lg:flex lg:items-center max-lg:order-1;
 
-        .pool-service-title {
-            @apply mt-0 text-2xl lg:text-4xl text-primary-800;
+        p {
+            @apply mb-4;
         }
-    
     }
 }
 
@@ -722,5 +766,12 @@ footer.aquarius-footer {
 }
 
 .pool-item-card {
-    @apply bg-gray-50 border border-gray-200 shadow-sm hover:shadow-xl transition-shadow rounded-xl h-full overflow-hidden;
+    @apply bg-gray-50 border border-gray-200 shadow-sm hover:shadow-xl transition-shadow rounded-lg h-full overflow-hidden;
+}
+
+/* POOL GALLERY / SHOWCASE PAGE */
+.image-gallery-container {
+    .gallery-tags-label {
+        @apply inline-flex items-center justify-center w-full text-center hover:bg-neutral-50 active:bg-neutral-50 active:scale-97 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none focus-visible:ring-offset-4 rounded-lg px-4 py-2 cursor-pointer border border-neutral-200 transition-all has-checked:bg-primary-700 has-checked:border-primary-800 text-sm has-checked:text-white has-checked:font-semibold
+    }
 }

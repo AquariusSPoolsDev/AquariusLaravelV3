@@ -22,8 +22,8 @@ $headerSubtitle = 'our_pools_subtitle_heading';
 {{-- MAIN CONTENT STARTS HERE --}}
 @section('content')
 
-<div class="prose !max-w-full">
-    <p>{!!__('strings.our_pools_body')!!}</p>
+<div class="">
+    <p class="mb-4">{!!__('strings.our_pools_body')!!}</p>
 
     <x-our-pools.pool-type-section />
 

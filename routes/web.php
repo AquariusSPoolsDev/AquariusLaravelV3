@@ -105,7 +105,6 @@ Route::domain('v2.aquariusswimmingpools.com')->group(function () {
 // REDIRECT ROUTES
 
 // Our Pools
-Route::redirect('/our-pools/', '/our-pools', 301);
 Route::redirect('/our-pools/concrete-pools', '/concrete-pools', 301);
 Route::redirect('/our-pools/concrete-pools/', '/concrete-pools', 301);
 Route::redirect('/our-pools/vinyl-pools', '/vinyl-pools', 301);

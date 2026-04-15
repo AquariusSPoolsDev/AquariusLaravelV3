@@ -36,24 +36,30 @@ $headerSubtitle = 'showcase_subtitle_heading';
     </x-reusables.alert>
 </div>
 
-<div id="gallery-container">
-    <div class="mb-4 flex flex-col">
+<div id="gallery-container" class="image-gallery-container">
+    <div class="flex flex-col">
         {{-- SEARCH INPUT --}}
-        <label for="search-input" class="font-semibold mb-1">{{__('strings.showcase_search_input_title')}}</label>
-        @include('image-gallery.01-search-input')
+        <div class="mb-4">
+            <label for="search-input" class="font-semibold">{{__('strings.showcase_search_input_title')}}</label>
+            @include('image-gallery.01-search-input')
+        </div>
 
         {{-- TAGS --}}
-        <label class="font-semibold mb-1 mt-0!">{{__('strings.showcase_search_filter_tag_title')}}</label>
+        <div class="mb-4">
+            <label class="font-semibold">{{__('strings.showcase_search_filter_tag_title')}}</label>
 
-        {{-- USE THIS IN SMALLER VIEWPORT --}}
-        @include('image-gallery.02-tags-small')
+            {{-- USE THIS IN SMALLER VIEWPORT --}}
+            @include('image-gallery.02-tags-small')
 
-        {{-- USE THIS IN LARGER VIEWPORT --}}
-        @include('image-gallery.03-tags-large')
+            {{-- USE THIS IN LARGER VIEWPORT --}}
+            @include('image-gallery.03-tags-large')
+        </div>
 
         {{-- RESET BUTTON --}}
-        @include('image-gallery.04-reset-btn')
-        
+        <div class="mb-4">
+            @include('image-gallery.04-reset-btn')
+        </div>
+
         {{-- LOADING INDICATOR --}}
         @include('image-gallery.05-loading')
 

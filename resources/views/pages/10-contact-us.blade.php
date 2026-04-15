@@ -32,9 +32,9 @@
         </div>
     </section>
 
-    <section id="showpool">
+    <section id="showpool" class="">
         <x-reusables.pill-text>{{__('strings.contact_visit_showpool_pill')}}</x-reusables.pill-text>
-        <x-reusables.subheading>{{__('strings.contact_visit_showpool_heading')}}</x-reusables.subheading>
+        <x-reusables.subheading class="uppercase">{{__('strings.contact_visit_showpool_heading')}}</x-reusables.subheading>
         <p class="aquarius-visit-showpool-desc">{{__('strings.contact_visit_showpool_desc')}}</p>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8">

@@ -107,7 +107,10 @@ return [
     'our_pools_vinyl_overview'          => 'Kolam renang vinil dibina dengan rangka logam, besi atau plastik pasang siap yang dipasang dalam lubang siap digali dan diperkukuh dengan tapak konkrit dan pendakap dinding. Rangka kolam renang vinil kami dibuat dengan besi tahan karat dan mempunyai jaminan antara 20-30 tahun, bergantung pada siri yang anda pilih. Pemasangan kolam renang ambil masa kira-kira dua (2) minggu untuk siap. Pilih dari pelbagai saiz dan bentuk yang tersedia.',
     'our_pools_fibreglass_overview'     => 'Kolam renang gentian kaca dibina dengan rangka gentian kaca yang pasang siap. Kolam harga sederhana ini mempunyai masa pemasangan yang cepat, dalam masa 5 hingga 7 hari dan memerlukan penyelenggaraan yang rendah berbanding jenis kolam renang yang lain. Pilih dari jenis kolam renang kami yang sedia ada.',
 
-    // POOL COMPARASION TABLE
+    'our_pools_overview_pill'           => 'Jenis Kolam',
+    'our_pools_comparison_pill'         => 'Ketahui Perbandingannya',
+
+    // POOL COMPARISON TABLE
     'pool_comparasion_title_heading'    => 'Perbandingan Kolam Renang Konkrit, Vinil & Gentian Kaca',
 
     'table_keypoints_title'             => 'Kata Kunci',

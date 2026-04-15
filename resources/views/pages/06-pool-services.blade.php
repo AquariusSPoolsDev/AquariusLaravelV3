@@ -21,7 +21,7 @@ $headerSubtitle = 'pool_service_subtitle_heading';
 
 {{-- MAIN CONTENT STARTS HERE --}}
 @section('content')
-<div class="prose !max-w-full">
+<div class="">
     <p class="">{{__('strings.pool_service_content_1')}}</p>
 
     <div class="aquarius-pool-service-content">

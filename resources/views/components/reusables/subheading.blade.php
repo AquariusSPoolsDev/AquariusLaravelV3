@@ -1,1 +1,1 @@
-<h2 class="aquarius-subheading">{{ $slot }}</h2>
+<h2 {{ $attributes->merge(['class' => 'aquarius-subheading']) }}>{!! $slot !!}</h2>

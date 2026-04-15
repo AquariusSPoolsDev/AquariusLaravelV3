@@ -9,7 +9,7 @@ return [
     'navbar_our_pools_concrete'     => 'Concrete Pools',
     'navbar_our_pools_vinyl'        => 'Vinyl Pools',
     'navbar_our_pools_fibreglass'   => 'Fibreglass Pools',
-    'navbar_our_pools_compare'      => 'Pools Comparasion',
+    'navbar_our_pools_compare'      => 'Pools Comparison',
     'navbar_pool_showcase'          => 'Showcase',
     'navbar_our_services'           => 'Our Services',
     'navbar_our_services_pool'      => 'Pool Services',
@@ -107,7 +107,10 @@ return [
     'our_pools_vinyl_overview'          => 'Vinyl pools are built with prefabricated metal, steel, or plastic frames that are set into a pre-dug hole and reinforced with concrete footings and wall braces. Our vinyl pool frames are made of stainless steel and have a warranty of 20–30 years, depending on which series you choose. Pool installation takes approximately two weeks to complete. Choose from the range of sizes and shapes available.',
     'our_pools_fibreglass_overview'     => 'Fiberglass pools are built with prefabricated fiberglass frames. These mid-range pools have the quickest installation time, taking only 5 to 7 days, and require less maintenance compared to all the other pool types. Choose from our range of ready-made pools.',
 
-    // POOL COMPARASION TABLE
+    'our_pools_overview_pill'           => 'Pool Types',
+    'our_pools_comparison_pill'         => 'Know The Difference',
+
+    // POOL COMPARISON TABLE
     'pool_comparasion_title_heading'    => 'Concrete, Vinyl & Fibreglass Pools Comparison',
 
     'table_keypoints_title'             => 'Keypoints',

@@ -4,7 +4,7 @@
 
     <div class="input-date mb-5">
         <label for="date" class="block mb-2 text-sm font-semibold text-gray-950">{{__('strings.cf_step_3_select_date')}}</label>
-        <input type="date" id="date" name="cust_callback_date" class="bg-gray-100 border border-gray-300 text-gray-950 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
+        <input type="date" id="date" name="cust_callback_date" class="form-input"
                 placeholder="Select date">
 
         @error('cust_callback_date')
@@ -24,7 +24,7 @@
                 </svg>
             </div>
             <input type="time" id="time" name="cust_callback_time"
-                class="bg-gray-100 border border-gray-300 text-gray-950 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
+                class="form-input"
                 value="09:00" required />
         </div>
 
