@@ -13,7 +13,7 @@ class LocaleController extends Controller
     {
         // If language is set via form, use it; otherwise, get it from URL
         $lang = $lang ?? $request->input('language');
-        
+
         $localeMap = [
             'en' => 'en_MY',
             'ms' => 'ms_MY'

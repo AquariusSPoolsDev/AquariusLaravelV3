@@ -1,0 +1,1 @@
+<h2 class="aquarius-subheading">{{ $slot }}</h2>

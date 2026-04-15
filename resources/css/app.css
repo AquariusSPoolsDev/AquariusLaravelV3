@@ -59,15 +59,21 @@
     --color-neutral-950: oklch(0.160 0.008 240);
 
     /* Semantic */
-    --color-success:      #10b981;
-    --color-success-bg:   #ecfdf5;
-    --color-success-text: #065f46;
-    --color-error:        #dc2626;
-    --color-error-bg:     #fef2f2;
-    --color-error-text:   #991b1b;
-    --color-warning:      #f59e0b;
-    --color-warning-bg:   #fffbeb;
-    --color-warning-text: #92400e;
+    --color-success-100: #ecfdf5;  /* was -bg     */
+    --color-success-200: #a7f3d0;  /* was -border */
+    --color-success-300: #10b981;  /* was base    */
+    --color-success-400: #065f46;  /* was -text   */
+
+    --color-error-100:   #fef2f2;  /* was -bg     */
+    --color-error-200:   #fecaca;  /* was -border */
+    --color-error-300:   #dc2626;  /* was base    */
+    --color-error-400:   #991b1b;  /* was -text   */
+
+    --color-warning-100: #fffbeb;  /* was -bg     */
+    --color-warning-200: #fde68a;  /* was -border */
+    --color-warning-300: #f59e0b;  /* was base    */
+    --color-warning-400: #92400e;  /* was -text   */
+
     --color-info-bg:      var(--color-primary-50);
     --color-info-text:    var(--color-primary-800);
 }
@@ -87,6 +93,27 @@ body {
     @apply font-body;
 }
 
+/* REUSABLE COMPONENTS - START */
+/* PILL TEXT */
+.pill-text {
+    @apply inline-flex items-center px-4 py-1.5 bg-primary-50 rounded-full mb-4;
+
+    span {
+        @apply font-heading text-sm font-bold text-primary-800 -tracking-tighter uppercase;
+    }
+}
+
+/* SUBHEADING */
+.aquarius-subheading {
+    @apply text-2xl lg:text-4xl uppercase text-neutral-900 font-extrabold mb-2.5 lg:mb-4 tracking-tight;
+}
+
+/* ALERT */
+.aquarius-alert {
+    @apply p-4 rounded-lg border text-base;
+}
+
+/* REUSABLE COMPONENTS - END */
 /* brand logo component */
 .brand {
     @apply flex flex-row items-center focus:outline-none focus:opacity-80 gap-x-2;
@@ -492,7 +519,7 @@ footer.aquarius-footer {
     }
 
     .aquarius-footer-heading {
-        @apply text-base font-bold text-white uppercase;
+        @apply text-base lg:text-lg font-bold text-white uppercase;
     }
 
     .aquarius-footer-links {
@@ -548,8 +575,24 @@ footer.aquarius-footer {
 }
 
 /* CONTACT */
+.aquarius-visit-showpool-desc {
+    @apply text-base lg:text-lg text-neutral-600 mb-8;
+}
+
 .aquarius-contact-card {
-    @apply bg-gray-50 border border-gray-200 shadow-sm rounded-xl p-4 h-full break-before-avoid;
+    @apply bg-white border border-neutral-200 rounded-xl p-4 lg:p-6 h-full break-before-avoid;
+
+    .aquarius-contact-card-title {
+        @apply text-xl lg:text-2xl uppercase font-semibold mb-4 text-primary-900;
+    }
+
+    p {
+        @apply text-neutral-600 leading-relaxed;
+    }
+
+    strong {
+        @apply text-neutral-900;
+    }
 }
 
 /* OUR POOLS */

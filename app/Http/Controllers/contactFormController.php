@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Notification;
 use Illuminate\Http\Request;
 use App\Notifications\sendContactForm;
 class contactFormController extends Controller
@@ -20,7 +21,7 @@ class contactFormController extends Controller
             'cust_agree'            => 'required|accepted',
         ]);
 
-        \Notification::route('mail','admin@aquariusswimmingpools.com')->notify(new sendContactForm($data));
+        Notification::route('mail','admin@aquariusswimmingpools.com')->notify(new sendContactForm($data));
         return redirect()->route('thank-you');
         
     }
