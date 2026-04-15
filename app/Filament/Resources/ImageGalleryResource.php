@@ -2,12 +2,31 @@
 
 namespace App\Filament\Resources;
 
+use Filament\Schemas\Schema;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Toggle;
+use Filament\Tables\Table;
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\IconColumn;
+use Filament\Actions\ActionGroup;
+use Filament\Actions\ViewAction;
+use Filament\Actions\EditAction;
+use Filament\Actions\DeleteAction;
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteBulkAction;
+use Filament\Actions\BulkAction;
+use App\Filament\Resources\ImageGalleryResource\Pages\ListImageGalleries;
+use App\Filament\Resources\ImageGalleryResource\Pages\CreateImageGallery;
+use App\Filament\Resources\ImageGalleryResource\Pages\EditImageGallery;
 use App\Filament\Resources\ImageGalleryResource\Pages;
 use App\Models\ImageGallery;
 use Filament\Forms;
 use Filament\Tables;
 use Filament\Resources\Resource;
-use Filament\Tables\Actions\BulkAction;
 use Filament\Tables\Filters\Filter;
 use Filament\Tables\Filters\SelectFilter;
 use Illuminate\Support\Facades\Auth;
@@ -19,22 +38,22 @@ class ImageGalleryResource extends Resource
 {
     protected static ?string $model = ImageGallery::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-photo';
+    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-photo';
     protected static ?string $navigationLabel = 'Image Gallery';
-    protected static ?string $navigationGroup = 'Content Management';
+    protected static string | \UnitEnum | null $navigationGroup = 'Content Management';
 
     public static function getNavigationBadge(): ?string
     {
         return ImageGallery::where('is_published', true)->count();
     }
 
-    protected static ?string $navigationBadgeTooltip = 'Total Published Images';
+    protected static string|\Illuminate\Contracts\Support\Htmlable|null $navigationBadgeTooltip = 'Total Published Images';
 
-    public static function form(Forms\Form $form): Forms\Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
-            ->schema([
-                Forms\Components\FileUpload::make('image_path')
+        return $schema
+            ->components([
+                FileUpload::make('image_path')
                     ->required()
                     ->label('Image')
                     ->hint('Max 2MB each image. Available for cropping.')
@@ -51,17 +70,17 @@ class ImageGalleryResource extends Resource
                         '1:1',
                     ])
                     ->maxSize(2048),
-                Forms\Components\TextInput::make('image_name')
+                TextInput::make('image_name')
                     ->required()
                     ->label('Pool Name')
                     ->hint('Insert name that suits the image.')
                     ->columnSpanFull(),
-                Forms\Components\Textarea::make('image_description')
+                Textarea::make('image_description')
                     ->nullable()
                     ->label('Pool Details')
                     ->hint('Insert any information that suits the image.')
                     ->columnSpanFull(),
-                Forms\Components\Select::make('image_tags')
+                Select::make('image_tags')
                     ->nullable()
                     ->label('Pool Image Tags')
                     ->hint('Use appropriate tags for the image')
@@ -103,10 +122,10 @@ class ImageGalleryResource extends Resource
                         'Mosaic Tiles' => 'Mosaic Tiles',
                         'Safety Fence' => 'Safety Fence',
                     ]),
-                Forms\Components\Toggle::make('is_published')
+                Toggle::make('is_published')
                     ->label('Publish this Image?')
                     ->default(0),
-                Forms\Components\TextInput::make('uploader_id')
+                TextInput::make('uploader_id')
                     ->default(Auth::id()) // Automatically set the current user's ID
                     ->label('Uploader ID')
                     ->hint('Ignore this field for validation purposes.')
@@ -114,30 +133,30 @@ class ImageGalleryResource extends Resource
             ]);
     }
 
-    public static function table(Tables\Table $table): Tables\Table
+    public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('image_path')
+                ImageColumn::make('image_path')
                     ->label('Image')
                     ->limit(1)
                     ->width(200)
                     ->height('auto'),
-                Tables\Columns\TextColumn::make('image_name')
+                TextColumn::make('image_name')
                     ->label('Pool Details')
                     ->description(fn(ImageGallery $record): string => $record->image_description)
                     ->wrap()
                     ->searchable(),
-                Tables\Columns\TextColumn::make('image_tags')
+                TextColumn::make('image_tags')
                     ->label('Pool Tags')
                     ->badge()
                     ->separator(',')
                     ->wrap()
                     ->searchable(),
-                Tables\Columns\IconColumn::make('is_published')
+                IconColumn::make('is_published')
                     ->boolean()
                     ->label('Published'),
-                Tables\Columns\TextColumn::make('created_at')
+                TextColumn::make('created_at')
                     ->dateTime()
                     ->wrap()
                     ->label('Uploaded Date')
@@ -188,11 +207,11 @@ class ImageGalleryResource extends Resource
                         'Safety Fence' => 'Safety Fence',
                     ]),
             ])
-            ->actions([
-                Tables\Actions\ActionGroup::make([
-                    Tables\Actions\ViewAction::make(),
-                    Tables\Actions\EditAction::make(),
-                    Tables\Actions\DeleteAction::make()->action(function ($record) {
+            ->recordActions([
+                ActionGroup::make([
+                    ViewAction::make(),
+                    EditAction::make(),
+                    DeleteAction::make()->action(function ($record) {
                         // Delete associated image before deleting the record
                         if ($record->image_path) {
                             Storage::disk('public')->delete($record->image_path);
@@ -204,9 +223,9 @@ class ImageGalleryResource extends Resource
                 ->button()
                 ->label('Actions')
             ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make()->action(function (array $records) {
+            ->toolbarActions([
+                BulkActionGroup::make([
+                    DeleteBulkAction::make()->action(function (array $records) {
                         foreach ($records as $record) {
                             if ($record->image_path) {
                                 Storage::disk('public')->delete($record->image_path);
@@ -214,7 +233,7 @@ class ImageGalleryResource extends Resource
                             $record->delete();
                         }
                     }),
-                    Tables\Actions\BulkAction::make('Publish All')
+                    BulkAction::make('Publish All')
                         ->action(function (Collection $records) {
                             $records->each->update(['is_published' => true]);
                         }),
@@ -230,9 +249,9 @@ class ImageGalleryResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListImageGalleries::route('/'),
-            'create' => Pages\CreateImageGallery::route('/create'),
-            'edit' => Pages\EditImageGallery::route('/{record}/edit'),
+            'index' => ListImageGalleries::route('/'),
+            'create' => CreateImageGallery::route('/create'),
+            'edit' => EditImageGallery::route('/{record}/edit'),
         ];
     }
 }

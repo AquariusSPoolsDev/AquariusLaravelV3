@@ -10,7 +10,7 @@ use BezhanSalleh\FilamentShield\Traits\HasWidgetShield;
 class ImageGalleryWidget extends Widget
 {
     use HasWidgetShield;
-    protected static string $view = 'filament.widgets.image-gallery-widget';
+    protected string $view = 'filament.widgets.image-gallery-widget';
     protected int | string | array $columnSpan = 'full'; 
 
     public function getImagesCount()

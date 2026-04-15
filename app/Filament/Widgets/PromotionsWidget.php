@@ -12,7 +12,7 @@ class PromotionsWidget extends Widget
 {
     use HasWidgetShield;
 
-    protected static string $view = 'filament.widgets.promotions-widget';
+    protected string $view = 'filament.widgets.promotions-widget';
     protected int | string | array $columnSpan = 'full'; 
     
     public function getActivePromotions()

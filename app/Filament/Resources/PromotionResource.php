@@ -2,11 +2,26 @@
 
 namespace App\Filament\Resources;
 
+use Filament\Schemas\Schema;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\DateTimePicker;
+use Filament\Forms\Components\FileUpload;
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Actions\ActionGroup;
+use Filament\Actions\ViewAction;
+use Filament\Actions\EditAction;
+use Filament\Actions\DeleteAction;
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteBulkAction;
+use App\Filament\Resources\PromotionResource\Pages\ListPromotions;
+use App\Filament\Resources\PromotionResource\Pages\CreatePromotion;
+use App\Filament\Resources\PromotionResource\Pages\EditPromotion;
 use App\Filament\Resources\PromotionResource\Pages;
 use App\Filament\Resources\PromotionResource\RelationManagers;
 use App\Models\Promotion;
 use Filament\Forms;
-use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -20,9 +35,9 @@ class PromotionResource extends Resource
 {
     protected static ?string $model = Promotion::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-megaphone';
+    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-megaphone';
     protected static ?string $navigationLabel = 'Promotions';
-    protected static ?string $navigationGroup = 'Content Management';
+    protected static string | \UnitEnum | null $navigationGroup = 'Content Management';
 
     public static function getNavigationBadge(): ?string
     {
@@ -33,37 +48,37 @@ class PromotionResource extends Resource
             ->count();
     }
 
-    protected static ?string $navigationBadgeTooltip = 'Active Promotions';
+    protected static string|\Illuminate\Contracts\Support\Htmlable|null $navigationBadgeTooltip = 'Active Promotions';
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
-            ->schema([
-                Forms\Components\TextInput::make('title')
+        return $schema
+            ->components([
+                TextInput::make('title')
                     ->required()
                     ->label('Promotion Title')
                     ->hint('Your Promotion Name.')
                     ->columnSpanFull(),
-                Forms\Components\Textarea::make('description')
+                Textarea::make('description')
                     ->required()
                     ->hint('Your Promotion Details.')
                     ->label('Promotion Details')
                     ->columnSpanFull(),
-                Forms\Components\DateTimePicker::make('start_time')
+                DateTimePicker::make('start_time')
                     ->required()
                     ->hint('Promotion start time.')
                     ->label('Start Time')
                     ->seconds(false)
                     ->native(false)
                     ->timezone('Asia/Kuala_Lumpur'),
-                Forms\Components\DateTimePicker::make('end_time')
+                DateTimePicker::make('end_time')
                     ->nullable()
                     ->hint('Promotion end time. Must be latter time.')
                     ->label('End Time')
                     ->seconds(false)
                     ->native(false)
                     ->timezone('Asia/Kuala_Lumpur'),
-                Forms\Components\FileUpload::make('file_attachment')
+                FileUpload::make('file_attachment')
                     ->label('Promotional Materials')
                     ->hint('Your Promotion material images. Can be uploaded multiple files. Max 2MB each.')
                     ->nullable()
@@ -75,7 +90,7 @@ class PromotionResource extends Resource
                     ->reorderable()
                     ->appendFiles()
                     ->maxSize(2048),
-                Forms\Components\TextInput::make('uploader_id')
+                TextInput::make('uploader_id')
                     ->default(Auth::id()) // Automatically set the current user's ID
                     ->label('Uploader ID (Ignore this part)')
                     ->hint('Ignore this field. Used for verification purposes.')
@@ -87,21 +102,21 @@ class PromotionResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('file_attachment')
+                ImageColumn::make('file_attachment')
                     ->label('Image')
                     ->limit(1)
                     ->width(150)
                     ->height('auto'),
-                Tables\Columns\TextColumn::make('title')
+                TextColumn::make('title')
                     ->label('Promotion Details')
                     ->description(fn(Promotion $record): string => $record->description)
                     ->wrap(),
-                Tables\Columns\TextColumn::make('start_time')
+                TextColumn::make('start_time')
                     ->label('Promo Starts')
                     ->wrap()
                     ->dateTime()
                     ->timezone('Asia/Kuala_Lumpur'),
-                Tables\Columns\TextColumn::make('end_time')
+                TextColumn::make('end_time')
                     ->label('Promo Ends')
                     ->wrap()
                     ->dateTime()
@@ -110,11 +125,11 @@ class PromotionResource extends Resource
             ->filters([
                 //
             ])
-            ->actions([
-                Tables\Actions\ActionGroup::make([
-                    Tables\Actions\ViewAction::make(),
-                    Tables\Actions\EditAction::make(),
-                    Tables\Actions\DeleteAction::make()->action(function (Promotion $record) {
+            ->recordActions([
+                ActionGroup::make([
+                    ViewAction::make(),
+                    EditAction::make(),
+                    DeleteAction::make()->action(function (Promotion $record) {
                         // Delete associated files before deleting the record
                         if ($record->file_attachment) {
                             foreach ($record->file_attachment as $filePath) {
@@ -128,9 +143,9 @@ class PromotionResource extends Resource
                 ->button()
                 ->label('Actions')
             ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make()->action(function (Collection $records) {
+            ->toolbarActions([
+                BulkActionGroup::make([
+                    DeleteBulkAction::make()->action(function (Collection $records) {
                         foreach ($records as $record) {
                             // Check if there are file attachments and delete them
                             if ($record->file_attachment) {
@@ -151,9 +166,9 @@ class PromotionResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListPromotions::route('/'),
-            'create' => Pages\CreatePromotion::route('/create'),
-            'edit' => Pages\EditPromotion::route('/{record}/edit'),
+            'index' => ListPromotions::route('/'),
+            'create' => CreatePromotion::route('/create'),
+            'edit' => EditPromotion::route('/{record}/edit'),
         ];
     }
 }

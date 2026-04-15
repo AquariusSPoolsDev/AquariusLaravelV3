@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\PromotionResource\Pages;
 
+use Exception;
 use App\Filament\Resources\PromotionResource;
 use Filament\Actions;
 use Filament\Resources\Pages\CreateRecord;
@@ -15,7 +16,7 @@ class CreatePromotion extends CreateRecord
 {
     $userId = Auth::id();
     if (!$userId) {
-        throw new \Exception('User is not authenticated.'); // This will help you debug
+        throw new Exception('User is not authenticated.'); // This will help you debug
     }
     $data['uploader_id'] = $userId;
     return $data;

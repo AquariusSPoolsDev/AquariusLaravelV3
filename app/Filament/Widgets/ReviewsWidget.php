@@ -10,7 +10,7 @@ class ReviewsWidget extends Widget
 {
     use HasWidgetShield;
 
-    protected static string $view = 'filament.widgets.reviews-widget';
+    protected string $view = 'filament.widgets.reviews-widget';
     protected int | string | array $columnSpan = 'full'; 
     
     public function getTotalReviews()
