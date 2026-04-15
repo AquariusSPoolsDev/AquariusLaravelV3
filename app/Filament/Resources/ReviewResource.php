@@ -2,12 +2,23 @@
 
 namespace App\Filament\Resources;
 
+use Filament\Schemas\Schema;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\Radio;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Actions\ViewAction;
+use Filament\Actions\EditAction;
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteBulkAction;
+use App\Filament\Resources\ReviewResource\Pages\ListReviews;
+use App\Filament\Resources\ReviewResource\Pages\CreateReview;
+use App\Filament\Resources\ReviewResource\Pages\EditReview;
 use App\Filament\Resources\ReviewResource\Pages;
 use App\Filament\Resources\ReviewResource\RelationManagers;
 use App\Models\Review;
 use Filament\Forms;
 use Filament\Forms\Components\ViewField;
-use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -19,26 +30,26 @@ class ReviewResource extends Resource
 {
     protected static ?string $model = Review::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-star';
+    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-star';
     protected static ?string $navigationLabel = 'Reviews';
-    protected static ?string $navigationGroup = 'Content Management';
+    protected static string | \UnitEnum | null $navigationGroup = 'Content Management';
 
     public static function getNavigationBadge(): ?string
     {
         return static::getModel()::count();
     }
 
-    protected static ?string $navigationBadgeTooltip = 'Total Reviews Count';
+    protected static string|\Illuminate\Contracts\Support\Htmlable|null $navigationBadgeTooltip = 'Total Reviews Count';
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form->schema([
-            Forms\Components\TextInput::make('reviewer_name')
+        return $schema->components([
+            TextInput::make('reviewer_name')
                 ->label('Reviewer Name')
                 ->required(),
-                Forms\Components\TextInput::make('reviewer_location')
+                TextInput::make('reviewer_location')
                 ->label('Reviewer Location'),
-            Forms\Components\RichEditor::make('review')
+            RichEditor::make('review')
                 ->required()
                 ->label('Review')
                 ->columnSpanFull()
@@ -51,7 +62,7 @@ class ReviewResource extends Resource
                     'underline',
                     'undo',
                 ]),
-            Forms\Components\Radio::make('rating')
+            Radio::make('rating')
                 ->options([
                     '1' => '1. Poor',
                     '2' => '2. Fair',
@@ -69,13 +80,13 @@ class ReviewResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('review')
+                TextColumn::make('review')
                     ->label('Review')
                     ->description(fn(Review $record): string => '- ' . $record->reviewer_name.' from '.$record->reviewer_location)
                     ->searchable()
                     ->wrap()
                     ->html(),
-                Tables\Columns\TextColumn::make('rating')
+                TextColumn::make('rating')
                     ->label('Rating')
                     ->icon(fn(string $state): string => match ($state) {
                         '1' => 'heroicon-o-star',
@@ -84,22 +95,22 @@ class ReviewResource extends Resource
                         '4' => 'heroicon-o-star',
                         '5' => 'heroicon-o-star',
                     }),
-                Tables\Columns\TextColumn::make('created_at')
+                TextColumn::make('created_at')
                     ->label('Created at')
                     ->dateTime()
                     ->timezone('Asia/Kuala_Lumpur')
                     ->wrap(),
             ])
-            ->actions([
-                Tables\Actions\ViewAction::make(),
-                Tables\Actions\EditAction::make(),
+            ->recordActions([
+                ViewAction::make(),
+                EditAction::make(),
             ])
             ->filters([
                 //
             ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
+            ->toolbarActions([
+                BulkActionGroup::make([
+                    DeleteBulkAction::make(),
                 ]),
             ])
             ->defaultSort('created_at', 'desc');
@@ -115,9 +126,9 @@ class ReviewResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListReviews::route('/'),
-            'create' => Pages\CreateReview::route('/create'),
-            'edit' => Pages\EditReview::route('/{record}/edit'),
+            'index' => ListReviews::route('/'),
+            'create' => CreateReview::route('/create'),
+            'edit' => EditReview::route('/{record}/edit'),
         ];
     }
 }

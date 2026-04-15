@@ -6,7 +6,7 @@
     <div class="aquarius-navbar-main">
         <nav class="aquarius-navbar-container">
             <div class="navbar-mobile">
-                <a class="navbar-brand" href="{{ route('homepage') }}" aria-label="Aquarius Swimming Pools">
+                <a class="brand navbar-brand" href="{{ route('homepage') }}" aria-label="Aquarius Swimming Pools">
                     <img class="aquarius-logo" src="{{ asset('assets/favicon/aquarius-logo-192.png') }}" alt="Aquarius Swimming Pools">
                     <div class="aquarius-branding-name">
                         <span class="name-1">Aquarius</span><span class="name-2">Swimming Pools</span>

@@ -2,6 +2,15 @@
 
 namespace App\Filament\Resources;
 
+use Filament\Schemas\Schema;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Select;
+use Filament\Tables\Table;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Actions\EditAction;
+use App\Filament\Resources\UserResource\Pages\ListUsers;
+use App\Filament\Resources\UserResource\Pages\CreateUser;
+use App\Filament\Resources\UserResource\Pages\EditUser;
 use App\Filament\Resources\UserResource\Pages;
 use App\Models\User;
 use Filament\Forms;
@@ -13,29 +22,29 @@ class UserResource extends Resource
 
     protected static ?string $model = User::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-user';
+    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-user';
     protected static ?string $navigationLabel = 'Users';
-    protected static ?string $navigationGroup = 'User Management';
+    protected static string | \UnitEnum | null $navigationGroup = 'User Management';
 
     public static function getNavigationBadge(): ?string
     {
         return static::getModel()::count();
     }
 
-    protected static ?string $navigationBadgeTooltip = 'Registered Users';
+    protected static string|\Illuminate\Contracts\Support\Htmlable|null $navigationBadgeTooltip = 'Registered Users';
 
-    public static function form(Forms\Form $form): Forms\Form
+    public static function form(Schema $schema): Schema
     {
-        return $form->schema([
-            Forms\Components\TextInput::make('name')
+        return $schema->components([
+            TextInput::make('name')
                 ->required(),
-            Forms\Components\TextInput::make('email')
+            TextInput::make('email')
                 ->required()
                 ->email(),
-            Forms\Components\TextInput::make('password')
+            TextInput::make('password')
                 ->password()
                 ->dehydrated(fn ($state) => filled($state)),
-            Forms\Components\Select::make('roles')
+            Select::make('roles')
                 ->relationship('roles', 'name')
                 ->multiple()
                 ->preload()
@@ -43,30 +52,30 @@ class UserResource extends Resource
         ]);
     }
 
-    public static function table(Tables\Table $table): Tables\Table
+    public static function table(Table $table): Table
     {
         return $table
         ->columns([
-            Tables\Columns\TextColumn::make('name'),
-            Tables\Columns\TextColumn::make('email'),
-            Tables\Columns\TextColumn::make('roles.name')
+            TextColumn::make('name'),
+            TextColumn::make('email'),
+            TextColumn::make('roles.name')
                 ->label('Role')
                 ->badge(),
-            Tables\Columns\TextColumn::make('created_at')
+            TextColumn::make('created_at')
                 ->dateTime()
                 ->timezone('Asia/Kuala_Lumpur'),
         ])
-        ->actions([
-            Tables\Actions\EditAction::make(),
+        ->recordActions([
+            EditAction::make(),
         ]);
     }
 
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListUsers::route('/'),
-            'create' => Pages\CreateUser::route('/create'),
-            'edit' => Pages\EditUser::route('/{record}/edit'),
+            'index' => ListUsers::route('/'),
+            'create' => CreateUser::route('/create'),
+            'edit' => EditUser::route('/{record}/edit'),
         ];
     }
 }

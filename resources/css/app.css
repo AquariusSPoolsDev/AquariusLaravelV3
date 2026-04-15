@@ -87,6 +87,34 @@ body {
     @apply font-body;
 }
 
+/* brand logo component */
+.brand {
+    @apply flex flex-row items-center focus:outline-none focus:opacity-80 gap-x-2;
+
+    img.aquarius-logo {
+        @apply w-16 h-auto shrink-0;
+    }
+
+    .aquarius-branding-name {
+        @apply flex flex-col text-primary-900 uppercase font-heading;
+
+        .name-1 { @apply font-bold text-[2rem] -mb-[0.3rem]; }
+        .name-2 { @apply font-semibold text-[1.2rem] -mt-[0.3rem]; }
+    }
+}
+
+.navbar-brand {
+    @apply w-64;
+}
+
+.footer-brand {
+    img.aquarius-logo { @apply w-12; }
+    .aquarius-branding-name {
+        .name-1 { @apply text-[1.5rem]; }
+        .name-2 { @apply text-[0.9rem]; }
+    }
+}
+
 /* navbar */
 .aquarius-navbar-main {
     @apply flex flex-wrap lg:justify-start lg:flex-nowrap bg-white border-b border-b-neutral-200 shadow;
@@ -97,26 +125,6 @@ body {
 
     .navbar-mobile {
         @apply flex justify-between items-center;
-
-        .navbar-brand {
-            @apply flex flex-row items-center focus:outline-none focus:opacity-80 gap-x-2 w-64;
-        }
-
-        img.aquarius-logo {
-            @apply w-16 h-auto shrink-0;
-        }
-
-        .aquarius-branding-name {
-            @apply flex flex-col text-primary-900 uppercase font-heading;
-
-            .name-1 {
-                @apply font-bold text-[2rem] -mb-[0.3rem];
-            }
-
-            .name-2 {
-                @apply font-semibold text-[1.2rem] -mt-[0.3rem];
-            }
-        }
 
         .navbar-btn-close {
             @apply lg:hidden relative w-10 h-10 overflow-hidden text-neutral-600 flex justify-center items-center cursor-pointer rounded-lg hover:text-primary-600 hover:bg-primary-50 active:scale-95 active:text-primary-600 active:bg-primary-50 focus:text-primary-600 focus:bg-primary-50 disabled:opacity-50 disabled:pointer-events-none;
@@ -476,18 +484,29 @@ body {
 }
 
 /* FOOTER */
-footer {
+footer.aquarius-footer {
+    @apply bg-neutral-950 mt-auto w-full pt-10 pb-32;
+
+    .aquarius-container-content {
+        @apply container mx-auto px-4 md:px-6 lg:px-8;
+    }
+
     .aquarius-footer-heading {
-        @apply text-base font-bold text-primary-900 uppercase;
+        @apply text-base font-bold text-white uppercase;
     }
 
     .aquarius-footer-links {
-        @apply text-sm inline-flex gap-x-2 text-gray-600 underline hover:no-underline hover:text-gray-800 transition focus:outline-none focus:text-gray-800;
+        @apply text-sm lg:text-base inline-flex gap-x-2 text-neutral-400 underline transition-all hover:text-neutral-200 active:text-neutral-200 focus:text-neutral-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:rounded-sm;
     }
 
     .aquarius-social-icons {
-        @apply inline-block text-lg lg:text-xl text-gray-500 hover:text-gray-800 focus:outline-none focus:text-gray-800;
+        @apply inline-flex items-center justify-center min-w-[2.75rem] min-h-[2.75rem] text-lg lg:text-xl text-neutral-400 transition-all hover:text-neutral-200 active:text-neutral-200 focus:text-neutral-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:rounded-sm;
     }
+
+    .bottom-row {
+        @apply pt-6 mt-6 border-t border-t-neutral-800;
+    }
+
 }
 
 /* back to top button */

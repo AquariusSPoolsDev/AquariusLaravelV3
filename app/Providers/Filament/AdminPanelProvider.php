@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
 use App\Filament\Widgets\adminPanelMetadata;
 use App\Filament\Widgets\ImageGalleryWidget;
 use App\Filament\Widgets\PromotionsWidget;
@@ -74,7 +75,7 @@ class AdminPanelProvider extends PanelProvider
                 Authenticate::class,
             ])
             ->plugins([
-                \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make(),
+                FilamentShieldPlugin::make(),
             ])
             ->assets([
                 Css::make('custom-stylesheet', resource_path('css/app/custom-stylesheet.css')),
