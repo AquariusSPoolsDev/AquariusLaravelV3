@@ -21,20 +21,19 @@ $headerSubtitle = 'showcase_subtitle_heading';
 
 {{-- MAIN CONTENT STARTS HERE --}}
 @section('content')
-<div class="prose max-w-full mb-6">
-    <p>{{__('strings.showcase_body')}}</p>
-
-    <div class="bg-teal-50 border-s-4 border-teal-500 p-4 ps-6" role="alert" tabindex="-1" aria-labelledby="howtouse">
-        <h3 id="howtouse" class="text-gray-800 font-semibold m-0">
+<div class="mb-6">
+    <p class="mb-6">{{__('strings.showcase_body')}}</p>
+    <x-reusables.alert color="info">
+        <h3 id="howtouse" class="font-semibold text-lg lg:text-xl mb-3 tracking-tight">
             {{__('strings.showcase_how_to_use')}}
         </h3>
-        <ol class="list-decimal list-inside text-sm text-gray-700 m-0 p-0">
-            <li><strong>{{__('strings.showcase_how_to_use_1_title')}}</strong> {{__('strings.showcase_how_to_use_1_body')}}</li>
-            <li><strong>{{__('strings.showcase_how_to_use_2_title')}}</strong> {{__('strings.showcase_how_to_use_2_body')}}</li>
-            <li><strong>{{__('strings.showcase_how_to_use_3_title')}}</strong> {{__('strings.showcase_how_to_use_3_body')}}</li>
-            <li><strong>{{__('strings.showcase_how_to_use_4_title')}}</strong> {{__('strings.showcase_how_to_use_4_body')}}</li>
+        <ol class="list-decimal list-inside text-sm lg:text-base flex flex-col gap-2">
+            <li>&nbsp;<strong>{{__('strings.showcase_how_to_use_1_title')}}</strong> {{__('strings.showcase_how_to_use_1_body')}}</li>
+            <li>&nbsp;<strong>{{__('strings.showcase_how_to_use_2_title')}}</strong> {{__('strings.showcase_how_to_use_2_body')}}</li>
+            <li>&nbsp;<strong>{{__('strings.showcase_how_to_use_3_title')}}</strong> {{__('strings.showcase_how_to_use_3_body')}}</li>
+            <li>&nbsp;<strong>{{__('strings.showcase_how_to_use_4_title')}}</strong> {{__('strings.showcase_how_to_use_4_body')}}</li>
         </ol>
-    </div>
+    </x-reusables.alert>
 </div>
 
 <div id="gallery-container">
@@ -44,7 +43,7 @@ $headerSubtitle = 'showcase_subtitle_heading';
         @include('image-gallery.01-search-input')
 
         {{-- TAGS --}}
-        <label class="font-semibold mb-1 !mt-0">{{__('strings.showcase_search_filter_tag_title')}}</label>
+        <label class="font-semibold mb-1 mt-0!">{{__('strings.showcase_search_filter_tag_title')}}</label>
 
         {{-- USE THIS IN SMALLER VIEWPORT --}}
         @include('image-gallery.02-tags-small')

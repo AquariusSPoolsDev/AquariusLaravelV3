@@ -1,2 +1,2 @@
 <input type="text" id="search-input" placeholder="{{__('strings.showcase_search_placeholder')}}"
-    class="!mt-0 !mb-4 py-2 px-4 block w-full border-gray-200 rounded-xl text-sm focus:border-primary-500 focus:ring-primary-500">
+    class="mt-0! mb-4! py-2 px-4 block w-full border-gray-200 rounded-xl text-sm focus:border-primary-500 focus:ring-primary-500">

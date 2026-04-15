@@ -1,4 +1,4 @@
-<div class="block lg:hidden !my-0">
+<div class="block lg:hidden my-0!">
     <select id="multiple-with-conditional-counter-select" multiple data-hs-select='{
         "placeholder": "{{__('strings.choose_dropdown')}}",
         "toggleTag": "<button type=\"button\" aria-expanded=\"false\"></button>",
