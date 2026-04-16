@@ -201,7 +201,7 @@ body {
         @apply overflow-hidden lg:overflow-visible transition-all duration-500 grow lg:block;
 
         .aquarius-nav-main {
-            @apply overflow-y-auto lg:overflow-visible max-lg:h-[calc(100dvh-57px)] [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300;
+            @apply overflow-y-auto lg:overflow-visible max-lg:h-[calc(100dvh-57px)] [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-neutral-100 [&::-webkit-scrollbar-thumb]:bg-neutral-300;
 
             .nav-flex {
                 @apply pt-4 lg:py-0 flex flex-col lg:flex-row lg:items-center lg:gap-x-8;
@@ -239,7 +239,7 @@ body {
                         }
 
                         .nav-dropdown-menu::after {
-                            @apply content-[''] lg:hidden absolute top-1 start-4.5 w-0.5 h-[calc(100%-0.25rem)] bg-gray-100;
+                            @apply content-[''] lg:hidden absolute top-1 start-4.5 w-0.5 h-[calc(100%-0.25rem)] bg-neutral-100;
                         }
 
                         .nav-dropdown-chevron {
@@ -269,7 +269,7 @@ body {
 
                 .aquarius-lang-select-dropdown {
                     @apply absolute top-full end-0 min-w-60 bg-white shadow-md rounded-lg mt-2 z-50;
-                    @apply max-lg:static max-lg:mt-1 max-lg:w-full max-lg:shadow-none max-lg:bg-gray-50 max-lg:rounded-lg;
+                    @apply max-lg:static max-lg:mt-1 max-lg:w-full max-lg:shadow-none max-lg:bg-neutral-50 max-lg:rounded-lg;
                 }
 
                 .lang-select-dropdown-card {
@@ -322,7 +322,7 @@ body {
 
 /* homepage hero section */
 .aquarius-hero-page-content-section {
-    @apply relative overflow-hidden flex items-center max-sm:h-[64rem] max-lg:h-[58rem] h-[50rem] bg-gray-950;
+    @apply relative overflow-hidden flex items-center max-sm:h-[64rem] max-lg:h-[58rem] h-[50rem] bg-neutral-950;
 
     .hero-video-bg {
         @apply absolute top-0 left-0 w-full h-full object-cover;
@@ -336,19 +336,19 @@ body {
         @apply absolute bottom-4 right-4 z-30;
 
         .hero-video-toast {
-            @apply hs-removing:translate-x-5 hs-removing:opacity-0 transition duration-300 max-w-xs bg-white border border-gray-200 rounded-full shadow-lg;
+            @apply hs-removing:translate-x-5 hs-removing:opacity-0 transition duration-300 max-w-xs bg-white border border-neutral-200 rounded-full shadow-lg;
 
             .hero-video-toast-label {
-                @apply text-sm text-gray-700;
+                @apply text-sm text-neutral-700;
             }
 
             .toast-close-btn {
-                @apply inline-flex shrink-0 justify-center items-center size-4 rounded-lg text-gray-800 opacity-50 hover:opacity-100 focus:outline-none focus:opacity-100;
+                @apply inline-flex shrink-0 justify-center items-center size-4 rounded-lg text-neutral-800 opacity-50 hover:opacity-100 focus:outline-none focus:opacity-100;
             }
         }
 
         .hero-video-toggle-btn {
-            @apply bg-gray-800 text-white p-2 rounded-full flex items-center;
+            @apply bg-neutral-800 text-white p-2 rounded-full flex items-center;
         }
     }
 
@@ -368,11 +368,11 @@ body {
         }
 
         .aquarius-secondary-heading {
-            @apply text-lg lg:text-xl font-medium mb-2 text-gray-100 drop-shadow-md;
+            @apply text-lg lg:text-xl font-medium mb-2 text-neutral-100 drop-shadow-md;
         }
 
         .aquarius-features-heading {
-            @apply text-lg lg:text-xl mb-6 text-gray-100 drop-shadow-md;
+            @apply text-lg lg:text-xl mb-6 text-neutral-100 drop-shadow-md;
         }
 
         .aquarius-cta-buttons {
@@ -407,11 +407,11 @@ body {
 }
 
 .aquarius-our-pools-tablist {
-    @apply flex max-lg:pb-2 max-lg:mb-3 max-lg:gap-x-3 max-lg:overflow-x-auto max-lg:[&::-webkit-scrollbar]:h-2 max-lg:[&::-webkit-scrollbar-thumb]:rounded-full max-lg:[&::-webkit-scrollbar-track]:bg-gray-100 max-lg:[&::-webkit-scrollbar-thumb]:bg-gray-300 lg:flex-col lg:space-y-6;
+    @apply flex max-lg:pb-2 max-lg:mb-3 max-lg:gap-x-3 max-lg:overflow-x-auto max-lg:[&::-webkit-scrollbar]:h-2 max-lg:[&::-webkit-scrollbar-thumb]:rounded-full max-lg:[&::-webkit-scrollbar-track]:bg-neutral-100 max-lg:[&::-webkit-scrollbar-thumb]:bg-neutral-300 lg:flex-col lg:space-y-6;
 }
 
 .aquarius-our-pools-tab {
-    @apply text-gray-800 bg-gray-50 border border-gray-200 text-xl font-semibold uppercase shadow-sm hover:shadow-lg transition-all rounded-lg px-4 py-8 inline-flex items-center hover:text-white hover:bg-primary-700 focus:text-white focus:bg-primary-700 max-lg:text-lg max-lg:whitespace-nowrap max-lg:justify-center max-lg:px-6 max-lg:py-3 max-lg:basis-0 max-lg:grow;
+    @apply text-neutral-800 bg-neutral-50 border border-neutral-200 text-xl font-semibold uppercase shadow-sm hover:shadow-lg transition-all rounded-lg px-4 py-8 inline-flex items-center hover:text-white hover:bg-primary-700 focus:text-white focus:bg-primary-700 max-lg:text-lg max-lg:whitespace-nowrap max-lg:justify-center max-lg:px-6 max-lg:py-3 max-lg:basis-0 max-lg:grow;
 
     &.tab-active {
         @apply text-white bg-primary-700;
@@ -419,11 +419,11 @@ body {
 }
 
 .aquarius-our-pools-tab-content {
-    @apply bg-gray-50 border border-gray-200 shadow-sm hover:shadow-lg transition-all rounded-lg p-4 h-full;
+    @apply bg-neutral-50 border border-neutral-200 shadow-sm hover:shadow-lg transition-all rounded-lg p-4 h-full;
 }
 
 .aquarius-our-pools-tab-desc {
-    @apply text-gray-800 leading-relaxed mb-4;
+    @apply text-neutral-800 leading-relaxed mb-4;
 }
 
 .aquarius-our-pools-image-grid {
@@ -455,7 +455,7 @@ body {
     @apply grid grid-cols-1 gap-4 lg:grid-cols-3 lg:grid-rows-4 mt-10;
 
     .showcase-grid-content {
-        @apply w-full h-48 lg:h-80 bg-secondary-400 rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow border-2 border-gray-300;
+        @apply w-full h-48 lg:h-80 bg-secondary-400 rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow border-2 border-neutral-300;
 
         img {
             @apply w-full h-full object-cover hover:scale-125 transition-all;
@@ -485,7 +485,7 @@ body {
 
 
     .service-content-link {
-        @apply flex gap-y-6 size-full hover:bg-gray-100 focus:outline-none focus:bg-gray-100 rounded-lg p-5;
+        @apply flex gap-y-6 size-full hover:bg-neutral-100 focus:outline-none focus:bg-neutral-100 rounded-lg p-5;
     }
 }
 
@@ -503,12 +503,12 @@ body {
                 @apply flex-auto p-4 md:p-6;
 
                 .review-text {
-                    @apply text-base italic md:text-lg text-gray-800;
+                    @apply text-base italic md:text-lg text-neutral-800;
                 }
             }
 
             .reviewer-area {
-                @apply p-4 bg-gray-100 rounded-b-xl md:px-7;
+                @apply p-4 bg-neutral-100 rounded-b-xl md:px-7;
 
                 .reviewer-detail {
                     @apply flex items-center gap-x-3;
@@ -525,11 +525,11 @@ body {
                         @apply grow;
 
                         .reviewer-name {
-                            @apply text-base font-semibold text-gray-800;
+                            @apply text-base font-semibold text-neutral-800;
                         }
 
                         .reviewer-location {
-                            @apply text-sm text-gray-500;
+                            @apply text-sm text-neutral-500;
                         }
                     }
                 }
@@ -552,7 +552,7 @@ body {
 }
 
 .aquarius-contact-form-card {
-    @apply p-4 bg-gray-50 border border-gray-200 rounded-lg shadow-sm;
+    @apply p-4 bg-neutral-50 border border-neutral-200 rounded-lg shadow-sm;
 }
 
 /* FOOTER */
@@ -582,9 +582,7 @@ footer.aquarius-footer {
 }
 
 /* back to top button */
-.aquarius-back-top-btn {
-    @apply fixed z-50 bottom-6 right-6 lg:bottom-12 lg:right-12 p-4 border-0 w-[3.25rem] h-[3.25rem] rounded-full shadow-md bg-secondary hover:bg-secondary-600 text-white text-lg font-semibold transition-colors duration-300;
-}
+
 
 /* CONTAINER */
 .main-container {
@@ -640,6 +638,10 @@ footer.aquarius-footer {
     }
 }
 
+/* PAGE HEADER - START */
+
+/* PAGE HEADER - END */
+
 /* OUR POOLS */
 
 .aquarius-our-pools-card {
@@ -649,11 +651,11 @@ footer.aquarius-footer {
         @apply lg:relative block lg:flex items-center overflow-hidden h-[inherit];
 
         .aquarius-our-pools-card-img {
-            @apply w-full h-60 lg:w-72 lg:h-full lg:absolute inset-0 object-cover !m-0;
+            @apply w-full h-60 lg:w-80 xl:w-104 lg:h-full lg:absolute inset-0 object-cover m-0!;
         }
 
         .aquarius-our-pools-card-body {
-            @apply grow p-4 lg:p-6 max-lg:mt-3 lg:ms-80;
+            @apply grow p-4 lg:p-6 max-lg:mt-3 lg:ms-88 xl:ms-108;
 
             .our-pools-type-title {
                 @apply text-xl lg:text-2xl font-semibold mb-4 mt-0 text-primary-900;
@@ -668,26 +670,26 @@ footer.aquarius-footer {
 
 /* POOL COMPARISON TABLE */
 .aquarius-pool-compare-content {
-    @apply relative overflow-x-auto shadow-md rounded-lg mt-6
+    @apply relative overflow-x-auto border border-neutral-200 rounded-lg mt-6;
 }
 
 .aquarius-pool-compare-table {
-    @apply w-full text-left text-gray-500 !my-0;
+    @apply w-full text-left text-neutral-500 my-0!;
 }
 
 .aquarius-pool-compare-table__head {
-    @apply text-gray-800 uppercase bg-gray-50 block lg:table-header-group;
+    @apply text-neutral-900 uppercase bg-neutral-50/50 border-b border-b-neutral-200 hidden lg:table-header-group;
 }
 
 .table-row-large {
-    @apply hidden lg:table-row;
+    @apply lg:table-row divide-x divide-neutral-200;
 }
 
 .table-head-keypoints,
 .table-head-concrete,
 .table-head-vinyl,
 .table-head-fibreglass {
-    @apply px-6 py-3;
+    @apply lg:px-6 py-3;
 }
 
 .aquarius-pool-compare-table__body {
@@ -695,21 +697,21 @@ footer.aquarius-footer {
 }
 
 .body-table-row {
-    @apply bg-white border-b text-gray-700 hover:bg-gray-50 block lg:table-row max-lg:pb-2;
+    @apply text-neutral-600 bg-white not-last:border-b not-last:border-b-neutral-200 hover:bg-neutral-50/50 block lg:table-row lg:divide-x lg:divide-neutral-200 max-lg:pb-2;
 }
 
 .table-row-keypoint {
-    @apply px-6 pt-4 pb-2 lg:py-4 font-semibold text-gray-800 whitespace-nowrap block relative max-lg:text-lg lg:table-cell lg:static;
+    @apply text-neutral-900 px-4 lg:px-6 pt-4 pb-2 lg:py-4 font-semibold whitespace-nowrap block relative max-lg:text-lg lg:table-cell lg:static;
 }
 
 .table-row-concrete,
 .table-row-vinyl,
 .table-row-fibreglass {
-    @apply px-6 py-3 lg:py-4 flex relative lg:table-cell lg:static;
+    @apply px-4 lg:px-6 py-3 lg:py-4 flex relative lg:table-cell lg:static;
 }
 
 .pool-name-title-small {
-    @apply lg:hidden font-semibold max-lg:w-[8.5rem];
+    @apply text-neutral-900 lg:hidden font-semibold max-lg:w-34;
 }
 
 /* POOL TYPES - CONCRETE, VINYL, FIBREGLASS */
@@ -735,7 +737,7 @@ footer.aquarius-footer {
         @apply w-full lg:w-1/3 max-lg:order-2;
 
         .pool-service-relative {
-            @apply relative shadow-md hover:shadow-xl transition w-full max-lg:aspect-4/3 lg:aspect-video! rounded-lg overflow-hidden active:scale-97;
+            @apply relative border border-neutral-200 transition w-full max-lg:aspect-4/3 lg:aspect-video! rounded-lg overflow-hidden active:scale-97;
         }
 
         .pool-service-absolute {
@@ -743,7 +745,7 @@ footer.aquarius-footer {
         }
 
         .pool-service-img-content {
-            @apply !m-0 object-cover w-auto h-full hover:scale-125 transition;
+            @apply m-0! object-cover w-full h-full hover:scale-125 transition;
         }
     }
 
@@ -766,7 +768,7 @@ footer.aquarius-footer {
 }
 
 .pool-item-card {
-    @apply bg-gray-50 border border-gray-200 shadow-sm hover:shadow-xl transition-shadow rounded-lg h-full overflow-hidden;
+    @apply bg-neutral-50 border border-neutral-200 shadow-sm hover:shadow-xl transition-shadow rounded-lg h-full overflow-hidden;
 }
 
 /* POOL GALLERY / SHOWCASE PAGE */

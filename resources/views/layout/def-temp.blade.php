@@ -13,7 +13,7 @@
     {{-- MAIN CONTENT PAGE --}}
     <main class="mt-22 lg:mt-25 text-base lg:text-lg">
         {{-- PAGE HEADER TITLE --}}
-        <x-page-header-component :headerTitle="$headerTitle" :headerSubtitle="$headerSubtitle"
+        <x-reusables.page-header :headerTitle="$headerTitle" :headerSubtitle="$headerSubtitle"
             :imageFileLoc="$imageFileLoc" />
 
         {{-- MAIN CONTAINER --}}
