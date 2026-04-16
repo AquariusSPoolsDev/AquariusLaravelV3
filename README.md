@@ -1,34 +1,39 @@
-# Aquarius Web Project
+# Aquarius Web Project (V3 Beta)
 
-This project is built using the Laravel framework, along with other modern tools and technologies to streamline development and enhance the user interface.
+> **V3.0 Final** will be published on the official website upon completion.
 
-## Technologies Used
+## Tech Stack
 
-1. Laravel
-    - Laravel is a PHP framework designed for web application development.
-    - It offers a clean, elegant syntax and provides essential features like routing, middleware, authentication, and more.
-    - Version used: `Laravel 11`
-2. Tailwind CSS
-    - Tailwind CSS is a utility-first CSS framework that enables rapid UI development.
-    - It allows for easy customization with minimal CSS, focusing on flexibility and responsiveness.
-    - Version used: `Tailwind CSS 3`
-3. Alpine JS
-    - Alpine.js is a minimal JavaScript framework that complements Tailwind CSS.
-    - It's great for adding interactivity to the frontend without the overhead of a larger framework like Vue or React.
-4. Blade Templating Engine
-    - Blade is Laravel's powerful, lightweight templating engine.
-    - It offers features like template inheritance, sections, and reusable components.
+| Technology | Version | Purpose |
+|---|---|---|
+| **Laravel** | 12 | PHP framework — routing, middleware, auth, backend logic |
+| **Filament** | 4 | Admin panel & server-driven UI (SDUI) |
+| **Livewire** | 3 | Full-stack reactive components |
+| **Alpine.js** | 3 | Lightweight frontend interactivity |
+| **Tailwind CSS** | 4 | Utility-first CSS framework |
+| **Blade** | — | Laravel templating engine |
 
 ## Additional Dependencies
 
-1. Flag Icons
-    - Used to display flag icons on language selector.
-2. Preline UI
-    - Used for UI design based on Tailwind CSS.
-3. Swiper JS
-    - Used for carousel image.
+| Package | Purpose |
+|---|---|
+| **Filament Shield** | Role-based access control for admin panel |
+| **Laravel Pint** | PHP code style formatter |
+| **Laravel Pail** | Real-time log tailing |
+| **Laravel Sail** | Docker-based local development |
+| **Flag Icons** | Flag icons for language selector |
+| **Swiper.js** | Carousel/slider component |
 
-## Versioning
+## Changelog
 
-### 15/11/2024 - 0.1.0
-- Initial project.
+### 2026-04-16 — V3 Beta
+- Upgraded Laravel 11 → 12
+- Upgraded Tailwind CSS 3 → 4
+- Upgraded Filament 3 → 4, Shield 3 → 4
+- Migrated Preline interactive components to Alpine.js
+- Redesigned footer with reusable components and CSS token refinements
+- Refreshed image gallery UI with WCAG improvements
+- UI polish: typography, color tokens, WCAG accessibility fixes
+- Restyled comparison table, fixed fibreglass spelling
+- Moved page-header to reusable component
+- Installed Laravel Boost MCP tooling
