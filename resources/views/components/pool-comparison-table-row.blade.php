@@ -1,4 +1,4 @@
-@props(['table_keypoint_title', 'ph_concrete', 'table_concrete_body', 'ph_vinyl', 'table_vinyl_body', 'ph_fiberglass', 'table_fibreglass_body'])
+@props(['table_keypoint_title', 'ph_concrete', 'table_concrete_body', 'ph_vinyl', 'table_vinyl_body', 'ph_fibreglass', 'table_fibreglass_body'])
 
 <tr class="body-table-row">
     <th scope="row" class="table-row-keypoint">

@@ -105,7 +105,7 @@ return [
     'our_pools_overview_title'          => 'Overview of our pools',
     'our_pools_concrete_overview'       => 'Concrete Pools are built on a solid steel foundation using a combination of concrete and plaster. The construction process takes 60 to 90 days, depending on the weather. Concrete pools can be any size, shape, or depth. We design and build swimming pools, waterfalls, integrated Jacuzzis, wading pools, and water features. Concrete pools are considered high-end due to their customizable nature, cost of construction, and durability.',
     'our_pools_vinyl_overview'          => 'Vinyl pools are built with prefabricated metal, steel, or plastic frames that are set into a pre-dug hole and reinforced with concrete footings and wall braces. Our vinyl pool frames are made of stainless steel and have a warranty of 20–30 years, depending on which series you choose. Pool installation takes approximately two weeks to complete. Choose from the range of sizes and shapes available.',
-    'our_pools_fibreglass_overview'     => 'Fiberglass pools are built with prefabricated fiberglass frames. These mid-range pools have the quickest installation time, taking only 5 to 7 days, and require less maintenance compared to all the other pool types. Choose from our range of ready-made pools.',
+    'our_pools_fibreglass_overview'     => 'Fibreglass pools are built with prefabricated fibreglass frames. These mid-range pools have the quickest installation time, taking only 5 to 7 days, and require less maintenance compared to all the other pool types. Choose from our range of ready-made pools.',
 
     'our_pools_overview_pill'           => 'Pool Types',
     'our_pools_comparison_pill'         => 'Know The Difference',
@@ -261,7 +261,7 @@ return [
     'fibreglass_pool_disadvantage_2_desc'       => '',
     'fibreglass_pool_disadvantage_3_title'      => '',
     'fibreglass_pool_disadvantage_3_desc'       => '',
-    'fibreglass_pool_closing_body'              => 'Overall, a fiberglass pool is a great choice for homeowners who want a durable, low-maintenance, and easy-to-install pool that offers a sleek and modern look but are also comfortable with a slightly higher price range.',
+    'fibreglass_pool_closing_body'              => 'Overall, a fibreglass pool is a great choice for homeowners who want a durable, low-maintenance, and easy-to-install pool that offers a sleek and modern look but are also comfortable with a slightly higher price range.',
     'fibreglass_pool_compare_other'             => 'Not what you envisioned? Learn more about concrete and vinyl pools before making your decision or contact our team to assist you!',
 
     // POOL SERVICES PAGE
