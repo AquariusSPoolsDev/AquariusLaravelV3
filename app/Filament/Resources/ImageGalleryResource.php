@@ -62,6 +62,11 @@ class ImageGalleryResource extends Resource
                     ->preserveFilenames()
                     ->panelLayout('grid')
                     ->directory('image_gallery')
+                    ->afterStateHydrated(function (FileUpload $component, ?string $state): void {
+                        if ($state && ! str_starts_with($state, 'image_gallery/')) {
+                            $component->state('image_gallery/'.$state);
+                        }
+                    })
                     ->image()
                     ->imageEditor()
                     ->imageEditorAspectRatios([
@@ -221,7 +226,7 @@ class ImageGalleryResource extends Resource
                     DeleteAction::make()->action(function ($record) {
                         // Delete associated image before deleting the record
                         if ($record->image_path) {
-                            Storage::disk('public')->delete($record->image_path);
+                            Storage::disk('public')->delete('image_gallery/'.$record->image_path);
                         }
                         // Now delete the record itself
                         $record->delete();

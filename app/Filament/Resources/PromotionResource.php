@@ -89,6 +89,14 @@ class PromotionResource extends Resource
                     ->panelLayout('grid')
                     ->reorderable()
                     ->appendFiles()
+                    ->afterStateHydrated(function (FileUpload $component, $state): void {
+                        if (is_array($state)) {
+                            $component->state(array_map(
+                                fn (string $path) => str_starts_with($path, 'promotion_materials/') ? $path : 'promotion_materials/'.$path,
+                                $state
+                            ));
+                        }
+                    })
                     ->maxSize(2048),
                 TextInput::make('uploader_id')
                     ->default(Auth::id()) // Automatically set the current user's ID
