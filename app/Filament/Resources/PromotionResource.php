@@ -128,6 +128,9 @@ class PromotionResource extends Resource
                     ->wrap()
                     ->dateTime()
                     ->timezone('Asia/Kuala_Lumpur'),
+                TextColumn::make('uploader.name')
+                    ->label('Uploaded By')
+                    ->wrap(),
             ])
             ->filters([
                 //

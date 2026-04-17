@@ -159,6 +159,9 @@ class ImageGalleryResource extends Resource
                 IconColumn::make('is_published')
                     ->boolean()
                     ->label('Published'),
+                TextColumn::make('uploader.name')
+                    ->label('Uploaded By')
+                    ->wrap(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->wrap()
