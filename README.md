@@ -21,7 +21,6 @@
 | **Laravel Pint** | PHP code style formatter |
 | **Laravel Pail** | Real-time log tailing |
 | **Laravel Sail** | Docker-based local development |
-| **Flag Icons** | Flag icons for language selector |
 | **Swiper.js** | Carousel/slider component |
 
 ## Changelog

@@ -1,4 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+
 @import '../../../../vendor/filament/filament/resources/css/theme.css';
+
+@theme {
+    /* Success */
+    --color-success-100: #ecfdf5;
+    --color-success-200: #a7f3d0;
+    --color-success-300: #10b981;
+    --color-success-400: #065f46;
+
+    /* Error */
+    --color-error-100: #fef2f2;
+    --color-error-200: #fecaca;
+    --color-error-300: #dc2626;
+    --color-error-400: #991b1b;
+
+    /* Warning */
+    --color-warning-100: #fffbeb;
+    --color-warning-200: #fde68a;
+    --color-warning-300: #f59e0b;
+    --color-warning-400: #92400e;
+}
+
+:root, .fi-root {
+    font-family: 'Lato', ui-sans-serif, system-ui, sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+.fi-header-heading,
+.fi-sidebar-header,
+.fi-logo {
+    font-family: 'Outfit', ui-sans-serif, system-ui, sans-serif !important;
+}
 
 @source '../../../../app/Filament/**/*';
 @source '../../../../resources/views/filament/**/*';
+@source '../../../../resources/views/components/**/*';

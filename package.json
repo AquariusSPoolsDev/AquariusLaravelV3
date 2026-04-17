@@ -9,7 +9,7 @@
         "@tailwindcss/cli": "^4.2.2",
         "@tailwindcss/forms": "^0.5.9",
         "@tailwindcss/typography": "^0.5.15",
-        "@tailwindcss/vite": "^4.0",
+        "@tailwindcss/vite": "^4.2.2",
         "axios": "^1.7.4",
         "concurrently": "^9.0.1",
         "laravel-vite-plugin": "^1.0",
@@ -19,7 +19,6 @@
     },
     "dependencies": {
         "alpinejs": "^3.15.11",
-        "flag-icons": "^7.2.3",
         "fslightbox": "^3.4.2",
         "preline": "^3.0",
         "swiper": "^12.1.3"

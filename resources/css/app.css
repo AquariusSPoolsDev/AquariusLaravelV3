@@ -640,6 +640,38 @@ footer.aquarius-footer {
 
 /* PAGE HEADER - START */
 
+.aquarius-header {
+    @apply relative bg-primary-900;
+
+    .aquarius-header-image {
+        @apply absolute top-0 left-0 w-full h-full object-cover;
+    }
+
+    .aquarius-header-overlay {
+        @apply absolute w-full h-full opacity-70;
+    }
+
+    .aquarius-header-dot-background {
+        @apply absolute w-full h-full opacity-70 bg-repeat;
+    }
+
+    .aquarius-header-content {
+        @apply relative z-10;
+    }
+
+    .aquarius-header-container {
+        @apply container mx-auto px-4 md:px-6 lg:px-8 pt-40 lg:pt-52 pb-24 lg:pb-32;
+    }
+
+    .aquarius-header-title {
+        @apply text-center lg:text-left font-semibold text-4xl lg:text-7xl mb-4 uppercase text-white drop-shadow-xl;
+    }
+
+    .aquarius-header-subtitle {
+        @apply text-center lg:text-left text-base lg:text-lg text-gray-50 drop-shadow-xl;
+    }
+}
+
 /* PAGE HEADER - END */
 
 /* OUR POOLS */

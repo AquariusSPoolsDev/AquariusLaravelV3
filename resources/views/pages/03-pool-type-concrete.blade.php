@@ -21,7 +21,7 @@ $headerSubtitle = 'concrete_pool_subtitle_heading';
 
 {{-- MAIN CONTENT STARTS HERE --}}
 @section('content')
-<div class="prose !max-w-full">
+<div class="">
     {{-- BODY TEXT MAIN --}}
     <p class="">{{ __('strings.concrete_pool_body') }}</p>
 
