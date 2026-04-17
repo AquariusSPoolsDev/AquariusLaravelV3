@@ -104,6 +104,8 @@ class PromotionResource extends Resource
             ->columns([
                 ImageColumn::make('file_attachment')
                     ->label('Image')
+                    ->disk('public')
+                    ->state(fn (Promotion $record): string => 'promotion_materials/'.($record->file_attachment[0] ?? ''))
                     ->limit(1)
                     ->width(150)
                     ->height('auto')
@@ -134,7 +136,7 @@ class PromotionResource extends Resource
                         // Delete associated files before deleting the record
                         if ($record->file_attachment) {
                             foreach ($record->file_attachment as $filePath) {
-                                Storage::disk('public')->delete($filePath);
+                                Storage::disk('public')->delete('promotion_materials/'.$filePath);
                             }
                         }
                         // Now delete the record itself
@@ -151,7 +153,7 @@ class PromotionResource extends Resource
                             // Check if there are file attachments and delete them
                             if ($record->file_attachment) {
                                 foreach ($record->file_attachment as $filePath) {
-                                    Storage::disk('public')->delete($filePath);
+                                    Storage::disk('public')->delete('promotion_materials/'.$filePath);
                                 }
                             }
                             // Now delete the record itself

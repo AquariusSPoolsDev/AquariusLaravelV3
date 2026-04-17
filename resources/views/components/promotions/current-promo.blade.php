@@ -32,7 +32,7 @@
                     @if(in_array(strtolower($fileExtension), ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'svg']))
                         <div class="m-0 overflow-hidden rounded-xl shadow-sm hover:shadow-lg">
                             @php
-                                $encodedFile = implode('/', array_map('rawurlencode', explode('/', $file)));
+                                $encodedFile = implode('/', array_map('rawurlencode', explode('/', 'promotion_materials/' . $file)));
                             @endphp
                             <a data-fslightbox="promotion_{{$promotion->id}}" href="{{ asset('storage/' . $encodedFile) }}">
                                 <img src="{{ asset('storage/' . $encodedFile) }}" title="{{ $promotion->title }} Image Promotion" alt="{{ $promotion->title }} Image Promotion" class="m-0 w-full h-auto object-cover hover:scale-125 transition-all">
