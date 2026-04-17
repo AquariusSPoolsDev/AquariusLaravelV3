@@ -12,7 +12,7 @@ $images = ImageGallery::where('is_published', 1)->orderBy('created_at', 'desc')-
                 {{ $loop->index + 1 === 2 ||$loop->index + 1 === 8 ? 'wide-col-content' : '' }}
                 {{ $loop->index + 1 === 4 || $loop->index + 1 === 7 ? 'start-row-3-content' : '' }}
                 {{ $loop->index + 1 === 5 ? 'middle-content' : '' }}">
-                <img loading="lazy" src="{{ asset('storage/' . $image->image_path) }}" alt="{{ $image->image_name }}" title="{{ $image->image_name }}">
+                <img loading="lazy" src="{{ asset('storage/image_gallery/' . $image->image_path) }}" alt="{{ $image->image_name }}" title="{{ $image->image_name }}">
             </div>
         @endforeach
     </div>

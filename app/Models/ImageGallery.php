@@ -41,6 +41,11 @@ class ImageGallery extends Model
         $this->attributes['image_tags'] = json_encode($value);
     }
 
+    public function setImagePathAttribute(string $value): void
+    {
+        $this->attributes['image_path'] = ltrim(str_replace('image_gallery/', '', $value), '/');
+    }
+
     // Scope to filter published images
     public function scopePublished($query)
     {

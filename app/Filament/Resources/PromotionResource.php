@@ -2,42 +2,38 @@
 
 namespace App\Filament\Resources;
 
-use Filament\Schemas\Schema;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\DateTimePicker;
-use Filament\Forms\Components\FileUpload;
-use Filament\Tables\Columns\ImageColumn;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Actions\ActionGroup;
-use Filament\Actions\ViewAction;
-use Filament\Actions\EditAction;
-use Filament\Actions\DeleteAction;
-use Filament\Actions\BulkActionGroup;
-use Filament\Actions\DeleteBulkAction;
-use App\Filament\Resources\PromotionResource\Pages\ListPromotions;
 use App\Filament\Resources\PromotionResource\Pages\CreatePromotion;
 use App\Filament\Resources\PromotionResource\Pages\EditPromotion;
-use App\Filament\Resources\PromotionResource\Pages;
-use App\Filament\Resources\PromotionResource\RelationManagers;
+use App\Filament\Resources\PromotionResource\Pages\ListPromotions;
 use App\Models\Promotion;
-use Filament\Forms;
+use Filament\Actions\ActionGroup;
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
+use Filament\Actions\DeleteBulkAction;
+use Filament\Actions\EditAction;
+use Filament\Actions\ViewAction;
+use Filament\Forms\Components\DateTimePicker;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Resources\Resource;
-use Filament\Tables;
+use Filament\Schemas\Schema;
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Database\Eloquent\Collection;
 
 class PromotionResource extends Resource
 {
     protected static ?string $model = Promotion::class;
 
-    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-megaphone';
+    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-megaphone';
+
     protected static ?string $navigationLabel = 'Promotions';
-    protected static string | \UnitEnum | null $navigationGroup = 'Content Management';
+
+    protected static string|\UnitEnum|null $navigationGroup = 'Content Management';
 
     public static function getNavigationBadge(): ?string
     {
@@ -70,6 +66,7 @@ class PromotionResource extends Resource
                     ->label('Start Time')
                     ->seconds(false)
                     ->native(false)
+                    ->live()
                     ->timezone('Asia/Kuala_Lumpur'),
                 DateTimePicker::make('end_time')
                     ->nullable()
@@ -77,11 +74,14 @@ class PromotionResource extends Resource
                     ->label('End Time')
                     ->seconds(false)
                     ->native(false)
-                    ->timezone('Asia/Kuala_Lumpur'),
+                    ->timezone('Asia/Kuala_Lumpur')
+                    ->after('start_time'),
                 FileUpload::make('file_attachment')
                     ->label('Promotional Materials')
                     ->hint('Your Promotion material images. Can be uploaded multiple files. Max 2MB each.')
                     ->nullable()
+                    ->disk('public')
+                    ->visibility('public')
                     ->directory('promotion_materials')
                     ->multiple()
                     ->columnSpanFull()
@@ -106,10 +106,11 @@ class PromotionResource extends Resource
                     ->label('Image')
                     ->limit(1)
                     ->width(150)
-                    ->height('auto'),
+                    ->height('auto')
+                    ->extraImgAttributes(['style' => 'border-radius: 0.25rem; width: 150px; height: auto; object-fit: cover;']),
                 TextColumn::make('title')
                     ->label('Promotion Details')
-                    ->description(fn(Promotion $record): string => $record->description)
+                    ->description(fn (Promotion $record): string => $record->description)
                     ->wrap(),
                 TextColumn::make('start_time')
                     ->label('Promo Starts')
@@ -140,8 +141,8 @@ class PromotionResource extends Resource
                         $record->delete();
                     }),
                 ])
-                ->button()
-                ->label('Actions')
+                    ->button()
+                    ->label('Actions'),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
@@ -158,10 +159,9 @@ class PromotionResource extends Resource
                         }
                     }),
                 ]),
-            ])            
+            ])
             ->defaultSort('start_time', 'desc');
     }
-
 
     public static function getPages(): array
     {

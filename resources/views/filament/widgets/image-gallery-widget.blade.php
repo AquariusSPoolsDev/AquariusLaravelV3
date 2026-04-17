@@ -28,7 +28,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-2">
                     @foreach ($this->getRecentImages() as $image)
                     <div>
-                        <img class="w-full h-40 object-cover rounded-xl" src="{{ asset('storage/' . $image->image_path) }}" alt="{{ $image->image_name }}" title="{{ $image->image_name }}" />
+                        <img class="w-full h-40 object-cover rounded-xl" src="{{ asset('storage/image_gallery/' . $image->image_path) }}" alt="{{ $image->image_name }}" title="{{ $image->image_name }}" />
                         <p class="text-sm mt-1">🖼️ {{ $image->created_at->timezone('Asia/Kuala_Lumpur')->format('d/m/Y H:i') }}</p>
                     </div>
                     @endforeach

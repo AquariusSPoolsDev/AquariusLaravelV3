@@ -141,6 +141,7 @@ class ImageGalleryResource extends Resource
                 ImageColumn::make('image_path')
                     ->label('Image')
                     ->disk('public')
+                    ->state(fn (ImageGallery $record): string => 'image_gallery/'.$record->image_path)
                     ->limit(1)
                     ->width(150)
                     ->height('auto')
