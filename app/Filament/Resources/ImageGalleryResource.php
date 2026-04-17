@@ -2,45 +2,44 @@
 
 namespace App\Filament\Resources;
 
-use Filament\Schemas\Schema;
-use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\Select;
-use Filament\Forms\Components\Toggle;
-use Filament\Tables\Table;
-use Filament\Tables\Columns\ImageColumn;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Columns\IconColumn;
-use Filament\Actions\ActionGroup;
-use Filament\Actions\ViewAction;
-use Filament\Actions\EditAction;
-use Filament\Actions\DeleteAction;
-use Filament\Actions\BulkActionGroup;
-use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\BulkAction;
-use App\Filament\Resources\ImageGalleryResource\Pages\ListImageGalleries;
 use App\Filament\Resources\ImageGalleryResource\Pages\CreateImageGallery;
 use App\Filament\Resources\ImageGalleryResource\Pages\EditImageGallery;
-use App\Filament\Resources\ImageGalleryResource\Pages;
+use App\Filament\Resources\ImageGalleryResource\Pages\ListImageGalleries;
 use App\Models\ImageGallery;
-use Filament\Forms;
-use Filament\Tables;
+use Filament\Actions\ActionGroup;
+use Filament\Actions\BulkAction;
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
+use Filament\Actions\DeleteBulkAction;
+use Filament\Actions\EditAction;
+use Filament\Actions\ViewAction;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Filament\Resources\Resource;
+use Filament\Schemas\Schema;
+use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\Filter;
 use Filament\Tables\Filters\SelectFilter;
-use Illuminate\Support\Facades\Auth;
+use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class ImageGalleryResource extends Resource
 {
     protected static ?string $model = ImageGallery::class;
 
-    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-photo';
+    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-photo';
+
     protected static ?string $navigationLabel = 'Image Gallery';
-    protected static string | \UnitEnum | null $navigationGroup = 'Content Management';
+
+    protected static string|\UnitEnum|null $navigationGroup = 'Content Management';
 
     public static function getNavigationBadge(): ?string
     {
@@ -58,6 +57,8 @@ class ImageGalleryResource extends Resource
                     ->label('Image')
                     ->hint('Max 2MB each image. Available for cropping.')
                     ->columnSpanFull()
+                    ->disk('public')
+                    ->visibility('public')
                     ->preserveFilenames()
                     ->panelLayout('grid')
                     ->directory('image_gallery')
@@ -139,12 +140,14 @@ class ImageGalleryResource extends Resource
             ->columns([
                 ImageColumn::make('image_path')
                     ->label('Image')
+                    ->disk('public')
                     ->limit(1)
-                    ->width(200)
-                    ->height('auto'),
+                    ->width(150)
+                    ->height('auto')
+                    ->extraImgAttributes(['style' => 'border-radius: 0.25rem; width: 150px; height: auto; object-fit: cover;']),
                 TextColumn::make('image_name')
                     ->label('Pool Details')
-                    ->description(fn(ImageGallery $record): string => $record->image_description)
+                    ->description(fn (ImageGallery $record): string => $record->image_description)
                     ->wrap()
                     ->searchable(),
                 TextColumn::make('image_tags')
@@ -164,10 +167,9 @@ class ImageGalleryResource extends Resource
             ])
             ->filters([
                 Filter::make('is_published')
-                    ->query(fn(Builder $query) => $query->where('is_published', true))
+                    ->query(fn (Builder $query) => $query->where('is_published', true))
                     ->label('Published'),
                 SelectFilter::make('image_tags')
-                    ->attribute('image_tags')
                     ->label('Pool Tags')
                     ->options([
                         'Concrete' => 'Concrete',
@@ -205,7 +207,11 @@ class ImageGalleryResource extends Resource
                         'Backyard' => 'Backyard',
                         'Mosaic Tiles' => 'Mosaic Tiles',
                         'Safety Fence' => 'Safety Fence',
-                    ]),
+                    ])
+                    ->query(fn (Builder $query, array $data) => $query->when(
+                        $data['value'],
+                        fn (Builder $query, string $value) => $query->whereRaw('JSON_CONTAINS(image_tags, ?)', [json_encode($value)])
+                    )),
             ])
             ->recordActions([
                 ActionGroup::make([
@@ -220,8 +226,8 @@ class ImageGalleryResource extends Resource
                         $record->delete();
                     }),
                 ])
-                ->button()
-                ->label('Actions')
+                    ->button()
+                    ->label('Actions'),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
