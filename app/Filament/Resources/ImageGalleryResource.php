@@ -28,7 +28,6 @@ use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class ImageGalleryResource extends Resource
@@ -131,11 +130,6 @@ class ImageGalleryResource extends Resource
                 Toggle::make('is_published')
                     ->label('Publish this Image?')
                     ->default(0),
-                TextInput::make('uploader_id')
-                    ->default(Auth::id()) // Automatically set the current user's ID
-                    ->label('Uploader ID')
-                    ->hint('Ignore this field for validation purposes.')
-                    ->readonly(),
             ]);
     }
 

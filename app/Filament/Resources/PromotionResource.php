@@ -22,7 +22,6 @@ use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class PromotionResource extends Resource
@@ -100,11 +99,6 @@ class PromotionResource extends Resource
                         }
                     })
                     ->maxSize(2048),
-                TextInput::make('uploader_id')
-                    ->default(Auth::id()) // Automatically set the current user's ID
-                    ->label('Uploader ID (Ignore this part)')
-                    ->hint('Ignore this field. Used for verification purposes.')
-                    ->readonly(),
             ]);
     }
 
