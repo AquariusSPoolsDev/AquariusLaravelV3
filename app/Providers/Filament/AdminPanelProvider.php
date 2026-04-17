@@ -33,10 +33,9 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->viteTheme('resources/css/filament/admin/theme.css')
             ->login()
-            ->registration()
             ->passwordReset()
-            ->emailVerification()
             ->profile()
+            // Email verification disabled — User model does not implement MustVerifyEmail
             ->colors([
                 'gray' => [
                     50 => 'oklch(0.970 0.008 240)',

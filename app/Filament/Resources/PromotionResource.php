@@ -83,6 +83,8 @@ class PromotionResource extends Resource
                     ->disk('public')
                     ->visibility('public')
                     ->directory('promotion_materials')
+                    ->image()
+                    ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/gif', 'image/webp'])
                     ->multiple()
                     ->columnSpanFull()
                     ->preserveFilenames()

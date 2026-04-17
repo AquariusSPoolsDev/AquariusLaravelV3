@@ -1,15 +1,14 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\contactFormController;
-use App\Http\Controllers\localeController;
 use App\Http\Controllers\ImageGalleryController;
-use App\Http\Controllers\PromotionController;
+use App\Http\Controllers\localeController;
 use App\Http\Controllers\ReviewController;
+use Illuminate\Support\Facades\Route;
 
 // CHANGE LANGUAGE
-Route::get('{lang}', [LocaleController::class, 'setLocale'])->where('lang', 'en|ms');
-Route::post('change-language', [LocaleController::class, 'setLocale']);
+Route::get('{lang}', [localeController::class, 'setLocale'])->where('lang', 'en|ms');
+Route::post('change-language', [localeController::class, 'setLocale']);
 
 // 1. HOMEPAGE
 Route::get('/', function () {
@@ -83,7 +82,9 @@ Route::get('/sitemap', function () {
 })->name('sitemap-page');
 
 // ROUTE CONTACT SEND EMAIL
-Route::post('/send-email',[contactFormController::class,'sendEmail'])->name('send-email-page');
+Route::post('/send-email', [contactFormController::class, 'sendEmail'])
+    ->middleware('throttle:5,10')
+    ->name('send-email-page');
 
 Route::get('/thank-you', function () {
     return view('pages.15-thankYouSubmitPage');
@@ -92,6 +93,7 @@ Route::get('/thank-you', function () {
 // ROUTE DISMISS NOTIFICATION
 Route::post('/dismiss-promotion', function () {
     session(['promotion_dismissed' => true]); // Set session variable
+
     return response()->json(['success' => true]);
 })->name('dismiss-promotion');
 
