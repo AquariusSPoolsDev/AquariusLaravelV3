@@ -5,7 +5,7 @@
 
 {{-- PARSE HEADER STRINGS --}}
 @php
-    $imageFileLoc   = 'pool-image-placeholder-2.jpg';
+    $imageFileLoc   = 'header-promotions.jpg';
     $headerTitle    = 'terms_title_heading';
     $headerSubtitle = 'terms_subtitle_heading';
 @endphp
@@ -27,7 +27,7 @@
     </x-slot>
 </x-alert-notification>
 
-<div class="prose !max-w-full">
+<div class="">
     <section class="mt-10">
         <h2 class="uppercase text-3xl">Terms:</h2>
         <p>

@@ -5,7 +5,7 @@
 
 {{-- PARSE HEADER STRINGS --}}
 @php
-    $imageFileLoc   = 'pool-image-placeholder-2.jpg';
+    $imageFileLoc   = 'header-privacy.jpg';
     $headerTitle    = 'privacy_title_heading';
     $headerSubtitle = 'privacy_subtitle_heading';
 @endphp
@@ -29,7 +29,7 @@
 
 <strong class="mt-10">{{__('strings.privacy_date_updated_title')}}: {{__('strings.privacy_date_updated')}}</strong>
 
-<div class="prose !max-w-full">
+<div class="">
     <section class="mt-4">
         <h2 class="uppercase  text-3xl">Introduction</h2>
         <p class="">

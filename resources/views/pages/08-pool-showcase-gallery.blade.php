@@ -5,7 +5,7 @@
 
 {{-- PARSE HEADER STRINGS --}}
 @php
-$imageFileLoc = 'pool-image-placeholder-2.jpg';
+$imageFileLoc = 'header-pool-gallery.jpg';
 $headerTitle = 'showcase_title_heading';
 $headerSubtitle = 'showcase_subtitle_heading';
 @endphp
@@ -40,13 +40,13 @@ $headerSubtitle = 'showcase_subtitle_heading';
     <div class="flex flex-col">
         {{-- SEARCH INPUT --}}
         <div class="mb-4">
-            <label for="search-input" class="font-semibold">{{__('strings.showcase_search_input_title')}}</label>
+            <label for="search-input" class="font-semibold text-neutral-900 block mb-1.5">{{__('strings.showcase_search_input_title')}}</label>
             @include('image-gallery.01-search-input')
         </div>
 
         {{-- TAGS --}}
         <div class="mb-4">
-            <label class="font-semibold">{{__('strings.showcase_search_filter_tag_title')}}</label>
+            <label class="font-semibold text-neutral-900 block mb-1.5">{{__('strings.showcase_search_filter_tag_title')}}</label>
 
             {{-- USE THIS IN SMALLER VIEWPORT --}}
             @include('image-gallery.02-tags-small')

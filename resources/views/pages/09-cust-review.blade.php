@@ -5,7 +5,7 @@
 
 {{-- PARSE HEADER STRINGS --}}
 @php
-$imageFileLoc = 'pool-image-placeholder-5.jpg';
+$imageFileLoc = 'header-customer-review.jpg';
 $headerTitle = 'reviews_title_heading';
 $headerSubtitle = 'reviews_subtitle_heading';
 @endphp

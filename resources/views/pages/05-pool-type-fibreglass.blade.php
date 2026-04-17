@@ -5,7 +5,7 @@
 
 {{-- PARSE HEADER STRINGS --}}
 @php
-    $imageFileLoc = 'our-pools-fibreglass.jpg';
+    $imageFileLoc = 'header-pool-fibreglass.jpg';
     $headerTitle = 'fibreglass_pool_title_heading';
     $headerSubtitle = 'fibreglass_pool_subtitle_heading';
 @endphp

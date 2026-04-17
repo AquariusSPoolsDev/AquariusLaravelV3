@@ -5,7 +5,7 @@
 
 {{-- PARSE HEADER STRINGS --}}
 @php
-    $imageFileLoc   = 'pool-image-placeholder-1.jpg';
+    $imageFileLoc   = 'header-sitemap.jpg';
     $headerTitle    = 'sitemap_title_heading';
     $headerSubtitle = 'sitemap_subtitle_heading';
 @endphp

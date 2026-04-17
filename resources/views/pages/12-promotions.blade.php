@@ -5,7 +5,7 @@
 
 {{-- PARSE HEADER STRINGS --}}
 @php
-$imageFileLoc = 'pool-image-placeholder-3.jpg';
+$imageFileLoc = 'header-promotions.jpg';
 $headerTitle = 'promotions_title_heading';
 $headerSubtitle = 'promotions_subtitle_heading';
 @endphp
@@ -21,7 +21,7 @@ $headerSubtitle = 'promotions_subtitle_heading';
 
 {{-- MAIN CONTENT STARTS HERE --}}
 @section('content')
-<div class="prose !max-w-full">
+<div class="">
     <x-promotions.current-promo />
 </div>
 @endsection
