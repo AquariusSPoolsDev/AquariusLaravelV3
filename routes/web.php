@@ -83,7 +83,7 @@ Route::get('/sitemap', function () {
 
 // ROUTE CONTACT SEND EMAIL
 Route::post('/send-email', [ContactFormController::class, 'sendEmail'])
-    ->middleware('throttle:3,60')
+    ->middleware('throttle:1,60')
     ->name('send-email-page');
 
 Route::get('/thank-you', function () {

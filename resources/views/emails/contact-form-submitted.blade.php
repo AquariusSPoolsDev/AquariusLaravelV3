@@ -1,170 +1,133 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>New Customer Enquiry</title>
-    <style>
-        body {
-            font-family: Inter, Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 2rem 0;
-            background-color: #f4f4f4;
-        }
-
-        .container {
-            max-width: 37.5rem;
-            margin: 1.5rem auto;
-            background: #ffffff;
-            border-radius: 0.75rem;
-            box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.1);
-        }
-
-        .header {
-            background: #071019;
-            color: #ffffff;
-            padding: 1.25rem;
-            border-radius: 0.75rem 0.75rem 0 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo-container { flex-shrink: 0; }
-
-        .logo { width: 8rem; height: auto; }
-
-        .header-title {
-            text-align: right;
-            margin: 0;
-            font-size: 1.5rem;
-        }
-
-        .content { padding: 1.25rem; }
-
-        .section {
-            margin-bottom: 1rem;
-            border-bottom: 0.1rem solid #edf2f7;
-            padding-bottom: 1rem;
-        }
-
-        .section:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-        }
-
-        .section h3 {
-            color: #071019;
-            margin-top: 0;
-            margin-bottom: 1rem;
-            font-size: 1.25rem;
-        }
-
-        .field { margin-bottom: 10px; }
-
-        .label {
-            font-weight: bold;
-            color: #071019;
-            font-size: 1rem;
-            display: inline-block;
-        }
-
-        .value {
-            color: #2d3748;
-            display: inline-block;
-        }
-
-        .query-value {
-            margin-top: 0.25rem;
-            display: block;
-        }
-
-        .query-box {
-            background: #f7fafc;
-            border-radius: 0.5rem;
-            padding: 1rem;
-            border-left: 0.25rem solid #071019;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 1.25rem;
-            color: #071019;
-            font-size: 0.75rem;
-            border-top: 0.1rem solid #edf2f7;
-            background: #f8fafc;
-            border-radius: 0 0 0.5rem 0.5rem;
-        }
-
-        .footer-p { margin-top: 0; margin-bottom: 0.25rem; }
-        .footer-p0 { margin: 0; }
-
-        @media only screen and (max-width: 600px) {
-            .container { width: 100%; margin: 0; border-radius: 0; }
-            .header { flex-direction: column; text-align: center; gap: 1rem; }
-            .header-title { text-align: center; }
-        }
-    </style>
 </head>
+<body style="margin:0;padding:0;background-color:#f1f5f9;font-family:Lato,Arial,sans-serif;font-size:15px;line-height:1.6;color:#1e293b;">
 
-<body>
-    <div class="container">
-        <div class="header">
-            <div class="logo-container">
-                <img class="logo" src="{{ asset('assets/images/aquarius-logo-light.png') }}" alt="Aquarius Swimming Pools">
-            </div>
-            <h2 class="header-title">New Customer Enquiry</h2>
-        </div>
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f1f5f9;padding:32px 0;">
+        <tr>
+            <td align="center">
 
-        <div class="content">
-            <div class="section">
-                <h3>Customer Information</h3>
-                <div class="field">
-                    <div class="label">Name: </div>
-                    <div class="value">{{ $submission->name }}</div>
-                </div>
-                <div class="field">
-                    <div class="label">Email: </div>
-                    <div class="value">{{ $submission->email }}</div>
-                </div>
-                <div class="field">
-                    <div class="label">Phone: </div>
-                    <div class="value">{{ $submission->country_code }} {{ $submission->phone }}</div>
-                </div>
-            </div>
+                {{-- Card --}}
+                <table width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;width:100%;background-color:#ffffff;border-radius:12px;overflow:hidden;">
 
-            <div class="section">
-                <h3>Enquiry Details</h3>
-                @if ($submission->interest)
-                    <div class="field">
-                        <div class="label">Interest: </div>
-                        <div class="value">
-                            {{ $submission->interest }}
-                            @if ($submission->interest_other)
-                                — {{ $submission->interest_other }}
+                    {{-- Header --}}
+                    <tr>
+                        <td style="background-color:#183d7a;padding:20px 24px;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td style="vertical-align:middle;">
+                                        <table cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td style="vertical-align:middle;padding-right:10px;">
+                                                    <img src="{{ asset('assets/favicon/aquarius-logo-navbar.png') }}" alt="Aquarius Swimming Pools" width="48" style="display:block;border:0;height:auto;">
+                                                </td>
+                                                <td style="vertical-align:middle;">
+                                                    <span style="display:block;font-family:Outfit,Arial,sans-serif;font-size:24px;font-weight:600;color:#ffffff;text-transform:uppercase;line-height:1;letter-spacing:0.5px;">Aquarius</span>
+                                                    <span style="display:block;font-family:Outfit,Arial,sans-serif;font-size:14px;font-weight:500;color:#ffffff;text-transform:uppercase;line-height:1;letter-spacing:0.5px;">Swimming Pools</span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td align="right" style="vertical-align:middle;">
+                                        <span style="font-family:Outfit,Arial,sans-serif;font-size:18px;font-weight:700;color:#ffffff;">New Customer Enquiry</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    {{-- Body --}}
+                    <tr>
+                        <td style="padding:28px 24px 8px 24px;">
+
+                            {{-- Section: Customer Info --}}
+                            <p style="margin:0 0 12px 0;font-family:Outfit,Arial,sans-serif;font-size:17px;font-weight:700;color:#183d7a;">Customer Information</p>
+
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:24px;">
+                                <tr>
+                                    <td style="padding:8px 0;border-bottom:1px solid #e2e8f0;">
+                                        <span style="font-weight:700;color:#1e293b;">Name</span>
+                                    </td>
+                                    <td style="padding:8px 0;border-bottom:1px solid #e2e8f0;color:#475569;">
+                                        {{ $submission->name }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:8px 0;border-bottom:1px solid #e2e8f0;">
+                                        <span style="font-weight:700;color:#1e293b;">Email</span>
+                                    </td>
+                                    <td style="padding:8px 0;border-bottom:1px solid #e2e8f0;color:#475569;">
+                                        {{ $submission->email }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:8px 0;">
+                                        <span style="font-weight:700;color:#1e293b;">Phone</span>
+                                    </td>
+                                    <td style="padding:8px 0;color:#475569;">
+                                        {{ $submission->country_code }} {{ $submission->phone }}
+                                    </td>
+                                </tr>
+                            </table>
+
+                            {{-- Section: Enquiry Details --}}
+                            <p style="margin:0 0 12px 0;font-family:Outfit,Arial,sans-serif;font-size:17px;font-weight:700;color:#183d7a;">Enquiry Details</p>
+
+                            @if ($submission->interest)
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:16px;">
+                                <tr>
+                                    <td style="padding:8px 0;border-bottom:1px solid #e2e8f0;">
+                                        <span style="font-weight:700;color:#1e293b;">Interest</span>
+                                    </td>
+                                    <td style="padding:8px 0;border-bottom:1px solid #e2e8f0;color:#475569;">
+                                        {{ $submission->interest }}@if ($submission->interest_other) &mdash; {{ $submission->interest_other }}@endif
+                                    </td>
+                                </tr>
+                            </table>
                             @endif
-                        </div>
-                    </div>
-                @endif
-                @if ($submission->query)
-                    <div class="query-box">
-                        <div class="label">Query:</div>
-                        <div class="value query-value">{{ $submission->query }}</div>
-                    </div>
-                @endif
-                @if (!$submission->interest && !$submission->query)
-                    <p style="color:#718096">No additional details provided.</p>
-                @endif
-            </div>
-        </div>
 
-        <div class="footer">
-            <p class="footer-p">© {{ date('Y') }} Aquarius Swimming Pools.</p>
-            <p class="footer-p0">Notification from aquariusswimmingpools.com. Please respond within 2 working days.</p>
-        </div>
-    </div>
+                            @if ($submission->query)
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:16px;">
+                                <tr>
+                                    <td>
+                                        <p style="margin:0 0 6px 0;font-weight:700;color:#1e293b;">Query</p>
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td style="background-color:#f8fafc;border-left:4px solid #2d63c8;border-radius:4px;padding:12px 16px;color:#475569;">
+                                                    {{ $submission->query }}
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            @endif
+
+                            @if (!$submission->interest && !$submission->query)
+                            <p style="color:#94a3b8;margin:0 0 16px 0;">No additional details provided.</p>
+                            @endif
+
+                        </td>
+                    </tr>
+
+                    {{-- Footer --}}
+                    <tr>
+                        <td style="background-color:#f8fafc;border-top:1px solid #e2e8f0;padding:16px 24px;text-align:center;">
+                            <p style="margin:0 0 4px 0;font-size:13px;color:#64748b;">&copy; {{ date('Y') }} Aquarius Swimming Pools Sdn Bhd.</p>
+                            <p style="margin:0;font-size:13px;color:#94a3b8;">Notification from aquariusswimmingpools.com. Please respond within 2 working days.</p>
+                        </td>
+                    </tr>
+
+                </table>
+
+            </td>
+        </tr>
+    </table>
+
 </body>
-
 </html>
