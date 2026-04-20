@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\contactFormController;
+use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\ImageGalleryController;
 use App\Http\Controllers\localeController;
 use App\Http\Controllers\ReviewController;
@@ -82,8 +82,8 @@ Route::get('/sitemap', function () {
 })->name('sitemap-page');
 
 // ROUTE CONTACT SEND EMAIL
-Route::post('/send-email', [contactFormController::class, 'sendEmail'])
-    ->middleware('throttle:5,10')
+Route::post('/send-email', [ContactFormController::class, 'sendEmail'])
+    ->middleware('throttle:3,60')
     ->name('send-email-page');
 
 Route::get('/thank-you', function () {
