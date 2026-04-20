@@ -1,32 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title')</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.bunny.net/css?family=inter:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+    <title>@yield('code') — @yield('title')</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body>
-    <div class="bg-linear-to-b from-sky-200 to-blue-300 w-screen h-screen font-[Inter] relative">
-        <div class="absolute inset-0 container mx-auto p-6 flex flex-col items-center justify-center">
-            <div class="text-center text-blue-950">
-                <h1 class="text-7xl lg:text-9xl font-bold">@yield('code')</h1>
-                <h2 class="mt-4 mb-6 uppercase text-xl font-semibold">@yield('message')</h2>
-            </div>
-            <div class="uppercase text-center flex flex-wrap items-center justify-center gap-3">
-                <a href="/" class="py-3 px-6 inline-flex items-center gap-3 font-medium rounded-full border border-transparent bg-blue-700 text-white hover:bg-blue-800 focus:outline-none focus:bg-blue-800 disabled:opacity-50 disabled:pointer-events-none">Back to Homepage</a>
-                <a href="/contact" class="py-3 px-6 inline-flex items-center gap-3 font-medium rounded-full border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none">Contact us</a>
-            </div>
+<body class="antialiased bg-primary-50 min-h-screen flex flex-col items-center justify-center px-4">
 
+    <div class="">
+
+        {{-- Logo + Branding --}}
+        <a href="{{ route('homepage') }}" class="brand navbar-brand inline-flex items-center gap-3 mb-10 justify-center"
+            aria-label="Aquarius Swimming Pools">
+            <x-reusables.logo />
+        </a>
+
+        <div class="text-center">
+            {{-- Error Code --}}
+            <h1 class="font-heading font-bold text-8xl lg:text-9xl text-primary-800 mb-4">@yield('code')</h1>
+
+            {{-- Message --}}
+            <p class="text-neutral-600 text-lg lg:text-xl max-w-md mx-auto mb-10">@yield('message')</p>
+
+            {{-- Buttons --}}
+            <div class="flex flex-wrap items-center justify-center gap-3">
+                <a href="{{ route('homepage') }}"
+                    class="py-2.5 px-5.5 inline-flex items-center gap-2 font-bold rounded-lg transition-all text-white bg-primary hover:bg-primary-700 active:bg-primary-800 active:scale-95 focus:outline-none focus:bg-primary-700 cursor-pointer">
+                    Back to Homepage
+                </a>
+                <a href="{{ route('contact-page') }}"
+                    class="py-2.5 px-5.5 inline-flex items-center gap-2 font-bold rounded-lg transition-all border border-neutral-300 bg-white text-neutral-700 hover:bg-neutral-50 hover:border-neutral-400 active:scale-95 focus:outline-none cursor-pointer">
+                    Contact Us
+                </a>
+            </div>
         </div>
+
     </div>
 
-    <style>
-
-    </style>
 </body>
 
 </html>

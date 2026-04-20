@@ -5,11 +5,7 @@
         <div class="grid grid-cols-2 lg:grid-cols-6 gap-4 lg:gap-6 mb-10">
             <div class="col-span-full hidden lg:col-span-2 lg:block">
                 <a class="brand footer-brand" href="{{ route('homepage') }}" aria-label="Aquarius Swimming Pools">
-                    <img class="aquarius-logo" src="{{ asset('assets/favicon/aquarius-logo-192.png') }}"
-                        alt="Aquarius Swimming Pools">
-                    <div class="aquarius-branding-name">
-                        <span class="name-1 text-white">Aquarius</span><span class="name-2 text-white">Swimming Pools</span>
-                    </div>
+                    <x-reusables.logo textClass="text-white" />
                 </a>
 
                 <p class="mt-3 text-neutral-400">
@@ -95,11 +91,7 @@
                     <div class="mt-3 max-lg:block hidden">
                         <a class="brand footer-brand" href="{{ route('homepage') }}"
                             aria-label="Aquarius Swimming Pools">
-                            <img class="aquarius-logo" src="{{ asset('assets/favicon/aquarius-logo-192.png') }}"
-                                alt="Aquarius Swimming Pools">
-                            <div class="aquarius-branding-name">
-                                <span class="name-1 text-white">Aquarius</span><span class="name-2 text-white">Swimming Pools</span>
-                            </div>
+                            <x-reusables.logo textClass="text-white" />
                         </a>
                         <p class="mt-2 text-neutral-400 text-sm"> © {{ date('Y') }} Aquarius Swimming Pools.</p>
                     </div>

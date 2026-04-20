@@ -1,7 +1,7 @@
 {{-- FIBREGLASS POOLS PAGE --}}
 
 {{-- EXTENDS DEFAULT LAYOUT --}}
-@extends('layout.def-temp')
+@extends('layout.default')
 
 {{-- PARSE HEADER STRINGS --}}
 @php
@@ -12,7 +12,7 @@
 
 {{-- META TAG PAGE --}}
 @section('seoData')
-   <x-seo 
+   <x-seo.seo 
         ogPageTitle="{{__('strings.' . $headerTitle)}}"
         ogDescription="{{__('strings.' . $headerSubtitle)}}"
         ogImage="{{ asset('assets/images/'.$imageFileLoc) }}"

@@ -1,7 +1,7 @@
 {{-- PRIVACY PAGE --}}
 
 {{-- EXTENDS DEFAULT LAYOUT --}}
-@extends('layout.def-temp')
+@extends('layout.default')
 
 {{-- PARSE HEADER STRINGS --}}
 @php
@@ -12,7 +12,7 @@
 
 {{-- META TAG PAGE --}}
 @section('seoData')
-   <x-seo 
+   <x-seo.seo 
         ogPageTitle="{{__('strings.' . $headerTitle)}}"
         ogDescription="{{__('strings.' . $headerSubtitle)}}"
         ogImage="{{ asset('assets/images/'.$imageFileLoc) }}"
@@ -21,11 +21,9 @@
 
 {{-- MAIN CONTENT STARTS HERE --}}
 @section('content')
-<x-alert-notification class="text-secondary-800 bg-secondary-50 border-secondary-200">
-    <x-slot name="alert">
-        <strong>{{__('strings.privacy_notice_alert')}}</strong>
-    </x-slot>
-</x-alert-notification>
+<x-reusables.alert color="warning">
+    <strong>{{__('strings.privacy_notice_alert')}}</strong>
+</x-reusables.alert>
 
 <strong class="mt-10">{{__('strings.privacy_date_updated_title')}}: {{__('strings.privacy_date_updated')}}</strong>
 
