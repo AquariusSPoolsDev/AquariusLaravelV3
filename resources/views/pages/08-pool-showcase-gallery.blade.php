@@ -1,7 +1,7 @@
 {{-- POOL SHOWCASE GALLERY PAGE --}}
 
 {{-- EXTENDS DEFAULT LAYOUT --}}
-@extends('layout.def-temp')
+@extends('layout.default')
 
 {{-- PARSE HEADER STRINGS --}}
 @php
@@ -12,7 +12,7 @@ $headerSubtitle = 'showcase_subtitle_heading';
 
 {{-- META TAG PAGE --}}
 @section('seoData')
-   <x-seo 
+   <x-seo.seo 
         ogPageTitle="{{__('strings.' . $headerTitle)}}"
         ogDescription="{{__('strings.' . $headerSubtitle)}}"
         ogImage="{{ asset('assets/images/'.$imageFileLoc) }}"
@@ -41,7 +41,7 @@ $headerSubtitle = 'showcase_subtitle_heading';
         {{-- SEARCH INPUT --}}
         <div class="mb-4">
             <label for="search-input" class="font-semibold text-neutral-900 block mb-1.5">{{__('strings.showcase_search_input_title')}}</label>
-            @include('image-gallery.01-search-input')
+            @include('components.image-gallery.01-search-input')
         </div>
 
         {{-- TAGS --}}
@@ -49,28 +49,28 @@ $headerSubtitle = 'showcase_subtitle_heading';
             <label class="font-semibold text-neutral-900 block mb-1.5">{{__('strings.showcase_search_filter_tag_title')}}</label>
 
             {{-- USE THIS IN SMALLER VIEWPORT --}}
-            @include('image-gallery.02-tags-small')
+            @include('components.image-gallery.02-tags-small')
 
             {{-- USE THIS IN LARGER VIEWPORT --}}
-            @include('image-gallery.03-tags-large')
+            @include('components.image-gallery.03-tags-large')
         </div>
 
         {{-- RESET BUTTON --}}
         <div class="mb-4">
-            @include('image-gallery.04-reset-btn')
+            @include('components.image-gallery.04-reset-btn')
         </div>
 
         {{-- LOADING INDICATOR --}}
-        @include('image-gallery.05-loading')
+        @include('components.image-gallery.05-loading')
 
         {{-- NO RESULT MESSAGE --}}
-        @include('image-gallery.06-no-result-msg')
+        @include('components.image-gallery.06-no-result-msg')
         
     </div>
 
     {{-- IMAGE GRID --}}
     <div id="image-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        @include('image-gallery.grid', ['images' => $images])
+        @include('components.image-gallery.grid', ['images' => $images])
     </div>
 
     {{-- PAGINATION PROVIDED ON LARAVEL --}}

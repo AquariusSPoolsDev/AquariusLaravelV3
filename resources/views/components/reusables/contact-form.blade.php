@@ -19,9 +19,9 @@
 
     <div x-show="!submitting">
         @if ($errors->any())
-            <div class="mb-5 p-4 bg-error-100 border border-error-200 rounded-lg text-error-300 text-sm">
+            <x-reusables.alert color="error" class="mb-5 text-sm">
                 {{ __('strings.cf_error_summary') }}
-            </div>
+            </x-reusables.alert>
         @endif
 
         {{-- Name --}}

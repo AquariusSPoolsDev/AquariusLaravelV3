@@ -7,10 +7,7 @@
         <nav class="aquarius-navbar-container">
             <div class="navbar-mobile">
                 <a class="brand navbar-brand" href="{{ route('homepage') }}" aria-label="Aquarius Swimming Pools">
-                    <img class="aquarius-logo" src="{{ asset('assets/favicon/aquarius-logo-192.png') }}" alt="Aquarius Swimming Pools">
-                    <div class="aquarius-branding-name">
-                        <span class="name-1">Aquarius</span><span class="name-2">Swimming Pools</span>
-                    </div>
+                    <x-reusables.logo />
                 </a>
 
                 {{-- HAMBURGER BTN --}}
@@ -156,7 +153,7 @@
                                     :aria-expanded="open"
                                     @click="open = !open">
 
-                                    <x-flag-icons :lang="app()->getLocale()" class="inline-block" />
+                                    <x-reusables.flag-icons :lang="app()->getLocale()" class="inline-block" />
 
                                     @if (app()->getLocale() === 'en_MY')
                                         <span class="lg:hidden max-lg:grow max-lg:text-left">Language: EN (English)</span>
@@ -182,7 +179,7 @@
                                             @csrf
                                             <button type="submit" name="language" value="en"
                                                 class="aquarius-lang-select-item">
-                                                <x-flag-icons lang="en_MY" /> <span class="text-gray-500">EN</span> English
+                                                <x-reusables.flag-icons lang="en_MY" /> <span class="text-gray-500">EN</span> English
                                             </button>
                                         </form>
 
@@ -190,7 +187,7 @@
                                             @csrf
                                             <button type="submit" name="language" value="ms"
                                                 class="aquarius-lang-select-item">
-                                                <x-flag-icons lang="ms_MY" /> <span class="text-gray-500">MS</span> Melayu
+                                                <x-reusables.flag-icons lang="ms_MY" /> <span class="text-gray-500">MS</span> Melayu
                                             </button>
                                         </form>
                                     </div>
@@ -207,6 +204,6 @@
     </div>
 
     {{-- ANNOUCEMENT BANNER --}}
-    <x-navbar-annoucement-banner />
+    <x-partials.navbar-annoucement-banner />
 
 </header>
