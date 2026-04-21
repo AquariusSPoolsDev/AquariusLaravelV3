@@ -106,33 +106,33 @@ Route::domain('v2.aquariusswimmingpools.com')->group(function () {
 
 // REDIRECT ROUTES
 
-// Our Pools
-Route::redirect('/our-pools/concrete-pools', '/concrete-pools', 301);
-Route::redirect('/our-pools/concrete-pools/', '/concrete-pools', 301);
-Route::redirect('/our-pools/vinyl-pools', '/vinyl-pools', 301);
-Route::redirect('/our-pools/vinyl-pools/', '/vinyl-pools', 301);
-Route::redirect('/our-pools/fiberglass-pools', '/fibreglass-pools', 301);
-Route::redirect('/our-pools/fiberglass-pools/', '/fibreglass-pools', 301);
+// // Our Pools
+// Route::redirect('/our-pools/concrete-pools', '/concrete-pools', 301);
+// Route::redirect('/our-pools/concrete-pools/', '/concrete-pools', 301);
+// Route::redirect('/our-pools/vinyl-pools', '/vinyl-pools', 301);
+// Route::redirect('/our-pools/vinyl-pools/', '/vinyl-pools', 301);
+// Route::redirect('/our-pools/fiberglass-pools', '/fibreglass-pools', 301);
+// Route::redirect('/our-pools/fiberglass-pools/', '/fibreglass-pools', 301);
 
-// Showcase / Gallery
-Route::redirect('/pool-gallery', '/showcase', 301);
-Route::redirect('/pool-gallery/', '/showcase', 301);
+// // Showcase / Gallery
+// Route::redirect('/pool-gallery', '/showcase', 301);
+// Route::redirect('/pool-gallery/', '/showcase', 301);
 
-// Services
-Route::redirect('/services', '/our-pool-services', 301);
-Route::redirect('/services/', '/our-pool-services', 301);
-Route::redirect('/services/our-services', '/our-pool-services', 301);
-Route::redirect('/services/our-services/', '/our-pool-services', 301);
-Route::redirect('/services/pool-items', '/pool-items-equipments', 301);
-Route::redirect('/services/pool-items/', '/pool-items-equipments', 301);
+// // Services
+// Route::redirect('/services', '/our-pool-services', 301);
+// Route::redirect('/services/', '/our-pool-services', 301);
+// Route::redirect('/services/our-services', '/our-pool-services', 301);
+// Route::redirect('/services/our-services/', '/our-pool-services', 301);
+// Route::redirect('/services/pool-items', '/pool-items-equipments', 301);
+// Route::redirect('/services/pool-items/', '/pool-items-equipments', 301);
 
-// Pool Shop (external)
-Route::get('/services/pool-shop', function () {
-    return redirect()->away('https://thesplashshop.com');
-});
-Route::get('/services/pool-shop/', function () {
-    return redirect()->away('https://thesplashshop.com');
-});
+// // Pool Shop (external)
+// Route::get('/services/pool-shop', function () {
+//     return redirect()->away('https://thesplashshop.com');
+// });
+// Route::get('/services/pool-shop/', function () {
+//     return redirect()->away('https://thesplashshop.com');
+// });
 
 // // Contact
 // Route::redirect('/contact', '/contact-us', 301);

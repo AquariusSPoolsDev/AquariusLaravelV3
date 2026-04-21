@@ -1,4 +1,4 @@
-<section id="compare" class="pt-6 mt-6">
+<section id="compare" class="pt-12">
     <x-reusables.pill-text>{{__('strings.our_pools_comparison_pill')}}</x-reusables.pill-text>
     <x-reusables.subheading class="uppercase">
         {{__('strings.pool_comparasion_title_heading')}}
