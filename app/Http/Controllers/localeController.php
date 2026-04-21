@@ -16,7 +16,7 @@ class LocaleController extends Controller
 
         $localeMap = [
             'en' => 'en_MY',
-            'ms' => 'ms_MY'
+            'ms' => 'ms_MY',
         ];
 
         // Convert 'en' or 'ms' to full locale code 'en_MY' or 'ms_MY'
@@ -26,6 +26,6 @@ class LocaleController extends Controller
         App::setLocale($selectedLocale);
         Session::put('locale', $selectedLocale);
 
-        return back(); // Redirect back to the previous page
+        return redirect()->back(fallback: route('homepage'));
     }
 }
