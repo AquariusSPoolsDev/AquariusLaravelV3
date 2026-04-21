@@ -407,6 +407,7 @@ return [
     // FAQ
     'faq_title_heading' => 'Soalan Lazim',
     'faq_subtitle_heading' => 'Dapatkan jawapan untuk soalan anda di sini.',
+    'faq_pill' => 'Soalan Lazim',
     'faq_heading_2' => 'Soalan anda, dijawab',
     'faq_content_1' => 'Jika anda tidak jumpa jawapan yang ingin dicari, jangan risau! Di Aquarius, kami berdedikasi demi kepuasan anda. Pasukan kami sedia untuk bantu anda.',
     'faq_content_2' => 'Sementara menunggu jawapan yang diberi, kami mencadangkan untuk membaca soalan lazim kami yang komprehensif. Ia merupakan sumber yang berguna yang mungkin telah menjawab soalan anda. Kami mahu pengalaman anda bersama kami menjadi lancar dan menyeronokkan.',

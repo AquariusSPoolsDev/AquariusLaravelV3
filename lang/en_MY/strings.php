@@ -407,6 +407,7 @@ return [
     // FAQ
     'faq_title_heading' => 'Frequently Asked Questions',
     'faq_subtitle_heading' => 'Find the answers to your questions here',
+    'faq_pill' => 'FAQ',
     'faq_heading_2' => 'Your questions, answered',
     'faq_content_1' => 'If you can\'t find the answer you\'re looking for, don\'t worry! At Aquarius, we\'re dedicated to your satisfaction. Our friendly team is ready to assist you further.',
     'faq_content_2' => 'While we attend to your query, we recommend browsing through our comprehensive FAQ section. It\'s a valuable resource that may already address your common questions. We want your experience with us to be seamless and enjoyable.',
