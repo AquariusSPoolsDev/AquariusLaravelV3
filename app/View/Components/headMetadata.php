@@ -21,6 +21,6 @@ class headMetadata extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.head-metadata');
+        return view('components.partials.head-metadata');
     }
 }

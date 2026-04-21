@@ -21,6 +21,6 @@ class alertNotification extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.alert-notification');
+        return view('components.reusables.alert');
     }
 }

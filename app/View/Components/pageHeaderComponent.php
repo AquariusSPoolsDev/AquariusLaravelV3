@@ -21,6 +21,6 @@ class pageHeaderComponent extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.page-header-component');
+        return view('components.reusables.page-header');
     }
 }

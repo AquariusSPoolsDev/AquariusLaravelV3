@@ -21,6 +21,6 @@ class FlagIcons extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.flag-icons');
+        return view('components.reusables.flag-icons');
     }
 }

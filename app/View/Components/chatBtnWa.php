@@ -21,6 +21,6 @@ class chatBtnWa extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.chat-btn-wa');
+        return view('components.partials-br.chat-btn-wa');
     }
 }

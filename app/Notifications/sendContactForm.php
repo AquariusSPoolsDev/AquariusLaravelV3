@@ -3,14 +3,15 @@
 namespace App\Notifications;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
 class sendContactForm extends Notification
 {
     use Queueable;
+
     public $data;
+
     /**
      * Create a new notification instance.
      */
@@ -36,8 +37,8 @@ class sendContactForm extends Notification
     {
         return (new MailMessage)
             ->from($this->data['cust_email'], $this->data['cust_name'])
-            ->subject('New Enquiry from ' . $this->data['cust_name'])
-            ->view('emails.contact-form', ['data' => $this->data]);
+            ->subject('New Enquiry from '.$this->data['cust_name'])
+            ->view('emails.contact-form-submitted', ['data' => $this->data]);
     }
 
     /**
