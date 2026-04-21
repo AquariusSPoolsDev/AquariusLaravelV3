@@ -1,5 +1,5 @@
 {{-- HEADER --}}
-<header class="z-99999 fixed top-0 w-full" x-data="{ mobileOpen: false }"
+<header class="z-99999 fixed top-0 w-full" x-data="{ mobileOpen: false, isDesktop: window.innerWidth >= 1024 }"
     x-effect="document.body.style.overflow = (mobileOpen && window.innerWidth < 1024) ? 'hidden' : ''"
     @keydown.escape.window="mobileOpen = false">
     {{-- NAVBAR ROW WITH NAVIGATION --}}
@@ -37,10 +37,10 @@
 
             {{-- NAVIGATION --}}
             <div class="aquarius-navbar-nav"
-                x-show="mobileOpen || window.innerWidth >= 1024"
+                x-show="mobileOpen || isDesktop"
                 x-transition:enter="slide-in-top"
                 x-cloak
-                @resize.window="if (window.innerWidth >= 1024) mobileOpen = false">
+                @resize.window="isDesktop = window.innerWidth >= 1024; if (isDesktop) mobileOpen = false">
                 <div class="aquarius-nav-main">
                     <div class="nav-flex">
                         <div class="nav-content">
@@ -141,7 +141,7 @@
                         <div class="side-nav-content">
                             {{-- GET A QUOTE BTN --}}
                             <div class="nav-get-quote">
-                                <a href="/#contact" class="quote-btn">
+                                <a href="{{ route('homepage') }}#contact" class="quote-btn">
                                     {{__('strings.navbar_get_quote')}}
                                 </a>
                             </div>

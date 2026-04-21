@@ -22,13 +22,13 @@
 {{-- MAIN CONTENT STARTS HERE --}}
 @section('content')
 <div class="flex flex-col gap-y-20">
-    <section class="flex flex-col lg:flex-row lg:justify-between">
-        <div class="max-lg:mb-3 lg:w-[60%]">
+    <section class="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-16">
+        <div class="max-lg:mb-3 lg:col-span-1">
             <p class="mb-8">{{__('strings.contact_fill_body')}}</p>
             <x-reusables.contact-form />
         </div>
-        <div class="max-lg:mt-3 max-lg:h-96 lg:w-[35%]">
-            <iframe width="100%" height="100%" class="rounded-xl border border-neutral-200" src="https://maps.google.com/maps?width=684&amp;height=440&amp;hl=en&amp;q=+(Aquarius%20Swimming%20Pools%20Sdn%20Bhd)&amp;ie=UTF8&amp;t=&amp;z=15&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">Loading...</iframe>
+        <div class="max-lg:mt-3 max-lg:h-96 lg:col-span-1">
+            <iframe width="100%" height="100%" class="rounded-lg border border-neutral-200" src="https://maps.google.com/maps?width=684&amp;height=440&amp;hl=en&amp;q=+(Aquarius%20Swimming%20Pools%20Sdn%20Bhd)&amp;ie=UTF8&amp;t=&amp;z=15&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">Loading...</iframe>
         </div>
     </section>
 
