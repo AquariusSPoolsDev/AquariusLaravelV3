@@ -12,30 +12,35 @@ $headerSubtitle = 'concrete_pool_subtitle_heading';
 
 {{-- META TAG PAGE --}}
 @section('seoData')
-   <x-seo.seo 
-        ogPageTitle="{{__('strings.' . $headerTitle)}}"
-        ogDescription="{{__('strings.' . $headerSubtitle)}}"
-        ogImage="{{ asset('assets/images/'.$imageFileLoc) }}"
-    /> 
+<x-seo.seo ogPageTitle="{{__('strings.' . $headerTitle)}}" ogDescription="{{__('strings.' . $headerSubtitle)}}"
+    ogImage="{{ asset('assets/images/'.$imageFileLoc) }}" />
 @endsection
 
 {{-- MAIN CONTENT STARTS HERE --}}
 @section('content')
-<div class="">
-    {{-- BODY TEXT MAIN --}}
-    <p class="">{{ __('strings.concrete_pool_body') }}</p>
+{{-- BODY TEXT MAIN --}}
+<p class="mb-8 leading-relaxed">{{ __('strings.concrete_pool_body') }}</p>
 
-    {{-- POOL STEPS --}}
-    <x-our-pools-concrete.pool-creation-steps />
+{{-- POOL STEPS --}}
+<section class="pool-creation-steps-section mt-16">
+    <x-reusables.pill-text>{{ __('strings.concrete_pool_steps_pill') }}</x-reusables.pill-text>
+    <h2 class="aquarius-subheading mb-6!">{{ __('strings.concrete_pool_steps_title') }}</h2>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 xl:gap-24">
+        <x-our-pools-concrete.pool-creation-steps />
+        <x-our-pools-concrete.pool-creation-steps-desc />
+    </div>
+</section>
 
-    {{-- STEPS DESCRIPTION --}}
-    <x-our-pools-concrete.pool-creation-steps-desc />
+{{-- PROS & CONS --}}
+<section class="pool-pros-cons-section mt-16">
+    <x-reusables.pill-text class="">{{ __('strings.concrete_pool_pros_cons_pill') }}</x-reusables.pill-text>
+    <h2 class="aquarius-subheading mb-6!">{{ __('strings.concrete_pool_pros_cons_title') }}</h2>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <x-our-pools-concrete.pool-advantage />
+        <x-our-pools-concrete.pool-disadvantage />
+    </div>
+</section>
 
-    {{-- ADVANTAGE --}}
-    <x-our-pools-concrete.pool-advantage />
-
-    {{-- DISADVANTAGE --}}
-    <x-our-pools-concrete.pool-disadvantage />
-
-</div>
+{{-- EXPLORE OTHER POOL TYPES --}}
+<x-reusables.explore-pools current="concrete" />
 @endsection

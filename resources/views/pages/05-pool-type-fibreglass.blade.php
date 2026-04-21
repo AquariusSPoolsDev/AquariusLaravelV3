@@ -5,35 +5,42 @@
 
 {{-- PARSE HEADER STRINGS --}}
 @php
-    $imageFileLoc = 'header-pool-fibreglass.jpg';
-    $headerTitle = 'fibreglass_pool_title_heading';
-    $headerSubtitle = 'fibreglass_pool_subtitle_heading';
+$imageFileLoc = 'header-pool-fibreglass.jpg';
+$headerTitle = 'fibreglass_pool_title_heading';
+$headerSubtitle = 'fibreglass_pool_subtitle_heading';
 @endphp
 
 {{-- META TAG PAGE --}}
 @section('seoData')
-   <x-seo.seo 
-        ogPageTitle="{{__('strings.' . $headerTitle)}}"
-        ogDescription="{{__('strings.' . $headerSubtitle)}}"
-        ogImage="{{ asset('assets/images/'.$imageFileLoc) }}"
-    /> 
+<x-seo.seo ogPageTitle="{{__('strings.' . $headerTitle)}}" ogDescription="{{__('strings.' . $headerSubtitle)}}"
+    ogImage="{{ asset('assets/images/'.$imageFileLoc) }}" />
 @endsection
 
 {{-- MAIN CONTENT STARTS HERE --}}
 @section('content')
-<div class="prose !max-w-full">
-    {{-- BODY TEXT MAIN --}}
-    <p class="">{{ __('strings.fibreglass_pool_body') }}</p>
-    {{-- POOL STEPS --}}
-    <x-our-pools-fibreglass.pool-creation-steps />
+{{-- BODY TEXT MAIN --}}
+<p class="mb-8 leading-relaxed">{{ __('strings.fibreglass_pool_body') }}</p>
 
-    {{-- STEPS DESCRIPTION --}}
-    <x-our-pools-fibreglass.pool-creation-steps-desc />
+{{-- POOL STEPS --}}
+<section class="pool-creation-steps-section mt-16">
+    <x-reusables.pill-text>{{ __('strings.fibreglass_pool_steps_pill') }}</x-reusables.pill-text>
+    <h2 class="aquarius-subheading mb-6!">{{ __('strings.fibreglass_pool_steps_title') }}</h2>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 xl:gap-24">
+        <x-our-pools-fibreglass.pool-creation-steps />
+        <x-our-pools-fibreglass.pool-creation-steps-desc />
+    </div>
+</section>
 
-    {{-- ADVANTAGE --}}
-    <x-our-pools-fibreglass.pool-advantage />
+{{-- PROS & CONS --}}
+<section class="pool-pros-cons-section mt-16">
+    <x-reusables.pill-text class="">{{ __('strings.fibreglass_pool_pros_cons_pill') }}</x-reusables.pill-text>
+    <h2 class="aquarius-subheading mb-6!">{{ __('strings.fibreglass_pool_pros_cons_title') }}</h2>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <x-our-pools-fibreglass.pool-advantage />
+        <x-our-pools-fibreglass.pool-disadvantage />
+    </div>
+</section>
 
-    {{-- DISADVANTAGE --}}
-    <x-our-pools-fibreglass.pool-disadvantage />
-</div>
+{{-- EXPLORE OTHER POOL TYPES --}}
+<x-reusables.explore-pools current="fibreglass" />
 @endsection

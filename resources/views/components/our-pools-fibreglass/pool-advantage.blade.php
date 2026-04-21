@@ -1,13 +1,15 @@
-    {{-- ADVANTAGE --}}
-    <h2 class="pool-type-advantage-title">{{ __('strings.fibreglass_pool_advantage_title') }}</h2>
-    <ul class="list-disc">
+{{-- ADVANTAGE --}}
+<div class="pro-con-card">
+    <h3 class="pro-con-card-title">{{ __('strings.fibreglass_pool_advantage_title') }}</h3>
+    <ul class="list-disc list-outside pl-5 space-y-2">
         <li>
-            <strong>{!!__('strings.fibreglass_pool_advantage_1_title')!!}:</strong> {{__('strings.fibreglass_pool_advantage_1_desc')}}
+            <strong class="text-neutral-950">{!!__('strings.fibreglass_pool_advantage_1_title')!!}:</strong> {{__('strings.fibreglass_pool_advantage_1_desc')}}
         </li>
         <li>
-            <strong>{!!__('strings.fibreglass_pool_advantage_2_title')!!}:</strong> {{__('strings.fibreglass_pool_advantage_2_desc')}}
+            <strong class="text-neutral-950">{!!__('strings.fibreglass_pool_advantage_2_title')!!}:</strong> {{__('strings.fibreglass_pool_advantage_2_desc')}}
         </li>
         <li>
-            <strong>{!!__('strings.fibreglass_pool_advantage_3_title')!!}:</strong> {{__('strings.fibreglass_pool_advantage_3_desc')}}
+            <strong class="text-neutral-950">{!!__('strings.fibreglass_pool_advantage_3_title')!!}:</strong> {{__('strings.fibreglass_pool_advantage_3_desc')}}
         </li>
     </ul>
+</div>
