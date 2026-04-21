@@ -10,9 +10,13 @@ use Illuminate\View\Component;
 class Seo extends Component
 {
     public $ogSiteTitle;
+
     public $ogPageTitle;
+
     public $ogDescription;
+
     public $ogTags;
+
     public $ogImage;
 
     public function __construct($ogPageTitle = '', $ogDescription = '', $ogTags = '', $ogImage = '')
@@ -20,7 +24,7 @@ class Seo extends Component
         if (Route::currentRouteName() === 'homepage') {
             $this->ogSiteTitle = 'Johor Bahru (JB) Swimming Pool Builder and Contractor Specialist | Aquarius Swimming Pools';
         } else {
-            $this->ogSiteTitle = $ogPageTitle . ' | Johor Bahru (JB) Swimming Pool Specialist | Aquarius Swimming Pools';
+            $this->ogSiteTitle = $ogPageTitle.' | Johor Bahru (JB) Swimming Pool Specialist | Aquarius Swimming Pools';
         }
 
         $this->ogDescription = $ogDescription;
@@ -33,6 +37,6 @@ class Seo extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.seo');
+        return view('components.seo.seo');
     }
 }

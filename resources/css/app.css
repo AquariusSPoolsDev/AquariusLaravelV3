@@ -268,8 +268,7 @@ body {
                 }
 
                 .aquarius-lang-select-dropdown {
-                    @apply absolute top-full end-0 min-w-60 bg-white shadow-md rounded-lg mt-2 z-50;
-                    @apply max-lg:static max-lg:mt-1 max-lg:w-full max-lg:shadow-none max-lg:bg-neutral-50 max-lg:rounded-lg;
+                    @apply lg:absolute lg:top-full lg:inset-e-0 lg:min-w-60 lg:bg-white lg:shadow-md rounded-lg lg:mt-2 z-50 max-lg:static mt-1 w-full shadow-none bg-neutral-50;
                 }
 
                 .lang-select-dropdown-card {

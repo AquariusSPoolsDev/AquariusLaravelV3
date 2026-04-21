@@ -21,6 +21,6 @@ class navbarAnnoucementBanner extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.navbar-annoucement-banner');
+        return view('components.partials.navbar-annoucement-banner');
     }
 }

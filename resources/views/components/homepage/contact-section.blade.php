@@ -11,7 +11,7 @@
             </div>
             <div class="aquarius-contact-col-right">
                 <div class="aquarius-contact-form-card">
-                    <x-homepage.contact-form />
+                    <x-reusables.contact-form />
                 </div>
             </div>
         </div>

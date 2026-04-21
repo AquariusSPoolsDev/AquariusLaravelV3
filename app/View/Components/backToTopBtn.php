@@ -21,6 +21,6 @@ class backToTopBtn extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.back-to-top-btn');
+        return view('components.partials-br.back-to-top-btn');
     }
 }

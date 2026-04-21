@@ -63,6 +63,9 @@ if (toTopButton) {
 //
 document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('search-input');
+
+    if (!searchInput) return;
+
     const tagCheckboxes = document.querySelectorAll('.tag-checkbox');
     const tagSelect = document.getElementById('multiple-with-conditional-counter-select'); // Updated reference
     const imageGrid = document.getElementById('image-grid');

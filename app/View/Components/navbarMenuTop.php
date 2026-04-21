@@ -21,6 +21,6 @@ class navbarMenuTop extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.navbar-menu-top');
+        return view('components.partials.navbar-menu-top');
     }
 }

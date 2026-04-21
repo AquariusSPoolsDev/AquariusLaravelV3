@@ -134,24 +134,24 @@ Route::get('/services/pool-shop/', function () {
     return redirect()->away('https://thesplashshop.com');
 });
 
-// Contact
-Route::redirect('/contact', '/contact-us', 301);
-Route::redirect('/contact/', '/contact-us', 301);
+// // Contact
+// Route::redirect('/contact', '/contact-us', 301);
+// Route::redirect('/contact/', '/contact-us', 301);
 
-// FAQ
-Route::redirect('/contact/faq', '/faq', 301);
-Route::redirect('/contact/faq/', '/faq', 301);
+// // FAQ
+// Route::redirect('/contact/faq', '/faq', 301);
+// Route::redirect('/contact/faq/', '/faq', 301);
 
-// Legal
-Route::redirect('/legal', '/terms', 301);
-Route::redirect('/legal/', '/terms', 301);
-Route::redirect('/legal/terms-and-conditions', '/terms', 301);
-Route::redirect('/legal/terms-and-conditions/', '/terms', 301);
-Route::redirect('/legal/privacy-policy', '/privacy', 301);
-Route::redirect('/legal/privacy-policy/', '/privacy', 301);
+// // Legal
+// Route::redirect('/legal', '/terms', 301);
+// Route::redirect('/legal/', '/terms', 301);
+// Route::redirect('/legal/terms-and-conditions', '/terms', 301);
+// Route::redirect('/legal/terms-and-conditions/', '/terms', 301);
+// Route::redirect('/legal/privacy-policy', '/privacy', 301);
+// Route::redirect('/legal/privacy-policy/', '/privacy', 301);
 
-// Reviews (FIXED - was looping to itself)
-// No redirect needed, /reviews is already a valid route
+// // Reviews (FIXED - was looping to itself)
+// // No redirect needed, /reviews is already a valid route
 
-// Promotions
-Route::redirect('/promotions.php', '/promotions', 301);
+// // Promotions
+// Route::redirect('/promotions.php', '/promotions', 301);
