@@ -19,7 +19,5 @@
 
     <x-homepage.services-section />
 
-    <x-homepage.reviews-section />
-
     <x-homepage.contact-section />
 @endsection

@@ -355,6 +355,191 @@ return [
     'pool_item_closing_1' => 'All these components are used to keep your pool well-maintained and running efficiently. Although it seems tedious it is always necessary to have all these items on hand, properly maintained and in perfect working condition, otherwise it may jeopardize the safety and cleanliness of your swimming pool.',
     'pool_item_closing_2' => 'If you have any more questions or doubts, feel free to contact our team here at Aquarius to assist you.',
 
+    // POOL ESSENTIALS - NAV & BRIEF STRINGS
+    'pool_item_nav_core' => 'Core Equipment',
+    'pool_item_nav_cleaning' => 'Cleaning',
+    'pool_item_nav_chemicals' => 'Chemicals',
+    'pool_item_core_pill' => 'Core Equipment',
+    'pool_item_core_title' => 'The Heart of Your Pool System',
+    'pool_item_core_body' => 'These three components work together to keep your pool water clean, safe, and properly sanitised at all times.',
+    'pool_item_pump_brief' => 'Circulates water through the filtration system, distributes chemicals evenly, and keeps the pool water from going stagnant.',
+    'pool_item_filter_brief' => 'Removes debris, bacteria, and contaminants from the water — protecting both swimmers and other pool equipment.',
+    'pool_item_salt_chlorinator_brief' => 'Converts salt into chlorine via electrolysis, providing consistent sanitisation with a softer feel on skin and eyes.',
+
+    // POOL ESSENTIALS - CLEANING ACCESSORIES SECTION HEADINGS
+    'pool_item_equip_pill' => 'Cleaning Accessories',
+    'pool_item_equip_title' => 'Pool Equipment & Accessories',
+    'pool_item_equip_body' => 'Essential tools and accessories for effective pool maintenance.',
+
+    // POOL ESSENTIALS - CLEANING ACCESSORIES
+    'pool_item_equip_test_kit_title' => '2 in 1 Test Kit',
+    'pool_item_equip_test_kit_body' => 'Quick and reliable solution for testing Chlorine (CL) and pH levels in swimming pools. Includes Phenol Red and OTO solutions. Compact and easy to use for regular residential and commercial pool maintenance.',
+
+    'pool_item_equip_chem_scoop_title' => 'Chemical Scoop',
+    'pool_item_equip_chem_scoop_body' => 'Convenient measuring tool for accurate dosing of pool cleaning chemicals. Suitable for measuring dry chemicals in ounces and grams. Capacity up to 700 grams.',
+
+    'pool_item_equip_vacuum_hose_title' => 'Powerflo Vacuum Hose',
+    'pool_item_equip_vacuum_hose_body' => 'Heavy-duty vacuum hose for efficient pool cleaning and long-term durability. Reinforced two-layer design for extra strength. Available in 9 metres (30 ft) and 15 metres (50 ft) lengths.',
+
+    'pool_item_equip_tablet_dispenser_title' => 'Chlorine Tablet Floating Dispenser',
+    'pool_item_equip_tablet_dispenser_body' => 'Easy-to-use floating dispenser for slow-dissolving chlorine or bromine tablets. Automatically releases sanitiser upon contact with pool water. Available in 5-inch (suitable for 70% chlorine tablets) and 8-inch (suitable for 90% chlorine tablets) models.',
+
+    'pool_item_equip_leaf_rake_title' => 'Leaf Rake Deluxe',
+    'pool_item_equip_leaf_rake_body' => 'Designed for efficient removal of leaves and debris from the pool surface and bottom. Reinforced blue ABS moulded frame with deep nylon net for effective collection.',
+
+    'pool_item_equip_scoop_net_title' => 'Pool Scoop Net Series',
+    'pool_item_equip_scoop_net_body' => 'Lightweight, durable nets for easy removal of leaves and debris from pool surfaces. Available as a standard net or with an integrated adjustable aluminium pole. Safe for all pool liners — will not scratch surfaces.',
+
+    'pool_item_equip_telescopic_pole_title' => 'Telescopic Pole',
+    'pool_item_equip_telescopic_pole_body' => 'Durable, extendable handle compatible with vacuum heads, vacuum hoses, leaf rakes, and brushes. Available in 7.8–15.4 ft and 8–16 ft. Lightweight aluminium shaft with quick-lock Cam system for secure, adjustable length.',
+
+    'pool_item_equip_algae_brush_title' => 'Stainless Steel Algae Brush',
+    'pool_item_equip_algae_brush_body' => 'Compact, heavy-duty brush for removing stubborn algae from plaster or concrete pool surfaces, especially in hard-to-reach corners. 9-inch width with stiff stainless steel bristles. Not recommended for vinyl-lined or fibreglass pools.',
+
+    'pool_item_equip_alu_vacuum_head_title' => 'Aluminium Vacuum Head',
+    'pool_item_equip_alu_vacuum_head_body' => '45 cm wide aluminium vacuum head for thorough pool cleaning. Full-length flex strips for efficient debris pickup. Spring clip attachment fits most standard telescopic poles.',
+
+    'pool_item_equip_heavy_vacuum_head_title' => 'Heavy-Duty Vacuum Head',
+    'pool_item_equip_heavy_vacuum_head_body' => 'Flexible vacuum head built for efficient cleaning of pool floors. Available in 14 inch, 19 inch, and 22 inch sizes. Integrated brushes and rollers ensure smooth gliding on uneven pool surfaces.',
+
+    'pool_item_equip_pool_brush_title' => 'Pool Brush 18 Inch',
+    'pool_item_equip_pool_brush_body' => 'Durable 18-inch pool brush for sweeping dirt, algae, and debris from walls and floors. Curved design for cleaning corners with ease. UV-stabilised bristles with snap-adapt handle for standard telescopic poles.',
+
+    'pool_item_equip_vacuum_brush_rollers_title' => 'Vacuum Head Brush with Rollers',
+    'pool_item_equip_vacuum_brush_rollers_body' => '14-inch vacuum head with integrated side brushes and rollers for thorough pool floor cleaning. Tough ABS plastic body for long-term durability. Compatible with standard vacuum hoses and telescopic poles.',
+
+    // POOL ESSENTIALS - POOL CHEMICALS SECTION HEADINGS
+    'pool_item_chem_pill' => 'Pool Chemicals',
+    'pool_item_chem_title' => 'Pool Chemicals',
+    'pool_item_chem_body' => 'Chemicals for maintaining safe, clean, and balanced pool water.',
+
+    // POOL ESSENTIALS - POOL CHEMICALS
+    'pool_item_chem_chlorine_90_title' => 'Chlorine 90% Tablet and Granular',
+    'pool_item_chem_chlorine_90_body' => 'High-concentration TCCA chlorine in tablet and granular form. Kills bacteria, prevents algae, and maintains clear pool water with minimal applications.',
+
+    'pool_item_chem_chlorine_90_copper_title' => 'Chlorine 90% Tablet with Copper',
+    'pool_item_chem_chlorine_90_copper_body' => 'Dual-action tablet combining 90% TCCA chlorine with copper-based algaecide. Sanitises water and provides long-lasting algae control in one product.',
+
+    'pool_item_chem_chlorine_70_title' => 'Chlorine 70% Tablet and Granular',
+    'pool_item_chem_chlorine_70_body' => 'Calcium Hypochlorite chlorine in tablet and granular form. Effective disinfectant that kills bacteria and controls algae to keep pool water clean and safe.',
+
+    'pool_item_chem_ph_up_title' => 'pH Up / pH Increaser',
+    'pool_item_chem_ph_up_body' => 'Sodium carbonate (soda ash) powder that raises pool pH and total alkalinity. Use when pH drops below 7.2 to prevent surface damage and irritation.',
+
+    'pool_item_chem_ph_minus_title' => 'pH Minus / pH Reducer',
+    'pool_item_chem_ph_minus_body' => 'Dry sodium bisulphate granules that lower high pH and alkalinity. Use when pH exceeds 7.8 to prevent cloudy water, scaling, and reduced chlorine effectiveness.',
+
+    'pool_item_chem_algaecide_title' => 'Algaecide',
+    'pool_item_chem_algaecide_body' => 'Eliminates and prevents algae growth by disrupting vital algae cell functions. Best applied after brushing, vacuuming, and shock chlorination for maximum effect.',
+
+    'pool_item_chem_alum_title' => 'Aluminum Sulphate (Alum)',
+    'pool_item_chem_alum_body' => 'White powder flocculant that binds fine particles and algae into larger clumps, settling them to the pool floor for easy removal and restored water clarity.',
+
+    // POOL ITEM MODAL UI
+    'modal_learn_more' => 'Learn More',
+    'modal_why_use' => 'Why Use It?',
+    'modal_how_to_use' => 'How to Use',
+    'modal_key_features' => 'Key Features',
+    'modal_packaging' => 'Packaging',
+
+    // POOL ITEM MODAL — CLEANING EQUIPMENT
+    'pool_item_equip_test_kit_feature_1' => 'Tests both Chlorine (CL) and pH levels in one kit',
+    'pool_item_equip_test_kit_feature_2' => 'Includes Phenol Red (pH) and OTO (chlorine) solutions',
+    'pool_item_equip_test_kit_feature_3' => 'Compact, durable plastic case for easy storage and transport',
+
+    'pool_item_equip_chem_scoop_feature_1' => 'Capacity up to 700 grams',
+    'pool_item_equip_chem_scoop_feature_2' => 'Measures dry chemicals in both ounces and grams',
+    'pool_item_equip_chem_scoop_feature_3' => 'Durable design built for regular pool maintenance use',
+
+    'pool_item_equip_vacuum_hose_feature_1' => 'Reinforced two-layer design for extra strength and durability',
+    'pool_item_equip_vacuum_hose_feature_2' => 'Available in 9m (30 ft) and 15m (50 ft) lengths',
+    'pool_item_equip_vacuum_hose_feature_3' => 'Compatible with pool cleaning equipment and skimmers',
+
+    'pool_item_equip_tablet_dispenser_feature_1' => 'Available in 5-inch (for 70% chlorine) and 8-inch (for 90% chlorine) models',
+    'pool_item_equip_tablet_dispenser_feature_2' => 'Automatically releases sanitizer on contact with pool water',
+    'pool_item_equip_tablet_dispenser_feature_3' => 'Ideal for maintaining consistent pool water sanitation',
+
+    'pool_item_equip_leaf_rake_feature_1' => 'Reinforced blue ABS molded frame with deluxe socket',
+    'pool_item_equip_leaf_rake_feature_2' => 'Deep nylon net for efficient collection of leaves and floating debris',
+    'pool_item_equip_leaf_rake_feature_3' => 'Ideal for routine pool maintenance',
+
+    'pool_item_equip_scoop_net_feature_1' => 'Available in standard net or with built-in adjustable aluminum handle',
+    'pool_item_equip_scoop_net_feature_2' => 'Fine mesh netting, safe for all pool liner types — will not scratch surfaces',
+    'pool_item_equip_scoop_net_feature_3' => 'Lightweight and easy to maneuver',
+
+    'pool_item_equip_telescopic_pole_feature_1' => 'Two size options: 7.8–15.4 ft and 8–16 ft',
+    'pool_item_equip_telescopic_pole_feature_2' => 'Lightweight aluminum shaft with comfortable PVC grip',
+    'pool_item_equip_telescopic_pole_feature_3' => 'Quick-lock Cam system for secure, adjustable length',
+
+    'pool_item_equip_algae_brush_feature_1' => '9-inch width with stiff stainless steel bristles',
+    'pool_item_equip_algae_brush_feature_2' => 'Snap-adapt handle fits most telescopic poles',
+    'pool_item_equip_algae_brush_feature_3' => 'Not recommended for vinyl-lined or fibreglass pools',
+
+    'pool_item_equip_alu_vacuum_head_feature_1' => '45 cm wide head for faster coverage',
+    'pool_item_equip_alu_vacuum_head_feature_2' => 'Full-length flex strips for efficient debris pickup into suction chamber',
+    'pool_item_equip_alu_vacuum_head_feature_3' => 'Spring clip fits most standard telescopic poles',
+
+    'pool_item_equip_heavy_vacuum_head_feature_1' => 'Available in 14 inch, 19 inch, and 22 inch sizes',
+    'pool_item_equip_heavy_vacuum_head_feature_2' => 'Flexible body adapts to uneven pool surfaces',
+    'pool_item_equip_heavy_vacuum_head_feature_3' => 'Integrated brushes and rollers ensure smooth gliding',
+
+    'pool_item_equip_pool_brush_feature_1' => '18-inch wide head covers more area for faster cleaning',
+    'pool_item_equip_pool_brush_feature_2' => 'Curved design for brushing pool corners and curves with ease',
+    'pool_item_equip_pool_brush_feature_3' => 'UV-stabilized polypropylene or nylon bristles for long-lasting use',
+
+    'pool_item_equip_vacuum_brush_rollers_feature_1' => '14-inch cleaning head for faster coverage',
+    'pool_item_equip_vacuum_brush_rollers_feature_2' => 'Side brushes and rollers ensure thorough debris removal',
+    'pool_item_equip_vacuum_brush_rollers_feature_3' => 'Tough ABS plastic body designed for long-term durability',
+
+    // POOL ITEM MODAL — CHEMICALS
+    'pool_item_chem_chlorine_90_subtitle' => 'Trichloroisocyanuric Acid (TCCA)',
+    'pool_item_chem_chlorine_90_why_1' => 'Effectively kills bacteria and harmful microorganisms',
+    'pool_item_chem_chlorine_90_why_2' => 'Prevents algae growth in your pool',
+    'pool_item_chem_chlorine_90_why_3' => 'Maintains free chlorine level of 1–3 ppm with fewer applications',
+    'pool_item_chem_chlorine_90_how' => 'Tablets: use a floating dispenser or automatic chlorinator — do not place directly in pool to avoid surface bleaching. Granules: pre-dissolve in a bucket of clean water, then add evenly around the pool or into the balancing tank.',
+    'pool_item_chem_chlorine_90_packaging' => 'Tablet: 2 KG, 50 KG | Granular: 25 KG, 50 KG',
+
+    'pool_item_chem_chlorine_90_copper_subtitle' => 'TCCA + Copper Compound',
+    'pool_item_chem_chlorine_90_copper_why_1' => 'Dual-action: sanitises water and prevents algae in one product',
+    'pool_item_chem_chlorine_90_copper_why_2' => 'Effective against black, green, and mustard algae',
+    'pool_item_chem_chlorine_90_copper_why_3' => 'Slow-dissolving tablets reduce the need for frequent dosing',
+    'pool_item_chem_chlorine_90_copper_how' => 'Dosage: 1 tablet per 10,000 litres of pool water. Place in a floating dispenser or automatic chlorinator. Replace tablets as they dissolve. Monitor copper levels — excess copper can stain pool surfaces.',
+    'pool_item_chem_chlorine_90_copper_packaging' => 'Tablet: 25 KG',
+
+    'pool_item_chem_chlorine_70_subtitle' => 'Calcium Hypochlorite',
+    'pool_item_chem_chlorine_70_why_1' => 'Effectively kills bacteria and harmful microorganisms',
+    'pool_item_chem_chlorine_70_why_2' => 'Controls algae growth and keeps water safe',
+    'pool_item_chem_chlorine_70_why_3' => 'Stable compound with 60–70% purity for reliable sanitisation',
+    'pool_item_chem_chlorine_70_how' => 'Tablets: use a floating dispenser or automatic chlorinator. Granules: pre-dissolve in a bucket of clean water, then add evenly around the pool. Maintain free chlorine at 1–3 ppm. Increase dosage after heavy rain or high pool usage.',
+    'pool_item_chem_chlorine_70_packaging' => 'Granular: 3 KG, 5 KG, 40 KG | Tablet: 40 KG',
+
+    'pool_item_chem_ph_up_subtitle' => 'Sodium Carbonate / Soda Ash',
+    'pool_item_chem_ph_up_why_1' => 'Raises pool pH and total alkalinity simultaneously',
+    'pool_item_chem_ph_up_why_2' => 'Prevents surface etching and corrosion from acidic water',
+    'pool_item_chem_ph_up_why_3' => 'Reduces skin and eye irritation caused by low pH',
+    'pool_item_chem_ph_up_how' => 'Use when pH drops below 7.2 or alkalinity falls below 80 ppm. Always test water before and after application. Overdosing may cause cloudy water or scaling — dose gradually and retest.',
+    'pool_item_chem_ph_up_packaging' => 'Powder: 2 KG, 25 KG',
+
+    'pool_item_chem_ph_minus_subtitle' => 'Sodium Bisulphate / Dry Acid',
+    'pool_item_chem_ph_minus_why_1' => 'Lowers high pH and alkalinity safely and effectively',
+    'pool_item_chem_ph_minus_why_2' => 'Prevents cloudy water, scaling, and mineral deposits',
+    'pool_item_chem_ph_minus_why_3' => 'Restores chlorine effectiveness when pH is too high',
+    'pool_item_chem_ph_minus_how' => 'Use when pH exceeds 7.8. Safer alternative to liquid hydrochloric acid. Handle with care — highly corrosive. Avoid contact with skin, eyes, and fumes. Always wear appropriate safety gear when handling.',
+    'pool_item_chem_ph_minus_packaging' => 'Powder: 2 KG, 25 KG',
+
+    'pool_item_chem_algaecide_subtitle' => 'Algae Eliminator and Preventive Treatment',
+    'pool_item_chem_algaecide_why_1' => 'Eliminates and prevents algae and fungal growth in pool water',
+    'pool_item_chem_algaecide_why_2' => 'Disrupts algae cell functions — halts photosynthesis and damages cell walls',
+    'pool_item_chem_algaecide_why_3' => 'Functions as an antimicrobial and molluscicide',
+    'pool_item_chem_algaecide_how' => 'Best applied after thoroughly brushing, vacuuming, and shock-treating the pool with at least 70% chlorine. Safe to swim 15–30 minutes after application. Store sealed in a cool, dry area at room temperature.',
+
+    'pool_item_chem_alum_subtitle' => 'Aluminum Sulphate Flocculant',
+    'pool_item_chem_alum_why_1' => 'Binds fine particles and algae into larger clumps that settle to the pool floor',
+    'pool_item_chem_alum_why_2' => 'Restores crystal clarity to cloudy or murky pool water',
+    'pool_item_chem_alum_why_3' => 'Aids in reducing bacteria levels by removing organic matter',
+    'pool_item_chem_alum_how' => 'Dissolve required amount in a bucket of water. Switch pump to Recirculate, pour evenly around pool, run pump for 4+ hours (stir every 2 hours), then switch off and let settle overnight. Next day: switch to Waste and vacuum sediment to drain. Do not swim while alum is active.',
+    'pool_item_chem_alum_packaging' => 'Recommended dosage: 5,000g per 10,000 litres of pool water',
+
     // POOL SHOWCASE
     'showcase_title_heading' => 'Showcase',
     'showcase_subtitle_heading' => 'A collection of our completed swimming pool projects',

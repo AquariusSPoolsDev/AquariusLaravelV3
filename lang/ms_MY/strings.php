@@ -355,6 +355,191 @@ return [
     'pool_item_closing_1' => 'Semua peralatan ini digunakan untuk memastikan kolam anda diselenggara dengan baik dan berjalan dengan cekap. Walaupun nampak payah, tetapi semua barang ini sentiasa diperlukan, diselenggara dengan betul dan berfungsi dengan sempurna, jika tidak, ia boleh menjejaskan keselamatan dan kebersihan kolam renang anda.',
     'pool_item_closing_2' => 'Jika anda mempunyai persoalan, sila hubungi pasukan kami dari Aquarius untuk membantu anda.',
 
+    // POOL ESSENTIALS - NAV & BRIEF STRINGS
+    'pool_item_nav_core' => 'Peralatan Utama',
+    'pool_item_nav_cleaning' => 'Pembersihan',
+    'pool_item_nav_chemicals' => 'Bahan Kimia',
+    'pool_item_core_pill' => 'Peralatan Utama',
+    'pool_item_core_title' => 'Teras Sistem Kolam Anda',
+    'pool_item_core_body' => 'Ketiga-tiga komponen ini bekerjasama untuk memastikan air kolam anda bersih, selamat dan tersanitasi pada setiap masa.',
+    'pool_item_pump_brief' => 'Mengitar air melalui sistem penapisan, mengagihkan bahan kimia secara sekata, dan mengelakkan air kolam daripada bertakung.',
+    'pool_item_filter_brief' => 'Mengeluarkan habuk, bakteria dan bahan cemar dari air — melindungi perenang dan peralatan kolam yang lain.',
+    'pool_item_salt_chlorinator_brief' => 'Menukar garam kepada klorin melalui elektrolisis, memberikan sanitasi yang konsisten dengan rasa yang lebih lembut pada kulit dan mata.',
+
+    // POOL ESSENTIALS - CLEANING ACCESSORIES SECTION HEADINGS
+    'pool_item_equip_pill' => 'Aksesori Pembersihan',
+    'pool_item_equip_title' => 'Peralatan & Aksesori Kolam',
+    'pool_item_equip_body' => 'Peralatan dan aksesori penting untuk penyelenggaraan kolam yang berkesan.',
+
+    // POOL ESSENTIALS - CLEANING ACCESSORIES
+    'pool_item_equip_test_kit_title' => 'Kit Ujian 2-dalam-1',
+    'pool_item_equip_test_kit_body' => 'Penyelesaian yang cepat dan boleh dipercayai untuk menguji tahap Klorin (CL) dan pH dalam kolam renang. Mengandungi larutan Phenol Red dan OTO. Kompak dan mudah digunakan untuk penyelenggaraan kolam renang secara berkala.',
+
+    'pool_item_equip_chem_scoop_title' => 'Pencedok Bahan Kimia',
+    'pool_item_equip_chem_scoop_body' => 'Alat pengukur yang mudah digunakan untuk pendos bahan pembersih kolam renang secara tepat. Sesuai untuk mengukur bahan kimia kering dalam auns dan gram. Kapasiti sehingga 700 gram.',
+
+    'pool_item_equip_vacuum_hose_title' => 'Hos Vakum Powerflo',
+    'pool_item_equip_vacuum_hose_body' => 'Hos vakum tahan lasak untuk pembersihan kolam renang yang berkesan dan ketahanan jangka panjang. Reka bentuk dua lapisan untuk kekuatan tambahan. Tersedia dalam panjang 9 meter (30 kaki) dan 15 meter (50 kaki).',
+
+    'pool_item_equip_tablet_dispenser_title' => 'Dispenser Tablet Klorin Terapung',
+    'pool_item_equip_tablet_dispenser_body' => 'Dispenser terapung yang mudah digunakan untuk tablet klorin atau bromin yang larut perlahan. Bahan sanitasi dilepaskan secara automatik apabila bersentuhan dengan air kolam. Tersedia dalam saiz 5 inci (sesuai untuk tablet klorin 70%) dan 8 inci (sesuai untuk tablet klorin 90%).',
+
+    'pool_item_equip_leaf_rake_title' => 'Penyauk Daun Deluxe',
+    'pool_item_equip_leaf_rake_body' => 'Direka untuk penyingkiran daun dan habuk secara berkesan dari permukaan dan dasar kolam. Rangka ABS beracuan biru yang diperkukuh dengan jaring nilon dalam untuk pengumpulan yang efisien.',
+
+    'pool_item_equip_scoop_net_title' => 'Siri Jaring Penyauk Kolam',
+    'pool_item_equip_scoop_net_body' => 'Jaring yang ringan dan tahan lasak untuk memudahkan penyingkiran daun dan habuk dari permukaan kolam. Tersedia sebagai jaring standard atau dengan batang aluminium boleh laras terbina dalam. Selamat untuk semua jenis pelapik kolam — tidak mencalarkan permukaan.',
+
+    'pool_item_equip_telescopic_pole_title' => 'Batang Teleskopik',
+    'pool_item_equip_telescopic_pole_body' => 'Pemegang yang tahan lasak dan boleh dipanjangkan, serasi dengan kepala vakum, hos vakum, penyauk daun dan berus. Tersedia dalam saiz 7.8–15.4 kaki dan 8–16 kaki. Batang aluminium ringan dengan sistem Cam kunci pantas.',
+
+    'pool_item_equip_algae_brush_title' => 'Berus Alga Keluli Tahan Karat',
+    'pool_item_equip_algae_brush_body' => 'Berus kompak dan tahan lasak untuk menanggalkan alga degil dari permukaan plaster atau konkrit, terutamanya di sudut yang sukar dicapai. Lebar 9 inci dengan bulu berus keluli tahan karat yang keras. Tidak disyorkan untuk kolam berlapik vinil atau gentian kaca.',
+
+    'pool_item_equip_alu_vacuum_head_title' => 'Kepala Vakum Aluminium',
+    'pool_item_equip_alu_vacuum_head_body' => 'Kuat dan cekap, kepala vakum aluminium 45 cm ini dibina untuk pembersihan kolam renang yang menyeluruh, membawa habuk terus ke dalam ruang sedutan dengan jalur fleksibel lebar penuh. Badan aluminium tahan lama untuk kegunaan jangka panjang.',
+
+    'pool_item_equip_heavy_vacuum_head_title' => 'Kepala Vakum Tahan Lasak',
+    'pool_item_equip_heavy_vacuum_head_body' => 'Kepala vakum fleksibel untuk pembersihan lantai kolam yang cekap. Tersedia dalam saiz 14 inci, 19 inci, dan 22 inci. Badan yang fleksibel disesuaikan dengan permukaan kolam yang tidak rata. Berus dan penggelek bersepadu memastikan gelongsoran yang lancar.',
+
+    'pool_item_equip_pool_brush_title' => 'Berus Kolam Renang 18 Inci',
+    'pool_item_equip_pool_brush_body' => 'Berus kolam yang kuat dan cekap untuk menyapu kotoran, alga dan habuk dari dinding dan lantai. Kepala selebar 18 inci dengan reka bentuk melengkung untuk memberus sudut dengan mudah. Berus distabilkan UV dengan pemegang yang serasi dengan tiang teleskopik standard.',
+
+    'pool_item_equip_vacuum_brush_rollers_title' => 'Berus Kepala Vakum dengan Penggelek',
+    'pool_item_equip_vacuum_brush_rollers_body' => 'Kepala vakum 14 inci dengan berus sisi bersepadu dan penggelek untuk pembersihan lantai kolam yang menyeluruh. Badan plastik ABS yang kuat untuk ketahanan jangka panjang. Serasi dengan hos vakum standard dan tiang teleskopik.',
+
+    // POOL ESSENTIALS - POOL CHEMICALS SECTION HEADINGS
+    'pool_item_chem_pill' => 'Bahan Kimia Kolam',
+    'pool_item_chem_title' => 'Bahan Kimia Kolam Renang',
+    'pool_item_chem_body' => 'Bahan kimia untuk mengekalkan air kolam yang selamat, bersih dan seimbang.',
+
+    // POOL ESSENTIALS - POOL CHEMICALS
+    'pool_item_chem_chlorine_90_title' => 'Klorin 90% Tablet dan Serbuk',
+    'pool_item_chem_chlorine_90_body' => 'Klorin TCCA kepekatan tinggi dalam bentuk tablet dan serbuk. Membunuh bakteria, mencegah alga, dan mengekalkan air kolam jernih dengan penggunaan yang lebih sedikit.',
+
+    'pool_item_chem_chlorine_90_copper_title' => 'Tablet Klorin 90% dengan Kuprum',
+    'pool_item_chem_chlorine_90_copper_body' => 'Tablet dwi-tindakan menggabungkan 90% klorin TCCA dengan algaesid berasaskan kuprum. Menyahkuman air dan mencegah pertumbuhan alga secara serentak dalam satu produk.',
+
+    'pool_item_chem_chlorine_70_title' => 'Klorin 70% Tablet dan Serbuk',
+    'pool_item_chem_chlorine_70_body' => 'Kalsium Hipoklorit dalam bentuk tablet dan serbuk. Membunuh bakteria dan mengawal alga untuk mengekalkan air kolam bersih dan selamat.',
+
+    'pool_item_chem_ph_up_title' => 'pH Up / Penambah pH',
+    'pool_item_chem_ph_up_body' => 'Serbuk natrium karbonat (soda ash) yang meningkatkan pH dan kealkalian kolam. Gunakan apabila pH turun di bawah 7.2 untuk mengelakkan kerosakan permukaan dan iritasi.',
+
+    'pool_item_chem_ph_minus_title' => 'pH Minus / Penurun pH',
+    'pool_item_chem_ph_minus_body' => 'Serbuk natrium bisulfat yang menurunkan pH dan kealkalian yang tinggi. Gunakan apabila pH melebihi 7.8 untuk mencegah air keruh, pembentukan kerak, dan keberkesanan klorin yang berkurangan.',
+
+    'pool_item_chem_algaecide_title' => 'Algaesid',
+    'pool_item_chem_algaecide_body' => 'Menghapuskan dan mencegah pertumbuhan alga dengan mengganggu fungsi sel alga. Paling berkesan apabila digunakan selepas memberus, menyedut, dan rawatan kejutan klorin.',
+
+    'pool_item_chem_alum_title' => 'Aluminium Sulfat (Alum)',
+    'pool_item_chem_alum_body' => 'Flokulan serbuk putih yang mengikat zarah halus dan alga menjadi gumpalan lebih besar untuk mendap ke dasar kolam, memudahkan pembersihan dan memulihkan kejernihan air.',
+
+    // POOL ITEM MODAL UI
+    'modal_learn_more' => 'Ketahui Lebih Lanjut',
+    'modal_why_use' => 'Mengapa Gunakannya?',
+    'modal_how_to_use' => 'Cara Penggunaan',
+    'modal_key_features' => 'Ciri-Ciri Utama',
+    'modal_packaging' => 'Pembungkusan',
+
+    // POOL ITEM MODAL — CLEANING EQUIPMENT
+    'pool_item_equip_test_kit_feature_1' => 'Menguji tahap Klorin (CL) dan pH dalam satu kit',
+    'pool_item_equip_test_kit_feature_2' => 'Termasuk larutan Phenol Red (pH) dan OTO (klorin)',
+    'pool_item_equip_test_kit_feature_3' => 'Bekas plastik kompak dan tahan lasak untuk penyimpanan mudah',
+
+    'pool_item_equip_chem_scoop_feature_1' => 'Kapasiti sehingga 700 gram',
+    'pool_item_equip_chem_scoop_feature_2' => 'Sesuai untuk mengukur bahan kimia kering dalam auns dan gram',
+    'pool_item_equip_chem_scoop_feature_3' => 'Reka bentuk tahan lasak untuk penyelenggaraan kolam secara berkala',
+
+    'pool_item_equip_vacuum_hose_feature_1' => 'Reka bentuk dua lapisan diperkukuh untuk kekuatan tambahan',
+    'pool_item_equip_vacuum_hose_feature_2' => 'Tersedia dalam panjang 9m (30 kaki) dan 15m (50 kaki)',
+    'pool_item_equip_vacuum_hose_feature_3' => 'Serasi dengan peralatan pembersihan kolam dan skimmer',
+
+    'pool_item_equip_tablet_dispenser_feature_1' => 'Tersedia dalam saiz 5 inci (untuk klorin 70%) dan 8 inci (untuk klorin 90%)',
+    'pool_item_equip_tablet_dispenser_feature_2' => 'Melepaskan bahan sanitasi secara automatik apabila bersentuhan dengan air kolam',
+    'pool_item_equip_tablet_dispenser_feature_3' => 'Sesuai untuk mengekalkan sanitasi air kolam yang konsisten',
+
+    'pool_item_equip_leaf_rake_feature_1' => 'Rangka ABS beracuan biru yang diperkukuh dengan soket deluxe',
+    'pool_item_equip_leaf_rake_feature_2' => 'Jaring nilon dalam untuk pengumpulan daun dan serpihan terapung secara efisien',
+    'pool_item_equip_leaf_rake_feature_3' => 'Sesuai untuk penyelenggaraan kolam renang secara berkala',
+
+    'pool_item_equip_scoop_net_feature_1' => 'Tersedia dalam versi standard atau dengan batang aluminium boleh laras terbina dalam',
+    'pool_item_equip_scoop_net_feature_2' => 'Jaring halus, selamat untuk semua jenis lapisan kolam — tidak mencalarkan permukaan',
+    'pool_item_equip_scoop_net_feature_3' => 'Ringan dan mudah dikendalikan',
+
+    'pool_item_equip_telescopic_pole_feature_1' => 'Dua pilihan saiz: 7.8–15.4 kaki dan 8–16 kaki',
+    'pool_item_equip_telescopic_pole_feature_2' => 'Batang aluminium ringan dengan pemegang PVC yang selesa',
+    'pool_item_equip_telescopic_pole_feature_3' => 'Sistem kunci Cam pantas untuk panjang yang selamat dan boleh dilaraskan',
+
+    'pool_item_equip_algae_brush_feature_1' => 'Lebar 9 inci dengan bulu berus keluli tahan karat yang keras',
+    'pool_item_equip_algae_brush_feature_2' => 'Pemegang snap-adapt sesuai dengan kebanyakan batang teleskopik',
+    'pool_item_equip_algae_brush_feature_3' => 'Tidak disyorkan untuk kolam berlapik vinil atau gentian kaca',
+
+    'pool_item_equip_alu_vacuum_head_feature_1' => 'Kepala lebar 45 cm untuk liputan yang lebih pantas',
+    'pool_item_equip_alu_vacuum_head_feature_2' => 'Jalur fleksibel panjang penuh untuk pengumpulan serpihan yang cekap',
+    'pool_item_equip_alu_vacuum_head_feature_3' => 'Klip spring sesuai dengan kebanyakan tiang teleskopik standard',
+
+    'pool_item_equip_heavy_vacuum_head_feature_1' => 'Tersedia dalam saiz 14 inci, 19 inci, dan 22 inci',
+    'pool_item_equip_heavy_vacuum_head_feature_2' => 'Badan fleksibel disesuaikan dengan permukaan kolam yang tidak rata',
+    'pool_item_equip_heavy_vacuum_head_feature_3' => 'Berus dan penggelek bersepadu memastikan gelongsoran yang lancar',
+
+    'pool_item_equip_pool_brush_feature_1' => 'Kepala selebar 18 inci meliputi lebih banyak kawasan untuk pembersihan lebih pantas',
+    'pool_item_equip_pool_brush_feature_2' => 'Reka bentuk melengkung untuk memberus sudut dan lengkung dengan mudah',
+    'pool_item_equip_pool_brush_feature_3' => 'Bulu berus polipropilena atau nilon distabilkan UV untuk kegunaan tahan lama',
+
+    'pool_item_equip_vacuum_brush_rollers_feature_1' => 'Kepala pembersih selebar 14 inci untuk liputan yang lebih pantas',
+    'pool_item_equip_vacuum_brush_rollers_feature_2' => 'Berus sisi dan penggelek memastikan pembersihan serpihan yang menyeluruh',
+    'pool_item_equip_vacuum_brush_rollers_feature_3' => 'Badan plastik ABS yang kukuh untuk ketahanan jangka panjang',
+
+    // POOL ITEM MODAL — CHEMICALS
+    'pool_item_chem_chlorine_90_subtitle' => 'Asid Trikloroisosianurik (TCCA)',
+    'pool_item_chem_chlorine_90_why_1' => 'Membunuh bakteria dan mikroorganisma berbahaya dengan berkesan',
+    'pool_item_chem_chlorine_90_why_2' => 'Mencegah pertumbuhan alga dalam kolam',
+    'pool_item_chem_chlorine_90_why_3' => 'Mengekalkan paras klorin bebas 1–3 ppm dengan penggunaan lebih sedikit',
+    'pool_item_chem_chlorine_90_how' => 'Tablet: gunakan dispenser terapung atau chlorinator automatik — jangan letakkan terus dalam kolam untuk elakkan pelunturan permukaan. Serbuk: larutkan dalam baldi air bersih dahulu, kemudian tambah secara sekata ke sekeliling kolam atau ke dalam tangki imbangan.',
+    'pool_item_chem_chlorine_90_packaging' => 'Tablet: 2 KG, 50 KG | Serbuk: 25 KG, 50 KG',
+
+    'pool_item_chem_chlorine_90_copper_subtitle' => 'TCCA + Sebatian Kuprum',
+    'pool_item_chem_chlorine_90_copper_why_1' => 'Dwi-tindakan: menyahkuman air dan mencegah alga dalam satu produk',
+    'pool_item_chem_chlorine_90_copper_why_2' => 'Berkesan terhadap alga hitam, hijau, dan mustard',
+    'pool_item_chem_chlorine_90_copper_why_3' => 'Tablet larut perlahan mengurangkan keperluan dos yang kerap',
+    'pool_item_chem_chlorine_90_copper_how' => 'Dos: 1 tablet bagi setiap 10,000 liter air kolam. Letakkan dalam dispenser terapung atau chlorinator automatik. Gantikan tablet apabila larut. Pantau paras kuprum — kuprum berlebihan boleh menyebabkan kesan kotoran pada permukaan kolam.',
+    'pool_item_chem_chlorine_90_copper_packaging' => 'Tablet: 25 KG',
+
+    'pool_item_chem_chlorine_70_subtitle' => 'Kalsium Hipoklorit',
+    'pool_item_chem_chlorine_70_why_1' => 'Membunuh bakteria dan mikroorganisma berbahaya dengan berkesan',
+    'pool_item_chem_chlorine_70_why_2' => 'Mengawal pertumbuhan alga dan mengekalkan air selamat',
+    'pool_item_chem_chlorine_70_why_3' => 'Sebatian stabil dengan ketulenan 60–70% untuk sanitasi yang boleh dipercayai',
+    'pool_item_chem_chlorine_70_how' => 'Tablet: gunakan dispenser terapung atau chlorinator automatik. Serbuk: larutkan dalam baldi air bersih, kemudian tambah secara sekata ke sekeliling kolam. Kekalkan klorin bebas pada 1–3 ppm. Tambah dos selepas hujan lebat atau penggunaan tinggi.',
+    'pool_item_chem_chlorine_70_packaging' => 'Serbuk: 3 KG, 5 KG, 40 KG | Tablet: 40 KG',
+
+    'pool_item_chem_ph_up_subtitle' => 'Natrium Karbonat / Soda Ash',
+    'pool_item_chem_ph_up_why_1' => 'Meningkatkan pH kolam dan kealkalian secara serentak',
+    'pool_item_chem_ph_up_why_2' => 'Mencegah hakisan permukaan dan kakisan akibat air berasid',
+    'pool_item_chem_ph_up_why_3' => 'Mengurangkan iritasi kulit dan mata disebabkan pH rendah',
+    'pool_item_chem_ph_up_how' => 'Gunakan apabila pH turun di bawah 7.2 atau kealkalian jatuh di bawah 80 ppm. Sentiasa uji air sebelum dan selepas penggunaan. Dos berlebihan boleh menyebabkan air keruh — tambah secara beransur dan uji semula.',
+    'pool_item_chem_ph_up_packaging' => 'Serbuk: 2 KG, 25 KG',
+
+    'pool_item_chem_ph_minus_subtitle' => 'Natrium Bisulfat / Asid Kering',
+    'pool_item_chem_ph_minus_why_1' => 'Menurunkan pH dan kealkalian yang tinggi dengan selamat dan berkesan',
+    'pool_item_chem_ph_minus_why_2' => 'Mencegah air keruh, pembentukan kerak, dan mendapan mineral',
+    'pool_item_chem_ph_minus_why_3' => 'Memulihkan keberkesanan klorin apabila pH terlalu tinggi',
+    'pool_item_chem_ph_minus_how' => 'Gunakan apabila pH melebihi 7.8. Alternatif lebih selamat berbanding asid hidroklorik cecair. Kendalikan dengan berhati-hati — sangat menghakis. Elakkan sentuhan dengan kulit, mata, dan jangan hidu wap. Sentiasa guna peralatan keselamatan yang sesuai.',
+    'pool_item_chem_ph_minus_packaging' => 'Serbuk: 2 KG, 25 KG',
+
+    'pool_item_chem_algaecide_subtitle' => 'Rawatan Penghapus dan Pencegah Alga',
+    'pool_item_chem_algaecide_why_1' => 'Menghapuskan dan mencegah pertumbuhan alga dan kulat dalam air kolam',
+    'pool_item_chem_algaecide_why_2' => 'Mengganggu fungsi sel alga — menghentikan fotosintesis dan merosakkan dinding sel',
+    'pool_item_chem_algaecide_why_3' => 'Berfungsi sebagai antimikrob dan moluskisid',
+    'pool_item_chem_algaecide_how' => 'Paling berkesan apabila digunakan selepas memberus, menyedut kotoran, dan melakukan rawatan kejutan dengan klorin sekurang-kurangnya 70%. Selamat berenang 15–30 minit selepas penggunaan. Simpan dalam bekas tertutup rapat di tempat sejuk dan kering.',
+
+    'pool_item_chem_alum_subtitle' => 'Flokulan Aluminium Sulfat',
+    'pool_item_chem_alum_why_1' => 'Mengikat zarah halus dan alga menjadi gumpalan besar yang mendap ke dasar',
+    'pool_item_chem_alum_why_2' => 'Memulihkan kejernihan air kolam yang keruh',
+    'pool_item_chem_alum_why_3' => 'Membantu mengurangkan paras bakteria dengan menyingkirkan bahan organik',
+    'pool_item_chem_alum_how' => 'Larutkan dalam baldi air, tukar pam ke mod Recirculate, tuang secara sekata ke sekeliling kolam, jalankan pam 4+ jam (kacau setiap 2 jam), kemudian matikan pam dan biarkan mendap semalaman. Esoknya: tukar ke mod Waste dan vakum mendapan terus ke saliran. Jangan berenang semasa alum masih aktif.',
+    'pool_item_chem_alum_packaging' => 'Dos disyorkan: 5,000g bagi setiap 10,000 liter air kolam',
+
     // POOL SHOWCASE
     'showcase_title_heading' => 'Galeri',
     'showcase_subtitle_heading' => 'Koleksi projek kolam renang kami yang telah siap',

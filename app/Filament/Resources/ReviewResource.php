@@ -2,37 +2,33 @@
 
 namespace App\Filament\Resources;
 
-use Filament\Schemas\Schema;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\RichEditor;
-use Filament\Forms\Components\Radio;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Actions\ViewAction;
-use Filament\Actions\EditAction;
-use Filament\Actions\BulkActionGroup;
-use Filament\Actions\DeleteBulkAction;
-use App\Filament\Resources\ReviewResource\Pages\ListReviews;
 use App\Filament\Resources\ReviewResource\Pages\CreateReview;
 use App\Filament\Resources\ReviewResource\Pages\EditReview;
-use App\Filament\Resources\ReviewResource\Pages;
-use App\Filament\Resources\ReviewResource\RelationManagers;
+use App\Filament\Resources\ReviewResource\Pages\ListReviews;
 use App\Models\Review;
-use Filament\Forms;
-use Filament\Forms\Components\ViewField;
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteBulkAction;
+use Filament\Actions\EditAction;
+use Filament\Actions\ViewAction;
+use Filament\Forms\Components\Radio;
+use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
 use Filament\Resources\Resource;
-use Filament\Tables;
+use Filament\Schemas\Schema;
+use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Symfony\Component\Yaml\Inline;
 
 class ReviewResource extends Resource
 {
     protected static ?string $model = Review::class;
 
-    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-star';
+    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-star';
+
     protected static ?string $navigationLabel = 'Reviews';
-    protected static string | \UnitEnum | null $navigationGroup = 'Content Management';
+
+    protected static string|\UnitEnum|null $navigationGroup = 'Content Management';
 
     public static function getNavigationBadge(): ?string
     {
@@ -47,7 +43,7 @@ class ReviewResource extends Resource
             TextInput::make('reviewer_name')
                 ->label('Reviewer Name')
                 ->required(),
-                TextInput::make('reviewer_location')
+            TextInput::make('reviewer_location')
                 ->label('Reviewer Location'),
             RichEditor::make('review')
                 ->required()
@@ -68,13 +64,15 @@ class ReviewResource extends Resource
                     '2' => '2. Fair',
                     '3' => '3. Good',
                     '4' => '4. Very Good',
-                    '5' => '5. Excellent'
+                    '5' => '5. Excellent',
                 ])
                 ->inline()
                 ->columnSpanFull(),
+            Toggle::make('is_published')
+                ->label('Published')
+                ->columnSpanFull(),
         ]);
     }
-
 
     public static function table(Table $table): Table
     {
@@ -82,19 +80,22 @@ class ReviewResource extends Resource
             ->columns([
                 TextColumn::make('review')
                     ->label('Review')
-                    ->description(fn(Review $record): string => '- ' . $record->reviewer_name.' from '.$record->reviewer_location)
+                    ->description(fn (Review $record): string => '- '.$record->reviewer_name.' from '.$record->reviewer_location)
                     ->searchable()
                     ->wrap()
                     ->html(),
                 TextColumn::make('rating')
                     ->label('Rating')
-                    ->icon(fn(string $state): string => match ($state) {
+                    ->icon(fn (string $state): string => match ($state) {
                         '1' => 'heroicon-o-star',
                         '2' => 'heroicon-o-star',
                         '3' => 'heroicon-o-star',
                         '4' => 'heroicon-o-star',
                         '5' => 'heroicon-o-star',
                     }),
+                IconColumn::make('is_published')
+                    ->label('Published')
+                    ->boolean(),
                 TextColumn::make('created_at')
                     ->label('Created at')
                     ->dateTime()

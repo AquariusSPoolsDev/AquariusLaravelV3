@@ -10,12 +10,13 @@ class Review extends Model
     use HasFactory;
 
     protected $table = 'reviews';
-    
+
     protected $fillable = [
         'reviewer_name',
         'reviewer_location',
         'review',
         'rating',
+        'is_published',
         'uploader_id',
     ];
 
