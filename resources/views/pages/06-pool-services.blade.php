@@ -30,39 +30,39 @@ $headerSubtitle = 'pool_service_subtitle_heading';
         <x-pool-services.pool-service-card 
             title="{{ __('strings.pool_service_item_1_title') }}" 
             :content="[__('strings.pool_service_item_1_content_1'),__('strings.pool_service_item_1_content_2')]" 
-            image="assets/images/pool-design.jpg" 
-            :isReversed="false" 
+            image="assets/images/pool-services/pool-design.jpg"
+            :isReversed="false"
         />
 
         {{-- SERVICE #2 --}}
-        <x-pool-services.pool-service-card 
-            title="{{ __('strings.pool_service_item_2_title') }}" 
-            :content="[__('strings.pool_service_item_2_content_1'), __('strings.pool_service_item_2_content_2'), __('strings.pool_service_item_2_content_3')]" 
-            image="assets/images/pool-maintainence.jpg" 
-            :isReversed="true" 
+        <x-pool-services.pool-service-card
+            title="{{ __('strings.pool_service_item_2_title') }}"
+            :content="[__('strings.pool_service_item_2_content_1'), __('strings.pool_service_item_2_content_2'), __('strings.pool_service_item_2_content_3')]"
+            image="assets/images/pool-services/pool-maintainence.jpg"
+            :isReversed="true"
         />
 
         {{-- SERVICE #3 --}}
-        <x-pool-services.pool-service-card 
-            title="{{ __('strings.pool_service_item_3_title') }}" 
-            :content="[__('strings.pool_service_item_3_content_1'),__('strings.pool_service_item_3_content_2'),__('strings.pool_service_item_3_content_3')]" 
-            image="assets/images/pool-restore.jpg" 
-            :isReversed="false" 
+        <x-pool-services.pool-service-card
+            title="{{ __('strings.pool_service_item_3_title') }}"
+            :content="[__('strings.pool_service_item_3_content_1'),__('strings.pool_service_item_3_content_2'),__('strings.pool_service_item_3_content_3')]"
+            image="assets/images/pool-services/pool-restore.jpg"
+            :isReversed="false"
         />
 
         {{-- SERVICE #4 --}}
-        <x-pool-services.pool-service-card 
-            title="{{ __('strings.pool_service_item_4_title') }}" 
-            :content="[__('strings.pool_service_item_4_content_1'), __('strings.pool_service_item_4_content_2'), __('strings.pool_service_item_4_content_3')]" 
-            image="assets/images/pool-supplies.jpg" 
-            :isReversed="true" 
+        <x-pool-services.pool-service-card
+            title="{{ __('strings.pool_service_item_4_title') }}"
+            :content="[__('strings.pool_service_item_4_content_1'), __('strings.pool_service_item_4_content_2'), __('strings.pool_service_item_4_content_3')]"
+            image="assets/images/pool-services/pool-supplies.jpg"
+            :isReversed="true"
         />
 
         {{-- SERVICE #5 --}}
-        <x-pool-services.pool-service-card 
-            title="{{ __('strings.pool_service_item_5_title') }}" 
-            :content="[__('strings.pool_service_item_5_content_1')]" 
-            image="assets/images/pool-after-sale.jpg" 
+        <x-pool-services.pool-service-card
+            title="{{ __('strings.pool_service_item_5_title') }}"
+            :content="[__('strings.pool_service_item_5_content_1')]"
+            image="assets/images/pool-services/pool-after-sale.jpg"
             :isReversed="false" 
         />
     </div>

@@ -774,14 +774,14 @@ footer.aquarius-footer {
     @apply grid gap-16 lg:gap-24 mt-12;
 
     .pool-service-body {
-        @apply flex max-lg:flex-col lg:justify-between lg:gap-16;
+        @apply flex items-center max-lg:flex-col lg:justify-between lg:gap-16;
     }
 
     .pool-service-image-side {
         @apply w-full lg:w-1/3 max-lg:order-2;
 
         .pool-service-relative {
-            @apply relative border border-neutral-200 transition w-full max-lg:aspect-4/3 lg:aspect-video! rounded-lg overflow-hidden active:scale-97;
+            @apply relative border border-neutral-200 transition w-full aspect-video rounded-lg overflow-hidden active:scale-97;
         }
 
         .pool-service-absolute {
