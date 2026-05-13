@@ -25,11 +25,10 @@ $headerSubtitle = 'projects_subtitle_heading';
 @if($projects->isNotEmpty())
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         @foreach($projects as $project)
-        <a href="{{ route('project-detail-page', $project->slug) }}"
-           class="group bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col">
+        <a href="{{ route('project-detail-page', $project->slug) }}" class="group bg-white border border-neutral-200 rounded-lg overflow-hidden h-full break-before-avoid transition-all duration-300 hover:-translate-y-1 hover:border-primary-300 hover:shadow-lg hover:shadow-primary-100">
 
             {{-- COVER IMAGE --}}
-            <div class="aspect-video overflow-hidden bg-gray-100">
+            <div class="aspect-video overflow-hidden bg-neutral-100">
                 @if($project->gallery_images && count($project->gallery_images))
                     <img
                         src="{{ asset('storage/' . $project->gallery_images[0]) }}"
@@ -38,17 +37,16 @@ $headerSubtitle = 'projects_subtitle_heading';
                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     >
                 @else
-                    <div class="w-full h-full flex items-center justify-center bg-primary/10">
-                        <svg class="w-16 h-16 text-primary/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="w-full h-full flex items-center justify-center bg-primary-50">
+                        <svg class="w-16 h-16 text-primary-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3 21h18M3.75 3h16.5M4.5 3v18M19.5 3v18" />
                         </svg>
                     </div>
                 @endif
-
             </div>
 
             {{-- CARD CONTENT --}}
-            <div class="p-5 flex flex-col flex-1">
+            <div class="flex flex-col flex-1 p-4">
                 <h2 class="font-bold text-lg text-neutral-900 mb-1 group-hover:text-primary transition-colors">
                     {{ $project->title }}
                 </h2>
