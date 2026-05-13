@@ -5,12 +5,17 @@ return [
 
     // NAVBAR
     'navbar_homepage' => 'Homepage',
+    'navbar_about' => 'About Us',
+    'navbar_about_us' => 'About Us',
+    'navbar_showroom' => 'Showroom',
     'navbar_our_pools' => 'Our Pools',
     'navbar_our_pools_concrete' => 'Concrete Pools',
     'navbar_our_pools_vinyl' => 'Vinyl Pools',
     'navbar_our_pools_fibreglass' => 'Fibreglass Pools',
     'navbar_our_pools_compare' => 'Pools Comparison',
+    'navbar_our_work' => 'Our Work',
     'navbar_pool_showcase' => 'Showcase',
+    'navbar_projects' => 'Notable Projects',
     'navbar_our_services' => 'Our Services',
     'navbar_our_services_pool' => 'Pool Services',
     'navbar_our_services_essential' => 'Essential Pool Items',
@@ -86,12 +91,16 @@ return [
     'footer_our_services_supplies' => 'Pool Supplies',
     'footer_extra' => 'Extra',
     'footer_pool_showcase' => 'Pool Gallery Showcase',
+    'footer_projects' => 'Notable Projects',
+    'footer_about_us' => 'About Us',
+    'footer_showroom' => 'Showroom',
     'footer_contact' => 'Contact',
     'footer_contact_title' => 'Contact Us',
     'footer_promotion' => 'Promotions',
     'footer_reviews' => 'Reviews',
     'footer_terms' => 'Terms & Conditions',
     'footer_privacy' => 'Privacy Policy',
+    'footer_developed_by' => 'Website developed by ',
     'footer_faq' => 'Frequently Asked Questions (FAQs)',
 
     // BOTTOM FIXED BUTTON
@@ -561,14 +570,23 @@ return [
     'showcase_how_to_use_4_title' => 'Reset Your Search:',
     'showcase_how_to_use_4_body' => 'Click the “Reset Filters” button to clear your search and start fresh.',
 
+    // ABOUT US
+    'about_title_heading' => 'About Us',
+    'about_subtitle_heading' => '',
+
+    // SHOWROOM
+    'showroom_title_heading' => 'Showroom',
+    'showroom_subtitle_heading' => '',
+
     // CONTACT
     'contact_title_heading' => 'Contact',
     'contact_subtitle_heading' => 'Connect with Aquarius team',
     'contact_fill_body' => 'If you have any queries, you can fill up this form below.',
     'contact_visit_showpool_pill' => 'Visit Us',
-    'contact_visit_showpool_heading' => 'Visit Our Showpool',
-    'contact_visit_showpool_desc' => 'You can also visit us in person at our showpool during business hours.',
-    'contact_showpool_address_title' => 'Showpool Address',
+    'contact_visit_showpool_heading' => 'Visit Our Showroom',
+    'contact_visit_showpool_link' => 'Have a look at our showroom',
+    'contact_visit_showpool_desc' => 'You can also visit us in person at our showroom during business hours.',
+    'contact_showpool_address_title' => 'Showroom Address',
     'contact_business_hours_title' => 'Business Hours',
     'contact_mon_fri' => 'Monday to Friday',
     'contact_sat' => 'Saturday',
@@ -763,4 +781,17 @@ return [
     'sitemap_pools_heading' => 'Our Pools',
     'sitemap_pool_service_heading' => 'Pool Services',
     'sitemap_pool_overview' => 'Our Pools Overview',
+
+    // NOTABLE PROJECTS
+    'projects_title_heading' => 'Notable Projects',
+    'projects_subtitle_heading' => 'A showcase of our most remarkable completed projects across Malaysia.',
+    'projects_no_projects_title' => 'No Projects Found',
+    'projects_no_projects_body' => 'Check back soon for our project showcase.',
+    'projects_back_to_projects' => 'Back to Projects',
+    'projects_location_label' => 'Location',
+    'projects_year_label' => 'Year Completed',
+    'projects_view_project' => 'View Project',
+    'projects_get_quote' => 'Get a Quote',
+    'projects_contact_cta_title' => 'Inspired? Let\'s Build Yours.',
+    'projects_contact_cta_body' => 'Every great pool starts with a conversation. Reach out to our team today.',
 ];

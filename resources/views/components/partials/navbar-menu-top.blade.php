@@ -50,6 +50,13 @@
                                     {{__('strings.navbar_homepage')}}
                                 </a>
 
+                                {{-- ABOUT US LINK --}}
+                                <a class="nav-link {{ Route::currentRouteName() === 'about-page' ? 'nav-link-active' : '' }}"
+                                    href="{{ route('about-page') }}">
+                                    {{__('strings.navbar_about_us')}}
+                                </a>
+                                {{-- ABOUT US LINK --}}
+
                                 {{-- DROPDOWN: OUR POOLS --}}
                                 <div class="nav-dropdown" x-data="{ open: false }" @click.outside="open = false">
                                     <button type="button" class="nav-dropdown-btn"
@@ -91,10 +98,37 @@
                                 {{-- DROPDOWN: OUR POOLS --}}
 
 
-                                <a class="nav-link {{ Route::currentRouteName() === 'pool-showcase-gallery' ? 'nav-link-active' : '' }}"
-                                    href="{{ route('pool-showcase-gallery') }}">
-                                    {{__('strings.navbar_pool_showcase')}}
-                                </a>
+                                {{-- DROPDOWN: OUR WORK --}}
+                                <div class="nav-dropdown" x-data="{ open: false }" @click.outside="open = false">
+                                    <button type="button" class="nav-dropdown-btn"
+                                        :class="{ 'nav-link-active': {{ in_array(Route::currentRouteName(), ['pool-showcase-gallery', 'projects-page', 'project-detail-page']) ? 'true' : 'false' }} }"
+                                        :aria-expanded="open"
+                                        @click="open = !open">
+                                        {{__('strings.navbar_our_work')}}
+                                        <svg class="nav-dropdown-chevron"
+                                            :style="open ? 'transform: rotate(-180deg)' : ''"
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="m6 9 6 6 6-6" />
+                                        </svg>
+                                    </button>
+
+                                    <div class="nav-dropdown-menu" x-show="open" x-cloak role="menu" aria-orientation="vertical">
+                                        <div class="py-1 space-y-0.5">
+                                            <a class="nav-link {{ Route::currentRouteName() === 'pool-showcase-gallery' ? 'nav-link-active' : '' }}"
+                                                href="{{ route('pool-showcase-gallery') }}">
+                                                {{__('strings.navbar_pool_showcase')}}
+                                            </a>
+
+                                            <a class="nav-link {{ in_array(Route::currentRouteName(), ['projects-page', 'project-detail-page']) ? 'nav-link-active' : '' }}"
+                                                href="{{ route('projects-page') }}">
+                                                {{__('strings.navbar_projects')}}
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- DROPDOWN: OUR WORK --}}
 
                                 {{-- DROPDOWN: OUR SERVICES --}}
                                 <div class="nav-dropdown" x-data="{ open: false }" @click.outside="open = false">
@@ -202,6 +236,9 @@
             {{-- NAVIGATION --}}
         </nav>
     </div>
+
+    {{-- SCROLL PROGRESS BAR --}}
+    <div id="scroll-progress-bar" class="h-1 bg-linear-to-r from-secondary-300 via-secondary to-secondary-600 origin-left" style="transform: scaleX(0); transition: transform 0.1s linear;"></div>
 
     {{-- ANNOUCEMENT BANNER --}}
     <x-partials.navbar-annoucement-banner />

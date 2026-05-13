@@ -3,6 +3,7 @@
 use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\ImageGalleryController;
 use App\Http\Controllers\localeController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ReviewController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,11 @@ Route::post('change-language', [localeController::class, 'setLocale']);
 Route::get('/', function () {
     return view('pages.01-homepage');
 })->name('homepage');
+
+// ABOUT US
+Route::get('/about-us', function () {
+    return view('pages.19-about-us');
+})->name('about-page');
 
 // 2. OUR POOLS (WITH COMPARASION)
 Route::get('/our-pools', function () {
@@ -47,6 +53,10 @@ Route::get('/pool-items-equipments', function () {
 
 // 8. SHOWCASE
 Route::match(['get', 'post'], '/showcase', [ImageGalleryController::class, 'index'])->name('pool-showcase-gallery');
+
+// 8A. NOTABLE PROJECTS
+Route::get('/projects', [ProjectController::class, 'index'])->name('projects-page');
+Route::get('/projects/{slug}', [ProjectController::class, 'show'])->name('project-detail-page');
 
 // 9. REVIEWS
 Route::match(['get', 'post'], '/reviews', [ReviewController::class, 'index'])->name('customer-reviews-page');

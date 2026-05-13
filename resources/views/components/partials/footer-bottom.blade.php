@@ -54,10 +54,13 @@
                 <h4 class="aquarius-footer-heading">{{__('strings.footer_contact_title')}}</h4>
 
                 <div class="mt-4 flex flex-col gap-y-4">
+                    <p><a class="aquarius-footer-links" href="{{ route('about-page') }}">{{__('strings.footer_about_us')}}</a></p>
+
+                    <p><a class="aquarius-footer-links" href="{{ route('about-page') }}#showroom">{{__('strings.footer_showroom')}}</a></p>
+
                     <p><a class="aquarius-footer-links" href="{{ route('contact-page') }}">{{__('strings.footer_contact')}}</a></p>
 
-                    <p><a class="aquarius-footer-links" href="{{ route('faq-page') }}">{{__('strings.footer_faq')}}</a>
-                    </p>
+                    <p><a class="aquarius-footer-links" href="{{ route('faq-page') }}">{{__('strings.footer_faq')}}</a></p>
                 </div>
             </div>
 
@@ -67,6 +70,8 @@
 
                 <div class="mt-4 flex flex-col gap-y-4">
                     <p><a class="aquarius-footer-links" href="{{ route('pool-showcase-gallery') }}">{{__('strings.footer_pool_showcase')}}</a></p>
+
+                    <p><a class="aquarius-footer-links" href="{{ route('projects-page') }}">{{__('strings.footer_projects')}}</a></p>
 
                     <p><a class="aquarius-footer-links" href="{{ route('customer-reviews-page') }}">{{__('strings.footer_reviews')}}</a></p>
 
@@ -78,12 +83,15 @@
         {{-- BOTTOM ROW --}}
         <div class="bottom-row">
             <div class="flex gap-y-4 max-lg:flex-col justify-center lg:justify-between">
-                <div class="flex flex-wrap items-center gap-3 max-lg:order-3">
+                <div class="flex flex-wrap flex-col gap-2 max-lg:order-3">
                     <div class="space-x-4">
                         <a class="aquarius-footer-links"
                             href="{{ route('terms-page') }}">{{__('strings.footer_terms')}}</a>
                         <a class="aquarius-footer-links"
                             href="{{ route('privacy-page') }}">{{__('strings.footer_privacy')}}</a>
+                    </div>
+                    <div class="text-sm text-neutral-400">
+                        {{__('strings.footer_developed_by')}}<a class="aquarius-footer-links" href="https://usoppii.my/" target="_blank" rel="noreferrer">Usoppii.my</a>.
                     </div>
                 </div>
 

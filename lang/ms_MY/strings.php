@@ -5,12 +5,17 @@ return [
 
     // NAVBAR
     'navbar_homepage' => 'Laman Utama',
+    'navbar_about' => 'Tentang Kami',
+    'navbar_about_us' => 'Tentang Kami',
+    'navbar_showroom' => 'Bilik Pameran',
     'navbar_our_pools' => 'Kolam Renang Kami',
     'navbar_our_pools_concrete' => 'Kolam Renang Konkrit',
     'navbar_our_pools_vinyl' => 'Kolam Renang Vinil',
     'navbar_our_pools_fibreglass' => 'Kolam Renang Gentian Kaca',
     'navbar_our_pools_compare' => 'Perbandingan antara Kolam Renang',
+    'navbar_our_work' => 'Hasil Kerja',
     'navbar_pool_showcase' => 'Galeri',
+    'navbar_projects' => 'Projek Terkemuka',
     'navbar_our_services' => 'Perkhidmatan Kami',
     'navbar_our_services_pool' => 'Perkhidmatan Kolam Renang',
     'navbar_our_services_essential' => 'Peralatan Kolam Renang',
@@ -86,12 +91,16 @@ return [
     'footer_our_services_supplies' => 'Kedai Kolam Renang',
     'footer_extra' => 'Lain-lain',
     'footer_pool_showcase' => 'Galeri Kolam Renang',
+    'footer_projects' => 'Projek Terkemuka',
+    'footer_about_us' => 'Tentang Kami',
+    'footer_showroom' => 'Bilik Pameran',
     'footer_contact' => 'Hubungi Kami',
     'footer_contact_title' => 'Hubungi Kami',
     'footer_promotion' => 'Promosi',
     'footer_reviews' => 'Ulasan Pelanggan',
     'footer_terms' => 'Terma & Syarat',
     'footer_privacy' => 'Dasar Privasi',
+    'footer_developed_by' => 'Laman Web dibangunkan oleh ',
     'footer_faq' => 'Soalan Lazim',
 
     // BOTTOM FIXED BUTTON
@@ -561,14 +570,23 @@ return [
     'showcase_how_to_use_4_title' => 'Set Semula Carian Anda:',
     'showcase_how_to_use_4_body' => 'Tekan butang "Set Semula Carian" untuk mengosongkan carian anda dan mulakan dengan baharu.',
 
+    // ABOUT US
+    'about_title_heading' => 'Tentang Kami',
+    'about_subtitle_heading' => '',
+
+    // SHOWROOM
+    'showroom_title_heading' => 'Bilik Pameran',
+    'showroom_subtitle_heading' => '',
+
     // CONTACT
     'contact_title_heading' => 'Hubungi Kami',
     'contact_subtitle_heading' => 'Hubungi pasukan Aquarius',
     'contact_fill_body' => 'Jika anda mempunyai sebarang soalan, anda boleh mengisi borang di bawah.',
     'contact_visit_showpool_pill' => 'Lawati Kami',
     'contact_visit_showpool_heading' => 'Kunjungi Bilik Pameran Kolam Renang Kami',
+    'contact_visit_showpool_link' => 'Lihat bilik pameran di sini',
     'contact_visit_showpool_desc' => 'Anda juga boleh melawat kami secara terus di bilik pameran kami semasa waktu perniagaan.',
-    'contact_showpool_address_title' => 'Alamat Kolam Pameran',
+    'contact_showpool_address_title' => 'Alamat Bilik Pameran',
     'contact_business_hours_title' => 'Waktu Perniagaan',
     'contact_mon_fri' => 'Isnin hingga Jumaat',
     'contact_sat' => 'Sabtu',
@@ -763,4 +781,17 @@ return [
     'sitemap_pools_heading' => 'Kolam Kami',
     'sitemap_pool_service_heading' => 'Perkhidmatan Kami',
     'sitemap_pool_overview' => 'Gambaran Keseluruhan Kolam Renang Kami',
+
+    // NOTABLE PROJECTS
+    'projects_title_heading' => 'Projek Terkemuka',
+    'projects_subtitle_heading' => 'Pameran projek-projek terbaik kami yang telah siap di seluruh Malaysia.',
+    'projects_no_projects_title' => 'Tiada Projek Dijumpai',
+    'projects_no_projects_body' => 'Kembali semula tidak lama lagi untuk pameran projek kami.',
+    'projects_back_to_projects' => 'Kembali ke Projek',
+    'projects_location_label' => 'Lokasi',
+    'projects_year_label' => 'Tahun Siap',
+    'projects_view_project' => 'Lihat Projek',
+    'projects_get_quote' => 'Dapatkan Sebutan Harga',
+    'projects_contact_cta_title' => 'Terinspirasi? Mari Bina Kolam Anda.',
+    'projects_contact_cta_body' => 'Setiap kolam yang hebat bermula dengan perbualan. Hubungi pasukan kami hari ini.',
 ];
