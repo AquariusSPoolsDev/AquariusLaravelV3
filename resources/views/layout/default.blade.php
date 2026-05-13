@@ -21,6 +21,9 @@
         </article>
     </main>
 
+    {{-- FULL-WIDTH CTA BANNER (opt-in per page via @section('cta')) --}}
+    @yield('cta')
+
     <x-partials.footer-bottom />
     <x-partials-br.back-to-top-btn />
     <x-partials-br.chat-btn-wa />
