@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Enums\PoolTags;
 use App\Filament\Resources\ImageGalleryResource\Pages\CreateImageGallery;
 use App\Filament\Resources\ImageGalleryResource\Pages\EditImageGallery;
 use App\Filament\Resources\ImageGalleryResource\Pages\ListImageGalleries;
@@ -90,43 +91,7 @@ class ImageGalleryResource extends Resource
                     ->label('Pool Image Tags')
                     ->hint('Use appropriate tags for the image')
                     ->multiple()
-                    ->options([
-                        'Concrete' => 'Concrete',
-                        'Vinyl' => 'Vinyl',
-                        'Fibreglass' => 'Fibreglass',
-                        'Skimmer' => 'Skimmer',
-                        'Overflow' => 'Overflow',
-                        'Infinity' => 'Infinity',
-                        'Residential Pool' => 'Residential Pool',
-                        'Commercial Pool' => 'Commercial Pool',
-                        'Balinese' => 'Balinese',
-                        'Lampang' => 'Lampang',
-                        'Customised Tiling' => 'Customised Tiling',
-                        'Jacuzzi' => 'Jacuzzi',
-                        'Heated Pool' => 'Heated Pool',
-                        'Kids Pool' => 'Kids Pool',
-                        'Lightweight Panel Pool' => 'Lightweight Panel Pool',
-                        'Timber Deck' => 'Timber Deck',
-                        'Concrete Deck' => 'Concrete Deck',
-                        'Water Features' => 'Water Features',
-                        'Waterfall' => 'Waterfall',
-                        'Nature' => 'Nature',
-                        'Water Fountain' => 'Water Fountain',
-                        'Oasis' => 'Oasis',
-                        'Luxurious' => 'Luxurious',
-                        'Landscape Design' => 'Landscape Design',
-                        'Wading Pool' => 'Wading Pool',
-                        'Private Pool' => 'Private Pool',
-                        'Contemporary' => 'Contemporary',
-                        'Swimming Pool' => 'Swimming Pool',
-                        'Gazebos' => 'Gazebos',
-                        'Minimalism' => 'Minimalism',
-                        'LED Lights' => 'LED Lights',
-                        'Fitness' => 'Fitness',
-                        'Backyard' => 'Backyard',
-                        'Mosaic Tiles' => 'Mosaic Tiles',
-                        'Safety Fence' => 'Safety Fence',
-                    ]),
+                    ->options(PoolTags::options()),
                 Toggle::make('is_published')
                     ->label('Publish this Image?')
                     ->default(0),
@@ -174,43 +139,7 @@ class ImageGalleryResource extends Resource
                     ->label('Published'),
                 SelectFilter::make('image_tags')
                     ->label('Pool Tags')
-                    ->options([
-                        'Concrete' => 'Concrete',
-                        'Vinyl' => 'Vinyl',
-                        'Fibreglass' => 'Fibreglass',
-                        'Skimmer' => 'Skimmer',
-                        'Overflow' => 'Overflow',
-                        'Infinity' => 'Infinity',
-                        'Residential Pool' => 'Residential Pool',
-                        'Commercial Pool' => 'Commercial Pool',
-                        'Balinese' => 'Balinese',
-                        'Lampang' => 'Lampang',
-                        'Customised Tiling' => 'Customised Tiling',
-                        'Jacuzzi' => 'Jacuzzi',
-                        'Heated Pool' => 'Heated Pool',
-                        'Kids Pool' => 'Kids Pool',
-                        'Lightweight Panel Pool' => 'Lightweight Panel Pool',
-                        'Timber Deck' => 'Timber Deck',
-                        'Concrete Deck' => 'Concrete Deck',
-                        'Water Features' => 'Water Features',
-                        'Waterfall' => 'Waterfall',
-                        'Nature' => 'Nature',
-                        'Water Fountain' => 'Water Fountain',
-                        'Oasis' => 'Oasis',
-                        'Luxurious' => 'Luxurious',
-                        'Landscape Design' => 'Landscape Design',
-                        'Wading Pool' => 'Wading Pool',
-                        'Private Pool' => 'Private Pool',
-                        'Contemporary' => 'Contemporary',
-                        'Swimming Pool' => 'Swimming Pool',
-                        'Gazebos' => 'Gazebos',
-                        'Minimalism' => 'Minimalism',
-                        'LED Lights' => 'LED Lights',
-                        'Fitness' => 'Fitness',
-                        'Backyard' => 'Backyard',
-                        'Mosaic Tiles' => 'Mosaic Tiles',
-                        'Safety Fence' => 'Safety Fence',
-                    ])
+                    ->options(PoolTags::options())
                     ->query(fn (Builder $query, array $data) => $query->when(
                         $data['value'],
                         fn (Builder $query, string $value) => $query->whereRaw('JSON_CONTAINS(image_tags, ?)', [json_encode($value)])

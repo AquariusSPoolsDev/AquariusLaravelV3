@@ -2,56 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\PoolTags;
 use App\Models\ImageGallery;
 use Illuminate\Http\Request;
 
 class ImageGalleryController extends Controller
 {
-    // Predefined tags (can be moved to a config file later)
-    private $predefinedTags = [
-        'Concrete',
-        'Vinyl',
-        'Fibreglass',
-        'Skimmer',
-        'Overflow',
-        'Infinity',
-        'Residential Pool',
-        'Commercial Pool',
-        'Balinese',
-        'Lampang',
-        'Customised Tiling',
-        'Jacuzzi',
-        'Heated Pool',
-        'Kids Pool',
-        'Lightweight Panel Pool',
-        'Timber Deck',
-        'Concrete Deck',
-        'Water Features',
-        'Waterfall',
-        'Nature',
-        'Water Fountain',
-        'Oasis',
-        'Luxurious',
-        'Landscape Design',
-        'Wading Pool',
-        'Private Pool',
-        'Contemporary',
-        'Swimming Pool',
-        'Gazebos',
-        'Minimalism',
-        'LED Lights',
-        'Fitness',
-        'Backyard',
-        'Mosaic Tiles',
-        'Safety Fence',
-    ];
-
-    private function getTranslatedTags()
+    private function getTranslatedTags(): array
     {
         $translatedTags = [];
-        foreach ($this->predefinedTags as $tag) {
-            $translationKey = str_replace(' ', '_', strtolower($tag));
-            $translatedTags[$tag] = __('strings.'.$translationKey);
+        foreach (array_keys(PoolTags::options()) as $tag) {
+            $translatedTags[$tag] = PoolTags::translate($tag);
         }
 
         return $translatedTags;
@@ -98,7 +59,7 @@ class ImageGalleryController extends Controller
         // Regular page load
         return view('pages.08-pool-showcase-gallery', [
             'images' => $images,
-            'tags' => $this->predefinedTags,
+            'tags' => array_keys(PoolTags::options()),
             'translatedTags' => $translatedTags,
             'galleryId' => $galleryId, // Pass the dynamic gallery ID to the view
         ]);
