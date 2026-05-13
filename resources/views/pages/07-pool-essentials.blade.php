@@ -29,15 +29,15 @@ $headerSubtitle = 'pool_item_subtitle_heading';
 <nav class="sticky top-0 z-10 bg-white/90 backdrop-blur-sm py-3 mb-10 -mx-4 px-4 border-b border-neutral-100">
     <div class="flex flex-wrap gap-2">
         <a href="#core-equipment"
-            class="inline-flex items-center px-4 py-1.5 rounded-full text-base lg:text-lg font-semibold font-heading tracking-tight transition-colors bg-primary-700 text-white hover:bg-primary-800">
+            class="inline-flex items-center px-4 py-1.5 rounded-full text-sm lg:text-base font-semibold font-heading tracking-tight transition-colors bg-primary-700 text-white hover:bg-primary-800">
             {{ __('strings.pool_item_nav_core') }}
         </a>
         <a href="#cleaning"
-            class="inline-flex items-center px-4 py-1.5 rounded-full text-base lg:text-lg font-semibold font-heading tracking-tight transition-colors bg-primary-50 text-primary-800 hover:bg-primary-100">
+            class="inline-flex items-center px-4 py-1.5 rounded-full text-sm lg:text-base font-semibold font-heading tracking-tight transition-colors bg-primary-50 text-primary-800 hover:bg-primary-100">
             {{ __('strings.pool_item_nav_cleaning') }}
         </a>
         <a href="#chemicals"
-            class="inline-flex items-center px-4 py-1.5 rounded-full text-base lg:text-lg font-semibold font-heading tracking-tight transition-colors bg-primary-50 text-primary-800 hover:bg-primary-100">
+            class="inline-flex items-center px-4 py-1.5 rounded-full text-sm lg:text-base font-semibold font-heading tracking-tight transition-colors bg-primary-50 text-primary-800 hover:bg-primary-100">
             {{ __('strings.pool_item_nav_chemicals') }}
         </a>
     </div>
@@ -273,7 +273,7 @@ $headerSubtitle = 'pool_item_subtitle_heading';
             pool_item_body="{{ __('strings.pool_item_chem_chlorine_90_body') }}"
         >
             <x-slot name="modal">
-                <p class="modal-item-subtitle text-base lg:text-lg font-semibold text-primary-600 mb-6">{{ __('strings.pool_item_chem_chlorine_90_subtitle') }}</p>
+                <p class="modal-item-subtitle text-sm lg:text-base font-semibold text-primary-600 mb-6">{{ __('strings.pool_item_chem_chlorine_90_subtitle') }}</p>
                 <h4 class="modal-feature-heading font-heading font-semibold text-lg lg:text-xl text-primary-900 mb-3">{{ __('strings.modal_why_use') }}</h4>
                 <ul class="list-disc pl-5 mb-6 space-y-1.5 text-neutral-700">
                     <li>{{ __('strings.pool_item_chem_chlorine_90_why_1') }}</li>
@@ -281,7 +281,7 @@ $headerSubtitle = 'pool_item_subtitle_heading';
                     <li>{{ __('strings.pool_item_chem_chlorine_90_why_3') }}</li>
                 </ul>
                 <h4 class="modal-feature-heading font-heading font-semibold text-lg lg:text-xl text-primary-900 mb-3">{{ __('strings.modal_how_to_use') }}</h4>
-                <p class="text-neutral-700 mb-5 text-base lg:text-lg leading-relaxed">{{ __('strings.pool_item_chem_chlorine_90_how') }}</p>
+                <p class="text-neutral-700 mb-5 text-sm lg:text-base leading-relaxed">{{ __('strings.pool_item_chem_chlorine_90_how') }}</p>
                 <x-reusables.alert>
                     <span class="font-semibold">{{ __('strings.modal_packaging') }}:</span> {{ __('strings.pool_item_chem_chlorine_90_packaging') }}
                 </x-reusables.alert>
@@ -294,7 +294,7 @@ $headerSubtitle = 'pool_item_subtitle_heading';
             pool_item_body="{{ __('strings.pool_item_chem_chlorine_90_copper_body') }}"
         >
             <x-slot name="modal">
-                <p class="modal-item-subtitle text-base lg:text-lg font-semibold text-primary-600 mb-6">{{ __('strings.pool_item_chem_chlorine_90_copper_subtitle') }}</p>
+                <p class="modal-item-subtitle text-sm lg:text-base font-semibold text-primary-600 mb-6">{{ __('strings.pool_item_chem_chlorine_90_copper_subtitle') }}</p>
                 <h4 class="modal-feature-heading font-heading font-semibold text-lg lg:text-xl text-primary-900 mb-3">{{ __('strings.modal_why_use') }}</h4>
                 <ul class="list-disc pl-5 mb-6 space-y-1.5 text-neutral-700">
                     <li>{{ __('strings.pool_item_chem_chlorine_90_copper_why_1') }}</li>
@@ -302,7 +302,7 @@ $headerSubtitle = 'pool_item_subtitle_heading';
                     <li>{{ __('strings.pool_item_chem_chlorine_90_copper_why_3') }}</li>
                 </ul>
                 <h4 class="modal-feature-heading font-heading font-semibold text-lg lg:text-xl text-primary-900 mb-3">{{ __('strings.modal_how_to_use') }}</h4>
-                <p class="text-neutral-700 mb-5 text-base lg:text-lg leading-relaxed">{{ __('strings.pool_item_chem_chlorine_90_copper_how') }}</p>
+                <p class="text-neutral-700 mb-5 text-sm lg:text-base leading-relaxed">{{ __('strings.pool_item_chem_chlorine_90_copper_how') }}</p>
                 <x-reusables.alert>
                     <span class="font-semibold">{{ __('strings.modal_packaging') }}:</span> {{ __('strings.pool_item_chem_chlorine_90_copper_packaging') }}
                 </x-reusables.alert>
@@ -315,7 +315,7 @@ $headerSubtitle = 'pool_item_subtitle_heading';
             pool_item_body="{{ __('strings.pool_item_chem_chlorine_70_body') }}"
         >
             <x-slot name="modal">
-                <p class="modal-item-subtitle text-base lg:text-lg font-semibold text-primary-600 mb-6">{{ __('strings.pool_item_chem_chlorine_70_subtitle') }}</p>
+                <p class="modal-item-subtitle text-sm lg:text-base font-semibold text-primary-600 mb-6">{{ __('strings.pool_item_chem_chlorine_70_subtitle') }}</p>
                 <h4 class="modal-feature-heading font-heading font-semibold text-lg lg:text-xl text-primary-900 mb-3">{{ __('strings.modal_why_use') }}</h4>
                 <ul class="list-disc pl-5 mb-6 space-y-1.5 text-neutral-700">
                     <li>{{ __('strings.pool_item_chem_chlorine_70_why_1') }}</li>
@@ -323,7 +323,7 @@ $headerSubtitle = 'pool_item_subtitle_heading';
                     <li>{{ __('strings.pool_item_chem_chlorine_70_why_3') }}</li>
                 </ul>
                 <h4 class="modal-feature-heading font-heading font-semibold text-lg lg:text-xl text-primary-900 mb-3">{{ __('strings.modal_how_to_use') }}</h4>
-                <p class="text-neutral-700 mb-5 text-base lg:text-lg leading-relaxed">{{ __('strings.pool_item_chem_chlorine_70_how') }}</p>
+                <p class="text-neutral-700 mb-5 text-sm lg:text-base leading-relaxed">{{ __('strings.pool_item_chem_chlorine_70_how') }}</p>
                 <x-reusables.alert>
                     <span class="font-semibold">{{ __('strings.modal_packaging') }}:</span> {{ __('strings.pool_item_chem_chlorine_70_packaging') }}
                 </x-reusables.alert>
@@ -336,7 +336,7 @@ $headerSubtitle = 'pool_item_subtitle_heading';
             pool_item_body="{{ __('strings.pool_item_chem_ph_up_body') }}"
         >
             <x-slot name="modal">
-                <p class="modal-item-subtitle text-base lg:text-lg font-semibold text-primary-600 mb-6">{{ __('strings.pool_item_chem_ph_up_subtitle') }}</p>
+                <p class="modal-item-subtitle text-sm lg:text-base font-semibold text-primary-600 mb-6">{{ __('strings.pool_item_chem_ph_up_subtitle') }}</p>
                 <h4 class="modal-feature-heading font-heading font-semibold text-lg lg:text-xl text-primary-900 mb-3">{{ __('strings.modal_why_use') }}</h4>
                 <ul class="list-disc pl-5 mb-6 space-y-1.5 text-neutral-700">
                     <li>{{ __('strings.pool_item_chem_ph_up_why_1') }}</li>
@@ -344,7 +344,7 @@ $headerSubtitle = 'pool_item_subtitle_heading';
                     <li>{{ __('strings.pool_item_chem_ph_up_why_3') }}</li>
                 </ul>
                 <h4 class="modal-feature-heading font-heading font-semibold text-lg lg:text-xl text-primary-900 mb-3">{{ __('strings.modal_how_to_use') }}</h4>
-                <p class="text-neutral-700 mb-5 text-base lg:text-lg leading-relaxed">{{ __('strings.pool_item_chem_ph_up_how') }}</p>
+                <p class="text-neutral-700 mb-5 text-sm lg:text-base leading-relaxed">{{ __('strings.pool_item_chem_ph_up_how') }}</p>
                 <x-reusables.alert>
                     <span class="font-semibold">{{ __('strings.modal_packaging') }}:</span> {{ __('strings.pool_item_chem_ph_up_packaging') }}
                 </x-reusables.alert>
@@ -357,7 +357,7 @@ $headerSubtitle = 'pool_item_subtitle_heading';
             pool_item_body="{{ __('strings.pool_item_chem_ph_minus_body') }}"
         >
             <x-slot name="modal">
-                <p class="modal-item-subtitle text-base lg:text-lg font-semibold text-primary-600 mb-6">{{ __('strings.pool_item_chem_ph_minus_subtitle') }}</p>
+                <p class="modal-item-subtitle text-sm lg:text-base font-semibold text-primary-600 mb-6">{{ __('strings.pool_item_chem_ph_minus_subtitle') }}</p>
                 <h4 class="modal-feature-heading font-heading font-semibold text-lg lg:text-xl text-primary-900 mb-3">{{ __('strings.modal_why_use') }}</h4>
                 <ul class="list-disc pl-5 mb-6 space-y-1.5 text-neutral-700">
                     <li>{{ __('strings.pool_item_chem_ph_minus_why_1') }}</li>
@@ -365,7 +365,7 @@ $headerSubtitle = 'pool_item_subtitle_heading';
                     <li>{{ __('strings.pool_item_chem_ph_minus_why_3') }}</li>
                 </ul>
                 <h4 class="modal-feature-heading font-heading font-semibold text-lg lg:text-xl text-primary-900 mb-3">{{ __('strings.modal_how_to_use') }}</h4>
-                <p class="text-neutral-700 mb-5 text-base lg:text-lg leading-relaxed">{{ __('strings.pool_item_chem_ph_minus_how') }}</p>
+                <p class="text-neutral-700 mb-5 text-sm lg:text-base leading-relaxed">{{ __('strings.pool_item_chem_ph_minus_how') }}</p>
                 <x-reusables.alert>
                     <span class="font-semibold">{{ __('strings.modal_packaging') }}:</span> {{ __('strings.pool_item_chem_ph_minus_packaging') }}
                 </x-reusables.alert>
@@ -378,7 +378,7 @@ $headerSubtitle = 'pool_item_subtitle_heading';
             pool_item_body="{{ __('strings.pool_item_chem_algaecide_body') }}"
         >
             <x-slot name="modal">
-                <p class="modal-item-subtitle text-base lg:text-lg font-semibold text-primary-600 mb-6">{{ __('strings.pool_item_chem_algaecide_subtitle') }}</p>
+                <p class="modal-item-subtitle text-sm lg:text-base font-semibold text-primary-600 mb-6">{{ __('strings.pool_item_chem_algaecide_subtitle') }}</p>
                 <h4 class="modal-feature-heading font-heading font-semibold text-lg lg:text-xl text-primary-900 mb-3">{{ __('strings.modal_why_use') }}</h4>
                 <ul class="list-disc pl-5 mb-6 space-y-1.5 text-neutral-700">
                     <li>{{ __('strings.pool_item_chem_algaecide_why_1') }}</li>
@@ -386,7 +386,7 @@ $headerSubtitle = 'pool_item_subtitle_heading';
                     <li>{{ __('strings.pool_item_chem_algaecide_why_3') }}</li>
                 </ul>
                 <h4 class="modal-feature-heading font-heading font-semibold text-lg lg:text-xl text-primary-900 mb-3">{{ __('strings.modal_how_to_use') }}</h4>
-                <p class="text-neutral-700 text-base lg:text-lg leading-relaxed">{{ __('strings.pool_item_chem_algaecide_how') }}</p>
+                <p class="text-neutral-700 text-sm lg:text-base leading-relaxed">{{ __('strings.pool_item_chem_algaecide_how') }}</p>
             </x-slot>
         </x-pool-supplies.pool-item-card>
 
@@ -396,7 +396,7 @@ $headerSubtitle = 'pool_item_subtitle_heading';
             pool_item_body="{{ __('strings.pool_item_chem_alum_body') }}"
         >
             <x-slot name="modal">
-                <p class="modal-item-subtitle text-base lg:text-lg font-semibold text-primary-600 mb-6">{{ __('strings.pool_item_chem_alum_subtitle') }}</p>
+                <p class="modal-item-subtitle text-sm lg:text-base font-semibold text-primary-600 mb-6">{{ __('strings.pool_item_chem_alum_subtitle') }}</p>
                 <h4 class="modal-feature-heading font-heading font-semibold text-lg lg:text-xl text-primary-900 mb-3">{{ __('strings.modal_why_use') }}</h4>
                 <ul class="list-disc pl-5 mb-6 space-y-1.5 text-neutral-700">
                     <li>{{ __('strings.pool_item_chem_alum_why_1') }}</li>
@@ -404,7 +404,7 @@ $headerSubtitle = 'pool_item_subtitle_heading';
                     <li>{{ __('strings.pool_item_chem_alum_why_3') }}</li>
                 </ul>
                 <h4 class="modal-feature-heading font-heading font-semibold text-lg lg:text-xl text-primary-900 mb-3">{{ __('strings.modal_how_to_use') }}</h4>
-                <p class="text-neutral-700 mb-5 text-base lg:text-lg leading-relaxed">{{ __('strings.pool_item_chem_alum_how') }}</p>
+                <p class="text-neutral-700 mb-5 text-sm lg:text-base leading-relaxed">{{ __('strings.pool_item_chem_alum_how') }}</p>
                 <x-reusables.alert>
                     {{ __('strings.pool_item_chem_alum_packaging') }}
                 </x-reusables.alert>

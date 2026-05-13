@@ -36,29 +36,34 @@ const swiper = new Swiper('.swiper', {
     },
 });
 
-// Get the 'to top' button element by ID
+// Back-to-top + scroll progress bar
 var toTopButton = document.getElementById("to-top-button");
+var progressBar = document.getElementById("scroll-progress-bar");
 
-// Check if the button exists
-if (toTopButton) {
+window.onscroll = function() {
+    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 
-    // On scroll event, toggle button visibility based on scroll position
-    window.onscroll = function() {
-        if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-            toTopButton.classList.remove("hidden");
+    // Progress bar
+    if (progressBar && docHeight > 0) {
+        progressBar.style.transform = 'scaleX(' + (scrollTop / docHeight) + ')';
+    }
+
+    // Back-to-top visibility
+    if (toTopButton) {
+        if (scrollTop > 500) {
+            toTopButton.classList.remove("opacity-0", "pointer-events-none", "translate-y-4");
+            toTopButton.classList.add("opacity-100", "pointer-events-auto", "translate-y-0");
         } else {
-            toTopButton.classList.add("hidden");
+            toTopButton.classList.remove("opacity-100", "pointer-events-auto", "translate-y-0");
+            toTopButton.classList.add("opacity-0", "pointer-events-none", "translate-y-4");
         }
-    };
+    }
+};
 
-    // Function to scroll to the top of the page smoothly
-    window.goToTop = function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    };
-}
+window.goToTop = function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+};
 
 //
 document.addEventListener('DOMContentLoaded', function() {

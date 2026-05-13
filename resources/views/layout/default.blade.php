@@ -11,7 +11,7 @@
     <x-partials.navbar-menu-top />
 
     {{-- MAIN CONTENT PAGE --}}
-    <main class="mt-22 lg:mt-25 text-base lg:text-lg">
+    <main class="mt-22 lg:mt-25 text-sm lg:text-base">
         {{-- PAGE HEADER TITLE --}}
         <x-reusables.page-header :headerTitle="$headerTitle" :headerSubtitle="$headerSubtitle" :imageFileLoc="$imageFileLoc" />
 
