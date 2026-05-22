@@ -600,12 +600,10 @@ return [
     // CUSTOMER REVIEWS
     'reviews_title_heading' => 'Ulasan',
     'reviews_subtitle_heading' => 'Dengarkan ulasan daripada pelanggan',
-    'reviews_pill' => 'Ulasan Pelanggan',
-    'reviews_body_title' => 'Dengar terus daripada pelanggan kami tentang pengalaman mereka bersama Aquarius.',
+    'reviews_body_title' => 'Lihat apa yang orang katakan tentang kami! Kami menghargai maklum balas sebenar dan sentiasa gembira untuk mendengar bagaimana produk dan perkhidmatan kami membuat perubahan. Lihat apa yang orang lain fikirkan!',
     'reviews_total_review' => 'jumlah ulasan',
     'reviews_avg_rating' => 'Purata Penilaian:',
-    'reviews_of_5_star' => 'daripada 5',
-    'reviews_based_on' => 'Berdasarkan :total ulasan',
+    'reviews_of_5_star' => 'daripada 5 bintang',
     'reviews_no_review_title' => 'Tiada Ulasan Ditemui',
     'reviews_no_review_body' => 'Tiada ulasan untuk dipaparkan pada masa ini. Maklum balas anda mungkin yang pertama membuat perubahan!',
 
@@ -679,7 +677,6 @@ return [
     'promotions_current_promo_duration' => 'Tempoh',
     'promotions_no_active_promo_title' => 'Tiada Promosi Aktif',
     'promotions_no_active_promo_body' => 'Tiada promosi yang aktif buat pada masa ini. Sila semak semula nanti!',
-    'promotions_loading' => 'Memuatkan promosi...',
 
     // Terms
     'terms_title_heading' => 'Terma & Syarat',

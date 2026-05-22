@@ -2,26 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CustReview;
 use Illuminate\Http\Request;
+use App\Models\Review;
 
 class ReviewController extends Controller
 {
     public function index(Request $request)
     {
-        $reviews = CustReview::where('is_published', true)
-            ->orderBy('reviewed_at', 'desc')
-            ->paginate(12);
-
-        $averageRating = CustReview::where('is_published', true)->avg('rating');
-        $totalReviews = CustReview::where('is_published', true)->count();
-
-        if ($request->ajax()) {
-            return response()->json([
-                'html' => view('components.reviews.grid', compact('reviews'))->render(),
-                'pagination' => (string) $reviews->links(),
-            ]);
-        }
+        $reviews = Review::latest()->paginate(12);
+        $averageRating = Review::avg('rating');
+        $totalReviews = Review::count();
 
         return view('pages.09-cust-review', compact('reviews', 'averageRating', 'totalReviews'));
     }

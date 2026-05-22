@@ -21,6 +21,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
+use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\Filter;
@@ -36,13 +37,7 @@ class ImageGalleryResource extends Resource
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-photo';
 
-    protected static ?string $navigationLabel = 'Pool Images';
-
-    protected static ?int $navigationSort = 1;
-
-    protected static ?string $modelLabel = 'Pool Image';
-
-    protected static ?string $pluralModelLabel = 'Pool Images';
+    protected static ?string $navigationLabel = 'Image Gallery';
 
     protected static string|\UnitEnum|null $navigationGroup = 'Content Management';
 
@@ -117,22 +112,18 @@ class ImageGalleryResource extends Resource
                     ->extraImgAttributes(['style' => 'border-radius: 0.25rem; width: 150px; height: auto; object-fit: cover;']),
                 TextColumn::make('image_name')
                     ->label('Pool Details')
-                    ->description(fn (ImageGallery $record): string => str($record->image_description)->limit(80))
+                    ->description(fn (ImageGallery $record): string => $record->image_description)
                     ->wrap()
-                    ->searchable()
-                    ->limit(40)
-                    ->tooltip(fn (ImageGallery $record): ?string => strlen($record->image_name) > 40 ? $record->image_name : null),
+                    ->searchable(),
                 TextColumn::make('image_tags')
                     ->label('Pool Tags')
                     ->badge()
                     ->separator(',')
                     ->wrap()
                     ->searchable(),
-                TextColumn::make('is_published')
-                    ->label('Published')
-                    ->state(fn (ImageGallery $record): string => $record->is_published ? 'Published' : 'Unpublished')
-                    ->badge()
-                    ->color(fn (string $state): string => $state === 'Published' ? 'success' : 'danger'),
+                IconColumn::make('is_published')
+                    ->boolean()
+                    ->label('Published'),
                 TextColumn::make('uploader.name')
                     ->label('Uploaded By')
                     ->wrap(),
@@ -172,26 +163,22 @@ class ImageGalleryResource extends Resource
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
-                    BulkAction::make('publish')
-                        ->label('Publish Selected')
-                        ->icon('heroicon-o-eye')
-                        ->action(fn (Collection $records) => $records->each->update(['is_published' => true]))
-                        ->requiresConfirmation()
-                        ->deselectRecordsAfterCompletion(),
-                    BulkAction::make('unpublish')
-                        ->label('Unpublish Selected')
-                        ->icon('heroicon-o-eye-slash')
-                        ->action(fn (Collection $records) => $records->each->update(['is_published' => false]))
-                        ->requiresConfirmation()
-                        ->deselectRecordsAfterCompletion(),
                     DeleteBulkAction::make()->action(function (array $records) {
                         foreach ($records as $record) {
                             if ($record->image_path) {
-                                Storage::disk('public')->delete('image_gallery/'.$record->image_path);
+                                Storage::disk('public')->delete($record->image_path);
                             }
                             $record->delete();
                         }
                     }),
+                    BulkAction::make('Publish All')
+                        ->action(function (Collection $records) {
+                            $records->each->update(['is_published' => true]);
+                        }),
+                    BulkAction::make('Unpublish All')
+                        ->action(function (Collection $records) {
+                            $records->each->update(['is_published' => false]);
+                        }),
                 ]),
             ])
             ->defaultSort('created_at', 'desc');

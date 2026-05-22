@@ -2,8 +2,9 @@
 
 namespace App\Filament\Resources\ImageGalleryResource\Pages;
 
-use App\Filament\Resources\ImageGalleryResource;
 use Filament\Actions\DeleteAction;
+use App\Filament\Resources\ImageGalleryResource;
+use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
 use Illuminate\Support\Facades\Storage;
 
@@ -20,14 +21,21 @@ class EditImageGallery extends EditRecord
 
     protected function beforeSave(): void
     {
+        // Get the current record
         $gallery = $this->record;
-        $oldImagePath = $gallery->image_path;
-        $newImagePath = is_array($this->data['image_path'] ?? null)
-            ? array_values($this->data['image_path'])[0] ?? null
-            : ($this->data['image_path'] ?? null);
 
-        if ($newImagePath && $oldImagePath && $oldImagePath !== $newImagePath) {
-            Storage::disk('public')->delete('image_gallery/'.$oldImagePath);
+        // Store old image path for comparison
+        $oldImagePath = $gallery->image_path;
+
+        // Check if a new image is uploaded
+        if (isset($this->data['image_path'])) {
+            // If an old image exists, delete it before saving the new one
+            if ($oldImagePath) {
+                Storage::disk('public')->delete($oldImagePath);
+            }
+
+            // Update the image path with the new uploaded image
+            $gallery->image_path = $this->data['image_path'];
         }
     }
 }

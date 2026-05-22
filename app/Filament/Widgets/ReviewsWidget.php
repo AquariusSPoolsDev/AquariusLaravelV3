@@ -2,40 +2,32 @@
 
 namespace App\Filament\Widgets;
 
-use App\Models\CustReview;
-use BezhanSalleh\FilamentShield\Traits\HasWidgetShield;
 use Filament\Widgets\Widget;
-use Illuminate\Support\Collection;
+use App\Models\Review;
+use BezhanSalleh\FilamentShield\Traits\HasWidgetShield;
 
 class ReviewsWidget extends Widget
 {
     use HasWidgetShield;
 
     protected string $view = 'filament.widgets.reviews-widget';
-
-    protected int|string|array $columnSpan = 'full';
-
-    public function getTotalReviews(): int
+    protected int | string | array $columnSpan = 'full'; 
+    
+    public function getTotalReviews()
     {
-        return CustReview::query()->count('id');
+        // Count total reviews
+        return Review::count();
     }
 
-    public function getAverageRating(): ?float
+    public function getAverageRating()
     {
-        return CustReview::query()->avg('rating');
+        // Calculate average rating from reviews
+        return Review::average('rating'); // This returns null if there are no reviews
     }
 
-    public function getAverageRatingByPlatform(): Collection
+    public function getLatestReviews()
     {
-        return CustReview::query()
-            ->selectRaw('source as platform, ROUND(AVG(rating), 1) as average, COUNT(*) as total')
-            ->groupBy('source')
-            ->orderByDesc('total')
-            ->get();
-    }
-
-    public function getLatestReviews(): Collection
-    {
-        return CustReview::query()->orderBy('reviewed_at', 'desc')->take(5)->get();
+        // Fetch latest reviews (e.g., the last 5 reviews)
+        return Review::orderBy('created_at', 'desc')->take(5)->get();
     }
 }

@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class Project extends Model
@@ -37,22 +36,6 @@ class Project extends Model
         static::updating(function (Project $project) {
             if ($project->isDirty('title') && ! $project->isDirty('slug')) {
                 $project->slug = Str::slug($project->title);
-            }
-
-            if ($project->isDirty('gallery_images')) {
-                $removed = array_diff(
-                    $project->getOriginal('gallery_images') ?? [],
-                    $project->gallery_images ?? []
-                );
-                foreach ($removed as $path) {
-                    Storage::disk('public')->delete($path);
-                }
-            }
-        });
-
-        static::deleting(function (Project $project) {
-            foreach ($project->gallery_images ?? [] as $path) {
-                Storage::disk('public')->delete($path);
             }
         });
     }

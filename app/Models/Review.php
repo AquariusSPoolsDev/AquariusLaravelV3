@@ -17,14 +17,11 @@ class Review extends Model
         'review',
         'rating',
         'is_published',
-        'reviewed_at',
+        'uploader_id',
     ];
 
-    protected function casts(): array
+    public function reviewer()
     {
-        return [
-            'reviewed_at' => 'date',
-            'is_published' => 'boolean',
-        ];
+        return $this->belongsTo(User::class, 'reviewer_id');
     }
 }

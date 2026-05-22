@@ -24,13 +24,6 @@ class ImageGallery extends Model
         'image_tags' => 'array', // Cast JSON field to array
     ];
 
-    protected static function booted(): void
-    {
-        static::creating(function (ImageGallery $imageGallery) {
-            $imageGallery->uploader_id ??= auth()->id();
-        });
-    }
-
     public function uploader()
     {
         return $this->belongsTo(User::class, 'uploader_id');
@@ -48,9 +41,8 @@ class ImageGallery extends Model
         $this->attributes['image_tags'] = json_encode($value);
     }
 
-    public function setImagePathAttribute(string|array $value): void
+    public function setImagePathAttribute(string $value): void
     {
-        $value = is_array($value) ? array_values($value)[0] : $value;
         $this->attributes['image_path'] = ltrim(str_replace('image_gallery/', '', $value), '/');
     }
 
