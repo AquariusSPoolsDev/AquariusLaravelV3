@@ -600,10 +600,12 @@ return [
     // CUSTOMER REVIEWS
     'reviews_title_heading' => 'Reviews',
     'reviews_subtitle_heading' => 'See what our customers are saying',
-    'reviews_body_title' => 'See what people are saying about us! We value real feedback, and it\'s always great to hear how our products and services are making a difference. Take a look at what others think!',
+    'reviews_pill' => 'Customer Reviews',
+    'reviews_body_title' => 'Hear directly from our customers about their experience with Aquarius.',
     'reviews_total_review' => 'reviews total',
     'reviews_avg_rating' => 'Average Rating:',
-    'reviews_of_5_star' => 'of 5 stars',
+    'reviews_of_5_star' => 'out of 5',
+    'reviews_based_on' => 'Based on :total reviews',
     'reviews_no_review_title' => 'No Reviews Found',
     'reviews_no_review_body' => 'There are no reviews to display at the moment. Your feedback could be the first to make a difference!',
 
@@ -677,6 +679,7 @@ return [
     'promotions_current_promo_duration' => 'Duration',
     'promotions_no_active_promo_title' => 'No Active Promotions',
     'promotions_no_active_promo_body' => 'There are no active promotions at the moment. Please check back later!',
+    'promotions_loading' => 'Loading promotions...',
 
     // Terms
     'terms_title_heading' => 'Terms & Conditions',

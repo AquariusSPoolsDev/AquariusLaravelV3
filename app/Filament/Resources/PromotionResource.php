@@ -34,6 +34,8 @@ class PromotionResource extends Resource
 
     protected static string|\UnitEnum|null $navigationGroup = 'Content Management';
 
+    protected static ?int $navigationSort = 3;
+
     public static function getNavigationBadge(): ?string
     {
         return Promotion::where('start_time', '<=', now())

@@ -4,26 +4,43 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Database\Factories\UserFactory;
+use Filament\Models\Contracts\FilamentUser;
+use Filament\Panel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Storage;
 use Spatie\Permission\Traits\HasRoles;
-use Filament\Models\Contracts\FilamentUser;
-use Filament\Panel;
 
 class User extends Authenticatable implements FilamentUser
 {
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable;
+
     use HasRoles;
-    
+
+    protected static function booted(): void
+    {
+        static::deleting(function (User $user) {
+            foreach ($user->imageGalleries as $image) {
+                Storage::disk('public')->delete('image_gallery/'.$image->image_path);
+            }
+            foreach ($user->promotions as $promotion) {
+                foreach ($promotion->file_attachment ?? [] as $path) {
+                    Storage::disk('public')->delete('promotion_materials/'.$path);
+                }
+            }
+        });
+    }
+
     public function canAccessPanel(Panel $panel): bool
     {
         // REMOVE VERIFY EMAIL AS THIS DOES NOT REQUIRED
         // return str_ends_with($this->email, '@aquariusswimmingpools.com') && $this->hasVerifiedEmail();
-        return str_ends_with($this->email, '@aquariusswimmingpools.com');
+        return str_ends_with($this->email, '@aquariusswimmingpools.com')
+            || str_ends_with($this->email, '@aquariuspools.com.my');
     }
-    
+
     public function imageGalleries()
     {
         return $this->hasMany(ImageGallery::class, 'uploader_id');
@@ -38,7 +55,7 @@ class User extends Authenticatable implements FilamentUser
     {
         return $this->hasMany(Promotion::class, 'uploader_id');
     }
-    
+
     /**
      * The attributes that are mass assignable.
      *

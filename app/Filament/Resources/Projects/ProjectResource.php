@@ -24,6 +24,8 @@ class ProjectResource extends Resource
 
     protected static string|\UnitEnum|null $navigationGroup = 'Content Management';
 
+    protected static ?int $navigationSort = 2;
+
     public static function getNavigationBadge(): ?string
     {
         return static::getModel()::count();

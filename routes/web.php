@@ -4,6 +4,7 @@ use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\ImageGalleryController;
 use App\Http\Controllers\localeController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\PromotionController;
 use App\Http\Controllers\ReviewController;
 use Illuminate\Support\Facades\Route;
 
@@ -72,9 +73,7 @@ Route::get('/faq', function () {
 })->name('faq-page');
 
 // 12. PROMOTIONS
-Route::get('/promotions', function () {
-    return view('pages.12-promotions');
-})->name('promo-page');
+Route::get('/promotions', [PromotionController::class, 'index'])->name('promo-page');
 
 // 13. TERMS
 Route::get('/terms', function () {

@@ -20,6 +20,8 @@ class ContactSubmissionResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
+    protected static string|\UnitEnum|null $navigationGroup = 'Customer Enquiry';
+
     public static function form(Schema $schema): Schema
     {
         return ContactSubmissionForm::configure($schema);
