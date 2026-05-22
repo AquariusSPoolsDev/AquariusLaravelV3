@@ -8,6 +8,9 @@ import 'fslightbox';
 // core version + navigation, pagination modules:
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
+window.Swiper = Swiper;
+window.SwiperNavigation = Navigation;
+window.SwiperPagination = Pagination;
 // import Swiper and modules styles
 import 'swiper/css';
 import 'swiper/css/navigation';

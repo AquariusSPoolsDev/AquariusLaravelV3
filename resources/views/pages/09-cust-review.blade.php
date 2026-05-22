@@ -12,50 +12,93 @@ $headerSubtitle = 'reviews_subtitle_heading';
 
 {{-- META TAG PAGE --}}
 @section('seoData')
-   <x-seo.seo 
+   <x-seo.seo
         ogPageTitle="{{__('strings.' . $headerTitle)}}"
         ogDescription="{{__('strings.' . $headerSubtitle)}}"
         ogImage="{{ asset('assets/images/'.$imageFileLoc) }}"
-    /> 
+    />
 @endsection
 
 {{-- MAIN CONTENT STARTS HERE --}}
 @section('content')
-<div class="prose max-w-full">
-    <p class="">{{__('strings.reviews_body_title')}}</p>
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3 mb-8">
+    <div>
+        <x-reusables.pill-text>{{__('strings.reviews_pill')}}</x-reusables.pill-text>
+        <p class="text-neutral-600">{{__('strings.reviews_body_title')}}</p>
+    </div>
+    <div class="inline-flex items-center gap-4 border border-neutral-300 rounded-full px-6.5 py-2.5 shrink-0">
+        <div class="flex flex-col items-center">
+            <div class="flex items-center gap-2">
+                <span class="text-2xl font-extrabold text-neutral-900">{{ number_format($averageRating ?? 0, 1) }}</span>
+                <span class="text-yellow-400 text-2xl leading-none">★</span>
+            </div>
+            <span class="text-xs text-neutral-400">{{__('strings.reviews_of_5_star')}}</span>
+        </div>
+        <div class="w-px h-8 bg-neutral-300"></div>
+        <span class="text-neutral-600">{!! __('strings.reviews_based_on', ['total' => '<strong>'.$totalReviews.'</strong>']) !!}</span>
+    </div>
 </div>
 
 <div class="container">
-    <div class="flex flex-col md:flex-row md:justify-between my-6">
-        <p class="font-bold max-md:mb-2">{{ $totalReviews }} {{__('strings.reviews_total_review')}}</p>
-        <p class="">{{__('strings.reviews_avg_rating')}}
-            <span class="text-secondary-800 font-semibold">{{ round($averageRating, 1) }} {{__('strings.reviews_of_5_star')}}</span>
-        </p>
+
+    {{-- Loading indicator --}}
+    <div id="reviews-loading" class="hidden py-12 justify-center items-center gap-3 text-neutral-500">
+        <svg class="animate-spin h-6 w-6 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        <span>Loading reviews...</span>
     </div>
 
-    @if($reviews->isNotEmpty())
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-        @foreach($reviews as $review)
-        <div
-            class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4 border-primary">
-            <div class="flex items-center mb-2">
-                <h2 class="font-bold">{{ $review->reviewer_name }}</h2>
-                <div class="ml-auto text-yellow-500">
-                    {{ str_repeat('★', $review->rating) }}
-                </div>
-            </div>
-            <div class="rich-text text-sm text-gray-700 italic">
-                <div class=" inline-flex">{!! $review->review !!}</div>
-            </div>
-        </div>
-        @endforeach
+    <div id="reviews-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+        @include('components.reviews.grid', ['reviews' => $reviews])
     </div>
-    {{ $reviews->links() }}
-    @else
-        <div class="bg-red-50 border-s-4 border-red-500 rounded-e-xl p-6 ps-8" role="alert" tabindex="-1" aria-labelledby="noreview">
-            <h2 id="noreview" class="text-2xl text-gray-800 font-semibold mb-3 mt-0">{{__('strings.reviews_no_review_title')}}</h2>
-            <p class="text-gray-700 m-0">{{__('strings.reviews_no_review_body')}}</p>
-        </div>
-    @endif
+
+    <div id="reviews-pagination" class="mt-6 flex justify-center">
+        {{ $reviews->links() }}
+    </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const grid = document.getElementById('reviews-grid');
+    const pagination = document.getElementById('reviews-pagination');
+    const loading = document.getElementById('reviews-loading');
+
+    function attachPaginationListeners() {
+        pagination.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const url = new URL(this.href);
+                const page = url.searchParams.get('page') || 1;
+                fetchReviews(page);
+            });
+        });
+    }
+
+    function fetchReviews(page) {
+        grid.classList.add('opacity-0', 'pointer-events-none');
+        loading.classList.remove('hidden');
+        loading.classList.add('flex');
+
+        axios.get('/reviews', {
+            params: { page },
+            headers: { 'X-Requested-With': 'XMLHttpRequest' }
+        }).then(response => {
+            grid.innerHTML = response.data.html;
+            pagination.innerHTML = response.data.pagination;
+            attachPaginationListeners();
+            window.scrollTo({ top: grid.offsetTop - 100, behavior: 'smooth' });
+        }).catch(error => {
+            console.error('Error fetching reviews:', error);
+        }).finally(() => {
+            loading.classList.add('hidden');
+            loading.classList.remove('flex');
+            grid.classList.remove('opacity-0', 'pointer-events-none');
+        });
+    }
+
+    attachPaginationListeners();
+});
+</script>
 @endsection
