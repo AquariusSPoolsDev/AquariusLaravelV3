@@ -318,14 +318,17 @@
 
 /* homepage hero section */
 .aquarius-hero-page-content-section {
-    @apply relative overflow-hidden flex items-center h-256 sm:h-232 lg:h-200 bg-neutral-950;
+    @apply relative overflow-hidden flex items-start bg-neutral-950;
 
     .hero-video-bg {
         @apply absolute top-0 left-0 w-full h-full object-cover;
     }
 
     .hero-video-overlay {
-        @apply absolute inset-0 opacity-70 bg-linear-to-tl from-cyan-500 to-sky-900;
+        @apply absolute inset-0 opacity-80 bg-linear-to-tl from-cyan-500 to-sky-900;
+        background-image: radial-gradient(rgba(255,255,255,0.2) 0.8px, transparent 0.8px), radial-gradient(rgba(255,255,255,0.2) 0.8px, transparent 0.8px), linear-gradient(to top left, theme('colors.cyan.500'), theme('colors.sky.900'));
+        background-size: 32px 32px, 32px 32px, 100% 100%;
+        background-position: 0 0, 16px 16px, 0 0;
     }
 
     .hero-video-toggle {
@@ -349,59 +352,117 @@
     }
 
     .aquarius-hero-contents {
-        @apply relative z-10 flex flex-col lg:flex-row container px-4 lg:pb-20 lg:pt-28 mx-auto;
+        @apply relative z-10 flex flex-col items-center container px-4 pt-28 gap-y-4 mx-auto;
 
         .aquarius-left-hero-content {
-            @apply lg:w-[62%] lg:mr-40 flex items-center;
-        }
+            .left-content-gap-small {
+                @apply max-w-4xl text-center flex flex-col gap-2 items-center;
 
-        .left-content-gap-small {
-            @apply max-lg:mb-12 max-lg:text-center;
-        }
+                .aquarius-main-heading {
+                    @apply text-4xl lg:text-6xl font-extrabold uppercase mb-4 text-white drop-shadow-md drop-shadow-primary-900;
+                }
 
-        .aquarius-main-heading {
-            @apply text-4xl lg:text-6xl font-extrabold uppercase mb-8 text-white drop-shadow-md;
-        }
+                .aquarius-secondary-heading {
+                    @apply text-lg lg:text-xl font-medium text-neutral-100 drop-shadow-md drop-shadow-primary-900 italic;
+                }
 
-        .aquarius-secondary-heading {
-            @apply text-lg lg:text-xl font-medium mb-2 text-neutral-100 drop-shadow-md;
-        }
+                .aquarius-features-heading {
+                    @apply text-lg lg:text-xl mb-2 text-neutral-100 drop-shadow-md drop-shadow-primary-900 lg:w-3/4;
+                }
 
-        .aquarius-features-heading {
-            @apply text-lg lg:text-xl mb-6 text-neutral-100 drop-shadow-md;
-        }
+                .aquarius-cta-buttons {
+                    @apply flex flex-wrap max-lg:justify-center gap-4;
+                }
 
-        .aquarius-cta-buttons {
-            @apply flex flex-wrap max-lg:justify-center gap-4;
-        }
+                .aquarius-cta-primary {
+                    @apply py-3.5 px-10 inline-flex items-center gap-2 text-base lg:text-lg rounded-full font-heading font-bold bg-linear-to-b from-primary-500 via-primary-700 to-primary-900 text-white focus:outline-none disabled:opacity-50 disabled:pointer-events-none transition-all drop-shadow-lg relative overflow-hidden hover:shadow-primary-700/50 hover:shadow-lg hover:brightness-110 active:scale-95 active:brightness-90;
 
-        .aquarius-cta-primary {
-            @apply py-3 px-6 inline-flex items-center gap-4 text-base lg:text-lg rounded-lg border border-transparent bg-gradient-to-b from-primary-600 via-primary-700 to-primary-900 text-white focus:outline-none disabled:opacity-50 disabled:pointer-events-none transition-all drop-shadow-md relative overflow-hidden hover:brightness-110 active:scale-95 active:brightness-90;
+                    &::before {
+                        content: '';
+                        @apply absolute w-2 h-80 top-0 -translate-x-32 -skew-x-10 transition-all duration-500 bg-white blur-sm;
+                    }
 
-            &::before {
-                content: '';
-                @apply absolute w-[0.4rem] h-[20rem] top-0 -translate-x-32 -skew-x-[10deg] transition-all duration-[0.8s] bg-white blur-[8px];
+                    &:hover::before {
+                        @apply translate-x-56;
+                    }
+                }
+
+                .aquarius-cta-secondary {
+                    @apply py-3.5 px-10 inline-flex items-center gap-2 text-base lg:text-lg rounded-full font-heading font-bold border-2 border-white/70 text-white backdrop-blur-sm hover:border-white hover:bg-white/15 focus:outline-none focus:border-white focus:bg-white/15 active:scale-95 active:bg-white/20 disabled:opacity-50 disabled:pointer-events-none transition-all drop-shadow-md;
+                }
             }
-
-            &:hover::before {
-                @apply translate-x-28;
-            }
         }
-
-        .aquarius-cta-secondary {
-            @apply py-3 px-6 inline-flex items-center gap-4 text-base lg:text-lg rounded-lg border border-secondary-100 text-secondary-100 hover:border-secondary hover:bg-secondary hover:text-neutral-950 focus:outline-none focus:border-secondary focus:bg-secondary focus:text-secondary-900 disabled:opacity-50 disabled:pointer-events-none transition drop-shadow-md;
-        }
+        
 
         .aquarius-right-hero-content {
-            @apply lg:w-[38%];
         }
 
-        .aquarius-swiper-carousel {
-            @apply h-[20rem] lg:h-[37.5rem] rounded-lg overflow-hidden shadow-md bg-purple-50 border-4 border-white;
+        .hero-strip-container {
+            @apply hidden lg:w-full lg:flex lg:items-end lg:justify-center lg:overflow-hidden lg:h-100;
         }
 
-        .aquarius-swiper-image img {
-            @apply w-full h-full object-cover;
+        .hero-strip-card {
+            @apply overflow-hidden -mb-8 rounded-t-2xl border-2 border-white transition-all duration-300 cursor-pointer shrink-0 hover:brightness-110;
+
+            picture {
+                @apply block w-full h-full;
+            }
+
+            img {
+                @apply w-full h-full object-cover transition-all duration-300;
+            }
+
+            &.hero-strip-card-far-left {
+                @apply lg:w-[15%] lg:h-1/2 lg:z-1 lg:-mr-3 ;
+            }
+
+            &.hero-strip-card-left {
+                @apply lg:w-[20%] lg:h-[70%] lg:z-2 lg:-mr-6 shadow-2xl shadow-primary-900;
+            }
+
+            &.hero-strip-card-center {
+                @apply lg:w-[35%] lg:h-full lg:z-3 shadow-2xl shadow-primary-900;
+            }
+
+            &.hero-strip-card-right {
+                @apply lg:w-[20%] lg:h-[70%] lg:z-2 lg:-ml-6 shadow-2xl shadow-primary-900;
+            }
+
+            &.hero-strip-card-far-right {
+                @apply lg:w-[15%] lg:h-1/2 lg:z-1 lg:-ml-3;
+            }
+        }
+
+        .hero-mobile-swiper-wrap {
+            @apply w-full;
+
+            .hero-mobile-swiper {
+                @apply w-full rounded-lg overflow-hidden border-2 border-white shadow-xl shadow-primary-900 mt-12 mb-20 aspect-4/3;
+
+                picture {
+                    @apply block w-full h-full;
+                }
+
+                img {
+                    @apply w-full h-full object-cover;
+                }
+
+                .swiper-pagination-bullet-active {
+                    @apply bg-white;
+                }
+
+                .swiper-button-prev,
+                .swiper-button-next {
+                    @apply h-10 w-10 bg-primary active:bg-primary-800 transition-all;
+                }
+
+                .swiper-button-prev { @apply left-0; }
+                .swiper-button-next { @apply right-0; }
+
+                .swiper-navigation-icon {
+                    @apply text-white h-6 w-6;
+                }
+            }
         }
     }
 }
@@ -454,6 +515,61 @@
         }
     }
 }
+
+/* HOMEPAGE OUR POOLS CARDS */
+.our-pools-container {
+    @apply bg-primary-50/50;
+
+    .aquarius-card-grid {
+        @apply mt-12 grid grid-cols-1 gap-6 lg:gap-10 md:grid-cols-2 lg:grid-cols-3;
+
+        .aquarius-card {
+            @apply flex flex-col rounded-lg border-2 border-neutral-200 bg-white overflow-hidden h-full transition-all duration-300 hover:-translate-y-1 hover:border-primary-300 hover:shadow-lg hover:shadow-primary-100 active:border-primary-300 active:shadow-lg active:shadow-primary-100 cursor-pointer no-underline;
+
+            .aquarius-card-body {
+                @apply flex flex-col gap-3 p-4 lg:p-6 grow;
+            }
+
+            .aquarius-card-title {
+                @apply text-2xl lg:text-3xl uppercase font-semibold mb-2 text-primary-900;
+            }
+
+            .aquarius-card-desc {
+                @apply text-neutral-600 leading-relaxed grow;
+            }
+
+            .aquarius-card-btn {
+                @apply mt-4 inline-flex items-center gap-1 font-medium text-secondary-800 group-hover:underline group-active:underline underline-offset-4 transition-colors;
+            }
+
+            .aquarius-card-image {
+                @apply relative h-60 overflow-hidden;
+
+                .aquarius-card-img-default,
+                .aquarius-card-img-hover {
+                    @apply absolute inset-0 w-full h-full object-cover transition-opacity duration-500;
+                }
+
+                .aquarius-card-img-hover {
+                    @apply opacity-0;
+                }
+            }
+
+            &:hover, &:active {
+                .aquarius-card-img-default {
+                    @apply opacity-0;
+                }
+
+                .aquarius-card-img-hover {
+                    @apply opacity-100;
+                }
+            }
+        }
+    }
+}
+
+
+
 
 /* HOPMEPAGE SHOWCASE */
 .aquarius-homepage-showcase-grid {
@@ -668,8 +784,12 @@ footer.aquarius-footer {
 .aquarius-header {
     @apply relative bg-primary-900;
 
+    picture {
+        @apply absolute top-0 left-0 w-full h-full;
+    }
+
     .aquarius-header-image {
-        @apply absolute top-0 left-0 w-full h-full object-cover opacity-50;
+        @apply w-full h-full object-cover opacity-50;
     }
 
     .aquarius-header-overlay {

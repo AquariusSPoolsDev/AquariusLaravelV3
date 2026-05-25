@@ -28,8 +28,11 @@
             </div>
 
             <button id="play-pause-btn" onclick="togglePlay()"
-                class="hero-video-toggle-btn">
-                <i id="play-pause-icon" class="fas fa-pause"></i>
+                class="hero-video-toggle-btn cursor-pointer">
+                <span id="play-pause-icon">
+                    <svg id="icon-pause" class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="3" width="5" height="18" rx="1"/><rect x="5" y="3" width="5" height="18" rx="1"/></svg>
+                    <svg id="icon-play" class="hidden h-4 w-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
+                </span>
                 <span id="play-pause-text" class="ml-2 text-sm">Pause</span>
             </button>
         </div>
@@ -37,20 +40,20 @@
 
         <script>
             const video = document.getElementById('background-video');
-            const playPauseBtn = document.getElementById('play-pause-btn');
-            const playPauseIcon = document.getElementById('play-pause-icon');
             const playPauseText = document.getElementById('play-pause-text');
+            const iconPause = document.getElementById('icon-pause');
+            const iconPlay = document.getElementById('icon-play');
 
             function togglePlay() {
                 if (video.paused) {
                     video.play();
-                    playPauseIcon.classList.remove('fa-play');
-                    playPauseIcon.classList.add('fa-pause');
+                    iconPause.classList.remove('hidden');
+                    iconPlay.classList.add('hidden');
                     playPauseText.textContent = 'Pause';
                 } else {
                     video.pause();
-                    playPauseIcon.classList.remove('fa-pause');
-                    playPauseIcon.classList.add('fa-play');
+                    iconPause.classList.add('hidden');
+                    iconPlay.classList.remove('hidden');
                     playPauseText.textContent = 'Play';
                 }
             }
@@ -74,38 +77,66 @@
                 </p>
 
                 <div class="aquarius-cta-buttons">
-                    <a href="#contact" type="button" class="aquarius-cta-primary">
+                    <a href="#contact" type="button" class="aquarius-cta-primary" title="{{ __('strings.hero_btn_quote') }}">
                         {{ __('strings.hero_btn_quote') }}
                     </a>
-                    <a href="#our-pools" type="button" class="aquarius-cta-secondary">
+                    <a href="#our-pools" type="button" class="aquarius-cta-secondary" title="{{ __('strings.hero_btn_explore') }}">
                         {{ __('strings.hero_btn_explore') }}
                     </a>
                 </div>
             </div>
         </div>
 
-        <div class="aquarius-right-hero-content">
-            <div
-                class="aquarius-swiper-carousel swiper">
+        {{-- Mobile Swiper (hidden on lg+) --}}
+        <div class="hero-mobile-swiper-wrap lg:hidden">
+            <div class="hero-mobile-swiper swiper">
                 <div class="swiper-wrapper">
-                    <div class="aquarius-swiper-image swiper-slide" data-swiper-autoplay="4000">
-                        <img loading="lazy" src="{{ asset('assets/images/aquarius-hero-image-1.jpg') }}" title="Hero Homepage Image 1" alt="Hero Homepage Image 1">
+                    @foreach ([1,2,3,4,5] as $n)
+                    <div class="swiper-slide">
+                        <picture>
+                            <source srcset="{{ asset('assets/images/hero-image/webp/hero-image-' . $n . '.webp') }}" type="image/webp">
+                            <img loading="lazy" src="{{ asset('assets/images/hero-image/hero-image-' . $n . '.jpg') }}" alt="Hero Image {{ $n }}">
+                        </picture>
                     </div>
-                    <div class="aquarius-swiper-image swiper-slide" data-swiper-autoplay="4000">
-                        <img loading="lazy" src="{{ asset('assets/images/aquarius-hero-image-2.jpg') }}" title="Hero Homepage Image 2" alt="Hero Homepage Image 2">
-                    </div>
-                    <div class="aquarius-swiper-image swiper-slide" data-swiper-autoplay="4000">
-                        <img loading="lazy" src="{{ asset('assets/images/aquarius-hero-image-3.jpg') }}" title="Hero Homepage Image 3" alt="Hero Homepage Image 3">
-                    </div>
-                    <div class="aquarius-swiper-image swiper-slide" data-swiper-autoplay="4000">
-                        <img loading="lazy" src="{{ asset('assets/images/aquarius-hero-image-4.jpg') }}" title="Hero Homepage Image 4" alt="Hero Homepage Image 4">
-                    </div>
+                    @endforeach
                 </div>
-
                 <div class="swiper-pagination"></div>
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
-                <div class="swiper-scrollbar"></div>
+            </div>
+        </div>
+
+        {{-- Strip images (lg+) --}}
+        <div class="hero-strip-container">
+            <div class="hero-strip-card hero-strip-card-far-left">
+                <picture>
+                    <source srcset="{{ asset('assets/images/hero-image/webp/hero-image-4.webp') }}" type="image/webp">
+                    <img loading="lazy" src="{{ asset('assets/images/hero-image/hero-image-4.jpg') }}" alt="Hero Image 4">
+                </picture>
+            </div>
+            <div class="hero-strip-card hero-strip-card-left">
+                <picture>
+                    <source srcset="{{ asset('assets/images/hero-image/webp/hero-image-2.webp') }}" type="image/webp">
+                    <img loading="lazy" src="{{ asset('assets/images/hero-image/hero-image-2.jpg') }}" alt="Hero Image 2">
+                </picture>
+            </div>
+            <div class="hero-strip-card hero-strip-card-center">
+                <picture>
+                    <source srcset="{{ asset('assets/images/hero-image/webp/hero-image-1.webp') }}" type="image/webp">
+                    <img loading="lazy" src="{{ asset('assets/images/hero-image/hero-image-1.jpg') }}" alt="Hero Image 1">
+                </picture>
+            </div>
+            <div class="hero-strip-card hero-strip-card-right">
+                <picture>
+                    <source srcset="{{ asset('assets/images/hero-image/webp/hero-image-3.webp') }}" type="image/webp">
+                    <img loading="lazy" src="{{ asset('assets/images/hero-image/hero-image-3.jpg') }}" alt="Hero Image 3">
+                </picture>
+            </div>
+            <div class="hero-strip-card hero-strip-card-far-right">
+                <picture>
+                    <source srcset="{{ asset('assets/images/hero-image/webp/hero-image-5.webp') }}" type="image/webp">
+                    <img loading="lazy" src="{{ asset('assets/images/hero-image/hero-image-5.jpg') }}" alt="Hero Image 5">
+                </picture>
             </div>
         </div>
     </div>

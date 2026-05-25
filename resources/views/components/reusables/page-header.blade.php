@@ -1,7 +1,10 @@
 @props(['headerTitle', 'headerSubtitle', 'imageFileLoc'])
 
 <header class="aquarius-header">
-    <img loading="lazy" class="aquarius-header-image" src="{{ asset('assets/images/pool_header/'. $imageFileLoc) }}" alt="">
+    <picture>
+        <source srcset="{{ asset('assets/images/pool_header/webp/' . pathinfo($imageFileLoc, PATHINFO_FILENAME) . '.webp') }}" type="image/webp">
+        <img loading="lazy" class="aquarius-header-image" src="{{ asset('assets/images/pool_header/'. $imageFileLoc) }}" alt="">
+    </picture>
 
     <div class="aquarius-header-overlay"
         style=" background: radial-gradient(at 25% 90%, #78A3DA 0px, transparent 50%), radial-gradient(at 97% 94%, #1D4169 0px, transparent 50%), radial-gradient(at 11% 98%, #90e0ab 0px, transparent 50%), radial-gradient(at 80% 8%, #fef9c3 0px, transparent 50%), #3370B9;">
