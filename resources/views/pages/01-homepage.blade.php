@@ -4,7 +4,7 @@
 {{-- META TAG PAGE --}}
 @section('seoData')
    <x-seo.seo 
-        ogDescription="Discover our range of every pool type in the market. Sastify with your dream swimming pool with pool specialists in Johor Bahru (JB)!"
+        ogDescription="Discover our range of every pool type in the market. Satisfy with your dream swimming pool with pool specialists in Johor Bahru (JB)!"
         ogImage="{{ asset('assets/images/pool-image-placeholder-5.jpg') }}"
     /> 
 @endsection

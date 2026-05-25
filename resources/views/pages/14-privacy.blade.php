@@ -64,7 +64,7 @@
         <strong class="text-neutral-900">It does not apply to information collected by:</strong>
         <ul class="list-disc pl-6 space-y-2">
             <li>us offline or through any other means,
-                including on any oter website operated by Company or any third party &lpar;including our affiliates and
+                including on any other website operated by Company or any third party &lpar;including our affiliates and
                 subsidiaries&rpar;; or
             </li>
             <li>

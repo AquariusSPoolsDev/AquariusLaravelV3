@@ -66,7 +66,7 @@
     </section>
 
     <section class="">
-        <h2 class="aquarius-subheading mt-8 uppercase">Changes or Amemdments:</h2>
+        <h2 class="aquarius-subheading mt-8 uppercase">Changes or Amendments:</h2>
         <p class="mb-4">
             Changes to this agreement, including payment terms can be made by us as well as amendments this agreement, at
             any time, provided we give you at least <strong class="text-neutral-900">30 days notice</strong> before the beginning of the billing
