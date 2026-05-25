@@ -30,7 +30,7 @@ $headerSubtitle = 'reviews_subtitle_heading';
         <div class="flex flex-col items-center">
             <div class="flex items-center gap-2">
                 <span class="text-2xl font-extrabold text-neutral-900">{{ number_format($averageRating ?? 0, 1) }}</span>
-                <span class="text-yellow-400 text-2xl leading-none">★</span>
+                <span class="text-warning-300 text-2xl leading-none">★</span>
             </div>
             <span class="text-xs text-neutral-400">{{__('strings.reviews_of_5_star')}}</span>
         </div>

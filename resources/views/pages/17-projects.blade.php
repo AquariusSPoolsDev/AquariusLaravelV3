@@ -52,7 +52,7 @@ $headerSubtitle = 'projects_subtitle_heading';
                 </h2>
 
                 {{-- LOCATION & YEAR --}}
-                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm text-gray-500 mb-3">
+                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm text-neutral-500 mb-3">
                     @if($project->location)
                         <span class="flex items-center gap-1">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -74,7 +74,7 @@ $headerSubtitle = 'projects_subtitle_heading';
 
                 {{-- TAGS --}}
                 @if($project->tags && count($project->tags))
-                    <div class="flex flex-wrap gap-1.5 mt-auto pt-3 border-t border-gray-100">
+                    <div class="flex flex-wrap gap-1.5 mt-auto pt-3 border-t border-neutral-100">
                         @foreach($project->tags as $tag)
                             <span class="text-xs px-2 py-0.5 bg-primary/10 text-primary font-medium rounded-full">
                                 {{ \App\Enums\PoolTags::translate($tag) }}

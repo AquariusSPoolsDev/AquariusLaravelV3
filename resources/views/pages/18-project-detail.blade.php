@@ -46,7 +46,7 @@ $headerSubtitle = 'projects_subtitle_heading';
         <div class="mb-8">
             <h1 class="text-3xl lg:text-5xl font-bold text-neutral-900 mb-5 lg:mb-7">{{ $project->title }}</h1>
 
-            <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-600 mb-4 pb-4 border-b border-neutral-200">
+            <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-neutral-600 mb-4 pb-4 border-b border-neutral-200">
                 @if($project->location)
                 <span class="flex items-center gap-1.5">
                     <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">

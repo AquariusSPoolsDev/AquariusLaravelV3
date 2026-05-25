@@ -39,9 +39,9 @@ $reviews = Review::orderBy('created_at', 'desc')->take(6)->get();
             {{-- CARD LOOP --}}
         </div>
         @else
-            <div class="mt-16 bg-red-50 border-s-4 border-red-500 rounded-e-xl p-6 ps-8" role="alert" tabindex="-1" aria-labelledby="noreview">
-                <h3 id="noreview" class="text-2xl text-gray-800 font-semibold mb-3 mt-0">{{__('strings.reviews_no_review_title')}}</h3>
-                <p class="text-gray-700 m-0">{{__('strings.reviews_no_review_body')}}</p>
+            <div class="mt-16 bg-error-100 border-s-4 border-error-300 rounded-e-xl p-6 ps-8" role="alert" tabindex="-1" aria-labelledby="noreview">
+                <h3 id="noreview" class="text-2xl text-neutral-800 font-semibold mb-3 mt-0">{{__('strings.reviews_no_review_title')}}</h3>
+                <p class="text-neutral-700 m-0">{{__('strings.reviews_no_review_body')}}</p>
             </div>
         @endif
     </div>

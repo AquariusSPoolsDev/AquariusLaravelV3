@@ -5,7 +5,7 @@
 
             {{-- SERVICE #1 --}}
             <a class="service-content-link group" href="{{ route('pool-services-page') }}">
-                <svg class="shrink-0 size-8 text-gray-800 mt-0.5 me-6" xmlns="http://www.w3.org/2000/svg"
+                <svg class="shrink-0 size-8 text-neutral-800 mt-0.5 me-6" xmlns="http://www.w3.org/2000/svg"
                     width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="13.5" cy="6.5" r=".5" />
@@ -18,11 +18,11 @@
 
                 <div>
                     <div>
-                        <h3 class="block font-bold text-gray-800 text-xl">{{__('strings.services_pool')}}</h3>
-                        <p class="text-gray-600">{{__('strings.services_pool_body')}}</p>
+                        <h3 class="block font-bold text-neutral-800 text-xl">{{__('strings.services_pool')}}</h3>
+                        <p class="text-neutral-600">{{__('strings.services_pool_body')}}</p>
                     </div>
 
-                    <p class="mt-3 inline-flex items-center gap-x-1 font-semibold text-gray-800">
+                    <p class="mt-3 inline-flex items-center gap-x-1 font-semibold text-neutral-800">
                         {{__('strings.services_pool_link')}}
                         <svg class="shrink-0 size-4 transition ease-in-out group-hover:translate-x-1 group-focus:translate-x-1"
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -37,7 +37,7 @@
 
             {{-- SERVICE #2 --}}
             <a class="service-content-link group" href="{{ route('pool-items-page') }}">
-                <svg class="shrink-0 size-8 text-gray-800 mt-0.5 me-6" xmlns="http://www.w3.org/2000/svg"
+                <svg class="shrink-0 size-8 text-neutral-800 mt-0.5 me-6" xmlns="http://www.w3.org/2000/svg"
                     width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M2 3h20" />
@@ -47,11 +47,11 @@
 
                 <div>
                     <div>
-                        <h3 class="block font-bold text-gray-800 text-xl">{{__('strings.services_essential')}}</h3>
-                        <p class="text-gray-600">{{__('strings.services_essential_body')}}</p>
+                        <h3 class="block font-bold text-neutral-800 text-xl">{{__('strings.services_essential')}}</h3>
+                        <p class="text-neutral-600">{{__('strings.services_essential_body')}}</p>
                     </div>
 
-                    <p class="mt-3 inline-flex items-center gap-x-1 font-semibold text-gray-800">
+                    <p class="mt-3 inline-flex items-center gap-x-1 font-semibold text-neutral-800">
                         {{__('strings.services_essential_link')}}
                         <svg class="shrink-0 size-4 transition ease-in-out group-hover:translate-x-1 group-focus:translate-x-1"
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -66,7 +66,7 @@
 
             {{-- SERVICE #3 --}}
             <a class="service-content-link group" href="https://thesplashshop.com/">
-                <svg class="shrink-0 size-8 text-gray-800 mt-0.5 me-6" xmlns="http://www.w3.org/2000/svg"
+                <svg class="shrink-0 size-8 text-neutral-800 mt-0.5 me-6" xmlns="http://www.w3.org/2000/svg"
                     width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7" />
@@ -79,11 +79,11 @@
 
                 <div>
                     <div>
-                        <h3 class="block font-bold text-gray-800 text-xl">{{__('strings.services_supplies')}}</h3>
-                        <p class="text-gray-600">{{__('strings.services_supplies_body')}}</p>
+                        <h3 class="block font-bold text-neutral-800 text-xl">{{__('strings.services_supplies')}}</h3>
+                        <p class="text-neutral-600">{{__('strings.services_supplies_body')}}</p>
                     </div>
 
-                    <p class="mt-3 inline-flex items-center gap-x-1 font-semibold text-gray-800">
+                    <p class="mt-3 inline-flex items-center gap-x-1 font-semibold text-neutral-800">
                         {{__('strings.services_supplies_link')}}
                         <svg class="shrink-0 size-4 transition ease-in-out group-hover:translate-x-1 group-focus:translate-x-1"
                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
