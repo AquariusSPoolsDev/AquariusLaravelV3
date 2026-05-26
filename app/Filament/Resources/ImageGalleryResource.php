@@ -100,6 +100,10 @@ class ImageGalleryResource extends Resource
                 Toggle::make('is_published')
                     ->label('Publish this Image?')
                     ->default(0),
+                Toggle::make('is_featured')
+                    ->label('Feature on Homepage?')
+                    ->helperText('Up to 9 featured images are shown on the homepage showcase.')
+                    ->default(false),
             ]);
     }
 
@@ -133,6 +137,11 @@ class ImageGalleryResource extends Resource
                     ->state(fn (ImageGallery $record): string => $record->is_published ? 'Published' : 'Unpublished')
                     ->badge()
                     ->color(fn (string $state): string => $state === 'Published' ? 'success' : 'danger'),
+                TextColumn::make('is_featured')
+                    ->label('Featured')
+                    ->state(fn (ImageGallery $record): string => $record->is_featured ? 'Featured' : '—')
+                    ->badge()
+                    ->color(fn (string $state): string => $state === 'Featured' ? 'warning' : 'gray'),
                 TextColumn::make('uploader.name')
                     ->label('Uploaded By')
                     ->wrap(),
@@ -146,6 +155,9 @@ class ImageGalleryResource extends Resource
                 Filter::make('is_published')
                     ->query(fn (Builder $query) => $query->where('is_published', true))
                     ->label('Published'),
+                Filter::make('is_featured')
+                    ->query(fn (Builder $query) => $query->where('is_featured', true))
+                    ->label('Featured on Homepage'),
                 SelectFilter::make('image_tags')
                     ->label('Pool Tags')
                     ->options(PoolTags::options())
@@ -184,6 +196,35 @@ class ImageGalleryResource extends Resource
                         ->action(fn (Collection $records) => $records->each->update(['is_published' => false]))
                         ->requiresConfirmation()
                         ->deselectRecordsAfterCompletion(),
+                ])->label('Publish'),
+                BulkActionGroup::make([
+                    BulkAction::make('feature')
+                        ->label('Feature Selected')
+                        ->icon('heroicon-o-star')
+                        ->requiresConfirmation()
+                        ->modalHeading('Feature Selected Images')
+                        ->modalDescription(function (Collection $records): string {
+                            $currentCount = ImageGallery::where('is_featured', true)->count();
+                            $afterCount = $currentCount + $records->count();
+
+                            return "This will feature {$records->count()} image(s) on the homepage showcase. "
+                                ."Currently {$currentCount}/9 slots are used. After this action: {$afterCount}/9. "
+                                .($afterCount > 9 ? '⚠ Warning: exceeding 9 featured images — only the first 9 (by newest date) will be shown.' : 'This is within the 9-image limit.');
+                        })
+                        ->modalSubmitActionLabel('Feature Images')
+                        ->action(fn (Collection $records) => $records->each->update(['is_featured' => true]))
+                        ->deselectRecordsAfterCompletion(),
+                    BulkAction::make('unfeature')
+                        ->label('Unfeature Selected')
+                        ->icon('heroicon-o-star')
+                        ->requiresConfirmation()
+                        ->modalHeading('Remove from Homepage Showcase')
+                        ->modalDescription('These images will no longer appear on the homepage showcase.')
+                        ->modalSubmitActionLabel('Unfeature Images')
+                        ->action(fn (Collection $records) => $records->each->update(['is_featured' => false]))
+                        ->deselectRecordsAfterCompletion(),
+                ])->label('Feature'),
+                BulkActionGroup::make([
                     DeleteBulkAction::make()->action(function (array $records) {
                         foreach ($records as $record) {
                             if ($record->image_path) {
@@ -192,7 +233,7 @@ class ImageGalleryResource extends Resource
                             $record->delete();
                         }
                     }),
-                ]),
+                ])->label('Delete'),
             ])
             ->defaultSort('created_at', 'desc');
     }

@@ -57,14 +57,15 @@ return [
 
     // HOMEPAGE - OUR SERVICES SECTION
     'services_heading' => 'Our Services',
-    'services_pool' => 'Pool Related Services',
-    'services_pool_body' => 'Find out more about the pool maintenance services we offer.',
+    'services_subheading' => 'From pool maintenance to supplies, we have everything you need to keep your pool in great shape.',
+    'services_pool' => 'Pool Maintenance & Repairs',
+    'services_pool_body' => 'From cleaning to repairs, we handle everything your pool needs to stay in top condition.',
     'services_pool_link' => 'View provided services',
-    'services_essential' => 'Pool Items and Equipments',
-    'services_essential_body' => 'Discover on equipments that are used for your pool to make it clean and safe.',
-    'services_essential_link' => 'Check out the equipments',
+    'services_essential' => 'Pool Items & Equipment',
+    'services_essential_body' => 'Discover the equipment used to keep your pool clean, safe, and running smoothly.',
+    'services_essential_link' => 'Check out the equipment',
     'services_supplies' => 'Pool Supply Shop',
-    'services_supplies_body' => 'Visit the store to buy supplies for your pool.',
+    'services_supplies_body' => 'Browse our online store for chemicals, accessories, and everything your pool needs.',
     'services_supplies_link' => 'Visit the shop',
 
     // HOMEPAGE - SHOWCASE SECTION
@@ -77,7 +78,7 @@ return [
 
     // HOMEPAGE - CONTACT SECTION
     'contact_heading' => 'Contact Us',
-    'contact_desc' => 'Complete the form to submit your interest to us, or click on the "Chat With Us Now!" button at the bottom of this page.',
+    'contact_desc' => 'Have a question or a project in mind? Fill in the form and we\'ll get back to you. Or hit the chat button below for a faster reply.',
 
     // FOOTER
     'footer_our_pools' => 'Our Pools',
@@ -606,6 +607,7 @@ return [
     'reviews_avg_rating' => 'Average Rating:',
     'reviews_of_5_star' => 'out of 5',
     'reviews_based_on' => 'Based on :total reviews',
+    'reviews_view_all' => 'View all reviews',
     'reviews_no_review_title' => 'No Reviews Found',
     'reviews_no_review_body' => 'There are no reviews to display at the moment. Your feedback could be the first to make a difference!',
 

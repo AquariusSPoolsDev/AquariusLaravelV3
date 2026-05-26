@@ -17,6 +17,7 @@ class ImageGallery extends Model
         'image_description',
         'image_tags',
         'is_published',
+        'is_featured',
         'uploader_id',
     ];
 
@@ -54,9 +55,13 @@ class ImageGallery extends Model
         $this->attributes['image_path'] = ltrim(str_replace('image_gallery/', '', $value), '/');
     }
 
-    // Scope to filter published images
     public function scopePublished($query)
     {
         return $query->where('is_published', 1);
+    }
+
+    public function scopeFeatured($query)
+    {
+        return $query->where('is_featured', 1);
     }
 }

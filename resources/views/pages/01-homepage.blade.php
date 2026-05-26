@@ -13,11 +13,15 @@
 @section('content')
     <x-homepage.hero-section />
 
+    {{-- About Us + Trust bar — to be added --}}
+
     <x-homepage.our-pools-section />
+
+    <x-homepage.services-section />
 
     <x-homepage.showcase-section />
 
-    <x-homepage.services-section />
+    <x-homepage.reviews-section />
 
     <x-homepage.contact-section />
 @endsection

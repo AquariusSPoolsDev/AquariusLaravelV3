@@ -62,13 +62,13 @@
     <div class="aquarius-hero-contents">
         <div class="aquarius-left-hero-content">
             <div class="left-content-gap-small">
-                <h1 class="aquarius-main-heading">
+                <h1 class="aquarius-main-heading" data-animate data-delay="0">
                     {{ __('strings.hero_heading') }}
                 </h1>
-                <p class="aquarius-secondary-heading">
+                <p class="aquarius-secondary-heading" data-animate data-delay="150">
                     {{ __('strings.hero_content') }}
                 </p>
-                <p class="aquarius-features-heading">
+                <p class="aquarius-features-heading" data-animate data-delay="250">
                     <strong>{{ __('strings.hero_feature_1') }}</strong> |
                     <strong>{{ __('strings.hero_feature_2') }}</strong> |
                     <strong>{{ __('strings.hero_feature_3') }}</strong> |
@@ -76,7 +76,7 @@
                     <strong>{{ __('strings.hero_feature_5') }}</strong>
                 </p>
 
-                <div class="aquarius-cta-buttons">
+                <div class="aquarius-cta-buttons" data-animate data-delay="350">
                     <a href="#contact" type="button" class="aquarius-cta-primary" title="{{ __('strings.hero_btn_quote') }}">
                         {{ __('strings.hero_btn_quote') }}
                     </a>
@@ -108,31 +108,31 @@
 
         {{-- Strip images (lg+) --}}
         <div class="hero-strip-container">
-            <div class="hero-strip-card hero-strip-card-far-left">
+            <div class="hero-strip-card hero-strip-card-far-left" data-animate data-delay="450">
                 <picture>
                     <source srcset="{{ asset('assets/images/hero-image/webp/hero-image-4.webp') }}" type="image/webp">
                     <img loading="lazy" src="{{ asset('assets/images/hero-image/hero-image-4.jpg') }}" alt="Hero Image 4">
                 </picture>
             </div>
-            <div class="hero-strip-card hero-strip-card-left">
+            <div class="hero-strip-card hero-strip-card-left" data-animate data-delay="500">
                 <picture>
                     <source srcset="{{ asset('assets/images/hero-image/webp/hero-image-2.webp') }}" type="image/webp">
                     <img loading="lazy" src="{{ asset('assets/images/hero-image/hero-image-2.jpg') }}" alt="Hero Image 2">
                 </picture>
             </div>
-            <div class="hero-strip-card hero-strip-card-center">
+            <div class="hero-strip-card hero-strip-card-center" data-animate data-delay="550">
                 <picture>
                     <source srcset="{{ asset('assets/images/hero-image/webp/hero-image-1.webp') }}" type="image/webp">
                     <img loading="lazy" src="{{ asset('assets/images/hero-image/hero-image-1.jpg') }}" alt="Hero Image 1">
                 </picture>
             </div>
-            <div class="hero-strip-card hero-strip-card-right">
+            <div class="hero-strip-card hero-strip-card-right" data-animate data-delay="500">
                 <picture>
                     <source srcset="{{ asset('assets/images/hero-image/webp/hero-image-3.webp') }}" type="image/webp">
                     <img loading="lazy" src="{{ asset('assets/images/hero-image/hero-image-3.jpg') }}" alt="Hero Image 3">
                 </picture>
             </div>
-            <div class="hero-strip-card hero-strip-card-far-right">
+            <div class="hero-strip-card hero-strip-card-far-right" data-animate data-delay="450">
                 <picture>
                     <source srcset="{{ asset('assets/images/hero-image/webp/hero-image-5.webp') }}" type="image/webp">
                     <img loading="lazy" src="{{ asset('assets/images/hero-image/hero-image-5.jpg') }}" alt="Hero Image 5">

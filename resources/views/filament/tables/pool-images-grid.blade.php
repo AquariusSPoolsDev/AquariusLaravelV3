@@ -10,10 +10,17 @@
             <img src="{{ $imageUrl }}"
                  alt="{{ $record->image_name }}"
                  class="w-full h-48 object-cover transition-transform duration-200 group-hover:scale-105">
-            <span class="absolute top-2 right-2 text-xs font-semibold px-2 py-0.5 rounded-full
-                {{ $record->is_published ? 'bg-green-500 text-white' : 'bg-red-500 text-white' }}">
-                {{ $record->is_published ? 'Published' : 'Unpublished' }}
-            </span>
+            <div class="absolute top-2 right-2 flex flex-col items-end gap-1">
+                <span class="text-xs font-semibold px-2 py-0.5 rounded-full
+                    {{ $record->is_published ? 'bg-green-500 text-white' : 'bg-red-500 text-white' }}">
+                    {{ $record->is_published ? 'Published' : 'Unpublished' }}
+                </span>
+                @if($record->is_featured)
+                <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-400 text-amber-900">
+                    Featured
+                </span>
+                @endif
+            </div>
         </a>
     @endforeach
 

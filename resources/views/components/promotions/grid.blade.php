@@ -4,7 +4,7 @@
     {{-- Badge + title --}}
     <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
         <h2 class="font-bold text-neutral-900 text-lg mt-0">{{ $promotion->title }}</h2>
-        <span class="shrink-0 inline-flex items-center py-1 px-3 rounded-full text-xs font-medium bg-secondary-100 text-secondary-800">
+        <span class="shrink-0 inline-flex items-center py-1 px-3 rounded-full text-base font-semibold bg-secondary-500 text-white">
             {{__('strings.promotions_current_promo_badge')}}
         </span>
     </div>
@@ -28,7 +28,7 @@
     @endphp
 
     @if($images->isNotEmpty())
-        <div class="promo-swiper swiper rounded-xl overflow-hidden" data-promo-id="{{ $promotion->id }}">
+        <div class="promo-swiper swiper" data-promo-id="{{ $promotion->id }}">
             <div class="swiper-wrapper">
                 @foreach($images as $file)
                     @php
@@ -38,16 +38,14 @@
                         <a data-fslightbox="promotion_{{ $promotion->id }}" href="{{ asset('storage/' . $encodedFile) }}">
                             <img src="{{ asset('storage/' . $encodedFile) }}"
                                  alt="{{ $promotion->title }}"
-                                 class="w-full h-64 object-cover">
+                                 class="w-full h-64 object-cover rounded-xl">
                         </a>
                     </div>
                 @endforeach
             </div>
-            @if($images->count() > 1)
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-            @endif
+            <div class="swiper-pagination mt-2"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
         </div>
     @endif
 </div>

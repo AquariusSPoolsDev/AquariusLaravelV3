@@ -26,17 +26,7 @@ $headerSubtitle = 'reviews_subtitle_heading';
         <x-reusables.pill-text>{{__('strings.reviews_pill')}}</x-reusables.pill-text>
         <p class="text-neutral-600">{{__('strings.reviews_body_title')}}</p>
     </div>
-    <div class="inline-flex items-center gap-4 border border-neutral-300 rounded-full px-6.5 py-2.5 shrink-0">
-        <div class="flex flex-col items-center">
-            <div class="flex items-center gap-2">
-                <span class="text-2xl font-extrabold text-neutral-900">{{ number_format($averageRating ?? 0, 1) }}</span>
-                <span class="text-warning-300 text-2xl leading-none">★</span>
-            </div>
-            <span class="text-xs text-neutral-400">{{__('strings.reviews_of_5_star')}}</span>
-        </div>
-        <div class="w-px h-8 bg-neutral-300"></div>
-        <span class="text-neutral-600">{!! __('strings.reviews_based_on', ['total' => '<strong>'.$totalReviews.'</strong>']) !!}</span>
-    </div>
+    <x-reusables.google-reviews-pill :avg="$averageRating ?? 0" :total="$totalReviews ?? 0" variant="light" />
 </div>
 
 <div class="container">

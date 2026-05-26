@@ -1,19 +1,19 @@
 @forelse($reviews as $review)
-<div class="bg-white border border-neutral-200 rounded-lg p-4 lg:p-6 h-full break-before-avoid transition-all duration-300 hover:-translate-y-1 hover:border-primary-300 hover:shadow-lg hover:shadow-primary-100">
+<div class="aquarius-homepage-review-card" @if(!empty($animate)) data-animate data-delay="{{ 200 + $loop->index * 100 }}" @endif>
 
     {{-- Header: avatar + name + stars --}}
-    <div class="flex items-center gap-3 mb-5">
-        <div class="shrink-0 w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold uppercase">
+    <div class="review-card-header">
+        <div class="review-card-avatar">
             {{ mb_substr($review->reviewer_name, 0, 1) }}
         </div>
-        <div class="flex-1 min-w-0">
-            <div class="flex items-center justify-between gap-2">
-                <h2 class="font-bold text-neutral-900 truncate">{{ $review->reviewer_name }}</h2>
-                <div class="shrink-0 text-yellow-400 leading-none">
+        <div class="review-card-meta">
+            <div class="review-card-meta-top">
+                <h2 class="review-card-name">{{ $review->reviewer_name }}</h2>
+                <div class="review-card-stars">
                     {{ str_repeat('★', $review->rating) }}{{ str_repeat('☆', 5 - $review->rating) }}
                 </div>
             </div>
-            <div class="flex flex-wrap items-center gap-1.5 text-sm text-neutral-600 mt-1">
+            <div class="review-card-source-row">
                 @if($review->source)
                     <span class="font-bold">{{ $review->source }}</span>
                 @endif
@@ -28,7 +28,7 @@
     </div>
 
     {{-- Review text --}}
-    <div class="rich-text italic text-neutral-700 pt-4 mt-4 border-t border-neutral-200">
+    <div class="review-card-body rich-text">
         {!! $review->review !!}
     </div>
 </div>

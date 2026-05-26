@@ -1,48 +1,32 @@
 @php
-use App\Models\Review;
-$reviews = Review::orderBy('created_at', 'desc')->take(6)->get();
+use App\Models\CustReview;
+$reviews = CustReview::where('is_published', true)->orderBy('reviewed_at', 'desc')->take(6)->get();
+$googleAvg = round(CustReview::where('source', 'Google Reviews')->avg('rating'), 1);
+$googleTotal = CustReview::where('source', 'Google Reviews')->count();
 @endphp
 
-<section class="bg-primary-800">
-    <div class="main-container">
-        <h2 class="aquarius-homepage-heading"><span class="text-white">{{__('strings.reviews_heading')}}</span></h2>
+<section class="bg-linear-to-br from-primary-950 via-primary-800 to-primary-700 relative overflow-hidden">
+    {{-- Dashed grid overlay --}}
+    <div class="absolute inset-0 z-0 pointer-events-none" style="background-image: linear-gradient(to right, rgba(255,255,255,0.07) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.07) 1px, transparent 1px); background-size: 24px 24px; mask-image: repeating-linear-gradient(to right, black 0px, black 3px, transparent 3px, transparent 8px), repeating-linear-gradient(to bottom, black 0px, black 3px, transparent 3px, transparent 8px); -webkit-mask-image: repeating-linear-gradient(to right, black 0px, black 3px, transparent 3px, transparent 8px), repeating-linear-gradient(to bottom, black 0px, black 3px, transparent 3px, transparent 8px); mask-composite: intersect; -webkit-mask-composite: source-in;"></div>
+    <div class="main-container relative z-10">
+        <h2 class="aquarius-homepage-heading" data-animate data-delay="0"><span class="text-white">{{__('strings.reviews_heading')}}</span></h2>
 
-        @if($reviews->isNotEmpty())
-        <div class="aquarius-review-grid-homepage">
-            {{-- CARD LOOP --}}
-            @foreach ($reviews as $review)
-            <div class="aquarius-review-card">
-                <div class="review-card-content">
-                    <div class="review-area">
-                        <span class="review-text">{!!$review->review!!}</span>
-                    </div>
-
-                    <div class="reviewer-area">
-                        <div class="reviewer-detail">
-                            <div class="reviewer-image">
-                                <img loading="lazy" src="{{ asset('assets/favicon/aquarius-logo-192.png') }}" alt="{{$review->reviewer_name}}" title="{{$review->reviewer_name}}">
-                            </div>
-
-                            <div class="reviewer-data">
-                                <p class="reviewer-name">
-                                    {{$review->reviewer_name}}
-                                </p>
-                                <p class="reviewer-location">
-                                    {{$review->reviewer_location}}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            @endforeach
-            {{-- CARD LOOP --}}
+        {{-- Google Reviews summary --}}
+        <div class="mt-6 flex justify-center" data-animate data-delay="100">
+            <x-reusables.google-reviews-pill :avg="$googleAvg" :total="$googleTotal" variant="dark" />
         </div>
-        @else
-            <div class="mt-16 bg-error-100 border-s-4 border-error-300 rounded-e-xl p-6 ps-8" role="alert" tabindex="-1" aria-labelledby="noreview">
-                <h3 id="noreview" class="text-2xl text-neutral-800 font-semibold mb-3 mt-0">{{__('strings.reviews_no_review_title')}}</h3>
-                <p class="text-neutral-700 m-0">{{__('strings.reviews_no_review_body')}}</p>
-            </div>
-        @endif
+
+        <div class="aquarius-homepage-review-grid">
+            @include('components.reviews.grid', ['reviews' => $reviews, 'animate' => true])
+        </div>
+
+        <div class="mt-10 text-center" data-animate data-delay="750">
+            <a href="{{ route('customer-reviews-page') }}" class="aquarius-reviews-btn">
+                {{__('strings.reviews_view_all')}}
+                <svg class="reviews-btn-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
     </div>
 </section>

@@ -47,10 +47,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function initSwipers() {
         list.querySelectorAll('.promo-swiper').forEach(function (el) {
-            if (el.swiper) { return; }
+            if (el.swiper) { el.swiper.destroy(true, true); }
             new window.Swiper(el, {
                 modules: [window.SwiperNavigation, window.SwiperPagination],
-                loop: true,
+                loop: false,
+                watchOverflow: true,
+                slidesPerView: 1,
+                spaceBetween: 16,
+                breakpoints: {
+                    768:  { slidesPerView: 2, spaceBetween: 16 },
+                    1024: { slidesPerView: 3, spaceBetween: 24 },
+                },
                 pagination: { el: el.querySelector('.swiper-pagination'), clickable: true },
                 navigation: {
                     nextEl: el.querySelector('.swiper-button-next'),

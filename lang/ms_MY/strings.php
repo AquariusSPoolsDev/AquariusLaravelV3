@@ -57,14 +57,15 @@ return [
 
     // HOMEPAGE - OUR SERVICES SECTION
     'services_heading' => 'Perkhidmatan Kami',
-    'services_pool' => 'Perkhidmatan berkaitan kolam renang',
-    'services_pool_body' => 'Pelajari lebih lanjut tentang perkhidmatan kolam renang yang kami tawarkan.',
+    'services_subheading' => 'Dari penyelenggaraan kolam hingga bekalan, kami ada semua yang anda perlukan untuk menjaga kolam anda.',
+    'services_pool' => 'Penyelenggaraan & Pembaikan Kolam',
+    'services_pool_body' => 'Dari pembersihan hingga pembaikan, kami uruskan semua yang diperlukan kolam anda.',
     'services_pool_link' => 'Lihat perkhidmatan yang ditawarkan',
     'services_essential' => 'Peralatan Kolam Renang',
-    'services_essential_body' => 'Teroka peralatan yang digunakan untuk memastikan kolam renang anda bersih dan selamat',
+    'services_essential_body' => 'Teroka peralatan yang digunakan untuk memastikan kolam renang anda bersih, selamat dan berfungsi dengan baik.',
     'services_essential_link' => 'Teroka peralatan',
     'services_supplies' => 'Kedai Kolam Renang',
-    'services_supplies_body' => 'Lawat kedai untuk membeli barangan untuk kolam renang anda',
+    'services_supplies_body' => 'Layari kedai dalam talian kami untuk bahan kimia, aksesori, dan semua keperluan kolam anda.',
     'services_supplies_link' => 'Lawati Kedai',
 
     // HOMEPAGE - SHOWCASE SECTION
@@ -77,7 +78,7 @@ return [
 
     // HOMEPAGE - CONTACT SECTION
     'contact_heading' => 'Hubungi Kami',
-    'contact_desc' => 'Lengkapkan borang untuk menghantar minat anda kepada kami, atau klik butang "Tanya Kami!" di bawah halaman ini.',
+    'contact_desc' => 'Ada soalan atau projek dalam fikiran? Isi borang dan kami akan hubungi anda semula. Atau tekan butang chat di bawah untuk respons yang lebih cepat.',
 
     // FOOTER
     'footer_our_pools' => 'Kolam Renang Kami',
@@ -606,6 +607,7 @@ return [
     'reviews_avg_rating' => 'Purata Penilaian:',
     'reviews_of_5_star' => 'daripada 5',
     'reviews_based_on' => 'Berdasarkan :total ulasan',
+    'reviews_view_all' => 'Lihat semua ulasan',
     'reviews_no_review_title' => 'Tiada Ulasan Ditemui',
     'reviews_no_review_body' => 'Tiada ulasan untuk dipaparkan pada masa ini. Maklum balas anda mungkin yang pertama membuat perubahan!',
 

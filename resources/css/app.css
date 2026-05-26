@@ -467,107 +467,97 @@
     }
 }
 
-/* HOMEPAGE OUR POOLS */
-.aquarius-our-pools-tab-main {
-    @apply mt-10 flex max-lg:flex-col lg:justify-between;
+
+
+/* HOMEPAGE CARDS LAYOUTS */
+.aquarius-homepage-card-grid {
+    @apply mt-12 grid grid-cols-1 gap-6 lg:gap-10 md:grid-cols-2 lg:grid-cols-3;
 }
 
-.aquarius-our-pools-tablist {
-    @apply flex max-lg:pb-2 max-lg:mb-3 max-lg:gap-x-3 max-lg:overflow-x-auto max-lg:[&::-webkit-scrollbar]:h-2 max-lg:[&::-webkit-scrollbar-thumb]:rounded-full max-lg:[&::-webkit-scrollbar-track]:bg-neutral-100 max-lg:[&::-webkit-scrollbar-thumb]:bg-neutral-300 lg:flex-col lg:space-y-6;
-}
 
-.aquarius-our-pools-tab {
-    @apply text-neutral-800 bg-neutral-50 border border-neutral-200 text-xl font-semibold uppercase shadow-sm hover:shadow-lg transition-all rounded-lg px-4 py-8 inline-flex items-center hover:text-white hover:bg-primary-700 focus:text-white focus:bg-primary-700 max-lg:text-lg max-lg:whitespace-nowrap max-lg:justify-center max-lg:px-6 max-lg:py-3 max-lg:basis-0 max-lg:grow;
 
-    &.tab-active {
-        @apply text-white bg-primary-700;
+/* HOMEPAGE SERVICE CARDS */
+.aquarius-homepage-service-card {
+    @apply bg-white border-2 border-neutral-200 rounded-lg transition-all duration-300 hover:-translate-y-1 hover:border-primary-300 hover:shadow-lg hover:shadow-primary-100 active:scale-95 active:translate-y-0 active:shadow-none cursor-pointer no-underline;
+
+    .card-body {
+        @apply relative p-4 lg:p-6 overflow-hidden;
+    }
+
+    .card-blob {
+        @apply absolute flex items-center justify-center -top-4 -right-4 rotate-12 size-24 rounded-2xl lg:size-32 lg:-top-5 lg:-right-5 bg-primary-100 text-primary-700 transition-all duration-300 group-hover/card:top-4 group-hover/card:right-4 lg:group-hover/card:top-6 lg:group-hover/card:right-6 group-hover/card:size-16 lg:group-hover/card:size-20 group-hover/card:rotate-0 group-hover/card:rounded-xl group-active/card:top-4 group-active/card:right-4 lg:group-active/card:top-6 lg:group-active/card:right-6 group-active/card:size-16 lg:group-active/card:size-20 group-active/card:rotate-0 group-active/card:rounded-xl group-active/card:brightness-90;
+    }
+
+    .card-blob-icon {
+        @apply size-12 lg:size-16 transition-all duration-300 group-hover/card:size-8 lg:group-hover/card:size-10 group-active/card:size-8 lg:group-active/card:size-10;
+    }
+
+    .card-title {
+        @apply text-2xl lg:text-3xl font-semibold mb-4 lg:mb-6 text-primary-900 max-w-3/4 text-balance;
+    }
+
+    .card-desc {
+        @apply text-neutral-600 leading-relaxed grow;
+    }
+
+    .card-btn {
+        @apply mt-4 inline-flex items-center gap-1 font-medium text-secondary-800 underline-offset-4 transition-colors group-hover/card:underline group-active/card:underline;
+    }
+
+    .card-btn-arrow {
+        @apply w-5 h-5 transition-transform duration-200 group-hover/card:translate-x-1;
     }
 }
 
-.aquarius-our-pools-tab-content {
-    @apply bg-neutral-50 border border-neutral-200 shadow-sm hover:shadow-lg transition-all rounded-lg p-4 h-full;
-}
 
-.aquarius-our-pools-tab-desc {
-    @apply text-neutral-800 leading-relaxed mb-4;
-}
 
-.aquarius-our-pools-image-grid {
-    @apply grid grid-cols-1 h-60 lg:grid-cols-3 lg:gap-4 lg:h-45;
-}
+/* HOMEPAGE POOL CARDS */
+.aquarius-homepage-pool-card {
+    @apply flex flex-col rounded-lg border-2 border-neutral-200 bg-white overflow-hidden h-full transition-all duration-300 hover:-translate-y-1 hover:border-primary-300 hover:shadow-lg hover:shadow-primary-100 active:scale-95 active:brightness-97 active:shadow-none active:translate-y-0 active:border-primary-300 cursor-pointer no-underline;
 
-.aquarius-our-pools-image-content {
-    @apply bg-primary-300 rounded-lg overflow-hidden;
-
-    img {
-        @apply w-full h-full object-cover;
+    .pool-card-body {
+        @apply flex flex-col gap-3 p-4 lg:p-6 grow;
     }
-}
 
-.aquarius-our-pools-link {
-    @apply text-center lg:text-end mt-5;
+    .pool-card-title {
+        @apply text-2xl lg:text-3xl uppercase font-semibold mb-2 text-primary-900;
+    }
 
-    a.link-text {
-        @apply text-lg inline-flex items-center gap-x-1 font-semibold underline hover:no-underline transition text-primary;
+    .pool-card-desc {
+        @apply text-neutral-600 leading-relaxed grow;
+    }
 
-        svg {
-            @apply shrink-0 size-6 transition ease-in-out group-hover:translate-x-1 group-focus:translate-x-1;
+    .pool-card-btn {
+        @apply mt-4 inline-flex items-center gap-1 font-medium text-secondary-800 group-hover/card:underline group-active/card:underline underline-offset-4 transition-colors;
+    }
+
+    .pool-card-btn-arrow {
+        @apply w-5 h-5 transition-transform duration-200 group-hover/card:translate-x-1;
+    }
+
+    .pool-card-image {
+        @apply relative h-60 overflow-hidden;
+
+        .pool-card-img-default,
+        .pool-card-img-hover {
+            @apply absolute inset-0 w-full h-full object-cover transition-opacity duration-500;
+        }
+
+        .pool-card-img-hover {
+            @apply opacity-0;
+        }
+    }
+
+    &:hover, &:active {
+        .pool-card-img-default {
+            @apply opacity-0;
+        }
+
+        .pool-card-img-hover {
+            @apply opacity-100;
         }
     }
 }
-
-/* HOMEPAGE OUR POOLS CARDS */
-.our-pools-container {
-    @apply bg-primary-50/50;
-
-    .aquarius-card-grid {
-        @apply mt-12 grid grid-cols-1 gap-6 lg:gap-10 md:grid-cols-2 lg:grid-cols-3;
-
-        .aquarius-card {
-            @apply flex flex-col rounded-lg border-2 border-neutral-200 bg-white overflow-hidden h-full transition-all duration-300 hover:-translate-y-1 hover:border-primary-300 hover:shadow-lg hover:shadow-primary-100 active:border-primary-300 active:shadow-lg active:shadow-primary-100 cursor-pointer no-underline;
-
-            .aquarius-card-body {
-                @apply flex flex-col gap-3 p-4 lg:p-6 grow;
-            }
-
-            .aquarius-card-title {
-                @apply text-2xl lg:text-3xl uppercase font-semibold mb-2 text-primary-900;
-            }
-
-            .aquarius-card-desc {
-                @apply text-neutral-600 leading-relaxed grow;
-            }
-
-            .aquarius-card-btn {
-                @apply mt-4 inline-flex items-center gap-1 font-medium text-secondary-800 group-hover:underline group-active:underline underline-offset-4 transition-colors;
-            }
-
-            .aquarius-card-image {
-                @apply relative h-60 overflow-hidden;
-
-                .aquarius-card-img-default,
-                .aquarius-card-img-hover {
-                    @apply absolute inset-0 w-full h-full object-cover transition-opacity duration-500;
-                }
-
-                .aquarius-card-img-hover {
-                    @apply opacity-0;
-                }
-            }
-
-            &:hover, &:active {
-                .aquarius-card-img-default {
-                    @apply opacity-0;
-                }
-
-                .aquarius-card-img-hover {
-                    @apply opacity-100;
-                }
-            }
-        }
-    }
-}
-
 
 
 
@@ -576,10 +566,10 @@
     @apply grid grid-cols-1 gap-4 lg:grid-cols-3 lg:grid-rows-4 mt-10;
 
     .showcase-grid-content {
-        @apply w-full h-48 lg:h-80 bg-secondary-400 rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow border-2 border-neutral-300;
+        @apply w-full h-48 lg:h-80 bg-secondary-400 rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all border border-neutral-200 active:scale-95 active:shadow-none active:brightness-90;
 
         img {
-            @apply w-full h-full object-cover hover:scale-125 transition-all;
+            @apply w-full h-full object-cover hover:scale-110 transition-all;
         }
     }
 
@@ -597,83 +587,70 @@
 }
 
 .aquarius-showcase-btn {
-    @apply py-4 px-12 inline-flex items-center gap-4 text-lg lg:text-xl rounded-lg border border-transparent bg-primary-700 text-white hover:bg-primary-800 focus:outline-none focus:bg-primary-800 disabled:opacity-50 disabled:pointer-events-none;
+    @apply py-4 px-12 inline-flex items-center gap-4 text-lg lg:text-xl rounded-lg border border-transparent bg-primary-700 text-white transition-all hover:bg-primary-800 hover:shadow-lg hover:shadow-primary-700/40 hover:-translate-y-0.5 focus:outline-none focus:bg-primary-800 active:scale-95 active:brightness-90 active:translate-y-0 disabled:opacity-50 disabled:pointer-events-none;
 }
 
-/* SERVICES HOMEPAGE */
-.aquarius-service-grid-homepage {
-    @apply grid sm:grid-cols-2 lg:grid-cols-3 items-center gap-6;
 
+/* REVIEWS HOMEPAGE */
+.aquarius-homepage-review-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10;
+}
 
-    .service-content-link {
-        @apply flex gap-y-6 size-full hover:bg-neutral-100 focus:outline-none focus:bg-neutral-100 rounded-lg p-5;
+.aquarius-homepage-review-card {
+    @apply bg-white border border-neutral-200 rounded-lg p-4 lg:p-6 h-full break-before-avoid transition-all duration-300 hover:-translate-y-1 hover:border-primary-300 hover:shadow-lg hover:shadow-primary-100;
+
+    .review-card-header {
+        @apply flex items-center gap-3 mb-5;
+    }
+
+    .review-card-avatar {
+        @apply shrink-0 w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold uppercase;
+    }
+
+    .review-card-meta {
+        @apply flex-1 min-w-0;
+
+        .review-card-meta-top {
+            @apply flex items-center justify-between gap-2;
+        }
+
+        .review-card-name {
+            @apply font-bold text-neutral-900 truncate;
+        }
+
+        .review-card-stars {
+            @apply shrink-0 text-yellow-400 leading-none;
+        }
+
+        .review-card-source-row {
+            @apply flex flex-wrap items-center gap-1.5 text-sm text-neutral-600 mt-1;
+        }
+    }
+
+    .review-card-body {
+        @apply italic text-neutral-700 pt-4 mt-4 border-t border-neutral-200;
     }
 }
 
-/* REVIEWS HOMEPAGE */
-.aquarius-review-grid-homepage {
-    @apply grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-16;
+.aquarius-reviews-btn {
+    @apply py-4 px-12 inline-flex items-center gap-4 text-lg lg:text-xl rounded-lg border border-white bg-white text-primary-800 font-semibold transition-all hover:bg-primary-50 hover:shadow-lg hover:-translate-y-0.5 focus:outline-none active:scale-95 active:brightness-90 active:translate-y-0 disabled:opacity-50 disabled:pointer-events-none;
 
-    .aquarius-review-card {
-        @apply grid h-auto;
+    .reviews-btn-arrow {
+        @apply size-5 transition-transform;
+    }
 
-        .review-card-content {
-            @apply flex flex-col bg-white rounded-lg;
-
-            .review-area {
-                @apply flex-auto p-4 md:p-6;
-
-                .review-text {
-                    @apply text-sm italic md:text-base text-neutral-800;
-                }
-            }
-
-            .reviewer-area {
-                @apply p-4 bg-neutral-100 rounded-b-xl md:px-7;
-
-                .reviewer-detail {
-                    @apply flex items-center gap-x-3;
-
-                    .reviewer-image {
-                        @apply shrink-0;
-
-                        img {
-                            @apply size-12 rounded-full bg-primary;
-                        }
-                    }
-
-                    .reviewer-data {
-                        @apply grow;
-
-                        .reviewer-name {
-                            @apply text-sm font-semibold text-neutral-800;
-                        }
-
-                        .reviewer-location {
-                            @apply text-sm text-neutral-500;
-                        }
-                    }
-                }
-            }
-        }
+    &:hover .reviews-btn-arrow {
+        @apply translate-x-1;
     }
 }
 
 /* HOMEPAGE CONTACT */
 .aquarius-contact-main {
-    @apply flex lg:justify-between max-lg:flex-col;
-
-    .aquarius-contact-col-left {
-        @apply lg:w-[32%];
-    }
-
-    .aquarius-contact-col-right {
-        @apply lg:w-[62%];
-    }
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-8;
 }
 
 .aquarius-contact-form-card {
-    @apply p-4 bg-neutral-50 border border-neutral-200 rounded-lg shadow-sm;
+    @apply p-4 lg:p-8 bg-neutral-50 border border-neutral-200 rounded-lg;
 }
 
 /* FOOTER */
@@ -703,12 +680,25 @@ footer.aquarius-footer {
 
 }
 
-/* back to top button */
-
 
 /* CONTAINER */
 .main-container {
-    @apply container mx-auto px-4 md:px-6 lg:px-8 py-12 lg:py-16;
+    @apply container mx-auto px-4 md:px-6 lg:px-8 py-12 lg:py-16 xl:py-20;
+}
+
+/* SCROLL ANIMATIONS */
+@media (prefers-reduced-motion: no-preference) {
+    [data-animate] {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.55s ease, transform 0.55s ease;
+        transition-delay: var(--animate-delay, 0ms);
+    }
+
+    [data-animate].animate-in {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* HOMEPAGE HEADING */
@@ -733,11 +723,11 @@ footer.aquarius-footer {
     }
 
     .aquarius-accordion-toggle {
-        @apply flex items-center justify-between gap-4 w-full px-5 py-5 lg:px-6 text-left text-sm lg:text-base font-semibold text-neutral-900 transition-colors duration-150 hover:text-primary-600 focus:outline-none;
+        @apply flex items-center justify-between gap-4 w-full px-5 py-5 lg:px-6 text-left text-sm lg:text-base font-semibold text-neutral-900 transition-colors duration-150 hover:text-primary-600 focus:outline-none cursor-pointer;
     }
 
     .toggle-icon {
-        @apply shrink-0 w-[22px] h-[22px] rounded-full border border-neutral-200 flex items-center justify-center text-neutral-400 transition-all duration-150;
+        @apply shrink-0 size-5.5 rounded-full border border-neutral-200 flex items-center justify-center text-neutral-400 transition-all duration-150;
     }
 
     .aquarius-accordion-content {
