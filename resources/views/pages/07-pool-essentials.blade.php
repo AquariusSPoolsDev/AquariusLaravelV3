@@ -23,10 +23,10 @@ $headerSubtitle = 'pool_item_subtitle_heading';
 @section('content')
 
 {{-- INTRO --}}
-<p class="mb-10 leading-relaxed">{{ __('strings.pool_item_body') }}</p>
+<p class="mb-8 leading-relaxed">{{ __('strings.pool_item_body') }}</p>
 
 {{-- ANCHOR NAV --}}
-<nav class="sticky top-0 z-10 bg-white/90 backdrop-blur-sm py-3 mb-10 -mx-4 px-4 border-b border-neutral-100">
+<nav class="pb-6 mb-12 border-b border-neutral-100">
     <div class="flex flex-wrap gap-2">
         <a href="#core-equipment"
             class="inline-flex items-center px-4 py-1.5 rounded-full text-sm lg:text-base font-semibold font-heading tracking-tight transition-colors bg-primary-700 text-white hover:bg-primary-800">
@@ -50,20 +50,20 @@ $headerSubtitle = 'pool_item_subtitle_heading';
     <p class="mb-8 text-neutral-600">{{ __('strings.pool_item_core_body') }}</p>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <x-pool-supplies.pool-item-card-portrait
-            pool_item_image="{{ asset('assets/images/hero-image-3.jpg') }}"
+        <x-pool-supplies.pool-item-card
+            pool_item_image="{{ asset('assets/images/pool-image-placeholder-5.jpg') }}"
             pool_item_title="{{ __('strings.pool_item_pump_title') }}"
-            pool_item_brief="{{ __('strings.pool_item_pump_brief') }}"
+            pool_item_body="{{ __('strings.pool_item_pump_brief') }}"
         />
-        <x-pool-supplies.pool-item-card-portrait
-            pool_item_image="{{ asset('assets/images/hero-image-3.jpg') }}"
+        <x-pool-supplies.pool-item-card
+            pool_item_image="{{ asset('assets/images/pool-image-placeholder-5.jpg') }}"
             pool_item_title="{{ __('strings.pool_item_filter_title') }}"
-            pool_item_brief="{{ __('strings.pool_item_filter_brief') }}"
+            pool_item_body="{{ __('strings.pool_item_filter_brief') }}"
         />
-        <x-pool-supplies.pool-item-card-portrait
-            pool_item_image="{{ asset('assets/images/hero-image-3.jpg') }}"
+        <x-pool-supplies.pool-item-card
+            pool_item_image="{{ asset('assets/images/pool-image-placeholder-5.jpg') }}"
             pool_item_title="{{ __('strings.pool_item_salt_chlorinator_title') }}"
-            pool_item_brief="{{ __('strings.pool_item_salt_chlorinator_brief') }}"
+            pool_item_body="{{ __('strings.pool_item_salt_chlorinator_brief') }}"
         />
     </div>
 </section>
@@ -415,7 +415,7 @@ $headerSubtitle = 'pool_item_subtitle_heading';
 </section>
 
 {{-- CLOSING --}}
-<div class="mt-8 p-6">
+<div class="mt-8">
     <p class="mb-2">{{ __('strings.pool_item_closing_1') }}</p>
     <p class="mb-0">{{ __('strings.pool_item_closing_2') }}</p>
 </div>

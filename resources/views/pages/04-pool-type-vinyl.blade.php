@@ -29,6 +29,20 @@ $headerSubtitle = 'vinyl_pool_subtitle_heading';
         <x-our-pools-vinyl.pool-creation-steps />
         <x-our-pools-vinyl.pool-creation-steps-desc />
     </div>
+
+    {{-- STEP IMAGE GRID --}}
+    <div class="grid grid-cols-2 lg:grid-cols-5 gap-4 mt-10">
+        @foreach ([1, 2, 3, 4, 5] as $step)
+        <div>
+            <div class="overflow-hidden rounded-xl border border-neutral-200 bg-info-bg aspect-square">
+                <img src="{{ asset('assets/images/vinyl/steps/step-' . $step . '.jpg') }}"
+                     alt="{{ __('strings.vinyl_pool_step_' . $step . '_title') }}"
+                     class="w-full h-full object-cover hover:scale-105 transition-all">
+            </div>
+            <p class="mt-2 italic text-neutral-700">{{ $step }}. {{ __('strings.vinyl_pool_step_' . $step . '_title') }}</p>
+        </div>
+        @endforeach
+    </div>
 </section>
 
 {{-- PROS & CONS --}}
@@ -41,6 +55,25 @@ $headerSubtitle = 'vinyl_pool_subtitle_heading';
     </div>
 </section>
 
+{{-- POOL GALLERY --}}
+<section class="mt-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="bg-info-bg overflow-hidden w-full aspect-4/3 object-cover border border-neutral-200 rounded-xl">
+            <img src="{{ asset('assets/images/vinyl/vinyl-pool-1.jpg') }}" alt="Vinyl pool 1" class="w-full h-auto hover:scale-105 active:scale-105 transition-all">
+        </div>
+        <div class="bg-info-bg overflow-hidden w-full aspect-4/3 object-cover border border-neutral-200 rounded-xl">
+            <img src="{{ asset('assets/images/vinyl/vinyl-pool-2.jpg') }}" alt="Vinyl pool 2" class="w-full h-auto hover:scale-105 active:scale-105 transition-all">
+        </div>
+        <div class="bg-info-bg overflow-hidden w-full aspect-video lg:aspect-4/3 object-cover border border-neutral-200 rounded-xl md:col-span-2 lg:col-span-1">
+            <img src="{{ asset('assets/images/vinyl/vinyl-pool-3.jpg') }}" alt="Vinyl pool 3" class="w-full h-auto hover:scale-105 active:scale-105 transition-all">
+        </div>
+    </div>
+</section>
+
 {{-- EXPLORE OTHER POOL TYPES --}}
 <x-reusables.explore-pools current="vinyl" />
+@endsection
+
+@section('cta')
+<x-reusables.cta-banner />
 @endsection
