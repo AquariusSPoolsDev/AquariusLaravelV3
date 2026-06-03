@@ -188,9 +188,11 @@ return [
     'table_fibreglass_body_10' => 'Kos yang rendah.<br><br>Pemasangan cepat.<br><br>Reka bentuk pasang siap.<br><br>Boleh dipasang oleh kontraktor yang berpengalaman.',
 
     // CONCRETE POOLS PAGE
-    'concrete_pool_title_heading' => 'Kolam Renang Konkrit',
-    'concrete_pool_subtitle_heading' => 'Penerangan menyeluruh tentang kolam renang jenis konkrit',
-    'concrete_pool_body' => 'Kolam renang konkrit merupakan jenis kolam atas tanah atau dalam tanah yang dibina dengan campuran konkrit and plaster. Konkrit dihasilkan dengan campuran air, simen, pasir dan bahan kasar (batu kerikil).',
+    'concrete_pool_title_heading' => 'Kolam Renang Konkrit di Johor Bahru',
+    'concrete_pool_display_heading' => 'Kolam Renang Konkrit',
+    'concrete_pool_subtitle_heading' => 'Dibina mengikut saiz dan bentuk pilihan anda. Masa pembinaan 60 hingga 90 hari. Tahan seumur hidup.',
+    'concrete_pool_meta_description' => 'Aquarius membina kolam konkrit tersuai di seluruh Malaysia. Bebas reka bentuk. Pembinaan 60 hingga 90 hari. Berpangkalan di Johor Bahru. Perundingan secara percuma.',
+    'concrete_pool_body' => 'Aquarius Swimming Pools membina kolam renang konkrit mengikut sebarang saiz, bentuk, dan kedalaman, berpangkalan di Johor Bahru dengan lebih 30 tahun pengalaman di seluruh Malaysia. Setiap kolam menggunakan rangka tetulang keluli yang disiapkan dengan pilihan jubin, plaster, kerikil, atau batu. Pilihan termasuk jakuzi bersepadu, kolam cetek, air terjun, dan hiasan air tersuai. Baca lebih lanjut untuk mengetahui cara kolam konkrit dibina, dan sama ada ia sesuai untuk hartanah anda.',
     'concrete_pool_steps_pill' => 'Proses Pembinaan',
     'concrete_pool_steps_title' => 'Bagaimana Kolam Konkrit Dibina?',
     'concrete_pool_pros_cons_pill' => 'Kelebihan & Kelemahan',
@@ -219,7 +221,7 @@ return [
     'concrete_pool_disadvantage_2_desc' => 'Kolam renang konkrit mempunyai masa pembinaan yang lama untuk siap, dalam masa 2 hingga 3 bulan untuk disiapkan. Ini tidak termasuk perbincangan awal untuk memulakan pembinaan.',
     'concrete_pool_disadvantage_3_title' => '',
     'concrete_pool_disadvantage_3_desc' => '',
-    'concrete_pool_closing_body' => 'Secara keseluruhannya, kolam renang konkrit adalah pilihan terbaik untuk pemilik rumah yang mahukan kolam renang yang kuat, tersuai, tahan lama dan kos penyelenggaraan yang rendah. Walau bagaimanapun, kos yang tinggi dan masa pembinaan yang lama perlu diambil kira sebelum membuat keputusan.',
+    'concrete_pool_closing_body' => 'Kolam konkrit ialah pilihan paling tersuai yang dibina oleh Aquarius. Jika anda mahukan kawalan penuh ke atas saiz, bentuk, kedalaman, dan kemasan, serta selesa dengan masa pembinaan 2 hingga 3 bulan, kolam konkrit adalah pilihan yang tepat. Untuk pemasangan lebih cepat atau kos lebih rendah, bandingkan kolam gentian kaca dan vinil.',
     'concrete_pool_compare_other' => 'Rasa tidak sesuai untuk anda? Teroka kolam renang vinil dan gentian kaca sebelum membuat keputusan atau runding dengan pasukan kami untuk bantuan!',
 
     // VINYL POOLS PAGE
@@ -304,6 +306,7 @@ return [
 
     // POOL SERVICES PAGE
     'pool_service_title_heading' => 'Perkhidmatan Kolam Renang di Johor Bahru',
+    'pool_service_display_heading' => 'Perkhidmatan Kolam Renang',
     'pool_service_subtitle_heading' => 'Reka bentuk, pembinaan, penyelenggaraan, pengubahsuaian, dan bekalan peralatan di seluruh Malaysia.',
     'pool_service_meta_description' => 'Aquarius Swimming Pools menyediakan reka bentuk, pembinaan, penyelenggaraan, pengubahsuaian, dan bekalan peralatan kolam renang di seluruh Malaysia. 30 tahun di Johor Bahru.',
     'pool_service_content_1' => 'Aquarius Swimming Pools menguruskan setiap peringkat pemilikan kolam renang, dari reka bentuk dan pembinaan hingga penyelenggaraan, pengubahsuaian, dan bekalan peralatan. Pasukan kami telah melayani pelanggan kediaman dan komersial di seluruh Malaysia selama lebih 30 tahun, berpusat di Johor Bahru.',

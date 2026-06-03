@@ -188,9 +188,11 @@ return [
     'table_fibreglass_body_10' => 'Low cost.<br><br>Quick Installation.<br><br>Ready-made designs.<br><br>Can be installed by an experienced contractor.',
 
     // CONCRETE POOLS PAGE
-    'concrete_pool_title_heading' => 'Concrete Pools',
-    'concrete_pool_subtitle_heading' => 'Comprehensive explanation of concrete pools type',
-    'concrete_pool_body' => 'A concrete pool is a type of in-ground or above ground pool that is constructed using a combination of concrete and plaster. Concrete is a mix of water, cement, sand, and a coarse aggregate (stone or gravel).',
+    'concrete_pool_title_heading' => 'Concrete Swimming Pools in Johor Bahru',
+    'concrete_pool_display_heading' => 'Concrete Pools',
+    'concrete_pool_subtitle_heading' => 'Custom-built to any size or shape. 60 to 90 day build time. Built to last a lifetime.',
+    'concrete_pool_meta_description' => 'Aquarius builds custom concrete pools across Malaysia. Any size, shape, or depth. 60 to 90 day build time. Based in Johor Bahru. Free consultation.',
+    'concrete_pool_body' => 'Aquarius Swimming Pools builds concrete pools to any size, shape, and depth, based in Johor Bahru with over 30 years of experience across Malaysia. Each pool uses a steel-reinforced framework finished with your choice of tiles, plaster, pebbles, or stone. Options include integrated jacuzzis, wading pools, waterfalls, and custom water features. Read on to see how concrete pools are built, and whether one is right for your property.',
     'concrete_pool_steps_pill' => 'How it\'s made',
     'concrete_pool_steps_title' => 'How Are Concrete Pools Built?',
     'concrete_pool_pros_cons_pill' => 'Pros & Cons',
@@ -219,7 +221,7 @@ return [
     'concrete_pool_disadvantage_2_desc' => 'Concrete pools also have a longer construction time, taking about 2 to 3 months to complete. This is not including the duration from the initial meeting to the start of construction.',
     'concrete_pool_disadvantage_3_title' => '',
     'concrete_pool_disadvantage_3_desc' => '',
-    'concrete_pool_closing_body' => 'Overall, concrete pools are a great choice for homeowners who want a durable, customizable, long-lasting and low-maintenance pool. However, the higher cost and longer construction time should be considered before making a decision.',
+    'concrete_pool_closing_body' => 'Concrete pools are the most customizable option Aquarius builds. If you want full control over size, shape, depth, and finish, and are comfortable with a 2 to 3 month build time, concrete is the right choice. For faster installation or lower cost, compare fibreglass and vinyl pools.',
     'concrete_pool_compare_other' => 'Not the best fit for you? Explore fibreglass and vinyl pools before making your decision or consult our team to help!',
 
     // VINYL POOLS PAGE
@@ -304,6 +306,7 @@ return [
 
     // POOL SERVICES PAGE
     'pool_service_title_heading' => 'Swimming Pool Services in Johor Bahru',
+    'pool_service_display_heading' => 'Swimming Pool Services',
     'pool_service_subtitle_heading' => 'Design, construction, maintenance, renovation, and equipment supply across Malaysia.',
     'pool_service_meta_description' => 'Aquarius Swimming Pools provides pool design, construction, maintenance, renovation, and equipment supply across Malaysia. 30 years in Johor Bahru.',
     'pool_service_content_1' => 'Aquarius Swimming Pools handles every stage of pool ownership, from design and construction through to maintenance, renovation, and equipment supply. Our team has served residential and commercial clients across Malaysia for over 30 years, based in Johor Bahru.',
