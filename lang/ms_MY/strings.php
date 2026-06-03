@@ -40,6 +40,14 @@ return [
     'hero_btn_explore' => 'Teroka Kolam Renang Kami',
     'video_player_support' => 'Pelayar anda tidak menyokong teg video.',
 
+    // HOMEPAGE - TRUST SECTION
+    'trust_pill' => 'Siapa Kami',
+    'trust_heading' => 'Di mana terdapat air, di situ ada kehidupan!',
+    'trust_body' => 'Aquarius Swimming Pools merupakan salah satu pakar pembinaan kolam renang di Semenanjung Malaysia, dengan hampir seribu projek siap merangkumi pembangunan perumahan dan komersial. Kami berpusat di Johor Bahru, dan pasukan kami menguruskan setiap projek dari perundingan sehingga selesai.',
+    'trust_stats_years' => 'Tahun Pengalaman',
+    'trust_stats_pools' => 'Kolam Renang Siap',
+    'trust_member_of' => 'Ahli',
+
     // HOMEPAGE - OUR POOLS SECTION
     'pools_heading' => 'Kolam Renang Kami',
     'pools_concrete' => 'Kolam Renang Konkrit',
@@ -250,8 +258,9 @@ return [
 
     // FIBREGLASS POOLS PAGE
     'fibreglass_pool_title_heading' => 'Kolam Renang Gentian Kaca',
-    'fibreglass_pool_subtitle_heading' => 'Penerangan menyeluruh tentang kolam renang jenis gentian kaca',
-    'fibreglass_pool_body' => 'Kolam renang gentian kaca merupakan jenis kolam dalam tanah yang dihasilkan dalam kilang terlebih dahulu dengan menggunakan rangka gentian kaca pasang siap.',
+    'fibreglass_pool_subtitle_heading' => 'Dipasang dalam 5 hingga 7 hari. Penyelenggaraan rendah. Tahan 40 hingga 50 tahun.',
+    'fibreglass_pool_meta_description' => 'Aquarius Swimming Pools memasang kolam renang gentian kaca di seluruh Malaysia. Berpusat di Johor Bahru. Pemasangan 5 hingga 7 hari, jangka hayat 40 hingga 50 tahun. Hubungi kami untuk perundingan percuma.',
+    'fibreglass_pool_body' => 'Kolam renang gentian kaca dipasang lebih cepat daripada jenis kolam renang lain, siap dalam masa 5 hingga 7 hari. Aquarius Swimming Pools membekal dan memasang kolam renang gentian kaca di seluruh Malaysia, berpusat di Johor Bahru. Setiap kolam dihantar sebagai cengkerang pasang siap, dibina untuk tahan 40 hingga 50 tahun dengan penyelenggaraan yang rendah. Baca selanjutnya untuk mengetahui cara kolam gentian kaca dibina dan sama ada ia sesuai untuk rumah anda.',
     'fibreglass_pool_steps_pill' => 'Proses Pembinaan',
     'fibreglass_pool_steps_title' => 'Bagaimana Kolam Gentian Kaca Dibina?',
     'fibreglass_pool_pros_cons_pill' => 'Kelebihan & Kelemahan',

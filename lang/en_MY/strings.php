@@ -40,6 +40,14 @@ return [
     'hero_btn_explore' => 'Explore Our Pools',
     'video_player_support' => 'Your browser does not support the video tag.',
 
+    // HOMEPAGE - TRUST SECTION
+    'trust_pill' => 'Who We Are',
+    'trust_heading' => 'Where there is water, there is life!',
+    'trust_body' => 'Aquarius Swimming Pools is one of West Malaysia\'s most experienced pool builders, with nearly a thousand completed projects across residential and commercial developments. We are based in Johor Bahru, and our in-house team manages every project from consultation to completion.',
+    'trust_stats_years' => 'Years of Experience',
+    'trust_stats_pools' => 'Pools Completed',
+    'trust_member_of' => 'Member of',
+    
     // HOMEPAGE - OUR POOLS SECTION
     'pools_heading' => 'Our Pools',
     'pools_concrete' => 'Concrete Pools',
@@ -249,9 +257,10 @@ return [
     'vinyl_pool_compare_other' => 'Not what you envisioned? Learn more about concrete and fibreglass pools before making your decision or contact our team to assist you!',
 
     // FIBREGLASS POOLS PAGE
-    'fibreglass_pool_title_heading' => 'Fibreglass Pools',
-    'fibreglass_pool_subtitle_heading' => 'Comprehensive explanation of fibreglass pools type',
-    'fibreglass_pool_body' => 'A fibreglass pool is a type of in-ground swimming pool that is pre-manufactured in a factory using prefabricated fibreglass frames.',
+    'fibreglass_pool_title_heading' => 'Fibreglass Swimming Pools',
+    'fibreglass_pool_subtitle_heading' => 'Installed in 5 to 7 days. Low maintenance. Built to last 40 to 50 years.',
+    'fibreglass_pool_meta_description' => 'Aquarius Swimming Pools installs fibreglass pools across Malaysia. Based in Johor Bahru. Fast 5 to 7 day installation, 40 to 50 year lifespan. Contact us for a free consultation.',
+    'fibreglass_pool_body' => 'Fibreglass swimming pools install faster than any other pool type, ready in 5 to 7 days. Aquarius Swimming Pools supplies and installs fibreglass pools across Malaysia, based in Johor Bahru. Each pool ships as a pre-manufactured shell, built to last 40 to 50 years with minimal upkeep. Read on to see how fibreglass pools are built, and whether one is the right fit for your home.',
     'fibreglass_pool_steps_pill' => 'How it\'s made',
     'fibreglass_pool_steps_title' => 'How Are Fibreglass Pools Built?',
     'fibreglass_pool_pros_cons_pill' => 'Pros & Cons',

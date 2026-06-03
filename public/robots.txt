@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin
+Disallow: /storage
+Disallow: /thank-you
+Disallow: /sitemap
+Disallow: /send-email
+Disallow: /dismiss-promotion
+Disallow: /en
+Disallow: /ms
+
+Sitemap: https://aquariusswimmingpools.com/sitemap.xml

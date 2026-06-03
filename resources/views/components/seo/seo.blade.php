@@ -7,6 +7,7 @@
     <title>{!! $ogSiteTitle !!}</title>
     <meta name="title" content="{{ $ogSiteTitle }}" />
     <meta name="description" content="{{ $ogDescription }}" />
+    <link rel="canonical" href="{{ url()->current() }}" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
