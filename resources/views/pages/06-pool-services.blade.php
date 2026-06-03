@@ -12,9 +12,9 @@ $headerSubtitle = 'pool_service_subtitle_heading';
 
 {{-- META TAG PAGE --}}
 @section('seoData')
-   <x-seo.seo 
+   <x-seo.seo
         ogPageTitle="{{__('strings.' . $headerTitle)}}"
-        ogDescription="{{__('strings.' . $headerSubtitle)}}"
+        ogDescription="{{__('strings.pool_service_meta_description')}}"
         ogImage="{{ asset('assets/images/'.$imageFileLoc) }}"
     /> 
 @endsection
