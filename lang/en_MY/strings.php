@@ -47,7 +47,7 @@ return [
     'trust_stats_years' => 'Years of Experience',
     'trust_stats_pools' => 'Pools Completed',
     'trust_member_of' => 'Member of',
-    
+
     // HOMEPAGE - OUR POOLS SECTION
     'pools_heading' => 'Our Pools',
     'pools_concrete' => 'Concrete Pools',
@@ -117,13 +117,14 @@ return [
     'chat_whatsapp_btn' => 'Chat with Us!',
 
     // OUR POOLS MAIN PAGE
-    'our_pools_title_heading' => 'Our Pools',
-    'our_pools_subtitle_heading' => 'Discover various types of pools that are available on market',
-    'our_pools_body' => 'The first decision that you will have to make is <strong>choosing the right type of pool</strong> for your property. We can help you make this decision! Understanding the differences between the types of pools in terms of cost, construction process, and durability is key to building the pool of your dreams.',
+    'our_pools_title_heading' => 'Concrete, Vinyl & Fibreglass Swimming Pools',
+    'our_pools_subtitle_heading' => 'Compare concrete, vinyl, and fibreglass pools. Find the right fit for your property.',
+    'our_pools_meta_description' => 'Aquarius Swimming Pools builds concrete, vinyl, and fibreglass pools across Malaysia. 30 years in Johor Bahru. Compare pool types and get a free consultation.',
+    'our_pools_body' => 'Aquarius Swimming Pools has built concrete, vinyl, and fibreglass pools across Malaysia for over 30 years, based in Johor Bahru. Each pool type differs in cost, build time, and design flexibility. Compare all three below to find the right fit for your property.',
     'our_pools_overview_title' => 'Overview of our pools',
-    'our_pools_concrete_overview' => 'Concrete Pools are built on a solid steel foundation using a combination of concrete and plaster. The construction process takes 60 to 90 days, depending on the weather. Concrete pools can be any size, shape, or depth. We design and build swimming pools, waterfalls, integrated Jacuzzis, wading pools, and water features. Concrete pools are considered high-end due to their customizable nature, cost of construction, and durability.',
-    'our_pools_vinyl_overview' => 'Vinyl pools are built with prefabricated metal, steel, or plastic frames that are set into a pre-dug hole and reinforced with concrete footings and wall braces. Our vinyl pool frames are made of stainless steel and have a warranty of 20–30 years, depending on which series you choose. Pool installation takes approximately two weeks to complete. Choose from the range of sizes and shapes available.',
-    'our_pools_fibreglass_overview' => 'Fibreglass pools are built with prefabricated fibreglass frames. These mid-range pools have the quickest installation time, taking only 5 to 7 days, and require less maintenance compared to all the other pool types. Choose from our range of ready-made pools.',
+    'our_pools_concrete_overview' => 'Aquarius builds concrete pools to any size, shape, and depth, using a steel-reinforced framework finished with your choice of tiles, plaster, or stone. Build time runs 60 to 90 days. Optional features include integrated jacuzzis, wading pools, waterfalls, and water features. Concrete pools last a lifetime with proper maintenance.',
+    'our_pools_vinyl_overview' => 'Vinyl pools use stainless steel wall frames set into excavated ground, lined with a fitted vinyl sheet. Our stainless steel frames carry a 20 to 30 year warranty, depending on the series. Installation takes 2 to 3 weeks. Vinyl is the most affordable pool type. Choose from fixed sizes and shapes.',
+    'our_pools_fibreglass_overview' => 'Fibreglass pools arrive as a pre-manufactured shell, lowered into the excavated site and ready in 5 to 7 days. Built to last 40 to 50 years with low maintenance. Aquarius supplies and installs a range of ready-made fibreglass models.',
 
     'our_pools_overview_pill' => 'Pool Types',
     'our_pools_comparison_pill' => 'Know The Difference',

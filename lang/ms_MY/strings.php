@@ -117,13 +117,14 @@ return [
     'chat_whatsapp_btn' => 'Tanya Kami!',
 
     // OUR POOLS MAIN PAGE
-    'our_pools_title_heading' => 'Kolam Renang Kami',
-    'our_pools_subtitle_heading' => 'Teroka pelbagai jenis kolam renang yang ada di pasaran',
-    'our_pools_body' => 'Perkara pertama yang anda perlu buat adalah <strong>memilih jenis kolam renang yang sesuai</strong> untuk rumah anda. Kami boleh membantu anda membuat keputusan ini! Memahami perbezaan antara jenis kolam renang dari segi kos, proses pembinaan dan ketahanan penting untuk membina kolam renang impian anda.',
+    'our_pools_title_heading' => 'Kolam Renang Konkrit, Vinil & Gentian Kaca',
+    'our_pools_subtitle_heading' => 'Bandingkan kolam konkrit, vinil, dan gentian kaca. Cari pilihan yang sesuai untuk rumah anda.',
+    'our_pools_meta_description' => 'Aquarius Swimming Pools membina kolam renang konkrit, vinil, dan gentian kaca di seluruh Malaysia. 30 tahun di Johor Bahru. Bandingkan jenis kolam dan dapatkan perundingan percuma.',
+    'our_pools_body' => 'Aquarius Swimming Pools telah membina kolam renang konkrit, vinil, dan gentian kaca di seluruh Malaysia selama lebih 30 tahun, berpusat di Johor Bahru. Setiap jenis kolam berbeza dari segi kos, masa pembinaan, dan fleksibiliti reka bentuk. Bandingkan ketiga-tiganya di bawah untuk mencari pilihan yang sesuai untuk rumah anda.',
     'our_pools_overview_title' => 'Gambaran keseluruhan kolam renang kami',
-    'our_pools_concrete_overview' => 'Kolam renang konkrit dibina dengan besi asas yang kukuh dengan gabungan konktit dan plaster. Proses pembinaan ambil mas dalam 60 hingga 90 hari bergantung pada cuaca. Kolam renang konkrit boleh dibuat dalam pelbagai bentuk, saiz atau kedalaman. Kami mereka bentuk dan membina kolam renang, air terjun, Jakuzi bersepadu, kolam cetek dan hiasan air. Kolam renang konkrit dikira antara yang termahal disebabkan oleh reka bentuk tersendiri, kos pembinaan dan ketahanan.',
-    'our_pools_vinyl_overview' => 'Kolam renang vinil dibina dengan rangka logam, besi atau plastik pasang siap yang dipasang dalam lubang siap digali dan diperkukuh dengan tapak konkrit dan pendakap dinding. Rangka kolam renang vinil kami dibuat dengan besi tahan karat dan mempunyai jaminan antara 20-30 tahun, bergantung pada siri yang anda pilih. Pemasangan kolam renang ambil masa kira-kira dua (2) minggu untuk siap. Pilih dari pelbagai saiz dan bentuk yang tersedia.',
-    'our_pools_fibreglass_overview' => 'Kolam renang gentian kaca dibina dengan rangka gentian kaca yang pasang siap. Kolam harga sederhana ini mempunyai masa pemasangan yang cepat, dalam masa 5 hingga 7 hari dan memerlukan penyelenggaraan yang rendah berbanding jenis kolam renang yang lain. Pilih dari jenis kolam renang kami yang sedia ada.',
+    'our_pools_concrete_overview' => 'Aquarius membina kolam renang konkrit mengikut sebarang saiz, bentuk, dan kedalaman, menggunakan rangka bertetulang keluli yang disiapkan dengan pilihan jubin, plaster, atau batu. Masa pembinaan antara 60 hingga 90 hari. Ciri pilihan termasuk jakuzi bersepadu, kolam cetek, air terjun, dan hiasan air. Kolam renang konkrit tahan seumur hidup dengan penyelenggaraan yang betul.',
+    'our_pools_vinyl_overview' => 'Kolam renang vinil menggunakan rangka dinding keluli tahan karat yang dipasang dalam tanah yang digali, dilapisi dengan lembaran vinil yang dipasang kemas. Rangka keluli tahan karat kami membawa jaminan 20 hingga 30 tahun, bergantung pada siri. Pemasangan mengambil masa 2 hingga 3 minggu. Vinil ialah jenis kolam yang paling mampu milik. Pilih dari saiz dan bentuk yang tetap.',
+    'our_pools_fibreglass_overview' => 'Kolam renang gentian kaca tiba sebagai cangkerang siap kilang, diturunkan ke tapak yang digali dan siap dalam masa 5 hingga 7 hari. Dibina untuk tahan 40 hingga 50 tahun dengan penyelenggaraan yang rendah. Aquarius membekal dan memasang pelbagai model gentian kaca sedia ada.',
 
     'our_pools_overview_pill' => 'Jenis Kolam',
     'our_pools_comparison_pill' => 'Ketahui Perbandingannya',
