@@ -819,6 +819,7 @@ return [
 
     // SITEMAP - 09012025
     'sitemap_title_heading' => 'Peta Laman',
+    'sitemap_display_heading' => 'Peta Laman',
     'sitemap_subtitle_heading' => 'Cari dalam Laman Kami',
     'sitemap_pages_heading' => 'Halaman',
     'sitemap_pools_heading' => 'Kolam Kami',

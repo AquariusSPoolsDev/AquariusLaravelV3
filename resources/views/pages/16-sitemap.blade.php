@@ -6,16 +6,17 @@
 {{-- PARSE HEADER STRINGS --}}
 @php
     $imageFileLoc   = 'header-sitemap.jpg';
-    $headerTitle    = 'sitemap_title_heading';
+    $headerTitle    = 'sitemap_display_heading';
     $headerSubtitle = 'sitemap_subtitle_heading';
 @endphp
 
 {{-- META TAG PAGE --}}
 @section('seoData')
    <x-seo.seo
-        ogPageTitle="{{__('strings.' . $headerTitle)}}"
-        ogDescription="{{__('strings.' . $headerSubtitle)}}"
+        ogPageTitle="{{__('strings.sitemap_title_heading')}}"
+        ogDescription="{{__('strings.sitemap_subtitle_heading')}}"
         ogImage="{{ asset('assets/images/'.$imageFileLoc) }}"
+        :noIndex="true"
     />
 @endsection
 

@@ -819,6 +819,7 @@ return [
 
     // SITEMAP - 09012025
     'sitemap_title_heading' => 'Sitemap',
+    'sitemap_display_heading' => 'Sitemap',
     'sitemap_subtitle_heading' => 'Navigate Our Site',
     'sitemap_pages_heading' => 'Pages',
     'sitemap_pools_heading' => 'Our Pools',
