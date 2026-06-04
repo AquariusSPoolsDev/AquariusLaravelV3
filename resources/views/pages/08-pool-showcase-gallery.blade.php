@@ -6,17 +6,17 @@
 {{-- PARSE HEADER STRINGS --}}
 @php
 $imageFileLoc = 'header-pool-gallery.jpg';
-$headerTitle = 'showcase_title_heading';
+$headerTitle = 'showcase_display_heading';
 $headerSubtitle = 'showcase_subtitle_heading';
 @endphp
 
 {{-- META TAG PAGE --}}
 @section('seoData')
-   <x-seo.seo 
-        ogPageTitle="{{__('strings.' . $headerTitle)}}"
-        ogDescription="{{__('strings.' . $headerSubtitle)}}"
+   <x-seo.seo
+        ogPageTitle="{{__('strings.showcase_title_heading')}}"
+        ogDescription="{{__('strings.showcase_meta_description')}}"
         ogImage="{{ asset('assets/images/'.$imageFileLoc) }}"
-    /> 
+    />
 @endsection
 
 {{-- MAIN CONTENT STARTS HERE --}}

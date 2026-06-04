@@ -569,8 +569,10 @@ return [
     'pool_item_chem_alum_packaging' => 'Dos disyorkan: 5,000g bagi setiap 10,000 liter air kolam',
 
     // POOL SHOWCASE
-    'showcase_title_heading' => 'Galeri',
+    'showcase_title_heading' => 'Galeri Kolam Renang di Johor Bahru',
+    'showcase_display_heading' => 'Galeri',
     'showcase_subtitle_heading' => 'Koleksi projek kolam renang kami yang telah siap',
+    'showcase_meta_description' => 'Layari projek kolam renang siap Aquarius di Johor Bahru dan seluruh Malaysia. Kolam konkrit, gentian kaca, dan vinil. Tapis mengikut jenis, saiz, dan ciri.',
     'showcase_search_loading' => 'Memuat...',
     'showcase_search_loading_desc' => 'Ini mungkin mengambil sedikit masa. Sila tunggu.',
     'showcase_search_no_result' => 'Tiada keputusan dijumpai.',
@@ -578,7 +580,7 @@ return [
     'showcase_search_input_title' => 'Input Carian',
     'showcase_search_filter_tag_title' => 'Saring mengikut tag',
     'showcase_search_reset_filter_title' => 'Set Semula Carian',
-    'showcase_body' => 'Kolam renang anda menceritakan kisah tentang siapa anda dan keutamaan anda. Kami di Aquarius ingin membantu anda! Teroka galeri projek kami yang lepas untuk mendapatkan inspirasi dan mencapai matlamat anda untuk menjadikan oasis impian anda menjadi kenyataan.',
+    'showcase_body' => 'Layari projek kolam renang siap kami untuk mencari reka bentuk yang sesuai dengan ruang dan gaya anda. Aquarius telah membina kolam konkrit, gentian kaca, dan vinil di seluruh Malaysia selama lebih 30 tahun.',
     'showcase_how_to_use' => 'Cara Pengunaan',
     'showcase_how_to_use_1_title' => 'Cari Pertanyaan Anda:',
     'showcase_how_to_use_1_body' => 'Masukkan kata kunci dalam bar input carian di bawah.',

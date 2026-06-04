@@ -569,8 +569,10 @@ return [
     'pool_item_chem_alum_packaging' => 'Recommended dosage: 5,000g per 10,000 litres of pool water',
 
     // POOL SHOWCASE
-    'showcase_title_heading' => 'Showcase',
+    'showcase_title_heading' => 'Swimming Pool Gallery in Johor Bahru',
+    'showcase_display_heading' => 'Showcase',
     'showcase_subtitle_heading' => 'A collection of our completed swimming pool projects',
+    'showcase_meta_description' => 'Browse completed swimming pool projects by Aquarius in Johor Bahru and across Malaysia. Concrete, fibreglass, and vinyl pools. Filter by type, size, and feature.',
     'showcase_search_loading' => 'Loading...',
     'showcase_search_loading_desc' => 'This might take a moment. Please wait.',
     'showcase_search_no_result' => 'No results found.',
@@ -578,7 +580,7 @@ return [
     'showcase_search_input_title' => 'Search Input',
     'showcase_search_filter_tag_title' => 'Filter by Tags',
     'showcase_search_reset_filter_title' => 'Reset Filters',
-    'showcase_body' => 'Your pool tells a story of who you are and your preferences. We, at Aquarius want to help you! Browse our gallery of past projects to get inspired and achieve your goal of making your dream oasis come to life.',
+    'showcase_body' => 'Browse our completed pool projects to find designs that match your space and style. Aquarius has built concrete, fibreglass, and vinyl pools across Malaysia for over 30 years.',
     'showcase_how_to_use' => 'How to use?',
     'showcase_how_to_use_1_title' => 'Search for Your Query:',
     'showcase_how_to_use_1_body' => 'Enter your keywords in the search input bar below.',
