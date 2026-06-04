@@ -6,16 +6,17 @@
 {{-- PARSE HEADER STRINGS --}}
 @php
     $imageFileLoc   = 'header-thankyou.jpg';
-    $headerTitle    = 'submission_accepted_title_heading';
+    $headerTitle    = 'submission_accepted_display_heading';
     $headerSubtitle = 'submission_accepted_subtitle_heading';
 @endphp
 
 {{-- META TAG PAGE --}}
 @section('seoData')
-   <x-seo.seo 
-        ogPageTitle="{{__('strings.' . $headerTitle)}}"
-        ogDescription="{{__('strings.' . $headerSubtitle)}}"
+   <x-seo.seo
+        ogPageTitle="{{__('strings.submission_accepted_title_heading')}}"
+        ogDescription="{{__('strings.submission_accepted_subtitle_heading')}}"
         ogImage="{{ asset('assets/images/'.$imageFileLoc) }}"
+        :noIndex="true"
     /> 
 @endsection
 

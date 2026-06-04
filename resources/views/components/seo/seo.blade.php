@@ -1,4 +1,4 @@
-@props(['ogPageTitle' => config('app.name'), 'ogDescription' => '', 'ogImage' => ''])
+@props(['ogPageTitle' => config('app.name'), 'ogDescription' => '', 'ogImage' => '', 'noIndex' => false])
 @php
     $ogSiteTitle = Route::currentRouteName() === 'homepage'
         ? 'Johor Bahru (JB) Swimming Pool Builder and Contractor Specialist | Aquarius Swimming Pools'
@@ -7,6 +7,9 @@
     <title>{!! $ogSiteTitle !!}</title>
     <meta name="title" content="{{ $ogSiteTitle }}" />
     <meta name="description" content="{{ $ogDescription }}" />
+    @if($noIndex)
+    <meta name="robots" content="noindex, nofollow" />
+    @endif
     <link rel="canonical" href="{{ url()->current() }}" />
 
     <!-- Open Graph / Facebook -->

@@ -761,6 +761,7 @@ return [
 
     // THANK YOU FOR SUBMISSION
     'submission_accepted_title_heading' => 'Thank You!',
+    'submission_accepted_display_heading' => 'Thank You!',
     'submission_accepted_subtitle_heading' => 'Your submission has been received.',
     'submission_accepted_body_1' => 'Your information has been successfully submitted. Our team from Aquarius will review it and get back to you shortly.',
     'submission_accepted_body_2a' => 'If you have any questions, feel free to reach out! You can also',

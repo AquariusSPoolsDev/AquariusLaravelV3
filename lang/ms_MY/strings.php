@@ -761,6 +761,7 @@ return [
 
     // THANK YOU FOR SUBMISSION
     'submission_accepted_title_heading' => 'Terima Kasih!',
+    'submission_accepted_display_heading' => 'Terima Kasih!',
     'submission_accepted_subtitle_heading' => 'Hantaran anda telah diterima.',
     'submission_accepted_body_1' => 'Maklumat anda berjaya dihantar. Pasukan kami dari Aquarius akan menilainya dan menghubungi anda semula dalam masa terdekat.',
     'submission_accepted_body_2a' => 'Jika anda mempunyai sebarang pertanyaan, jangan ragu untuk menghubungi kami! Anda juga boleh',
