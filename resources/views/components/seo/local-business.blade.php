@@ -1,8 +1,8 @@
 <script type="application/ld+json">
 {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "{{ url('/') }}/#localbusiness",
+    "@@context": "https://schema.org",
+    "@@type": "LocalBusiness",
+    "@@id": "{{ url('/') }}/#localbusiness",
     "name": "Aquarius Swimming Pools Sdn Bhd",
     "url": "{{ url('/') }}",
     "logo": "{{ asset('assets/favicon/aquarius-logo-512.png') }}",
@@ -11,7 +11,7 @@
     "telephone": ["+60125105126", "+6075953060"],
     "email": "mail@aquariuspools.com.my",
     "address": {
-        "@type": "PostalAddress",
+        "@@type": "PostalAddress",
         "streetAddress": "33, Jalan Selatan 3/4, Taman Impian Emas",
         "addressLocality": "Skudai",
         "addressRegion": "Johor",
@@ -19,19 +19,19 @@
         "addressCountry": "MY"
     },
     "geo": {
-        "@type": "GeoCoordinates",
+        "@@type": "GeoCoordinates",
         "latitude": 1.5334,
         "longitude": 103.6739
     },
     "openingHoursSpecification": [
         {
-            "@type": "OpeningHoursSpecification",
+            "@@type": "OpeningHoursSpecification",
             "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
             "opens": "08:00",
             "closes": "17:00"
         },
         {
-            "@type": "OpeningHoursSpecification",
+            "@@type": "OpeningHoursSpecification",
             "dayOfWeek": "Saturday",
             "opens": "08:00",
             "closes": "12:00"
@@ -44,7 +44,7 @@
         "https://wa.me/60125105126"
     ],
     "areaServed": {
-        "@type": "State",
+        "@@type": "State",
         "name": "Johor"
     },
     "priceRange": "$$"

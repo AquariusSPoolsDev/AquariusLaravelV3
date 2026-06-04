@@ -17,6 +17,7 @@
         ogDescription="{{__('strings.faq_meta_description')}}"
         ogImage="{{ asset('assets/images/'.$imageFileLoc) }}"
     />
+    <x-seo.faq-schema />
 @endsection
 
 {{-- MAIN CONTENT STARTS HERE --}}
