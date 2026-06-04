@@ -18,6 +18,10 @@ $headerSubtitle = 'fibreglass_pool_subtitle_heading';
     serviceName="Fibreglass Swimming Pool Installation"
     serviceDescription="{{__('strings.fibreglass_pool_meta_description')}}"
     serviceUrl="{{ route('fibreglass-pools-page') }}" />
+<x-seo.breadcrumb-schema :items="[
+    ['name' => 'Our Pools', 'url' => route('our-pools-main')],
+    ['name' => 'Fibreglass Pools', 'url' => route('fibreglass-pools-page')],
+]" />
 @endsection
 
 {{-- MAIN CONTENT STARTS HERE --}}

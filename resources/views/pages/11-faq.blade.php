@@ -18,6 +18,9 @@
         ogImage="{{ asset('assets/images/'.$imageFileLoc) }}"
     />
     <x-seo.faq-schema />
+    <x-seo.breadcrumb-schema :items="[
+        ['name' => 'FAQ', 'url' => route('faq-page')],
+    ]" />
 @endsection
 
 {{-- MAIN CONTENT STARTS HERE --}}

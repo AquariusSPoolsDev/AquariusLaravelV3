@@ -17,11 +17,19 @@
         ogDescription="{{__('strings.' . $headerSubtitle)}}"
         ogImage="{{ asset('assets/images/'.$imageFileLoc) }}"
     />
+    <x-seo.breadcrumb-schema :items="[
+        ['name' => 'About Us', 'url' => route('about-page')],
+    ]" />
 @endsection
 
 {{-- MAIN CONTENT STARTS HERE --}}
 @section('content')
-<div class="flex flex-col gap-y-20 py-10">
-    <x-reusables.alert color="info">This page does not have any content yet.</x-reusables.alert>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <div class="">
+
+    </div>
+    <div class="">
+        
+    </div>
 </div>
 @endsection

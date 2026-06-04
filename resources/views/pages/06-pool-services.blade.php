@@ -21,6 +21,9 @@ $headerSubtitle = 'pool_service_subtitle_heading';
         serviceName="Swimming Pool Services"
         serviceDescription="{{__('strings.pool_service_meta_description')}}"
         serviceUrl="{{ route('pool-services-page') }}" />
+    <x-seo.breadcrumb-schema :items="[
+        ['name' => 'Pool Services', 'url' => route('pool-services-page')],
+    ]" />
 @endsection
 
 {{-- MAIN CONTENT STARTS HERE --}}

@@ -14,6 +14,9 @@ $headerSubtitle = 'contact_subtitle_heading';
 @section('seoData')
 <x-seo.seo ogPageTitle="{{__('strings.contact_title_heading')}}" ogDescription="{{__('strings.contact_meta_description')}}"
     ogImage="{{ asset('assets/images/'.$imageFileLoc) }}" />
+<x-seo.breadcrumb-schema :items="[
+    ['name' => 'Contact Us', 'url' => route('contact-page')],
+]" />
 @endsection
 
 {{-- MAIN CONTENT STARTS HERE --}}

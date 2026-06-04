@@ -16,7 +16,10 @@ $headerSubtitle = 'our_pools_subtitle_heading';
         ogPageTitle="{{__('strings.our_pools_title_heading')}}"
         ogDescription="{{__('strings.our_pools_meta_description')}}"
         ogImage="{{ asset('assets/images/'.$imageFileLoc) }}"
-    /> 
+    />
+    <x-seo.breadcrumb-schema :items="[
+        ['name' => 'Our Pools', 'url' => route('our-pools-main')],
+    ]" />
 @endsection
 
 {{-- MAIN CONTENT STARTS HERE --}}

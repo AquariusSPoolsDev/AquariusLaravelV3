@@ -17,6 +17,9 @@ $headerSubtitle = 'promotions_subtitle_heading';
         ogDescription="{{__('strings.promotions_meta_description')}}"
         ogImage="{{ asset('assets/images/'.$imageFileLoc) }}"
     />
+    <x-seo.breadcrumb-schema :items="[
+        ['name' => 'Promotions', 'url' => route('promo-page')],
+    ]" />
 @endsection
 
 {{-- MAIN CONTENT STARTS HERE --}}

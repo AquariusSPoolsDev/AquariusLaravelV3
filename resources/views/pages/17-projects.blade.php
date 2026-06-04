@@ -17,6 +17,9 @@ $headerSubtitle = 'projects_subtitle_heading';
         ogDescription="{{__('strings.projects_meta_description')}}"
         ogImage="{{ asset('assets/images/' . $imageFileLoc) }}"
     />
+    <x-seo.breadcrumb-schema :items="[
+        ['name' => 'Notable Projects', 'url' => route('projects-page')],
+    ]" />
 @endsection
 
 {{-- MAIN CONTENT STARTS HERE --}}

@@ -20,6 +20,10 @@ $headerSubtitle = 'vinyl_pool_subtitle_heading';
     serviceName="Vinyl Swimming Pool Installation"
     serviceDescription="{{__('strings.vinyl_pool_meta_description')}}"
     serviceUrl="{{ route('vinyl-pools-page') }}" />
+<x-seo.breadcrumb-schema :items="[
+    ['name' => 'Our Pools', 'url' => route('our-pools-main')],
+    ['name' => 'Vinyl Pools', 'url' => route('vinyl-pools-page')],
+]" />
 @endsection
 
 {{-- MAIN CONTENT STARTS HERE --}}
