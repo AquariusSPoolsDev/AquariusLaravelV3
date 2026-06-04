@@ -823,8 +823,10 @@ return [
     'sitemap_pool_overview' => 'Our Pools Overview',
 
     // NOTABLE PROJECTS
-    'projects_title_heading' => 'Notable Projects',
-    'projects_subtitle_heading' => 'A showcase of our most remarkable completed projects across Malaysia.',
+    'projects_title_heading' => 'Notable Pool Projects Across Malaysia',
+    'projects_display_heading' => 'Notable Projects',
+    'projects_subtitle_heading' => 'Residential and commercial pools built across Johor Bahru and Malaysia',
+    'projects_meta_description' => 'Browse past pool projects by Aquarius Swimming Pools. Each project includes pool type, location, and build details. Residential and commercial pools across Malaysia.',
     'projects_no_projects_title' => 'No Projects Found',
     'projects_no_projects_body' => 'Check back soon for our project showcase.',
     'projects_back_to_projects' => 'Back to Projects',
@@ -833,5 +835,5 @@ return [
     'projects_view_project' => 'View Project',
     'projects_get_quote' => 'Get a Quote',
     'projects_contact_cta_title' => 'Inspired? Let\'s Build Yours.',
-    'projects_contact_cta_body' => 'Every great pool starts with a conversation. Reach out to our team today.',
+    'projects_contact_cta_body' => 'Seen a pool that matches what you have in mind? Contact us to plan your build.',
 ];

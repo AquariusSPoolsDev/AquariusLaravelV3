@@ -823,8 +823,10 @@ return [
     'sitemap_pool_overview' => 'Gambaran Keseluruhan Kolam Renang Kami',
 
     // NOTABLE PROJECTS
-    'projects_title_heading' => 'Projek Terkemuka',
-    'projects_subtitle_heading' => 'Pameran projek-projek terbaik kami yang telah siap di seluruh Malaysia.',
+    'projects_title_heading' => 'Projek Kolam Renang Terkemuka di Seluruh Malaysia',
+    'projects_display_heading' => 'Projek Terkemuka',
+    'projects_subtitle_heading' => 'Kolam kediaman dan komersial yang dibina di seluruh Johor Bahru dan Malaysia',
+    'projects_meta_description' => 'Semak projek kolam siap oleh Aquarius Swimming Pools. Setiap projek merangkumi jenis kolam, lokasi, dan butiran binaan. Kolam kediaman dan komersial di seluruh Malaysia.',
     'projects_no_projects_title' => 'Tiada Projek Dijumpai',
     'projects_no_projects_body' => 'Kembali semula tidak lama lagi untuk pameran projek kami.',
     'projects_back_to_projects' => 'Kembali ke Projek',
@@ -833,5 +835,5 @@ return [
     'projects_view_project' => 'Lihat Projek',
     'projects_get_quote' => 'Dapatkan Sebutan Harga',
     'projects_contact_cta_title' => 'Terinspirasi? Mari Bina Kolam Anda.',
-    'projects_contact_cta_body' => 'Setiap kolam yang hebat bermula dengan perbualan. Hubungi pasukan kami hari ini.',
+    'projects_contact_cta_body' => 'Nampak kolam renang yang sesuai dengan apa yang anda fikirkan? Hubungi kami untuk merancang binaan kolam anda.',
 ];
