@@ -14,6 +14,10 @@ $headerSubtitle = 'fibreglass_pool_subtitle_heading';
 @section('seoData')
 <x-seo.seo ogPageTitle="{{__('strings.fibreglass_pool_title_heading')}}" ogDescription="{{__('strings.fibreglass_pool_meta_description')}}"
     ogImage="{{ asset('assets/images/'.$imageFileLoc) }}" />
+<x-seo.service-schema
+    serviceName="Fibreglass Swimming Pool Installation"
+    serviceDescription="{{__('strings.fibreglass_pool_meta_description')}}"
+    serviceUrl="{{ route('fibreglass-pools-page') }}" />
 @endsection
 
 {{-- MAIN CONTENT STARTS HERE --}}

@@ -16,6 +16,10 @@ $headerSubtitle = 'vinyl_pool_subtitle_heading';
     ogPageTitle="{{__('strings.vinyl_pool_title_heading')}}"
     ogDescription="{{__('strings.vinyl_pool_meta_description')}}"
     ogImage="{{ asset('assets/images/'.$imageFileLoc) }}" />
+<x-seo.service-schema
+    serviceName="Vinyl Swimming Pool Installation"
+    serviceDescription="{{__('strings.vinyl_pool_meta_description')}}"
+    serviceUrl="{{ route('vinyl-pools-page') }}" />
 @endsection
 
 {{-- MAIN CONTENT STARTS HERE --}}

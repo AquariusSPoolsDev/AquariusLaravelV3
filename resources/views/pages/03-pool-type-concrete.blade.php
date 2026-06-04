@@ -16,6 +16,10 @@ $headerSubtitle = 'concrete_pool_subtitle_heading';
     ogPageTitle="{{__('strings.concrete_pool_title_heading')}}"
     ogDescription="{{__('strings.concrete_pool_meta_description')}}"
     ogImage="{{ asset('assets/images/'.$imageFileLoc) }}" />
+<x-seo.service-schema
+    serviceName="Concrete Swimming Pool Construction"
+    serviceDescription="{{__('strings.concrete_pool_meta_description')}}"
+    serviceUrl="{{ route('concrete-pools-page') }}" />
 @endsection
 
 {{-- MAIN CONTENT STARTS HERE --}}
