@@ -1,16 +1,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="robots" content="index, follow" />
-
     {{-- INCLUDE SEO DATA FROM EVERY PAGES --}}
     @yield('seoData')
 
     <meta name="robots" content="index, follow">
     <meta name="google-site-verification" content="m4m8SXHkw6n2F-AMy8oO-CUBZtG1_H-_4A7cBgDujvM" />
-
-    <link rel="alternate" hreflang="en" href="{{ url('/en') }}" />
-    <link rel="alternate" hreflang="ms" href="{{ url('/ms') }}" />
 
     {{-- Fonts V3.0 --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
