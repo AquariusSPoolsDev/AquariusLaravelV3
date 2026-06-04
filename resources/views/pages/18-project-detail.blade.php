@@ -13,7 +13,7 @@ $headerSubtitle = 'projects_subtitle_heading';
 {{-- META TAG PAGE --}}
 @section('seoData')
 <x-seo.seo ogPageTitle="{{ $project->title }}"
-    ogDescription="{{ $project->location ? $project->title . ' — ' . $project->location : $project->title }}"
+    ogDescription="{{ $project->description ?: ($project->location ? $project->title . ', ' . $project->location : $project->title) }}"
     ogImage="{{ ($project->gallery_images && count($project->gallery_images)) ? asset('storage/' . $project->gallery_images[0]) : asset('assets/images/' . $imageFileLoc) }}" />
 @endsection
 
