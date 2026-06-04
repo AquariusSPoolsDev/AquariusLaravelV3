@@ -6,15 +6,15 @@
 {{-- PARSE HEADER STRINGS --}}
 @php
 $imageFileLoc = 'header-promotions.jpg';
-$headerTitle = 'promotions_title_heading';
+$headerTitle = 'promotions_display_heading';
 $headerSubtitle = 'promotions_subtitle_heading';
 @endphp
 
 {{-- META TAG PAGE --}}
 @section('seoData')
    <x-seo.seo
-        ogPageTitle="{{__('strings.' . $headerTitle)}}"
-        ogDescription="{{__('strings.' . $headerSubtitle)}}"
+        ogPageTitle="{{__('strings.promotions_title_heading')}}"
+        ogDescription="{{__('strings.promotions_meta_description')}}"
         ogImage="{{ asset('assets/images/'.$imageFileLoc) }}"
     />
 @endsection
