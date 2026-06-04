@@ -6,16 +6,17 @@
 {{-- PARSE HEADER STRINGS --}}
 @php
     $imageFileLoc   = 'header-privacy.jpg';
-    $headerTitle    = 'privacy_title_heading';
+    $headerTitle    = 'privacy_display_heading';
     $headerSubtitle = 'privacy_subtitle_heading';
 @endphp
 
 {{-- META TAG PAGE --}}
 @section('seoData')
-   <x-seo.seo 
-        ogPageTitle="{{__('strings.' . $headerTitle)}}"
-        ogDescription="{{__('strings.' . $headerSubtitle)}}"
+   <x-seo.seo
+        ogPageTitle="{{__('strings.privacy_title_heading')}}"
+        ogDescription="{{__('strings.privacy_subtitle_heading')}}"
         ogImage="{{ asset('assets/images/'.$imageFileLoc) }}"
+        :noIndex="true"
     /> 
 @endsection
 

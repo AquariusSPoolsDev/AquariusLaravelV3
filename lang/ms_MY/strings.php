@@ -720,6 +720,7 @@ return [
 
     // Terms
     'terms_title_heading' => 'Terma & Syarat',
+    'terms_display_heading' => 'Terma & Syarat',
     'terms_subtitle_heading' => '',
     'terms_notice_alert' => 'Baca dengan teliti Senarai Terma di bawah! (English option available)',
     'terms_date_updated_title' => 'Tarikh Dikemaskini',
@@ -727,6 +728,7 @@ return [
 
     // privacy
     'privacy_title_heading' => 'Dasar Privasi',
+    'privacy_display_heading' => 'Dasar Privasi',
     'privacy_subtitle_heading' => '',
     'privacy_notice_alert' => 'Baca dengan teliti Dasar Privasi di bawah! (English option available)',
     'privacy_date_updated_title' => 'Tarikh Dikemaskini',

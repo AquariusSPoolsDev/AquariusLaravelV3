@@ -720,6 +720,7 @@ return [
 
     // Terms
     'terms_title_heading' => 'Terms & Conditions',
+    'terms_display_heading' => 'Terms & Conditions',
     'terms_subtitle_heading' => '',
     'terms_notice_alert' => 'Please read carefully on Terms List below!',
     'terms_date_updated_title' => 'Date Updated',
@@ -727,6 +728,7 @@ return [
 
     // privacy
     'privacy_title_heading' => 'Privacy Policy',
+    'privacy_display_heading' => 'Privacy Policy',
     'privacy_subtitle_heading' => '',
     'privacy_notice_alert' => 'Please read carefully on Privacy Policy below!',
     'privacy_date_updated_title' => 'Date Updated',
