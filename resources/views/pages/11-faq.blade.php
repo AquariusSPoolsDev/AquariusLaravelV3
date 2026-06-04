@@ -173,7 +173,7 @@
                     </button>
                     <div class="aquarius-accordion-content" x-show="active === 4" x-cloak x-transition role="region">
                         <div class="accordion-inner">
-                            <p>{!!__('strings.faq_different_material_avail_answer')!!}</p>
+                            <p>{{__('strings.faq_different_material_avail_answer_1')}} <a href="{{ route('our-pools-main') }}" class="text-primary-600 underline underline-offset-4 hover:text-primary-700 hover:no-underline">{{__('strings.faq_different_material_avail_link_text')}}</a> {{__('strings.faq_different_material_avail_answer_2')}}</p>
                         </div>
                     </div>
                 </div>
