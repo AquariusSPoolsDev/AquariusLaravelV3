@@ -632,8 +632,10 @@ return [
     'reviews_no_review_body' => 'Tiada ulasan untuk dipaparkan pada masa ini. Maklum balas anda mungkin yang pertama membuat perubahan!',
 
     // FAQ
-    'faq_title_heading' => 'Soalan Lazim',
+    'faq_title_heading' => 'Soalan Lazim Kolam Renang — Aquarius Pools, Johor Bahru',
+    'faq_display_heading' => 'Soalan Lazim',
     'faq_subtitle_heading' => 'Dapatkan jawapan untuk soalan anda di sini.',
+    'faq_meta_description' => 'Soalan lazim tentang pembinaan kolam renang, bahan, penyelenggaraan, dan keselamatan. Dijawab oleh Aquarius Swimming Pools, Johor Bahru.',
     'faq_pill' => 'Soalan Lazim',
     'faq_heading_2' => 'Soalan anda, dijawab',
     'faq_content_1' => 'Tiada jawapan yang anda ingin cari? Hubungi pasukan kami dan kami akan cuba membalas kepada anda.',

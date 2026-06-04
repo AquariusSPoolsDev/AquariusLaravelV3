@@ -632,8 +632,10 @@ return [
     'reviews_no_review_body' => 'There are no reviews to display at the moment. Your feedback could be the first to make a difference!',
 
     // FAQ
-    'faq_title_heading' => 'Frequently Asked Questions',
+    'faq_title_heading' => 'Swimming Pool FAQ — Aquarius Pools, Johor Bahru',
+    'faq_display_heading' => 'Frequently Asked Questions',
     'faq_subtitle_heading' => 'Find the answers to your questions here',
+    'faq_meta_description' => 'Common questions about swimming pool construction, materials, maintenance, and safety. Answered by Aquarius Swimming Pools, Johor Bahru.',
     'faq_pill' => 'FAQ',
     'faq_heading_2' => 'Your questions, answered',
     'faq_content_1' => 'Can\'t find what you need? Contact our team and we\'ll get back to you.',
