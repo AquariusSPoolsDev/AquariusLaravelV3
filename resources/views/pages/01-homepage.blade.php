@@ -8,6 +8,7 @@
         ogImage="{{ asset('assets/images/pool-image-placeholder-5.jpg') }}"
     />
     <x-seo.local-business />
+    <x-seo.breadcrumb-schema :items="[]" />
 @endsection
 
 {{-- HOMEPAGE LAYOUT --}}

@@ -1,7 +1,7 @@
 <script type="application/ld+json">
 {
     "@@context": "https://schema.org",
-    "@@type": "LocalBusiness",
+    "@@type": "HomeAndConstructionBusiness",
     "@@id": "{{ url('/') }}/#localbusiness",
     "name": "Aquarius Swimming Pools Sdn Bhd",
     "url": "{{ url('/') }}",
@@ -43,10 +43,16 @@
         "https://www.tiktok.com/@aquariuspools",
         "https://wa.me/60125105126"
     ],
-    "areaServed": {
-        "@@type": "State",
-        "name": "Johor"
-    },
+    "areaServed": [
+        {
+            "@@type": "Country",
+            "name": "Malaysia"
+        },
+        {
+            "@@type": "City",
+            "name": "Singapore"
+        }
+    ],
     "priceRange": "$$"
 }
 </script>
