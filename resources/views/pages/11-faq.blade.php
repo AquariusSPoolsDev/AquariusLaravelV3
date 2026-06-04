@@ -204,7 +204,7 @@
                                     <strong class="text-neutral-900">{{ __('strings.faq_kind_maintenance_answer_steps_4') }}</strong> {{ __('strings.faq_kind_maintenance_answer_steps_4_detail') }}
                                 </li>
                             </ul>
-                            <p>{!! __('strings.faq_kind_maintenance_answer_2') !!}</p>
+                            <p>{{__('strings.faq_kind_maintenance_answer_2_1')}} <a href="{{ route('contact-page') }}" class="text-primary-600 underline underline-offset-4 hover:text-primary-700 hover:no-underline">{{__('strings.faq_kind_maintenance_answer_2_link_text')}}</a> {{__('strings.faq_kind_maintenance_answer_2_2')}}</p>
                         </div>
                     </div>
                 </div>
