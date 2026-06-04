@@ -15,7 +15,7 @@
 @section('content')
     <x-homepage.hero-section />
 
-    {{-- About Us + Trust bar — to be added --}}
+    <x-homepage.trust-section />
 
     <x-homepage.our-pools-section />
 
