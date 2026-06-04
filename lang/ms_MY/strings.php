@@ -334,8 +334,10 @@ return [
     'pool_service_item_5_content_3' => '',
 
     // POOL ITEMS
-    'pool_item_title_heading' => 'Peralatan Kolam Renang',
-    'pool_item_subtitle_heading' => 'Peralatan kolam renang untuk kolam anda dijelaskan',
+    'pool_item_title_heading' => 'Peralatan & Bahan Kimia Kolam Renang di Johor Bahru',
+    'pool_item_display_heading' => 'Peralatan Kolam Renang',
+    'pool_item_subtitle_heading' => 'Pam, penapis, pengklorin garam, bahan kimia, dan peralatan pembersihan dijelaskan secara mendalam.',
+    'pool_item_meta_description' => 'Aquarius menerangkan pam, penapis, pengklorin garam, bahan kimia, dan peralatan pembersihan yang diperlukan untuk kolam anda. Berpangkalan di Johor Bahru.',
     'pool_item_body' => 'Terdapat pelbagai peralatan yang diperlukan untuk kolam renang supaya dijaga dengan baik dan sentiasa berjalan dengan lancar. Senarai di bawah menerangkan peralatan yang penting dan penjelasan yang lebih mendalam tentang fungsi dan kepentingan peralatan tersebut.',
     'pool_item_main_items' => 'Peralatan Utama',
     'pool_item_pump_title' => 'Pam',
@@ -596,8 +598,10 @@ return [
     'showroom_subtitle_heading' => '',
 
     // CONTACT
-    'contact_title_heading' => 'Hubungi Kami',
-    'contact_subtitle_heading' => 'Hubungi pasukan Aquarius',
+    'contact_title_heading' => 'Hubungi Aquarius Swimming Pools, Johor Bahru',
+    'contact_display_heading' => 'Hubungi Kami',
+    'contact_subtitle_heading' => 'Telefon, WhatsApp atau lawati kolam pameran kami di Johor Bahru.',
+    'contact_meta_description' => 'Hubungi Aquarius Swimming Pools di Johor Bahru melalui telefon, WhatsApp, e-mel, atau lawati kolam pameran kami.',
     'contact_fill_body' => 'Jika anda mempunyai sebarang soalan, anda boleh mengisi borang di bawah.',
     'contact_visit_showpool_pill' => 'Lawati Kami',
     'contact_visit_showpool_heading' => 'Kunjungi Bilik Pameran Kolam Renang Kami',

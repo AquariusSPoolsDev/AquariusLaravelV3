@@ -334,8 +334,10 @@ return [
     'pool_service_item_5_content_3' => '',
 
     // POOL ITEMS
-    'pool_item_title_heading' => 'Pool Items',
-    'pool_item_subtitle_heading' => 'Pool equipment used for your swimming pool explained.',
+    'pool_item_title_heading' => 'Swimming Pool Equipment & Chemicals in Johor Bahru',
+    'pool_item_display_heading' => 'Pool Items & Equipment',
+    'pool_item_subtitle_heading' => 'Pumps, filters, salt chlorinators, chemicals, and cleaning tools. What each one does.',
+    'pool_item_meta_description' => 'Aquarius explains the pumps, filters, salt chlorinators, chemicals, and cleaning tools needed to keep your pool running. Based in Johor Bahru.',
     'pool_item_body' => 'There are many components required for a swimming pool to be kept well-maintained and always running efficiently. Listed below are the items that are essential to this process as well as an in-depth explanation of the function and importance of each item.',
     'pool_item_main_items' => 'Main Equipments',
     'pool_item_pump_title' => 'Pump',
@@ -596,8 +598,10 @@ return [
     'showroom_subtitle_heading' => '',
 
     // CONTACT
-    'contact_title_heading' => 'Contact',
-    'contact_subtitle_heading' => 'Connect with Aquarius team',
+    'contact_title_heading' => 'Contact Aquarius Swimming Pools, Johor Bahru',
+    'contact_display_heading' => 'Contact Us',
+    'contact_subtitle_heading' => 'Call, WhatsApp, or visit our Johor Bahru showroom.',
+    'contact_meta_description' => 'Reach Aquarius Swimming Pools in Johor Bahru by phone, WhatsApp, email, or visit our showroom.',
     'contact_fill_body' => 'If you have any queries, you can fill up this form below.',
     'contact_visit_showpool_pill' => 'Visit Us',
     'contact_visit_showpool_heading' => 'Visit Our Showroom',
