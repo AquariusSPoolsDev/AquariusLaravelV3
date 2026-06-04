@@ -118,6 +118,7 @@ return [
 
     // OUR POOLS MAIN PAGE
     'our_pools_title_heading' => 'Concrete, Vinyl & Fibreglass Pools in Johor Bahru',
+    'our_pools_display_heading' => 'Our Pools',
     'our_pools_subtitle_heading' => 'Compare concrete, vinyl, and fibreglass pools. Find the right fit for your property.',
     'our_pools_meta_description' => 'Aquarius Swimming Pools builds concrete, vinyl, and fibreglass pools across Malaysia. 30 years in Johor Bahru. Compare pool types and get a free consultation.',
     'our_pools_body' => 'Aquarius Swimming Pools has built concrete, vinyl, and fibreglass pools across Malaysia for over 30 years, based in Johor Bahru. Each pool type differs in cost, build time, and design flexibility. Compare all three below to find the right fit for your property.',
@@ -263,6 +264,7 @@ return [
 
     // FIBREGLASS POOLS PAGE
     'fibreglass_pool_title_heading' => 'Fibreglass Swimming Pools in Johor Bahru',
+    'fibreglass_pool_display_heading' => 'Fibreglass Pools',
     'fibreglass_pool_subtitle_heading' => 'Installed in 5 to 7 days. Low maintenance. Built to last 40 to 50 years.',
     'fibreglass_pool_meta_description' => 'Aquarius Swimming Pools installs fibreglass pools across Malaysia. Based in Johor Bahru. Fast 5 to 7 day installation, 40 to 50 year lifespan. Contact us for a free consultation.',
     'fibreglass_pool_body' => 'Fibreglass swimming pools install faster than any other pool type, ready in 5 to 7 days. Aquarius Swimming Pools supplies and installs fibreglass pools across Malaysia, based in Johor Bahru. Each pool ships as a pre-manufactured shell, built to last 40 to 50 years with minimal upkeep. Read on to see how fibreglass pools are built, and whether one is the right fit for your home.',

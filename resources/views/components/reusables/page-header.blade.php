@@ -17,10 +17,10 @@
     <div class="aquarius-header-content">
         <div class="aquarius-header-container">
             <h1 class="aquarius-header-title">
-                {{ __('strings.' . $headerTitle) }}
+                {{ Lang::has('strings.' . $headerTitle) ? __('strings.' . $headerTitle) : $headerTitle }}
             </h1>
             <p class="aquarius-header-subtitle">
-                {{ __('strings.'. $headerSubtitle) }}
+                {{ Lang::has('strings.' . $headerSubtitle) ? __('strings.' . $headerSubtitle) : $headerSubtitle }}
             </p>
         </div>
     </div>

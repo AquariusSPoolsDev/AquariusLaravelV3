@@ -118,6 +118,7 @@ return [
 
     // OUR POOLS MAIN PAGE
     'our_pools_title_heading' => 'Kolam Renang Konkrit, Vinil & Gentian Kaca di Johor Bahru',
+    'our_pools_display_heading' => 'Kolam Renang Kami',
     'our_pools_subtitle_heading' => 'Bandingkan kolam konkrit, vinil, dan gentian kaca. Cari pilihan yang sesuai untuk rumah anda.',
     'our_pools_meta_description' => 'Aquarius Swimming Pools membina kolam renang konkrit, vinil, dan gentian kaca di seluruh Malaysia. 30 tahun di Johor Bahru. Bandingkan jenis kolam dan dapatkan perundingan percuma.',
     'our_pools_body' => 'Aquarius Swimming Pools telah membina kolam renang konkrit, vinil, dan gentian kaca di seluruh Malaysia selama lebih 30 tahun, berpusat di Johor Bahru. Setiap jenis kolam berbeza dari segi kos, masa pembinaan, dan fleksibiliti reka bentuk. Bandingkan ketiga-tiganya di bawah untuk mencari pilihan yang sesuai untuk rumah anda.',
@@ -263,6 +264,7 @@ return [
 
     // FIBREGLASS POOLS PAGE
     'fibreglass_pool_title_heading' => 'Kolam Renang Gentian Kaca di Johor Bahru',
+    'fibreglass_pool_display_heading' => 'Kolam Gentian Kaca',
     'fibreglass_pool_subtitle_heading' => 'Dipasang dalam 5 hingga 7 hari. Penyelenggaraan rendah. Tahan 40 hingga 50 tahun.',
     'fibreglass_pool_meta_description' => 'Aquarius Swimming Pools memasang kolam renang gentian kaca di seluruh Malaysia. Berpusat di Johor Bahru. Pemasangan 5 hingga 7 hari, jangka hayat 40 hingga 50 tahun. Hubungi kami untuk perundingan percuma.',
     'fibreglass_pool_body' => 'Kolam renang gentian kaca dipasang lebih cepat daripada jenis kolam renang lain, siap dalam masa 5 hingga 7 hari. Aquarius Swimming Pools membekal dan memasang kolam renang gentian kaca di seluruh Malaysia, berpusat di Johor Bahru. Setiap kolam dihantar sebagai cengkerang pasang siap, dibina untuk tahan 40 hingga 50 tahun dengan penyelenggaraan yang rendah. Baca selanjutnya untuk mengetahui cara kolam gentian kaca dibina dan sama ada ia sesuai untuk rumah anda.',
