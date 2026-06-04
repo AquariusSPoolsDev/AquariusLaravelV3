@@ -117,7 +117,7 @@ return [
     'chat_whatsapp_btn' => 'Tanya Kami!',
 
     // OUR POOLS MAIN PAGE
-    'our_pools_title_heading' => 'Kolam Renang Konkrit, Vinil & Gentian Kaca',
+    'our_pools_title_heading' => 'Kolam Renang Konkrit, Vinil & Gentian Kaca di Johor Bahru',
     'our_pools_subtitle_heading' => 'Bandingkan kolam konkrit, vinil, dan gentian kaca. Cari pilihan yang sesuai untuk rumah anda.',
     'our_pools_meta_description' => 'Aquarius Swimming Pools membina kolam renang konkrit, vinil, dan gentian kaca di seluruh Malaysia. 30 tahun di Johor Bahru. Bandingkan jenis kolam dan dapatkan perundingan percuma.',
     'our_pools_body' => 'Aquarius Swimming Pools telah membina kolam renang konkrit, vinil, dan gentian kaca di seluruh Malaysia selama lebih 30 tahun, berpusat di Johor Bahru. Setiap jenis kolam berbeza dari segi kos, masa pembinaan, dan fleksibiliti reka bentuk. Bandingkan ketiga-tiganya di bawah untuk mencari pilihan yang sesuai untuk rumah anda.',
@@ -262,7 +262,7 @@ return [
     'vinyl_pool_compare_other' => 'Rasa tidak sesuai untuk anda? Teroka kolam renang konkrit dan gentian kaca sebelum membuat keputusan atau runding dengan pasukan kami untuk bantuan!',
 
     // FIBREGLASS POOLS PAGE
-    'fibreglass_pool_title_heading' => 'Kolam Renang Gentian Kaca',
+    'fibreglass_pool_title_heading' => 'Kolam Renang Gentian Kaca di Johor Bahru',
     'fibreglass_pool_subtitle_heading' => 'Dipasang dalam 5 hingga 7 hari. Penyelenggaraan rendah. Tahan 40 hingga 50 tahun.',
     'fibreglass_pool_meta_description' => 'Aquarius Swimming Pools memasang kolam renang gentian kaca di seluruh Malaysia. Berpusat di Johor Bahru. Pemasangan 5 hingga 7 hari, jangka hayat 40 hingga 50 tahun. Hubungi kami untuk perundingan percuma.',
     'fibreglass_pool_body' => 'Kolam renang gentian kaca dipasang lebih cepat daripada jenis kolam renang lain, siap dalam masa 5 hingga 7 hari. Aquarius Swimming Pools membekal dan memasang kolam renang gentian kaca di seluruh Malaysia, berpusat di Johor Bahru. Setiap kolam dihantar sebagai cengkerang pasang siap, dibina untuk tahan 40 hingga 50 tahun dengan penyelenggaraan yang rendah. Baca selanjutnya untuk mengetahui cara kolam gentian kaca dibina dan sama ada ia sesuai untuk rumah anda.',
@@ -598,7 +598,7 @@ return [
     'showroom_subtitle_heading' => '',
 
     // CONTACT
-    'contact_title_heading' => 'Hubungi Aquarius Swimming Pools, Johor Bahru',
+    'contact_title_heading' => 'Hubungi Aquarius Swimming Pools',
     'contact_display_heading' => 'Hubungi Kami',
     'contact_subtitle_heading' => 'Telefon, WhatsApp atau lawati kolam pameran kami di Johor Bahru.',
     'contact_meta_description' => 'Hubungi Aquarius Swimming Pools di Johor Bahru melalui telefon, WhatsApp, e-mel, atau lawati kolam pameran kami.',
@@ -619,8 +619,10 @@ return [
     'contact_email' => 'Emel',
 
     // CUSTOMER REVIEWS
-    'reviews_title_heading' => 'Ulasan',
+    'reviews_title_heading' => 'Ulasan Kolam Renang di Johor Bahru',
+    'reviews_display_heading' => 'Ulasan',
     'reviews_subtitle_heading' => 'Dengarkan ulasan daripada pelanggan',
+    'reviews_meta_description' => 'Pelanggan Aquarius Swimming Pools berkongsi pengalaman membina kolam konkrit, gentian kaca, dan vinil di Johor Bahru dan seluruh Malaysia.',
     'reviews_pill' => 'Ulasan Pelanggan',
     'reviews_body_title' => 'Dengar terus daripada pelanggan kami tentang pengalaman mereka bersama Aquarius.',
     'reviews_total_review' => 'jumlah ulasan',
@@ -632,7 +634,7 @@ return [
     'reviews_no_review_body' => 'Tiada ulasan untuk dipaparkan pada masa ini. Maklum balas anda mungkin yang pertama membuat perubahan!',
 
     // FAQ
-    'faq_title_heading' => 'Soalan Lazim Kolam Renang — Aquarius Pools, Johor Bahru',
+    'faq_title_heading' => 'Soalan Lazim Kolam Renang di Johor Bahru',
     'faq_display_heading' => 'Soalan Lazim',
     'faq_subtitle_heading' => 'Dapatkan jawapan untuk soalan anda di sini.',
     'faq_meta_description' => 'Soalan lazim tentang pembinaan kolam renang, bahan, penyelenggaraan, dan keselamatan. Dijawab oleh Aquarius Swimming Pools, Johor Bahru.',

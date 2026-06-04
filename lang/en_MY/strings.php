@@ -117,7 +117,7 @@ return [
     'chat_whatsapp_btn' => 'Chat with Us!',
 
     // OUR POOLS MAIN PAGE
-    'our_pools_title_heading' => 'Concrete, Vinyl & Fibreglass Swimming Pools',
+    'our_pools_title_heading' => 'Concrete, Vinyl & Fibreglass Pools in Johor Bahru',
     'our_pools_subtitle_heading' => 'Compare concrete, vinyl, and fibreglass pools. Find the right fit for your property.',
     'our_pools_meta_description' => 'Aquarius Swimming Pools builds concrete, vinyl, and fibreglass pools across Malaysia. 30 years in Johor Bahru. Compare pool types and get a free consultation.',
     'our_pools_body' => 'Aquarius Swimming Pools has built concrete, vinyl, and fibreglass pools across Malaysia for over 30 years, based in Johor Bahru. Each pool type differs in cost, build time, and design flexibility. Compare all three below to find the right fit for your property.',
@@ -262,7 +262,7 @@ return [
     'vinyl_pool_compare_other' => 'Not what you envisioned? Learn more about concrete and fibreglass pools before making your decision or contact our team to assist you!',
 
     // FIBREGLASS POOLS PAGE
-    'fibreglass_pool_title_heading' => 'Fibreglass Swimming Pools',
+    'fibreglass_pool_title_heading' => 'Fibreglass Swimming Pools in Johor Bahru',
     'fibreglass_pool_subtitle_heading' => 'Installed in 5 to 7 days. Low maintenance. Built to last 40 to 50 years.',
     'fibreglass_pool_meta_description' => 'Aquarius Swimming Pools installs fibreglass pools across Malaysia. Based in Johor Bahru. Fast 5 to 7 day installation, 40 to 50 year lifespan. Contact us for a free consultation.',
     'fibreglass_pool_body' => 'Fibreglass swimming pools install faster than any other pool type, ready in 5 to 7 days. Aquarius Swimming Pools supplies and installs fibreglass pools across Malaysia, based in Johor Bahru. Each pool ships as a pre-manufactured shell, built to last 40 to 50 years with minimal upkeep. Read on to see how fibreglass pools are built, and whether one is the right fit for your home.',
@@ -598,7 +598,7 @@ return [
     'showroom_subtitle_heading' => '',
 
     // CONTACT
-    'contact_title_heading' => 'Contact Aquarius Swimming Pools, Johor Bahru',
+    'contact_title_heading' => 'Contact Aquarius Swimming Pools',
     'contact_display_heading' => 'Contact Us',
     'contact_subtitle_heading' => 'Call, WhatsApp, or visit our Johor Bahru showroom.',
     'contact_meta_description' => 'Reach Aquarius Swimming Pools in Johor Bahru by phone, WhatsApp, email, or visit our showroom.',
@@ -619,8 +619,10 @@ return [
     'contact_email' => 'Email',
 
     // CUSTOMER REVIEWS
-    'reviews_title_heading' => 'Reviews',
+    'reviews_title_heading' => 'Swimming Pool Reviews in Johor Bahru',
+    'reviews_display_heading' => 'Reviews',
     'reviews_subtitle_heading' => 'See what our customers are saying',
+    'reviews_meta_description' => 'Aquarius Swimming Pools customers share their experience building concrete, fibreglass, and vinyl pools in Johor Bahru and across Malaysia.',
     'reviews_pill' => 'Customer Reviews',
     'reviews_body_title' => 'Hear directly from our customers about their experience with Aquarius.',
     'reviews_total_review' => 'reviews total',
@@ -632,7 +634,7 @@ return [
     'reviews_no_review_body' => 'There are no reviews to display at the moment. Your feedback could be the first to make a difference!',
 
     // FAQ
-    'faq_title_heading' => 'Swimming Pool FAQ — Aquarius Pools, Johor Bahru',
+    'faq_title_heading' => 'Swimming Pool FAQ in Johor Bahru',
     'faq_display_heading' => 'Frequently Asked Questions',
     'faq_subtitle_heading' => 'Find the answers to your questions here',
     'faq_meta_description' => 'Common questions about swimming pool construction, materials, maintenance, and safety. Answered by Aquarius Swimming Pools, Johor Bahru.',
