@@ -296,7 +296,7 @@ return [
     'fibreglass_pool_disadvantage_2_desc' => '',
     'fibreglass_pool_disadvantage_3_title' => '',
     'fibreglass_pool_disadvantage_3_desc' => '',
-    'fibreglass_pool_closing_body' => 'Secara keseluruhannya, kolam renang gentian kaca adalah pilihan terbaik untuk pemilik rumah yang mahukan kolam yang tahan lama, penyelenggaraan rendah dan mudah dipasang yang menawarkan penampilan serba moden dan cantik, serta selesa dengan julat harga yang sedikit tinggi.',
+    'fibreglass_pool_closing_body' => 'Kolam gentian kaca ialah kolam terpantas yang Aquarius pasang, siap dalam 5 hingga 7 hari dengan penyelenggaraan minimum sepanjang jangka hayat 40 hingga 50 tahun. Bentuk tetap bermakna kurang fleksibiliti reka bentuk berbanding kolam konkrit. Jika kecepatan dan penyelenggaraan rendah lebih penting daripada penyesuaian, gentian kaca adalah pilihan yang sesuai. Untuk lebih pilihan, bandingkan kolam konkrit dan vinil.',
     'fibreglass_pool_compare_other' => 'Rasa tidak sesuai untuk anda? Teroka kolam renang konkrit dan vinil sebelum membuat keputusan atau runding dengan pasukan kami untuk bantuan!',
 
     // EXPLORE OTHER POOL TYPES SECTION
@@ -324,8 +324,8 @@ return [
     'pool_service_item_2_content_3' => 'Aquarius mempunyai juruteknik dengan pengalaman yang lama dalam pemeriksaan berkala, pembaikan peralatan kolam renang dan menyelesaikan masalah yang disebabkan oleh penggunaan yang sekian lama. Anda boleh mempercayai Aquarius Swimming Pools untuk menjaga keperluan kolam renang anda.',
     'pool_service_item_3_title' => 'Pengubahsuaian, Ubah Hias dan Pemulihan',
     'pool_service_item_3_content_1' => 'Aquarius mengendalikan pengubahsuaian, ubah hias, dan pemulihan kolam renang sedia ada, hiasan air, dan pembinaan berasaskan air yang lain.',
-    'pool_service_item_3_content_2' => 'Walaupun diketahui sebagai pembina kolam renang, kepakaran kami merangkumi kerja-kerja pengubahsuaian, baik pulih, dan pemulihan kolam renang yang lama, hiasan air dan pembinaan berasaskan air yang lain.',
-    'pool_service_item_3_content_3' => 'Plaster semula, model semula atau apa-apa jenis pengubahsuaian kolam renang yang lain; hubungi kami untuk merealisasikan segala yang anda bayangkan.',
+    'pool_service_item_3_content_2' => 'Perkhidmatan termasuk plaster semula, jubin semula, model semula, dan pembaikan struktur.',
+    'pool_service_item_3_content_3' => 'Hubungi kami untuk berbincang tentang keperluan kolam renang anda.',
     'pool_service_item_4_title' => 'Pembekalan Peralatan Kolam Renang',
     'pool_service_item_4_content_1' => 'Memastikan kolam renang anda bersih dan berjalan dengan cekap akan memastikan kolam renang anda kekal jimat tenaga dan mengelakkan pembaikan yang mahal dalam jangka masa panjang.',
     'pool_service_item_4_content_2' => 'Menjaga peralatan kolam renang anda dengan baik mengurangkan kos pembaikan jangka panjang dan memanjangkan hayat kolam renang anda.',

@@ -296,7 +296,7 @@ return [
     'fibreglass_pool_disadvantage_2_desc' => '',
     'fibreglass_pool_disadvantage_3_title' => '',
     'fibreglass_pool_disadvantage_3_desc' => '',
-    'fibreglass_pool_closing_body' => 'Overall, a fibreglass pool is a great choice for homeowners who want a durable, low-maintenance, and easy-to-install pool that offers a sleek and modern look but are also comfortable with a slightly higher price range.',
+    'fibreglass_pool_closing_body' => 'Fibreglass is the fastest pool material Aquarius installs, ready in 5 to 7 days with minimal upkeep over its 40 to 50 year lifespan. Fixed shapes mean less design flexibility than concrete. If speed and low maintenance matter more than customization, fibreglass is the right fit. For more options, compare concrete and vinyl pools.',
     'fibreglass_pool_compare_other' => 'Not what you envisioned? Learn more about concrete and vinyl pools before making your decision or contact our team to assist you!',
 
     // EXPLORE OTHER POOL TYPES SECTION
@@ -324,8 +324,8 @@ return [
     'pool_service_item_2_content_3' => 'Technicians with many years of experience in regular check-ups, pool equipment repairs and solving any complications that may arise due to wear and tear are available at Aquarius. You can count on Aquarius Swimming Pools to take care of your pool needs.',
     'pool_service_item_3_title' => 'Renovation, Refurbishment and Restoration',
     'pool_service_item_3_content_1' => 'Aquarius handles renovation, refurbishment, and restoration of existing pools, water features, and related water constructions.',
-    'pool_service_item_3_content_2' => 'Although known as swimming pool builders, our expertise extends to renovation, refurbishment, and restoration of old swimming pools, water features, and other related water constructions.',
-    'pool_service_item_3_content_3' => 'Re-plastering, remodelling or any other form of pool renovation; get in touch with us to make everything you envisioned come through.',
+    'pool_service_item_3_content_2' => 'Services include re-plastering, retiling, remodelling, and structural repairs.',
+    'pool_service_item_3_content_3' => 'Contact us to discuss what your pool needs.',
     'pool_service_item_4_title' => 'Swimming Pool Equipment Supplies',
     'pool_service_item_4_content_1' => 'Keeping your swimming pool clean and running efficiently will ensure that your pool remains energy efficient and prevent costly repairs in the long run.',
     'pool_service_item_4_content_2' => 'Keeping your pool equipment well-maintained reduces long-term repair costs and extends the life of your pool.',
