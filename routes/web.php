@@ -6,6 +6,7 @@ use App\Http\Controllers\localeController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\PromotionController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\SitemapController;
 use Illuminate\Support\Facades\Route;
 
 // CHANGE LANGUAGE
@@ -85,10 +86,13 @@ Route::get('/privacy', function () {
     return view('pages.14-privacy');
 })->name('privacy-page');
 
-// 15. SITEMAP
+// 15. SITEMAP (HTML page)
 Route::get('/sitemap', function () {
     return view('pages.16-sitemap');
 })->name('sitemap-page');
+
+// SITEMAP XML
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap-xml');
 
 // ROUTE CONTACT SEND EMAIL
 Route::post('/send-email', [ContactFormController::class, 'sendEmail'])
