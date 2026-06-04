@@ -344,13 +344,13 @@ return [
 
     // UNUSED — old long-form descriptions (replaced by brief + modal strings)
     // 'pool_item_main_items' => 'Peralatan Utama',
-    // 'pool_item_pump_title' => 'Pam',
+    'pool_item_pump_title' => 'Pam',
     // 'pool_item_pump_desc_1' => 'Fungsi utama sesebuah pam adalah untuk mengitar air melalui sistem penapisan kolam renang yang boleh membuang serpihan, habuk dan zarah lain dari air. Pam membawa air melalui \'skimmer\' dan saliran utama dan membawa terus melalui penapis. Setelah air ditapis, pam membawa balik air tersebut ke kolam renang melalui jet balik.',
     // 'pool_item_pump_desc_2' => 'Tanpa pam kolam renang, air di dalam kolam renang tersebut menjadi bertakung, mendorong kepada kualiti air yang keruh dan penumbuhan alga dan bakteria.',
     // 'pool_item_pump_desc_3' => 'Kitaran air juga mampu untuk mengagihkan bahan kimia secara sekata seperti klorin, di mana bantu membersihkan kolam renang, membunuh mikroorganisma berbahaya, dan mengawal kualiti air yang baik. Sebuah pam kolam renang merupakan komponen penting dalam sistem kolam renang di mana membantu mengekalkan air menjadi bersih, jernih dan selamat untuk berenang.',
     // 'pool_item_pump_desc_4' => 'Pam kolam renang penting untuk mengekalkan kesihatan keseluruhan bagi sistem kolam. Tanpa kitaran air yang betul, penapis akan menjadi tersumbat, mengakibatkan penurunan kecekapan dan kos pembaikkan yang tinggi. Pam kolam renang yang baik mampu memastikan penapis beroperasi secara efektif dan menambahkan jangka hayat peralatan tersebut.',
     // 'pool_item_pump_summary' => 'Kesimpulannya, pam kolam amatlah penting untuk mengekalkan air bersih dan selamat dalam kolam renang, dan memastikan jangka hayat dan kecekapan peralatan kolam tersebut.',
-    // 'pool_item_filter_title' => 'Penapis',
+    'pool_item_filter_title' => 'Penapis',
     // 'pool_item_filter_desc_1' => 'Kegunaan utama penapis kolam renang adalah untuk mengeluarkan bahan cemaran, habuk dan partikel lain dari air dalam kolam renang. Tanpa penapis kolam renang, air akan menjadi keruh, kotor dan bahaya kepada perenang. Penapis kolam renang yang berjalan baik membantu mengekalkan air menjadi bersih, selamat dan baik untuk kesihatan.',
     // 'pool_item_filter_desc_2' => 'Penapis kolam renang yang bersih dan dijaga dengan baik juga penting untuk memastikan kesihatan dan keselamatan perenang. Tanpa penapis, bakteria berbahaya dan mikroorganisma yang lain mudah membiak dalam air kolam renang, sekaligus membawa jangkitan. Penapis kolam renang membantu mengeluarkan bahan cemaran, menjadikan air selamat untuk berenang.',
     // 'pool_item_filter_desc_3' => 'Penapis kolam renang juga membantu melindungi peralatan kolam renang yang lain seperti pam, pemanas dan permukaan kolam renang dengan mengeluarkan partikel yang boleh merosakkan atau menyumbatkan peralatan tersebut. Ini boleh menambahkan jangka hayat peralatan kolam renang dan mengurangkan kos pembaikkan dari semasa ke semasa.',
@@ -377,7 +377,7 @@ return [
     // 'pool_item_algaecide_body' => 'Algaesid digunakan untuk mengawal dan mengelakkan pertumbuhan alga dalam air kolam renang. Ia datang dalam pelbagai bentuk, termasuk berasaskan tembaga dan bukan logam. Algaesid biasanya digunakan sebagai langkah berjaga-jaga atau mengawal pertumbuhan alga sedia ada.',
     // 'pool_item_clarifier_title' => 'Penjernih',
     // 'pool_item_clarifier_body' => 'Penjernih digunakan untuk menambah kejernihan air dengan menyebabkan partikel kecil bergumpal dam mendak pada dasar kolam renang. Biasanya digunakan bersama dengan penapis kolam.',
-    // 'pool_item_salt_chlorinator_title' => 'Sistem pengklorinan garam',
+    'pool_item_salt_chlorinator_title' => 'Pengklorin Garam',
     // 'pool_item_salt_chlorinator_body' => 'Sistem pengklorinan garam merupakan sebuah alat yang menggunakan elektrolisis untuk menukar garam menjadi klorin, yang kemudiannya digunakan untuk membersihkan air kolam.',
     // 'pool_item_salt_chlorinator_body_2' => 'Kegunaan utama sistem pengklorinan garam adalah untuk memberikan cara yang lebih senang dan efektif untuk membersihkan air kolam tanpa menggunakan klorin biasa. Manfaat sistem pengklorinan garam termasuk:',
     // 'pool_item_salt_chlorinator_function_1' => 'Mengurangkan keperluan pengendalian dan penyimpanan produk klorin tradisional.',
@@ -831,7 +831,7 @@ return [
     // NOTABLE PROJECTS
     'projects_title_heading' => 'Projek Kolam Renang Terkemuka di Seluruh Malaysia',
     'projects_display_heading' => 'Projek Terkemuka',
-    'projects_subtitle_heading' => 'Kolam kediaman dan komersial yang dibina di seluruh Johor Bahru dan Malaysia',
+    'projects_subtitle_heading' => 'Kolam kediaman dan komersial yang dibina di seluruh Malaysia',
     'projects_meta_description' => 'Semak projek kolam siap oleh Aquarius Swimming Pools. Setiap projek merangkumi jenis kolam, lokasi, dan butiran binaan. Kolam kediaman dan komersial di seluruh Malaysia.',
     'projects_no_projects_title' => 'Tiada Projek Dijumpai',
     'projects_no_projects_body' => 'Kembali semula tidak lama lagi untuk pameran projek kami.',

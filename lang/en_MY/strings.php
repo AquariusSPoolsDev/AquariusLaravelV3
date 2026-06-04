@@ -344,13 +344,13 @@ return [
 
     // UNUSED — old long-form descriptions (replaced by brief + modal strings)
     // 'pool_item_main_items' => 'Main Equipments',
-    // 'pool_item_pump_title' => 'Pump',
+    'pool_item_pump_title' => 'Pump',
     // 'pool_item_pump_desc_1' => 'The function of a pool pump is to circulate water through the pool\'s filtration system, which helps to remove debris, dirt, and other particles from the water. The pump draws water from the pool through the skimmer and main drain and then pushes it through the filter. Once the water has been filtered, the pump returns it to the pool through the return jets.',
     // 'pool_item_pump_desc_2' => 'Without a pool pump, the water in the pool would become stagnant, leading to poor water quality and the growth of algae and bacteria.',
     // 'pool_item_pump_desc_3' => 'The circulation of water also helps to evenly distribute chemicals such as chlorine, which helps to sanitize the pool, kill harmful microorganisms, and maintain good water quality. A pool pump is an essential component of a swimming pool system, as it helps to keep the water clean, clear, and safe for swimming.',
     // 'pool_item_pump_desc_4' => 'A pool pump is also important for maintaining the overall health of the pool system. Without proper circulation, the filter can become clogged, leading to decreased efficiency and increased maintenance costs. A properly functioning pool pump helps to ensure that the filter operates effectively and prolongs the lifespan of the pool equipment.',
     // 'pool_item_pump_summary' => 'In summary, a pool pump is essential for maintaining clean and safe water in a swimming pool, as well as ensuring the longevity and efficiency of the pool equipment.',
-    // 'pool_item_filter_title' => 'Filter',
+    'pool_item_filter_title' => 'Filter',
     // 'pool_item_filter_desc_1' => 'The primary function of a pool filter is to remove contaminants, debris, and other particles from the water in a swimming pool. Without a pool filter, the water would quickly become cloudy, dirty, and potentially harmful to swimmers. A properly functioning pool filter helps to maintain clear, clean, and healthy water.',
     // 'pool_item_filter_desc_2' => 'A clean and well-maintained pool filter is also essential for ensuring the health and safety of swimmers. Without a filter, harmful bacteria and other microorganisms can thrive in the pool water, leading to illnesses and infections. A pool filter helps to remove these contaminants, making the water safe for swimming.',
     // 'pool_item_filter_desc_3' => 'A pool filter also helps to protect other pool equipment, such as pumps, heaters, and pool surfaces, by removing particles that can cause damage or clog the equipment. This can extend the lifespan of pool equipment and reduce maintenance and repair costs over time.',
@@ -377,7 +377,7 @@ return [
     // 'pool_item_algaecide_body' => 'Algaecides are used to prevent or treat algae growth in the pool water. They come in different forms, including copper-based and non-metallic. Algaecides are typically used as a preventative measure or to treat existing algae growth.',
     // 'pool_item_clarifier_title' => 'Clarifiers',
     // 'pool_item_clarifier_body' => 'Clarifiers are used to improve the clarity of the pool water by causing small particles to clump together and settle to the bottom of the pool. They are often used in conjunction with a pool filter.',
-    // 'pool_item_salt_chlorinator_title' => 'Salt System chlorinator',
+    'pool_item_salt_chlorinator_title' => 'Salt Chlorinator',
     // 'pool_item_salt_chlorinator_body' => 'A salt system chlorinator is a device that uses electrolysis to convert salt into chlorine, which is then used to sanitize the pool water.',
     // 'pool_item_salt_chlorinator_body_2' => 'The main function of a salt system chlorinator is to provide a convenient and effective way to sanitize the pool water without the need for traditional chlorine products. The benefits of a salt system chlorinator include: ',
     // 'pool_item_salt_chlorinator_function_1' => 'Reduced need for handling and storing traditional chlorine products.',
@@ -831,7 +831,7 @@ return [
     // NOTABLE PROJECTS
     'projects_title_heading' => 'Notable Pool Projects Across Malaysia',
     'projects_display_heading' => 'Notable Projects',
-    'projects_subtitle_heading' => 'Residential and commercial pools built across Johor Bahru and Malaysia',
+    'projects_subtitle_heading' => 'Residential and commercial pools built across Malaysia',
     'projects_meta_description' => 'Browse past pool projects by Aquarius Swimming Pools. Each project includes pool type, location, and build details. Residential and commercial pools across Malaysia.',
     'projects_no_projects_title' => 'No Projects Found',
     'projects_no_projects_body' => 'Check back soon for our project showcase.',
