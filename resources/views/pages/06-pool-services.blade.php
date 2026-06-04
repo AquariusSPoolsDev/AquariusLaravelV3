@@ -6,14 +6,14 @@
 {{-- PARSE HEADER STRINGS --}}
 @php
 $imageFileLoc = 'header-pool-services.jpg';
-$headerTitle = 'pool_service_title_heading';
+$headerTitle = 'pool_service_display_heading';
 $headerSubtitle = 'pool_service_subtitle_heading';
 @endphp
 
 {{-- META TAG PAGE --}}
 @section('seoData')
    <x-seo.seo
-        ogPageTitle="{{__('strings.' . $headerTitle)}}"
+        ogPageTitle="{{__('strings.pool_service_title_heading')}}"
         ogDescription="{{__('strings.pool_service_meta_description')}}"
         ogImage="{{ asset('assets/images/'.$imageFileLoc) }}"
     /> 
