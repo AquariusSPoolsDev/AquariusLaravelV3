@@ -174,7 +174,7 @@ return [
 
     'table_keypoint_title_8' => 'Benefits',
     'table_concrete_body_8' => 'Can be emptied for repair works.<br><br>Design flexibility with easy add on options such as integrated Jacuzzi, wading pool, water features and underwater lighting.',
-    'table_vinyl_body_8' => 'Slow algae growth<br><br>Stainless steel walls with 20 - 30 years warranty.',
+    'table_vinyl_body_8' => 'Slow algae growth<br><br>Stainless steel walls with 5 year warranty.',
     'table_fibreglass_body_8' => 'Can be emptied for repair works.<br><br>Slow algae growth.',
 
     'table_keypoint_title_9' => 'Limitations',
@@ -225,9 +225,11 @@ return [
     'concrete_pool_compare_other' => 'Not the best fit for you? Explore fibreglass and vinyl pools before making your decision or consult our team to help!',
 
     // VINYL POOLS PAGE
-    'vinyl_pool_title_heading' => 'Vinyl Pools',
-    'vinyl_pool_subtitle_heading' => 'Comprehensive explanation of vinyl pools type',
-    'vinyl_pool_body' => 'A vinyl pool is a type of in-ground swimming pool that features a vinyl liner installed over a structure made of prefabricated metal and steel.',
+    'vinyl_pool_title_heading' => 'Vinyl Swimming Pools in Johor Bahru',
+    'vinyl_pool_display_heading' => 'Vinyl Pools',
+    'vinyl_pool_subtitle_heading' => 'Stainless steel frames. 5 year warranty. Installed in 2 to 3 weeks. Most affordable pool type.',
+    'vinyl_pool_meta_description' => 'Aquarius installs vinyl pools with stainless steel frames across Malaysia. 5 year warranty. 2 to 3 week installation. Based in Johor Bahru. Free consultation.',
+    'vinyl_pool_body' => 'Aquarius Swimming Pools installs vinyl pools across Malaysia, based in Johor Bahru. Each pool uses stainless steel wall frames set into excavated ground, lined with a fitted vinyl liner. Our frames carry a 5 year warranty. Installation takes 2 to 3 weeks, making vinyl the fastest in-ground option after fibreglass. Vinyl is the most affordable pool type Aquarius offers. Read on to see how vinyl pools are built, and whether one is right for your property.',
     'vinyl_pool_steps_pill' => 'How it\'s made',
     'vinyl_pool_steps_title' => 'How Are Vinyl Pools Built?',
     'vinyl_pool_pros_cons_pill' => 'Pros & Cons',
@@ -237,7 +239,7 @@ return [
     'vinyl_pool_step_2_title' => 'Excavation',
     'vinyl_pool_step_2_description' => 'Once the site has been prepared, the next step is to excavate the area where the pool will be installed. The excavation must be done carefully to ensure that the dimensions of the pool are accurate and that the walls are straight and level.',
     'vinyl_pool_step_3_title' => 'Framework',
-    'vinyl_pool_step_3_description' => 'Prefabricated metal/steel or plastic frames are set into the excavated area and reinforced with concrete footings and wall braces.',
+    'vinyl_pool_step_3_description' => 'Stainless steel frames are set into the excavated area and reinforced with concrete footings and wall braces.',
     'vinyl_pool_step_4_title' => 'Plumbing and Electrical works',
     'vinyl_pool_step_4_description' => 'The plumbing and electrical systems are installed next. This includes installing the pool pump, filter, and heater, as well as running the electrical wiring.',
     'vinyl_pool_step_5_title' => 'Flooring & Installation',
@@ -246,7 +248,7 @@ return [
     'vinyl_pool_advantage_1_title' => 'Cost efficient',
     'vinyl_pool_advantage_1_desc' => 'Vinyl pools are the cheapest type of pool to construct, they are less expensive than fibreglass and concrete pools.',
     'vinyl_pool_advantage_2_title' => 'Quick Installation',
-    'vinyl_pool_advantage_2_desc' => 'Vinyl pools are relatively quicker and easier to install compared to concrete pools, taking only a fraction of the time to required.',
+    'vinyl_pool_advantage_2_desc' => 'Vinyl pools install faster than concrete, ready in 2 to 3 weeks from excavation to completion.',
     'vinyl_pool_advantage_3_title' => 'Range of variety',
     'vinyl_pool_advantage_3_desc' => 'Vinyl liners are available in a wide variety of colours and patterns, allowing customers to customize the appearance of their pool.',
     'vinyl_pool_disadvantage_title' => 'Disadvantages',
@@ -256,7 +258,7 @@ return [
     'vinyl_pool_disadvantage_2_desc' => '',
     'vinyl_pool_disadvantage_3_title' => '',
     'vinyl_pool_disadvantage_3_desc' => '',
-    'vinyl_pool_closing_body' => 'Overall, vinyl pools are a good option for homeowners who want a more affordable and quick-to-install pool option, and who are willing to accept the limitations of a vinyl liner.',
+    'vinyl_pool_closing_body' => 'Vinyl pools are the most affordable option Aquarius installs, with the fastest build time after fibreglass. Fixed shapes and sizes mean less design flexibility than concrete. If cost and speed matter more than customization, vinyl is the right fit. For more options, compare concrete and fibreglass pools.',
     'vinyl_pool_compare_other' => 'Not what you envisioned? Learn more about concrete and fibreglass pools before making your decision or contact our team to assist you!',
 
     // FIBREGLASS POOLS PAGE

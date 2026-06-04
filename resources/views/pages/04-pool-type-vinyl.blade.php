@@ -6,13 +6,15 @@
 {{-- PARSE HEADER STRINGS --}}
 @php
 $imageFileLoc = 'header-pool-vinyl.jpg';
-$headerTitle = 'vinyl_pool_title_heading';
+$headerTitle = 'vinyl_pool_display_heading';
 $headerSubtitle = 'vinyl_pool_subtitle_heading';
 @endphp
 
 {{-- META TAG PAGE --}}
 @section('seoData')
-<x-seo.seo ogPageTitle="{{__('strings.' . $headerTitle)}}" ogDescription="{{__('strings.' . $headerSubtitle)}}"
+<x-seo.seo
+    ogPageTitle="{{__('strings.vinyl_pool_title_heading')}}"
+    ogDescription="{{__('strings.vinyl_pool_meta_description')}}"
     ogImage="{{ asset('assets/images/'.$imageFileLoc) }}" />
 @endsection
 
