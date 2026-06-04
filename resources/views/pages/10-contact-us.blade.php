@@ -6,13 +6,13 @@
 {{-- PARSE HEADER STRINGS --}}
 @php
 $imageFileLoc = 'header-contact-us.jpg';
-$headerTitle = 'contact_title_heading';
+$headerTitle = 'contact_display_heading';
 $headerSubtitle = 'contact_subtitle_heading';
 @endphp
 
 {{-- META TAG PAGE --}}
 @section('seoData')
-<x-seo.seo ogPageTitle="{{__('strings.' . $headerTitle)}}" ogDescription="{{__('strings.' . $headerSubtitle)}}"
+<x-seo.seo ogPageTitle="{{__('strings.contact_title_heading')}}" ogDescription="{{__('strings.contact_meta_description')}}"
     ogImage="{{ asset('assets/images/'.$imageFileLoc) }}" />
 @endsection
 
@@ -56,8 +56,8 @@ $headerSubtitle = 'contact_subtitle_heading';
 
             <div class="aquarius-contact-card">
                 <h3 class="aquarius-contact-card-title">{{__('strings.contact_business_hours_title')}}</h3>
-                <p class="mb-2.5"><strong>{{__('strings.contact_mon_fri')}}:</strong><br>8:30 AM - 5:30 PM</p>
-                <p class="mb-2.5"><strong>{{__('strings.contact_sat')}}:</strong><br>8:30AM - 12:30PM</p>
+                <p class="mb-2.5"><strong>{{__('strings.contact_mon_fri')}}:</strong><br>8:00 AM - 5:00 PM</p>
+                <p class="mb-2.5"><strong>{{__('strings.contact_sat')}}:</strong><br>8:00 AM - 12:00 PM</p>
                 <p><strong class="text-error-400!">{{__('strings.contact_close_sun')}}</strong></p>
             </div>
 
