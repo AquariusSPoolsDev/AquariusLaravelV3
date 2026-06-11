@@ -75,21 +75,21 @@
                                     <div class="nav-dropdown-menu" x-show="open" x-cloak role="menu" aria-orientation="vertical">
                                         <div class="py-1 space-y-0.5">
                                             <a class="nav-link {{ Route::currentRouteName() === 'concrete-pools-page' ? 'nav-link-active' : '' }}"
-                                                href="{{ route('concrete-pools-page') }}">
+                                                href="{{ route('concrete-pools-page') }}" role="menuitem">
                                                 {{__('strings.navbar_our_pools_concrete')}}
                                             </a>
 
                                             <a class="nav-link {{ Route::currentRouteName() === 'vinyl-pools-page' ? 'nav-link-active' : '' }}"
-                                                href="{{ route('vinyl-pools-page') }}">
+                                                href="{{ route('vinyl-pools-page') }}" role="menuitem">
                                                 {{__('strings.navbar_our_pools_vinyl')}}
                                             </a>
 
                                             <a class="nav-link {{ Route::currentRouteName() === 'fibreglass-pools-page' ? 'nav-link-active' : '' }}"
-                                                href="{{ route('fibreglass-pools-page') }}">
+                                                href="{{ route('fibreglass-pools-page') }}" role="menuitem">
                                                 {{__('strings.navbar_our_pools_fibreglass')}}
                                             </a>
 
-                                            <a class="nav-link" href="{{ route('our-pools-main') }}#compare">
+                                            <a class="nav-link" href="{{ route('our-pools-main') }}#compare" role="menuitem">
                                                 {{__('strings.navbar_our_pools_compare')}}
                                             </a>
                                         </div>
@@ -117,12 +117,12 @@
                                     <div class="nav-dropdown-menu" x-show="open" x-cloak role="menu" aria-orientation="vertical">
                                         <div class="py-1 space-y-0.5">
                                             <a class="nav-link {{ Route::currentRouteName() === 'pool-showcase-gallery' ? 'nav-link-active' : '' }}"
-                                                href="{{ route('pool-showcase-gallery') }}">
+                                                href="{{ route('pool-showcase-gallery') }}" role="menuitem">
                                                 {{__('strings.navbar_pool_showcase')}}
                                             </a>
 
                                             <a class="nav-link {{ in_array(Route::currentRouteName(), ['projects-page', 'project-detail-page']) ? 'nav-link-active' : '' }}"
-                                                href="{{ route('projects-page') }}">
+                                                href="{{ route('projects-page') }}" role="menuitem">
                                                 {{__('strings.navbar_projects')}}
                                             </a>
                                         </div>
@@ -148,16 +148,16 @@
                                     <div class="nav-dropdown-menu" x-show="open" x-cloak role="menu" aria-orientation="vertical">
                                         <div class="py-1 space-y-0.5">
                                             <a class="nav-link {{ Route::currentRouteName() === 'pool-services-page' ? 'nav-link-active' : '' }}"
-                                                href="{{ route('pool-services-page') }}">
+                                                href="{{ route('pool-services-page') }}" role="menuitem">
                                                 {{__('strings.navbar_our_services_pool')}}
                                             </a>
 
                                             <a class="nav-link {{ Route::currentRouteName() === 'pool-items-page' ? 'nav-link-active' : '' }}"
-                                                href="{{ route('pool-items-page') }}">
+                                                href="{{ route('pool-items-page') }}" role="menuitem">
                                                 {{__('strings.navbar_our_services_essential')}}
                                             </a>
 
-                                            <a class="nav-link" href="https://thesplashshop.com/">
+                                            <a class="nav-link" href="https://thesplashshop.com/" role="menuitem">
                                                 {{__('strings.navbar_our_services_supplies')}}
                                             </a>
                                         </div>

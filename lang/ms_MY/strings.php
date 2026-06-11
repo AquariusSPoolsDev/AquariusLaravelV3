@@ -598,11 +598,25 @@ return [
 
     // ABOUT US
     'about_title_heading' => 'Tentang Kami',
-    'about_subtitle_heading' => '',
-
-    // SHOWROOM
-    'showroom_title_heading' => 'Bilik Pameran',
-    'showroom_subtitle_heading' => '',
+    'about_subtitle_heading' => 'Lebih 30 tahun. Lebih 1,000 kolam renang. Dibina di Malaysia.',
+    'about_values_pill' => 'Apa Yang Kami Pegang',
+    'about_values_heading' => 'Nilai Kami',
+    'about_value_1_title' => 'Kecemerlangan',
+    'about_value_1_body' => 'Kualiti tanpa kompromi dalam setiap kolam renang yang kami bina.',
+    'about_value_2_title' => 'Integriti',
+    'about_value_2_body' => 'Harga yang jelas dan komunikasi secara jujur sepanjang setiap projek.',
+    'about_value_3_title' => 'Kepuasan Pelanggan',
+    'about_value_3_body' => 'Penyelesaian kolam renang yang disesuaikan untuk setiap bajet dan tujuan.',
+    'about_value_4_title' => 'Inovasi',
+    'about_value_4_body' => 'Lebih 30 tahun berkembang dalam reka bentuk dan pembinaan kolam renang.',
+    'about_value_5_title' => 'Perkhidmatan Menyeluruh',
+    'about_value_5_body' => 'Dari perundingan, pembinaan, penjagaan kolam. Semua di bawah satu bumbung.',
+    'about_value_6_title' => 'Profesionalisme',
+    'about_value_6_body' => 'Bahan binaan yang premium. Pasukan yang mahir. Boleh dipercayai dari mula sehingga selesai.',
+    'about_showroom_pill' => 'Lawati Kami',
+    'about_showroom_heading' => 'Bilik Pameran, Pejabat dan Kedai Kami',
+    'about_showroom_body_1' => 'Cara terbaik untuk memilih kolam renang anda adalah dengan melihatnya sendiri. Kami mempunyai tiga kolam pameran saiz penuh di sini. Konkrit, gentian kaca, dan vinil. Bandingkan kemasan dan saiz sebelum membuat keputusan.',
+    'about_showroom_body_2' => 'Bilik pameran, pejabat, dan kedai kami semuanya berada di bawah satu bumbung di Johor Bahru, bertentangan dengan Southern University College dan sebelum Paradigm Mall menuju ke bandar Johor Bahru (JB). Singgah semasa waktu perniagaan dan pasukan kami sedia membantu.',
 
     // CONTACT
     'contact_title_heading' => 'Hubungi Aquarius Swimming Pools',
@@ -708,6 +722,11 @@ return [
     'faq_kind_maintenance_answer_2_1' => 'Aquarius menyediakan semua perkhidmatan di atas melalui pasukan penyelengaraan kami.',
     'faq_kind_maintenance_answer_2_link_text' => 'Hubungi kami',
     'faq_kind_maintenance_answer_2_2' => 'untuk maklumat lanjut.',
+
+    // HOMEPAGE FAQ
+    'homepage_faq_pill' => 'Soalan Lazim',
+    'homepage_faq_heading' => 'Soalan Lazim',
+    'homepage_faq_view_all' => 'Lihat semua soalan lazim',
 
     // PROMOTIONS
     'promotions_title_heading' => 'Promosi Kolam Renang di Johor Bahru',

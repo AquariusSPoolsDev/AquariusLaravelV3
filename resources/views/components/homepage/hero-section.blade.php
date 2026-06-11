@@ -44,6 +44,14 @@
             const iconPause = document.getElementById('icon-pause');
             const iconPlay = document.getElementById('icon-play');
 
+            // Respect OS-level reduced motion preference — pause video on load if set
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                video.pause();
+                iconPause.classList.add('hidden');
+                iconPlay.classList.remove('hidden');
+                playPauseText.textContent = 'Play';
+            }
+
             function togglePlay() {
                 if (video.paused) {
                     video.play();
@@ -68,13 +76,13 @@
                 <p class="aquarius-secondary-heading" data-animate data-delay="150">
                     {{ __('strings.hero_content') }}
                 </p>
-                <p class="aquarius-features-heading" data-animate data-delay="250">
-                    <strong>{{ __('strings.hero_feature_1') }}</strong> |
-                    <strong>{{ __('strings.hero_feature_2') }}</strong> |
-                    <strong>{{ __('strings.hero_feature_3') }}</strong> |
-                    <strong>{{ __('strings.hero_feature_4') }}</strong> |
-                    <strong>{{ __('strings.hero_feature_5') }}</strong>
-                </p>
+                <ul class="flex flex-wrap justify-center gap-2 mb-4 max-w-xl" data-animate data-delay="250" aria-label="Key features">
+                    <li class="aquarius-feature-pill">{{ __('strings.hero_feature_1') }}</li>
+                    <li class="aquarius-feature-pill">{{ __('strings.hero_feature_2') }}</li>
+                    <li class="aquarius-feature-pill">{{ __('strings.hero_feature_3') }}</li>
+                    <li class="aquarius-feature-pill">{{ __('strings.hero_feature_4') }}</li>
+                    <li class="aquarius-feature-pill">{{ __('strings.hero_feature_5') }}</li>
+                </ul>
 
                 <div class="aquarius-cta-buttons" data-animate data-delay="350">
                     <a href="#contact" type="button" class="aquarius-cta-primary" title="{{ __('strings.hero_btn_quote') }}">
@@ -91,11 +99,21 @@
         <div class="hero-mobile-swiper-wrap lg:hidden">
             <div class="hero-mobile-swiper swiper">
                 <div class="swiper-wrapper">
+                    @php
+                    $heroAlts = [
+                        1 => 'Aquarius Pools completed commercial pool in Tanjung Leman',
+                        2 => 'Aquarius Pools completed residential infinity concrete pool type',
+                        3 => 'Aquarius Pools vinyl pool completion at a residential home',
+                        4 => 'Vinyl pool view from the indoor area',
+                        5 => 'Aerial view of a fountain field in a public housing area',
+                    ];
+                    @endphp
                     @foreach ([1,2,3,4,5] as $n)
                     <div class="swiper-slide">
                         <picture>
                             <source srcset="{{ asset('assets/images/hero-image/webp/hero-image-' . $n . '.webp') }}" type="image/webp">
-                            <img loading="lazy" src="{{ asset('assets/images/hero-image/hero-image-' . $n . '.jpg') }}" alt="Hero Image {{ $n }}">
+                            {{-- Slide 1 is above the fold — eager load to avoid LCP penalty --}}
+                            <img loading="{{ $n === 1 ? 'eager' : 'lazy' }}" src="{{ asset('assets/images/hero-image/hero-image-' . $n . '.jpg') }}" alt="{{ $heroAlts[$n] }}" title="{{ $heroAlts[$n] }}">
                         </picture>
                     </div>
                     @endforeach
@@ -111,31 +129,32 @@
             <div class="hero-strip-card hero-strip-card-far-left" data-animate data-delay="450">
                 <picture>
                     <source srcset="{{ asset('assets/images/hero-image/webp/hero-image-4.webp') }}" type="image/webp">
-                    <img loading="lazy" src="{{ asset('assets/images/hero-image/hero-image-4.jpg') }}" alt="Hero Image 4">
+                    <img loading="lazy" src="{{ asset('assets/images/hero-image/hero-image-4.jpg') }}" alt="Vinyl pool view from the indoor area" title="Vinyl pool view from the indoor area">
                 </picture>
             </div>
             <div class="hero-strip-card hero-strip-card-left" data-animate data-delay="500">
                 <picture>
                     <source srcset="{{ asset('assets/images/hero-image/webp/hero-image-2.webp') }}" type="image/webp">
-                    <img loading="lazy" src="{{ asset('assets/images/hero-image/hero-image-2.jpg') }}" alt="Hero Image 2">
+                    <img loading="lazy" src="{{ asset('assets/images/hero-image/hero-image-2.jpg') }}" alt="Aquarius Pools completed residential infinity concrete pool type" title="Aquarius Pools completed residential infinity concrete pool type">
                 </picture>
             </div>
             <div class="hero-strip-card hero-strip-card-center" data-animate data-delay="550">
                 <picture>
                     <source srcset="{{ asset('assets/images/hero-image/webp/hero-image-1.webp') }}" type="image/webp">
-                    <img loading="lazy" src="{{ asset('assets/images/hero-image/hero-image-1.jpg') }}" alt="Hero Image 1">
+                    {{-- Center strip is the largest visible image above the fold — eager load to avoid LCP penalty --}}
+                    <img loading="eager" src="{{ asset('assets/images/hero-image/hero-image-1.jpg') }}" alt="Aquarius Pools completed commercial pool in Tanjung Leman" title="Aquarius Pools completed commercial pool in Tanjung Leman">
                 </picture>
             </div>
             <div class="hero-strip-card hero-strip-card-right" data-animate data-delay="500">
                 <picture>
                     <source srcset="{{ asset('assets/images/hero-image/webp/hero-image-3.webp') }}" type="image/webp">
-                    <img loading="lazy" src="{{ asset('assets/images/hero-image/hero-image-3.jpg') }}" alt="Hero Image 3">
+                    <img loading="lazy" src="{{ asset('assets/images/hero-image/hero-image-3.jpg') }}" alt="Aquarius Pools vinyl pool completion at a residential home" title="Aquarius Pools vinyl pool completion at a residential home">
                 </picture>
             </div>
             <div class="hero-strip-card hero-strip-card-far-right" data-animate data-delay="450">
                 <picture>
                     <source srcset="{{ asset('assets/images/hero-image/webp/hero-image-5.webp') }}" type="image/webp">
-                    <img loading="lazy" src="{{ asset('assets/images/hero-image/hero-image-5.jpg') }}" alt="Hero Image 5">
+                    <img loading="lazy" src="{{ asset('assets/images/hero-image/hero-image-5.jpg') }}" alt="Aerial view of a fountain field in a public housing area" title="Aerial view of a fountain field in a public housing area">
                 </picture>
             </div>
         </div>

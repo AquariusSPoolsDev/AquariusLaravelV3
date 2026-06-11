@@ -24,12 +24,15 @@ $headerSubtitle = 'reviews_subtitle_heading';
 
 {{-- MAIN CONTENT STARTS HERE --}}
 @section('content')
-<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3 mb-8">
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3 mb-8" data-animate data-delay="0">
     <div>
         <x-reusables.pill-text>{{__('strings.reviews_pill')}}</x-reusables.pill-text>
         <p class="text-neutral-600">{{__('strings.reviews_body_title')}}</p>
     </div>
-    <x-reusables.google-reviews-pill :avg="$averageRating ?? 0" :total="$totalReviews ?? 0" variant="light" />
+    <div class="flex flex-wrap gap-3">
+        <x-reusables.google-reviews-pill :avg="$averageRating ?? 0" :total="$totalReviews ?? 0" variant="light" />
+        <x-reusables.facebook-recommendations-pill :recommended="$fbRecommended ?? 0" :total="$fbTotal ?? 0" variant="light" />
+    </div>
 </div>
 
 <div class="container">

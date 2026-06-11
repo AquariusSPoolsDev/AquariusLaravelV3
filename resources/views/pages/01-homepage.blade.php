@@ -4,7 +4,7 @@
 {{-- META TAG PAGE --}}
 @section('seoData')
    <x-seo.seo
-        ogDescription="Discover our range of every pool type in the market. Satisfy with your dream swimming pool with pool specialists in Johor Bahru (JB)!"
+        ogDescription="Over 1,000 pools built across Malaysia. Johor Bahru's swimming pool specialist. Concrete, vinyl, and fibreglass built to your specifications. Free consultation."
         ogImage="{{ asset('assets/images/pool-image-placeholder-5.jpg') }}"
     />
     <x-seo.local-business />
@@ -24,6 +24,8 @@
     <x-homepage.showcase-section />
 
     <x-homepage.reviews-section />
+
+    <x-homepage.faq-section />
 
     <x-homepage.contact-section />
 @endsection

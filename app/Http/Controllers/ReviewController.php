@@ -13,8 +13,10 @@ class ReviewController extends Controller
             ->orderBy('reviewed_at', 'desc')
             ->paginate(12);
 
-        $averageRating = CustReview::where('is_published', true)->avg('rating');
-        $totalReviews = CustReview::where('is_published', true)->count();
+        $averageRating = CustReview::where('is_published', true)->where('source', 'Google Reviews')->avg('rating');
+        $totalReviews = CustReview::where('is_published', true)->where('source', 'Google Reviews')->count();
+        $fbTotal = CustReview::where('is_published', true)->where('source', 'Facebook')->count();
+        $fbRecommended = $fbTotal;
 
         if ($request->ajax()) {
             return response()->json([
@@ -23,6 +25,6 @@ class ReviewController extends Controller
             ]);
         }
 
-        return view('pages.09-cust-review', compact('reviews', 'averageRating', 'totalReviews'));
+        return view('pages.09-cust-review', compact('reviews', 'averageRating', 'totalReviews', 'fbTotal', 'fbRecommended'));
     }
 }

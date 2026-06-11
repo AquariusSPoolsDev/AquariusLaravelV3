@@ -16,57 +16,45 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-// init Swiper:
-const swiper = new Swiper('.swiper', {
-    // configure Swiper to use modules
-    modules: [Navigation, Pagination],
-    loop: true,
-
-    // If we need pagination
-    pagination: {
-        el: '.swiper-pagination',
-    },
-
-    // Navigation arrows
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-
-    // And if we need scrollbar
-    scrollbar: {
-        el: '.swiper-scrollbar',
-    },
-});
-
-// Back-to-top + scroll progress bar
-var toTopButton = document.getElementById("to-top-button");
-var progressBar = document.getElementById("scroll-progress-bar");
-
-window.onscroll = function() {
-    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-    var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-
-    // Progress bar
-    if (progressBar && docHeight > 0) {
-        progressBar.style.transform = 'scaleX(' + (scrollTop / docHeight) + ')';
+document.addEventListener('DOMContentLoaded', function () {
+    // init Swiper only on pages that have a swiper element
+    if (document.querySelector('.swiper')) {
+        new Swiper('.swiper', {
+            modules: [Navigation, Pagination],
+            loop: true,
+            pagination: { el: '.swiper-pagination' },
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+            scrollbar: { el: '.swiper-scrollbar' },
+        });
     }
 
-    // Back-to-top visibility
-    if (toTopButton) {
-        if (scrollTop > 500) {
-            toTopButton.classList.remove("opacity-0", "pointer-events-none", "translate-y-4");
-            toTopButton.classList.add("opacity-100", "pointer-events-auto", "translate-y-0");
-        } else {
-            toTopButton.classList.remove("opacity-100", "pointer-events-auto", "translate-y-0");
-            toTopButton.classList.add("opacity-0", "pointer-events-none", "translate-y-4");
+    // Back-to-top + scroll progress bar
+    var toTopButton = document.getElementById("to-top-button");
+    var progressBar = document.getElementById("scroll-progress-bar");
+
+    window.onscroll = function () {
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+        if (progressBar && docHeight > 0) {
+            progressBar.style.transform = 'scaleX(' + (scrollTop / docHeight) + ')';
         }
-    }
-};
 
-window.goToTop = function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-};
+        if (toTopButton) {
+            if (scrollTop > 500) {
+                toTopButton.classList.remove("opacity-0", "pointer-events-none", "translate-y-4");
+                toTopButton.classList.add("opacity-100", "pointer-events-auto", "translate-y-0");
+            } else {
+                toTopButton.classList.remove("opacity-100", "pointer-events-auto", "translate-y-0");
+                toTopButton.classList.add("opacity-0", "pointer-events-none", "translate-y-4");
+            }
+        }
+    };
+
+    window.goToTop = function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+});
 
 //
 document.addEventListener('DOMContentLoaded', function() {

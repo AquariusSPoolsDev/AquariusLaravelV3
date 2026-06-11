@@ -120,7 +120,7 @@ return [
     'our_pools_title_heading' => 'Concrete, Vinyl & Fibreglass Pools in Johor Bahru',
     'our_pools_display_heading' => 'Our Pools',
     'our_pools_subtitle_heading' => 'Compare concrete, vinyl, and fibreglass pools. Find the right fit for your property.',
-    'our_pools_meta_description' => 'Aquarius Swimming Pools builds concrete, vinyl, and fibreglass pools across Malaysia. 30 years in Johor Bahru. Compare pool types and get a free consultation.',
+    'our_pools_meta_description' => 'Johor Bahru\'s custom swimming pool specialist. Concrete, vinyl, and fibreglass pools built to your exact size and design. 30 years experience. Free consultation.',
     'our_pools_body' => 'Aquarius Swimming Pools has built concrete, vinyl, and fibreglass pools across Malaysia for over 30 years, based in Johor Bahru. Each pool type differs in cost, build time, and design flexibility. Compare all three below to find the right fit for your property.',
     'our_pools_overview_title' => 'Overview of our pools',
     'our_pools_concrete_overview' => 'Aquarius builds concrete pools to any size, shape, and depth, using a steel-reinforced framework finished with your choice of tiles, plaster, or stone. Build time runs 60 to 90 days. Optional features include integrated jacuzzis, wading pools, waterfalls, and water features. Concrete pools last a lifetime with proper maintenance.',
@@ -598,11 +598,25 @@ return [
 
     // ABOUT US
     'about_title_heading' => 'About Us',
-    'about_subtitle_heading' => '',
-
-    // SHOWROOM
-    'showroom_title_heading' => 'Showroom',
-    'showroom_subtitle_heading' => '',
+    'about_subtitle_heading' => 'More than 30 years. Over 1,000 pools. Built in Malaysia.',
+    'about_values_pill' => 'What We Stand For',
+    'about_values_heading' => 'Our Values',
+    'about_value_1_title' => 'Excellence',
+    'about_value_1_body' => 'Uncompromising quality in every pool we build.',
+    'about_value_2_title' => 'Integrity',
+    'about_value_2_body' => 'Clear pricing and honest communication throughout every project.',
+    'about_value_3_title' => 'Customer Satisfaction',
+    'about_value_3_body' => 'Bespoke pool solutions designed for every budget and vision.',
+    'about_value_4_title' => 'Innovation',
+    'about_value_4_body' => 'Over 30 years pushing the boundaries of pool design and construction.',
+    'about_value_5_title' => 'Comprehensive Services',
+    'about_value_5_body' => 'From consultation to construction to aftercare. All under one roof.',
+    'about_value_6_title' => 'Professionalism',
+    'about_value_6_body' => 'Premium materials. Skilled in-house team. Reliable from start to finish.',
+    'about_showroom_pill' => 'Visit Us',
+    'about_showroom_heading' => 'Our Showroom, Office and Shop',
+    'about_showroom_body_1' => 'The best way to choose your pool is to see one. We have three full-size display pools on-site. Concrete, fibreglass, and vinyl. Compare finishes and sizes before you decide.',
+    'about_showroom_body_2' => 'Our showroom, office, and shop are all under one roof in Johor Bahru, opposite Southern University College and just before Paradigm Mall heading towards JB city. Walk in during business hours and our team will be there to help.',
 
     // CONTACT
     'contact_title_heading' => 'Contact Aquarius Swimming Pools',
@@ -708,6 +722,11 @@ return [
     'faq_kind_maintenance_answer_2_1' => 'Aquarius provides all of the above through our in-house servicing team.',
     'faq_kind_maintenance_answer_2_link_text' => 'Contact us',
     'faq_kind_maintenance_answer_2_2' => 'for more information.',
+
+    // HOMEPAGE FAQ
+    'homepage_faq_pill' => 'FAQ',
+    'homepage_faq_heading' => 'Common Questions',
+    'homepage_faq_view_all' => 'View all FAQs',
 
     // PROMOTIONS
     'promotions_title_heading' => 'Swimming Pool Promotions in Johor Bahru',

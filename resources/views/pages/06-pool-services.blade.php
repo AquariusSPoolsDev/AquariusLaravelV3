@@ -29,7 +29,7 @@ $headerSubtitle = 'pool_service_subtitle_heading';
 {{-- MAIN CONTENT STARTS HERE --}}
 @section('content')
 <div class="">
-    <p class="">{{__('strings.pool_service_content_1')}}</p>
+    <p class="" data-animate data-delay="0">{{__('strings.pool_service_content_1')}}</p>
 
     <div class="aquarius-pool-service-content">
 

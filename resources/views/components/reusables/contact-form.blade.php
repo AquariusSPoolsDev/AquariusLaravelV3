@@ -145,8 +145,9 @@
             @enderror
         </div>
 
-        {{-- Submit --}}
+        {{-- Submit — disabled while submitting to prevent double-submission before overlay paints --}}
         <button type="submit"
+            :disabled="submitting"
             class="w-full text-center py-2.5 px-5.5 font-bold rounded-lg transition-all cursor-pointer text-white bg-primary hover:bg-primary-600 active:bg-primary-700 active:scale-95 focus:outline-none focus:bg-primary-600 disabled:opacity-50 disabled:pointer-events-none">
             {{ __('strings.cf_btn_submit') }}
         </button>

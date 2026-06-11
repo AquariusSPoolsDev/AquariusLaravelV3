@@ -27,6 +27,29 @@
     <x-partials.footer-bottom />
     <x-partials-br.back-to-top-btn />
     <x-partials-br.chat-btn-wa />
+
+    <script>
+        (function () {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (!entry.isIntersecting) return;
+                    var el = entry.target;
+                    var delay = parseFloat(el.dataset.delay || '0');
+                    el.style.setProperty('--animate-delay', delay + 'ms');
+                    el.classList.add('animate-in');
+                    observer.unobserve(el);
+                    setTimeout(function () {
+                        el.removeAttribute('data-animate');
+                        el.style.removeProperty('--animate-delay');
+                    }, delay + 650);
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('[data-animate]').forEach(function (el) {
+                observer.observe(el);
+            });
+        })();
+    </script>
 </body>
 
 </html>

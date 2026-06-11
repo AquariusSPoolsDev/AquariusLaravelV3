@@ -1,4 +1,4 @@
-<div class="pool-service-body {{ $isReversed ? 'lg:flex-row-reverse' : '' }}">
+<div class="pool-service-body {{ $isReversed ? 'lg:flex-row-reverse' : '' }}" data-animate data-delay="0">
     <div class="pool-service-image-side">
         <div class="pool-service-relative">
             <div class="pool-service-absolute">
