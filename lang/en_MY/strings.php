@@ -88,6 +88,18 @@ return [
     'contact_heading' => 'Contact Us',
     'contact_desc' => 'Have a question or a project in mind? Fill in the form and we\'ll get back to you. Or hit the chat button below for a faster reply.',
 
+    // HOMEPAGE CTA STRIP
+    'homepage_cta_strip_heading' => 'Your pool starts with one conversation.',
+    'homepage_cta_strip_body' => 'No pressure. Just tell us what you have in mind.',
+    'homepage_cta_strip_btn' => 'Get a Free Quote',
+
+    // HOMEPAGE FAQ
+    'homepage_services_pill' => 'What We Offer',
+    'homepage_showcase_pill' => 'Our Work',
+    'homepage_faq_pill' => 'FAQ',
+    'homepage_faq_heading' => 'Common Questions',
+    'homepage_faq_view_all' => 'View all FAQs',
+
     // FOOTER
     'footer_our_pools' => 'Our Pools',
     'footer_our_pools_concrete' => 'Concrete Pools',
@@ -645,6 +657,7 @@ return [
     'reviews_subtitle_heading' => 'See what our customers are saying',
     'reviews_meta_description' => 'Aquarius Swimming Pools customers share their experience building concrete, fibreglass, and vinyl pools in Johor Bahru and across Malaysia.',
     'reviews_pill' => 'Customer Reviews',
+    'reviews_fb_recommended' => 'Recommended',
     'reviews_body_title' => 'Hear directly from our customers about their experience with Aquarius.',
     'reviews_total_review' => 'reviews total',
     'reviews_avg_rating' => 'Average Rating:',
@@ -722,11 +735,6 @@ return [
     'faq_kind_maintenance_answer_2_1' => 'Aquarius provides all of the above through our in-house servicing team.',
     'faq_kind_maintenance_answer_2_link_text' => 'Contact us',
     'faq_kind_maintenance_answer_2_2' => 'for more information.',
-
-    // HOMEPAGE FAQ
-    'homepage_faq_pill' => 'FAQ',
-    'homepage_faq_heading' => 'Common Questions',
-    'homepage_faq_view_all' => 'View all FAQs',
 
     // PROMOTIONS
     'promotions_title_heading' => 'Swimming Pool Promotions in Johor Bahru',

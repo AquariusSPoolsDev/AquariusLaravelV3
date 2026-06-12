@@ -33,5 +33,5 @@ $strongClass  = $variant === 'dark' ? 'text-white' : 'text-neutral-900';
         <span class="{{ $countClass }}">{{ $recommended }}/{{ $total }}</span>
     </div>
     <div class="w-px h-6 {{ $dividerClass }}"></div>
-    <span class="{{ $totalClass }}">Recommended</span>
+    <span class="{{ $totalClass }}">{{ __('strings.reviews_fb_recommended') }}</span>
 </div>

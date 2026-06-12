@@ -1,6 +1,9 @@
 <section id="our-pools" class="bg-primary-50/50">
     <div class="main-container">
-        <h2 class="aquarius-homepage-heading" data-animate data-delay="0">{{__('strings.pools_heading')}}</h2>
+        <div class="max-w-2xl mx-auto text-center">
+            <x-reusables.pill-text class="block" data-animate data-delay="0">{{__('strings.our_pools_overview_pill')}}</x-reusables.pill-text>
+            <h2 class="aquarius-homepage-heading" data-animate data-delay="100">{{__('strings.pools_heading')}}</h2>
+        </div>
 
         <div class="aquarius-homepage-card-grid">
             {{-- Concrete --}}

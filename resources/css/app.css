@@ -17,6 +17,8 @@
 @plugin "@tailwindcss/forms";
 
 @theme {
+    --animate-aurora: aurora 60s linear infinite;
+
     --font-heading: "Outfit", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-body: "Lato", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -106,6 +108,14 @@
 
     span {
         @apply font-heading text-sm font-bold text-primary-800 -tracking-tighter uppercase;
+    }
+
+    &.pill-text-dark {
+        @apply bg-white/10;
+
+        span {
+            @apply text-white/90;
+        }
     }
 }
 
@@ -300,6 +310,15 @@
         -webkit-transform: translateY(0);
         transform: translateY(0);
         opacity: 1;
+    }
+}
+
+@keyframes aurora {
+    from {
+        background-position: 50% 50%, 50% 50%;
+    }
+    to {
+        background-position: 350% 50%, 350% 50%;
     }
 }
 
@@ -737,6 +756,47 @@ footer.aquarius-footer {
         .accordion-inner {
             @apply px-5 lg:px-6 pb-5 text-neutral-600 leading-relaxed;
         }
+    }
+}
+
+/* HOMEPAGE CTA STRIP - AURORA BACKGROUND */
+.cta-aurora-bg {
+    position: absolute;
+    inset: -10px;
+    opacity: 0.5;
+    will-change: transform;
+    pointer-events: none;
+    filter: blur(10px) invert(1);
+    background-image:
+        repeating-linear-gradient(100deg, white 0%, white 7%, transparent 10%, transparent 12%, white 16%),
+        repeating-linear-gradient(100deg, var(--color-primary-500) 10%, var(--color-primary-300) 15%, var(--color-primary-400) 20%, var(--color-secondary-300) 25%, var(--color-primary-600) 30%);
+    background-size: 300%, 200%;
+    background-position: 50% 50%, 50% 50%;
+    mask-image: radial-gradient(ellipse at 100% 0%, black 10%, transparent 70%);
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+            repeating-linear-gradient(100deg, white 0%, white 7%, transparent 10%, transparent 12%, white 16%),
+            repeating-linear-gradient(100deg, var(--color-primary-500) 10%, var(--color-primary-300) 15%, var(--color-primary-400) 20%, var(--color-secondary-300) 25%, var(--color-primary-600) 30%);
+        background-size: 200%, 100%;
+        background-attachment: fixed;
+        animation: var(--animate-aurora);
+        mix-blend-mode: difference;
+    }
+}
+
+.cta-strip-btn {
+    @apply py-4 px-10 inline-flex items-center gap-3 text-base lg:text-lg rounded-lg border border-transparent bg-primary-700 text-white font-semibold transition-all hover:bg-primary-800 hover:shadow-lg hover:shadow-primary-700/40 hover:-translate-y-0.5 focus:outline-none focus:bg-primary-800 active:scale-95 active:brightness-90 active:translate-y-0 disabled:opacity-50 disabled:pointer-events-none;
+
+    svg {
+        @apply size-5 transition-transform;
+    }
+
+    &:hover svg {
+        @apply translate-x-1;
     }
 }
 

@@ -25,6 +25,8 @@
 
     <x-homepage.reviews-section />
 
+    <x-homepage.cta-strip />
+
     <x-homepage.faq-section />
 
     <x-homepage.contact-section />

@@ -3,7 +3,7 @@
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-8">
                 <x-reusables.pill-text class="text-center block" data-animate data-delay="0">{{ __('strings.homepage_faq_pill') }}</x-reusables.pill-text>
-                <h2 class="aquarius-homepage-heading mt-2" data-animate data-delay="100">{{ __('strings.homepage_faq_heading') }}</h2>
+                <h2 class="aquarius-homepage-heading" data-animate data-delay="100">{{ __('strings.homepage_faq_heading') }}</h2>
             </div>
 
             <div class="mt-12 flex flex-col gap-2.5" x-data="{ active: null }" data-animate data-delay="200">

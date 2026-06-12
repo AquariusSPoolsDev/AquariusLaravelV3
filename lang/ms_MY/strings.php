@@ -41,7 +41,7 @@ return [
     'video_player_support' => 'Pelayar anda tidak menyokong teg video.',
 
     // HOMEPAGE - TRUST SECTION
-    'trust_pill' => 'Siapa Kami',
+    'trust_pill' => 'Tentang Kami',
     'trust_heading' => 'Di mana terdapat air, di situ ada kehidupan!',
     'trust_body' => 'Aquarius Swimming Pools merupakan salah satu pakar pembinaan kolam renang di Semenanjung Malaysia, dengan hampir seribu projek siap merangkumi pembangunan perumahan dan komersial. Kami berpusat di Johor Bahru, dan pasukan kami menguruskan setiap projek dari perundingan sehingga selesai.',
     'trust_stats_years' => 'Tahun Pengalaman',
@@ -88,6 +88,18 @@ return [
     'contact_heading' => 'Hubungi Kami',
     'contact_desc' => 'Ada soalan atau projek dalam fikiran? Isi borang dan kami akan hubungi anda semula. Atau tekan butang chat di bawah untuk respons yang lebih cepat.',
 
+    // HOMEPAGE CTA STRIP
+    'homepage_cta_strip_heading' => 'Kolam renang anda bermula dengan satu perbualan.',
+    'homepage_cta_strip_body' => 'Tiada paksaan. Beritahu kami apa yang anda fikirkan.',
+    'homepage_cta_strip_btn' => 'Dapatkan Sebut Harga Percuma',
+
+    // HOMEPAGE FAQ
+    'homepage_services_pill' => 'Perkhidmatan Kami',
+    'homepage_showcase_pill' => 'Hasil Kerja Kami',
+    'homepage_faq_pill' => 'Soalan Lazim',
+    'homepage_faq_heading' => 'Soalan Lazim',
+    'homepage_faq_view_all' => 'Lihat semua soalan lazim',
+
     // FOOTER
     'footer_our_pools' => 'Kolam Renang Kami',
     'footer_our_pools_concrete' => 'Kolam Renang Konkrit',
@@ -127,7 +139,7 @@ return [
     'our_pools_vinyl_overview' => 'Kolam renang vinil menggunakan rangka dinding keluli tahan karat yang dipasang dalam tanah yang digali, dilapisi dengan lembaran vinil yang dipasang kemas. Rangka keluli tahan karat kami membawa jaminan 20 hingga 30 tahun, bergantung pada siri. Pemasangan mengambil masa 2 hingga 3 minggu. Vinil ialah jenis kolam yang paling mampu milik. Pilih dari saiz dan bentuk yang tetap.',
     'our_pools_fibreglass_overview' => 'Kolam renang gentian kaca tiba sebagai cangkerang siap kilang, diturunkan ke tapak yang digali dan siap dalam masa 5 hingga 7 hari. Dibina untuk tahan 40 hingga 50 tahun dengan penyelenggaraan yang rendah. Aquarius membekal dan memasang pelbagai model gentian kaca sedia ada.',
 
-    'our_pools_overview_pill' => 'Jenis Kolam',
+    'our_pools_overview_pill' => 'Jenis Kolam Renang',
     'our_pools_comparison_pill' => 'Ketahui Perbandingannya',
 
     // POOL COMPARISON TABLE
@@ -645,6 +657,7 @@ return [
     'reviews_subtitle_heading' => 'Dengarkan ulasan daripada pelanggan',
     'reviews_meta_description' => 'Pelanggan Aquarius Swimming Pools berkongsi pengalaman membina kolam konkrit, gentian kaca, dan vinil di Johor Bahru dan seluruh Malaysia.',
     'reviews_pill' => 'Ulasan Pelanggan',
+    'reviews_fb_recommended' => 'Disyorkan',
     'reviews_body_title' => 'Dengar terus daripada pelanggan kami tentang pengalaman mereka bersama Aquarius.',
     'reviews_total_review' => 'jumlah ulasan',
     'reviews_avg_rating' => 'Purata Penilaian:',
@@ -722,11 +735,6 @@ return [
     'faq_kind_maintenance_answer_2_1' => 'Aquarius menyediakan semua perkhidmatan di atas melalui pasukan penyelengaraan kami.',
     'faq_kind_maintenance_answer_2_link_text' => 'Hubungi kami',
     'faq_kind_maintenance_answer_2_2' => 'untuk maklumat lanjut.',
-
-    // HOMEPAGE FAQ
-    'homepage_faq_pill' => 'Soalan Lazim',
-    'homepage_faq_heading' => 'Soalan Lazim',
-    'homepage_faq_view_all' => 'Lihat semua soalan lazim',
 
     // PROMOTIONS
     'promotions_title_heading' => 'Promosi Kolam Renang di Johor Bahru',

@@ -38,6 +38,42 @@
                     observer.observe(el);
                 });
             })();
+
+            (function () {
+                if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+                function animateCounter(el) {
+                    var target = parseInt(el.dataset.counter, 10);
+                    var suffix = el.dataset.suffix || '';
+                    var format = el.dataset.format === 'thousands';
+                    var duration = 1800;
+                    var start = null;
+
+                    function easeOutQuart(t) { return 1 - Math.pow(1 - t, 4); }
+
+                    function step(ts) {
+                        if (!start) start = ts;
+                        var progress = Math.min((ts - start) / duration, 1);
+                        var value = Math.floor(easeOutQuart(progress) * target);
+                        el.textContent = (format ? value.toLocaleString() : value) + suffix;
+                        if (progress < 1) requestAnimationFrame(step);
+                    }
+
+                    requestAnimationFrame(step);
+                }
+
+                var counterObserver = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (!entry.isIntersecting) return;
+                        animateCounter(entry.target);
+                        counterObserver.unobserve(entry.target);
+                    });
+                }, { threshold: 0.5 });
+
+                document.querySelectorAll('[data-counter]').forEach(function (el) {
+                    counterObserver.observe(el);
+                });
+            })();
         </script>
     </body>
 </html>

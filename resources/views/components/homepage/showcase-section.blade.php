@@ -5,7 +5,10 @@ $images = ImageGallery::where('is_published', 1)->where('is_featured', 1)->order
 
 <section id="showcase" class="bg-primary-50/50">
     <div class="main-container">
-        <h2 class="aquarius-homepage-heading" data-animate data-delay="0">{{__('strings.showcase_heading')}}</h2>
+        <div class="max-w-2xl mx-auto text-center">
+            <x-reusables.pill-text class="block" data-animate data-delay="0">{{__('strings.homepage_showcase_pill')}}</x-reusables.pill-text>
+            <h2 class="aquarius-homepage-heading" data-animate data-delay="100">{{__('strings.showcase_heading')}}</h2>
+        </div>
 
         @if($images->count() === 9)
         <div class="aquarius-homepage-showcase-grid">
