@@ -42,22 +42,34 @@
                 </div>
             </div>
 
-            {{-- RIGHT: Image grid (swap placeholders with real showroom photos post-photoshoot) --}}
-            <div class="flex flex-col gap-4">
+            {{-- RIGHT: Image grid --}}
+            <div class="flex flex-col gap-4" data-animate data-delay="200">
                 {{-- Large: showroom exterior --}}
-                <div class="overflow-hidden rounded-xl bg-neutral-100 aspect-video">
-                    
+                <div class="group/img overflow-hidden rounded-xl bg-neutral-100 aspect-video border-2 border-neutral-200 shadow-sm hover:border-primary-600 hover:shadow-lg transition-all duration-300 cursor-pointer">
+                    <picture>
+                        <source srcset="{{ asset('assets/images/homepage/aquarius-showroom-exterior.webp') }}" type="image/webp">
+                        <img loading="lazy" src="{{ asset('assets/images/homepage/aquarius-showroom-exterior.jpg') }}" alt="Aquarius Pools Exterior Showroom" title="Aquarius Pools Exterior Showroom" class="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105">
+                    </picture>
                 </div>
-                {{-- Three smaller: pool displays --}}
-                <div class="grid lg:grid-cols-3 gap-4">
-                    <div class="overflow-hidden rounded-xl bg-neutral-100 aspect-4/3">
-                        
+                {{-- Three smaller: pool type displays (scroll on mobile, grid on desktop) --}}
+                <div class="flex gap-4 overflow-x-auto pb-1 lg:grid lg:grid-cols-3 lg:overflow-visible lg:pb-0">
+                    <div class="group/img shrink-0 w-[60vw] sm:w-[45vw] lg:w-auto overflow-hidden rounded-xl bg-neutral-100 aspect-4/3 border-2 border-neutral-200 shadow-sm hover:border-primary-600 hover:shadow-lg transition-all duration-300 cursor-pointer">
+                        <picture>
+                            <source srcset="{{ asset('assets/images/homepage/aquarius-showroom-concrete.webp') }}" type="image/webp">
+                            <img loading="lazy" src="{{ asset('assets/images/homepage/aquarius-showroom-concrete.jpg') }}" alt="Concrete Pool Example Showroom" title="Concrete Pool Example Showroom" class="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105">
+                        </picture>
                     </div>
-                    <div class="overflow-hidden rounded-xl bg-neutral-100 aspect-4/3">
-                        
+                    <div class="group/img shrink-0 w-[60vw] sm:w-[45vw] lg:w-auto overflow-hidden rounded-xl bg-neutral-100 aspect-4/3 border-2 border-neutral-200 shadow-sm hover:border-primary-600 hover:shadow-lg transition-all duration-300 cursor-pointer">
+                        <picture>
+                            <source srcset="{{ asset('assets/images/homepage/aquarius-showroom-vinyl.webp') }}" type="image/webp">
+                            <img loading="lazy" src="{{ asset('assets/images/homepage/aquarius-showroom-vinyl.jpg') }}" alt="Vinyl Pool Example Showroom" title="Vinyl Pool Example Showroom" class="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105">
+                        </picture>
                     </div>
-                    <div class="overflow-hidden rounded-xl bg-neutral-100 aspect-4/3">
-                        
+                    <div class="group/img shrink-0 w-[60vw] sm:w-[45vw] lg:w-auto overflow-hidden rounded-xl bg-neutral-100 aspect-4/3 border-2 border-neutral-200 shadow-sm hover:border-primary-600 hover:shadow-lg transition-all duration-300 cursor-pointer">
+                        <picture>
+                            <source srcset="{{ asset('assets/images/homepage/aquarius-showroom-fibreglass.webp') }}" type="image/webp">
+                            <img loading="lazy" src="{{ asset('assets/images/homepage/aquarius-showroom-fibreglass.jpg') }}" alt="Fibreglass Pool Example Showroom" title="Fibreglass Pool Example Showroom" class="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105">
+                        </picture>
                     </div>
                 </div>
             </div>
