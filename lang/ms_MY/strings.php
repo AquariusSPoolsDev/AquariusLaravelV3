@@ -47,6 +47,7 @@ return [
     'trust_stats_years' => 'Tahun Pengalaman',
     'trust_stats_pools' => 'Kolam Renang Siap',
     'trust_member_of' => 'Ahli',
+    'trust_btn_about' => 'Ketahui Lebih Lanjut',
 
     // HOMEPAGE - OUR POOLS SECTION
     'pools_heading' => 'Kolam Renang Kami',
@@ -139,6 +140,7 @@ return [
     'our_pools_vinyl_overview' => 'Kolam renang vinil menggunakan rangka dinding keluli tahan karat yang dipasang dalam tanah yang digali, dilapisi dengan lembaran vinil yang dipasang kemas. Rangka keluli tahan karat kami membawa jaminan 20 hingga 30 tahun, bergantung pada siri. Pemasangan mengambil masa 2 hingga 3 minggu. Vinil ialah jenis kolam yang paling mampu milik. Pilih dari saiz dan bentuk yang tetap.',
     'our_pools_fibreglass_overview' => 'Kolam renang gentian kaca tiba sebagai cangkerang siap kilang, diturunkan ke tapak yang digali dan siap dalam masa 5 hingga 7 hari. Dibina untuk tahan 40 hingga 50 tahun dengan penyelenggaraan yang rendah. Aquarius membekal dan memasang pelbagai model gentian kaca sedia ada.',
 
+    'our_pools_learn_more' => 'Ketahui Lebih Lanjut',
     'our_pools_overview_pill' => 'Jenis Kolam Renang',
     'our_pools_comparison_pill' => 'Ketahui Perbandingannya',
 

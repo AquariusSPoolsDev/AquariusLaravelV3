@@ -40,6 +40,14 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="mt-8" data-animate data-delay="400">
+                    <a href="{{ route('about-page') }}"
+                        class="inline-flex items-center gap-3 px-10 py-4 rounded-lg border border-primary-600 text-primary-700 font-semibold text-base lg:text-lg hover:bg-primary-50 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary-100 active:scale-95 active:translate-y-0 transition-all duration-200">
+                        {{ __('strings.trust_btn_about') }}
+                        <svg class="size-5 transition-transform group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
             </div>
 
             {{-- RIGHT: Image grid --}}

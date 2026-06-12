@@ -82,3 +82,7 @@ $headerSubtitle = 'showcase_subtitle_heading';
     </div>
 </div>
 @endsection
+
+@section('cta')
+    <x-reusables.cta-banner />
+@endsection

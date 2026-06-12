@@ -47,6 +47,7 @@ return [
     'trust_stats_years' => 'Years of Experience',
     'trust_stats_pools' => 'Pools Completed',
     'trust_member_of' => 'Member of',
+    'trust_btn_about' => 'Learn More About Us',
 
     // HOMEPAGE - OUR POOLS SECTION
     'pools_heading' => 'Our Pools',
@@ -139,6 +140,7 @@ return [
     'our_pools_vinyl_overview' => 'Vinyl pools use stainless steel wall frames set into excavated ground, lined with a fitted vinyl sheet. Our stainless steel frames carry a 20 to 30 year warranty, depending on the series. Installation takes 2 to 3 weeks. Vinyl is the most affordable pool type. Choose from fixed sizes and shapes.',
     'our_pools_fibreglass_overview' => 'Fibreglass pools arrive as a pre-manufactured shell, lowered into the excavated site and ready in 5 to 7 days. Built to last 40 to 50 years with low maintenance. Aquarius supplies and installs a range of ready-made fibreglass models.',
 
+    'our_pools_learn_more' => 'Learn More',
     'our_pools_overview_pill' => 'Pool Types',
     'our_pools_comparison_pill' => 'Know The Difference',
 
