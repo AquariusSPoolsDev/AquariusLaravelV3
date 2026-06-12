@@ -5,7 +5,7 @@
 
 {{-- PARSE HEADER STRINGS --}}
 @php
-    $imageFileLoc   = 'header-about-us.jpg';
+    $imageFileLoc   = 'header-about.jpg';
     $headerTitle    = 'about_title_heading';
     $headerSubtitle = 'about_subtitle_heading';
 @endphp
