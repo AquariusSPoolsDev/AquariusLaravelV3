@@ -761,7 +761,7 @@ return [
     'privacy_subtitle_heading' => '',
     'privacy_notice_alert' => 'Please read carefully on Privacy Policy below!',
     'privacy_date_updated_title' => 'Date Updated',
-    'privacy_date_updated' => '25 January 2023',
+    'privacy_date_updated' => '12 June 2026',
 
     // CONTACT FORM
     'cf_step_1_name_input' => 'Your Name',
@@ -798,6 +798,13 @@ return [
     'submission_accepted_body_2a' => 'If you have any questions, feel free to reach out! You can also',
     'submission_accepted_whatsapp_link' => 'contact us via WhatsApp',
     'submission_accepted_body_2b' => 'for immediate assistance.',
+    'submission_accepted_cta_heading' => 'While you wait...',
+    'submission_accepted_cta_wa_title' => 'Chat on WhatsApp',
+    'submission_accepted_cta_wa_desc' => 'Get a faster response',
+    'submission_accepted_cta_pools_title' => 'Explore Our Pools',
+    'submission_accepted_cta_pools_desc' => 'Concrete, fibreglass & vinyl',
+    'submission_accepted_cta_projects_title' => 'View Our Projects',
+    'submission_accepted_cta_projects_desc' => 'See what we\'ve built',
 
     // PAGINATION
     'pagination_previous' => '&laquo; Previous',

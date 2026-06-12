@@ -79,7 +79,7 @@
         </div>
 
         {{-- Interest --}}
-        <div class="mb-5" x-data="{ interest: '{{ old('cust_pool_interests', '') }}' }">
+        <div class="mb-5" x-data="{ interest: '{{ old('cust_pool_interests', request('interest', '')) }}' }">
             <label for="cust_pool_interests" class="font-semibold text-neutral-900 block mb-1.5 text-sm">
                 {{ __('strings.cf_step_2_interest_label') }} <span class="text-error-300">*</span>
             </label>

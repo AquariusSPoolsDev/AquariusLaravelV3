@@ -761,7 +761,7 @@ return [
     'privacy_subtitle_heading' => '',
     'privacy_notice_alert' => 'Baca dengan teliti Dasar Privasi di bawah! (English option available)',
     'privacy_date_updated_title' => 'Tarikh Dikemaskini',
-    'privacy_date_updated' => '25 Januari 2023',
+    'privacy_date_updated' => '12 Jun 2026',
 
     // CONTACT FORM
     'cf_step_1_name_input' => 'Nama',
@@ -798,6 +798,13 @@ return [
     'submission_accepted_body_2a' => 'Jika anda mempunyai sebarang pertanyaan, jangan ragu untuk menghubungi kami! Anda juga boleh',
     'submission_accepted_whatsapp_link' => 'hubungi kami melalui WhatsApp',
     'submission_accepted_body_2b' => 'untuk bantuan dengan kadar segera.',
+    'submission_accepted_cta_heading' => 'Sementara menunggu...',
+    'submission_accepted_cta_wa_title' => 'Sembang di WhatsApp',
+    'submission_accepted_cta_wa_desc' => 'Dapatkan maklum balas lebih cepat',
+    'submission_accepted_cta_pools_title' => 'Terokai Kolam Kami',
+    'submission_accepted_cta_pools_desc' => 'Konkrit, gentian kaca & vinil',
+    'submission_accepted_cta_projects_title' => 'Lihat Projek Kami',
+    'submission_accepted_cta_projects_desc' => 'Lihat apa yang telah kami bina',
 
     // PAGINATION
     'pagination_previous' => '&laquo; Sebelumnya',

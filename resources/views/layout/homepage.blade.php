@@ -14,6 +14,7 @@
         <x-partials.footer-bottom />
         <x-partials-br.back-to-top-btn />
         <x-partials-br.chat-btn-wa />
+        <x-partials.cookie-consent />
 
         <script>
             (function () {

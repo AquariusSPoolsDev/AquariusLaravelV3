@@ -27,10 +27,26 @@ $headerSubtitle = 'contact_subtitle_heading';
             <p class="mb-8">{{__('strings.contact_fill_body')}}</p>
             <x-reusables.contact-form />
         </div>
-        <div class="max-lg:mt-3 max-lg:h-96 lg:col-span-1">
-            <iframe width="100%" height="100%" class="rounded-lg border border-neutral-200"
-                src="https://maps.google.com/maps?width=684&amp;height=440&amp;hl=en&amp;q=+(Aquarius%20Swimming%20Pools%20Sdn%20Bhd)&amp;ie=UTF8&amp;t=&amp;z=15&amp;iwloc=B&amp;output=embed"
-                frameborder="0" scrolling="no" marginheight="0" marginwidth="0">Loading...</iframe>
+        <div class="max-lg:mt-3 max-lg:h-96 lg:col-span-1"
+            x-data="{
+                consent: null,
+                init() {
+                    this.consent = document.cookie.split(';').map(c => c.trim()).find(c => c.startsWith('aquarius_cookie_consent='))?.split('=')[1] || null;
+                    document.addEventListener('cookie-accepted', () => { this.consent = 'accepted'; });
+                }
+            }">
+            {{-- Map loads only after cookie consent --}}
+            <template x-if="consent === 'accepted'">
+                <iframe width="100%" height="100%" class="rounded-lg border border-neutral-200"
+                    src="https://maps.google.com/maps?width=684&amp;height=440&amp;hl=en&amp;q=+(Aquarius%20Swimming%20Pools%20Sdn%20Bhd)&amp;ie=UTF8&amp;t=&amp;z=15&amp;iwloc=B&amp;output=embed"
+                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0">Loading...</iframe>
+            </template>
+            <template x-if="consent !== 'accepted'">
+                <div class="w-full h-full min-h-64 rounded-lg border border-neutral-200 bg-neutral-50 flex flex-col items-center justify-center gap-3 text-center p-6">
+                    <svg class="size-8 text-neutral-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+                    <p class="text-sm text-neutral-500">Accept cookies to load the map.</p>
+                </div>
+            </template>
         </div>
     </section>
 
