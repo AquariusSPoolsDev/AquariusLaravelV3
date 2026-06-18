@@ -46,7 +46,7 @@
     <a href="{{ route('our-pools-main') }}" title="{{ __('strings.submission_accepted_cta_pools_title') }}"
         class="group flex items-center gap-4 bg-white border border-neutral-200 rounded-lg p-4 lg:p-6 transition-all duration-200 hover:-translate-y-1 hover:border-primary-300 hover:shadow-lg hover:shadow-primary-100 active:scale-95 active:shadow-none active:translate-y-0">
         <div class="shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-primary-50 text-primary-600 transition-colors group-hover:bg-primary-100">
-            <svg class="size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/></svg>
+            <svg class="size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M219.31,108.68l-80-80a16,16,0,0,0-22.62,0l-80,80A15.87,15.87,0,0,0,32,120v96a8,8,0,0,0,8,8h64a8,8,0,0,0,8-8V160h32v56a8,8,0,0,0,8,8h64a8,8,0,0,0,8-8V120A15.87,15.87,0,0,0,219.31,108.68ZM208,208H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48V120l80-80,80,80Z"></path></svg>
         </div>
         <div>
             <p class="font-semibold text-neutral-900 text-xl">{{ __('strings.submission_accepted_cta_pools_title') }}</p>
@@ -58,7 +58,7 @@
     <a href="{{ route('projects-page') }}" title="{{ __('strings.submission_accepted_cta_projects_title') }}"
         class="group flex items-center gap-4 bg-white border border-neutral-200 rounded-lg p-4 lg:p-6 transition-all duration-200 hover:-translate-y-1 hover:border-secondary-300 hover:shadow-lg hover:shadow-secondary-100 active:scale-95 active:shadow-none active:translate-y-0">
         <div class="shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-secondary-50 text-secondary-600 transition-colors group-hover:bg-secondary-100">
-            <svg class="size-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
+            <svg class="size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,16V158.75l-26.07-26.06a16,16,0,0,0-22.63,0l-20,20-44-44a16,16,0,0,0-22.62,0L40,149.37V56ZM40,172l52-52,80,80H40Zm176,28H194.63l-36-36,20-20L216,181.38V200ZM144,100a12,12,0,1,1,12,12A12,12,0,0,1,144,100Z"></path></svg>
         </div>
         <div>
             <p class="font-semibold text-neutral-900 text-xl">{{ __('strings.submission_accepted_cta_projects_title') }}</p>

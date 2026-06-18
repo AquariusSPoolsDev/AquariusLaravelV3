@@ -55,7 +55,7 @@ return [
     'pools_vinyl' => 'Kolam Renang Vinil',
     'pools_fibreglass' => 'Kolam Renang Gentian Kaca',
     'pools_concrete_desc' => 'Kolam renang konkrit dibina dengan <strong>besi asas yang kukuh dengan gabungan konktit dan plaster</strong>. Aquarius mempunyai <strong>lebih 30 tahun</strong> pengalaman dalam pembinaannya.',
-    'pools_vinyl_desc' => 'Kolam renang vinil dibina dengan <strong>rangka logam, besi atau plastik pasang siap</strong> yang dipasang dalam lubang siap digali dan diperkukuh dengan tapak konkrit dan pendakap dinding. Pilihan yang paling berpatutan.',
+    'pools_vinyl_desc' => 'Kolam renang vinil dibina dengan <strong>rangka keluli tahan karat dan tepi plastik pasang siap</strong> yang dipasang dalam lubang siap digali dan diperkukuh dengan tapak konkrit dan pendakap dinding. Pilihan yang paling berpatutan.',
     'pools_fibreglass_desc' => 'Kolam renang gentian kaca dibina dengan <strong>rangka gentian kaca yang dipasang siap</strong>. Pilih dari pelbagai jenis kolam renang pasang siap kami. Pemasangan cepat.',
     'pools_concrete_link' => 'Pelajari lebih tentang Kolam Renang Konkrit',
     'pools_vinyl_link' => 'Pelajari lebih tentang Kolam Renang Vinil',
@@ -189,7 +189,7 @@ return [
 
     'table_keypoint_title_8' => 'Manfaat',
     'table_concrete_body_8' => 'Boleh dikosongkan untuk kerja-kerja pembaikan.<br><br>Reka bentuk yang fleksibel dengan pilihan tambahan seperti jakuzi bersepadu, kolam saiz cetek, hiasan air, dan pencahayaan bawah air.',
-    'table_vinyl_body_8' => 'Pertumbuhan alga yang perlahan.<br><br>Dinding keluli tahan karat dengan jaminan 5 tahun.',
+    'table_vinyl_body_8' => 'Pertumbuhan alga yang perlahan.<br><br>Dinding keluli tahan karat dengan jaminan 20 hingga 30 tahun.',
     'table_fibreglass_body_8' => 'Boleh dikosongkan untuk kerja-kerja pembaikan.<br><br>Pertumbuhan alga yang perlahan.',
 
     'table_keypoint_title_9' => 'Batasan',
@@ -242,9 +242,9 @@ return [
     // VINYL POOLS PAGE
     'vinyl_pool_title_heading' => 'Kolam Renang Vinil di Johor Bahru',
     'vinyl_pool_display_heading' => 'Kolam Renang Vinil',
-    'vinyl_pool_subtitle_heading' => 'Rangka keluli tahan karat. Jaminan 5 tahun. Dipasang dalam 2 hingga 3 minggu. Jenis kolam paling mampu milik.',
-    'vinyl_pool_meta_description' => 'Aquarius memasang kolam vinil dengan rangka keluli tahan karat di seluruh Malaysia. Jaminan 5 tahun. Pemasangan 2 hingga 3 minggu. Berpangkalan di Johor Bahru. Perundingan percuma.',
-    'vinyl_pool_body' => 'Aquarius Swimming Pools memasang kolam renang vinil di seluruh Malaysia, berpangkalan di Johor Bahru. Setiap kolam menggunakan rangka dinding keluli tahan karat yang dimasukkan ke dalam tanah galian, dilapisi dengan pelapik vinil yang telah disuai. Rangka kami memberikan jaminan 5 tahun. Pemasangan mengambil masa 2 hingga 3 minggu, menjadikan vinil pilihan dalam tanah terpantas selepas gentian kaca. Vinil ialah jenis kolam paling mampu milik yang ditawarkan oleh Aquarius. Baca lebih lanjut untuk mengetahui cara kolam vinil dibina, dan sama ada ia sesuai untuk hartanah anda.',
+    'vinyl_pool_subtitle_heading' => 'Rangka keluli tahan karat. Jaminan 20 hingga 30 tahun. Dipasang dalam 2 hingga 3 minggu. Jenis kolam paling mampu milik.',
+    'vinyl_pool_meta_description' => 'Aquarius memasang kolam vinil dengan rangka keluli tahan karat di seluruh Malaysia. Jaminan 20 hingga 30 tahun. Pemasangan 2 hingga 3 minggu. Berpangkalan di Johor Bahru. Perundingan percuma.',
+    'vinyl_pool_body' => 'Aquarius Swimming Pools memasang kolam renang vinil di seluruh Malaysia, berpangkalan di Johor Bahru. Setiap kolam menggunakan rangka dinding keluli tahan karat yang dimasukkan ke dalam tanah galian, dilapisi dengan pelapik vinil yang telah disuai. Rangka kami memberikan jaminan 20 hingga 30 tahun, bergantung pada siri. Pemasangan mengambil masa 2 hingga 3 minggu, menjadikan vinil pilihan dalam tanah terpantas selepas gentian kaca. Vinil ialah jenis kolam paling mampu milik yang ditawarkan oleh Aquarius. Baca lebih lanjut untuk mengetahui cara kolam vinil dibina, dan sama ada ia sesuai untuk hartanah anda.',
     'vinyl_pool_steps_pill' => 'Proses Pembinaan',
     'vinyl_pool_steps_title' => 'Bagaimana Kolam Vinil Dibina?',
     'vinyl_pool_pros_cons_pill' => 'Kelebihan & Kelemahan',

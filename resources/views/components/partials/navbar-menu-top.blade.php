@@ -16,20 +16,9 @@
                     aria-label="Toggle navigation"
                     @click="mobileOpen = !mobileOpen">
 
-                    <svg x-show="!mobileOpen" class="shrink-0" xmlns="http://www.w3.org/2000/svg" width="24"
-                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="3" x2="21" y1="6" y2="6" />
-                        <line x1="3" x2="21" y1="12" y2="12" />
-                        <line x1="3" x2="21" y1="18" y2="18" />
-                    </svg>
+                    <svg x-show="!mobileOpen" class="shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path></svg>
 
-                    <svg x-show="mobileOpen" class="shrink-0" xmlns="http://www.w3.org/2000/svg"
-                        width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M18 6 6 18" />
-                        <path d="m6 6 12 12" />
-                    </svg>
+                    <svg x-show="mobileOpen" class="shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256" fill="currentColor"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path></svg>
                     <span class="sr-only">Toggle navigation</span>
                 </button>
                 {{-- HAMBURGER BTN --}}
@@ -66,10 +55,7 @@
                                         <svg class="nav-dropdown-chevron"
                                             :style="open ? 'transform: rotate(-180deg)' : ''"
                                             xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="m6 9 6 6 6-6" />
-                                        </svg>
+                                            viewBox="0 0 256 256" fill="currentColor"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path></svg>
                                     </button>
 
                                     <div class="nav-dropdown-menu" x-show="open" x-cloak role="menu" aria-orientation="vertical">
@@ -108,10 +94,7 @@
                                         <svg class="nav-dropdown-chevron"
                                             :style="open ? 'transform: rotate(-180deg)' : ''"
                                             xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="m6 9 6 6 6-6" />
-                                        </svg>
+                                            viewBox="0 0 256 256" fill="currentColor"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path></svg>
                                     </button>
 
                                     <div class="nav-dropdown-menu" x-show="open" x-cloak role="menu" aria-orientation="vertical">
@@ -139,10 +122,7 @@
                                         <svg class="nav-dropdown-chevron"
                                             :style="open ? 'transform: rotate(-180deg)' : ''"
                                             xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="m6 9 6 6 6-6" />
-                                        </svg>
+                                            viewBox="0 0 256 256" fill="currentColor"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path></svg>
                                     </button>
 
                                     <div class="nav-dropdown-menu" x-show="open" x-cloak role="menu" aria-orientation="vertical">
@@ -197,13 +177,7 @@
                                         <span class="hidden lg:block">MS</span>
                                     @endif
 
-                                    <svg class="size-4 transition-transform duration-200"
-                                        :class="open ? 'rotate-180' : ''"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="m6 9 6 6 6-6" />
-                                    </svg>
+                                    <svg class="size-4 transition-transform duration-200" :class="open ? 'rotate-180' : ''" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256" fill="currentColor"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path></svg>
                                 </button>
 
                                 <div x-show="open" x-cloak class="aquarius-lang-select-dropdown"

@@ -31,7 +31,7 @@ $promotion = Promotion::where('start_time', '<=', $currentDateTime) ->where('end
                             class="inline-flex rounded-lg p-1.5 text-white/80 hover:bg-white/10 focus:outline-none focus:bg-white/10"
                             @click="show = false; fetch('{{ route('dismiss-promotion') }}', { method: 'POST', headers: { 'X-CSRF-TOKEN': document.querySelector('meta[name=csrf-token]').content, 'Content-Type': 'application/json' }, body: JSON.stringify({ dismissed: true }) })">
                             <span class="sr-only">{{__('strings.alert_dismiss')}}</span>
-                            <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                            <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path></svg>
                         </button>
                     </div>
                 </div>

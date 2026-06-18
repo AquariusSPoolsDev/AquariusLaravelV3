@@ -52,7 +52,7 @@
                     <button class="aquarius-accordion-toggle" :aria-expanded="active === 0" @click="active = active === 0 ? null : 0">
                         {{ __('strings.faq_choose_concrete') }}
                         <span class="toggle-icon" aria-hidden="true">
-                            <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1v9M1 5.5h9" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+                            <svg width="11" height="11" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path></svg>
                         </span>
                     </button>
                     <div class="aquarius-accordion-content" x-show="active === 0" x-cloak x-transition role="region">
@@ -88,7 +88,7 @@
                     <button class="aquarius-accordion-toggle" :aria-expanded="active === 1" @click="active = active === 1 ? null : 1">
                         {{ __('strings.faq_coping') }}
                         <span class="toggle-icon" aria-hidden="true">
-                            <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1v9M1 5.5h9" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+                            <svg width="11" height="11" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path></svg>
                         </span>
                     </button>
                     <div class="aquarius-accordion-content" x-show="active === 1" x-cloak x-transition role="region">
@@ -105,7 +105,7 @@
                     <button class="aquarius-accordion-toggle" :aria-expanded="active === 2" @click="active = active === 2 ? null : 2">
                         {{ __('strings.faq_popular_pool_size') }}
                         <span class="toggle-icon" aria-hidden="true">
-                            <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1v9M1 5.5h9" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+                            <svg width="11" height="11" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path></svg>
                         </span>
                     </button>
                     <div class="aquarius-accordion-content" x-show="active === 2" x-cloak x-transition role="region">
@@ -130,7 +130,7 @@
                     <button class="aquarius-accordion-toggle" :aria-expanded="active === 3" @click="active = active === 3 ? null : 3">
                         {{ __('strings.faq_pool_safe_kids') }}
                         <span class="toggle-icon" aria-hidden="true">
-                            <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1v9M1 5.5h9" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+                            <svg width="11" height="11" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path></svg>
                         </span>
                     </button>
                     <div class="aquarius-accordion-content" x-show="active === 3" x-cloak x-transition role="region">
@@ -172,7 +172,7 @@
                     <button class="aquarius-accordion-toggle" :aria-expanded="active === 4" @click="active = active === 4 ? null : 4">
                         {{ __('strings.faq_different_material_avail') }}
                         <span class="toggle-icon" aria-hidden="true">
-                            <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1v9M1 5.5h9" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+                            <svg width="11" height="11" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path></svg>
                         </span>
                     </button>
                     <div class="aquarius-accordion-content" x-show="active === 4" x-cloak x-transition role="region">
@@ -188,7 +188,7 @@
                     <button class="aquarius-accordion-toggle" :aria-expanded="active === 5" @click="active = active === 5 ? null : 5">
                         {{ __('strings.faq_kind_maintenance') }}
                         <span class="toggle-icon" aria-hidden="true">
-                            <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 1v9M1 5.5h9" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+                            <svg width="11" height="11" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path></svg>
                         </span>
                     </button>
                     <div class="aquarius-accordion-content" x-show="active === 5" x-cloak x-transition role="region">

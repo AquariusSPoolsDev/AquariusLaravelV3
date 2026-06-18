@@ -55,7 +55,7 @@ return [
     'pools_vinyl' => 'Vinyl Pools',
     'pools_fibreglass' => 'Fibreglass Pools',
     'pools_concrete_desc' => 'Concrete pools are built on a <strong>solid steel foundation using a combination of concrete and plaster</strong>. Aquarius has over <strong>30 years</strong> of building experience.',
-    'pools_vinyl_desc' => 'Vinyl pools are built with <strong>prefabricated metal, steel, or plastic frames</strong> that are set into a pre-dug hole and reinforced with concrete footings and wall braces. Most affordable range.',
+    'pools_vinyl_desc' => 'Vinyl pools are built with <strong>prefabricated stainless steel and plastic-edged frames</strong> that are set into a pre-dug hole and reinforced with concrete footings and wall braces. Most affordable range.',
     'pools_fibreglass_desc' => 'Fibreglass pools are built with <strong>prefabricated fibreglass frames</strong>. Choose from our range of ready-made pools. Quick installation.',
     'pools_concrete_link' => 'Learn More about Concrete Pools here',
     'pools_vinyl_link' => 'Learn More about Vinyl Pools here',
@@ -189,7 +189,7 @@ return [
 
     'table_keypoint_title_8' => 'Benefits',
     'table_concrete_body_8' => 'Can be emptied for repair works.<br><br>Design flexibility with easy add on options such as integrated Jacuzzi, wading pool, water features and underwater lighting.',
-    'table_vinyl_body_8' => 'Slow algae growth<br><br>Stainless steel walls with 5 year warranty.',
+    'table_vinyl_body_8' => 'Slow algae growth<br><br>Stainless steel walls with 20 to 30 year warranty.',
     'table_fibreglass_body_8' => 'Can be emptied for repair works.<br><br>Slow algae growth.',
 
     'table_keypoint_title_9' => 'Limitations',
@@ -242,9 +242,9 @@ return [
     // VINYL POOLS PAGE
     'vinyl_pool_title_heading' => 'Vinyl Swimming Pools in Johor Bahru',
     'vinyl_pool_display_heading' => 'Vinyl Pools',
-    'vinyl_pool_subtitle_heading' => 'Stainless steel frames. 5 year warranty. Installed in 2 to 3 weeks. Most affordable pool type.',
-    'vinyl_pool_meta_description' => 'Aquarius installs vinyl pools with stainless steel frames across Malaysia. 5 year warranty. 2 to 3 week installation. Based in Johor Bahru. Free consultation.',
-    'vinyl_pool_body' => 'Aquarius Swimming Pools installs vinyl pools across Malaysia, based in Johor Bahru. Each pool uses stainless steel wall frames set into excavated ground, lined with a fitted vinyl liner. Our frames carry a 5 year warranty. Installation takes 2 to 3 weeks, making vinyl the fastest in-ground option after fibreglass. Vinyl is the most affordable pool type Aquarius offers. Read on to see how vinyl pools are built, and whether one is right for your property.',
+    'vinyl_pool_subtitle_heading' => 'Stainless steel frames. 20 to 30 year warranty. Installed in 2 to 3 weeks. Most affordable pool type.',
+    'vinyl_pool_meta_description' => 'Aquarius installs vinyl pools with stainless steel frames across Malaysia. 20 to 30 year warranty. 2 to 3 week installation. Based in Johor Bahru. Free consultation.',
+    'vinyl_pool_body' => 'Aquarius Swimming Pools installs vinyl pools across Malaysia, based in Johor Bahru. Each pool uses stainless steel wall frames set into excavated ground, lined with a fitted vinyl liner. Our frames carry a 20 to 30 year warranty, depending on the series. Installation takes 2 to 3 weeks, making vinyl the fastest in-ground option after fibreglass. Vinyl is the most affordable pool type Aquarius offers. Read on to see how vinyl pools are built, and whether one is right for your property.',
     'vinyl_pool_steps_pill' => 'How it\'s made',
     'vinyl_pool_steps_title' => 'How Are Vinyl Pools Built?',
     'vinyl_pool_pros_cons_pill' => 'Pros & Cons',
