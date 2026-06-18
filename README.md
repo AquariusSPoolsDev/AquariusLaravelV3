@@ -25,6 +25,11 @@
 
 ## Changelog
 
+### 2026-06-18 — V3.1
+- Replaced all inline SVG icons with Phosphor Icons across 23 Blade templates
+- Updated icon viewBox from `0 0 24 24` to `0 0 256 256`, switched from stroke-based to fill-based rendering
+- Brand icons (Facebook, Instagram, TikTok, WhatsApp, Google) and loading spinners kept unchanged
+
 ### 2026-04-16 — V3 Beta
 - Upgraded Laravel 11 → 12
 - Upgraded Tailwind CSS 3 → 4
