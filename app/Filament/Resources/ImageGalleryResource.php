@@ -28,7 +28,6 @@ use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Support\Facades\Storage;
 
 class ImageGalleryResource extends Resource
 {
@@ -165,14 +164,8 @@ class ImageGalleryResource extends Resource
                 ActionGroup::make([
                     ViewAction::make(),
                     EditAction::make(),
-                    DeleteAction::make()->action(function ($record) {
-                        // Delete associated image before deleting the record
-                        if ($record->image_path) {
-                            Storage::disk('public')->delete('image_gallery/'.$record->image_path);
-                        }
-                        // Now delete the record itself
-                        $record->delete();
-                    }),
+                    // The model's deleted event removes the image file.
+                    DeleteAction::make(),
                 ])
                     ->button()
                     ->label('Actions'),
@@ -220,14 +213,7 @@ class ImageGalleryResource extends Resource
                         ->deselectRecordsAfterCompletion(),
                 ])->label('Feature'),
                 BulkActionGroup::make([
-                    DeleteBulkAction::make()->action(function (array $records) {
-                        foreach ($records as $record) {
-                            if ($record->image_path) {
-                                Storage::disk('public')->delete('image_gallery/'.$record->image_path);
-                            }
-                            $record->delete();
-                        }
-                    }),
+                    DeleteBulkAction::make(),
                 ])->label('Delete'),
             ])
             ->defaultSort('created_at', 'desc');

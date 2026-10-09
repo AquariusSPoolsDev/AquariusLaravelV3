@@ -25,7 +25,7 @@
                             <p class="line-clamp-2 text-sm text-gray-600 dark:text-gray-300">{{ $promotion->description }}</p>
                             <p class="text-xs text-gray-500 dark:text-gray-400">
                                 {{ $promotion->start_time->timezone('Asia/Kuala_Lumpur')->format('d M Y, g:i A') }}
-                                – {{ $promotion->end_time->timezone('Asia/Kuala_Lumpur')->format('d M Y, g:i A') }}
+                                – {{ $promotion->end_time?->timezone('Asia/Kuala_Lumpur')->format('d M Y, g:i A') ?? 'no end date' }}
                             </p>
                         </div>
                     @endforeach

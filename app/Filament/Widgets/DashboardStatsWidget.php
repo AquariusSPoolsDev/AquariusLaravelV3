@@ -95,16 +95,8 @@ class DashboardStatsWidget extends StatsOverviewWidget
 
     protected function promotionsStat(): Stat
     {
-        $now = now();
-
-        $activeCount = Promotion::query()
-            ->where('start_time', '<=', $now)
-            ->where('end_time', '>=', $now)
-            ->count();
-
-        $upcomingCount = Promotion::query()
-            ->where('start_time', '>', $now)
-            ->count();
+        $activeCount = Promotion::query()->active()->count();
+        $upcomingCount = Promotion::query()->upcoming()->count();
 
         return Stat::make('Active promotions', $activeCount)
             ->icon(Heroicon::OutlinedMegaphone)

@@ -24,8 +24,10 @@ $redirectToEnglish = function (Request $request): RedirectResponse {
 
 Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap-xml');
 
+// 5 attempts per IP per hour: enough to fix validation errors or share an office network.
+// The honeypot and 24-hour duplicate-email check in the controller handle spam.
 Route::post('/send-email', [ContactFormController::class, 'sendEmail'])
-    ->middleware('throttle:1,60')
+    ->middleware('throttle:5,60')
     ->name('send-email-page');
 
 Route::get('/thank-you', function () {

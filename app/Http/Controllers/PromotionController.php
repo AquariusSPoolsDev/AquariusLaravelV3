@@ -3,23 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Promotion;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class PromotionController extends Controller
 {
     public function index(Request $request)
     {
-        $now = Carbon::now('Asia/Kuala_Lumpur');
-
-        $promotions = Promotion::where('start_time', '<=', $now)
-            ->where('end_time', '>=', $now)
+        $promotions = Promotion::query()
+            ->active()
             ->orderBy('start_time')
             ->paginate(5);
 
-        $totalActive = Promotion::where('start_time', '<=', $now)
-            ->where('end_time', '>=', $now)
-            ->count();
+        $totalActive = $promotions->total();
 
         if ($request->ajax()) {
             return response()->json([

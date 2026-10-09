@@ -28,8 +28,11 @@ class LocalePrefixRoutingTest extends TestCase
 
     public function test_throttled_contact_form_returns_429_error_page(): void
     {
-        // Honeypot field short-circuits before validation, so nothing is written to the database
-        $this->post('/send-email', ['website' => 'bot'])->assertRedirect(route('thank-you'));
+        // Honeypot field short-circuits before validation, so nothing is written to the database.
+        // The route allows 5 attempts per hour; the 6th is throttled.
+        for ($attempt = 1; $attempt <= 5; $attempt++) {
+            $this->post('/send-email', ['website' => 'bot'])->assertRedirect(route('thank-you'));
+        }
 
         // Drop the {locale} URL default left over from the first request — in production each request
         // starts fresh, and ThrottleRequests runs before LocalizationMiddleware sets it

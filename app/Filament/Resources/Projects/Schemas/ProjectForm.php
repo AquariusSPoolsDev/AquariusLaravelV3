@@ -34,7 +34,9 @@ class ProjectForm
                         ->required()
                         ->maxLength(255)
                         ->unique(ignoreRecord: true)
-                        ->helperText('Auto-generated from title. Edit only if needed.'),
+                        ->helperText(fn (string $operation): string => $operation === 'create'
+                            ? 'Auto-generated from title. Edit only if needed.'
+                            : 'This is the page URL. Changing it breaks existing links to this project.'),
 
                     Grid::make(2)
                         ->schema([

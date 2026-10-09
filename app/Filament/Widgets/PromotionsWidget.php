@@ -21,18 +21,9 @@ class PromotionsWidget extends Widget
      */
     protected function getViewData(): array
     {
-        $now = now();
-
         return [
-            'activePromotions' => Promotion::query()
-                ->where('start_time', '<=', $now)
-                ->where('end_time', '>=', $now)
-                ->orderBy('end_time')
-                ->get(),
-            'upcomingPromotions' => Promotion::query()
-                ->where('start_time', '>', $now)
-                ->orderBy('start_time')
-                ->get(),
+            'activePromotions' => Promotion::query()->active()->orderBy('end_time')->get(),
+            'upcomingPromotions' => Promotion::query()->upcoming()->orderBy('start_time')->get(),
             'createUrl' => PromotionResource::canCreate() ? PromotionResource::getUrl('create') : null,
         ];
     }

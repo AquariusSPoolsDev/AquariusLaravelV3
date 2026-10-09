@@ -1,13 +1,8 @@
 @php
 use App\Models\Promotion;
-use Carbon\Carbon;
-
-$currentDateTime = Carbon::now('Asia/Kuala_Lumpur');
 
 // Fetch only ongoing promotions
-$promotion = Promotion::where('start_time', '<=', $currentDateTime) ->where('end_time', '>=', $currentDateTime)
-    ->orderBy('start_time')
-    ->first();
+$promotion = Promotion::query()->active()->orderBy('start_time')->first();
     @endphp
 
     @if(session('promotion_dismissed') !== true && $promotion)

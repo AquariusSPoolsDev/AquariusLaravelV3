@@ -745,6 +745,7 @@ return [
     'promotions_meta_description' => 'Tawaran bermusim daripada Aquarius Swimming Pools di Johor Bahru. Peralatan kolam renang, bahan kimia, dan aksesori pada harga promosi. Semak semula untuk tawaran terbaru.',
     'promotions_current_promo_badge' => 'Promosi Semasa',
     'promotions_current_promo_duration' => 'Tempoh',
+    'promotions_until_further_notice' => 'sehingga diberitahu',
     'promotions_no_active_promo_title' => 'Tiada Promosi Aktif',
     'promotions_no_active_promo_body' => 'Tiada promosi berjalan sekarang. Semak semula untuk tawaran bermusim peralatan kolam renang, bahan kimia, dan aksesori.',
     'promotions_loading' => 'Memuatkan promosi...',

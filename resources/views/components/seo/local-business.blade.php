@@ -1,6 +1,17 @@
 @php
-    $reviewCount = \App\Models\Review::where('is_published', true)->count();
-    $reviewAvg   = $reviewCount > 0 ? round(\App\Models\Review::where('is_published', true)->avg('rating'), 1) : null;
+    // Rendered on every page, so the published-review rating is cached for an hour.
+    // CustReview clears this cache whenever a review is saved or deleted.
+    $reviewRating = \Illuminate\Support\Facades\Cache::remember(\App\Models\CustReview::RATING_CACHE_KEY, now()->addHour(), function (): array {
+        $summary = \App\Models\CustReview::query()
+            ->where('is_published', true)
+            ->toBase()
+            ->selectRaw('COUNT(*) as total, AVG(rating) as average')
+            ->first();
+
+        return ['count' => (int) $summary->total, 'average' => $summary->total > 0 ? round((float) $summary->average, 1) : null];
+    });
+    $reviewCount = $reviewRating['count'];
+    $reviewAvg = $reviewRating['average'];
 @endphp
 <script type="application/ld+json">
 {

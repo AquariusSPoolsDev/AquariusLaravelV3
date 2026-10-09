@@ -34,11 +34,8 @@ class Project extends Model
             }
         });
 
+        // The slug is the public URL, so renaming a project keeps it; it only changes when edited directly.
         static::updating(function (Project $project) {
-            if ($project->isDirty('title') && ! $project->isDirty('slug')) {
-                $project->slug = Str::slug($project->title);
-            }
-
             if ($project->isDirty('gallery_images')) {
                 $removed = array_diff(
                     $project->getOriginal('gallery_images') ?? [],

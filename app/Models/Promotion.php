@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -32,6 +33,28 @@ class Promotion extends Model
             $value = array_map(fn (string $path) => ltrim(str_replace('promotion_materials/', '', $path), '/'), $value);
         }
         $this->attributes['file_attachment'] = json_encode($value);
+    }
+
+    /**
+     * Running right now. Times are stored in UTC, so compare against now() in the app timezone (UTC),
+     * never a Malaysia-time Carbon. A promotion without an end time runs until it is removed.
+     *
+     * @param  Builder<Promotion>  $query
+     */
+    public function scopeActive(Builder $query): void
+    {
+        $now = now();
+
+        $query->where('start_time', '<=', $now)
+            ->where(fn (Builder $query) => $query->whereNull('end_time')->orWhere('end_time', '>=', $now));
+    }
+
+    /**
+     * @param  Builder<Promotion>  $query
+     */
+    public function scopeUpcoming(Builder $query): void
+    {
+        $query->where('start_time', '>', now());
     }
 
     // Relationship with User model

@@ -15,9 +15,7 @@
     <title>{!! $ogSiteTitle !!}</title>
     <meta name="title" content="{{ $ogSiteTitle }}" />
     <meta name="description" content="{{ $ogDescription }}" />
-    @if($noIndex)
-    <meta name="robots" content="noindex, nofollow" />
-    @endif
+    <meta name="robots" content="{{ $noIndex ? 'noindex, nofollow' : 'index, follow' }}" />
     <link rel="canonical" href="{{ url()->current() }}" />
     <link rel="alternate" hreflang="en" href="{{ $hreflangEn }}" />
     <link rel="alternate" hreflang="ms" href="{{ $hreflangMs }}" />

@@ -8,7 +8,6 @@
     {{-- INCLUDE SEO DATA FROM EVERY PAGES --}}
     @yield('seoData')
 
-    <meta name="robots" content="index, follow">
     <meta name="google-site-verification" content="m4m8SXHkw6n2F-AMy8oO-CUBZtG1_H-_4A7cBgDujvM" />
 
     {{-- Fonts V3.0 --}}

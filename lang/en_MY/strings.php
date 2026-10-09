@@ -745,6 +745,7 @@ return [
     'promotions_meta_description' => 'Seasonal deals from Aquarius Swimming Pools in Johor Bahru. Pool equipment, chemicals, and accessories at promotional prices. Check back for new offers.',
     'promotions_current_promo_badge' => 'Current Promotion',
     'promotions_current_promo_duration' => 'Duration',
+    'promotions_until_further_notice' => 'until further notice',
     'promotions_no_active_promo_title' => 'No Active Promotions',
     'promotions_no_active_promo_body' => 'No promotions running right now. Check back for seasonal deals on pool equipment, chemicals, and accessories.',
     'promotions_loading' => 'Loading promotions...',

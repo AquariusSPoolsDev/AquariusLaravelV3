@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class ImageGallery extends Model
 {
@@ -29,6 +30,13 @@ class ImageGallery extends Model
     {
         static::creating(function (ImageGallery $imageGallery) {
             $imageGallery->uploader_id ??= auth()->id();
+        });
+
+        // Remove the image file with its record, however it is deleted (single, bulk or in code).
+        static::deleted(function (ImageGallery $imageGallery) {
+            if ($imageGallery->image_path) {
+                Storage::disk('public')->delete('image_gallery/'.$imageGallery->image_path);
+            }
         });
     }
 

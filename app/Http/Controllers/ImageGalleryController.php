@@ -23,11 +23,13 @@ class ImageGalleryController extends Controller
         // Base query for published images
         $query = ImageGallery::published()->orderBy('created_at', 'desc');
 
+        $search = $request->string('search')->trim()->toString();
+
         // Search functionality
-        if ($request->has('search')) {
-            $query->where(function ($q) use ($request) {
-                $q->where('image_name', 'LIKE', '%'.$request->search.'%')
-                    ->orWhere('image_description', 'LIKE', '%'.$request->search.'%');
+        if ($search !== '') {
+            $query->where(function ($q) use ($search) {
+                $q->where('image_name', 'LIKE', '%'.$search.'%')
+                    ->orWhere('image_description', 'LIKE', '%'.$search.'%');
             });
         }
 
@@ -44,7 +46,7 @@ class ImageGalleryController extends Controller
         // Paginate results
         $images = $query->paginate(16);
 
-        $searchTerm = urlencode($request->search);
+        $searchTerm = urlencode($search);
         $tags = is_array($request->tags) ? $request->tags : [];
         $galleryId = 'gallery_'.$searchTerm.(count($tags) > 0 ? '_'.implode('_', $tags) : '');
         $translatedTags = $this->getTranslatedTags();

@@ -17,7 +17,7 @@
         <strong class="text-neutral-700">{{__('strings.promotions_current_promo_duration')}}: </strong>
         {{ $promotion->start_time->timezone('Asia/Kuala_Lumpur')->format('j F Y, g:i A') }}
         –
-        {{ $promotion->end_time->timezone('Asia/Kuala_Lumpur')->format('j F Y, g:i A') }}
+        {{ $promotion->end_time?->timezone('Asia/Kuala_Lumpur')->format('j F Y, g:i A') ?? __('strings.promotions_until_further_notice') }}
     </p>
 
     {{-- Image carousel --}}
