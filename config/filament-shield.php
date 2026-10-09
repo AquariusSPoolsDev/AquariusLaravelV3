@@ -1,6 +1,8 @@
 <?php
 
 declare(strict_types=1);
+use App\Filament\Widgets\DashboardStatsWidget;
+use App\Filament\Widgets\LatestEnquiriesWidget;
 use BezhanSalleh\FilamentShield\Resources\Roles\RoleResource;
 use Filament\Pages\Dashboard;
 use Filament\Widgets\AccountWidget;
@@ -218,6 +220,9 @@ return [
         'exclude' => [
             AccountWidget::class,
             FilamentInfoWidget::class,
+            // Visibility follows the linked resources' permissions instead of a widget permission.
+            DashboardStatsWidget::class,
+            LatestEnquiriesWidget::class,
         ],
     ],
 

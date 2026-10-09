@@ -2,11 +2,14 @@
 
 namespace App\Providers\Filament;
 
-use App\Filament\Widgets\adminPanelMetadata;
+use App\Filament\Pages\Auth\EditProfile;
+use App\Filament\Widgets\DashboardStatsWidget;
 use App\Filament\Widgets\ImageGalleryWidget;
+use App\Filament\Widgets\LatestEnquiriesWidget;
 use App\Filament\Widgets\PromotionsWidget;
 use App\Filament\Widgets\ReviewsWidget;
 use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
+use Filament\Actions\Action;
 use Filament\Enums\ThemeMode;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -15,7 +18,7 @@ use Filament\Navigation\NavigationGroup;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Assets\Css;
-use Filament\Widgets;
+use Filament\Support\Icons\Heroicon;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
@@ -35,7 +38,7 @@ class AdminPanelProvider extends PanelProvider
             ->viteTheme('resources/css/filament/admin/theme.css')
             ->login()
             ->passwordReset()
-            ->profile()
+            ->profile(EditProfile::class, isSimple: false)
             // Email verification disabled — User model does not implement MustVerifyEmail
             ->colors([
                 'gray' => [
@@ -65,6 +68,14 @@ class AdminPanelProvider extends PanelProvider
                     950 => 'oklch(0.210 0.095 254)',
                 ],
             ])
+            ->globalSearch(false)
+            ->userMenuItems([
+                'view-website' => Action::make('viewWebsite')
+                    ->label('View website')
+                    ->icon(Heroicon::OutlinedGlobeAlt)
+                    ->url(fn (): string => route('homepage', ['locale' => 'en']))
+                    ->openUrlInNewTab(),
+            ])
             ->unsavedChangesAlerts()
             ->favicon(asset('assets/favicon/favicon-16x16.png'))
             ->brandLogo(fn () => view('filament.components.logo'))
@@ -80,12 +91,11 @@ class AdminPanelProvider extends PanelProvider
             ->pages([])
             // ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
-                // Widgets\AccountWidget::class,
-                // Widgets\FilamentInfoWidget::class,
-                // adminPanelMetadata::class,
+                DashboardStatsWidget::class,
+                LatestEnquiriesWidget::class,
+                ReviewsWidget::class,
                 ImageGalleryWidget::class,
                 PromotionsWidget::class,
-                ReviewsWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,

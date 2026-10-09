@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements FilamentUser
@@ -33,12 +34,18 @@ class User extends Authenticatable implements FilamentUser
         });
     }
 
+    /**
+     * Only accounts on these email domains may sign in to the admin panel.
+     *
+     * @var array<int, string>
+     */
+    public const PANEL_EMAIL_DOMAINS = ['@aquariusswimmingpools.com', '@aquariuspools.com.my'];
+
     public function canAccessPanel(Panel $panel): bool
     {
         // REMOVE VERIFY EMAIL AS THIS DOES NOT REQUIRED
         // return str_ends_with($this->email, '@aquariusswimmingpools.com') && $this->hasVerifiedEmail();
-        return str_ends_with($this->email, '@aquariusswimmingpools.com')
-            || str_ends_with($this->email, '@aquariuspools.com.my');
+        return Str::endsWith($this->email, self::PANEL_EMAIL_DOMAINS);
     }
 
     public function imageGalleries()

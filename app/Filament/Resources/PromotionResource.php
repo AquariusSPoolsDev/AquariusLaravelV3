@@ -38,11 +38,12 @@ class PromotionResource extends Resource
 
     public static function getNavigationBadge(): ?string
     {
-        return Promotion::where('start_time', '<=', now())
-            ->where('end_time', '>=', now())
-            ->orderBy('start_time', 'asc')
-            ->get()
-            ->count();
+        $now = now();
+
+        return Promotion::query()
+            ->where('start_time', '<=', $now)
+            ->where('end_time', '>=', $now)
+            ->count() ?: null;
     }
 
     protected static string|\Illuminate\Contracts\Support\Htmlable|null $navigationBadgeTooltip = 'Active Promotions';

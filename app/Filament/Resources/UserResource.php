@@ -25,11 +25,6 @@ class UserResource extends Resource
 
     protected static string|\UnitEnum|null $navigationGroup = 'User Management';
 
-    public static function getNavigationBadge(): ?string
-    {
-        return static::getModel()::count();
-    }
-
     protected static string|\Illuminate\Contracts\Support\Htmlable|null $navigationBadgeTooltip = 'Registered Users';
 
     public static function form(Schema $schema): Schema

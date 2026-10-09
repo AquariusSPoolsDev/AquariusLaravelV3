@@ -2,33 +2,38 @@
 
 namespace App\Filament\Widgets;
 
-use Filament\Widgets\Widget;
+use App\Filament\Resources\PromotionResource;
 use App\Models\Promotion;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
 use BezhanSalleh\FilamentShield\Traits\HasWidgetShield;
+use Filament\Widgets\Widget;
+use Illuminate\Support\Collection;
 
 class PromotionsWidget extends Widget
 {
     use HasWidgetShield;
 
+    protected static ?int $sort = 5;
+
     protected string $view = 'filament.widgets.promotions-widget';
-    protected int | string | array $columnSpan = 'full'; 
-    
-    public function getActivePromotions()
+
+    /**
+     * @return array{activePromotions: Collection<int, Promotion>, upcomingPromotions: Collection<int, Promotion>, createUrl: ?string}
+     */
+    protected function getViewData(): array
     {
         $now = now();
-        
-        return Promotion::where('start_time', '<=', $now)
-            ->where('end_time', '>=', $now)
-            ->orderBy('start_time', 'asc')
-            ->get();
-    }
 
-    public function getUpcomingPromotions()
-    {
-        return Promotion::where('start_time', '>', now())
-            ->orderBy('start_time', 'asc')
-            ->get();
+        return [
+            'activePromotions' => Promotion::query()
+                ->where('start_time', '<=', $now)
+                ->where('end_time', '>=', $now)
+                ->orderBy('end_time')
+                ->get(),
+            'upcomingPromotions' => Promotion::query()
+                ->where('start_time', '>', $now)
+                ->orderBy('start_time')
+                ->get(),
+            'createUrl' => PromotionResource::canCreate() ? PromotionResource::getUrl('create') : null,
+        ];
     }
 }

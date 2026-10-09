@@ -2,43 +2,36 @@
 
 namespace App\Filament\Widgets;
 
+use App\Filament\Resources\ImageGalleryResource;
 use App\Models\ImageGallery;
-use Filament\Widgets\Widget;
-use Illuminate\Support\Facades\DB;
 use BezhanSalleh\FilamentShield\Traits\HasWidgetShield;
+use Filament\Widgets\Widget;
+use Illuminate\Support\Collection;
 
 class ImageGalleryWidget extends Widget
 {
     use HasWidgetShield;
+
+    protected static ?int $sort = 4;
+
     protected string $view = 'filament.widgets.image-gallery-widget';
-    protected int | string | array $columnSpan = 'full'; 
 
-    public function getImagesCount()
+    /**
+     * @return array{recentImages: Collection<int, ImageGallery>, tagCounts: Collection<string, int>, visibleTagLimit: int, galleryUrl: string}
+     */
+    protected function getViewData(): array
     {
-        return ImageGallery::count();
-    }
+        $tagCounts = ImageGallery::query()
+            ->get(['id', 'image_tags'])
+            ->flatMap(fn (ImageGallery $image): array => $image->image_tags ?? [])
+            ->countBy()
+            ->sortDesc();
 
-    public function getRecentImages()
-    {
-        return ImageGallery::orderBy('created_at', 'desc')->take(5)->get();
+        return [
+            'recentImages' => ImageGallery::query()->latest()->take(5)->get(['id', 'image_path', 'image_name', 'created_at']),
+            'tagCounts' => $tagCounts,
+            'visibleTagLimit' => 10,
+            'galleryUrl' => ImageGalleryResource::getUrl('index'),
+        ];
     }
-
-    public function getPublishedImages(){
-        return ImageGallery::where('is_published', true)->count();
-    }
-
-    public function getUnpublishedImages(){
-        return ImageGallery::where('is_published', false)->count();
-    }
-
-    public function getTagsCount()
-    {
-        return DB::table('image_galleries')
-            ->selectRaw('tag, COUNT(*) AS count')
-            ->from(DB::raw('(SELECT jt.tag FROM image_galleries, JSON_TABLE(image_tags, \'$[*]\' COLUMNS (tag VARCHAR(255) PATH \'$\')) AS jt) AS tags'))
-            ->groupBy('tag')
-            ->orderBy('count', 'DESC')
-            ->get();
-    }
-
 }

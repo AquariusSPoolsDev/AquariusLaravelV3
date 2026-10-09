@@ -1,51 +1,61 @@
 <x-filament-widgets::widget>
-    <x-filament::section>
-        <div>
-            <h2 class="text-xl font-bold mb-2">Image Gallery Showcase Content</h2>
+    <x-filament::section heading="Showcase gallery" description="Latest uploads">
+        <x-slot name="afterHeader">
+            <x-filament::link :href="$galleryUrl" size="sm">Open gallery</x-filament::link>
+        </x-slot>
 
-            <div class="mb-4 mt-2">
-                <h3 class="font-semibold text-lg mb-1">Stats</h3>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div>
-                        <h4 class="text-gray-500 dark:text-gray-400 text-sm">Total Images Uploaded</h4>
-                        <p class="text-4xl font-semibold text-primary-600 dark:text-primary-400">{{ $this->getImagesCount() }}</p>
-                    </div>
-
-                    <div>
-                        <h4 class="text-gray-500 dark:text-gray-400 text-sm">Published Images</h4>
-                        <p class="text-4xl font-semibold text-success-300 dark:text-success-200">{{ $this->getPublishedImages() }}</p>
-                    </div>
-
-                    <div>
-                        <h4 class="text-gray-500 dark:text-gray-400 text-sm">Unpublished Images (Please check them!)</h4>
-                        <p class="text-4xl font-semibold text-error-300 dark:text-error-200">{{ $this->getUnpublishedImages() }}</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="my-4">
-                <h3 class="font-semibold text-lg mb-1">Recent Images</h3>
-                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-2">
-                    @foreach ($this->getRecentImages() as $image)
-                    <div>
-                        <img class="w-full h-40 object-cover rounded-xl" src="{{ asset('storage/image_gallery/' . $image->image_path) }}" alt="{{ $image->image_name }}" title="{{ $image->image_name }}" />
-                        <p class="text-sm mt-1">🖼️ {{ $image->created_at->timezone('Asia/Kuala_Lumpur')->format('d/m/Y H:i') }}</p>
-                    </div>
+        <div class="flex flex-col gap-6">
+            @if ($recentImages->isNotEmpty())
+                <div class="grid grid-cols-3 gap-2 sm:grid-cols-5">
+                    @foreach ($recentImages as $image)
+                        <img
+                            class="aspect-square w-full rounded-lg object-cover"
+                            src="{{ asset('storage/image_gallery/' . $image->image_path) }}"
+                            alt="{{ $image->image_name }}"
+                            title="{{ $image->image_name }} · {{ $image->created_at->timezone('Asia/Kuala_Lumpur')->format('d M Y, g:i A') }}"
+                            loading="lazy"
+                        />
                     @endforeach
                 </div>
-            </div>
+            @else
+                <p class="text-sm text-gray-500 dark:text-gray-400">No images uploaded yet.</p>
+            @endif
 
-            <div class="mt-4">
-                <h3 class="font-semibold text-lg mb-1">Tags Usage Count</h3>
-                @php $tagsCount = $this->getTagsCount(); @endphp
-
-                @foreach ($tagsCount as $tag)
-                <span class="inline-flex items-center gap-x-2 py-1 px-2.5 mr-1 mb-1 rounded-full text-xs font-medium border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white">
-                    {{ $tag->tag }}
-                    <span class="inline-flex items-center py-0.5 px-1.5 rounded-full text-xs font-medium text-white bg-primary-600">{{ $tag->count }}</span>
-                </span>
-                @endforeach
-            </div>
+            @if ($tagCounts->isNotEmpty())
+                <div x-data="{ showAllTags: false }" class="flex flex-col gap-2">
+                    <div class="flex justify-between gap-2 text-sm">
+                        <h3 class="font-semibold text-gray-500 dark:text-gray-400">
+                            <span x-show="! showAllTags">Top tags</span>
+                            <span x-show="showAllTags" x-cloak>All tags</span>
+                        </h3>
+                        @if ($tagCounts->count() > $visibleTagLimit)
+                            <button
+                                type="button"
+                                x-on:click="showAllTags = ! showAllTags"
+                                x-bind:aria-expanded="showAllTags"
+                                class="font-semibold text-primary-600 hover:underline dark:text-primary-400"
+                            >
+                                <span x-show="! showAllTags">{{ $tagCounts->count() }} tags in use · Show all</span>
+                                <span x-show="showAllTags" x-cloak>Show less</span>
+                            </button>
+                        @else
+                            <span class="text-gray-500 dark:text-gray-400">{{ $tagCounts->count() }} tags in use</span>
+                        @endif
+                    </div>
+                    <div class="flex flex-wrap gap-1.5">
+                        @foreach ($tagCounts as $tag => $count)
+                            <x-filament::badge
+                                color="gray"
+                                :x-show="$loop->index >= $visibleTagLimit ? 'showAllTags' : null"
+                                :x-cloak="$loop->index >= $visibleTagLimit"
+                            >
+                                {{ $tag }}
+                                <span class="ms-1 text-primary-600 dark:text-primary-400">{{ $count }}</span>
+                            </x-filament::badge>
+                        @endforeach
+                    </div>
+                </div>
+            @endif
         </div>
     </x-filament::section>
 </x-filament-widgets::widget>

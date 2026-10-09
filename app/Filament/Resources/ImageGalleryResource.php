@@ -46,11 +46,6 @@ class ImageGalleryResource extends Resource
 
     protected static string|\UnitEnum|null $navigationGroup = 'Content Management';
 
-    public static function getNavigationBadge(): ?string
-    {
-        return ImageGallery::where('is_published', true)->count();
-    }
-
     protected static string|\Illuminate\Contracts\Support\Htmlable|null $navigationBadgeTooltip = 'Total Published Images';
 
     public static function form(Schema $schema): Schema

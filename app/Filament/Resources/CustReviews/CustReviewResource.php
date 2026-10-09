@@ -30,11 +30,6 @@ class CustReviewResource extends Resource
 
     protected static ?string $pluralModelLabel = 'Customer Reviews';
 
-    public static function getNavigationBadge(): ?string
-    {
-        return static::getModel()::count() ?: null;
-    }
-
     public static function form(Schema $schema): Schema
     {
         return CustReviewForm::configure($schema);

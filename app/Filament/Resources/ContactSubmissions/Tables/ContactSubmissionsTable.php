@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\ContactSubmissions\Tables;
 
+use App\Models\ContactSubmission;
 use Filament\Actions\Action;
 use Filament\Actions\BulkAction;
 use Filament\Actions\BulkActionGroup;
@@ -29,20 +30,8 @@ class ContactSubmissionsTable
                     ->label('Phone')
                     ->state(fn ($record) => $record->country_code.' '.$record->phone)
                     ->searchable(),
-                TextColumn::make('interest')
-                    ->label('Interest')
-                    ->state(fn ($record) => $record->interest_other
-                        ? $record->interest.' — '.$record->interest_other
-                        : ($record->interest ?? '—'))
-                    ->wrap(),
-                TextColumn::make('status')
-                    ->badge()
-                    ->color(fn (string $state): string => match ($state) {
-                        'new' => 'warning',
-                        'read' => 'success',
-                        'spam' => 'danger',
-                        default => 'gray',
-                    }),
+                static::interestColumn(),
+                static::statusColumn(),
                 TextColumn::make('created_at')
                     ->label('Received')
                     ->dateTime('d M Y, g:i A')
@@ -58,13 +47,9 @@ class ContactSubmissionsTable
                     ]),
             ])
             ->recordActions([
-                Action::make('whatsapp')
-                    ->label('WhatsApp')
-                    ->icon('heroicon-o-chat-bubble-left-ellipsis')
-                    ->color('success')
-                    ->url(fn ($record): string => 'https://wa.me/'.ltrim($record->country_code, '+').$record->phone)
-                    ->openUrlInNewTab(),
-                ViewAction::make(),
+                static::whatsAppAction(),
+                ViewAction::make()
+                    ->beforeFormFilled(fn (ContactSubmission $record) => $record->markAsRead()),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
@@ -83,5 +68,47 @@ class ContactSubmissionsTable
                     DeleteBulkAction::make(),
                 ]),
             ]);
+    }
+
+    /**
+     * Interest column, appending the free-text "other" answer when given. Shared with the dashboard widget.
+     */
+    public static function interestColumn(): TextColumn
+    {
+        return TextColumn::make('interest')
+            ->label('Interest')
+            ->state(fn (ContactSubmission $record): string => $record->interest_other
+                ? $record->interest.' — '.$record->interest_other
+                : ($record->interest ?? '—'))
+            ->wrap();
+    }
+
+    /**
+     * Status badge column. Shared with the dashboard widget.
+     */
+    public static function statusColumn(): TextColumn
+    {
+        return TextColumn::make('status')
+            ->badge()
+            ->formatStateUsing(fn (string $state): string => ucfirst($state))
+            ->color(fn (string $state): string => match ($state) {
+                'new' => 'warning',
+                'read' => 'success',
+                'spam' => 'danger',
+                default => 'gray',
+            });
+    }
+
+    /**
+     * Opens a WhatsApp chat with the enquirer. Shared with the dashboard widget.
+     */
+    public static function whatsAppAction(): Action
+    {
+        return Action::make('whatsapp')
+            ->label('WhatsApp')
+            ->icon('heroicon-o-chat-bubble-left-ellipsis')
+            ->color('success')
+            ->url(fn (ContactSubmission $record): string => 'https://wa.me/'.ltrim($record->country_code, '+').$record->phone)
+            ->openUrlInNewTab();
     }
 }
