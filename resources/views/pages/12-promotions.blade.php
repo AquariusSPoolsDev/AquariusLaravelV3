@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
         loading.classList.remove('hidden');
         loading.classList.add('flex');
 
-        axios.get('/promotions', {
+        axios.get('{{ route('promo-page') }}', {
             params: { page },
             headers: { 'X-Requested-With': 'XMLHttpRequest' }
         }).then(function (response) {

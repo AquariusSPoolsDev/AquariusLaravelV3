@@ -36,7 +36,7 @@ return [
     'hero_feature_3' => 'Pool Repair & Maintenance',
     'hero_feature_4' => 'Equipment',
     'hero_feature_5' => 'Chemicals',
-    'hero_btn_quote' => 'Get A Quote',
+    'hero_btn_quote' => 'Book a Free Assessment',
     'hero_btn_explore' => 'Explore Our Pools',
     'video_player_support' => 'Your browser does not support the video tag.',
 
@@ -92,7 +92,7 @@ return [
     // HOMEPAGE CTA STRIP
     'homepage_cta_strip_heading' => 'Your pool starts with one conversation.',
     'homepage_cta_strip_body' => 'No pressure. Just tell us what you have in mind.',
-    'homepage_cta_strip_btn' => 'Get a Free Quote',
+    'homepage_cta_strip_btn' => 'Book a Free Assessment',
 
     // HOMEPAGE FAQ
     'homepage_services_pill' => 'What We Offer',
@@ -769,6 +769,7 @@ return [
     'cf_step_1_name_input' => 'Your Name',
     'cf_step_1_email_input' => 'Your Email',
     'cf_step_1_phone_input' => 'Phone Number',
+    'cf_step_2_input_freeassessment' => 'Free Pool Assessment',
     'cf_step_2_input_alltypespools' => 'All Types of Pools',
     'cf_step_2_input_tiledconcrete' => 'Tiled Concrete Pools',
     'cf_step_2_input_fibreglasspools' => 'Fibreglass Pools',

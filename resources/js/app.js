@@ -104,7 +104,8 @@ document.addEventListener('DOMContentLoaded', function() {
             tags: selectedTags
         };
 
-        axios.get('/showcase', { 
+        // Current path keeps the /en or /ms locale prefix (e.g. /ms/showcase)
+        axios.get(window.location.pathname, {
             params: params,
             headers: {
                 'X-Requested-With': 'XMLHttpRequest'

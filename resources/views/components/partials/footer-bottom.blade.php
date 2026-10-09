@@ -16,6 +16,16 @@
                     <address class="not-italic text-sm">
                         <p class="text-base uppercase font-bold text-white">Aquarius Swimming Pools Sdn Bhd &lpar;920548-M&rpar;</p>
                         <p class="text-neutral-400">33, Jalan Selatan 3/4, Taman Impian Emas,<br>81300 Skudai, Johor, Malaysia</p>
+                        {{-- <div class="mt-3 flex flex-col gap-1">
+                            <a href="tel:+6075953060" class="aquarius-footer-links flex items-center gap-1.5" onclick="window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'click_to_call',phone:'+6075953060',location:'footer_desktop'})">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 256 256" fill="currentColor"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.56l20.78-24.71c.2-.25.39-.5.57-.76a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46Z"/></svg>
+                                +607-595 3060
+                            </a>
+                            <a href="tel:+60125105126" class="aquarius-footer-links flex items-center gap-1.5" onclick="window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'click_to_call',phone:'+60125105126',location:'footer_desktop'})">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 256 256" fill="currentColor"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.56l20.78-24.71c.2-.25.39-.5.57-.76a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46Z"/></svg>
+                                +6012-510 5126
+                            </a>
+                        </div> --}}
                     </address>
                 </div>
             </div>
@@ -134,6 +144,16 @@
                     <address class="not-italic text-sm">
                         <p class="text-base uppercase font-bold text-white">Aquarius Swimming Pools Sdn Bhd &lpar;920548-M&rpar;</p>
                         <p class="text-neutral-400">33, Jalan Selatan 3/4, Taman Impian Emas,<br>81300 Skudai, Johor, Malaysia</p>
+                        <div class="mt-3 flex flex-col gap-1">
+                            <a href="tel:+6075953060" class="aquarius-footer-links flex items-center gap-1.5" onclick="window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'click_to_call',phone:'+6075953060',location:'footer_mobile'})">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 256 256" fill="currentColor"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.56l20.78-24.71c.2-.25.39-.5.57-.76a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46Z"/></svg>
+                                +607-595 3060
+                            </a>
+                            <a href="tel:+60125105126" class="aquarius-footer-links flex items-center gap-1.5" onclick="window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'click_to_call',phone:'+60125105126',location:'footer_mobile'})">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 256 256" fill="currentColor"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.56l20.78-24.71c.2-.25.39-.5.57-.76a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46Z"/></svg>
+                                +6012-510 5126
+                            </a>
+                        </div>
                     </address>
                 </div>
             </div>

@@ -10,6 +10,10 @@
                     <x-reusables.logo />
                 </a>
 
+                {{-- CLICK-TO-CALL (mobile only) --}}
+                {{-- <a href="tel:+60125105126" class="lg:hidden flex items-center justify-center p-2 text-neutral-700 hover:text-primary-600 transition-colors" aria-label="Call Aquarius Swimming Pools" onclick="window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'click_to_call',phone:'+60125105126',location:'navbar_mobile'})">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 256 256" fill="currentColor"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.56l20.78-24.71c.2-.25.39-.5.57-.76a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46Z"/></svg>
+                </a> --}}
                 {{-- HAMBURGER BTN --}}
                 <button type="button" class="navbar-btn-close"
                     :aria-expanded="mobileOpen"
@@ -153,6 +157,11 @@
                         </div>
 
                         <div class="side-nav-content">
+                            {{-- CLICK-TO-CALL (desktop) --}}
+                            {{-- <a href="tel:+60125105126" class="hidden lg:flex items-center gap-1.5 text-sm font-semibold text-neutral-700 hover:text-primary-600 transition-colors" aria-label="Call us" onclick="window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'click_to_call',phone:'+60125105126',location:'navbar_desktop'})">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256" fill="currentColor"><path d="M222.37,158.46l-47.11-21.11-.13-.06a16,16,0,0,0-15.17,1.4,8.12,8.12,0,0,0-.75.56L134.87,160c-15.42-7.49-31.34-23.29-38.83-38.56l20.78-24.71c.2-.25.39-.5.57-.76a16,16,0,0,0,1.32-15.06l0-.12L97.54,33.64a16,16,0,0,0-16.62-9.52A56.26,56.26,0,0,0,32,80c0,79.4,64.6,144,144,144a56.26,56.26,0,0,0,55.88-48.92A16,16,0,0,0,222.37,158.46Z"/></svg>
+                                +6012-510 5126
+                            </a> --}}
                             {{-- GET A QUOTE BTN --}}
                             <div class="nav-get-quote">
                                 <a href="{{ route('homepage') }}#contact" class="quote-btn">
@@ -162,6 +171,13 @@
                             {{-- GET A QUOTE BTN --}}
 
                             {{-- LANGUAGE SELECTOR --}}
+                            @php
+                                $currentPath = request()->getPathInfo();
+                                $qs = request()->getQueryString() ? '?' . request()->getQueryString() : '';
+                                $enUrl = preg_replace('#^/(en|ms)(/|$)#', '/en$2', $currentPath) . $qs;
+                                $msUrl = preg_replace('#^/(en|ms)(/|$)#', '/ms$2', $currentPath) . $qs;
+                                $isMs = app()->getLocale() === 'ms_MY';
+                            @endphp
                             <div class="aquarius-lang-select" x-data="{ open: false }" @click.outside="open = false">
                                 <button type="button" class="aquarius-lang-select-btn"
                                     :aria-expanded="open"
@@ -169,7 +185,7 @@
 
                                     <x-reusables.flag-icons :lang="app()->getLocale()" class="inline-block" />
 
-                                    @if (app()->getLocale() === 'en_MY')
+                                    @if (!$isMs)
                                         <span class="lg:hidden max-lg:grow max-lg:text-left">Language: EN (English)</span>
                                         <span class="hidden lg:block">EN</span>
                                     @else
@@ -183,21 +199,12 @@
                                 <div x-show="open" x-cloak class="aquarius-lang-select-dropdown"
                                     role="menu" aria-orientation="vertical">
                                     <div class="lang-select-dropdown-card">
-                                        <form action="{{ url('/change-language') }}" method="POST" id="languageFormEn">
-                                            @csrf
-                                            <button type="submit" name="language" value="en"
-                                                class="aquarius-lang-select-item">
-                                                <x-reusables.flag-icons lang="en_MY" /> <span class="text-gray-500">EN</span> English
-                                            </button>
-                                        </form>
-
-                                        <form action="{{ url('/change-language') }}" method="POST" id="languageFormMs">
-                                            @csrf
-                                            <button type="submit" name="language" value="ms"
-                                                class="aquarius-lang-select-item">
-                                                <x-reusables.flag-icons lang="ms_MY" /> <span class="text-gray-500">MS</span> Melayu
-                                            </button>
-                                        </form>
+                                        <a href="{{ $enUrl }}" class="aquarius-lang-select-item" role="menuitem" onclick="window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'language_switch',language:'en'})">
+                                            <x-reusables.flag-icons lang="en_MY" /> <span class="text-gray-500">EN</span> English
+                                        </a>
+                                        <a href="{{ $msUrl }}" class="aquarius-lang-select-item" role="menuitem" onclick="window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'language_switch',language:'ms'})">
+                                            <x-reusables.flag-icons lang="ms_MY" /> <span class="text-gray-500">MS</span> Melayu
+                                        </a>
                                     </div>
                                 </div>
                             </div>

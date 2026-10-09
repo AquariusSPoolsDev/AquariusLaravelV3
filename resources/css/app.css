@@ -150,24 +150,24 @@
     @apply flex flex-row items-center focus:outline-none focus:opacity-80 gap-x-2;
 
     img.aquarius-logo {
-        @apply w-16 h-auto shrink-0;
+        @apply size-13 shrink-0;
     }
 
     .aquarius-branding-name {
         @apply flex flex-col text-primary-900 uppercase font-heading;
 
         .name-1 {
-            @apply font-bold text-[2rem] -mb-[0.3rem];
+            @apply font-bold text-[1.7rem] -mb-[0.2rem];
         }
 
         .name-2 {
-            @apply font-semibold text-[1.2rem] -mt-[0.3rem];
+            @apply font-semibold text-[1.1rem] -mt-[0.2rem];
         }
     }
 }
 
 .navbar-brand {
-    @apply w-64;
+    @apply w-56;
 }
 
 .footer-brand {
@@ -213,17 +213,17 @@
             @apply overflow-y-auto lg:overflow-visible max-lg:h-[calc(100dvh-57px)] [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-neutral-100 [&::-webkit-scrollbar-thumb]:bg-neutral-300;
 
             .nav-flex {
-                @apply pt-4 lg:py-0 flex flex-col lg:flex-row lg:items-center lg:gap-x-8;
+                @apply pt-4 lg:py-0 flex flex-col lg:flex-row lg:items-center lg:gap-x-5;
 
                 .nav-content {
                     @apply grow;
 
                     .nav-content-details {
-                        @apply flex flex-col lg:flex-row lg:justify-center lg:items-center gap-1 lg:gap-2 lg:flex-wrap;
+                        @apply flex flex-col lg:flex-row lg:justify-center lg:items-center gap-1 lg:gap-0.5 lg:flex-wrap;
 
                         .nav-link,
                         .nav-dropdown-btn {
-                            @apply p-2 lg:px-3 text-sm text-neutral-600 rounded-lg font-bold transition-all cursor-pointer hover:text-primary-800 hover:bg-primary-50 active:text-primary-800 active:bg-primary-50 focus:text-primary-800 focus:bg-primary-50 focus:outline-none;
+                            @apply p-4 lg:px-3 py-3.5 lg:py-2 text-sm text-neutral-600 rounded-lg font-bold transition-all cursor-pointer hover:text-primary-800 hover:bg-primary-50 active:text-primary-800 active:bg-primary-50 focus:text-primary-800 focus:bg-primary-50 focus:outline-none;
                         }
 
                         .nav-link {
@@ -262,7 +262,7 @@
                 }
 
                 .nav-get-quote .quote-btn {
-                    @apply block text-center text-sm py-2 px-5 font-bold rounded-lg transition-all text-neutral-950 bg-linear-to-br from-secondary-200 via-secondary-400 to-secondary-500 hover:brightness-110 active:scale-95 active:brightness-90 focus:outline-none disabled:opacity-50 disabled:pointer-events-none;
+                    @apply block text-center text-sm py-2 px-3.5 font-bold rounded-lg transition-all text-neutral-950 bg-linear-to-br from-secondary-200 via-secondary-400 to-secondary-500 hover:brightness-110 active:scale-95 active:brightness-90 focus:outline-none disabled:opacity-50 disabled:pointer-events-none;
                 }
 
                 /* language selector */
@@ -271,7 +271,7 @@
                 }
 
                 .aquarius-lang-select-btn {
-                    @apply inline-flex py-2 px-3.5 items-center gap-x-2 text-sm font-medium rounded-lg transition-all hover:cursor-pointer hover:text-primary-800 hover:bg-primary-50 active:text-primary-800 active:bg-primary-50 focus:text-primary-800 focus:bg-primary-50 focus:outline-none;
+                    @apply inline-flex p-2 items-center gap-x-1.5 text-sm font-medium rounded-lg transition-all hover:cursor-pointer hover:text-primary-800 hover:bg-primary-50 active:text-primary-800 active:bg-primary-50 focus:text-primary-800 focus:bg-primary-50 focus:outline-none;
                     @apply max-lg:w-full max-lg:rounded-lg;
                 }
 
@@ -372,7 +372,7 @@
     }
 
     .aquarius-hero-contents {
-        @apply relative z-10 flex flex-col items-center container px-4 pt-28 gap-y-4 mx-auto;
+        @apply relative z-10 flex flex-col items-center container px-4 pt-20 lg:pt-28 gap-y-4 mx-auto;
 
         .aquarius-left-hero-content {
             .left-content-gap-small {
@@ -891,7 +891,7 @@ footer.aquarius-footer {
     }
 
     .aquarius-header-container {
-        @apply container mx-auto px-4 md:px-6 lg:px-8 pt-44 lg:pt-64 pb-20 lg:pb-28;
+        @apply container mx-auto px-4 md:px-6 lg:px-8 pt-24 lg:pt-64 pb-20 lg:pb-28;
     }
 
     .aquarius-header-title {

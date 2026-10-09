@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
         loading.classList.remove('hidden');
         loading.classList.add('flex');
 
-        axios.get('/reviews', {
+        axios.get('{{ route('customer-reviews-page') }}', {
             params: { page },
             headers: { 'X-Requested-With': 'XMLHttpRequest' }
         }).then(response => {

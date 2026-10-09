@@ -1,7 +1,11 @@
+@php
+    $reviewCount = \App\Models\Review::where('is_published', true)->count();
+    $reviewAvg   = $reviewCount > 0 ? round(\App\Models\Review::where('is_published', true)->avg('rating'), 1) : null;
+@endphp
 <script type="application/ld+json">
 {
     "@@context": "https://schema.org",
-    "@@type": "HomeAndConstructionBusiness",
+    "@@type": ["GeneralContractor", "HomeAndConstructionBusiness"],
     "@@id": "{{ url('/') }}/#localbusiness",
     "name": "Aquarius Swimming Pools Sdn Bhd",
     "url": "{{ url('/') }}",
@@ -45,6 +49,14 @@
     ],
     "areaServed": [
         {
+            "@@type": "City",
+            "name": "Johor Bahru"
+        },
+        {
+            "@@type": "AdministrativeArea",
+            "name": "Johor"
+        },
+        {
             "@@type": "Country",
             "name": "Malaysia"
         },
@@ -53,6 +65,13 @@
             "name": "Singapore"
         }
     ],
-    "priceRange": "$$"
+    "priceRange": "$$"@if($reviewAvg !== null),
+    "aggregateRating": {
+        "@@type": "AggregateRating",
+        "ratingValue": "{{ $reviewAvg }}",
+        "reviewCount": "{{ $reviewCount }}",
+        "bestRating": "5",
+        "worstRating": "1"
+    }@endif
 }
 </script>

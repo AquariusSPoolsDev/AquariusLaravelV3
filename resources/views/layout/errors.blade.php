@@ -1,5 +1,13 @@
+@php
+    // Error pages can render before LocalizationMiddleware runs (unmatched URLs, CSRF/throttle failures),
+    // so the {locale} URL default may be unset — resolve it here from the URL, then the session.
+    $errorLocale = request()->segment(1);
+    if (! in_array($errorLocale, ['en', 'ms'], true)) {
+        $errorLocale = session('locale') === 'ms_MY' ? 'ms' : 'en';
+    }
+@endphp
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="{{ $errorLocale }}" class="scroll-smooth">
 
 <head>
     <meta charset="utf-8">
@@ -19,7 +27,7 @@
     <div class="">
 
         {{-- Logo + Branding --}}
-        <a href="{{ route('homepage') }}" class="brand navbar-brand inline-flex items-center gap-3 mb-10 justify-center"
+        <a href="{{ route('homepage', ['locale' => $errorLocale]) }}" class="brand navbar-brand mx-auto mb-10 justify-center"
             aria-label="Aquarius Swimming Pools">
             <x-reusables.logo />
         </a>
@@ -33,11 +41,11 @@
 
             {{-- Buttons --}}
             <div class="flex flex-wrap items-center justify-center gap-3">
-                <a href="{{ route('homepage') }}"
+                <a href="{{ route('homepage', ['locale' => $errorLocale]) }}"
                     class="py-2.5 px-5.5 inline-flex items-center gap-2 font-bold rounded-lg transition-all text-white bg-primary hover:bg-primary-700 active:bg-primary-800 active:scale-95 focus:outline-none focus:bg-primary-700 cursor-pointer">
                     Back to Homepage
                 </a>
-                <a href="{{ route('contact-page') }}"
+                <a href="{{ route('contact-page', ['locale' => $errorLocale]) }}"
                     class="py-2.5 px-5.5 inline-flex items-center gap-2 font-bold rounded-lg transition-all border border-neutral-300 bg-white text-neutral-700 hover:bg-neutral-50 hover:border-neutral-400 active:scale-95 focus:outline-none cursor-pointer">
                     Contact Us
                 </a>

@@ -8,7 +8,7 @@
             "@@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "{{ url('/') }}"
+            "item": "{{ url('/' . (app()->getLocale() === 'ms_MY' ? 'ms' : 'en')) }}"
         }@foreach($items as $index => $crumb),
         {
             "@@type": "ListItem",

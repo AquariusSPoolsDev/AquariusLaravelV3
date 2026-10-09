@@ -87,6 +87,7 @@
                 class="form-input @error('cust_pool_interests') border-error-300 @enderror"
                 x-model="interest" required>
                 <option value="">{{ __('strings.cf_step_2_select_an_option') }}</option>
+                <option value="Free Pool Assessment">{{ __('strings.cf_step_2_input_freeassessment') }}</option>
                 <option value="All Types of Pools">{{ __('strings.cf_step_2_input_alltypespools') }}</option>
                 <option value="Tiled Concrete Pools">{{ __('strings.cf_step_2_input_tiledconcrete') }}</option>
                 <option value="Fibreglass Pools">{{ __('strings.cf_step_2_input_fibreglasspools') }}</option>

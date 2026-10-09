@@ -4,10 +4,10 @@
     <head>
         <x-partials.head-metadata />
     </head>
-    <body class="antialiased scroll-mt-22 lg:scroll-mt-25">
+    <body class="antialiased scroll-mt-20 lg:scroll-mt-23.25">
         <x-partials.navbar-menu-top />
         
-        <main class="mt-22 lg:mt-25 text-sm lg:text-base">
+        <main class="mt-20 lg:mt-23.25 text-sm lg:text-base">
             @yield('content')
         </main>
 

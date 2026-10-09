@@ -67,10 +67,12 @@
     </a>
 </div>
 <script>
-    gtag('event', 'generate_lead', {
-        'event_category': 'contact_form',
-        'event_label': 'pool_inquiry',
-        'value': 1
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+        event: 'generate_lead',
+        event_category: 'contact_form',
+        event_label: 'pool_inquiry',
+        value: 1
     });
 </script>
 @endsection

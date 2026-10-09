@@ -7,8 +7,7 @@
         ogDescription="Over 1,000 pools built across Malaysia. Johor Bahru's swimming pool specialist. Concrete, vinyl, and fibreglass built to your specifications. Free consultation."
         ogImage="{{ asset('assets/images/pool-image-placeholder-5.jpg') }}"
     />
-    <x-seo.local-business />
-    <x-seo.breadcrumb-schema :items="[]" />
+<x-seo.breadcrumb-schema :items="[]" />
 @endsection
 
 {{-- HOMEPAGE LAYOUT --}}

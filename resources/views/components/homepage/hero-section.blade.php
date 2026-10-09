@@ -80,7 +80,7 @@
                 </ul>
 
                 <div class="aquarius-cta-buttons" data-animate data-delay="350">
-                    <a href="#contact" type="button" class="aquarius-cta-primary" title="{{ __('strings.hero_btn_quote') }}">
+                    <a href="{{ route('contact-page') }}?interest=Free+Pool+Assessment" type="button" class="aquarius-cta-primary" title="{{ __('strings.hero_btn_quote') }}" onclick="window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'book_assessment_click',location:'hero'})">
                         {{ __('strings.hero_btn_quote') }}
                     </a>
                     <a href="#our-pools" type="button" class="aquarius-cta-secondary" title="{{ __('strings.hero_btn_explore') }}">

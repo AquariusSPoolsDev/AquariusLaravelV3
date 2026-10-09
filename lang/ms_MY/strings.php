@@ -36,7 +36,7 @@ return [
     'hero_feature_3' => 'Pembaikian & Penyelengaraan Kolam Renang',
     'hero_feature_4' => 'Peralatan',
     'hero_feature_5' => 'Bahan Kimia',
-    'hero_btn_quote' => 'Dapatkan Sebut Harga',
+    'hero_btn_quote' => 'Tempah Penilaian Percuma',
     'hero_btn_explore' => 'Teroka Kolam Renang Kami',
     'video_player_support' => 'Pelayar anda tidak menyokong teg video.',
 
@@ -92,7 +92,7 @@ return [
     // HOMEPAGE CTA STRIP
     'homepage_cta_strip_heading' => 'Kolam renang anda bermula dengan satu perbualan.',
     'homepage_cta_strip_body' => 'Tiada paksaan. Beritahu kami apa yang anda fikirkan.',
-    'homepage_cta_strip_btn' => 'Dapatkan Sebut Harga Percuma',
+    'homepage_cta_strip_btn' => 'Tempah Penilaian Percuma',
 
     // HOMEPAGE FAQ
     'homepage_services_pill' => 'Perkhidmatan Kami',
@@ -769,6 +769,7 @@ return [
     'cf_step_1_name_input' => 'Nama',
     'cf_step_1_email_input' => 'Emel',
     'cf_step_1_phone_input' => 'Nombor Telefon',
+    'cf_step_2_input_freeassessment' => 'Penilaian Kolam Percuma',
     'cf_step_2_input_alltypespools' => 'Semua Jenis Kolam Renang',
     'cf_step_2_input_tiledconcrete' => 'Kolam Renang Konkrit Berjubin',
     'cf_step_2_input_fibreglasspools' => 'Kolam Renang Gentian Kaca',
