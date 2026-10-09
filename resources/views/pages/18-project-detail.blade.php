@@ -14,7 +14,7 @@ $headerSubtitle = 'projects_subtitle_heading';
 @section('seoData')
 <x-seo.seo ogPageTitle="{{ $project->title }}"
     ogDescription="{{ $project->description ?: ($project->location ? $project->title . ', ' . $project->location : $project->title) }}"
-    ogImage="{{ ($project->gallery_images && count($project->gallery_images)) ? asset('storage/' . $project->gallery_images[0]) : asset('assets/images/' . $imageFileLoc) }}" />
+    ogImage="{{ ($project->gallery_images && count($project->gallery_images)) ? asset('storage/' . $project->gallery_images[0]) : asset('assets/images/pool_header/'.$imageFileLoc) }}" />
 <x-seo.breadcrumb-schema :items="[
     ['name' => 'Notable Projects', 'url' => route('projects-page')],
     ['name' => $project->title, 'url' => route('project-detail-page', $project->slug)],

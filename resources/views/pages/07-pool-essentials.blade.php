@@ -15,7 +15,7 @@ $headerSubtitle = 'pool_item_subtitle_heading';
    <x-seo.seo
         ogPageTitle="{{__('strings.pool_item_title_heading')}}"
         ogDescription="{{__('strings.pool_item_meta_description')}}"
-        ogImage="{{ asset('assets/images/'.$imageFileLoc) }}"
+        ogImage="{{ asset('assets/images/pool_header/'.$imageFileLoc) }}"
     />
     <x-seo.breadcrumb-schema :items="[
         ['name' => 'Pool Items & Equipment', 'url' => route('pool-items-page')],

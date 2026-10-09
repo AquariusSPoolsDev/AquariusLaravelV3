@@ -129,6 +129,9 @@ return [
     'back_to_top_text' => 'Kembali ke atas',
     'chat_whatsapp_btn' => 'Tanya Kami!',
 
+    // HOMEPAGE META
+    'homepage_meta_description' => 'Lebih 1,000 kolam renang dibina di seluruh Malaysia. Pakar kolam renang Johor Bahru. Kolam konkrit, vinil dan gentian kaca dibina mengikut spesifikasi anda. Perundingan percuma.',
+
     // OUR POOLS MAIN PAGE
     'our_pools_title_heading' => 'Kolam Renang Konkrit, Vinil & Gentian Kaca di Johor Bahru',
     'our_pools_display_heading' => 'Kolam Renang Kami',

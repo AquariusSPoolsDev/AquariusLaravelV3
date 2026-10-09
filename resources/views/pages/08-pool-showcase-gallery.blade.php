@@ -15,7 +15,7 @@ $headerSubtitle = 'showcase_subtitle_heading';
    <x-seo.seo
         ogPageTitle="{{__('strings.showcase_title_heading')}}"
         ogDescription="{{__('strings.showcase_meta_description')}}"
-        ogImage="{{ asset('assets/images/'.$imageFileLoc) }}"
+        ogImage="{{ asset('assets/images/pool_header/'.$imageFileLoc) }}"
     />
     <x-seo.breadcrumb-schema :items="[
         ['name' => 'Pool Showcase Gallery', 'url' => route('pool-showcase-gallery')],

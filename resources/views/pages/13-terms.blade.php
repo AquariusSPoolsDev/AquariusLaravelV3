@@ -5,7 +5,7 @@
 
 {{-- PARSE HEADER STRINGS --}}
 @php
-    $imageFileLoc   = 'header-promotions.jpg';
+    $imageFileLoc   = 'header-terms.jpg';
     $headerTitle    = 'terms_display_heading';
     $headerSubtitle = 'terms_subtitle_heading';
 @endphp
@@ -15,7 +15,7 @@
    <x-seo.seo
         ogPageTitle="{{__('strings.terms_title_heading')}}"
         ogDescription="{{__('strings.terms_subtitle_heading')}}"
-        ogImage="{{ asset('assets/images/'.$imageFileLoc) }}"
+        ogImage="{{ asset('assets/images/pool_header/'.$imageFileLoc) }}"
         :noIndex="true"
     /> 
 @endsection

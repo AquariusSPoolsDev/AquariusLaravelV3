@@ -13,7 +13,7 @@ $headerSubtitle = 'contact_subtitle_heading';
 {{-- META TAG PAGE --}}
 @section('seoData')
 <x-seo.seo ogPageTitle="{{__('strings.contact_title_heading')}}" ogDescription="{{__('strings.contact_meta_description')}}"
-    ogImage="{{ asset('assets/images/'.$imageFileLoc) }}" />
+    ogImage="{{ asset('assets/images/pool_header/'.$imageFileLoc) }}" />
 <x-seo.breadcrumb-schema :items="[
     ['name' => 'Contact Us', 'url' => route('contact-page')],
 ]" />

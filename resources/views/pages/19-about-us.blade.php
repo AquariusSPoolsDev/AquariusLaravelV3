@@ -15,7 +15,7 @@
    <x-seo.seo
         ogPageTitle="{{__('strings.' . $headerTitle)}}"
         ogDescription="{{__('strings.' . $headerSubtitle)}}"
-        ogImage="{{ asset('assets/images/'.$imageFileLoc) }}"
+        ogImage="{{ asset('assets/images/pool_header/'.$imageFileLoc) }}"
     />
     <x-seo.breadcrumb-schema :items="[
         ['name' => 'About Us', 'url' => route('about-page')],

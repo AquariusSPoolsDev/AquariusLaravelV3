@@ -15,7 +15,7 @@
    <x-seo.seo
         ogPageTitle="{{__('strings.faq_title_heading')}}"
         ogDescription="{{__('strings.faq_meta_description')}}"
-        ogImage="{{ asset('assets/images/'.$imageFileLoc) }}"
+        ogImage="{{ asset('assets/images/pool_header/'.$imageFileLoc) }}"
     />
     <x-seo.faq-schema />
     <x-seo.breadcrumb-schema :items="[

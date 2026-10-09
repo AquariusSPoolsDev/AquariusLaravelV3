@@ -15,7 +15,7 @@
    <x-seo.seo
         ogPageTitle="{{__('strings.submission_accepted_title_heading')}}"
         ogDescription="{{__('strings.submission_accepted_subtitle_heading')}}"
-        ogImage="{{ asset('assets/images/'.$imageFileLoc) }}"
+        ogImage="{{ asset('assets/images/pool_header/'.$imageFileLoc) }}"
         :noIndex="true"
     /> 
 @endsection

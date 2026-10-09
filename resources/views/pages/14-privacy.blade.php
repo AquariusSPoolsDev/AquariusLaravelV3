@@ -15,7 +15,7 @@
    <x-seo.seo
         ogPageTitle="{{__('strings.privacy_title_heading')}}"
         ogDescription="{{__('strings.privacy_subtitle_heading')}}"
-        ogImage="{{ asset('assets/images/'.$imageFileLoc) }}"
+        ogImage="{{ asset('assets/images/pool_header/'.$imageFileLoc) }}"
         :noIndex="true"
     />
 @endsection
@@ -202,7 +202,7 @@
         <p class="mb-4">If you have any questions or concerns about this Privacy Policy, please contact us:</p>
         <ul class="list-disc pl-6 space-y-2 mb-4">
             <li><strong>Company:</strong> Aquarius Swimming Pools Sdn Bhd (920548-M)</li>
-            <li><strong>Address:</strong> No. 33, Jalan Selatan 3/4, Taman Impian Emas, 81300 Johor Bahru, Johor</li>
+            <li><strong>Address:</strong> No. 33, Jalan Selatan 3/4, Taman Impian Emas, 81300 Skudai, Johor</li>
             <li><strong>Email:</strong> <a href="mailto:mail@aquariuspools.com.my" class="font-semibold text-neutral-950 underline underline-offset-4 hover:no-underline">mail@aquariuspools.com.my</a></li>
             <li><strong>Office:</strong> <a href="tel:+6075953060" class="font-semibold text-neutral-950 underline underline-offset-4 hover:no-underline">+607 595 3060</a></li>
         </ul>

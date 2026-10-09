@@ -15,7 +15,7 @@ $headerSubtitle = 'vinyl_pool_subtitle_heading';
 <x-seo.seo
     ogPageTitle="{{__('strings.vinyl_pool_title_heading')}}"
     ogDescription="{{__('strings.vinyl_pool_meta_description')}}"
-    ogImage="{{ asset('assets/images/'.$imageFileLoc) }}" />
+    ogImage="{{ asset('assets/images/pool_header/'.$imageFileLoc) }}" />
 <x-seo.service-schema
     serviceName="Vinyl Swimming Pool Installation"
     serviceDescription="{{__('strings.vinyl_pool_meta_description')}}"

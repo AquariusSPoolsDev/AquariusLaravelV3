@@ -129,6 +129,9 @@ return [
     'back_to_top_text' => 'Back to Top',
     'chat_whatsapp_btn' => 'Chat with Us!',
 
+    // HOMEPAGE META
+    'homepage_meta_description' => 'Over 1,000 pools built across Malaysia. Johor Bahru\'s swimming pool specialist. Concrete, vinyl, and fibreglass built to your specifications. Free consultation.',
+
     // OUR POOLS MAIN PAGE
     'our_pools_title_heading' => 'Concrete, Vinyl & Fibreglass Pools in Johor Bahru',
     'our_pools_display_heading' => 'Our Pools',

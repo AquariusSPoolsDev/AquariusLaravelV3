@@ -4,7 +4,7 @@
 {{-- META TAG PAGE --}}
 @section('seoData')
    <x-seo.seo
-        ogDescription="Over 1,000 pools built across Malaysia. Johor Bahru's swimming pool specialist. Concrete, vinyl, and fibreglass built to your specifications. Free consultation."
+        ogDescription="{{ __('strings.homepage_meta_description') }}"
         ogImage="{{ asset('assets/images/pool-image-placeholder-5.jpg') }}"
     />
 <x-seo.breadcrumb-schema :items="[]" />

@@ -1,7 +1,7 @@
 <section class="aquarius-hero-page-content-section">
     <video id="background-video" autoplay muted loop class="hero-video-bg">
         <source src="{{ asset('assets/videos/aquarius-homepage-hero-video.mp4') }}" type="video/mp4">
-        {{ __('strings.video_player') }}
+        {{ __('strings.video_player_support') }}
     </video>
     <div class="hero-video-overlay"></div>
 

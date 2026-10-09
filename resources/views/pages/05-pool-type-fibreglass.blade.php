@@ -13,7 +13,7 @@ $headerSubtitle = 'fibreglass_pool_subtitle_heading';
 {{-- META TAG PAGE --}}
 @section('seoData')
 <x-seo.seo ogPageTitle="{{__('strings.fibreglass_pool_title_heading')}}" ogDescription="{{__('strings.fibreglass_pool_meta_description')}}"
-    ogImage="{{ asset('assets/images/'.$imageFileLoc) }}" />
+    ogImage="{{ asset('assets/images/pool_header/'.$imageFileLoc) }}" />
 <x-seo.service-schema
     serviceName="Fibreglass Swimming Pool Installation"
     serviceDescription="{{__('strings.fibreglass_pool_meta_description')}}"
@@ -38,7 +38,8 @@ $headerSubtitle = 'fibreglass_pool_subtitle_heading';
         <x-our-pools-fibreglass.pool-creation-steps-desc />
     </div>
 
-    {{-- STEP IMAGE GRID --}}
+    {{-- STEP IMAGE GRID — hidden until the step photos are added to assets/images/fibreglass/steps/ --}}
+    @if (file_exists(public_path('assets/images/fibreglass/steps/step-1.jpg')))
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
         @foreach ([1, 2, 3, 4] as $step)
         <div data-animate data-delay="{{ ($loop->index) * 80 }}">
@@ -51,6 +52,7 @@ $headerSubtitle = 'fibreglass_pool_subtitle_heading';
         </div>
         @endforeach
     </div>
+    @endif
 </section>
 
 {{-- PROS & CONS --}}
