@@ -19,6 +19,9 @@
         ['route' => 'contact-page',          'args' => [],       'freq' => 'monthly', 'priority' => '0.6'],
         ['route' => 'about-page',            'args' => [],       'freq' => 'monthly', 'priority' => '0.5'],
     ];
+
+    // Leave out pages switched off on the admin Page Visibility screen.
+    $pages = array_filter($pages, fn (array $page): bool => \App\Enums\SitePage::forRoute($page['route'])?->isVisible() ?? true);
 @endphp
 
 @foreach($pages as $page)

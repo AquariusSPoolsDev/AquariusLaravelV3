@@ -2,15 +2,28 @@
 
 namespace Tests\Feature;
 
+use App\Enums\SitePage;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 use PHPUnit\Framework\Attributes\DataProvider;
 use Tests\TestCase;
 
 /**
- * Read-only tests — phpunit.xml points at the development MySQL database,
- * so these must never use RefreshDatabase or write records.
+ * phpunit.xml points at the development MySQL database. Every page is switched on so its content
+ * can be checked; that runs inside a transaction that is rolled back, so nothing is kept.
  */
 class PageContentIntegrityTest extends TestCase
 {
+    use DatabaseTransactions;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        foreach (SitePage::cases() as $page) {
+            $page->setVisible(true);
+        }
+    }
+
     private const PAGES = [
         '', '/about-us', '/our-pools', '/concrete-pools', '/vinyl-pools', '/fibreglass-pools',
         '/our-pool-services', '/pool-items-equipments', '/showcase', '/projects', '/reviews',

@@ -41,6 +41,7 @@
                     </div>
                 </div>
 
+                @if (\App\Enums\SitePage::AboutUs->isVisible())
                 <div class="mt-8" data-animate data-delay="400">
                     <a href="{{ route('about-page') }}"
                         class="inline-flex items-center gap-3 px-10 py-4 rounded-lg border border-primary-600 text-primary-700 font-semibold text-base lg:text-lg hover:bg-primary-50 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary-100 active:scale-95 active:translate-y-0 transition-all duration-200">
@@ -48,6 +49,7 @@
                         <svg class="size-5 transition-transform group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path></svg>
                     </a>
                 </div>
+                @endif
             </div>
 
             {{-- RIGHT: Image grid --}}

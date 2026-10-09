@@ -58,8 +58,10 @@ Route::get('/', $redirectToEnglish);
 
 // ─── Locale-prefixed public routes ───────────────────────────────────────────
 
+// Every page here can be switched off on the admin Page Visibility screen (returns 404).
 Route::prefix('{locale}')
     ->where(['locale' => 'en|ms'])
+    ->middleware('site.page')
     ->group(function () {
 
         // Homepage

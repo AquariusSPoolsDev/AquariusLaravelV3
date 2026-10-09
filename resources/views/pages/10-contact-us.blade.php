@@ -58,11 +58,13 @@ $headerSubtitle = 'contact_subtitle_heading';
                 </x-reusables.subheading>
                 <p class="aquarius-visit-showpool-desc">{{__('strings.contact_visit_showpool_desc')}}</p>
             </div>
+            @if (\App\Enums\SitePage::AboutUs->isVisible())
             <a href="{{ route('about-page') }}#showroom"
                 class="group inline-flex items-center gap-1 text-secondary-800 hover:underline underline-offset-4 font-medium">
                 {{__('strings.contact_visit_showpool_link')}}
                 <svg class="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path></svg>
             </a>
+            @endif
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8">

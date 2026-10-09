@@ -64,9 +64,11 @@
                 <h4 class="aquarius-footer-heading">{{__('strings.footer_contact_title')}}</h4>
 
                 <div class="mt-4 flex flex-col gap-y-4">
+                    @if (\App\Enums\SitePage::AboutUs->isVisible())
                     <p><a class="aquarius-footer-links" href="{{ route('about-page') }}">{{__('strings.footer_about_us')}}</a></p>
 
                     <p><a class="aquarius-footer-links" href="{{ route('about-page') }}#showroom">{{__('strings.footer_showroom')}}</a></p>
+                    @endif
 
                     <p><a class="aquarius-footer-links" href="{{ route('contact-page') }}">{{__('strings.footer_contact')}}</a></p>
 
@@ -81,7 +83,9 @@
                 <div class="mt-4 flex flex-col gap-y-4">
                     <p><a class="aquarius-footer-links" href="{{ route('pool-showcase-gallery') }}">{{__('strings.footer_pool_showcase')}}</a></p>
 
+                    @if (\App\Enums\SitePage::Projects->isVisible())
                     <p><a class="aquarius-footer-links" href="{{ route('projects-page') }}">{{__('strings.footer_projects')}}</a></p>
+                    @endif
 
                     <p><a class="aquarius-footer-links" href="{{ route('customer-reviews-page') }}">{{__('strings.footer_reviews')}}</a></p>
 

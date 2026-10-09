@@ -74,7 +74,9 @@ class AdminPanelProvider extends PanelProvider
                     ->label('View website')
                     ->icon(Heroicon::OutlinedGlobeAlt)
                     ->url(fn (): string => route('homepage', ['locale' => 'en']))
-                    ->openUrlInNewTab(),
+                    ->openUrlInNewTab()
+                    // A negative sort places it above the theme switcher, under Profile.
+                    ->sort(-1),
             ])
             ->unsavedChangesAlerts()
             ->favicon(asset('assets/favicon/favicon-16x16.png'))

@@ -44,10 +44,12 @@
                                 </a>
 
                                 {{-- ABOUT US LINK --}}
+                                @if (\App\Enums\SitePage::AboutUs->isVisible())
                                 <a class="nav-link {{ Route::currentRouteName() === 'about-page' ? 'nav-link-active' : '' }}"
                                     href="{{ route('about-page') }}">
                                     {{__('strings.navbar_about_us')}}
                                 </a>
+                                @endif
                                 {{-- ABOUT US LINK --}}
 
                                 {{-- DROPDOWN: OUR POOLS --}}
@@ -108,10 +110,12 @@
                                                 {{__('strings.navbar_pool_showcase')}}
                                             </a>
 
+                                            @if (\App\Enums\SitePage::Projects->isVisible())
                                             <a class="nav-link {{ in_array(Route::currentRouteName(), ['projects-page', 'project-detail-page']) ? 'nav-link-active' : '' }}"
                                                 href="{{ route('projects-page') }}" role="menuitem">
                                                 {{__('strings.navbar_projects')}}
                                             </a>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>

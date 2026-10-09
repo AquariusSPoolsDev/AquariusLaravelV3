@@ -55,6 +55,7 @@
     </a>
 
     {{-- View Projects --}}
+    @if (\App\Enums\SitePage::Projects->isVisible())
     <a href="{{ route('projects-page') }}" title="{{ __('strings.submission_accepted_cta_projects_title') }}"
         class="group flex items-center gap-4 bg-white border border-neutral-200 rounded-lg p-4 lg:p-6 transition-all duration-200 hover:-translate-y-1 hover:border-secondary-300 hover:shadow-lg hover:shadow-secondary-100 active:scale-95 active:shadow-none active:translate-y-0">
         <div class="shrink-0 flex items-center justify-center w-12 h-12 rounded-full bg-secondary-50 text-secondary-600 transition-colors group-hover:bg-secondary-100">
@@ -65,6 +66,7 @@
             <p class="text-neutral-500">{{ __('strings.submission_accepted_cta_projects_desc') }}</p>
         </div>
     </a>
+    @endif
 </div>
 <script>
     window.dataLayer = window.dataLayer || [];
