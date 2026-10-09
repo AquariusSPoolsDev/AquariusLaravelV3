@@ -20,6 +20,18 @@ $redirectToEnglish = function (Request $request): RedirectResponse {
     return redirect('/en'.rtrim($request->getPathInfo(), '/').($query ? '?'.$query : ''), 301);
 };
 
+// ─── Old v2 subdomain → same path on the main domain ─────────────────────────
+// Registered first: routes without a domain would otherwise match v2 requests too.
+// The main domain then applies its own redirects (/ → /en, old URLs → /en/...).
+
+Route::domain('v2.aquariusswimmingpools.com')->group(function (): void {
+    Route::get('/{path?}', function (Request $request): RedirectResponse {
+        $query = $request->getQueryString();
+
+        return redirect()->away('https://aquariusswimmingpools.com'.$request->getPathInfo().($query ? '?'.$query : ''), 301);
+    })->where('path', '.*');
+});
+
 // ─── Utility routes (no locale prefix) ───────────────────────────────────────
 
 Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap-xml');
@@ -152,3 +164,30 @@ foreach ([
 ] as $legacyPath) {
     Route::get($legacyPath, $redirectToEnglish);
 }
+
+// ─── 301 redirects from the original site's URLs → their /en page in one hop ──
+
+foreach ([
+    '/our-pools/concrete-pools' => '/en/concrete-pools',
+    '/our-pools/vinyl-pools' => '/en/vinyl-pools',
+    '/our-pools/fiberglass-pools' => '/en/fibreglass-pools',
+    '/pool-gallery' => '/en/showcase',
+    '/services' => '/en/our-pool-services',
+    '/services/our-services' => '/en/our-pool-services',
+    '/services/pool-items' => '/en/pool-items-equipments',
+    '/contact' => '/en/contact-us',
+    '/contact/faq' => '/en/faq',
+    '/legal' => '/en/terms',
+    '/legal/terms-and-conditions' => '/en/terms',
+    '/legal/privacy-policy' => '/en/privacy',
+    '/promotions.php' => '/en/promotions',
+] as $oldPath => $newPath) {
+    Route::get($oldPath, function (Request $request) use ($newPath): RedirectResponse {
+        $query = $request->getQueryString();
+
+        return redirect($newPath.($query ? '?'.$query : ''), 301);
+    });
+}
+
+// The online shop lives on its own site; a temporary redirect in case its address changes.
+Route::get('/services/pool-shop', fn (): RedirectResponse => redirect()->away('https://thesplashshop.com'));

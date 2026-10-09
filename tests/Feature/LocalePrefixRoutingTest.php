@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use Illuminate\Support\Facades\URL;
+use PHPUnit\Framework\Attributes\DataProvider;
 use Tests\TestCase;
 
 /**
@@ -98,5 +99,76 @@ class LocalePrefixRoutingTest extends TestCase
         $this->getJson('/en/reviews?page=1', ['X-Requested-With' => 'XMLHttpRequest'])
             ->assertOk()
             ->assertJsonStructure(['html', 'pagination']);
+    }
+
+    /**
+     * @return array<string, array{string, string}>
+     */
+    public static function originalSiteUrls(): array
+    {
+        return [
+            'concrete pools' => ['/our-pools/concrete-pools', '/en/concrete-pools'],
+            'vinyl pools' => ['/our-pools/vinyl-pools', '/en/vinyl-pools'],
+            'fiberglass spelling' => ['/our-pools/fiberglass-pools', '/en/fibreglass-pools'],
+            'gallery' => ['/pool-gallery', '/en/showcase'],
+            'services' => ['/services', '/en/our-pool-services'],
+            'our services' => ['/services/our-services', '/en/our-pool-services'],
+            'pool items' => ['/services/pool-items', '/en/pool-items-equipments'],
+            'contact' => ['/contact', '/en/contact-us'],
+            'faq' => ['/contact/faq', '/en/faq'],
+            'legal' => ['/legal', '/en/terms'],
+            'terms' => ['/legal/terms-and-conditions', '/en/terms'],
+            'privacy' => ['/legal/privacy-policy', '/en/privacy'],
+            'old promotions script' => ['/promotions.php', '/en/promotions'],
+            'trailing slash' => ['/contact/', '/en/contact-us'],
+        ];
+    }
+
+    #[DataProvider('originalSiteUrls')]
+    public function test_original_site_urls_redirect_permanently_in_one_hop(string $oldPath, string $newPath): void
+    {
+        $this->get($oldPath)
+            ->assertStatus(301)
+            ->assertRedirect($newPath);
+
+        $this->get($newPath)->assertOk();
+    }
+
+    public function test_original_site_redirect_keeps_query_string(): void
+    {
+        $this->get('/pool-gallery?utm_source=facebook')
+            ->assertStatus(301)
+            ->assertRedirect('/en/showcase?utm_source=facebook');
+    }
+
+    public function test_v2_subdomain_redirects_to_the_same_path_on_the_main_domain(): void
+    {
+        $this->get('http://v2.aquariusswimmingpools.com/')
+            ->assertStatus(301)
+            ->assertRedirect('https://aquariusswimmingpools.com/');
+
+        $this->get('http://v2.aquariusswimmingpools.com/pool-gallery?utm_source=facebook')
+            ->assertStatus(301)
+            ->assertRedirect('https://aquariusswimmingpools.com/pool-gallery?utm_source=facebook');
+    }
+
+    public function test_main_domain_is_not_caught_by_the_v2_redirect(): void
+    {
+        $this->get('http://aquariusswimmingpools.com/en/faq')->assertOk();
+    }
+
+    public function test_old_pool_shop_link_goes_to_the_online_shop(): void
+    {
+        $this->get('/services/pool-shop')->assertRedirect('https://thesplashshop.com');
+    }
+
+    public function test_robots_txt_lets_google_index_pool_photos_only(): void
+    {
+        $robots = file_get_contents(public_path('robots.txt'));
+
+        $this->assertStringContainsString('Disallow: /storage', $robots);
+        $this->assertStringContainsString('Allow: /storage/image_gallery/', $robots);
+        $this->assertStringContainsString('Allow: /storage/projects/', $robots);
+        $this->assertStringNotContainsString('Allow: /storage/promotion_materials', $robots);
     }
 }

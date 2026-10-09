@@ -3,6 +3,9 @@ Allow: /
 
 Disallow: /admin
 Disallow: /storage
+# Pool photos (watermarked before upload) may appear in Google Images
+Allow: /storage/image_gallery/
+Allow: /storage/projects/
 Disallow: /thank-you
 Disallow: /send-email
 Disallow: /dismiss-promotion
