@@ -22,3 +22,6 @@ yarn-error.log
 /.zed
 /.claude
 /docs
+
+# Editor language-server bootstrap files
+/storage/framework/lsp-*.php
