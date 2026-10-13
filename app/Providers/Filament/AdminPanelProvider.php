@@ -8,6 +8,7 @@ use App\Filament\Widgets\ImageGalleryWidget;
 use App\Filament\Widgets\LatestEnquiriesWidget;
 use App\Filament\Widgets\PromotionsWidget;
 use App\Filament\Widgets\ReviewsWidget;
+use App\Http\Middleware\AdminDomain;
 use BezhanSalleh\FilamentShield\FilamentShieldPlugin;
 use Filament\Actions\Action;
 use Filament\Enums\ThemeMode;
@@ -34,7 +35,8 @@ class AdminPanelProvider extends PanelProvider
         return $panel
             ->default()
             ->id('admin')
-            ->path('admin')
+            ->domain(AdminDomain::host())
+            ->path(AdminDomain::host() ? '' : 'admin')
             ->viteTheme('resources/css/filament/admin/theme.css')
             ->login()
             ->passwordReset()
@@ -73,7 +75,8 @@ class AdminPanelProvider extends PanelProvider
                 'view-website' => Action::make('viewWebsite')
                     ->label('View website')
                     ->icon(Heroicon::OutlinedGlobeAlt)
-                    ->url(fn (): string => route('homepage', ['locale' => 'en']))
+                    // The main site's address, not route(): on the admin subdomain route() would point back at the subdomain.
+                    ->url(fn (): string => rtrim(config('app.url'), '/').'/en')
                     ->openUrlInNewTab()
                     // A negative sort places it above the theme switcher, under Profile.
                     ->sort(-1),
@@ -109,6 +112,7 @@ class AdminPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
+                AdminDomain::class,
             ])
             ->authMiddleware([
                 Authenticate::class,

@@ -6,6 +6,7 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\PromotionController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\SitemapController;
+use App\Http\Middleware\AdminDomain;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -51,6 +52,16 @@ Route::post('/dismiss-promotion', function () {
 
     return response()->json(['success' => true]);
 })->name('dismiss-promotion');
+
+// ─── Admin panel on its own subdomain → old /admin links follow it there ─────
+
+if (AdminDomain::host()) {
+    Route::get('/admin/{path?}', function (Request $request, ?string $path = null): RedirectResponse {
+        $query = $request->getQueryString();
+
+        return redirect()->away(rtrim(config('app.admin_url'), '/').'/'.$path.($query ? '?'.$query : ''), 301);
+    })->where('path', '.*');
+}
 
 // ─── Root redirect → /en ──────────────────────────────────────────────────────
 

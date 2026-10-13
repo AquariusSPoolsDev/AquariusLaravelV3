@@ -40,7 +40,9 @@ return [
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
+            // Relative, so files load from whichever host serves the page. On the admin subdomain an
+            // absolute main-site URL is cross-origin, and the browser blocks the upload field's preview.
+            'url' => '/storage',
             'visibility' => 'public',
             'throw' => false,
         ],

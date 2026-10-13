@@ -56,6 +56,20 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Admin Panel URL
+    |--------------------------------------------------------------------------
+    |
+    | When set (e.g. https://admin.aquariusswimmingpools.com), the admin panel
+    | lives at the root of that subdomain, /admin on the main site redirects
+    | there, and the subdomain answers admin pages only. When empty, the
+    | admin panel stays at /admin on the main site (local development).
+    |
+    */
+
+    'admin_url' => env('ADMIN_URL'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Application Timezone
     |--------------------------------------------------------------------------
     |
