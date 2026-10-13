@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\PromotionResource\Pages;
 
 use App\Filament\Resources\PromotionResource;
+use App\Models\Promotion;
 use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
 use Illuminate\Support\Facades\Storage;
@@ -20,13 +21,17 @@ class EditPromotion extends EditRecord
 
     protected function beforeSave(): void
     {
-        $promotion = $this->record;
-        $oldAttachments = $promotion->file_attachment ?? [];
-        $newAttachments = $this->data['file_attachment'] ?? $oldAttachments;
+        $oldAttachments = $this->record->file_attachment ?? [];
 
-        $filesToDelete = array_diff($oldAttachments, $newAttachments);
-        foreach ($filesToDelete as $path) {
-            Storage::disk('public')->delete('promotion_materials/'.$path);
+        // The form holds "promotion_materials/<file>" (keyed by upload id) and the record bare file names,
+        // so compare file names only. Otherwise every existing image looks removed and gets deleted.
+        $newAttachments = array_map(
+            Promotion::fileName(...),
+            array_values($this->data['file_attachment'] ?? $oldAttachments),
+        );
+
+        foreach (array_diff($oldAttachments, $newAttachments) as $fileName) {
+            Storage::disk('public')->delete(Promotion::DIRECTORY.'/'.$fileName);
         }
     }
 }
