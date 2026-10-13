@@ -5,6 +5,17 @@
     if (! in_array($errorLocale, ['en', 'ms'], true)) {
         $errorLocale = session('locale') === 'ms_MY' ? 'ms' : 'en';
     }
+
+    // On the admin subdomain the public pages are blocked, so the buttons point at the main site.
+    // Unprefixed paths work on the old public site today and 301 to /en/... once the new one is live.
+    if (request()->getHost() === \App\Http\Middleware\AdminDomain::host()) {
+        $mainSite = rtrim(config('app.url'), '/');
+        $errorHomeUrl = $mainSite.'/';
+        $errorContactUrl = $mainSite.'/contact-us';
+    } else {
+        $errorHomeUrl = route('homepage', ['locale' => $errorLocale]);
+        $errorContactUrl = route('contact-page', ['locale' => $errorLocale]);
+    }
 @endphp
 <!DOCTYPE html>
 <html lang="{{ $errorLocale }}" class="scroll-smooth">
@@ -27,7 +38,7 @@
     <div class="">
 
         {{-- Logo + Branding --}}
-        <a href="{{ route('homepage', ['locale' => $errorLocale]) }}" class="brand navbar-brand mx-auto mb-10 justify-center"
+        <a href="{{ $errorHomeUrl }}" class="brand navbar-brand mx-auto mb-10 justify-center"
             aria-label="Aquarius Swimming Pools">
             <x-reusables.logo />
         </a>
@@ -41,11 +52,11 @@
 
             {{-- Buttons --}}
             <div class="flex flex-wrap items-center justify-center gap-3">
-                <a href="{{ route('homepage', ['locale' => $errorLocale]) }}"
+                <a href="{{ $errorHomeUrl }}"
                     class="py-2.5 px-5.5 inline-flex items-center gap-2 font-bold rounded-lg transition-all text-white bg-primary hover:bg-primary-700 active:bg-primary-800 active:scale-95 focus:outline-none focus:bg-primary-700 cursor-pointer">
                     Back to Homepage
                 </a>
-                <a href="{{ route('contact-page', ['locale' => $errorLocale]) }}"
+                <a href="{{ $errorContactUrl }}"
                     class="py-2.5 px-5.5 inline-flex items-center gap-2 font-bold rounded-lg transition-all border border-neutral-300 bg-white text-neutral-700 hover:bg-neutral-50 hover:border-neutral-400 active:scale-95 focus:outline-none cursor-pointer">
                     Contact Us
                 </a>

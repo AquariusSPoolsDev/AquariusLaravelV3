@@ -67,6 +67,27 @@ class AdminDomainTest extends TestCase
             ->assertHeaderMissing('X-Robots-Tag');
     }
 
+    public function test_not_found_page_on_the_admin_subdomain_links_to_the_main_site(): void
+    {
+        config(['app.admin_url' => 'https://admin.aquariusswimmingpools.com', 'app.url' => 'https://aquariusswimmingpools.com']);
+
+        $this->get('https://admin.aquariusswimmingpools.com/en/faq')
+            ->assertNotFound()
+            ->assertSee('href="https://aquariusswimmingpools.com/"', false)
+            ->assertSee('href="https://aquariusswimmingpools.com/contact-us"', false)
+            ->assertDontSee('href="https://admin.aquariusswimmingpools.com', false);
+    }
+
+    public function test_not_found_page_on_the_main_site_keeps_the_locale_links(): void
+    {
+        config(['app.admin_url' => 'https://admin.aquariusswimmingpools.com']);
+
+        $this->get('https://aquariusswimmingpools.com/en/no-such-page')
+            ->assertNotFound()
+            ->assertSee('href="https://aquariusswimmingpools.com/en"', false)
+            ->assertSee('href="https://aquariusswimmingpools.com/en/contact-us"', false);
+    }
+
     public function test_nothing_is_blocked_without_an_admin_url(): void
     {
         config(['app.admin_url' => null]);
