@@ -35,12 +35,19 @@
                         $encodedFile = implode('/', array_map('rawurlencode', explode('/', 'promotion_materials/' . $file)));
                     @endphp
                     <div class="swiper-slide">
-                        <a data-fslightbox="promotion_{{ $promotion->id }}" href="{{ asset('storage/' . $encodedFile) }}">
-                            {{-- Square frame, whole image shown: promotion posters carry prices and text that must not be cropped. --}}
+                        <a data-fslightbox="promotion_{{ $promotion->id }}" href="{{ asset('storage/' . $encodedFile) }}"
+                           class="relative block w-full aspect-square overflow-hidden rounded-xl bg-neutral-100">
+                            {{-- Square frame, whole image shown: promotion posters carry prices and text that must not be cropped.
+                                 A blurred copy of the same image fills any space around it instead of flat bars. --}}
+                            <img src="{{ asset('storage/' . $encodedFile) }}"
+                                 alt=""
+                                 aria-hidden="true"
+                                 loading="lazy"
+                                 class="absolute inset-0 w-full h-full object-cover scale-110 blur-xl opacity-60">
                             <img src="{{ asset('storage/' . $encodedFile) }}"
                                  alt="{{ $promotion->title }}"
                                  loading="lazy"
-                                 class="w-full aspect-square object-contain bg-neutral-100 rounded-xl">
+                                 class="relative w-full h-full object-contain">
                         </a>
                     </div>
                 @endforeach
