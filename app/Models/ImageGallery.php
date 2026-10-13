@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
@@ -9,6 +10,11 @@ use Illuminate\Support\Facades\Storage;
 class ImageGallery extends Model
 {
     use HasFactory;
+
+    /**
+     * Folder on the public disk that holds the gallery images.
+     */
+    public const DIRECTORY = 'image_gallery';
 
     protected $table = 'image_galleries';
 
@@ -57,10 +63,24 @@ class ImageGallery extends Model
         $this->attributes['image_tags'] = json_encode($value);
     }
 
-    public function setImagePathAttribute(string|array $value): void
+    /**
+     * Stored as "image_gallery/<file>", the format the old public site reads from the shared database.
+     * Always read back as the bare file name, whichever format a row was saved in.
+     */
+    protected function imagePath(): Attribute
     {
-        $value = is_array($value) ? array_values($value)[0] : $value;
-        $this->attributes['image_path'] = ltrim(str_replace('image_gallery/', '', $value), '/');
+        return Attribute::make(
+            get: fn (?string $value): ?string => $value === null ? null : self::fileName($value),
+            set: fn (string|array $value): string => self::DIRECTORY.'/'.self::fileName(is_array($value) ? array_values($value)[0] : $value),
+        );
+    }
+
+    /**
+     * Strips the storage directory from a stored or uploaded image path.
+     */
+    public static function fileName(string $path): string
+    {
+        return ltrim(str_replace(self::DIRECTORY.'/', '', $path), '/');
     }
 
     public function scopePublished($query)
