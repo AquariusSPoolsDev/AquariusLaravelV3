@@ -17,16 +17,16 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 document.addEventListener('DOMContentLoaded', function () {
-    // init Swiper only on pages that have a swiper element
-    if (document.querySelector('.swiper')) {
-        new Swiper('.swiper', {
+    // Default one-slide carousel (homepage mobile hero). Promotion sliders set themselves up on the
+    // promotions page (1/2/3 per view); initialising them here as well overrode that with one slide.
+    document.querySelectorAll('.swiper:not(.promo-swiper)').forEach(function (el) {
+        new Swiper(el, {
             modules: [Navigation, Pagination],
             loop: true,
-            pagination: { el: '.swiper-pagination' },
-            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-            scrollbar: { el: '.swiper-scrollbar' },
+            pagination: { el: el.querySelector('.swiper-pagination') },
+            navigation: { nextEl: el.querySelector('.swiper-button-next'), prevEl: el.querySelector('.swiper-button-prev') },
         });
-    }
+    });
 
     // Back-to-top + scroll progress bar
     var toTopButton = document.getElementById("to-top-button");

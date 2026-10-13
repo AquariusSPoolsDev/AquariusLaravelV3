@@ -36,9 +36,11 @@
                     @endphp
                     <div class="swiper-slide">
                         <a data-fslightbox="promotion_{{ $promotion->id }}" href="{{ asset('storage/' . $encodedFile) }}">
+                            {{-- Square frame, whole image shown: promotion posters carry prices and text that must not be cropped. --}}
                             <img src="{{ asset('storage/' . $encodedFile) }}"
                                  alt="{{ $promotion->title }}"
-                                 class="w-full h-64 object-cover rounded-xl">
+                                 loading="lazy"
+                                 class="w-full aspect-square object-contain bg-neutral-100 rounded-xl">
                         </a>
                     </div>
                 @endforeach
