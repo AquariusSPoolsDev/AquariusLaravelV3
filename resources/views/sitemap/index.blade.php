@@ -2,36 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-@php
-    $pages = [
-        ['route' => 'homepage',              'args' => [],       'freq' => 'weekly',  'priority' => '1.0'],
-        ['route' => 'our-pools-main',        'args' => [],       'freq' => 'monthly', 'priority' => '0.8'],
-        ['route' => 'concrete-pools-page',   'args' => [],       'freq' => 'monthly', 'priority' => '0.8'],
-        ['route' => 'vinyl-pools-page',      'args' => [],       'freq' => 'monthly', 'priority' => '0.8'],
-        ['route' => 'fibreglass-pools-page', 'args' => [],       'freq' => 'monthly', 'priority' => '0.8'],
-        ['route' => 'pool-services-page',    'args' => [],       'freq' => 'monthly', 'priority' => '0.7'],
-        ['route' => 'pool-items-page',       'args' => [],       'freq' => 'monthly', 'priority' => '0.7'],
-        ['route' => 'pool-showcase-gallery', 'args' => [],       'freq' => 'weekly',  'priority' => '0.6'],
-        ['route' => 'projects-page',         'args' => [],       'freq' => 'weekly',  'priority' => '0.7'],
-        ['route' => 'customer-reviews-page', 'args' => [],       'freq' => 'weekly',  'priority' => '0.5'],
-        ['route' => 'promo-page',            'args' => [],       'freq' => 'weekly',  'priority' => '0.6'],
-        ['route' => 'faq-page',              'args' => [],       'freq' => 'monthly', 'priority' => '0.6'],
-        ['route' => 'contact-page',          'args' => [],       'freq' => 'monthly', 'priority' => '0.6'],
-        ['route' => 'about-page',            'args' => [],       'freq' => 'monthly', 'priority' => '0.5'],
-    ];
-
-    // Leave out pages switched off on the admin Page Visibility screen.
-    $pages = array_filter($pages, fn (array $page): bool => \App\Enums\SitePage::forRoute($page['route'])?->isVisible() ?? true);
-@endphp
 
 @foreach($pages as $page)
 @php
-    $enUrl = route($page['route'], array_merge(['locale' => 'en'], $page['args']));
-    $msUrl = route($page['route'], array_merge(['locale' => 'ms'], $page['args']));
+    $enUrl = route($page['route'], ['locale' => 'en']);
+    $msUrl = route($page['route'], ['locale' => 'ms']);
 @endphp
     {{-- English --}}
     <url>
         <loc>{{ $enUrl }}</loc>
+        <lastmod>{{ $page['lastmod']->toAtomString() }}</lastmod>
         <changefreq>{{ $page['freq'] }}</changefreq>
         <priority>{{ $page['priority'] }}</priority>
         <xhtml:link rel="alternate" hreflang="en" href="{{ $enUrl }}"/>
@@ -41,6 +21,7 @@
     {{-- Malay --}}
     <url>
         <loc>{{ $msUrl }}</loc>
+        <lastmod>{{ $page['lastmod']->toAtomString() }}</lastmod>
         <changefreq>{{ $page['freq'] }}</changefreq>
         <priority>{{ $page['priority'] }}</priority>
         <xhtml:link rel="alternate" hreflang="en" href="{{ $enUrl }}"/>

@@ -11,7 +11,7 @@
             <div class="pro-con-card p-0! overflow-hidden opacity-50 cursor-default select-none hover:translate-y-0! hover:border-neutral-200! hover:shadow-none!">
                 <div class="flex lg:flex-col">
                     <div class="w-32 lg:w-full lg:h-48 shrink-0">
-                        <img src="{{ asset('assets/images/pool_types/pool-type-concrete.jpg') }}" alt="{{ __('strings.pools_concrete') }}" class="w-full h-full object-cover">
+                        <img loading="lazy" decoding="async" src="{{ asset('assets/images/pool_types/pool-type-concrete.jpg') }}" alt="{{ __('strings.pools_concrete') }}" class="w-full h-full object-cover">
                     </div>
                     <div class="p-4 lg:p-6 flex flex-col justify-center">
                         <h3 class="pro-con-card-title">{{ __('strings.pools_concrete') }}</h3>
@@ -24,7 +24,7 @@
             <a href="{{ route('concrete-pools-page') }}" class="pro-con-card p-0! overflow-hidden block group active:scale-97! active:border-primary!">
                 <div class="flex lg:flex-col">
                     <div class="w-32 lg:w-full lg:h-48 shrink-0">
-                        <img src="{{ asset('assets/images/pool_types/pool-type-concrete.jpg') }}" alt="{{ __('strings.pools_concrete') }}" class="w-full h-full object-cover">
+                        <img loading="lazy" decoding="async" src="{{ asset('assets/images/pool_types/pool-type-concrete.jpg') }}" alt="{{ __('strings.pools_concrete') }}" class="w-full h-full object-cover">
                     </div>
                     <div class="p-4 lg:p-6 flex flex-col justify-center">
                         <h3 class="pro-con-card-title">{{ __('strings.pools_concrete') }}</h3>
@@ -40,7 +40,7 @@
             <div class="pro-con-card p-0! overflow-hidden opacity-50 cursor-default select-none hover:translate-y-0! hover:border-neutral-200! hover:shadow-none!">
                 <div class="flex lg:flex-col">
                     <div class="w-32 lg:w-full lg:h-48 shrink-0">
-                        <img src="{{ asset('assets/images/pool_types/pool-type-vinyl.jpg') }}" alt="{{ __('strings.pools_vinyl') }}" class="w-full h-full object-cover">
+                        <img loading="lazy" decoding="async" src="{{ asset('assets/images/pool_types/pool-type-vinyl.jpg') }}" alt="{{ __('strings.pools_vinyl') }}" class="w-full h-full object-cover">
                     </div>
                     <div class="p-4 lg:p-6 flex flex-col justify-center">
                         <h3 class="pro-con-card-title">{{ __('strings.pools_vinyl') }}</h3>
@@ -53,7 +53,7 @@
             <a href="{{ route('vinyl-pools-page') }}" class="pro-con-card p-0! overflow-hidden block group active:scale-97! active:border-primary!">
                 <div class="flex lg:flex-col">
                     <div class="w-32 lg:w-full lg:h-48 shrink-0">
-                        <img src="{{ asset('assets/images/pool_types/pool-type-vinyl.jpg') }}" alt="{{ __('strings.pools_vinyl') }}" class="w-full h-full object-cover">
+                        <img loading="lazy" decoding="async" src="{{ asset('assets/images/pool_types/pool-type-vinyl.jpg') }}" alt="{{ __('strings.pools_vinyl') }}" class="w-full h-full object-cover">
                     </div>
                     <div class="p-4 lg:p-6 flex flex-col justify-center">
                         <h3 class="pro-con-card-title">{{ __('strings.pools_vinyl') }}</h3>
@@ -69,7 +69,7 @@
             <div class="pro-con-card p-0! overflow-hidden opacity-50 cursor-default select-none hover:translate-y-0! hover:border-neutral-200! hover:shadow-none!">
                 <div class="flex lg:flex-col">
                     <div class="w-32 lg:w-full lg:h-48 shrink-0">
-                        <img src="{{ asset('assets/images/pool_types/pool-type-fibreglass.jpg') }}" alt="{{ __('strings.pools_fibreglass') }}" class="w-full h-full object-cover">
+                        <img loading="lazy" decoding="async" src="{{ asset('assets/images/pool_types/pool-type-fibreglass.jpg') }}" alt="{{ __('strings.pools_fibreglass') }}" class="w-full h-full object-cover">
                     </div>
                     <div class="p-4 lg:p-6 flex flex-col justify-center">
                         <h3 class="pro-con-card-title">{{ __('strings.pools_fibreglass') }}</h3>
@@ -82,7 +82,7 @@
             <a href="{{ route('fibreglass-pools-page') }}" class="pro-con-card p-0! overflow-hidden block group active:scale-97! active:border-primary!">
                 <div class="flex lg:flex-col">
                     <div class="w-32 lg:w-full lg:h-48 shrink-0">
-                        <img src="{{ asset('assets/images/pool_types/pool-type-fibreglass.jpg') }}" alt="{{ __('strings.pools_fibreglass') }}" class="w-full h-full object-cover">
+                        <img loading="lazy" decoding="async" src="{{ asset('assets/images/pool_types/pool-type-fibreglass.jpg') }}" alt="{{ __('strings.pools_fibreglass') }}" class="w-full h-full object-cover">
                     </div>
                     <div class="p-4 lg:p-6 flex flex-col justify-center">
                         <h3 class="pro-con-card-title">{{ __('strings.pools_fibreglass') }}</h3>

@@ -1,8 +1,17 @@
 @props(['ogPageTitle' => config('app.name'), 'ogDescription' => '', 'ogImage' => '', 'noIndex' => false])
 @php
-    $ogSiteTitle = Route::currentRouteName() === 'homepage'
-        ? 'Johor Bahru (JB) Swimming Pool Builder and Contractor Specialist | Aquarius Swimming Pools'
-        : $ogPageTitle . ' | Johor Bahru (JB) Swimming Pool Specialist | Aquarius Swimming Pools';
+    // Pages pass these through {{ }} already; decode once so the {{ }} below escapes exactly once
+    // (otherwise "&" and "'" show up as "&amp;amp;" / "&amp;#039;" in Google and social previews).
+    $ogPageTitle = html_entity_decode((string) $ogPageTitle, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+    $ogDescription = html_entity_decode((string) $ogDescription, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+    $ogImage = html_entity_decode((string) $ogImage, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+
+    // Keep titles short (~50-65 chars) so Google shows them in full: "<page topic> | <brand>".
+    $brandName = 'Aquarius Swimming Pools';
+    if (Route::currentRouteName() === 'homepage') {
+        $ogPageTitle = __('strings.homepage_seo_title');
+    }
+    $ogSiteTitle = str_contains($ogPageTitle, 'Aquarius') ? $ogPageTitle : $ogPageTitle.' | '.$brandName;
 
     // Build hreflang URLs by swapping locale segment
     $currentPath = request()->getPathInfo();
@@ -12,7 +21,7 @@
     $hreflangEn = $baseUrl . $enPath;
     $hreflangMs = $baseUrl . $msPath;
 @endphp
-    <title>{!! $ogSiteTitle !!}</title>
+    <title>{{ $ogSiteTitle }}</title>
     <meta name="title" content="{{ $ogSiteTitle }}" />
     <meta name="description" content="{{ $ogDescription }}" />
     <meta name="robots" content="{{ $noIndex ? 'noindex, nofollow' : 'index, follow' }}" />

@@ -12,7 +12,7 @@
     class="aquarius-pool-item-card {{ isset($modal) ? 'is-clickable' : '' }}"
 >
     <div class="aquarius-pool-item-card-image">
-        <img src="{{ $pool_item_image }}" alt="{{ $pool_item_title }}">
+        <img loading="lazy" decoding="async" src="{{ $pool_item_image }}" alt="{{ $pool_item_title }}">
     </div>
     <div class="aquarius-pool-item-card-body">
         <h3>{{ $pool_item_title }}</h3>
@@ -54,7 +54,7 @@
             >
                 <div class="pool-item-modal-layout">
                     <div class="pool-item-modal-image">
-                        <img src="{{ $pool_item_image }}" alt="{{ $pool_item_title }}">
+                        <img loading="lazy" decoding="async" src="{{ $pool_item_image }}" alt="{{ $pool_item_title }}">
                     </div>
                     <div class="pool-item-modal-content">
                         <div class="pool-item-modal-header">

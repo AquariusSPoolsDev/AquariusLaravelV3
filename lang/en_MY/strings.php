@@ -131,12 +131,13 @@ return [
 
     // HOMEPAGE META
     'homepage_meta_description' => 'Over 1,000 pools built across Malaysia. Johor Bahru\'s swimming pool specialist. Concrete, vinyl, and fibreglass built to your specifications. Free consultation.',
+    'homepage_seo_title' => 'Swimming Pool Builder in Johor Bahru | Aquarius Swimming Pools',
 
     // OUR POOLS MAIN PAGE
     'our_pools_title_heading' => 'Concrete, Vinyl & Fibreglass Pools in Johor Bahru',
     'our_pools_display_heading' => 'Our Pools',
     'our_pools_subtitle_heading' => 'Compare concrete, vinyl, and fibreglass pools. Find the right fit for your property.',
-    'our_pools_meta_description' => 'Johor Bahru\'s custom swimming pool specialist. Concrete, vinyl, and fibreglass pools built to your exact size and design. 30 years experience. Free consultation.',
+    'our_pools_meta_description' => 'Johor Bahru\'s custom swimming pool specialist. Concrete, vinyl, and fibreglass pools built to your size and design. 30 years experience. Free consultation.',
     'our_pools_body' => 'Aquarius Swimming Pools has built concrete, vinyl, and fibreglass pools across Malaysia for over 30 years, based in Johor Bahru. Each pool type differs in cost, build time, and design flexibility. Compare all three below to find the right fit for your property.',
     'our_pools_overview_title' => 'Overview of our pools',
     'our_pools_concrete_overview' => 'Aquarius builds concrete pools to any size, shape, and depth, using a steel-reinforced framework finished with your choice of tiles, plaster, or stone. Build time runs 60 to 90 days. Optional features include integrated jacuzzis, wading pools, waterfalls, and water features. Concrete pools last a lifetime with proper maintenance.',
@@ -246,7 +247,7 @@ return [
     'vinyl_pool_title_heading' => 'Vinyl Swimming Pools in Johor Bahru',
     'vinyl_pool_display_heading' => 'Vinyl Pools',
     'vinyl_pool_subtitle_heading' => 'Stainless steel frames. 20 to 30 year warranty. Installed in 2 to 3 weeks. Most affordable pool type.',
-    'vinyl_pool_meta_description' => 'Aquarius installs vinyl pools with stainless steel frames across Malaysia. 20 to 30 year warranty. 2 to 3 week installation. Based in Johor Bahru. Free consultation.',
+    'vinyl_pool_meta_description' => 'Aquarius installs vinyl pools with stainless steel frames across Malaysia. 20 to 30 year warranty. 2 to 3 week installation. Based in Johor Bahru.',
     'vinyl_pool_body' => 'Aquarius Swimming Pools installs vinyl pools across Malaysia, based in Johor Bahru. Each pool uses stainless steel wall frames set into excavated ground, lined with a fitted vinyl liner. Our frames carry a 20 to 30 year warranty, depending on the series. Installation takes 2 to 3 weeks, making vinyl the fastest in-ground option after fibreglass. Vinyl is the most affordable pool type Aquarius offers. Read on to see how vinyl pools are built, and whether one is right for your property.',
     'vinyl_pool_steps_pill' => 'How it\'s made',
     'vinyl_pool_steps_title' => 'How Are Vinyl Pools Built?',
@@ -283,7 +284,7 @@ return [
     'fibreglass_pool_title_heading' => 'Fibreglass Swimming Pools in Johor Bahru',
     'fibreglass_pool_display_heading' => 'Fibreglass Pools',
     'fibreglass_pool_subtitle_heading' => 'Installed in 5 to 7 days. Low maintenance. Built to last 40 to 50 years.',
-    'fibreglass_pool_meta_description' => 'Aquarius Swimming Pools installs fibreglass pools across Malaysia. Based in Johor Bahru. Fast 5 to 7 day installation, 40 to 50 year lifespan. Contact us for a free consultation.',
+    'fibreglass_pool_meta_description' => 'Aquarius installs fibreglass pools across Malaysia. Based in Johor Bahru. Fast 5 to 7 day installation, 40 to 50 year lifespan. Free consultation.',
     'fibreglass_pool_body' => 'Fibreglass swimming pools install faster than any other pool type, ready in 5 to 7 days. Aquarius Swimming Pools supplies and installs fibreglass pools across Malaysia, based in Johor Bahru. Each pool ships as a pre-manufactured shell, built to last 40 to 50 years with minimal upkeep. Read on to see how fibreglass pools are built, and whether one is the right fit for your home.',
     'fibreglass_pool_steps_pill' => 'How it\'s made',
     'fibreglass_pool_steps_title' => 'How Are Fibreglass Pools Built?',
@@ -353,7 +354,7 @@ return [
     'pool_service_item_5_content_3' => '',
 
     // POOL ITEMS
-    'pool_item_title_heading' => 'Swimming Pool Equipment & Chemicals in Johor Bahru',
+    'pool_item_title_heading' => 'Pool Equipment & Chemicals in Johor Bahru',
     'pool_item_display_heading' => 'Pool Items & Equipment',
     'pool_item_subtitle_heading' => 'Pumps, filters, salt chlorinators, chemicals, and cleaning tools. What each one does.',
     'pool_item_meta_description' => 'Aquarius explains the pumps, filters, salt chlorinators, chemicals, and cleaning tools needed to keep your pool running. Based in Johor Bahru.',
@@ -594,7 +595,7 @@ return [
     'showcase_title_heading' => 'Swimming Pool Gallery in Johor Bahru',
     'showcase_display_heading' => 'Showcase',
     'showcase_subtitle_heading' => 'A collection of our completed swimming pool projects',
-    'showcase_meta_description' => 'Browse completed swimming pool projects by Aquarius in Johor Bahru and across Malaysia. Concrete, fibreglass, and vinyl pools. Filter by type, size, and feature.',
+    'showcase_meta_description' => 'Browse completed pool projects by Aquarius in Johor Bahru and across Malaysia. Concrete, fibreglass, and vinyl pools. Filter by type, size, and feature.',
     'showcase_search_loading' => 'Loading...',
     'showcase_search_loading_desc' => 'This might take a moment. Please wait.',
     'showcase_search_no_result' => 'No results found.',
@@ -873,7 +874,7 @@ return [
     'projects_title_heading' => 'Notable Pool Projects Across Malaysia',
     'projects_display_heading' => 'Notable Projects',
     'projects_subtitle_heading' => 'Residential and commercial pools built across Malaysia',
-    'projects_meta_description' => 'Browse past pool projects by Aquarius Swimming Pools. Each project includes pool type, location, and build details. Residential and commercial pools across Malaysia.',
+    'projects_meta_description' => 'Past pool projects by Aquarius Swimming Pools, with pool type, location, and build details. Residential and commercial pools across Malaysia.',
     'projects_no_projects_title' => 'No Projects Found',
     'projects_no_projects_body' => 'Check back soon for our project showcase.',
     'projects_back_to_projects' => 'Back to Projects',

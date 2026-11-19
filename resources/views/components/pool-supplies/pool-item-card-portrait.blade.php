@@ -2,7 +2,7 @@
 
 <div class="pool-item-card flex flex-col">
     <div class="h-52 overflow-hidden">
-        <img class="w-full h-full object-cover m-0" src="{{ $pool_item_image }}" alt="{{ $pool_item_title }}">
+        <img loading="lazy" decoding="async" class="w-full h-full object-cover m-0" src="{{ $pool_item_image }}" alt="{{ $pool_item_title }}">
     </div>
     <div class="flex flex-col flex-1 p-5">
         <h3 class="font-semibold text-lg text-primary-800 mt-0 mb-2">
