@@ -36,7 +36,7 @@ $headerSubtitle = 'projects_subtitle_heading';
 
 {{-- BACK LINK --}}
 <div class="mb-4">
-    <a href="{{ route('projects-page') }}" class="inline-flex items-center gap-2 text-primary hover:underline hover:underline-offset-4 font-semibold text-sm transition-all group">
+    <a href="{{ route('projects-page') }}" class="inline-flex items-center gap-2 text-primary hover:underline hover:underline-offset-4 font-semibold text-base transition-all group">
         <svg class="w-4 h-4 group-hover:-translate-x-1 transition-all" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg>
         {{ __('strings.projects_back_to_projects') }}
     </a>
@@ -46,9 +46,9 @@ $headerSubtitle = 'projects_subtitle_heading';
     <div class="project-meta order-2 lg:order-1">
         {{-- TITLE + META --}}
         <div class="mb-8">
-            <h1 class="text-3xl lg:text-5xl font-bold text-neutral-900 mb-5 lg:mb-7">{{ $project->title }}</h1>
+            <h1 class="text-section font-semibold text-balance text-primary-900 mb-5 lg:mb-7">{{ $project->title }}</h1>
 
-            <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-neutral-600 mb-4 pb-4 border-b border-neutral-200">
+            <div class="flex flex-wrap gap-x-6 gap-y-2 text-base text-neutral-600 mb-4 pb-4 border-b border-neutral-200">
                 @if($project->location)
                 <span class="flex items-center gap-1.5">
                     <svg class="w-4 h-4 text-primary" viewBox="0 0 256 256" fill="currentColor"><path d="M112,80a16,16,0,1,1,16,16A16,16,0,0,1,112,80ZM64,80a64,64,0,0,1,128,0c0,59.95-57.58,93.54-60,94.95a8,8,0,0,1-7.94,0C121.58,173.54,64,140,64,80Zm16,0c0,42.2,35.84,70.21,48,78.5,12.15-8.28,48-36.3,48-78.5a48,48,0,0,0-96,0Zm122.77,67.63a8,8,0,0,0-5.54,15C213.74,168.74,224,176.92,224,184c0,13.36-36.52,32-96,32s-96-18.64-96-32c0-7.08,10.26-15.26,26.77-21.36a8,8,0,0,0-5.54-15C29.22,156.49,16,169.41,16,184c0,31.18,57.71,48,112,48s112-16.82,112-48C240,169.41,226.78,156.49,202.77,147.63Z"></path></svg>

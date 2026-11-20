@@ -16,7 +16,7 @@
                     <div class="p-4 lg:p-6 flex flex-col justify-center">
                         <h3 class="pro-con-card-title">{{ __('strings.pools_concrete') }}</h3>
                         <p class="text-neutral-600 leading-relaxed mb-4">{{ __('strings.explore_pools_concrete_desc') }}</p>
-                        <span class="text-sm lg:text-base font-semibold text-neutral-400">{{ __('strings.explore_pools_current_page') }}</span>
+                        <span class="text-base font-semibold text-neutral-400">{{ __('strings.explore_pools_current_page') }}</span>
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                     <div class="p-4 lg:p-6 flex flex-col justify-center">
                         <h3 class="pro-con-card-title">{{ __('strings.pools_concrete') }}</h3>
                         <p class="text-neutral-600 leading-relaxed mb-4">{{ __('strings.explore_pools_concrete_desc') }}</p>
-                        <span class="text-sm lg:text-base font-semibold text-primary-700 group-hover:underline">{{ __('strings.explore_pools_learn_more') }} &rarr;</span>
+                        <span class="text-base font-semibold text-primary-700 group-hover:underline">{{ __('strings.explore_pools_learn_more') }} &rarr;</span>
                     </div>
                 </div>
             </a>
@@ -45,7 +45,7 @@
                     <div class="p-4 lg:p-6 flex flex-col justify-center">
                         <h3 class="pro-con-card-title">{{ __('strings.pools_vinyl') }}</h3>
                         <p class="text-neutral-600 leading-relaxed mb-4">{{ __('strings.explore_pools_vinyl_desc') }}</p>
-                        <span class="text-sm lg:text-base font-semibold text-neutral-400">{{ __('strings.explore_pools_current_page') }}</span>
+                        <span class="text-base font-semibold text-neutral-400">{{ __('strings.explore_pools_current_page') }}</span>
                     </div>
                 </div>
             </div>
@@ -58,7 +58,7 @@
                     <div class="p-4 lg:p-6 flex flex-col justify-center">
                         <h3 class="pro-con-card-title">{{ __('strings.pools_vinyl') }}</h3>
                         <p class="text-neutral-600 leading-relaxed mb-4">{{ __('strings.explore_pools_vinyl_desc') }}</p>
-                        <span class="text-sm lg:text-base font-semibold text-primary-700 group-hover:underline">{{ __('strings.explore_pools_learn_more') }} &rarr;</span>
+                        <span class="text-base font-semibold text-primary-700 group-hover:underline">{{ __('strings.explore_pools_learn_more') }} &rarr;</span>
                     </div>
                 </div>
             </a>
@@ -74,7 +74,7 @@
                     <div class="p-4 lg:p-6 flex flex-col justify-center">
                         <h3 class="pro-con-card-title">{{ __('strings.pools_fibreglass') }}</h3>
                         <p class="text-neutral-600 leading-relaxed mb-4">{{ __('strings.explore_pools_fibreglass_desc') }}</p>
-                        <span class="text-sm lg:text-base font-semibold text-neutral-400">{{ __('strings.explore_pools_current_page') }}</span>
+                        <span class="text-base font-semibold text-neutral-400">{{ __('strings.explore_pools_current_page') }}</span>
                     </div>
                 </div>
             </div>
@@ -87,7 +87,7 @@
                     <div class="p-4 lg:p-6 flex flex-col justify-center">
                         <h3 class="pro-con-card-title">{{ __('strings.pools_fibreglass') }}</h3>
                         <p class="text-neutral-600 leading-relaxed mb-4">{{ __('strings.explore_pools_fibreglass_desc') }}</p>
-                        <span class="text-sm lg:text-base font-semibold text-primary-700 group-hover:underline">{{ __('strings.explore_pools_learn_more') }} &rarr;</span>
+                        <span class="text-base font-semibold text-primary-700 group-hover:underline">{{ __('strings.explore_pools_learn_more') }} &rarr;</span>
                     </div>
                 </div>
             </a>

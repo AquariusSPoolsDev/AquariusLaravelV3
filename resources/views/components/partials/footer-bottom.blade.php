@@ -13,7 +13,7 @@
                 </p>
 
                 <div class="mt-8 me-12">
-                    <address class="not-italic text-sm">
+                    <address class="not-italic text-base">
                         <p class="text-base uppercase font-bold text-white">Aquarius Swimming Pools Sdn Bhd &lpar;920548-M&rpar;</p>
                         <p class="text-neutral-400">33, Jalan Selatan 3/4, Taman Impian Emas,<br>81300 Skudai, Johor, Malaysia</p>
                         {{-- <div class="mt-3 flex flex-col gap-1">
@@ -106,7 +106,7 @@
                         <a class="aquarius-footer-links"
                             href="{{ route('privacy-page') }}">{{__('strings.footer_privacy')}}</a>
                     </div>
-                    <div class="text-sm text-neutral-400">
+                    <div class="text-base text-neutral-400">
                         {{__('strings.footer_developed_by')}}<a class="aquarius-footer-links" href="https://usoppii.my/" target="_blank" rel="noreferrer">Usoppii.my</a>.
                     </div>
                 </div>
@@ -117,11 +117,11 @@
                             aria-label="Aquarius Swimming Pools">
                             <x-reusables.logo textClass="text-white" />
                         </a>
-                        <p class="mt-2 text-neutral-400 text-sm"> © {{ date('Y') }} Aquarius Swimming Pools.</p>
+                        <p class="mt-2 text-neutral-400 text-base"> © {{ date('Y') }} Aquarius Swimming Pools.</p>
                     </div>
 
                     {{-- SOCIAL LINKS --}}
-                    <div class="flex gap-x-1" role="list" aria-label="Social media links">
+                    <div class="flex flex-wrap gap-x-1" role="list" aria-label="Social media links">
                         <a href="https://facebook.com/AquariusSwimmingPools" class="aquarius-social-icons"
                             aria-label="Visit us on Facebook" role="listitem">
                             <svg class="size-5 fill-current" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Facebook</title><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>
@@ -147,7 +147,7 @@
                 </div>
 
                 <div class="lg:hidden max-lg:order-2">
-                    <address class="not-italic text-sm">
+                    <address class="not-italic text-base">
                         <p class="text-base uppercase font-bold text-white">Aquarius Swimming Pools Sdn Bhd &lpar;920548-M&rpar;</p>
                         <p class="text-neutral-400">33, Jalan Selatan 3/4, Taman Impian Emas,<br>81300 Skudai, Johor, Malaysia</p>
                         <div class="mt-3 flex flex-col gap-1">

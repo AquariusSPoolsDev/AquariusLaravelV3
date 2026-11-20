@@ -53,7 +53,7 @@ $headerSubtitle = 'projects_subtitle_heading';
                 </h2>
 
                 {{-- LOCATION & YEAR --}}
-                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm text-neutral-500 mb-3">
+                <div class="flex flex-wrap gap-x-4 gap-y-1 text-base text-neutral-500 mb-3">
                     @if($project->location)
                         <span class="flex items-center gap-1">
                             <svg class="w-4 h-4" viewBox="0 0 256 256" fill="currentColor"><path d="M112,80a16,16,0,1,1,16,16A16,16,0,0,1,112,80ZM64,80a64,64,0,0,1,128,0c0,59.95-57.58,93.54-60,94.95a8,8,0,0,1-7.94,0C121.58,173.54,64,140,64,80Zm16,0c0,42.2,35.84,70.21,48,78.5,12.15-8.28,48-36.3,48-78.5a48,48,0,0,0-96,0Zm122.77,67.63a8,8,0,0,0-5.54,15C213.74,168.74,224,176.92,224,184c0,13.36-36.52,32-96,32s-96-18.64-96-32c0-7.08,10.26-15.26,26.77-21.36a8,8,0,0,0-5.54-15C29.22,156.49,16,169.41,16,184c0,31.18,57.71,48,112,48s112-16.82,112-48C240,169.41,226.78,156.49,202.77,147.63Z"></path></svg>
@@ -84,7 +84,7 @@ $headerSubtitle = 'projects_subtitle_heading';
     </div>
 @else
     <x-reusables.alert class="text-center">
-        <h2 class="text-2xl font-semibold mb-3 mt-0">{{ __('strings.projects_no_projects_title') }}</h2>
+        <h2 class="text-2xl text-primary-900 font-semibold mb-3 mt-0">{{ __('strings.projects_no_projects_title') }}</h2>
         <p class="m-0">{{ __('strings.projects_no_projects_body') }}</p>
     </x-reusables.alert>
 @endif

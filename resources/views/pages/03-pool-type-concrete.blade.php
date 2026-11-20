@@ -29,7 +29,7 @@ $headerSubtitle = 'concrete_pool_subtitle_heading';
 {{-- MAIN CONTENT STARTS HERE --}}
 @section('content')
 {{-- BODY TEXT MAIN --}}
-<p class="mb-8 max-w-[72ch] leading-relaxed">{{ __('strings.concrete_pool_body') }}</p>
+<p class="mb-8 max-w-[60ch] leading-relaxed">{{ __('strings.concrete_pool_body') }}</p>
 
 {{-- POOL STEPS --}}
 <section class="pool-creation-steps-section mt-16">

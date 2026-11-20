@@ -30,7 +30,7 @@ $headerSubtitle = 'showcase_subtitle_heading';
         <h3 id="howtouse" class="font-semibold text-lg lg:text-xl mb-3 tracking-tight">
             {{__('strings.showcase_how_to_use')}}
         </h3>
-        <ol class="list-decimal list-inside text-sm lg:text-base flex flex-col gap-2">
+        <ol class="list-decimal list-inside text-base flex flex-col gap-2">
             <li>&nbsp;<strong>{{__('strings.showcase_how_to_use_1_title')}}</strong> {{__('strings.showcase_how_to_use_1_body')}}</li>
             <li>&nbsp;<strong>{{__('strings.showcase_how_to_use_2_title')}}</strong> {{__('strings.showcase_how_to_use_2_body')}}</li>
             <li>&nbsp;<strong>{{__('strings.showcase_how_to_use_3_title')}}</strong> {{__('strings.showcase_how_to_use_3_body')}}</li>

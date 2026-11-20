@@ -15,7 +15,7 @@ $promotion = Promotion::query()->active()->orderBy('start_time')->first();
         <div class="focus-on-dark bg-primary-600 rounded-lg shadow-sm hover:shadow-lg hover:scale-101 active:scale-99 transition-all duration-200">
             <div class="py-2 px-4">
                 <div class="flex items-center">
-                    <p class="text-white text-sm">
+                    <p class="text-white text-base">
                         <strong>{{__('strings.alert_current_promo')}}:</strong> {{ $promotion->title }}&nbsp;&nbsp;
                         <a class="underline font-medium hover:no-underline transition-all"
                             href="{{ route('promo-page') }}">{{__('strings.alert_learn_more')}}</a>

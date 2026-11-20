@@ -7,7 +7,7 @@
     <body class="antialiased scroll-mt-20 lg:scroll-mt-23.25">
         <x-partials.navbar-menu-top />
         
-        <main class="mt-20 lg:mt-23.25 text-sm lg:text-base">
+        <main class="mt-20 lg:mt-23.25">
             @yield('content')
         </main>
 

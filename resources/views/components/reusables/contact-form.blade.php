@@ -19,43 +19,43 @@
 
     <div x-show="!submitting">
         @if ($errors->any())
-            <x-reusables.alert color="error" class="mb-5 text-sm">
+            <x-reusables.alert color="error" class="mb-5 text-base">
                 {{ __('strings.cf_error_summary') }}
             </x-reusables.alert>
         @endif
 
         {{-- Name --}}
         <div class="mb-5">
-            <label for="cust_name" class="font-semibold text-neutral-900 block mb-1.5 text-sm">
+            <label for="cust_name" class="font-semibold text-neutral-900 block mb-1.5 text-base">
                 {{ __('strings.cf_step_1_name_input') }} <span class="text-error-300">*</span>
             </label>
             <input type="text" id="cust_name" name="cust_name" value="{{ old('cust_name') }}"
                 class="form-input @error('cust_name') border-error-300 @enderror"
                 placeholder="Ali bin Abu" required />
             @error('cust_name')
-                <p class="text-error-300 text-sm mt-1">{{ $message }}</p>
+                <p class="text-error-300 text-base mt-1">{{ $message }}</p>
             @enderror
         </div>
 
         {{-- Email --}}
         <div class="mb-5">
-            <label for="cust_email" class="font-semibold text-neutral-900 block mb-1.5 text-sm">
+            <label for="cust_email" class="font-semibold text-neutral-900 block mb-1.5 text-base">
                 {{ __('strings.cf_step_1_email_input') }} <span class="text-error-300">*</span>
             </label>
             <input type="email" id="cust_email" name="cust_email" value="{{ old('cust_email') }}"
                 class="form-input @error('cust_email') border-error-300 @enderror"
                 placeholder="aliabu@example.com" required />
             @error('cust_email')
-                <p class="text-error-300 text-sm mt-1">{{ $message }}</p>
+                <p class="text-error-300 text-base mt-1">{{ $message }}</p>
             @enderror
         </div>
 
         {{-- Phone with country code --}}
         <div class="mb-5">
-            <label for="cust_phone" class="font-semibold text-neutral-900 block mb-1.5 text-sm">
+            <label for="cust_phone" class="font-semibold text-neutral-900 block mb-1.5 text-base">
                 {{ __('strings.cf_step_1_phone_input') }} <span class="text-error-300">*</span>
             </label>
-            <div class="flex gap-2">
+            <div class="flex flex-wrap gap-2">
                 <select name="country_code" id="country_code"
                     class="form-input w-36! shrink-0 @error('country_code') border-error-300 @enderror">
                     <option value="+60" {{ old('country_code', '+60') === '+60' ? 'selected' : '' }}>🇲🇾 +60</option>
@@ -63,7 +63,7 @@
                     <option value="other" {{ old('country_code') === 'other' ? 'selected' : '' }}>{{ __('strings.cf_country_others') }}</option>
                 </select>
                 <input type="tel" id="cust_phone" name="cust_phone" value="{{ old('cust_phone') }}"
-                    class="form-input @error('cust_phone') border-error-300 @enderror"
+                    class="form-input min-w-0 flex-1 basis-40 @error('cust_phone') border-error-300 @enderror"
                     placeholder="12-3456789"
                     inputmode="numeric"
                     pattern="[0-9\-\s]+"
@@ -71,16 +71,16 @@
                     required />
             </div>
             @error('cust_phone')
-                <p class="text-error-300 text-sm mt-1">{{ $message }}</p>
+                <p class="text-error-300 text-base mt-1">{{ $message }}</p>
             @enderror
             @error('country_code')
-                <p class="text-error-300 text-sm mt-1">{{ $message }}</p>
+                <p class="text-error-300 text-base mt-1">{{ $message }}</p>
             @enderror
         </div>
 
         {{-- Interest --}}
         <div class="mb-5" x-data="{ interest: '{{ old('cust_pool_interests', request('interest', '')) }}' }">
-            <label for="cust_pool_interests" class="font-semibold text-neutral-900 block mb-1.5 text-sm">
+            <label for="cust_pool_interests" class="font-semibold text-neutral-900 block mb-1.5 text-base">
                 {{ __('strings.cf_step_2_interest_label') }} <span class="text-error-300">*</span>
             </label>
             <select id="cust_pool_interests" name="cust_pool_interests"
@@ -99,12 +99,12 @@
                 <option value="Others (Please Specify)">{{ __('strings.cf_step_2_input_others') }} ({{ __('strings.cf_step_2_input_others_specify') }})</option>
             </select>
             @error('cust_pool_interests')
-                <p class="text-error-300 text-sm mt-1">{{ $message }}</p>
+                <p class="text-error-300 text-base mt-1">{{ $message }}</p>
             @enderror
 
             {{-- Others specify — show only when "Others" selected --}}
             <div x-show="interest === 'Others (Please Specify)'" x-cloak class="mt-3">
-                <label for="cust_interest_other" class="font-semibold text-neutral-900 block mb-1.5 text-sm">
+                <label for="cust_interest_other" class="font-semibold text-neutral-900 block mb-1.5 text-base">
                     {{ __('strings.cf_step_2_input_others_specify') }}
                 </label>
                 <input type="text" id="cust_interest_other" name="cust_interest_other"
@@ -112,14 +112,14 @@
                     class="form-input @error('cust_interest_other') border-error-300 @enderror"
                     placeholder="{{ __('strings.cf_others_placeholder') }}" />
                 @error('cust_interest_other')
-                    <p class="text-error-300 text-sm mt-1">{{ $message }}</p>
+                    <p class="text-error-300 text-base mt-1">{{ $message }}</p>
                 @enderror
             </div>
         </div>
 
         {{-- Query --}}
         <div class="mb-5">
-            <label for="cust_query" class="font-semibold text-neutral-900 block mb-1.5 text-sm">
+            <label for="cust_query" class="font-semibold text-neutral-900 block mb-1.5 text-base">
                 {{ __('strings.cf_step_2_your_question') }}
             </label>
             <textarea id="cust_query" name="cust_query"
@@ -127,7 +127,7 @@
                 rows="4"
                 placeholder="{{ __('strings.cf_query_placeholder') }}">{{ old('cust_query') }}</textarea>
             @error('cust_query')
-                <p class="text-error-300 text-sm mt-1">{{ $message }}</p>
+                <p class="text-error-300 text-base mt-1">{{ $message }}</p>
             @enderror
         </div>
 
@@ -137,12 +137,12 @@
                 <input type="checkbox" name="cust_agree" value="1"
                     class="mt-0.5 w-4 h-4 shrink-0 appearance-auto rounded accent-primary-600 cursor-pointer {{ $errors->has('cust_agree') ? 'border-error-300' : 'border-gray-300' }}"
                     {{ old('cust_agree') ? 'checked' : '' }} required>
-                <span class="text-sm text-neutral-700">
+                <span class="text-base text-neutral-700">
                     {{ __('strings.cf_step_3_agree_1') }}<a href="{{ route('privacy-page') }}" class="text-primary-600 underline hover:no-underline font-semibold">{{ __('strings.cf_step_3_privacy_link') }}</a>{{ __('strings.cf_step_3_agree_2') }}
                 </span>
             </label>
             @error('cust_agree')
-                <p class="text-error-300 text-sm mt-1">{{ $message }}</p>
+                <p class="text-error-300 text-base mt-1">{{ $message }}</p>
             @enderror
         </div>
 

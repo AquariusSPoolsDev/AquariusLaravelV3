@@ -43,6 +43,27 @@ class SiteFontsTest extends TestCase
         }
     }
 
+    public function test_page_text_starts_at_16px_on_every_screen(): void
+    {
+        SitePage::ContactUs->setVisible(true);
+        SitePage::Faq->setVisible(true);
+        SitePage::ConcretePools->setVisible(true);
+
+        foreach (['/en', '/en/contact-us', '/en/faq', '/en/concrete-pools', '/ms/contact-us'] as $path) {
+            $this->get($path)->assertOk()
+                ->assertSee('<main class="mt-20 lg:mt-23.25">', false)
+                ->assertDontSee('text-sm', false);
+        }
+    }
+
+    public function test_big_headings_use_the_fluid_sizes(): void
+    {
+        $this->get('/en')->assertOk()
+            ->assertSee('<h2 class="text-section font-semibold text-balance text-primary-900">', false)
+            ->assertDontSee('lg:text-5xl', false)
+            ->assertDontSee('lg:text-6xl', false);
+    }
+
     public function test_error_pages_load_the_same_fonts_from_bunny(): void
     {
         $this->get('/en/this-page-does-not-exist')->assertNotFound()

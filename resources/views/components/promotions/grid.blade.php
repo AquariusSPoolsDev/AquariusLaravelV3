@@ -13,7 +13,7 @@
     <p class="text-neutral-700 mb-3">{{ $promotion->description }}</p>
 
     {{-- Duration --}}
-    <p class="text-sm text-neutral-500 mb-4">
+    <p class="text-base text-neutral-500 mb-4">
         <strong class="text-neutral-700">{{__('strings.promotions_current_promo_duration')}}: </strong>
         {{ $promotion->start_time->timezone('Asia/Kuala_Lumpur')->format('j F Y, g:i A') }}
         –
@@ -60,7 +60,7 @@
 </div>
 @empty
 <div class="bg-red-50 border-s-4 border-red-500 rounded-e-xl p-6 ps-8" role="alert">
-    <h2 class="text-2xl text-neutral-900 font-semibold mb-3 mt-0">{{__('strings.promotions_no_active_promo_title')}}</h2>
+    <h2 class="text-2xl text-primary-900 font-semibold mb-3 mt-0">{{__('strings.promotions_no_active_promo_title')}}</h2>
     <p class="text-neutral-700 m-0">{{__('strings.promotions_no_active_promo_body')}}</p>
 </div>
 @endforelse

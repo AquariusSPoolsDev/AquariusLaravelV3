@@ -7,7 +7,7 @@
     </a>
     <div class="sr-only">
         <h3 class="font-semibold text-lg text-gray-800">{{ $image->image_name }}</h3>
-        <p class="text-sm text-gray-600">{{ $image->image_description }}</p>
+        <p class="text-base text-gray-600">{{ $image->image_description }}</p>
         
         @if($image->image_tags)
         <div class="mt-2 flex flex-wrap">

@@ -34,7 +34,7 @@
 </div>
 @empty
 <div class="col-span-full bg-red-50 border-s-4 border-red-500 rounded-e-xl p-6 ps-8" role="alert">
-    <h2 class="text-2xl text-neutral-900 font-semibold mb-3 mt-0">{{__('strings.reviews_no_review_title')}}</h2>
+    <h2 class="text-2xl text-primary-900 font-semibold mb-3 mt-0">{{__('strings.reviews_no_review_title')}}</h2>
     <p class="text-neutral-700 m-0">{{__('strings.reviews_no_review_body')}}</p>
 </div>
 @endforelse

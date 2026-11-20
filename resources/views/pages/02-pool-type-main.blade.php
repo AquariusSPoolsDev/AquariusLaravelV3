@@ -26,7 +26,7 @@ $headerSubtitle = 'our_pools_subtitle_heading';
 @section('content')
 
 <div class="">
-    <p class="mb-4">{!!__('strings.our_pools_body')!!}</p>
+    <p class="mb-4 max-w-[60ch]">{!!__('strings.our_pools_body')!!}</p>
 
     <x-our-pools.pool-type-section />
 

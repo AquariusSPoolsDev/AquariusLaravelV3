@@ -58,11 +58,11 @@ class HomepageHeroTest extends TestCase
     {
         $this->get('/en')->assertOk()
             ->assertSee('Toggle autoplay')
-            ->assertSee('<span id="play-pause-text" class="ml-2 text-sm">Pause</span>', false);
+            ->assertSee('<span id="play-pause-text" class="ml-2 text-base">Pause</span>', false);
 
         $this->get('/ms')->assertOk()
             ->assertSee('Automain')
-            ->assertSee('<span id="play-pause-text" class="ml-2 text-sm">Jeda</span>', false)
+            ->assertSee('<span id="play-pause-text" class="ml-2 text-base">Jeda</span>', false)
             ->assertSee("const labelPlay = 'Main'", false)
             ->assertDontSee('Toggle autoplay');
     }

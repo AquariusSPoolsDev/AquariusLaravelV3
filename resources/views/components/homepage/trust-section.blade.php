@@ -9,7 +9,7 @@
             {{-- LEFT: Text content --}}
             <div class="max-w-xl">
                 <x-reusables.pill-text>{{__('strings.trust_pill')}}</x-reusables.pill-text>
-                <h2 class="text-3xl lg:text-5xl font-semibold text-primary-900">{{__('strings.trust_heading')}}</h2>
+                <h2 class="text-section font-semibold text-balance text-primary-900">{{__('strings.trust_heading')}}</h2>
                 <p class="text-neutral-600 mt-6 mb-8">{{__('strings.trust_body')}}</p>
 
                 {{-- Stats bar --}}
@@ -18,13 +18,13 @@
                     {{-- Stat 1 --}}
                     <div class="bg-white border border-neutral-200 rounded-xl p-4">
                         <span class="block text-3xl font-bold text-primary-700" data-counter="30" data-suffix="+">30+</span>
-                        <span class="text-sm text-neutral-600">{{__('strings.trust_stats_years')}}</span>
+                        <span class="text-base text-neutral-600">{{__('strings.trust_stats_years')}}</span>
                     </div>
 
                     {{-- Stat 2 --}}
                     <div class="bg-white border border-neutral-200 rounded-xl p-4">
                         <span class="block text-3xl font-bold text-primary-700" data-counter="1000" data-suffix="+" data-format="thousands">1,000+</span>
-                        <span class="text-sm text-neutral-600">{{__('strings.trust_stats_pools')}}</span>
+                        <span class="text-base text-neutral-600">{{__('strings.trust_stats_pools')}}</span>
                     </div>
 
                     {{-- Stat 3 --}}

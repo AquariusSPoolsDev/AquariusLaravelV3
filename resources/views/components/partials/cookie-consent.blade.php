@@ -36,19 +36,19 @@
     role="dialog"
     aria-label="Cookie consent"
 >
-    <p class="text-sm text-neutral-700 mb-3">
+    <p class="text-base text-neutral-700 mb-3">
         This website uses cookies to enhance your experience within the site.
         <a href="{{ route('privacy-page') }}" class="font-semibold text-neutral-900 underline underline-offset-4 hover:no-underline">Privacy Policy</a>
     </p>
-    <div class="flex gap-2">
+    <div class="flex flex-wrap gap-2">
         <button
             @click="accept"
-            class="flex-1 py-2 px-4 text-sm font-semibold rounded-lg bg-primary text-white hover:bg-primary-600 active:bg-primary-700 active:scale-95 transition-all cursor-pointer">
+            class="flex-1 py-2 px-4 text-base font-semibold rounded-lg bg-primary text-white hover:bg-primary-600 active:bg-primary-700 active:scale-95 transition-all cursor-pointer">
             Accept
         </button>
         <button
             @click="decline"
-            class="flex-1 py-2 px-4 text-sm font-semibold rounded-lg bg-neutral-100 text-neutral-700 hover:bg-neutral-200 active:scale-95 transition-all cursor-pointer">
+            class="flex-1 py-2 px-4 text-base font-semibold rounded-lg bg-neutral-100 text-neutral-700 hover:bg-neutral-200 active:scale-95 transition-all cursor-pointer">
             Decline
         </button>
     </div>
