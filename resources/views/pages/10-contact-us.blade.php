@@ -56,7 +56,10 @@ $headerSubtitle = 'contact_subtitle_heading';
                 <x-reusables.pill-text>{{__('strings.contact_visit_showpool_pill')}}</x-reusables.pill-text>
                 <x-reusables.subheading class="uppercase">{{__('strings.contact_visit_showpool_heading')}}
                 </x-reusables.subheading>
-                <p class="aquarius-visit-showpool-desc">{{__('strings.contact_visit_showpool_desc')}}</p>
+                <div class="aquarius-visit-showpool-desc max-w-3xl space-y-3">
+                    <p>{{__('strings.about_showroom_body_1')}}</p>
+                    <p>{{__('strings.about_showroom_body_2')}}</p>
+                </div>
             </div>
             @if (\App\Enums\SitePage::AboutUs->isVisible())
             <a href="{{ route('about-page') }}#showroom"
@@ -67,12 +70,55 @@ $headerSubtitle = 'contact_subtitle_heading';
             @endif
         </div>
 
+        {{--
+            SHOWROOM PHOTOS (to fill in later)
+            Each slot shows its photo once 'src' is set (a path under public/, e.g. 'assets/images/showroom/exterior.jpg').
+            Until then, empty slots appear as labelled placeholders on local copies only (APP_DEBUG=true) and are
+            left out entirely on the live site, so visitors never see an empty box.
+        --}}
+        @php
+            $showroomPhotos = [
+                ['src' => null, 'alt' => 'Aquarius Swimming Pools showroom, office and shop from the road', 'need' => 'Showroom exterior', 'hint' => 'Landscape, from the road, with the signboard readable', 'wide' => true],
+                ['src' => null, 'alt' => 'Full-size concrete display pool at the Aquarius showroom', 'need' => 'Concrete display pool', 'hint' => 'Whole pool in frame, daylight'],
+                ['src' => null, 'alt' => 'Full-size vinyl display pool at the Aquarius showroom', 'need' => 'Vinyl display pool', 'hint' => 'Whole pool in frame, daylight'],
+                ['src' => null, 'alt' => 'Full-size fibreglass display pool at the Aquarius showroom', 'need' => 'Fibreglass display pool', 'hint' => 'Whole pool in frame, daylight'],
+                ['src' => null, 'alt' => 'Inside the Aquarius pool shop and office', 'need' => 'Shop and office, inside', 'hint' => 'Counter and shelves, ideally with staff'],
+            ];
+            $showPhotoPlaceholders = config('app.debug');
+            $visiblePhotos = array_filter($showroomPhotos, fn (array $photo): bool => $photo['src'] !== null || $showPhotoPlaceholders);
+        @endphp
+
+        @if ($visiblePhotos !== [])
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8" data-showroom-photos>
+            @foreach ($visiblePhotos as $photo)
+                <figure class="{{ ! empty($photo['wide']) ? 'col-span-2 lg:row-span-2 aspect-video lg:aspect-auto' : 'aspect-4/3' }} m-0 overflow-hidden rounded-lg">
+                    @if ($photo['src'])
+                        <img src="{{ asset($photo['src']) }}" alt="{{ $photo['alt'] }}" loading="lazy" class="w-full h-full object-cover">
+                    @else
+                        <div class="w-full h-full min-h-32 flex flex-col items-center justify-center gap-1 p-4 text-center border-2 border-dashed border-neutral-300 bg-neutral-50 rounded-lg" data-photo-placeholder>
+                            <span class="text-sm font-semibold text-neutral-700">Photo needed: {{ $photo['need'] }}</span>
+                            <span class="text-xs text-neutral-500">{{ $photo['hint'] }}</span>
+                        </div>
+                    @endif
+                </figure>
+            @endforeach
+        </div>
+        @endif
+
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8">
             <div class="aquarius-contact-card lg:col-span-full">
                 <h3 class="aquarius-contact-card-title">{{__('strings.contact_showpool_address_title')}}</h3>
                 <p class="text-lg font-semibold text-neutral-900! mb-2.5">AQUARIUS SWIMMING POOLS SDN BHD
                     &lpar;920548-M&rpar;</p>
                 <p>33, Jalan Selatan 3/4, Taman Impian Emas,<br>81300 Skudai, Johor,<br> Malaysia</p>
+                <a href="https://www.google.com/maps/dir/?api=1&amp;destination={{ urlencode('Aquarius Swimming Pools Sdn Bhd, 33 Jalan Selatan 3/4, Taman Impian Emas, 81300 Skudai, Johor') }}"
+                    target="_blank" rel="noopener"
+                    class="mt-4 inline-flex items-center gap-2 py-2.5 px-5 rounded-lg bg-primary-700 text-white font-semibold hover:bg-primary-800 active:bg-primary-900"
+                    onclick="window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'get_directions_click',location:'contact_showroom'})">
+                    <svg class="size-5 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M128,64a40,40,0,1,0,40,40A40,40,0,0,0,128,64Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,128Zm0-112a88.1,88.1,0,0,0-88,88c0,31.4,14.51,64.68,42,96.25a254.19,254.19,0,0,0,41.45,38.3,8,8,0,0,0,9.18,0A254.19,254.19,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25A88.1,88.1,0,0,0,128,16Zm0,206c-16.53-13-72-60.75-72-118a72,72,0,0,1,144,0C200,161.23,144.53,209,128,222Z"></path></svg>
+                    {{ __('strings.contact_get_directions') }}
+                    <span class="sr-only">{{ __('strings.navbar_opens_new_tab') }}</span>
+                </a>
             </div>
 
             <div class="aquarius-contact-card">

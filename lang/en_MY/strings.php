@@ -653,6 +653,7 @@ return [
     'contact_visit_showpool_link' => 'Have a look at our showroom',
     'contact_visit_showpool_desc' => 'You can also visit us in person at our showroom during business hours.',
     'contact_showpool_address_title' => 'Showroom Address',
+    'contact_get_directions' => 'Get directions',
     'contact_business_hours_title' => 'Business Hours',
     'contact_mon_fri' => 'Monday to Friday',
     'contact_sat' => 'Saturday',

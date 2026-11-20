@@ -653,6 +653,7 @@ return [
     'contact_visit_showpool_link' => 'Lihat bilik pameran di sini',
     'contact_visit_showpool_desc' => 'Anda juga boleh melawat kami secara terus di bilik pameran kami semasa waktu perniagaan.',
     'contact_showpool_address_title' => 'Alamat Bilik Pameran',
+    'contact_get_directions' => 'Dapatkan arah',
     'contact_business_hours_title' => 'Waktu Perniagaan',
     'contact_mon_fri' => 'Isnin hingga Jumaat',
     'contact_sat' => 'Sabtu',
