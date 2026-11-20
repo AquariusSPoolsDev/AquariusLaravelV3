@@ -66,8 +66,10 @@
                 <div class="mt-4 flex flex-col gap-y-4">
                     @if (\App\Enums\SitePage::AboutUs->isVisible())
                     <p><a class="aquarius-footer-links" href="{{ route('about-page') }}">{{__('strings.footer_about_us')}}</a></p>
+                    @endif
 
-                    <p><a class="aquarius-footer-links" href="{{ route('about-page') }}#showroom">{{__('strings.footer_showroom')}}</a></p>
+                    @if (\App\Enums\SitePage::ContactUs->isVisible())
+                    <p><a class="aquarius-footer-links" href="{{ route('contact-page') }}#showpool">{{__('strings.footer_showroom')}}</a></p>
                     @endif
 
                     <p><a class="aquarius-footer-links" href="{{ route('contact-page') }}">{{__('strings.footer_contact')}}</a></p>

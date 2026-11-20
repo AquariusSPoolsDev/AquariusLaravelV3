@@ -38,125 +38,92 @@
                     <div class="nav-flex">
                         <div class="nav-content">
                             <div class="nav-content-details">
-                                <a class="nav-link {{ Route::currentRouteName() === 'homepage' ? 'nav-link-active' : '' }}"
-                                    href="{{ route('homepage') }}" aria-current="page">
-                                    {{__('strings.navbar_homepage')}}
-                                </a>
+                                @php
+                                    $currentRoute = Route::currentRouteName();
 
-                                {{-- ABOUT US LINK --}}
-                                @if (\App\Enums\SitePage::AboutUs->isVisible())
-                                <a class="nav-link {{ Route::currentRouteName() === 'about-page' ? 'nav-link-active' : '' }}"
-                                    href="{{ route('about-page') }}">
-                                    {{__('strings.navbar_about_us')}}
+                                    /*
+                                     * Each dropdown lists only the pages switched on in Page Visibility; a dropdown with
+                                     * nothing visible is left out. Links are plain links in a disclosure (not role="menu").
+                                     * Each link: [SitePage, href, label, route names that mark it active].
+                                     */
+                                    $navGroups = [
+                                        [
+                                            'label' => __('strings.navbar_our_pools'),
+                                            'links' => [
+                                                [\App\Enums\SitePage::OurPools, route('our-pools-main').'#compare', __('strings.navbar_our_pools_compare'), ['our-pools-main']],
+                                                [\App\Enums\SitePage::ConcretePools, route('concrete-pools-page'), __('strings.navbar_our_pools_concrete'), ['concrete-pools-page']],
+                                                [\App\Enums\SitePage::VinylPools, route('vinyl-pools-page'), __('strings.navbar_our_pools_vinyl'), ['vinyl-pools-page']],
+                                                [\App\Enums\SitePage::FibreglassPools, route('fibreglass-pools-page'), __('strings.navbar_our_pools_fibreglass'), ['fibreglass-pools-page']],
+                                            ],
+                                        ],
+                                        [
+                                            'label' => __('strings.navbar_our_work'),
+                                            'links' => [
+                                                [\App\Enums\SitePage::Showcase, route('pool-showcase-gallery'), __('strings.navbar_pool_showcase'), ['pool-showcase-gallery']],
+                                                [\App\Enums\SitePage::Reviews, route('customer-reviews-page'), __('strings.navbar_reviews'), ['customer-reviews-page']],
+                                                [\App\Enums\SitePage::Projects, route('projects-page'), __('strings.navbar_projects'), ['projects-page', 'project-detail-page']],
+                                            ],
+                                        ],
+                                        [
+                                            'label' => __('strings.navbar_our_services'),
+                                            'links' => [
+                                                [\App\Enums\SitePage::PoolServices, route('pool-services-page'), __('strings.navbar_our_services_pool'), ['pool-services-page']],
+                                                [\App\Enums\SitePage::PoolItems, route('pool-items-page'), __('strings.navbar_our_services_essential'), ['pool-items-page']],
+                                            ],
+                                            'external' => ['https://thesplashshop.com/', __('strings.navbar_our_services_supplies')],
+                                        ],
+                                    ];
+                                @endphp
+
+                                {{-- Home is reached through the logo; About Us is retired (see unslop-practices.md) --}}
+
+                                @foreach ($navGroups as $group)
+                                    @php
+                                        $visibleLinks = array_values(array_filter($group['links'], fn (array $link): bool => $link[0]->isVisible()));
+                                        $isGroupActive = collect($visibleLinks)->contains(fn (array $link): bool => in_array($currentRoute, $link[3], true));
+                                    @endphp
+
+                                    @if ($visibleLinks !== [] || isset($group['external']))
+                                    <div class="nav-dropdown" x-data="{ open: false }" @click.outside="open = false" @keydown.escape="open = false">
+                                        <button type="button" class="nav-dropdown-btn {{ $isGroupActive ? 'nav-link-active' : '' }}"
+                                            :aria-expanded="open"
+                                            @click="open = !open">
+                                            {{ $group['label'] }}
+                                            <svg class="nav-dropdown-chevron"
+                                                :style="open ? 'transform: rotate(-180deg)' : ''"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" aria-hidden="true"
+                                                viewBox="0 0 256 256" fill="currentColor"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path></svg>
+                                        </button>
+
+                                        <div class="nav-dropdown-menu" x-show="open" x-cloak>
+                                            <div class="py-1 space-y-0.5">
+                                                @foreach ($visibleLinks as [$page, $href, $label, $routes])
+                                                    @php $isActive = in_array($currentRoute, $routes, true); @endphp
+                                                    <a class="nav-link {{ $isActive ? 'nav-link-active' : '' }}" href="{{ $href }}" @if ($isActive) aria-current="page" @endif>
+                                                        {{ $label }}
+                                                    </a>
+                                                @endforeach
+
+                                                @isset($group['external'])
+                                                    <a class="nav-link inline-flex! items-center gap-1.5" href="{{ $group['external'][0] }}" target="_blank" rel="noopener">
+                                                        {{ $group['external'][1] }}
+                                                        <svg class="size-3.5 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z"></path></svg>
+                                                        <span class="sr-only">{{ __('strings.navbar_opens_new_tab') }}</span>
+                                                    </a>
+                                                @endisset
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @endif
+                                @endforeach
+
+                                {{-- VISIT SHOWROOM: the showroom block on the Contact page --}}
+                                @if (\App\Enums\SitePage::ContactUs->isVisible())
+                                <a class="nav-link {{ $currentRoute === 'contact-page' ? 'nav-link-active' : '' }}"
+                                    href="{{ route('contact-page') }}#showpool" @if ($currentRoute === 'contact-page') aria-current="page" @endif>
+                                    {{ __('strings.navbar_visit_showroom') }}
                                 </a>
                                 @endif
-                                {{-- ABOUT US LINK --}}
-
-                                {{-- DROPDOWN: OUR POOLS --}}
-                                <div class="nav-dropdown" x-data="{ open: false }" @click.outside="open = false">
-                                    <button type="button" class="nav-dropdown-btn"
-                                        :aria-expanded="open"
-                                        @click="open = !open">
-                                        {{__('strings.navbar_our_pools')}}
-                                        <svg class="nav-dropdown-chevron"
-                                            :style="open ? 'transform: rotate(-180deg)' : ''"
-                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 256 256" fill="currentColor"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path></svg>
-                                    </button>
-
-                                    <div class="nav-dropdown-menu" x-show="open" x-cloak role="menu" aria-orientation="vertical">
-                                        <div class="py-1 space-y-0.5">
-                                            <a class="nav-link {{ Route::currentRouteName() === 'concrete-pools-page' ? 'nav-link-active' : '' }}"
-                                                href="{{ route('concrete-pools-page') }}" role="menuitem">
-                                                {{__('strings.navbar_our_pools_concrete')}}
-                                            </a>
-
-                                            <a class="nav-link {{ Route::currentRouteName() === 'vinyl-pools-page' ? 'nav-link-active' : '' }}"
-                                                href="{{ route('vinyl-pools-page') }}" role="menuitem">
-                                                {{__('strings.navbar_our_pools_vinyl')}}
-                                            </a>
-
-                                            <a class="nav-link {{ Route::currentRouteName() === 'fibreglass-pools-page' ? 'nav-link-active' : '' }}"
-                                                href="{{ route('fibreglass-pools-page') }}" role="menuitem">
-                                                {{__('strings.navbar_our_pools_fibreglass')}}
-                                            </a>
-
-                                            <a class="nav-link" href="{{ route('our-pools-main') }}#compare" role="menuitem">
-                                                {{__('strings.navbar_our_pools_compare')}}
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                {{-- DROPDOWN: OUR POOLS --}}
-
-
-                                {{-- DROPDOWN: OUR WORK --}}
-                                <div class="nav-dropdown" x-data="{ open: false }" @click.outside="open = false">
-                                    <button type="button" class="nav-dropdown-btn"
-                                        :class="{ 'nav-link-active': {{ in_array(Route::currentRouteName(), ['pool-showcase-gallery', 'projects-page', 'project-detail-page']) ? 'true' : 'false' }} }"
-                                        :aria-expanded="open"
-                                        @click="open = !open">
-                                        {{__('strings.navbar_our_work')}}
-                                        <svg class="nav-dropdown-chevron"
-                                            :style="open ? 'transform: rotate(-180deg)' : ''"
-                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 256 256" fill="currentColor"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path></svg>
-                                    </button>
-
-                                    <div class="nav-dropdown-menu" x-show="open" x-cloak role="menu" aria-orientation="vertical">
-                                        <div class="py-1 space-y-0.5">
-                                            <a class="nav-link {{ Route::currentRouteName() === 'pool-showcase-gallery' ? 'nav-link-active' : '' }}"
-                                                href="{{ route('pool-showcase-gallery') }}" role="menuitem">
-                                                {{__('strings.navbar_pool_showcase')}}
-                                            </a>
-
-                                            @if (\App\Enums\SitePage::Projects->isVisible())
-                                            <a class="nav-link {{ in_array(Route::currentRouteName(), ['projects-page', 'project-detail-page']) ? 'nav-link-active' : '' }}"
-                                                href="{{ route('projects-page') }}" role="menuitem">
-                                                {{__('strings.navbar_projects')}}
-                                            </a>
-                                            @endif
-                                        </div>
-                                    </div>
-                                </div>
-                                {{-- DROPDOWN: OUR WORK --}}
-
-                                {{-- DROPDOWN: OUR SERVICES --}}
-                                <div class="nav-dropdown" x-data="{ open: false }" @click.outside="open = false">
-                                    <button type="button" class="nav-dropdown-btn"
-                                        :aria-expanded="open"
-                                        @click="open = !open">
-                                        {{__('strings.navbar_our_services')}}
-                                        <svg class="nav-dropdown-chevron"
-                                            :style="open ? 'transform: rotate(-180deg)' : ''"
-                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 256 256" fill="currentColor"><path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path></svg>
-                                    </button>
-
-                                    <div class="nav-dropdown-menu" x-show="open" x-cloak role="menu" aria-orientation="vertical">
-                                        <div class="py-1 space-y-0.5">
-                                            <a class="nav-link {{ Route::currentRouteName() === 'pool-services-page' ? 'nav-link-active' : '' }}"
-                                                href="{{ route('pool-services-page') }}" role="menuitem">
-                                                {{__('strings.navbar_our_services_pool')}}
-                                            </a>
-
-                                            <a class="nav-link {{ Route::currentRouteName() === 'pool-items-page' ? 'nav-link-active' : '' }}"
-                                                href="{{ route('pool-items-page') }}" role="menuitem">
-                                                {{__('strings.navbar_our_services_essential')}}
-                                            </a>
-
-                                            <a class="nav-link" href="https://thesplashshop.com/" role="menuitem">
-                                                {{__('strings.navbar_our_services_supplies')}}
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                {{-- DROPDOWN: OUR SERVICES --}}
-
-                                <a class="nav-link {{ Route::currentRouteName() === 'contact-page' ? 'nav-link-active' : '' }}"
-                                    href="{{ route('contact-page') }}">
-                                    {{__('strings.navbar_contact')}}
-                                </a>
                             </div>
                         </div>
 
@@ -168,7 +135,7 @@
                             </a> --}}
                             {{-- GET A QUOTE BTN --}}
                             <div class="nav-get-quote">
-                                <a href="{{ route('homepage') }}#contact" class="quote-btn">
+                                <a href="{{ route('contact-page') }}?interest=Free+Pool+Assessment" class="quote-btn" onclick="window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'book_assessment_click',location:'navbar'})">
                                     {{__('strings.navbar_get_quote')}}
                                 </a>
                             </div>
@@ -201,12 +168,12 @@
                                 </button>
 
                                 <div x-show="open" x-cloak class="aquarius-lang-select-dropdown"
-                                    role="menu" aria-orientation="vertical">
+                                   >
                                     <div class="lang-select-dropdown-card">
-                                        <a href="{{ $enUrl }}" class="aquarius-lang-select-item" role="menuitem" onclick="window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'language_switch',language:'en'})">
+                                        <a href="{{ $enUrl }}" class="aquarius-lang-select-item" onclick="window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'language_switch',language:'en'})">
                                             <x-reusables.flag-icons lang="en_MY" /> <span class="text-gray-500">EN</span> English
                                         </a>
-                                        <a href="{{ $msUrl }}" class="aquarius-lang-select-item" role="menuitem" onclick="window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'language_switch',language:'ms'})">
+                                        <a href="{{ $msUrl }}" class="aquarius-lang-select-item" onclick="window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'language_switch',language:'ms'})">
                                             <x-reusables.flag-icons lang="ms_MY" /> <span class="text-gray-500">MS</span> Melayu
                                         </a>
                                     </div>
