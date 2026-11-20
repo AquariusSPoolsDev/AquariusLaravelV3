@@ -2,7 +2,6 @@
     <div class="main-container">
         <div class="aquarius-contact-main">
             <div class="aquarius-contact-col-left text-center lg:text-start">
-                <x-reusables.pill-text>{{__('strings.navbar_contact')}}</x-reusables.pill-text>
                 <h2 class="aquarius-homepage-heading lg:text-start! text-neutral-950">
                     {{__('strings.contact_heading')}}
                 </h2>

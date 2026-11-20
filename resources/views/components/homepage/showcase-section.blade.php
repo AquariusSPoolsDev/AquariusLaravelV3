@@ -6,7 +6,6 @@ $images = ImageGallery::where('is_published', 1)->where('is_featured', 1)->order
 <section id="showcase" class="bg-white">
     <div class="main-container">
         <div class="max-w-2xl mx-auto text-center">
-            <x-reusables.pill-text class="block">{{__('strings.homepage_showcase_pill')}}</x-reusables.pill-text>
             <h2 class="aquarius-homepage-heading">{{__('strings.showcase_heading')}}</h2>
         </div>
 

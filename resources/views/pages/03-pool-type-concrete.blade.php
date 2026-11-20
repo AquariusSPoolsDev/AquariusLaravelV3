@@ -33,7 +33,6 @@ $headerSubtitle = 'concrete_pool_subtitle_heading';
 
 {{-- POOL STEPS --}}
 <section class="pool-creation-steps-section mt-16">
-    <x-reusables.pill-text>{{ __('strings.concrete_pool_steps_pill') }}</x-reusables.pill-text>
     <h2 class="aquarius-subheading mb-6!">{{ __('strings.concrete_pool_steps_title') }}</h2>
     @php
         // Step photo per step (without extension); steps without a photo yet show text only
@@ -46,7 +45,6 @@ $headerSubtitle = 'concrete_pool_subtitle_heading';
 
 {{-- PROS & CONS --}}
 <section class="pool-pros-cons-section mt-16">
-    <x-reusables.pill-text>{{ __('strings.concrete_pool_pros_cons_pill') }}</x-reusables.pill-text>
     <h2 class="aquarius-subheading mb-6!">{{ __('strings.concrete_pool_pros_cons_title') }}</h2>
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6" data-animate data-delay="200">
         <x-our-pools-concrete.pool-advantage />

@@ -26,7 +26,6 @@ $headerSubtitle = 'reviews_subtitle_heading';
 @section('content')
 <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3 mb-8">
     <div>
-        <x-reusables.pill-text>{{__('strings.reviews_pill')}}</x-reusables.pill-text>
         <p class="text-neutral-600">{{__('strings.reviews_body_title')}}</p>
     </div>
     <div class="flex flex-wrap gap-3">

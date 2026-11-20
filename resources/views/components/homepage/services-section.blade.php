@@ -1,7 +1,6 @@
 <section class="bg-white" id="services">
     <div class="main-container">
         <div class="max-w-2xl mx-auto text-center">
-            <x-reusables.pill-text class="block">{{__('strings.homepage_services_pill')}}</x-reusables.pill-text>
             <h2 class="aquarius-homepage-heading">{{__('strings.services_heading')}}</h2>
             <p class="mt-3 text-neutral-600 text-lg">{{__('strings.services_subheading')}}</p>
         </div>

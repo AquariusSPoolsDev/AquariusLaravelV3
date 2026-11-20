@@ -121,23 +121,6 @@
 }
 
 /* REUSABLE COMPONENTS - START */
-/* PILL TEXT */
-.pill-text {
-    @apply inline-flex max-w-full items-center px-4 py-1.5 bg-primary-50 rounded-full mb-4;
-
-    span {
-        @apply font-heading text-sm font-bold text-primary-800 -tracking-tighter uppercase;
-    }
-
-    &.pill-text-dark {
-        @apply bg-white/10;
-
-        span {
-            @apply text-white/90;
-        }
-    }
-}
-
 /* SUBHEADING */
 .aquarius-subheading {
     @apply text-heading text-primary-900 font-semibold mb-2.5 lg:mb-4 text-balance;

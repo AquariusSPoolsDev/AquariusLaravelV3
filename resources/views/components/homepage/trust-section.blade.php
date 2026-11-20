@@ -8,7 +8,6 @@
 
             {{-- LEFT: Text content --}}
             <div class="max-w-xl">
-                <x-reusables.pill-text>{{__('strings.trust_pill')}}</x-reusables.pill-text>
                 <h2 class="text-section font-semibold text-balance text-primary-900">{{__('strings.trust_heading')}}</h2>
                 <p class="text-neutral-600 mt-6 mb-8">{{__('strings.trust_body')}}</p>
 

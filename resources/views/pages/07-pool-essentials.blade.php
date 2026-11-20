@@ -48,7 +48,6 @@ $headerSubtitle = 'pool_item_subtitle_heading';
 
 {{-- CORE EQUIPMENT --}}
 <section id="core-equipment" class="scroll-mt-20 mb-16">
-    <x-reusables.pill-text>{{ __('strings.pool_item_core_pill') }}</x-reusables.pill-text>
     <h2 class="aquarius-subheading mb-3!">{{ __('strings.pool_item_core_title') }}</h2>
     <p class="mb-8 text-neutral-600">{{ __('strings.pool_item_core_body') }}</p>
 
@@ -73,7 +72,6 @@ $headerSubtitle = 'pool_item_subtitle_heading';
 
 {{-- CLEANING ACCESSORIES --}}
 <section id="cleaning" class="scroll-mt-20 mb-16">
-    <x-reusables.pill-text>{{ __('strings.pool_item_equip_pill') }}</x-reusables.pill-text>
     <h2 class="aquarius-subheading mb-3!">{{ __('strings.pool_item_equip_title') }}</h2>
     <p class="mb-8 text-neutral-600">{{ __('strings.pool_item_equip_body') }}</p>
 
@@ -264,7 +262,6 @@ $headerSubtitle = 'pool_item_subtitle_heading';
 
 {{-- POOL CHEMICALS --}}
 <section id="chemicals" class="scroll-mt-20 mb-16">
-    <x-reusables.pill-text>{{ __('strings.pool_item_chem_pill') }}</x-reusables.pill-text>
     <h2 class="aquarius-subheading mb-3!">{{ __('strings.pool_item_chem_title') }}</h2>
     <p class="mb-8 text-neutral-600">{{ __('strings.pool_item_chem_body') }}</p>
 

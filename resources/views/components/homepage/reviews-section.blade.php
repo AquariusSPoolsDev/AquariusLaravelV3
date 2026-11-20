@@ -10,7 +10,6 @@ $fbRecommended = $fbTotal; // All published FB reviews are recommendations
 <section class="focus-on-dark bg-linear-to-br from-primary-950 via-primary-800 to-primary-700 relative overflow-hidden">
     <div class="main-container relative z-10">
         <div class="max-w-2xl mx-auto text-center">
-            <x-reusables.pill-text variant="dark" class="block">{{__('strings.reviews_pill')}}</x-reusables.pill-text>
             <h2 class="aquarius-homepage-heading"><span class="text-white">{{__('strings.reviews_heading')}}</span></h2>
         </div>
 

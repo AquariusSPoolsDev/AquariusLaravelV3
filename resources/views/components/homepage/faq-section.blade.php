@@ -2,7 +2,6 @@
     <div class="main-container">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-8">
-                <x-reusables.pill-text class="text-center block">{{ __('strings.homepage_faq_pill') }}</x-reusables.pill-text>
                 <h2 class="aquarius-homepage-heading">{{ __('strings.homepage_faq_heading') }}</h2>
             </div>
 

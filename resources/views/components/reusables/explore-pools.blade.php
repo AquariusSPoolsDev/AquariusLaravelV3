@@ -2,7 +2,6 @@
 
 {{-- EXPLORE OTHER POOL TYPES --}}
 <section class="mt-16">
-    <x-reusables.pill-text>{{ __('strings.explore_pools_pill') }}</x-reusables.pill-text>
     <h2 class="aquarius-subheading mb-6!">{{ __('strings.explore_pools_title') }}</h2>
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 

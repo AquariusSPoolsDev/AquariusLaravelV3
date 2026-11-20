@@ -52,7 +52,7 @@ class DecorativeEffectsTest extends TestCase
         $html = $this->get($path)->assertOk()->getContent();
 
         $this->assertDoesNotMatchRegularExpression('/<h[1-3][^>]*data-animate/', $html);
-        $this->assertDoesNotMatchRegularExpression('/class="pill-text[^"]*"[^>]*data-animate/', $html);
+        $this->assertStringNotContainsString('class="pill-text', $html);
     }
 
     public function test_homepage_cards_still_fade_in_but_the_contact_form_does_not(): void

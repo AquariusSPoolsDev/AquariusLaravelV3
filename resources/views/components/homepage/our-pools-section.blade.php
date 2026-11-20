@@ -1,7 +1,6 @@
 <section id="our-pools" class="bg-primary-50/50">
     <div class="main-container">
         <div class="max-w-2xl mx-auto text-center">
-            <x-reusables.pill-text class="block">{{__('strings.our_pools_overview_pill')}}</x-reusables.pill-text>
             <h2 class="aquarius-homepage-heading">{{__('strings.pools_heading')}}</h2>
         </div>
 

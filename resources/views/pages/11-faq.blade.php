@@ -40,7 +40,6 @@
         </div>
 
         <div class="mx-auto text-center mt-16 mb-10">
-            <x-reusables.pill-text>{{ __('strings.faq_pill') }}</x-reusables.pill-text>
             <h2 class="aquarius-subheading">{{ __('strings.faq_heading_2') }}</h2>
         </div>
 
