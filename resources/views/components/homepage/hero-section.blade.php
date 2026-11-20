@@ -77,12 +77,10 @@
                 <p class="aquarius-secondary-heading">
                     {{ __('strings.hero_content') }}
                 </p>
-                <ul class="flex flex-wrap justify-center gap-2 mb-4 max-w-xl" aria-label="Key features">
-                    <li class="aquarius-feature-pill">{{ __('strings.hero_feature_1') }}</li>
-                    <li class="aquarius-feature-pill">{{ __('strings.hero_feature_2') }}</li>
-                    <li class="aquarius-feature-pill">{{ __('strings.hero_feature_3') }}</li>
-                    <li class="aquarius-feature-pill">{{ __('strings.hero_feature_4') }}</li>
-                    <li class="aquarius-feature-pill">{{ __('strings.hero_feature_5') }}</li>
+                <ul class="aquarius-feature-line" aria-label="Key features">
+                    @foreach (range(1, 5) as $feature)
+                        <li>{{ __('strings.hero_feature_'.$feature) }}</li>
+                    @endforeach
                 </ul>
 
                 <div class="aquarius-cta-buttons">

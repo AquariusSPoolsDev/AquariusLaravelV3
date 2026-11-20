@@ -24,7 +24,8 @@ return [
     'navbar_contact' => 'Contact',
     'navbar_visit_showroom' => 'Visit Showroom',
     'navbar_opens_new_tab' => '(opens in a new tab)',
-    'navbar_get_quote' => 'Get a Quote',
+    'navbar_get_quote' => 'Book a Free Assessment',
+    'navbar_get_quote_short' => 'Free Assessment',
 
     // ALERT NOTIFICATION
     'alert_current_promo' => 'Current Promotion',
@@ -888,7 +889,7 @@ return [
     'projects_location_label' => 'Location',
     'projects_year_label' => 'Year Completed',
     'projects_view_project' => 'View Project',
-    'projects_get_quote' => 'Get a Quote',
+    'projects_get_quote' => 'Book a Free Assessment',
     'projects_contact_cta_title' => 'Inspired? Let\'s Build Yours.',
     'projects_contact_cta_body' => 'Seen a pool that matches what you have in mind? Contact us to plan your build.',
 ];

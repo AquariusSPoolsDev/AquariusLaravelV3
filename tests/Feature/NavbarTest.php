@@ -7,7 +7,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
 
 /**
- * Top navigation: Our Pools / Our Work / Our Services / Visit Showroom, with Get a Quote going to the
+ * Top navigation: Our Pools / Our Work / Our Services / Visit Showroom, with Book a Free Assessment going to the
  * Contact page. Links follow Page Visibility, and only the current page is marked aria-current.
  */
 class NavbarTest extends TestCase

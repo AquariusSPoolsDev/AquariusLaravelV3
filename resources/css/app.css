@@ -222,7 +222,7 @@
             @apply overflow-y-auto lg:overflow-visible max-lg:h-[calc(100dvh-57px)] [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-neutral-100 [&::-webkit-scrollbar-thumb]:bg-neutral-300;
 
             .nav-flex {
-                @apply pt-4 lg:py-0 flex flex-col lg:flex-row lg:items-center lg:gap-x-5;
+                @apply pt-4 lg:py-0 flex flex-col lg:flex-row lg:items-center lg:gap-x-3 xl:gap-x-5;
 
                 .nav-content {
                     @apply grow;
@@ -232,7 +232,7 @@
 
                         .nav-link,
                         .nav-dropdown-btn {
-                            @apply p-4 lg:px-3 py-3.5 lg:py-2 text-sm text-neutral-600 rounded-lg font-bold transition-all cursor-pointer hover:text-primary-800 hover:bg-primary-50 active:text-primary-800 active:bg-primary-50 focus:text-primary-800 focus:bg-primary-50;
+                            @apply p-4 lg:px-2 xl:px-3 py-3.5 lg:py-2 text-sm text-neutral-600 rounded-lg font-bold whitespace-nowrap transition-all cursor-pointer hover:text-primary-800 hover:bg-primary-50 active:text-primary-800 active:bg-primary-50 focus:text-primary-800 focus:bg-primary-50;
                         }
 
                         .nav-link {
@@ -271,7 +271,7 @@
                 }
 
                 .nav-get-quote .quote-btn {
-                    @apply block text-center text-sm py-2 px-3.5 font-bold rounded-lg transition-all text-neutral-950 bg-secondary-400 hover:bg-secondary-500 active:scale-95 active:brightness-90 disabled:opacity-50 disabled:pointer-events-none;
+                    @apply block text-center text-sm whitespace-nowrap py-2 px-3.5 font-bold rounded-lg transition-all text-neutral-950 bg-secondary-400 hover:bg-secondary-500 active:scale-95 active:brightness-90 disabled:opacity-50 disabled:pointer-events-none;
                 }
 
                 /* language selector */
@@ -383,8 +383,13 @@
                     @apply text-lg lg:text-xl font-medium text-neutral-100 drop-shadow-md drop-shadow-primary-900;
                 }
 
-                .aquarius-feature-pill {
-                    @apply text-sm font-semibold text-white bg-white/15 border border-white/25 rounded-full px-3 py-1 drop-shadow-sm;
+                .aquarius-feature-line {
+                    @apply flex flex-wrap justify-center gap-x-2 gap-y-1 mb-4 max-w-2xl text-sm lg:text-base font-semibold text-white drop-shadow-md drop-shadow-primary-900;
+
+                    li:not(:last-child)::after {
+                        content: '\00B7';
+                        @apply ml-2 text-white/70;
+                    }
                 }
 
                 .aquarius-cta-buttons {
@@ -392,11 +397,11 @@
                 }
 
                 .aquarius-cta-primary {
-                    @apply py-3.5 px-10 inline-flex items-center gap-2 text-base lg:text-lg rounded-full font-heading font-bold bg-primary-700 text-white disabled:opacity-50 disabled:pointer-events-none transition-colors drop-shadow-lg hover:bg-primary-800 active:scale-95 active:brightness-90;
+                    @apply py-3.5 px-10 inline-flex items-center gap-2 text-base lg:text-lg rounded-full font-heading font-bold bg-secondary-400 text-neutral-950 disabled:opacity-50 disabled:pointer-events-none transition-colors drop-shadow-lg hover:bg-secondary-500 active:scale-95 active:brightness-90;
                 }
 
                 .aquarius-cta-secondary {
-                    @apply py-3.5 px-10 inline-flex items-center gap-2 text-base lg:text-lg rounded-full font-heading font-bold border-2 border-white/70 text-white backdrop-blur-sm hover:border-white hover:bg-white/15 focus:border-white focus:bg-white/15 active:scale-95 active:bg-white/20 disabled:opacity-50 disabled:pointer-events-none transition-all drop-shadow-md;
+                    @apply py-3.5 px-10 inline-flex items-center gap-2 text-base lg:text-lg rounded-full font-heading font-bold border-2 border-white/70 text-white hover:border-white hover:bg-white/15 focus:border-white focus:bg-white/15 active:scale-95 active:bg-white/20 disabled:opacity-50 disabled:pointer-events-none transition-all drop-shadow-md;
                 }
             }
         }

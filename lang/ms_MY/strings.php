@@ -24,7 +24,8 @@ return [
     'navbar_contact' => 'Hubungi Kami',
     'navbar_visit_showroom' => 'Lawati Bilik Pameran',
     'navbar_opens_new_tab' => '(dibuka di tab baharu)',
-    'navbar_get_quote' => 'Dapatkan Sebut Harga',
+    'navbar_get_quote' => 'Tempah Penilaian Percuma',
+    'navbar_get_quote_short' => 'Penilaian Percuma',
 
     // ALERT NOTIFICATION
     'alert_current_promo' => 'Promosi Semasa',
@@ -888,7 +889,7 @@ return [
     'projects_location_label' => 'Lokasi',
     'projects_year_label' => 'Tahun Siap',
     'projects_view_project' => 'Lihat Projek',
-    'projects_get_quote' => 'Dapatkan Sebutan Harga',
+    'projects_get_quote' => 'Tempah Penilaian Percuma',
     'projects_contact_cta_title' => 'Terinspirasi? Mari Bina Kolam Anda.',
     'projects_contact_cta_body' => 'Nampak kolam renang yang sesuai dengan apa yang anda fikirkan? Hubungi kami untuk merancang binaan kolam anda.',
 ];

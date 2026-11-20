@@ -136,7 +136,8 @@
                             {{-- GET A QUOTE BTN --}}
                             <div class="nav-get-quote">
                                 <a href="{{ route('contact-page') }}?interest=Free+Pool+Assessment" class="quote-btn" onclick="window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'book_assessment_click',location:'navbar'})">
-                                    {{__('strings.navbar_get_quote')}}
+                                    <span class="xl:hidden">{{__('strings.navbar_get_quote_short')}}</span>
+                                    <span class="hidden xl:inline">{{__('strings.navbar_get_quote')}}</span>
                                 </a>
                             </div>
                             {{-- GET A QUOTE BTN --}}
