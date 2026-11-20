@@ -148,7 +148,7 @@ return [
     'our_pools_body' => 'Aquarius Swimming Pools has built concrete, vinyl, and fibreglass pools across Malaysia for over 30 years, based in Johor Bahru. Each pool type differs in cost, build time, and design flexibility. Compare all three below to find the right fit for your property.',
     'our_pools_overview_title' => 'The three pool types we build',
     'our_pools_concrete_overview' => 'Aquarius builds concrete pools to any size, shape, and depth, using a steel-reinforced framework finished with your choice of tiles, plaster, or stone. Build time runs 60 to 90 days. Optional features include integrated jacuzzis, wading pools, waterfalls, and water features. Concrete pools last a lifetime with proper maintenance.',
-    'our_pools_vinyl_overview' => 'Vinyl pools use stainless steel wall frames set into excavated ground, lined with a fitted vinyl sheet. Our stainless steel frames carry a 5 to 10 year warranty, depending on the series. Installation takes 2 to 3 weeks. Vinyl is the most affordable pool type. Choose from fixed sizes and shapes.',
+    'our_pools_vinyl_overview' => 'Vinyl pools use stainless steel wall frames set into excavated ground, lined with a fitted vinyl sheet. Our stainless steel frames carry a 5 to 10 year warranty, depending on the series. Installation takes 2 to 3 weeks, not including ordering time. Vinyl is the most affordable pool type. Choose from fixed sizes and shapes.',
     'our_pools_fibreglass_overview' => 'Fibreglass pools arrive as a pre-manufactured shell, lowered into the excavated site and ready in 5 to 7 days. Built to last 40 to 50 years with low maintenance. Aquarius supplies and installs a range of ready-made fibreglass models.',
 
     'our_pools_learn_more' => 'Learn More',
@@ -165,7 +165,7 @@ return [
 
     'table_keypoint_title_1' => 'Installation',
     'table_concrete_body_1' => '2 to 3 months.',
-    'table_vinyl_body_1' => '2 to 3 weeks.',
+    'table_vinyl_body_1' => '2 to 3 weeks, not including ordering time.',
     'table_fibreglass_body_1' => '5 to 7 days.',
 
     'table_keypoint_title_2' => 'Finishing',
@@ -194,9 +194,9 @@ return [
     'table_fibreglass_body_6' => 'Fixed shapes and sizes.',
 
     'table_keypoint_title_7' => 'Portability',
-    'table_concrete_body_7' => 'Non Portable.',
-    'table_vinyl_body_7' => 'Portable.',
-    'table_fibreglass_body_7' => 'Portable.',
+    'table_concrete_body_7' => 'Permanent. Built in place and cannot be moved.',
+    'table_vinyl_body_7' => 'Not portable once installed. The frame is fixed on concrete footings, so removing it is major work.',
+    'table_fibreglass_body_7' => 'Not portable once installed. The shell is set into the ground and hard to remove.',
 
     'table_keypoint_title_8' => 'Benefits',
     'table_concrete_body_8' => 'Can be emptied for repair works.<br><br>Design flexibility with easy add on options such as integrated Jacuzzi, wading pool, water features and underwater lighting.',
@@ -249,13 +249,15 @@ return [
     'concrete_pool_disadvantage_3_desc' => '',
     'concrete_pool_closing_body' => 'Concrete pools are the most customisable option Aquarius builds. If you want full control over size, shape, depth, and finish, and are comfortable with a 2 to 3 month build time, concrete is the right choice. For faster installation or lower cost, compare fibreglass and vinyl pools.',
     'concrete_pool_compare_other' => 'Not sure concrete is right? Compare fibreglass and vinyl pools, or ask our team.',
+    'concrete_pool_cta_title' => 'Thinking about a concrete pool?',
+    'concrete_pool_cta_body' => 'Tell us about your site and the size you have in mind. We\'ll talk you through the design, cost and build time.',
 
     // VINYL POOLS PAGE
     'vinyl_pool_title_heading' => 'Vinyl Swimming Pools in Johor Bahru',
     'vinyl_pool_display_heading' => 'Vinyl Pools',
-    'vinyl_pool_subtitle_heading' => 'Stainless steel frames. 5 to 10 year warranty. Installed in 2 to 3 weeks. Most affordable pool type.',
-    'vinyl_pool_meta_description' => 'Aquarius installs vinyl pools with stainless steel frames across Malaysia. 5 to 10 year warranty. 2 to 3 week installation. Based in Johor Bahru.',
-    'vinyl_pool_body' => 'Aquarius Swimming Pools installs vinyl pools across Malaysia, based in Johor Bahru. Each pool uses stainless steel wall frames set into excavated ground, lined with a fitted vinyl liner. Our frames carry a 5 to 10 year warranty, depending on the series. Installation takes 2 to 3 weeks, making vinyl the fastest in-ground option after fibreglass. Vinyl is the most affordable pool type Aquarius offers. Read on to see how vinyl pools are built, and whether one is right for your property.',
+    'vinyl_pool_subtitle_heading' => 'Stainless steel frames. 5 to 10 year warranty. Installed in 2 to 3 weeks, not including ordering time. Most affordable pool type.',
+    'vinyl_pool_meta_description' => 'Vinyl pools by Aquarius, Johor Bahru. Stainless steel frames, 5 to 10 year warranty. 2 to 3 week installation, not including ordering time.',
+    'vinyl_pool_body' => 'Aquarius Swimming Pools installs vinyl pools across Malaysia, based in Johor Bahru. Each pool uses stainless steel wall frames set into excavated ground, lined with a fitted vinyl liner. Our frames carry a 5 to 10 year warranty, depending on the series. Installation takes 2 to 3 weeks, not including ordering time, making vinyl the fastest in-ground option after fibreglass. Vinyl is the most affordable pool type Aquarius offers. Read on to see how vinyl pools are built, and whether one is right for your property.',
     'vinyl_pool_steps_pill' => 'How it\'s made',
     'vinyl_pool_steps_title' => 'How Are Vinyl Pools Built?',
     'vinyl_pool_pros_cons_pill' => 'Pros & Cons',
@@ -274,7 +276,7 @@ return [
     'vinyl_pool_advantage_1_title' => 'Cost efficient',
     'vinyl_pool_advantage_1_desc' => 'Vinyl is the cheapest pool type to build, costing less than fibreglass or concrete.',
     'vinyl_pool_advantage_2_title' => 'Quick Installation',
-    'vinyl_pool_advantage_2_desc' => 'Vinyl pools install faster than concrete, ready in 2 to 3 weeks from excavation to completion.',
+    'vinyl_pool_advantage_2_desc' => 'Vinyl pools install faster than concrete, ready in 2 to 3 weeks from excavation to completion, not including ordering time.',
     'vinyl_pool_advantage_3_title' => 'Choice of Liners',
     'vinyl_pool_advantage_3_desc' => 'Liners come in a range of colours and patterns, so you choose how your pool looks.',
     'vinyl_pool_disadvantage_title' => 'Disadvantages',
@@ -286,6 +288,8 @@ return [
     'vinyl_pool_disadvantage_3_desc' => '',
     'vinyl_pool_closing_body' => 'Vinyl pools are the most affordable option Aquarius installs, with the fastest build time after fibreglass. Fixed shapes and sizes mean less design flexibility than concrete. If cost and speed matter more than customisation, vinyl is the right fit. For more options, compare concrete and fibreglass pools.',
     'vinyl_pool_compare_other' => 'Not sure vinyl is right? Compare concrete and fibreglass pools, or ask our team.',
+    'vinyl_pool_cta_title' => 'Thinking about a vinyl pool?',
+    'vinyl_pool_cta_body' => 'Tell us about your space and budget, and we\'ll suggest a size and series that fits.',
 
     // FIBREGLASS POOLS PAGE
     'fibreglass_pool_title_heading' => 'Fibreglass Swimming Pools in Johor Bahru',
@@ -323,6 +327,8 @@ return [
     'fibreglass_pool_disadvantage_3_desc' => '',
     'fibreglass_pool_closing_body' => 'Fibreglass is the fastest pool material Aquarius installs, ready in 5 to 7 days with minimal upkeep over its 40 to 50 year lifespan. Fixed shapes mean less design flexibility than concrete. If speed and low maintenance matter more than customisation, fibreglass is the right fit. For more options, compare concrete and vinyl pools.',
     'fibreglass_pool_compare_other' => 'Not sure fibreglass is right? Compare concrete and vinyl pools, or ask our team.',
+    'fibreglass_pool_cta_title' => 'Thinking about a fibreglass pool?',
+    'fibreglass_pool_cta_body' => 'Tell us about your site, and we\'ll help you choose a model that fits.',
 
     // EXPLORE OTHER POOL TYPES SECTION
     'explore_pools_pill' => 'Explore',

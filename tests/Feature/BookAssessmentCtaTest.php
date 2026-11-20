@@ -62,6 +62,30 @@ class BookAssessmentCtaTest extends TestCase
             ->assertSee('href="'.url('/en/contact-us').'?interest=Tiled+Concrete+Pools" class="cta-strip-btn', false);
     }
 
+    /**
+     * @return array<string, array{string, string, string}>
+     */
+    public static function poolPages(): array
+    {
+        return [
+            'concrete' => ['/en/concrete-pools', 'Thinking about a concrete pool?', '/ms/concrete-pools'],
+            'vinyl' => ['/en/vinyl-pools', 'Thinking about a vinyl pool?', '/ms/vinyl-pools'],
+            'fibreglass' => ['/en/fibreglass-pools', 'Thinking about a fibreglass pool?', '/ms/fibreglass-pools'],
+        ];
+    }
+
+    #[DataProvider('poolPages')]
+    public function test_pool_pages_close_with_their_own_banner(string $path, string $title, string $malayPath): void
+    {
+        $this->get($path)->assertOk()
+            ->assertSee($title)
+            ->assertDontSee('Want a pool like this?');
+
+        $this->get($malayPath)->assertOk()
+            ->assertSee('Berminat dengan kolam')
+            ->assertDontSee('Mahukan kolam seperti ini?');
+    }
+
     public function test_default_banner_books_the_free_assessment_and_is_tracked(): void
     {
         $this->get('/en/showcase')->assertOk()

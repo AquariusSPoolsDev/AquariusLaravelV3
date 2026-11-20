@@ -92,5 +92,7 @@ $headerSubtitle = 'vinyl_pool_subtitle_heading';
 @endsection
 
 @section('cta')
-<x-reusables.cta-banner href="{{ route('contact-page') }}?interest=Steel+Structure+Vinyl+Pools" />
+<x-reusables.cta-banner href="{{ route('contact-page') }}?interest=Steel+Structure+Vinyl+Pools"
+    :title="__('strings.vinyl_pool_cta_title')"
+    :body="__('strings.vinyl_pool_cta_body')" />
 @endsection

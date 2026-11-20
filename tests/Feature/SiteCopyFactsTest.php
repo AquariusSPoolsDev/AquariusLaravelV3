@@ -55,6 +55,25 @@ class SiteCopyFactsTest extends TestCase
         }
     }
 
+    public function test_no_installed_pool_is_called_portable(): void
+    {
+        foreach (['table_concrete_body_7', 'table_vinyl_body_7', 'table_fibreglass_body_7'] as $key) {
+            $this->assertNotSame('Portable.', $this->strings('en_MY')[$key]);
+            $this->assertNotSame('Boleh dimudah alih.', $this->strings('ms_MY')[$key]);
+        }
+    }
+
+    public function test_vinyl_install_time_always_excludes_ordering_time(): void
+    {
+        $en = $this->strings('en_MY');
+        $ms = $this->strings('ms_MY');
+
+        foreach (['pools_vinyl_desc', 'our_pools_vinyl_overview', 'table_vinyl_body_1', 'vinyl_pool_subtitle_heading', 'vinyl_pool_meta_description', 'vinyl_pool_body', 'vinyl_pool_advantage_2_desc'] as $key) {
+            $this->assertStringContainsString('not including ordering time', $en[$key], "en {$key}");
+            $this->assertStringContainsString('tidak termasuk masa untuk diperoleh', $ms[$key], "ms {$key}");
+        }
+    }
+
     public function test_vinyl_warranty_and_pool_count_match_in_both_languages(): void
     {
         $en = $this->strings('en_MY');

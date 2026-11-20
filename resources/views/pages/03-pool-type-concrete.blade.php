@@ -92,5 +92,7 @@ $headerSubtitle = 'concrete_pool_subtitle_heading';
 @endsection
 
 @section('cta')
-<x-reusables.cta-banner href="{{ route('contact-page') }}?interest=Tiled+Concrete+Pools" />
+<x-reusables.cta-banner href="{{ route('contact-page') }}?interest=Tiled+Concrete+Pools"
+    :title="__('strings.concrete_pool_cta_title')"
+    :body="__('strings.concrete_pool_cta_body')" />
 @endsection

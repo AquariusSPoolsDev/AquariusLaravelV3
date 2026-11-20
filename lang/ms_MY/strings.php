@@ -148,7 +148,7 @@ return [
     'our_pools_body' => 'Aquarius Swimming Pools telah membina kolam renang konkrit, vinil, dan gentian kaca di seluruh Malaysia selama lebih 30 tahun, berpusat di Johor Bahru. Setiap jenis kolam berbeza dari segi kos, masa pembinaan, dan fleksibiliti reka bentuk. Bandingkan ketiga-tiganya di bawah untuk mencari pilihan yang sesuai untuk rumah anda.',
     'our_pools_overview_title' => 'Tiga jenis kolam yang kami bina',
     'our_pools_concrete_overview' => 'Aquarius membina kolam renang konkrit mengikut sebarang saiz, bentuk, dan kedalaman, menggunakan rangka bertetulang keluli yang disiapkan dengan pilihan jubin, plaster, atau batu. Masa pembinaan antara 60 hingga 90 hari. Ciri pilihan termasuk jakuzi bersepadu, kolam cetek, air terjun, dan hiasan air. Kolam renang konkrit tahan seumur hidup dengan penyelenggaraan yang betul.',
-    'our_pools_vinyl_overview' => 'Kolam renang vinil menggunakan rangka dinding keluli tahan karat yang dipasang dalam tanah yang digali, dilapisi dengan lembaran vinil yang dipasang kemas. Rangka keluli tahan karat kami membawa jaminan 5 hingga 10 tahun, bergantung pada siri. Pemasangan mengambil masa 2 hingga 3 minggu. Vinil ialah jenis kolam yang paling mampu milik. Pilih dari saiz dan bentuk yang tetap.',
+    'our_pools_vinyl_overview' => 'Kolam renang vinil menggunakan rangka dinding keluli tahan karat yang dipasang dalam tanah yang digali, dilapisi dengan lembaran vinil yang dipasang kemas. Rangka keluli tahan karat kami membawa jaminan 5 hingga 10 tahun, bergantung pada siri. Pemasangan mengambil masa 2 hingga 3 minggu, tidak termasuk masa untuk diperoleh. Vinil ialah jenis kolam yang paling mampu milik. Pilih dari saiz dan bentuk yang tetap.',
     'our_pools_fibreglass_overview' => 'Kolam renang gentian kaca tiba sebagai cangkerang siap kilang, diturunkan ke tapak yang digali dan siap dalam masa 5 hingga 7 hari. Dibina untuk tahan 40 hingga 50 tahun dengan penyelenggaraan yang rendah. Aquarius membekal dan memasang pelbagai model gentian kaca sedia ada.',
 
     'our_pools_learn_more' => 'Ketahui Lebih Lanjut',
@@ -165,7 +165,7 @@ return [
 
     'table_keypoint_title_1' => 'Pemasangan',
     'table_concrete_body_1' => '2 hingga 3 bulan.',
-    'table_vinyl_body_1' => '2 hingga 3 minggu.',
+    'table_vinyl_body_1' => '2 hingga 3 minggu, tidak termasuk masa untuk diperoleh.',
     'table_fibreglass_body_1' => '5 hingga 7 hari.',
 
     'table_keypoint_title_2' => 'Kemasan',
@@ -194,9 +194,9 @@ return [
     'table_fibreglass_body_6' => 'Bentuk dan saiz yang tetap.',
 
     'table_keypoint_title_7' => 'Mudah Alih',
-    'table_concrete_body_7' => 'Tidak boleh dimudah alih.',
-    'table_vinyl_body_7' => 'Boleh dimudah alih.',
-    'table_fibreglass_body_7' => 'Boleh dimudah alih.',
+    'table_concrete_body_7' => 'Kekal. Dibina di tapak dan tidak boleh dipindahkan.',
+    'table_vinyl_body_7' => 'Tidak mudah alih selepas dipasang. Rangkanya dipasang tetap pada tapak konkrit, jadi untuk membukanya memerlukan kerja yang besar.',
+    'table_fibreglass_body_7' => 'Tidak mudah alih selepas dipasang. Cangkerangnya tertanam dalam tanah dan sukar dikeluarkan.',
 
     'table_keypoint_title_8' => 'Manfaat',
     'table_concrete_body_8' => 'Boleh dikosongkan untuk kerja-kerja pembaikan.<br><br>Reka bentuk yang fleksibel dengan pilihan tambahan seperti jakuzi bersepadu, kolam saiz cetek, hiasan air, dan pencahayaan bawah air.',
@@ -249,13 +249,15 @@ return [
     'concrete_pool_disadvantage_3_desc' => '',
     'concrete_pool_closing_body' => 'Kolam konkrit ialah pilihan paling tersuai yang dibina oleh Aquarius. Jika anda mahukan kawalan penuh ke atas saiz, bentuk, kedalaman, dan kemasan, serta selesa dengan masa pembinaan 2 hingga 3 bulan, kolam konkrit adalah pilihan yang tepat. Untuk pemasangan lebih cepat atau kos lebih rendah, bandingkan kolam gentian kaca dan vinil.',
     'concrete_pool_compare_other' => 'Tidak pasti kolam konkrit sesuai? Bandingkan kolam gentian kaca dan vinil, atau tanya pasukan kami.',
+    'concrete_pool_cta_title' => 'Berminat dengan kolam konkrit?',
+    'concrete_pool_cta_body' => 'Beritahu kami tentang tapak anda dan saiz yang anda fikirkan. Kami akan terangkan reka bentuk, kos dan masa pembinaannya.',
 
     // VINYL POOLS PAGE
     'vinyl_pool_title_heading' => 'Kolam Renang Vinil di Johor Bahru',
     'vinyl_pool_display_heading' => 'Kolam Renang Vinil',
-    'vinyl_pool_subtitle_heading' => 'Rangka keluli tahan karat. Jaminan 5 hingga 10 tahun. Dipasang dalam 2 hingga 3 minggu. Jenis kolam paling mampu milik.',
-    'vinyl_pool_meta_description' => 'Kolam vinil berangka keluli tahan karat oleh Aquarius. Jaminan 5 hingga 10 tahun. Pemasangan 2 hingga 3 minggu. Berpangkalan di Johor Bahru.',
-    'vinyl_pool_body' => 'Aquarius Swimming Pools memasang kolam renang vinil di seluruh Malaysia, berpangkalan di Johor Bahru. Setiap kolam menggunakan rangka dinding keluli tahan karat yang dimasukkan ke dalam tanah galian, dilapisi dengan pelapik vinil yang telah disuai. Rangka kami memberikan jaminan 5 hingga 10 tahun, bergantung pada siri. Pemasangan mengambil masa 2 hingga 3 minggu, menjadikan vinil pilihan dalam tanah terpantas selepas gentian kaca. Vinil ialah jenis kolam paling mampu milik yang ditawarkan oleh Aquarius. Baca lebih lanjut untuk mengetahui cara kolam vinil dibina, dan sama ada ia sesuai untuk hartanah anda.',
+    'vinyl_pool_subtitle_heading' => 'Rangka keluli tahan karat. Jaminan 5 hingga 10 tahun. Dipasang dalam 2 hingga 3 minggu, tidak termasuk masa untuk diperoleh. Jenis kolam paling mampu milik.',
+    'vinyl_pool_meta_description' => 'Kolam vinil oleh Aquarius, Johor Bahru. Rangka keluli tahan karat, jaminan 5 hingga 10 tahun. Pemasangan 2 hingga 3 minggu, tidak termasuk masa untuk diperoleh.',
+    'vinyl_pool_body' => 'Aquarius Swimming Pools memasang kolam renang vinil di seluruh Malaysia, berpangkalan di Johor Bahru. Setiap kolam menggunakan rangka dinding keluli tahan karat yang dimasukkan ke dalam tanah galian, dilapisi dengan pelapik vinil yang telah disuai. Rangka kami memberikan jaminan 5 hingga 10 tahun, bergantung pada siri. Pemasangan mengambil masa 2 hingga 3 minggu, tidak termasuk masa untuk diperoleh, menjadikan vinil pilihan dalam tanah terpantas selepas gentian kaca. Vinil ialah jenis kolam paling mampu milik yang ditawarkan oleh Aquarius. Baca lebih lanjut untuk mengetahui cara kolam vinil dibina, dan sama ada ia sesuai untuk hartanah anda.',
     'vinyl_pool_steps_pill' => 'Proses Pembinaan',
     'vinyl_pool_steps_title' => 'Bagaimana Kolam Vinil Dibina?',
     'vinyl_pool_pros_cons_pill' => 'Kelebihan & Kelemahan',
@@ -274,7 +276,7 @@ return [
     'vinyl_pool_advantage_1_title' => 'Jimat kos',
     'vinyl_pool_advantage_1_desc' => 'Vinil ialah jenis kolam paling murah untuk dibina, lebih murah daripada gentian kaca atau konkrit.',
     'vinyl_pool_advantage_2_title' => 'Pemasangan Cepat',
-    'vinyl_pool_advantage_2_desc' => 'Kolam vinil dipasang lebih cepat berbanding konkrit, siap dalam 2 hingga 3 minggu dari penggalian hingga selesai.',
+    'vinyl_pool_advantage_2_desc' => 'Kolam vinil dipasang lebih cepat berbanding konkrit, siap dalam 2 hingga 3 minggu dari penggalian hingga selesai, tidak termasuk masa untuk diperoleh.',
     'vinyl_pool_advantage_3_title' => 'Pilihan Pelapik',
     'vinyl_pool_advantage_3_desc' => 'Pelapik tersedia dalam pelbagai warna dan corak, jadi anda pilih rupa kolam anda.',
     'vinyl_pool_disadvantage_title' => 'Kelemahan',
@@ -286,6 +288,8 @@ return [
     'vinyl_pool_disadvantage_3_desc' => '',
     'vinyl_pool_closing_body' => 'Kolam vinil ialah pilihan paling mampu milik yang dipasang oleh Aquarius, dengan masa pembinaan terpantas selepas gentian kaca. Saiz dan bentuk tetap bermakna kurang fleksibiliti reka bentuk berbanding konkrit. Jika kos dan kecepatan lebih penting daripada penyesuaian, vinil adalah pilihan yang tepat. Untuk lebih banyak pilihan, bandingkan kolam konkrit dan gentian kaca.',
     'vinyl_pool_compare_other' => 'Tidak pasti kolam vinil sesuai? Bandingkan kolam konkrit dan gentian kaca, atau tanya pasukan kami.',
+    'vinyl_pool_cta_title' => 'Berminat dengan kolam vinil?',
+    'vinyl_pool_cta_body' => 'Beritahu kami tentang ruang dan bajet anda, dan kami akan cadangkan saiz dan siri yang sesuai.',
 
     // FIBREGLASS POOLS PAGE
     'fibreglass_pool_title_heading' => 'Kolam Renang Gentian Kaca di Johor Bahru',
@@ -323,6 +327,8 @@ return [
     'fibreglass_pool_disadvantage_3_desc' => '',
     'fibreglass_pool_closing_body' => 'Kolam gentian kaca ialah kolam terpantas yang Aquarius pasang, siap dalam 5 hingga 7 hari dengan penyelenggaraan minimum sepanjang jangka hayat 40 hingga 50 tahun. Bentuk tetap bermakna kurang fleksibiliti reka bentuk berbanding kolam konkrit. Jika kecepatan dan penyelenggaraan rendah lebih penting daripada penyesuaian, gentian kaca adalah pilihan yang sesuai. Untuk lebih pilihan, bandingkan kolam konkrit dan vinil.',
     'fibreglass_pool_compare_other' => 'Tidak pasti kolam gentian kaca sesuai? Bandingkan kolam konkrit dan vinil, atau tanya pasukan kami.',
+    'fibreglass_pool_cta_title' => 'Berminat dengan kolam gentian kaca?',
+    'fibreglass_pool_cta_body' => 'Beritahu kami tentang tapak anda, dan kami akan bantu anda memilih model yang sesuai.',
 
     // EXPLORE OTHER POOL TYPES SECTION
     'explore_pools_pill' => 'Teroka',

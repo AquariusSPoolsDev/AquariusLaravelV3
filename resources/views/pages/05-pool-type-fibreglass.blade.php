@@ -82,5 +82,7 @@ $headerSubtitle = 'fibreglass_pool_subtitle_heading';
 @endsection
 
 @section('cta')
-<x-reusables.cta-banner href="{{ route('contact-page') }}?interest=Fibreglass+Pools" />
+<x-reusables.cta-banner href="{{ route('contact-page') }}?interest=Fibreglass+Pools"
+    :title="__('strings.fibreglass_pool_cta_title')"
+    :body="__('strings.fibreglass_pool_cta_body')" />
 @endsection
