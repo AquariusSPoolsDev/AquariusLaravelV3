@@ -35,31 +35,13 @@ $headerSubtitle = 'concrete_pool_subtitle_heading';
 <section class="pool-creation-steps-section mt-16">
     <x-reusables.pill-text>{{ __('strings.concrete_pool_steps_pill') }}</x-reusables.pill-text>
     <h2 class="aquarius-subheading mb-6!">{{ __('strings.concrete_pool_steps_title') }}</h2>
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 xl:gap-24">
-        <x-our-pools-concrete.pool-creation-steps />
-        <x-our-pools-concrete.pool-creation-steps-desc />
-    </div>
-
-    {{-- STEP IMAGE GRID --}}
     @php
-        $concreteStepSlugs = [1 => 'excavation', 2 => 'framework', 3 => 'plumbing', 4 => 'concreting', 5 => 'finishing'];
+        // Step photo per step (without extension); steps without a photo yet show text only
+        $concreteSteps = collect([1 => 'excavation', 2 => 'framework', 3 => 'plumbing', 4 => 'concreting', 5 => 'finishing'])
+            ->map(fn (string $slug, int $step): string => 'assets/images/concrete/steps/concrete-step-'.$step.'-'.$slug)
+            ->all();
     @endphp
-    <div class="grid grid-cols-2 lg:grid-cols-5 gap-4 mt-10">
-        @foreach ($concreteStepSlugs as $step => $slug)
-        <div data-animate data-delay="{{ ($loop->index) * 80 }}">
-            <a href="{{ asset('assets/images/concrete/steps/concrete-step-' . $step . '-' . $slug . '.jpg') }}" data-fslightbox="concrete-steps" class="block overflow-hidden rounded-xl border border-neutral-200 bg-info-bg aspect-square">
-                <picture>
-                    <source srcset="{{ asset('assets/images/concrete/steps/concrete-step-' . $step . '-' . $slug . '.webp') }}" type="image/webp">
-                    <img src="{{ asset('assets/images/concrete/steps/concrete-step-' . $step . '-' . $slug . '.jpg') }}"
-                         alt="{{ __('strings.concrete_pool_step_' . $step . '_title') }}"
-                         class="w-full h-full object-cover hover:scale-105 transition-all"
-                         loading="lazy">
-                </picture>
-            </a>
-            <p class="mt-2 italic text-neutral-700">{{ $step }}. {{ __('strings.concrete_pool_step_' . $step . '_title') }}</p>
-        </div>
-        @endforeach
-    </div>
+    <x-pool-creation-steps.process pool="concrete" :steps="$concreteSteps" />
 </section>
 
 {{-- PROS & CONS --}}

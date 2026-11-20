@@ -33,26 +33,13 @@ $headerSubtitle = 'fibreglass_pool_subtitle_heading';
 <section class="pool-creation-steps-section mt-16">
     <x-reusables.pill-text>{{ __('strings.fibreglass_pool_steps_pill') }}</x-reusables.pill-text>
     <h2 class="aquarius-subheading mb-6!">{{ __('strings.fibreglass_pool_steps_title') }}</h2>
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16 xl:gap-24">
-        <x-our-pools-fibreglass.pool-creation-steps />
-        <x-our-pools-fibreglass.pool-creation-steps-desc />
-    </div>
-
-    {{-- STEP IMAGE GRID — hidden until the step photos are added to assets/images/fibreglass/steps/ --}}
-    @if (file_exists(public_path('assets/images/fibreglass/steps/step-1.jpg')))
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
-        @foreach ([1, 2, 3, 4] as $step)
-        <div data-animate data-delay="{{ ($loop->index) * 80 }}">
-            <a href="{{ asset('assets/images/fibreglass/steps/step-' . $step . '.jpg') }}" data-fslightbox="fibreglass-steps" class="block overflow-hidden rounded-xl border border-neutral-200 bg-info-bg aspect-square">
-                <img src="{{ asset('assets/images/fibreglass/steps/step-' . $step . '.jpg') }}"
-                     alt="{{ __('strings.fibreglass_pool_step_' . $step . '_title') }}"
-                     class="w-full h-full object-cover hover:scale-105 transition-all">
-            </a>
-            <p class="mt-2 italic text-neutral-700">{{ $step }}. {{ __('strings.fibreglass_pool_step_' . $step . '_title') }}</p>
-        </div>
-        @endforeach
-    </div>
-    @endif
+    @php
+        // Step photo per step (without extension); steps without a photo yet show text only
+        $fibreglassSteps = collect([1 => 'step-1', 2 => 'step-2', 3 => 'step-3', 4 => 'step-4'])
+            ->map(fn (string $slug, int $step): string => 'assets/images/fibreglass/steps/'.$slug)
+            ->all();
+    @endphp
+    <x-pool-creation-steps.process pool="fibreglass" :steps="$fibreglassSteps" />
 </section>
 
 {{-- PROS & CONS --}}

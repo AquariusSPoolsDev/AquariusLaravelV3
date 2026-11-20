@@ -948,9 +948,57 @@ footer.aquarius-footer {
     @apply text-neutral-900 lg:hidden font-semibold max-lg:w-34;
 }
 
-/* POOL TYPES - CONCRETE, VINYL, FIBREGLASS */
-.pool-creation-grid {
-    @apply grid gap-4;
+/* POOL TYPES - CONCRETE, VINYL, FIBREGLASS: build steps (components/pool-creation-steps/process) */
+.pool-process {
+    @apply list-none m-0 p-0 max-w-5xl;
+}
+
+.pool-process-step {
+    @apply flex gap-5 lg:gap-8;
+
+    &:last-child .pool-process-body {
+        @apply pb-0;
+    }
+}
+
+.pool-process-marker {
+    @apply flex flex-col items-center shrink-0;
+}
+
+.pool-process-number {
+    @apply size-12 lg:size-14 shrink-0 rounded-full bg-primary-50 text-primary-800 font-heading font-bold text-xl lg:text-2xl flex items-center justify-center;
+}
+
+.pool-process-line {
+    @apply w-0.5 grow bg-neutral-200 my-2;
+}
+
+.pool-process-body {
+    @apply flex-1 min-w-0 pb-10 grid gap-4 lg:gap-8;
+
+    &.has-photo {
+        @apply md:grid-cols-[minmax(0,1fr)_13rem] lg:grid-cols-[minmax(0,1fr)_15rem];
+    }
+}
+
+.pool-process-title {
+    @apply m-0 mt-2.5 lg:mt-3.5 text-lg lg:text-xl font-semibold text-neutral-950;
+}
+
+.pool-process-desc {
+    @apply mt-2 max-w-[60ch] leading-relaxed;
+}
+
+.pool-process-photo {
+    @apply block self-start overflow-hidden rounded-xl border border-neutral-200 bg-info-bg aspect-4/3;
+
+    picture {
+        @apply block h-full;
+    }
+
+    img {
+        @apply w-full h-full object-cover transition-transform duration-300 hover:scale-105;
+    }
 }
 
 /* POOL SERVICES PAGE */
