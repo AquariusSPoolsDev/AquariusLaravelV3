@@ -1,4 +1,4 @@
-<section id="contact" class="bg-white relative overflow-hidden" style="background-image: radial-gradient(125% 125% at 50% 10%, #ffffff 40%, #f59e0b 100%)">
+<section id="contact" class="bg-white relative overflow-hidden">
     <div class="main-container">
         <div class="aquarius-contact-main">
             <div class="aquarius-contact-col-left text-center lg:text-start" data-animate data-delay="0">

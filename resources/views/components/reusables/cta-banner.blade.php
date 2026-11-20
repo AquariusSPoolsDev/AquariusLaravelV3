@@ -6,7 +6,6 @@
 ])
 
 <section class="relative overflow-hidden bg-primary-50">
-    <div class="cta-aurora-bg"></div>
     <div class="main-container relative z-10">
         <div class="flex flex-col items-center gap-6 text-center sm:flex-row sm:justify-between sm:text-left" data-animate data-delay="0">
             <div>
