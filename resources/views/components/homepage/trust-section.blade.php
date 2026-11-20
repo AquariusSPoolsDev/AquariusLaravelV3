@@ -9,7 +9,7 @@
             {{-- LEFT: Text content --}}
             <div class="max-w-xl">
                 <x-reusables.pill-text>{{__('strings.trust_pill')}}</x-reusables.pill-text>
-                <h2 class="text-3xl lg:text-5xl font-semibold text-primary-900 font-serif">{{__('strings.trust_heading')}}</h2>
+                <h2 class="text-3xl lg:text-5xl font-semibold text-primary-900">{{__('strings.trust_heading')}}</h2>
                 <p class="text-neutral-600 mt-6 mb-8">{{__('strings.trust_body')}}</p>
 
                 {{-- Stats bar --}}

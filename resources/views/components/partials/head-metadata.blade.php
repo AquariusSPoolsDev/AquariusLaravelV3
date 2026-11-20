@@ -12,7 +12,7 @@
 
     {{-- Fonts V3.0 --}}
     <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=lato:300,400,700|outfit:300,400,500,600,700,800|playfair-display:400" rel="stylesheet" />
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700,800|outfit:400,500,600,700,800" rel="stylesheet" />
     
     <!-- Styles / Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])

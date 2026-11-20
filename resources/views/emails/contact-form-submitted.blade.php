@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>New Customer Enquiry</title>
 </head>
-<body style="margin:0;padding:0;background-color:#f1f5f9;font-family:Lato,Arial,sans-serif;font-size:15px;line-height:1.6;color:#1e293b;">
+<body style="margin:0;padding:0;background-color:#f1f5f9;font-family:Figtree,Arial,sans-serif;font-size:15px;line-height:1.6;color:#1e293b;">
 
     <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f1f5f9;padding:32px 0;">
         <tr>
