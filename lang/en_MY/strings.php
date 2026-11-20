@@ -62,7 +62,7 @@ return [
     'pools_vinyl' => 'Vinyl Pools',
     'pools_fibreglass' => 'Fibreglass Pools',
     'pools_concrete_desc' => 'Built on site with a <strong>steel-reinforced frame, concrete and plaster</strong>. Any shape, size or depth, and it lasts a lifetime.',
-    'pools_vinyl_desc' => '<strong>Stainless steel wall frames</strong> on concrete footings, lined with a fitted vinyl liner. Our most affordable pool, installed in 2 to 3 weeks.',
+    'pools_vinyl_desc' => '<strong>Stainless steel wall frames</strong> on concrete footings, lined with a fitted vinyl liner. Our most affordable pool, installed in 2 to 3 weeks, not including ordering time.',
     'pools_fibreglass_desc' => 'A <strong>ready-made fibreglass shell</strong> lowered into place. Choose from our range of models, installed in 5 to 7 days.',
     'pools_concrete_link' => 'More about concrete pools',
     'pools_vinyl_link' => 'More about vinyl pools',

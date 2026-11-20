@@ -62,7 +62,7 @@ return [
     'pools_vinyl' => 'Kolam Renang Vinil',
     'pools_fibreglass' => 'Kolam Renang Gentian Kaca',
     'pools_concrete_desc' => 'Dibina di tapak dengan <strong>rangka besi bertetulang, konkrit dan plaster</strong>. Sebarang bentuk, saiz atau kedalaman, dan tahan seumur hidup.',
-    'pools_vinyl_desc' => '<strong>Rangka dinding keluli tahan karat</strong> di atas tapak konkrit, dilapisi pelapik vinil yang dipasang kemas. Kolam kami yang paling mampu milik, dipasang dalam 2 hingga 3 minggu.',
+    'pools_vinyl_desc' => '<strong>Rangka dinding keluli tahan karat</strong> di atas tapak konkrit, dilapisi pelapik vinil yang dipasang kemas. Kolam kami yang paling mampu milik, dipasang dalam 2 hingga 3 minggu, tidak termasuk masa untuk diperoleh.',
     'pools_fibreglass_desc' => '<strong>Cangkerang gentian kaca siap dibuat</strong> yang diturunkan ke tempatnya. Pilih daripada rangkaian model kami, dipasang dalam 5 hingga 7 hari.',
     'pools_concrete_link' => 'Lebih lanjut tentang kolam konkrit',
     'pools_vinyl_link' => 'Lebih lanjut tentang kolam vinil',
@@ -73,7 +73,7 @@ return [
 
     // HOMEPAGE - OUR SERVICES SECTION
     'services_heading' => 'Perkhidmatan Kami',
-    'services_subheading' => 'Penyelenggaraan, pembaikan, peralatan dan bahan kimia, daripada pasukan yang sama yang membina kolam.',
+    'services_subheading' => 'Penyelenggaraan, pembaikan, peralatan dan bahan kimia, daripada pasukan yang sama yang membina kolam renang.',
     'services_pool' => 'Penyelenggaraan & Pembaikan Kolam',
     'services_pool_body' => 'Pembersihan, pengimbangan air dan pembaikan oleh pasukan servis dalaman kami.',
     'services_pool_link' => 'Lihat perkhidmatan kolam kami',
@@ -86,7 +86,7 @@ return [
 
     // HOMEPAGE - SHOWCASE SECTION
     'showcase_heading' => 'Galeri Kolam Renang',
-    'showcase_btn_gallery' => 'Lihat semua kolam yang siap',
+    'showcase_btn_gallery' => 'Lihat semua kolam renang yang siap',
 
     // HOMEPAGE - REVIEWS SECTION
     'reviews_heading' => 'Ulasan Pelanggan',
@@ -224,7 +224,7 @@ return [
     'concrete_pool_pros_cons_pill' => 'Kelebihan & Kelemahan',
     'concrete_pool_pros_cons_title' => 'Adakah Kolam Konkrit Sesuai untuk Anda?',
     'concrete_pool_step_1_title' => 'Penggalian',
-    'concrete_pool_step_1_description' => 'Kru kami menggali kolam mengikut bentuk dan kedalaman yang dirancang.',
+    'concrete_pool_step_1_description' => 'Pasukan kami menggali kolam mengikut bentuk dan kedalaman yang dirancang.',
     'concrete_pool_step_2_title' => 'Pemasangan rangka',
     'concrete_pool_step_2_description' => 'Pasukan kami memasang rangka besi tetulang di dalam lubang. Besi ini memberi kekuatan kepada konkrit dan membantu mengelakkan keretakan struktur.',
     'concrete_pool_step_3_title' => 'Kerja-kerja Perpaipan dan Elektrikal',
@@ -235,7 +235,7 @@ return [
     'concrete_pool_step_5_description' => 'Setelah konkrit mengeras, kami menyiapkan bahagian dalam dengan plaster atau jubin dan memasang koping: kemasan tepi batu, konkrit, batu-bata atau jubin di sekeliling bahagian atas kolam. Koping memberi tepi yang selamat untuk perenang dan menghubungkan kolam dengan patio.',
     'concrete_pool_advantage_title' => 'Kelebihan',
     'concrete_pool_advantage_1_title' => 'Ketahanan',
-    'concrete_pool_advantage_1_desc' => 'Kolam konkrit yang dibina dan dijaga dengan baik tahan seumur hidup serta tahan hujan dan panas Malaysia.',
+    'concrete_pool_advantage_1_desc' => 'Kolam konkrit yang dibina dan dijaga dengan baik dapat tahan seumur hidup serta tahan hujan dan panas Malaysia.',
     'concrete_pool_advantage_2_title' => 'Dibina Mengikut Reka Bentuk Anda',
     'concrete_pool_advantage_2_desc' => 'Anda pilih saiz, bentuk dan kedalaman. Pilih kolam \'skimmer\', limpahan, infiniti atau konkrit ringan, kemudian tambah jakuzi bersepadu, kolam cetek, air terjun atau anak tangga tersuai. Pilihan kemasan termasuk cat, jubin, kerikil, marmar, kuarza dan render warna.',
     'concrete_pool_advantage_3_title' => 'Penyelenggaraan Mudah',
