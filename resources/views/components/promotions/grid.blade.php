@@ -1,5 +1,5 @@
 @forelse($promotions as $promotion)
-<div class="bg-white border border-neutral-200 rounded-lg p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary-300 hover:shadow-lg hover:shadow-primary-100">
+<div class="bg-white border border-neutral-200 rounded-lg p-6">
 
     {{-- Badge + title --}}
     <div class="flex flex-wrap items-start justify-between gap-3 mb-3">

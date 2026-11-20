@@ -271,7 +271,7 @@
                 }
 
                 .nav-get-quote .quote-btn {
-                    @apply block text-center text-sm py-2 px-3.5 font-bold rounded-lg transition-all text-neutral-950 bg-linear-to-br from-secondary-200 via-secondary-400 to-secondary-500 hover:brightness-110 active:scale-95 active:brightness-90 disabled:opacity-50 disabled:pointer-events-none;
+                    @apply block text-center text-sm py-2 px-3.5 font-bold rounded-lg transition-all text-neutral-950 bg-secondary-400 hover:bg-secondary-500 active:scale-95 active:brightness-90 disabled:opacity-50 disabled:pointer-events-none;
                 }
 
                 /* language selector */
@@ -380,7 +380,7 @@
                 }
 
                 .aquarius-secondary-heading {
-                    @apply text-lg lg:text-xl font-medium text-neutral-100 drop-shadow-md drop-shadow-primary-900 italic;
+                    @apply text-lg lg:text-xl font-medium text-neutral-100 drop-shadow-md drop-shadow-primary-900;
                 }
 
                 .aquarius-feature-pill {
@@ -392,7 +392,7 @@
                 }
 
                 .aquarius-cta-primary {
-                    @apply py-3.5 px-10 inline-flex items-center gap-2 text-base lg:text-lg rounded-full font-heading font-bold bg-linear-to-b from-primary-500 via-primary-700 to-primary-900 text-white disabled:opacity-50 disabled:pointer-events-none transition-all drop-shadow-lg relative overflow-hidden hover:shadow-primary-700/50 hover:shadow-lg hover:brightness-110 active:scale-95 active:brightness-90;
+                    @apply py-3.5 px-10 inline-flex items-center gap-2 text-base lg:text-lg rounded-full font-heading font-bold bg-primary-700 text-white disabled:opacity-50 disabled:pointer-events-none transition-colors drop-shadow-lg hover:bg-primary-800 active:scale-95 active:brightness-90;
                 }
 
                 .aquarius-cta-secondary {
@@ -493,11 +493,11 @@
     }
 
     .card-blob {
-        @apply absolute flex items-center justify-center -top-4 -right-4 rotate-12 size-24 rounded-2xl lg:size-32 lg:-top-5 lg:-right-5 bg-primary-100 text-primary-700 transition-all duration-300 group-hover/card:top-4 group-hover/card:right-4 lg:group-hover/card:top-6 lg:group-hover/card:right-6 group-hover/card:size-16 lg:group-hover/card:size-20 group-hover/card:rotate-0 group-hover/card:rounded-xl group-active/card:top-4 group-active/card:right-4 lg:group-active/card:top-6 lg:group-active/card:right-6 group-active/card:size-16 lg:group-active/card:size-20 group-active/card:rotate-0 group-active/card:rounded-xl group-active/card:brightness-90;
+        @apply absolute flex items-center justify-center -top-4 -right-4 rotate-12 size-24 rounded-2xl lg:size-32 lg:-top-5 lg:-right-5 bg-primary-100 text-primary-700;
     }
 
     .card-blob-icon {
-        @apply size-12 lg:size-16 transition-all duration-300 group-hover/card:size-8 lg:group-hover/card:size-10 group-active/card:size-8 lg:group-active/card:size-10;
+        @apply size-12 lg:size-16;
     }
 
     .card-title {
@@ -605,7 +605,7 @@
 }
 
 .aquarius-homepage-review-card {
-    @apply bg-white border border-neutral-200 rounded-lg p-4 lg:p-6 h-full break-before-avoid transition-all duration-300 hover:-translate-y-1 hover:border-primary-300 hover:shadow-lg hover:shadow-primary-100;
+    @apply bg-white border border-neutral-200 rounded-lg p-4 lg:p-6 h-full break-before-avoid;
 
     .review-card-header {
         @apply flex items-center gap-3 mb-5;
@@ -800,7 +800,7 @@ footer.aquarius-footer {
 }
 
 .aquarius-contact-card {
-    @apply bg-white border border-neutral-200 rounded-lg p-4 lg:p-6 h-full break-before-avoid transition-all duration-300 hover:-translate-y-1 hover:border-primary-300 hover:shadow-lg hover:shadow-primary-100;
+    @apply bg-white border border-neutral-200 rounded-lg p-4 lg:p-6 h-full break-before-avoid;
 
     .aquarius-contact-card-title {
         @apply text-xl lg:text-2xl uppercase font-semibold mb-4 text-primary-900;
@@ -817,7 +817,7 @@ footer.aquarius-footer {
 
 /* PRO CON CARD */
 .pro-con-card {
-    @apply bg-white border border-neutral-200 rounded-lg p-4 lg:p-6 h-full break-before-avoid transition-all duration-300 hover:-translate-y-1 hover:border-primary-300 hover:shadow-lg hover:shadow-primary-100;
+    @apply bg-white border border-neutral-200 rounded-lg p-4 lg:p-6 h-full break-before-avoid;
 
     .pro-con-card-title {
         @apply text-xl lg:text-2xl font-semibold mb-4 text-primary-900;
@@ -863,7 +863,7 @@ footer.aquarius-footer {
 /* OUR POOLS */
 
 .aquarius-our-pools-card {
-    @apply bg-white border border-neutral-200 rounded-lg h-full overflow-hidden my-8 transition-all duration-300 hover:-translate-y-1 hover:border-primary-300 hover:shadow-lg hover:shadow-primary-100;
+    @apply bg-white border border-neutral-200 rounded-lg h-full overflow-hidden my-8;
 
     .aquarius-our-pools-card-content {
         @apply lg:relative block lg:flex items-center overflow-hidden h-[inherit];
@@ -985,10 +985,10 @@ footer.aquarius-footer {
 
 /* POOL ITEM CARD (pool-essentials page) */
 .aquarius-pool-item-card {
-    @apply bg-white border border-neutral-200 rounded-lg overflow-hidden h-full transition-all duration-300 hover:-translate-y-1 hover:border-primary-300 hover:shadow-lg hover:shadow-primary-100 active:border-primary-300 active:shadow-lg active:shadow-primary-100 flex flex-col;
+    @apply bg-white border border-neutral-200 rounded-lg overflow-hidden h-full flex flex-col;
 
     &.is-clickable {
-        @apply cursor-pointer;
+        @apply cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:border-primary-300 hover:shadow-lg hover:shadow-primary-100 active:border-primary-300 active:shadow-lg active:shadow-primary-100;
     }
 
     .aquarius-pool-item-card-image {

@@ -190,7 +190,7 @@
     </div>
 
     {{-- SCROLL PROGRESS BAR --}}
-    <div id="scroll-progress-bar" class="h-1 bg-linear-to-r from-secondary-300 via-secondary to-secondary-600 origin-left" style="transform: scaleX(0); transition: transform 0.1s linear;"></div>
+    <div id="scroll-progress-bar" class="h-1 bg-secondary-400 origin-left" style="transform: scaleX(0); transition: transform 0.1s linear;"></div>
 
     {{-- ANNOUCEMENT BANNER --}}
     <x-partials.navbar-annoucement-banner />

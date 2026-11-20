@@ -10,12 +10,12 @@ $fbRecommended = $fbTotal; // All published FB reviews are recommendations
 <section class="focus-on-dark bg-linear-to-br from-primary-950 via-primary-800 to-primary-700 relative overflow-hidden">
     <div class="main-container relative z-10">
         <div class="max-w-2xl mx-auto text-center">
-            <x-reusables.pill-text variant="dark" class="block" data-animate data-delay="0">{{__('strings.reviews_pill')}}</x-reusables.pill-text>
-            <h2 class="aquarius-homepage-heading" data-animate data-delay="100"><span class="text-white">{{__('strings.reviews_heading')}}</span></h2>
+            <x-reusables.pill-text variant="dark" class="block">{{__('strings.reviews_pill')}}</x-reusables.pill-text>
+            <h2 class="aquarius-homepage-heading"><span class="text-white">{{__('strings.reviews_heading')}}</span></h2>
         </div>
 
         {{-- Reviews summary pills --}}
-        <div class="mt-6 flex flex-wrap justify-center gap-3" data-animate data-delay="100">
+        <div class="mt-6 flex flex-wrap justify-center gap-3">
             <x-reusables.google-reviews-pill :avg="$googleAvg" :total="$googleTotal" variant="dark" />
             <x-reusables.facebook-recommendations-pill :recommended="$fbRecommended" :total="$fbTotal" variant="dark" />
         </div>
@@ -25,7 +25,7 @@ $fbRecommended = $fbTotal; // All published FB reviews are recommendations
             @include('components.reviews.grid', ['reviews' => $reviews, 'animate' => true])
         </div>
 
-        <div class="mt-10 text-center" data-animate data-delay="750">
+        <div class="mt-10 text-center">
             <a href="{{ route('customer-reviews-page') }}" class="aquarius-reviews-btn">
                 {{__('strings.reviews_view_all')}}
                 <svg class="reviews-btn-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path></svg>

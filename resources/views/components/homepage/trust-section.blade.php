@@ -8,9 +8,9 @@
 
             {{-- LEFT: Text content --}}
             <div class="max-w-xl">
-                <x-reusables.pill-text data-animate data-delay="0">{{__('strings.trust_pill')}}</x-reusables.pill-text>
-                <h2 class="text-3xl lg:text-5xl font-semibold text-primary-900 font-serif" data-animate data-delay="100">{{__('strings.trust_heading')}}</h2>
-                <p class="text-neutral-600 mt-6 mb-8" data-animate data-delay="200">{{__('strings.trust_body')}}</p>
+                <x-reusables.pill-text>{{__('strings.trust_pill')}}</x-reusables.pill-text>
+                <h2 class="text-3xl lg:text-5xl font-semibold text-primary-900 font-serif">{{__('strings.trust_heading')}}</h2>
+                <p class="text-neutral-600 mt-6 mb-8">{{__('strings.trust_body')}}</p>
 
                 {{-- Stats bar --}}
                 <div class="grid grid-cols-2 gap-6" data-animate data-delay="300">
@@ -42,7 +42,7 @@
                 </div>
 
                 @if (\App\Enums\SitePage::AboutUs->isVisible())
-                <div class="mt-8" data-animate data-delay="400">
+                <div class="mt-8">
                     <a href="{{ route('about-page') }}"
                         class="inline-flex items-center gap-3 px-10 py-4 rounded-lg border border-primary-600 text-primary-700 font-semibold text-base lg:text-lg hover:bg-primary-50 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary-100 active:scale-95 active:translate-y-0 transition-all duration-200">
                         {{ __('strings.trust_btn_about') }}

@@ -6,8 +6,8 @@ $images = ImageGallery::where('is_published', 1)->where('is_featured', 1)->order
 <section id="showcase" class="bg-primary-50/50">
     <div class="main-container">
         <div class="max-w-2xl mx-auto text-center">
-            <x-reusables.pill-text class="block" data-animate data-delay="0">{{__('strings.homepage_showcase_pill')}}</x-reusables.pill-text>
-            <h2 class="aquarius-homepage-heading" data-animate data-delay="100">{{__('strings.showcase_heading')}}</h2>
+            <x-reusables.pill-text class="block">{{__('strings.homepage_showcase_pill')}}</x-reusables.pill-text>
+            <h2 class="aquarius-homepage-heading">{{__('strings.showcase_heading')}}</h2>
         </div>
 
         @if($images->count() === 9)
@@ -24,7 +24,7 @@ $images = ImageGallery::where('is_published', 1)->where('is_featured', 1)->order
             @endforeach
         </div>
 
-        <div class="mt-10 text-center" data-animate data-delay="580">
+        <div class="mt-10 text-center">
             <a href="{{ route('pool-showcase-gallery') }}" class="aquarius-showcase-btn group">
                 {{__('strings.showcase_btn_gallery')}}
                 <svg class="size-5 transition-transform group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path></svg>

@@ -1,6 +1,6 @@
 <section class="relative overflow-hidden bg-primary-50">
     <div class="main-container relative z-10">
-        <div class="flex flex-col items-center gap-6 text-center sm:flex-row sm:justify-between sm:text-left" data-animate data-delay="0">
+        <div class="flex flex-col items-center gap-6 text-center sm:flex-row sm:justify-between sm:text-left">
             <div>
                 <h2 class="text-2xl lg:text-3xl font-semibold text-primary-900">{{ __('strings.homepage_cta_strip_heading') }}</h2>
                 <p class="mt-1.5 text-neutral-600">{{ __('strings.homepage_cta_strip_body') }}</p>

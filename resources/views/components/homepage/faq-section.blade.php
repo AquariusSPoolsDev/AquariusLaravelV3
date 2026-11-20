@@ -2,11 +2,11 @@
     <div class="main-container">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-8">
-                <x-reusables.pill-text class="text-center block" data-animate data-delay="0">{{ __('strings.homepage_faq_pill') }}</x-reusables.pill-text>
-                <h2 class="aquarius-homepage-heading" data-animate data-delay="100">{{ __('strings.homepage_faq_heading') }}</h2>
+                <x-reusables.pill-text class="text-center block">{{ __('strings.homepage_faq_pill') }}</x-reusables.pill-text>
+                <h2 class="aquarius-homepage-heading">{{ __('strings.homepage_faq_heading') }}</h2>
             </div>
 
-            <div class="mt-12 flex flex-col gap-2.5" x-data="{ active: null }" data-animate data-delay="200">
+            <div class="mt-12 flex flex-col gap-2.5" x-data="{ active: null }">
 
                 {{-- Q1: Materials --}}
                 <div class="aquarius-accordion" :class="active === 0 && 'accordion-active'">
@@ -62,7 +62,7 @@
 
             </div>
 
-            <div class="mt-8 text-center" data-animate data-delay="300">
+            <div class="mt-8 text-center">
                 <a href="{{ route('faq-page') }}" class="faq-view-all-btn">
                     {{ __('strings.homepage_faq_view_all') }}
                     <svg class="size-5 transition-transform group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path></svg>

@@ -27,7 +27,7 @@
 @section('content')
     <div class="">
 
-        <div class="" data-animate data-delay="0">
+        <div>
             <p class="mb-3">
                 {{ __('strings.faq_content_1') }}
             </p>
@@ -39,12 +39,12 @@
             </p>
         </div>
 
-        <div class="mx-auto text-center mt-16 mb-10" data-animate data-delay="0">
+        <div class="mx-auto text-center mt-16 mb-10">
             <x-reusables.pill-text>{{ __('strings.faq_pill') }}</x-reusables.pill-text>
             <h2 class="aquarius-subheading">{{ __('strings.faq_heading_2') }}</h2>
         </div>
 
-        <div class="container" data-animate data-delay="100">
+        <div class="container">
             <div class="aquarius-accordion-group-faq" x-data="{ active: 0 }">
 
                 {{-- ACCORDION ITEM --}}
