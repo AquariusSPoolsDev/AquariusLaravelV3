@@ -129,7 +129,7 @@
 
 /* SUBHEADING */
 .aquarius-subheading {
-    @apply text-2xl lg:text-4xl text-neutral-900 font-extrabold mb-2.5 lg:mb-4 tracking-tight;
+    @apply text-[1.75rem] leading-tight lg:text-4xl text-primary-900 font-semibold mb-2.5 lg:mb-4 text-balance;
 }
 
 /* ALERT */
@@ -505,7 +505,7 @@
     }
 
     .card-title {
-        @apply text-2xl lg:text-3xl font-semibold mb-4 lg:mb-6 text-primary-900 max-w-3/4 text-balance;
+        @apply text-xl lg:text-2xl font-semibold mb-4 lg:mb-6 text-primary-900 max-w-3/4 text-balance;
     }
 
     .card-desc {
@@ -532,7 +532,7 @@
     }
 
     .pool-card-title {
-        @apply text-2xl lg:text-3xl uppercase font-semibold mb-2 text-primary-900;
+        @apply text-xl lg:text-2xl font-semibold mb-2 text-primary-900;
     }
 
     .pool-card-desc {
@@ -715,7 +715,7 @@ footer.aquarius-footer {
 
 /* HOMEPAGE HEADING */
 .aquarius-homepage-heading {
-    @apply text-3xl lg:text-5xl font-semibold uppercase text-center text-primary-900;
+    @apply text-3xl lg:text-5xl font-semibold text-center text-balance text-primary-900;
 }
 
 /* FAQ */
@@ -807,7 +807,7 @@ footer.aquarius-footer {
     @apply bg-white border border-neutral-200 rounded-lg p-4 lg:p-6 h-full break-before-avoid;
 
     .aquarius-contact-card-title {
-        @apply text-xl lg:text-2xl uppercase font-semibold mb-4 text-primary-900;
+        @apply text-xl lg:text-2xl font-semibold mb-4 text-primary-900;
     }
 
     p {
@@ -854,11 +854,11 @@ footer.aquarius-footer {
     }
 
     .aquarius-header-title {
-        @apply text-center lg:text-left font-bold text-5xl lg:text-8xl mb-4 uppercase text-white shadow-neutral-950 drop-shadow-xl;
+        @apply text-center lg:text-left font-extrabold text-4xl lg:text-6xl mb-4 uppercase text-balance text-white shadow-neutral-950 drop-shadow-xl;
     }
 
     .aquarius-header-subtitle {
-        @apply text-center lg:text-left text-lg lg:text-2xl text-white shadow-neutral-950 drop-shadow-xl;
+        @apply text-center lg:text-left text-lg lg:text-xl text-white shadow-neutral-950 drop-shadow-xl;
     }
 }
 

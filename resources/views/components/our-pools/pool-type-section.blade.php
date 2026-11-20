@@ -1,6 +1,6 @@
 <section id="" class="mt-12">
     <x-reusables.pill-text>{{__('strings.our_pools_overview_pill')}}</x-reusables.pill-text>
-    <x-reusables.subheading class="uppercase">
+    <x-reusables.subheading>
         {{__('strings.our_pools_overview_title')}}
     </x-reusables.subheading>
 

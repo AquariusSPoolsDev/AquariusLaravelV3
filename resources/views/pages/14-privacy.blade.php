@@ -30,7 +30,7 @@
 
 <div class="">
     <section class="mt-4">
-        <h2 class="aquarius-subheading mt-8 uppercase">Introduction</h2>
+        <h2 class="aquarius-subheading mt-8">Introduction</h2>
         <p class="mb-4">
             Aquarius Swimming Pools Sdn Bhd (SSM No. 920548-M) ("the Company", "we", "us", or "our") is committed to
             protecting the privacy of individuals who visit our website at <strong>aquariusswimmingpools.com</strong>
@@ -48,7 +48,7 @@
     </section>
 
     <section class="">
-        <h2 class="aquarius-subheading mt-8 uppercase">What Personal Data We Collect</h2>
+        <h2 class="aquarius-subheading mt-8">What Personal Data We Collect</h2>
         <p class="mb-4">
             When you submit an enquiry through our contact form, we collect the following information you provide directly:
         </p>
@@ -67,7 +67,7 @@
     </section>
 
     <section class="">
-        <h2 class="aquarius-subheading mt-8 uppercase">Why We Collect Your Data</h2>
+        <h2 class="aquarius-subheading mt-8">Why We Collect Your Data</h2>
         <p class="mb-4">We use the personal data you provide for the following purposes:</p>
         <ul class="list-disc pl-6 space-y-2 mb-4">
             <li>To respond to your pool enquiry and follow up with you about your project</li>
@@ -83,7 +83,7 @@
     </section>
 
     <section class="">
-        <h2 class="aquarius-subheading mt-8 uppercase">How We Collect Your Data</h2>
+        <h2 class="aquarius-subheading mt-8">How We Collect Your Data</h2>
         <p class="mb-4">We collect personal data in the following ways:</p>
         <ul class="list-disc pl-6 space-y-2 mb-4">
             <li><strong>Directly from you</strong> — when you fill in and submit the contact form on this Website</li>
@@ -92,7 +92,7 @@
     </section>
 
     <section class="">
-        <h2 class="aquarius-subheading mt-8 uppercase">How We Store Your Data</h2>
+        <h2 class="aquarius-subheading mt-8">How We Store Your Data</h2>
         <p class="mb-4">
             Enquiry data submitted through the contact form is stored in a secure, access-controlled database hosted
             as part of our website infrastructure. Access is limited to authorised staff only. A copy of each enquiry
@@ -111,7 +111,7 @@
     </section>
 
     <section class="">
-        <h2 class="aquarius-subheading mt-8 uppercase">Cookies and Tracking Technologies</h2>
+        <h2 class="aquarius-subheading mt-8">Cookies and Tracking Technologies</h2>
         <p class="mb-4">
             This Website uses cookies and similar tracking technologies. A cookie is a small file placed on your
             device by your browser when you visit a website.
@@ -128,7 +128,7 @@
     </section>
 
     <section class="">
-        <h2 class="aquarius-subheading mt-8 uppercase">Third-Party Service Providers</h2>
+        <h2 class="aquarius-subheading mt-8">Third-Party Service Providers</h2>
         <p class="mb-4">
             We use the following third-party services to operate this Website. These providers may process your
             data as part of delivering their service to us:
@@ -162,7 +162,7 @@
     </section>
 
     <section class="">
-        <h2 class="aquarius-subheading mt-8 uppercase">International Data Transfers</h2>
+        <h2 class="aquarius-subheading mt-8">International Data Transfers</h2>
         <p class="mb-4">
             Some of the third-party services listed above (Google, Meta/WhatsApp) operate servers outside
             of Malaysia. By using this Website, you acknowledge that your data may be transferred to and processed
@@ -172,7 +172,7 @@
     </section>
 
     <section class="">
-        <h2 class="aquarius-subheading mt-8 uppercase">Your Rights</h2>
+        <h2 class="aquarius-subheading mt-8">Your Rights</h2>
         <p class="mb-4">Under the <strong>Personal Data Protection Act 2010 (PDPA)</strong> of Malaysia, you have the right to:</p>
         <ul class="list-disc pl-6 space-y-2 mb-4">
             <li>Access the personal data we hold about you</li>
@@ -189,7 +189,7 @@
     </section>
 
     <section class="">
-        <h2 class="aquarius-subheading mt-8 uppercase">Changes to This Policy</h2>
+        <h2 class="aquarius-subheading mt-8">Changes to This Policy</h2>
         <p class="mb-4">
             We may update this Privacy Policy from time to time to reflect changes in our practices or legal
             requirements. The date at the top of this page indicates when the policy was last revised. Continued
@@ -198,7 +198,7 @@
     </section>
 
     <section class="">
-        <h2 class="aquarius-subheading mt-8 uppercase">Contact Information</h2>
+        <h2 class="aquarius-subheading mt-8">Contact Information</h2>
         <p class="mb-4">If you have any questions or concerns about this Privacy Policy, please contact us:</p>
         <ul class="list-disc pl-6 space-y-2 mb-4">
             <li><strong>Company:</strong> Aquarius Swimming Pools Sdn Bhd (920548-M)</li>

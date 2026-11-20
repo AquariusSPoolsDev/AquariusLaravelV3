@@ -9,6 +9,7 @@ use Tests\TestCase;
 /**
  * The public site uses two fonts from Bunny Fonts: Outfit for headings and Figtree for body text.
  * Playfair Display and Lato are gone, and error pages load the same fonts as the rest of the site.
+ * Only the big titles (hero, page titles) are uppercase; section headings use normal case.
  */
 class SiteFontsTest extends TestCase
 {
@@ -26,6 +27,19 @@ class SiteFontsTest extends TestCase
                 ->assertDontSee('playfair', false)
                 ->assertDontSee('family=lato', false)
                 ->assertDontSee('font-serif', false);
+        }
+    }
+
+    public function test_section_headings_are_not_forced_to_uppercase(): void
+    {
+        SitePage::ContactUs->setVisible(true);
+        SitePage::OurPools->setVisible(true);
+
+        foreach (['/en/contact-us', '/en/our-pools', '/en/privacy', '/en/terms'] as $path) {
+            $this->get($path)->assertOk()
+                ->assertSee('class="aquarius-subheading', false)
+                ->assertDontSee('class="aquarius-subheading uppercase"', false)
+                ->assertDontSee('class="aquarius-subheading mt-8 uppercase"', false);
         }
     }
 

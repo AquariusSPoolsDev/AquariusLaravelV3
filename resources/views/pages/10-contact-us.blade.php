@@ -54,7 +54,7 @@ $headerSubtitle = 'contact_subtitle_heading';
         <div class="flex justify-between items-start flex-col lg:flex-row gap-4 mb-8">
             <div>
                 <x-reusables.pill-text>{{__('strings.contact_visit_showpool_pill')}}</x-reusables.pill-text>
-                <x-reusables.subheading class="uppercase">{{__('strings.contact_visit_showpool_heading')}}
+                <x-reusables.subheading>{{__('strings.contact_visit_showpool_heading')}}
                 </x-reusables.subheading>
                 <div class="aquarius-visit-showpool-desc max-w-3xl space-y-3">
                     <p>{{__('strings.about_showroom_body_1')}}</p>
