@@ -99,6 +99,17 @@
     h1, h2, h3, h4, h5, h6 {
         @apply font-heading text-pretty;
     }
+
+    /* Keyboard focus ring, shown for keyboard users only (mouse clicks don't trigger :focus-visible) */
+    :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+        outline: 2px solid var(--color-primary-700);
+        outline-offset: 3px;
+    }
+
+    /* On dark surfaces the ring turns white to keep 3:1 contrast */
+    :where(.aquarius-hero-page-content-section, .focus-on-dark) :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+        outline-color: white;
+    }
 }
 
 /* REUSABLE COMPONENTS - START */
@@ -147,7 +158,7 @@
 
 /* brand logo component */
 .brand {
-    @apply flex flex-row items-center focus:outline-none focus:opacity-80 gap-x-2;
+    @apply flex flex-row items-center focus:opacity-80 gap-x-2;
 
     img.aquarius-logo {
         @apply size-13 shrink-0;
@@ -223,7 +234,7 @@
 
                         .nav-link,
                         .nav-dropdown-btn {
-                            @apply p-4 lg:px-3 py-3.5 lg:py-2 text-sm text-neutral-600 rounded-lg font-bold transition-all cursor-pointer hover:text-primary-800 hover:bg-primary-50 active:text-primary-800 active:bg-primary-50 focus:text-primary-800 focus:bg-primary-50 focus:outline-none;
+                            @apply p-4 lg:px-3 py-3.5 lg:py-2 text-sm text-neutral-600 rounded-lg font-bold transition-all cursor-pointer hover:text-primary-800 hover:bg-primary-50 active:text-primary-800 active:bg-primary-50 focus:text-primary-800 focus:bg-primary-50;
                         }
 
                         .nav-link {
@@ -262,7 +273,7 @@
                 }
 
                 .nav-get-quote .quote-btn {
-                    @apply block text-center text-sm py-2 px-3.5 font-bold rounded-lg transition-all text-neutral-950 bg-linear-to-br from-secondary-200 via-secondary-400 to-secondary-500 hover:brightness-110 active:scale-95 active:brightness-90 focus:outline-none disabled:opacity-50 disabled:pointer-events-none;
+                    @apply block text-center text-sm py-2 px-3.5 font-bold rounded-lg transition-all text-neutral-950 bg-linear-to-br from-secondary-200 via-secondary-400 to-secondary-500 hover:brightness-110 active:scale-95 active:brightness-90 disabled:opacity-50 disabled:pointer-events-none;
                 }
 
                 /* language selector */
@@ -271,7 +282,7 @@
                 }
 
                 .aquarius-lang-select-btn {
-                    @apply inline-flex p-2 items-center gap-x-1.5 text-sm font-medium rounded-lg transition-all hover:cursor-pointer hover:text-primary-800 hover:bg-primary-50 active:text-primary-800 active:bg-primary-50 focus:text-primary-800 focus:bg-primary-50 focus:outline-none;
+                    @apply inline-flex p-2 items-center gap-x-1.5 text-sm font-medium rounded-lg transition-all hover:cursor-pointer hover:text-primary-800 hover:bg-primary-50 active:text-primary-800 active:bg-primary-50 focus:text-primary-800 focus:bg-primary-50;
                     @apply max-lg:w-full max-lg:rounded-lg;
                 }
 
@@ -362,7 +373,7 @@
             }
 
             .toast-close-btn {
-                @apply inline-flex shrink-0 justify-center items-center size-4 rounded-lg text-neutral-800 opacity-50 hover:opacity-100 focus:outline-none focus:opacity-100;
+                @apply inline-flex shrink-0 justify-center items-center size-6 rounded-full text-neutral-800 opacity-60 hover:opacity-100 focus:opacity-100;
             }
         }
 
@@ -395,7 +406,7 @@
                 }
 
                 .aquarius-cta-primary {
-                    @apply py-3.5 px-10 inline-flex items-center gap-2 text-base lg:text-lg rounded-full font-heading font-bold bg-linear-to-b from-primary-500 via-primary-700 to-primary-900 text-white focus:outline-none disabled:opacity-50 disabled:pointer-events-none transition-all drop-shadow-lg relative overflow-hidden hover:shadow-primary-700/50 hover:shadow-lg hover:brightness-110 active:scale-95 active:brightness-90;
+                    @apply py-3.5 px-10 inline-flex items-center gap-2 text-base lg:text-lg rounded-full font-heading font-bold bg-linear-to-b from-primary-500 via-primary-700 to-primary-900 text-white disabled:opacity-50 disabled:pointer-events-none transition-all drop-shadow-lg relative overflow-hidden hover:shadow-primary-700/50 hover:shadow-lg hover:brightness-110 active:scale-95 active:brightness-90;
 
                     &::before {
                         content: '';
@@ -408,7 +419,7 @@
                 }
 
                 .aquarius-cta-secondary {
-                    @apply py-3.5 px-10 inline-flex items-center gap-2 text-base lg:text-lg rounded-full font-heading font-bold border-2 border-white/70 text-white backdrop-blur-sm hover:border-white hover:bg-white/15 focus:outline-none focus:border-white focus:bg-white/15 active:scale-95 active:bg-white/20 disabled:opacity-50 disabled:pointer-events-none transition-all drop-shadow-md;
+                    @apply py-3.5 px-10 inline-flex items-center gap-2 text-base lg:text-lg rounded-full font-heading font-bold border-2 border-white/70 text-white backdrop-blur-sm hover:border-white hover:bg-white/15 focus:border-white focus:bg-white/15 active:scale-95 active:bg-white/20 disabled:opacity-50 disabled:pointer-events-none transition-all drop-shadow-md;
                 }
             }
         }
@@ -607,7 +618,7 @@
 }
 
 .aquarius-showcase-btn {
-    @apply py-4 px-12 inline-flex items-center gap-4 text-lg lg:text-xl rounded-lg border border-transparent bg-primary-700 text-white transition-all hover:bg-primary-800 hover:shadow-lg hover:shadow-primary-700/40 hover:-translate-y-0.5 focus:outline-none focus:bg-primary-800 active:scale-95 active:brightness-90 active:translate-y-0 disabled:opacity-50 disabled:pointer-events-none;
+    @apply py-4 px-12 inline-flex items-center gap-4 text-lg lg:text-xl rounded-lg border border-transparent bg-primary-700 text-white transition-all hover:bg-primary-800 hover:shadow-lg hover:shadow-primary-700/40 hover:-translate-y-0.5 focus:bg-primary-800 active:scale-95 active:brightness-90 active:translate-y-0 disabled:opacity-50 disabled:pointer-events-none;
 }
 
 
@@ -653,7 +664,7 @@
 }
 
 .aquarius-reviews-btn {
-    @apply py-4 px-12 inline-flex items-center gap-4 text-lg lg:text-xl rounded-lg border border-white bg-white text-primary-800 font-semibold transition-all hover:bg-primary-50 hover:shadow-lg hover:-translate-y-0.5 focus:outline-none active:scale-95 active:brightness-90 active:translate-y-0 disabled:opacity-50 disabled:pointer-events-none;
+    @apply py-4 px-12 inline-flex items-center gap-4 text-lg lg:text-xl rounded-lg border border-white bg-white text-primary-800 font-semibold transition-all hover:bg-primary-50 hover:shadow-lg hover:-translate-y-0.5 active:scale-95 active:brightness-90 active:translate-y-0 disabled:opacity-50 disabled:pointer-events-none;
 
     .reviews-btn-arrow {
         @apply size-5 transition-transform;
@@ -743,7 +754,7 @@ footer.aquarius-footer {
     }
 
     .aquarius-accordion-toggle {
-        @apply flex items-center justify-between gap-4 w-full px-5 py-5 lg:px-6 text-left text-sm lg:text-base font-semibold text-neutral-900 transition-colors duration-150 hover:text-primary-600 focus:outline-none cursor-pointer;
+        @apply flex items-center justify-between gap-4 w-full px-5 py-5 lg:px-6 text-left text-sm lg:text-base font-semibold text-neutral-900 transition-colors duration-150 hover:text-primary-600 cursor-pointer;
     }
 
     .toggle-icon {
@@ -789,7 +800,7 @@ footer.aquarius-footer {
 }
 
 .cta-strip-btn {
-    @apply py-4 px-10 inline-flex items-center gap-3 text-base lg:text-lg rounded-lg border border-transparent bg-primary-700 text-white font-semibold transition-all hover:bg-primary-800 hover:shadow-lg hover:shadow-primary-700/40 hover:-translate-y-0.5 focus:outline-none focus:bg-primary-800 active:scale-95 active:brightness-90 active:translate-y-0 disabled:opacity-50 disabled:pointer-events-none;
+    @apply py-4 px-10 inline-flex items-center gap-3 text-base lg:text-lg rounded-lg border border-transparent bg-primary-700 text-white font-semibold transition-all hover:bg-primary-800 hover:shadow-lg hover:shadow-primary-700/40 hover:-translate-y-0.5 focus:bg-primary-800 active:scale-95 active:brightness-90 active:translate-y-0 disabled:opacity-50 disabled:pointer-events-none;
 
     svg {
         @apply size-5 transition-transform;
@@ -815,7 +826,7 @@ footer.aquarius-footer {
     }
 
     .aquarius-accordion-toggle {
-        @apply flex items-center justify-between gap-4 w-full px-5 py-5 lg:px-6 text-left text-sm lg:text-base font-semibold text-neutral-900 transition-colors duration-150 hover:text-primary-600 focus:outline-none cursor-pointer;
+        @apply flex items-center justify-between gap-4 w-full px-5 py-5 lg:px-6 text-left text-sm lg:text-base font-semibold text-neutral-900 transition-colors duration-150 hover:text-primary-600 cursor-pointer;
     }
 
     .toggle-icon {
@@ -831,7 +842,7 @@ footer.aquarius-footer {
     }
 
     .faq-view-all-btn {
-        @apply py-3 px-8 inline-flex items-center gap-3 text-base rounded-lg border border-transparent bg-primary-700 text-white transition-all hover:bg-primary-800 hover:shadow-lg hover:shadow-primary-700/40 hover:-translate-y-0.5 focus:outline-none focus:bg-primary-800 active:scale-95 active:brightness-90 active:translate-y-0;
+        @apply py-3 px-8 inline-flex items-center gap-3 text-base rounded-lg border border-transparent bg-primary-700 text-white transition-all hover:bg-primary-800 hover:shadow-lg hover:shadow-primary-700/40 hover:-translate-y-0.5 focus:bg-primary-800 active:scale-95 active:brightness-90 active:translate-y-0;
     }
 }
 

@@ -53,11 +53,11 @@
             {{-- Buttons --}}
             <div class="flex flex-wrap items-center justify-center gap-3">
                 <a href="{{ $errorHomeUrl }}"
-                    class="py-2.5 px-5.5 inline-flex items-center gap-2 font-bold rounded-lg transition-all text-white bg-primary hover:bg-primary-700 active:bg-primary-800 active:scale-95 focus:outline-none focus:bg-primary-700 cursor-pointer">
+                    class="py-2.5 px-5.5 inline-flex items-center gap-2 font-bold rounded-lg transition-all text-white bg-primary hover:bg-primary-700 active:bg-primary-800 active:scale-95 focus:bg-primary-700 cursor-pointer">
                     Back to Homepage
                 </a>
                 <a href="{{ $errorContactUrl }}"
-                    class="py-2.5 px-5.5 inline-flex items-center gap-2 font-bold rounded-lg transition-all border border-neutral-300 bg-white text-neutral-700 hover:bg-neutral-50 hover:border-neutral-400 active:scale-95 focus:outline-none cursor-pointer">
+                    class="py-2.5 px-5.5 inline-flex items-center gap-2 font-bold rounded-lg transition-all border border-neutral-300 bg-white text-neutral-700 hover:bg-neutral-50 hover:border-neutral-400 active:scale-95 cursor-pointer">
                     Contact Us
                 </a>
             </div>

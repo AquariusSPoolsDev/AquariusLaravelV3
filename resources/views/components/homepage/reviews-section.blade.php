@@ -7,7 +7,7 @@ $fbTotal = CustReview::where('source', 'Facebook')->count();
 $fbRecommended = $fbTotal; // All published FB reviews are recommendations
 @endphp
 
-<section class="bg-linear-to-br from-primary-950 via-primary-800 to-primary-700 relative overflow-hidden">
+<section class="focus-on-dark bg-linear-to-br from-primary-950 via-primary-800 to-primary-700 relative overflow-hidden">
     {{-- Dashed grid overlay --}}
     <div class="absolute inset-0 z-0 pointer-events-none" style="background-image: linear-gradient(to right, rgba(255,255,255,0.07) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.07) 1px, transparent 1px); background-size: 24px 24px; mask-image: repeating-linear-gradient(to right, black 0px, black 3px, transparent 3px, transparent 8px), repeating-linear-gradient(to bottom, black 0px, black 3px, transparent 3px, transparent 8px); -webkit-mask-image: repeating-linear-gradient(to right, black 0px, black 3px, transparent 3px, transparent 8px), repeating-linear-gradient(to bottom, black 0px, black 3px, transparent 3px, transparent 8px); mask-composite: intersect; -webkit-mask-composite: source-in;"></div>
     <div class="main-container relative z-10">
