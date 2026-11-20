@@ -426,7 +426,7 @@
         }
 
         .hero-strip-card {
-            @apply overflow-hidden -mb-8 rounded-t-2xl border-2 border-white transition-all duration-300 cursor-pointer shrink-0 hover:brightness-110;
+            @apply overflow-hidden -mb-8 rounded-t-2xl border-2 border-white shrink-0;
 
             picture {
                 @apply block w-full h-full;

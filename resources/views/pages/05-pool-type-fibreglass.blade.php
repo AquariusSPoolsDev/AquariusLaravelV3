@@ -43,11 +43,11 @@ $headerSubtitle = 'fibreglass_pool_subtitle_heading';
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
         @foreach ([1, 2, 3, 4] as $step)
         <div data-animate data-delay="{{ ($loop->index) * 80 }}">
-            <div class="overflow-hidden rounded-xl border border-neutral-200 bg-info-bg aspect-square">
+            <a href="{{ asset('assets/images/fibreglass/steps/step-' . $step . '.jpg') }}" data-fslightbox="fibreglass-steps" class="block overflow-hidden rounded-xl border border-neutral-200 bg-info-bg aspect-square">
                 <img src="{{ asset('assets/images/fibreglass/steps/step-' . $step . '.jpg') }}"
                      alt="{{ __('strings.fibreglass_pool_step_' . $step . '_title') }}"
                      class="w-full h-full object-cover hover:scale-105 transition-all">
-            </div>
+            </a>
             <p class="mt-2 italic text-neutral-700">{{ $step }}. {{ __('strings.fibreglass_pool_step_' . $step . '_title') }}</p>
         </div>
         @endforeach
@@ -68,12 +68,12 @@ $headerSubtitle = 'fibreglass_pool_subtitle_heading';
 {{-- POOL GALLERY --}}
 <section class="mt-16">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="bg-info-bg overflow-hidden w-full aspect-4/3 object-cover border border-neutral-200 rounded-xl" data-animate data-delay="0">
-            <img src="{{ asset('assets/images/fibreglass/fibreglass-pool-1.jpg') }}" alt="Aquarius Pools Fibreglass Pool One Image" class="w-full h-auto hover:scale-105 active:scale-105 transition-all">
-        </div>
-        <div class="bg-info-bg overflow-hidden w-full aspect-4/3 object-cover border border-neutral-200 rounded-xl" data-animate data-delay="100">
-            <img src="{{ asset('assets/images/fibreglass/fibreglass-pool-2.jpg') }}" alt="Aquarius Pools Fibreglass Pool Two Image" class="w-full h-auto hover:scale-105 active:scale-105 transition-all">
-        </div>
+        <a href="{{ asset('assets/images/fibreglass/fibreglass-pool-1.jpg') }}" data-fslightbox="fibreglass-pools" class="block bg-info-bg overflow-hidden w-full aspect-4/3 border border-neutral-200 rounded-xl" data-animate data-delay="0">
+            <img src="{{ asset('assets/images/fibreglass/fibreglass-pool-1.jpg') }}" alt="Finished fibreglass pool by Aquarius, photo 1 of 2" loading="lazy" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
+        </a>
+        <a href="{{ asset('assets/images/fibreglass/fibreglass-pool-2.jpg') }}" data-fslightbox="fibreglass-pools" class="block bg-info-bg overflow-hidden w-full aspect-4/3 border border-neutral-200 rounded-xl" data-animate data-delay="100">
+            <img src="{{ asset('assets/images/fibreglass/fibreglass-pool-2.jpg') }}" alt="Finished fibreglass pool by Aquarius, photo 2 of 2" loading="lazy" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
+        </a>
     </div>
 </section>
 

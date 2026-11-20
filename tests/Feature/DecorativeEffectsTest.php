@@ -64,6 +64,38 @@ class DecorativeEffectsTest extends TestCase
         $this->assertDoesNotMatchRegularExpression('/aquarius-contact-col-(left|right)[^>]*data-animate/', $html);
     }
 
+    /**
+     * @return array<string, array{string, string}>
+     */
+    public static function poolPages(): array
+    {
+        return [
+            'concrete' => ['/en/concrete-pools', 'concrete'],
+            'vinyl' => ['/en/vinyl-pools', 'vinyl'],
+            'fibreglass' => ['/en/fibreglass-pools', 'fibreglass'],
+        ];
+    }
+
+    #[DataProvider('poolPages')]
+    public function test_pool_page_photos_open_in_the_lightbox(string $path, string $pool): void
+    {
+        $html = $this->get($path)->assertOk()->getContent();
+
+        $this->assertStringContainsString('data-fslightbox="'.$pool.'-pools"', $html);
+        if (glob(public_path("assets/images/{$pool}/steps/*.jpg")) !== []) {
+            $this->assertStringContainsString('data-fslightbox="'.$pool.'-steps"', $html);
+        }
+        $this->assertStringNotContainsString('active:scale-105', $html);
+    }
+
+    public function test_homepage_showroom_photos_link_to_the_contact_showroom(): void
+    {
+        $html = $this->get('/en')->assertOk()->getContent();
+
+        $this->assertSame(4, preg_match_all('#<a\s+href="'.preg_quote(url('/en/contact-us'), '#').'\#showpool"\s+class="group/img block#', $html));
+        $this->assertDoesNotMatchRegularExpression('/group\/img[^"]*cursor-pointer/', $html);
+    }
+
     public function test_whatsapp_button_and_scroll_bar_use_solid_colours(): void
     {
         $this->get('/en')->assertOk()

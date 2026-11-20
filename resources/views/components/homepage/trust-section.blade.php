@@ -52,35 +52,39 @@
                 @endif
             </div>
 
-            {{-- RIGHT: Image grid --}}
+            {{-- RIGHT: Image grid. Photos link to the showroom section on the Contact page (plain photos if that page is switched off) --}}
+            @php
+                $showroomHref = \App\Enums\SitePage::ContactUs->isVisible() ? route('contact-page').'#showpool' : null;
+                $showroomTag = $showroomHref ? 'a' : 'div';
+            @endphp
             <div class="flex flex-col gap-4" data-animate data-delay="200">
                 {{-- Large: showroom exterior --}}
-                <div class="group/img overflow-hidden rounded-xl bg-neutral-100 aspect-video border-2 border-neutral-200 shadow-sm hover:border-primary-600 hover:shadow-lg transition-all duration-300 cursor-pointer">
+                <{{ $showroomTag }} @if ($showroomHref) href="{{ $showroomHref }}" @endif class="group/img block overflow-hidden rounded-xl bg-neutral-100 aspect-video border-2 border-neutral-200 shadow-sm hover:border-primary-600 hover:shadow-lg transition-all duration-300"><span class="sr-only">{{ __('strings.navbar_visit_showroom') }}: </span>
                     <picture>
                         <source srcset="{{ asset('assets/images/homepage/aquarius-showroom-exterior.webp') }}" type="image/webp">
                         <img loading="lazy" src="{{ asset('assets/images/homepage/aquarius-showroom-exterior.jpg') }}" alt="Aquarius Pools Exterior Showroom" title="Aquarius Pools Exterior Showroom" class="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105">
                     </picture>
-                </div>
+                </{{ $showroomTag }}>
                 {{-- Three smaller: pool type displays (scroll on mobile, grid on desktop) --}}
                 <div class="flex gap-4 overflow-x-auto pb-1 lg:grid lg:grid-cols-3 lg:overflow-visible lg:pb-0">
-                    <div class="group/img shrink-0 w-[60vw] sm:w-[45vw] lg:w-auto overflow-hidden rounded-xl bg-neutral-100 aspect-4/3 border-2 border-neutral-200 shadow-sm hover:border-primary-600 hover:shadow-lg transition-all duration-300 cursor-pointer">
+                    <{{ $showroomTag }} @if ($showroomHref) href="{{ $showroomHref }}" @endif class="group/img block shrink-0 w-[60vw] sm:w-[45vw] lg:w-auto overflow-hidden rounded-xl bg-neutral-100 aspect-4/3 border-2 border-neutral-200 shadow-sm hover:border-primary-600 hover:shadow-lg transition-all duration-300"><span class="sr-only">{{ __('strings.navbar_visit_showroom') }}: </span>
                         <picture>
                             <source srcset="{{ asset('assets/images/homepage/aquarius-showroom-concrete.webp') }}" type="image/webp">
                             <img loading="lazy" src="{{ asset('assets/images/homepage/aquarius-showroom-concrete.jpg') }}" alt="Concrete Pool Example Showroom" title="Concrete Pool Example Showroom" class="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105">
                         </picture>
-                    </div>
-                    <div class="group/img shrink-0 w-[60vw] sm:w-[45vw] lg:w-auto overflow-hidden rounded-xl bg-neutral-100 aspect-4/3 border-2 border-neutral-200 shadow-sm hover:border-primary-600 hover:shadow-lg transition-all duration-300 cursor-pointer">
+                    </{{ $showroomTag }}>
+                    <{{ $showroomTag }} @if ($showroomHref) href="{{ $showroomHref }}" @endif class="group/img block shrink-0 w-[60vw] sm:w-[45vw] lg:w-auto overflow-hidden rounded-xl bg-neutral-100 aspect-4/3 border-2 border-neutral-200 shadow-sm hover:border-primary-600 hover:shadow-lg transition-all duration-300"><span class="sr-only">{{ __('strings.navbar_visit_showroom') }}: </span>
                         <picture>
                             <source srcset="{{ asset('assets/images/homepage/aquarius-showroom-vinyl.webp') }}" type="image/webp">
                             <img loading="lazy" src="{{ asset('assets/images/homepage/aquarius-showroom-vinyl.jpg') }}" alt="Vinyl Pool Example Showroom" title="Vinyl Pool Example Showroom" class="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105">
                         </picture>
-                    </div>
-                    <div class="group/img shrink-0 w-[60vw] sm:w-[45vw] lg:w-auto overflow-hidden rounded-xl bg-neutral-100 aspect-4/3 border-2 border-neutral-200 shadow-sm hover:border-primary-600 hover:shadow-lg transition-all duration-300 cursor-pointer">
+                    </{{ $showroomTag }}>
+                    <{{ $showroomTag }} @if ($showroomHref) href="{{ $showroomHref }}" @endif class="group/img block shrink-0 w-[60vw] sm:w-[45vw] lg:w-auto overflow-hidden rounded-xl bg-neutral-100 aspect-4/3 border-2 border-neutral-200 shadow-sm hover:border-primary-600 hover:shadow-lg transition-all duration-300"><span class="sr-only">{{ __('strings.navbar_visit_showroom') }}: </span>
                         <picture>
                             <source srcset="{{ asset('assets/images/homepage/aquarius-showroom-fibreglass.webp') }}" type="image/webp">
                             <img loading="lazy" src="{{ asset('assets/images/homepage/aquarius-showroom-fibreglass.jpg') }}" alt="Fibreglass Pool Example Showroom" title="Fibreglass Pool Example Showroom" class="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105">
                         </picture>
-                    </div>
+                    </{{ $showroomTag }}>
                 </div>
             </div>
 
