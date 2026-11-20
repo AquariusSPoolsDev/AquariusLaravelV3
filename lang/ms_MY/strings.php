@@ -250,7 +250,7 @@ return [
     'concrete_pool_closing_body' => 'Kolam konkrit ialah pilihan paling tersuai yang dibina oleh Aquarius. Jika anda mahukan kawalan penuh ke atas saiz, bentuk, kedalaman, dan kemasan, serta selesa dengan masa pembinaan 2 hingga 3 bulan, kolam konkrit adalah pilihan yang tepat. Untuk pemasangan lebih cepat atau kos lebih rendah, bandingkan kolam gentian kaca dan vinil.',
     'concrete_pool_compare_other' => 'Tidak pasti kolam konkrit sesuai? Bandingkan kolam gentian kaca dan vinil, atau tanya pasukan kami.',
     'concrete_pool_cta_title' => 'Berminat dengan kolam konkrit?',
-    'concrete_pool_cta_body' => 'Beritahu kami tentang tapak anda dan saiz yang anda fikirkan. Kami akan terangkan reka bentuk, kos dan masa pembinaannya.',
+    'concrete_pool_cta_body' => 'Beritahu kami tentang kawasan anda dan saiz yang anda fikirkan. Kami akan terangkan reka bentuk, kos dan masa pembinaannya.',
 
     // VINYL POOLS PAGE
     'vinyl_pool_title_heading' => 'Kolam Renang Vinil di Johor Bahru',
