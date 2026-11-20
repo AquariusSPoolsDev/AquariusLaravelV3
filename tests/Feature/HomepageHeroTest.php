@@ -57,13 +57,13 @@ class HomepageHeroTest extends TestCase
     public function test_hero_video_toggle_labels_follow_the_locale(): void
     {
         $this->get('/en')->assertOk()
-            ->assertSee('Toggle autoplay')
+            ->assertSee('Autoplay')
             ->assertSee('<span id="play-pause-text" class="ml-2 text-base">Pause</span>', false);
 
         $this->get('/ms')->assertOk()
             ->assertSee('Automain')
             ->assertSee('<span id="play-pause-text" class="ml-2 text-base">Jeda</span>', false)
             ->assertSee("const labelPlay = 'Main'", false)
-            ->assertDontSee('Toggle autoplay');
+            ->assertDontSee('Autoplay');
     }
 }
