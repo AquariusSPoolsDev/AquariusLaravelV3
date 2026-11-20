@@ -328,7 +328,7 @@ return [
     'fibreglass_pool_closing_body' => 'Kolam gentian kaca ialah kolam terpantas yang Aquarius pasang, siap dalam 5 hingga 7 hari dengan penyelenggaraan minimum sepanjang jangka hayat 40 hingga 50 tahun. Bentuk tetap bermakna kurang fleksibiliti reka bentuk berbanding kolam konkrit. Jika kecepatan dan penyelenggaraan rendah lebih penting daripada penyesuaian, gentian kaca adalah pilihan yang sesuai. Untuk lebih pilihan, bandingkan kolam konkrit dan vinil.',
     'fibreglass_pool_compare_other' => 'Tidak pasti kolam gentian kaca sesuai? Bandingkan kolam konkrit dan vinil, atau tanya pasukan kami.',
     'fibreglass_pool_cta_title' => 'Berminat dengan kolam gentian kaca?',
-    'fibreglass_pool_cta_body' => 'Beritahu kami tentang tapak anda, dan kami akan bantu anda memilih model yang sesuai.',
+    'fibreglass_pool_cta_body' => 'Beritahu kami tentang kawasan anda, dan kami akan bantu anda memilih model yang sesuai.',
 
     // EXPLORE OTHER POOL TYPES SECTION
     'explore_pools_pill' => 'Teroka',
