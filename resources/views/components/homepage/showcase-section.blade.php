@@ -3,7 +3,7 @@ use App\Models\ImageGallery;
 $images = ImageGallery::where('is_published', 1)->where('is_featured', 1)->orderBy('created_at', 'desc')->take(9)->get();
 @endphp
 
-<section id="showcase" class="bg-primary-50/50">
+<section id="showcase" class="bg-white">
     <div class="main-container">
         <div class="max-w-2xl mx-auto text-center">
             <x-reusables.pill-text class="block">{{__('strings.homepage_showcase_pill')}}</x-reusables.pill-text>

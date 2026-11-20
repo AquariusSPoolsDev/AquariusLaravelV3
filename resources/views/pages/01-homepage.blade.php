@@ -12,19 +12,23 @@
 
 {{-- HOMEPAGE LAYOUT --}}
 @section('content')
+    {{-- Order: what we build, the work, what customers say, that we're real (showroom), then
+         the offer, services for existing pool owners, remaining questions, and contact.
+         Backgrounds alternate: hero dark, pools light, showcase white, reviews dark, about white,
+         CTA light, services white, FAQ light, contact white. --}}
     <x-homepage.hero-section />
 
-    <x-homepage.trust-section />
-
     <x-homepage.our-pools-section />
-
-    <x-homepage.services-section />
 
     <x-homepage.showcase-section />
 
     <x-homepage.reviews-section />
 
+    <x-homepage.trust-section />
+
     <x-homepage.cta-strip />
+
+    <x-homepage.services-section />
 
     <x-homepage.faq-section />
 

@@ -1,4 +1,4 @@
-<section id="faq" class="faq-section">
+<section id="faq" class="faq-section bg-primary-50/50">
     <div class="main-container">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-8">
