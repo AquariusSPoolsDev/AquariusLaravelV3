@@ -55,6 +55,7 @@ return [
     'trust_stats_pools' => 'Pools Completed',
     'trust_member_of' => 'Member of',
     'trust_btn_about' => 'Learn More About Us',
+    'trust_showroom_more' => 'More about the showroom',
 
     // HOMEPAGE - OUR POOLS SECTION
     'pools_heading' => 'Our Pools',

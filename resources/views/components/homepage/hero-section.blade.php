@@ -77,7 +77,9 @@
                 <p class="aquarius-secondary-heading">
                     {{ __('strings.hero_content') }}
                 </p>
-                <ul class="aquarius-feature-line" aria-label="Key features">
+                <ul class="aquarius-feature-line" aria-label="Key features"
+                    x-data
+                    x-init="const markLineEnds = () => { const items = [...$el.children]; items.forEach((item, i) => item.classList.toggle('is-line-end', i === items.length - 1 || items[i + 1].offsetTop > item.offsetTop)); }; markLineEnds(); new ResizeObserver(markLineEnds).observe($el);">
                     @foreach (range(1, 5) as $feature)
                         <li>{{ __('strings.hero_feature_'.$feature) }}</li>
                     @endforeach

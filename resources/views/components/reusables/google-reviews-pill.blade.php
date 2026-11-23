@@ -18,7 +18,7 @@ $totalClass   = $variant === 'dark' ? 'text-primary-200 text-base' : 'text-neutr
 $strongClass  = $variant === 'dark' ? 'text-white' : 'text-neutral-900';
 @endphp
 
-<div class="inline-flex flex-wrap justify-center max-w-full items-center gap-4 border rounded-full px-6 py-2.5 {{ $wrapClass }}">
+<div class="inline-flex flex-wrap justify-center max-w-full items-center gap-x-4 gap-y-1 border rounded-2xl sm:rounded-full px-6 py-2.5 {{ $wrapClass }}">
     <div class="flex items-center gap-2">
         <svg class="size-5 shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
@@ -33,6 +33,6 @@ $strongClass  = $variant === 'dark' ? 'text-white' : 'text-neutral-900';
         <span class="text-2xl font-extrabold {{ $ratingClass }}">{{ $avg }}</span>
         <span class="text-warning-300 text-2xl leading-none">★</span>
     </div>
-    <div class="w-px h-6 {{ $dividerClass }}"></div>
-    <span class="{{ $totalClass }}">{!! __('strings.reviews_based_on', ['total' => '<strong class="' . $strongClass . '">' . $total . '</strong>']) !!}</span>
+    <div class="hidden sm:block w-px h-6 {{ $dividerClass }}"></div>
+    <span class="basis-full sm:basis-auto text-center {{ $totalClass }}">{!! __('strings.reviews_based_on', ['total' => '<strong class="' . $strongClass . '">' . $total . '</strong>']) !!}</span>
 </div>

@@ -37,7 +37,7 @@ return [
     'hero_content' => 'Pakar kolam renang di Malaysia yang menyediakan pelbagai jenis kolam renang di pasaran.',
     'hero_feature_1' => 'Kolam Renang Konkrit, Vinil & Gentian Kaca',
     'hero_feature_2' => 'Perhiasan Air',
-    'hero_feature_3' => 'Pembaikian & Penyelengaraan Kolam Renang',
+    'hero_feature_3' => 'Pembaikan & Penyelenggaraan Kolam Renang',
     'hero_feature_4' => 'Peralatan',
     'hero_feature_5' => 'Bahan Kimia',
     'hero_btn_quote' => 'Tempah Penilaian Percuma',
@@ -55,6 +55,7 @@ return [
     'trust_stats_pools' => 'Kolam Renang Siap',
     'trust_member_of' => 'Ahli',
     'trust_btn_about' => 'Ketahui Lebih Lanjut',
+    'trust_showroom_more' => 'Ketahui lebih lanjut tentang bilik pameran',
 
     // HOMEPAGE - OUR POOLS SECTION
     'pools_heading' => 'Kolam Renang Kami',
@@ -315,7 +316,7 @@ return [
     'fibreglass_pool_advantage_1_title' => 'Ketahanan',
     'fibreglass_pool_advantage_1_desc' => 'Kolam gentian kaca tahan 40 hingga 50 tahun jika dijaga dengan betul.',
     'fibreglass_pool_advantage_2_title' => 'Penyelenggaraan rendah',
-    'fibreglass_pool_advantage_2_desc' => 'Kolam renang gentian kaca memerlukan penyelengaraan yang rendah dari semasa ke semasa yang dapat mengurangkan kos keseluruhan jangka hayat kolam anda. Permukaan yang licin pada rangka gentian kaca mengurangkan penumbuhan alga dan memerlukan bahan kimia yang sedikit.',
+    'fibreglass_pool_advantage_2_desc' => 'Kolam renang gentian kaca memerlukan penyelenggaraan yang rendah dari semasa ke semasa yang dapat mengurangkan kos keseluruhan jangka hayat kolam anda. Permukaan yang licin pada rangka gentian kaca mengurangkan penumbuhan alga dan memerlukan bahan kimia yang sedikit.',
     'fibreglass_pool_advantage_3_title' => 'Pemasangan mudah',
     'fibreglass_pool_advantage_3_desc' => 'Pemasangan mengambil masa 5 hingga 7 hari.',
     'fibreglass_pool_disadvantage_title' => 'Kelemahan',
@@ -707,7 +708,7 @@ return [
     'faq_choose_concrete_answer_benefit_3_detail' => 'Kolam konkrit boleh dibina dalam tanah atau atas tanah. Pilihan termasuk jakuzi bersepadu, kolam cetek, pancuran air, hiasan batuan, dan tangga. Boleh dibina mengikut kesesuaian anda.',
     'faq_choose_concrete_answer_benefit_4' => 'Kemasan',
     'faq_choose_concrete_answer_benefit_4_detail' => 'Kemasan dalaman termasuk cat, jubin, kerikil, marmar, kuarza, dan render warna. Konkrit menawarkan lebih banyak pilihan kemasan berbanding jenis kolam lain.',
-    'faq_choose_concrete_answer_benefit_5' => 'Penyelengaraan',
+    'faq_choose_concrete_answer_benefit_5' => 'Penyelenggaraan',
     'faq_choose_concrete_answer_benefit_5_detail' => 'Dengan pembersihan berkala dan ujian air, kolam konkrit mengekalkan kemasannya dan mudah dijaga.',
     'faq_coping' => 'Apakah itu koping?',
     'faq_coping_answer_1' => 'Koping ialah kemasan tepi yang membatasi bahagian atas dinding kolam. Diperbuat daripada batuan, konkrit, batu-bata, atau jubin, ia menutup struktur kolam dan menghasilkan tepi yang kemas. Semua kolam konkrit memerlukan koping. Permukaan yang licin dan tidak gelincir memberi pegangan selamat kepada perenang di tepi kolam.',
@@ -752,7 +753,7 @@ return [
     'faq_kind_maintenance_answer_steps_3_detail' => 'Uji air dan laraskan tahap klorin, pH, dan kealkalian secara berkala untuk memastikan air bersih dan jernih.',
     'faq_kind_maintenance_answer_steps_4' => 'Penjagaan peralatan:',
     'faq_kind_maintenance_answer_steps_4_detail' => 'Servis pam, pemanas, dan penapis secara berkala untuk memastikan ia berfungsi dengan baik.',
-    'faq_kind_maintenance_answer_2_1' => 'Aquarius menyediakan semua perkhidmatan di atas melalui pasukan penyelengaraan kami.',
+    'faq_kind_maintenance_answer_2_1' => 'Aquarius menyediakan semua perkhidmatan di atas melalui pasukan penyelenggaraan kami.',
     'faq_kind_maintenance_answer_2_link_text' => 'Hubungi kami',
     'faq_kind_maintenance_answer_2_2' => 'untuk maklumat lanjut.',
 

@@ -378,11 +378,26 @@
                 }
 
                 .aquarius-feature-line {
-                    @apply flex flex-wrap justify-center gap-x-2 gap-y-1 mb-4 max-w-2xl text-base font-semibold text-white drop-shadow-md drop-shadow-primary-900;
+                    @apply flex flex-wrap justify-center gap-x-4 sm:gap-x-2 gap-y-1 mb-4 max-w-2xl text-base font-semibold text-white drop-shadow-md drop-shadow-primary-900;
 
+                    li {
+                        @apply text-balance;
+                    }
+
+                    /* Phones: a bullet before every item, so a wrapped line never ends on a loose dot */
+                    li::before {
+                        content: '\2022';
+                        @apply mr-2 text-secondary-300 sm:hidden;
+                    }
+
+                    /* Wider screens: a dot between items, hidden on the last item of each line (is-line-end, set by the hero script) */
                     li:not(:last-child)::after {
                         content: '\00B7';
-                        @apply ml-2 text-white/70;
+                        @apply ml-2 text-white/70 hidden sm:inline;
+                    }
+
+                    li.is-line-end::after {
+                        @apply sm:hidden;
                     }
                 }
 
@@ -391,7 +406,7 @@
                 }
 
                 .aquarius-cta-primary {
-                    @apply max-w-full py-3.5 px-10 inline-flex items-center gap-2 text-base lg:text-lg rounded-full font-heading font-bold bg-secondary-400 text-neutral-950 disabled:opacity-50 disabled:pointer-events-none transition-colors drop-shadow-lg hover:bg-secondary-500 active:scale-95 active:brightness-90;
+                    @apply max-w-full py-3.5 px-10 inline-flex items-center gap-2 text-base lg:text-lg rounded-full font-heading font-bold bg-secondary-400 text-neutral-950 disabled:opacity-50 disabled:pointer-events-none transition-all drop-shadow-lg hover:bg-secondary-500 active:scale-95 active:brightness-90;
                 }
 
                 .aquarius-cta-secondary {
@@ -492,15 +507,15 @@
     }
 
     .card-blob {
-        @apply absolute flex items-center justify-center -top-4 -right-4 rotate-12 size-24 rounded-2xl lg:size-32 lg:-top-5 lg:-right-5 bg-primary-100 text-primary-700;
+        @apply flex items-center justify-center size-12 lg:size-14 mb-4 rounded-lg bg-primary-50 text-primary-700;
     }
 
     .card-blob-icon {
-        @apply size-12 lg:size-16;
+        @apply size-7 lg:size-8;
     }
 
     .card-title {
-        @apply text-xl lg:text-2xl font-semibold mb-4 lg:mb-6 text-primary-900 max-w-3/4 text-balance;
+        @apply text-xl lg:text-2xl font-semibold mb-3 lg:mb-4 text-primary-900 text-balance;
     }
 
     .card-desc {

@@ -57,13 +57,13 @@
             </label>
             <div class="flex flex-wrap gap-2">
                 <select name="country_code" id="country_code"
-                    class="form-input w-36! shrink-0 @error('country_code') border-error-300 @enderror">
+                    class="form-input w-32! shrink-0 @error('country_code') border-error-300 @enderror">
                     <option value="+60" {{ old('country_code', '+60') === '+60' ? 'selected' : '' }}>🇲🇾 +60</option>
                     <option value="+65" {{ old('country_code') === '+65' ? 'selected' : '' }}>🇸🇬 +65</option>
                     <option value="other" {{ old('country_code') === 'other' ? 'selected' : '' }}>{{ __('strings.cf_country_others') }}</option>
                 </select>
                 <input type="tel" id="cust_phone" name="cust_phone" value="{{ old('cust_phone') }}"
-                    class="form-input min-w-0 flex-1 basis-40 @error('cust_phone') border-error-300 @enderror"
+                    class="form-input min-w-0 flex-1 basis-36 @error('cust_phone') border-error-300 @enderror"
                     placeholder="12-3456789"
                     inputmode="numeric"
                     pattern="[0-9\-\s]+"

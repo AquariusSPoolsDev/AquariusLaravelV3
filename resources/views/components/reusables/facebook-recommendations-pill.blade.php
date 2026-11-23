@@ -16,7 +16,7 @@ $totalClass   = $variant === 'dark' ? 'text-primary-200 text-base' : 'text-neutr
 $strongClass  = $variant === 'dark' ? 'text-white' : 'text-neutral-900';
 @endphp
 
-<div class="inline-flex flex-wrap justify-center max-w-full items-center gap-4 border rounded-full px-6 py-2.5 {{ $wrapClass }}">
+<div class="inline-flex flex-wrap justify-center max-w-full items-center gap-x-4 gap-y-1 border rounded-2xl sm:rounded-full px-6 py-2.5 {{ $wrapClass }}">
     <div class="flex items-center gap-2">
         {{-- Facebook logo --}}
         <svg class="size-5 shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -32,6 +32,6 @@ $strongClass  = $variant === 'dark' ? 'text-white' : 'text-neutral-900';
         </svg>
         <span class="{{ $countClass }}">{{ $recommended }}/{{ $total }}</span>
     </div>
-    <div class="w-px h-6 {{ $dividerClass }}"></div>
-    <span class="{{ $totalClass }}">{{ __('strings.reviews_fb_recommended') }}</span>
+    <div class="hidden sm:block w-px h-6 {{ $dividerClass }}"></div>
+    <span class="basis-full sm:basis-auto text-center {{ $totalClass }}">{{ __('strings.reviews_fb_recommended') }}</span>
 </div>
