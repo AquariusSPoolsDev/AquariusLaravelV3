@@ -51,7 +51,7 @@ class SiteFontsTest extends TestCase
 
         foreach (['/en', '/en/contact-us', '/en/faq', '/en/concrete-pools', '/ms/contact-us'] as $path) {
             $this->get($path)->assertOk()
-                ->assertSee('<main class="mt-20 lg:mt-23.25">', false)
+                ->assertSee('<main id="main-content" tabindex="-1" class="mt-20 lg:mt-23.25 focus:outline-none">', false)
                 ->assertDontSee('text-sm', false);
         }
     }

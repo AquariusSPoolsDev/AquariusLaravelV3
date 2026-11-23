@@ -9,7 +9,7 @@
         <div class="review-card-meta">
             <div class="review-card-meta-top">
                 <h2 class="review-card-name">{{ $review->reviewer_name }}</h2>
-                <div class="review-card-stars">
+                <div class="review-card-stars" role="img" aria-label="{{ __('strings.reviews_rating_label', ['rating' => $review->rating]) }}">
                     {{ str_repeat('★', $review->rating) }}{{ str_repeat('☆', 5 - $review->rating) }}
                 </div>
             </div>
@@ -33,7 +33,7 @@
     </div>
 </div>
 @empty
-<div class="col-span-full bg-red-50 border-s-4 border-red-500 rounded-e-xl p-6 ps-8" role="alert">
+<div class="col-span-full rounded-lg border border-neutral-200 bg-neutral-50 p-6 lg:p-8 text-center">
     <h2 class="text-2xl text-primary-900 font-semibold mb-3 mt-0">{{__('strings.reviews_no_review_title')}}</h2>
     <p class="text-neutral-700 m-0">{{__('strings.reviews_no_review_body')}}</p>
 </div>

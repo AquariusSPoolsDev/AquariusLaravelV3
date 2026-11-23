@@ -89,7 +89,7 @@ $headerSubtitle = 'contact_subtitle_heading';
                     @else
                         <div class="w-full h-full min-h-32 flex flex-col items-center justify-center gap-1 p-4 text-center border-2 border-dashed border-neutral-300 bg-neutral-50 rounded-lg" data-photo-placeholder>
                             <span class="text-base font-semibold text-neutral-700">Photo needed: {{ $photo['need'] }}</span>
-                            <span class="text-xs text-neutral-500">{{ $photo['hint'] }}</span>
+                            <span class="text-xs text-neutral-600">{{ $photo['hint'] }}</span>
                         </div>
                     @endif
                 </figure>

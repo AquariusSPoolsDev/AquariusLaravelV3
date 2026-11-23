@@ -52,7 +52,8 @@ document.addEventListener('DOMContentLoaded', function () {
         list.querySelectorAll('.promo-swiper').forEach(function (el) {
             if (el.swiper) { el.swiper.destroy(true, true); }
             new window.Swiper(el, {
-                modules: [window.SwiperNavigation, window.SwiperPagination],
+                modules: [window.SwiperA11y, window.SwiperNavigation, window.SwiperPagination],
+                a11y: Object.assign({ enabled: true }, JSON.parse(document.getElementById('swiper-a11y-messages')?.textContent || '{}')),
                 loop: false,
                 watchOverflow: true,
                 slidesPerView: 1,

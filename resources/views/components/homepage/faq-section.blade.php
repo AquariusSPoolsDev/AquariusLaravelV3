@@ -9,13 +9,13 @@
 
                 {{-- Q1: Materials --}}
                 <div class="aquarius-accordion" :class="active === 0 && 'accordion-active'">
-                    <button class="aquarius-accordion-toggle" :aria-expanded="active === 0" @click="active = active === 0 ? null : 0">
+                    <button type="button" id="home-faq-q-0" aria-controls="home-faq-a-0" class="aquarius-accordion-toggle" :aria-expanded="active === 0" @click="active = active === 0 ? null : 0">
                         {{ __('strings.faq_different_material_avail') }}
                         <span class="toggle-icon" aria-hidden="true">
                             <svg width="11" height="11" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path></svg>
                         </span>
                     </button>
-                    <div class="aquarius-accordion-content" x-show="active === 0" x-cloak x-transition role="region">
+                    <div id="home-faq-a-0" class="aquarius-accordion-content" x-show="active === 0" x-cloak x-transition role="region" aria-labelledby="home-faq-q-0">
                         <div class="accordion-inner">
                             <p>{{ __('strings.faq_different_material_avail_answer_1') }} <a href="{{ route('our-pools-main') }}" class="text-primary-600 underline underline-offset-4 hover:text-primary-700 hover:no-underline">{{ __('strings.faq_different_material_avail_link_text') }}</a> {{ __('strings.faq_different_material_avail_answer_2') }}</p>
                         </div>
@@ -24,13 +24,13 @@
 
                 {{-- Q2: Pool sizes --}}
                 <div class="aquarius-accordion" :class="active === 1 && 'accordion-active'">
-                    <button class="aquarius-accordion-toggle" :aria-expanded="active === 1" @click="active = active === 1 ? null : 1">
+                    <button type="button" id="home-faq-q-1" aria-controls="home-faq-a-1" class="aquarius-accordion-toggle" :aria-expanded="active === 1" @click="active = active === 1 ? null : 1">
                         {{ __('strings.faq_popular_pool_size') }}
                         <span class="toggle-icon" aria-hidden="true">
                             <svg width="11" height="11" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path></svg>
                         </span>
                     </button>
-                    <div class="aquarius-accordion-content" x-show="active === 1" x-cloak x-transition role="region">
+                    <div id="home-faq-a-1" class="aquarius-accordion-content" x-show="active === 1" x-cloak x-transition role="region" aria-labelledby="home-faq-q-1">
                         <div class="accordion-inner">
                             <p class="mb-3">{{ __('strings.faq_popular_pool_size_answer_1') }}</p>
                             <p>{{ __('strings.faq_popular_pool_size_answer_3') }}</p>
@@ -40,13 +40,13 @@
 
                 {{-- Q3: Maintenance --}}
                 <div class="aquarius-accordion" :class="active === 2 && 'accordion-active'">
-                    <button class="aquarius-accordion-toggle" :aria-expanded="active === 2" @click="active = active === 2 ? null : 2">
+                    <button type="button" id="home-faq-q-2" aria-controls="home-faq-a-2" class="aquarius-accordion-toggle" :aria-expanded="active === 2" @click="active = active === 2 ? null : 2">
                         {{ __('strings.faq_kind_maintenance') }}
                         <span class="toggle-icon" aria-hidden="true">
                             <svg width="11" height="11" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path></svg>
                         </span>
                     </button>
-                    <div class="aquarius-accordion-content" x-show="active === 2" x-cloak x-transition role="region">
+                    <div id="home-faq-a-2" class="aquarius-accordion-content" x-show="active === 2" x-cloak x-transition role="region" aria-labelledby="home-faq-q-2">
                         <div class="accordion-inner">
                             <p class="mb-3">{{ __('strings.faq_kind_maintenance_answer_1') }}</p>
                             <ul class="mb-3 ps-5 space-y-2 list-disc list-inside">

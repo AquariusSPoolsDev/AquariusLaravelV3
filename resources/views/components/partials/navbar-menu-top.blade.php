@@ -4,9 +4,9 @@
     @keydown.escape.window="mobileOpen = false">
     {{-- NAVBAR ROW WITH NAVIGATION --}}
     <div class="aquarius-navbar-main">
-        <nav class="aquarius-navbar-container">
+        <nav class="aquarius-navbar-container" aria-label="{{ __('strings.navbar_main_label') }}">
             <div class="navbar-mobile">
-                <a class="brand navbar-brand" href="{{ route('homepage') }}" aria-label="Aquarius Swimming Pools">
+                <a class="brand navbar-brand" href="{{ route('homepage') }}">
                     <x-reusables.logo />
                 </a>
 
@@ -172,10 +172,10 @@
                                    >
                                     <div class="lang-select-dropdown-card">
                                         <a href="{{ $enUrl }}" class="aquarius-lang-select-item" onclick="window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'language_switch',language:'en'})">
-                                            <x-reusables.flag-icons lang="en_MY" /> <span class="text-gray-500">EN</span> English
+                                            <x-reusables.flag-icons lang="en_MY" /> <span class="text-neutral-500">EN</span> English
                                         </a>
                                         <a href="{{ $msUrl }}" class="aquarius-lang-select-item" onclick="window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'language_switch',language:'ms'})">
-                                            <x-reusables.flag-icons lang="ms_MY" /> <span class="text-gray-500">MS</span> Melayu
+                                            <x-reusables.flag-icons lang="ms_MY" /> <span class="text-neutral-500">MS</span> Melayu
                                         </a>
                                     </div>
                                 </div>

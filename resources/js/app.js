@@ -7,10 +7,11 @@ import 'fslightbox';
 
 // core version + navigation, pagination modules:
 import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import { A11y, Navigation, Pagination } from 'swiper/modules';
 window.Swiper = Swiper;
 window.SwiperNavigation = Navigation;
 window.SwiperPagination = Pagination;
+window.SwiperA11y = A11y;
 // import Swiper and modules styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -20,9 +21,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // Default one-slide carousel (homepage mobile hero). Promotion sliders set themselves up on the
     // promotions page (1/2/3 per view); initialising them here as well overrode that with one slide.
     document.querySelectorAll('.swiper:not(.promo-swiper)').forEach(function (el) {
+        // A11y: slide labels ("2 / 5"), named arrow buttons and a polite live region, in the page language
+        var a11yText = JSON.parse(document.getElementById('swiper-a11y-messages')?.textContent || '{}');
         new Swiper(el, {
-            modules: [Navigation, Pagination],
+            modules: [A11y, Navigation, Pagination],
             loop: true,
+            a11y: Object.assign({ enabled: true }, a11yText),
             pagination: { el: el.querySelector('.swiper-pagination') },
             navigation: { nextEl: el.querySelector('.swiper-button-next'), prevEl: el.querySelector('.swiper-button-prev') },
         });
@@ -52,7 +56,8 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     window.goToTop = function () {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
     };
 });
 

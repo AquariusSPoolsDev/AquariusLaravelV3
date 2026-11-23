@@ -1,5 +1,5 @@
-{{-- COOKIE CONSENT TOAST — bottom left, Alpine.js --}}
-<div
+{{-- COOKIE CONSENT TOAST, bottom left, Alpine.js. A non-modal notice, so a named <aside> landmark rather than a dialog --}}
+<aside
     x-data="{
         show: false,
         init() {
@@ -33,23 +33,22 @@
     x-transition:leave-start="opacity-100 translate-y-0"
     x-transition:leave-end="opacity-0 translate-y-4"
     class="fixed bottom-12 md:bottom-6 left-6 z-50 max-w-sm w-[calc(100vw-2.5rem)] bg-white border border-neutral-200 rounded-xl shadow-xl shadow-neutral-200/60 p-4"
-    role="dialog"
-    aria-label="Cookie consent"
+    aria-label="{{ __('strings.cookie_label') }}"
 >
     <p class="text-base text-neutral-700 mb-3">
-        This website uses cookies to enhance your experience within the site.
-        <a href="{{ route('privacy-page') }}" class="font-semibold text-neutral-900 underline underline-offset-4 hover:no-underline">Privacy Policy</a>
+        {{ __('strings.cookie_body') }}
+        <a href="{{ route('privacy-page') }}" class="font-semibold text-neutral-900 underline underline-offset-4 hover:no-underline">{{ __('strings.footer_privacy') }}</a>
     </p>
     <div class="flex flex-wrap gap-2">
-        <button
+        <button type="button"
             @click="accept"
             class="flex-1 py-2 px-4 text-base font-semibold rounded-lg bg-primary text-white hover:bg-primary-600 active:bg-primary-700 active:scale-95 transition-all cursor-pointer">
-            Accept
+            {{ __('strings.cookie_accept') }}
         </button>
-        <button
+        <button type="button"
             @click="decline"
             class="flex-1 py-2 px-4 text-base font-semibold rounded-lg bg-neutral-100 text-neutral-700 hover:bg-neutral-200 active:scale-95 transition-all cursor-pointer">
-            Decline
+            {{ __('strings.cookie_decline') }}
         </button>
     </div>
-</div>
+</aside>

@@ -98,8 +98,9 @@
         @apply font-body text-neutral-600 font-medium wrap-break-word;
     }
 
+    /* text-pretty avoids a single word alone on the last line of a paragraph (ignored where unsupported) */
     p, li, address {
-        @apply leading-relaxed;
+        @apply leading-relaxed text-pretty;
     }
 
     /* Long single words (Malay titles, email addresses) may break rather than spill out of their box
@@ -133,15 +134,21 @@
 
 /* REUSABLE COMPONENTS - END */
 
+/* SKIP LINK: hidden until a keyboard user tabs to it, then shown at the top left above the navbar */
+.skip-link {
+    @apply sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100000] focus:rounded-lg focus:bg-white focus:px-4 focus:py-3 focus:font-semibold focus:text-primary-800 focus:shadow-lg;
+}
+
 /* FORM INPUTS - START */
 
 .form-input {
-    @apply text-neutral-800 bg-white rounded-lg px-3.5 py-2.5 w-full outline-none transition-all leading-normal placeholder:text-neutral-500;
-    border: 1.5px solid var(--color-neutral-200);
+    @apply text-neutral-800 bg-white rounded-lg px-3.5 py-2.5 w-full transition-all leading-normal placeholder:text-neutral-500;
+    /* neutral-400 keeps the field edge at 3:1 against white (WCAG 1.4.11) */
+    border: 1.5px solid var(--color-neutral-400);
 
+    /* the site-wide focus ring (outline) shows on fields too; the border darkens as well */
     &:focus {
         border-color: var(--color-primary-600);
-        box-shadow: 0 0 0 3px var(--color-primary-50);
     }
 }
 
@@ -339,7 +346,7 @@
     }
 
     .hero-video-overlay {
-        @apply absolute inset-0 opacity-80 bg-linear-to-tl from-cyan-500 to-sky-900;
+        @apply absolute inset-0 opacity-80 bg-linear-to-tl from-primary-500 to-primary-900;
     }
 
     .hero-video-toggle {
@@ -459,7 +466,7 @@
             @apply w-full;
 
             .hero-mobile-swiper {
-                @apply w-full rounded-lg overflow-hidden border-2 border-white shadow-xl shadow-primary-900 mt-12 mb-20 aspect-4/3;
+                @apply w-full rounded-lg overflow-hidden border-2 border-white shadow-xl shadow-neutral-950/30 mt-12 mb-20 aspect-4/3;
 
                 picture {
                     @apply block w-full h-full;
@@ -502,12 +509,17 @@
 .aquarius-homepage-service-card {
     @apply bg-white border-2 border-neutral-200 rounded-lg transition-all duration-300 hover:-translate-y-1 hover:border-primary-300 hover:shadow-lg hover:shadow-primary-100 active:scale-95 active:translate-y-0 active:shadow-none cursor-pointer no-underline;
 
+    /* icon and title share the first row; description and link span the full width below */
     .card-body {
-        @apply relative p-4 lg:p-6 overflow-hidden;
+        @apply relative p-4 lg:p-6 overflow-hidden grid grid-cols-[auto_1fr] items-center gap-x-3 lg:gap-x-4;
+
+        > :not(.card-blob, .card-title) {
+            @apply col-span-full;
+        }
     }
 
     .card-blob {
-        @apply flex items-center justify-center size-12 lg:size-14 mb-4 rounded-lg bg-primary-50 text-primary-700;
+        @apply flex items-center justify-center text-primary-700;
     }
 
     .card-blob-icon {
@@ -515,11 +527,11 @@
     }
 
     .card-title {
-        @apply text-xl lg:text-2xl font-semibold mb-3 lg:mb-4 text-primary-900 text-balance;
+        @apply text-xl lg:text-2xl font-semibold text-primary-900 text-balance;
     }
 
     .card-desc {
-        @apply text-neutral-600 leading-relaxed grow;
+        @apply mt-3 lg:mt-4 text-neutral-600 leading-relaxed grow;
     }
 
     .card-btn {
@@ -641,7 +653,7 @@
         }
 
         .review-card-stars {
-            @apply shrink-0 text-yellow-400 leading-none;
+            @apply shrink-0 text-warning-300 leading-none;
         }
 
         .review-card-source-row {

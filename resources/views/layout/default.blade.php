@@ -1,6 +1,6 @@
 {{-- DEFAULT TEMPLATE USED ON ALL PAGES --}}
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="motion-safe:scroll-smooth">
 
 <head>
     <x-partials.head-metadata />
@@ -8,25 +8,30 @@
 
 <body class="antialiased scroll-mt-20 lg:scroll-mt-23.25">
     {{-- NAVBAR --}}
+    {{-- Skip link: first stop for keyboard users, hidden until focused --}}
+    <a href="#main-content" class="skip-link">{{ __('strings.skip_to_content') }}</a>
     <x-partials.navbar-menu-top />
 
     {{-- MAIN CONTENT PAGE --}}
-    <main class="mt-20 lg:mt-23.25">
+    <main id="main-content" tabindex="-1" class="mt-20 lg:mt-23.25 focus:outline-none">
         {{-- PAGE HEADER TITLE --}}
         <x-reusables.page-header :headerTitle="$headerTitle" :headerSubtitle="$headerSubtitle" :imageFileLoc="$imageFileLoc" />
 
         {{-- MAIN CONTAINER --}}
-        <article class="main-container">
+        <div class="main-container">
             @yield('content')
-        </article>
+        </div>
+
+        {{-- FULL-WIDTH CTA BANNER (opt-in per page via @section('cta')), inside <main> so it sits in a landmark --}}
+        @yield('cta')
     </main>
 
-    {{-- FULL-WIDTH CTA BANNER (opt-in per page via @section('cta')) --}}
-    @yield('cta')
-
     <x-partials.footer-bottom />
-    <x-partials-br.back-to-top-btn />
-    <x-partials-br.chat-btn-wa />
+    {{-- Floating buttons, grouped in a named landmark --}}
+    <aside aria-label="{{ __('strings.quick_actions_label') }}">
+        <x-partials-br.back-to-top-btn />
+        <x-partials-br.chat-btn-wa />
+    </aside>
     <x-partials.cookie-consent />
 
     <script>

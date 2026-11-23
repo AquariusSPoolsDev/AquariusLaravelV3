@@ -31,7 +31,7 @@ $strongClass  = $variant === 'dark' ? 'text-white' : 'text-neutral-900';
     <div class="w-px h-6 {{ $dividerClass }}"></div>
     <div class="flex items-center gap-2">
         <span class="text-2xl font-extrabold {{ $ratingClass }}">{{ $avg }}</span>
-        <span class="text-warning-300 text-2xl leading-none">★</span>
+        <span class="text-warning-300 text-2xl leading-none" aria-hidden="true">★</span>
     </div>
     <div class="hidden sm:block w-px h-6 {{ $dividerClass }}"></div>
     <span class="basis-full sm:basis-auto text-center {{ $totalClass }}">{!! __('strings.reviews_based_on', ['total' => '<strong class="' . $strongClass . '">' . $total . '</strong>']) !!}</span>

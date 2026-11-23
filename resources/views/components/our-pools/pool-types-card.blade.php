@@ -4,7 +4,7 @@
 <div class="aquarius-our-pools-card">
     <div class="aquarius-our-pools-card-content">
         <img loading="lazy" class="aquarius-our-pools-card-img"
-            src="{{$pool_type_image}}" alt="{{$pool_type_name}} Image">
+            src="{{$pool_type_image}}" alt="">
 
         <div class="aquarius-our-pools-card-body">
             <div class="flex flex-col justify-center">

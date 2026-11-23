@@ -1,9 +1,13 @@
+    {{-- charset must come first (within the first 1024 bytes), before the structured data blocks --}}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{-- Light-only site: keep browser-drawn controls light, and tint the mobile browser bar in brand blue --}}
+    <meta name="color-scheme" content="light">
+    <meta name="theme-color" content="#3170b9">
     {{-- Sitewide structured data: Organization + WebSite (entity recognition, AI citation) --}}
     <x-seo.organization-schema />
     {{-- Sitewide LocalBusiness schema (local pack, Maps, AI local answers) --}}
     <x-seo.local-business />
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     {{-- INCLUDE SEO DATA FROM EVERY PAGES --}}
     @yield('seoData')
@@ -14,6 +18,16 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700,800|outfit:400,500,600,700,800" rel="stylesheet" />
     
+    {{-- Slider (Swiper) screen-reader messages in the page language, read by resources/js/app.js --}}
+    <script type="application/json" id="swiper-a11y-messages">{!! json_encode([
+        'prevSlideMessage' => __('strings.slider_prev'),
+        'nextSlideMessage' => __('strings.slider_next'),
+        'firstSlideMessage' => __('strings.slider_first'),
+        'lastSlideMessage' => __('strings.slider_last'),
+        'paginationBulletMessage' => __('strings.slider_go_to'),
+        'slideLabelMessage' => __('strings.slider_label'),
+    ], JSON_HEX_TAG | JSON_UNESCAPED_UNICODE) !!}</script>
+
     <!-- Styles / Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 

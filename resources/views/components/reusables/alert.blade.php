@@ -11,8 +11,11 @@ $colorMap = [
 ];
 
 $classes = $colorMap[$color] ?? $colorMap['info'];
+
+// Only errors interrupt a screen reader; info and warning boxes are static page content
+$role = $color === 'error' ? 'alert' : null;
 @endphp
 
-<div {{ $attributes->merge(['class' => "aquarius-alert $classes"]) }} role="alert">
+<div {{ $attributes->merge(['class' => "aquarius-alert $classes"]) }} @if ($role) role="{{ $role }}" @endif>
     {{ $slot }}
 </div>

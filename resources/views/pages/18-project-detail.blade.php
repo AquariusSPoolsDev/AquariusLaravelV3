@@ -94,7 +94,7 @@ $headerSubtitle = 'projects_subtitle_heading';
             aria-label="View image"
         >
             <div class="pool-service-absolute">
-                <img src="{{ $coverSrc }}" alt="{{ $project->title }}" title="{{ $project->title }} Image" loading="lazy"
+                <img src="{{ $coverSrc }}" alt="{{ $project->title }}" loading="lazy"
                     class="pool-service-img-content">
             </div>
         </button>
@@ -115,7 +115,7 @@ $headerSubtitle = 'projects_subtitle_heading';
                     aria-label="View image"
                 >
                     <div class="pool-service-absolute">
-                        <img src="{{ $src }}" title="{{ $project->title }} Image" alt="{{ $project->title }} Image" loading="lazy"
+                        <img src="{{ $src }}" alt="{{ $project->title }}" loading="lazy"
                             class="pool-service-img-content">
                     </div>
                 </button>
@@ -158,7 +158,7 @@ $headerSubtitle = 'projects_subtitle_heading';
             >
                 <svg xmlns="http://www.w3.org/2000/svg" class="size-6" viewBox="0 0 256 256" fill="currentColor"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path></svg>
             </button>
-            <img :src="activeImage" title="{{ $project->title }} Image" alt="{{ $project->title }}" class="w-full max-h-[85vh] object-cover aspect-4/3 lg:aspect-video">
+            <img :src="activeImage" alt="{{ $project->title }}" class="w-full max-h-[85vh] object-cover aspect-4/3 lg:aspect-video">
         </div>
     </div>
 </template>

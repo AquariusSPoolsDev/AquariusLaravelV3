@@ -18,7 +18,7 @@
     }
 @endphp
 <!DOCTYPE html>
-<html lang="{{ $errorLocale }}" class="scroll-smooth">
+<html lang="{{ $errorLocale }}" class="motion-safe:scroll-smooth">
 
 <head>
     <meta charset="utf-8">
@@ -32,11 +32,10 @@
 
 <body class="antialiased bg-primary-50 min-h-screen flex flex-col items-center justify-center px-4">
 
-    <div class="">
+    <main>
 
         {{-- Logo + Branding --}}
-        <a href="{{ $errorHomeUrl }}" class="brand navbar-brand mx-auto mb-10 justify-center"
-            aria-label="Aquarius Swimming Pools">
+        <a href="{{ $errorHomeUrl }}" class="brand navbar-brand mx-auto mb-10 justify-center">
             <x-reusables.logo />
         </a>
 
@@ -60,7 +59,7 @@
             </div>
         </div>
 
-    </div>
+    </main>
 
 </body>
 

@@ -59,7 +59,7 @@
     @endif
 </div>
 @empty
-<div class="bg-red-50 border-s-4 border-red-500 rounded-e-xl p-6 ps-8" role="alert">
+<div class="rounded-lg border border-neutral-200 bg-neutral-50 p-6 lg:p-8 text-center">
     <h2 class="text-2xl text-primary-900 font-semibold mb-3 mt-0">{{__('strings.promotions_no_active_promo_title')}}</h2>
     <p class="text-neutral-700 m-0">{{__('strings.promotions_no_active_promo_body')}}</p>
 </div>
