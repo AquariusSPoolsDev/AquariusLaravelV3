@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\URL;
 use PHPUnit\Framework\Attributes\DataProvider;
 use Tests\TestCase;
@@ -84,6 +85,10 @@ class LocalePrefixRoutingTest extends TestCase
     {
         // resources/js/ajax-pagination.js requests the page's own path, so the locale prefix is kept
         $this->assertStringContainsString('window.axios.get(window.location.pathname', file_get_contents(resource_path('js/ajax-pagination.js')));
+
+        // Admin (Livewire) tests earlier in the run swap the paginator's view and path resolver; put Laravel's back
+        Paginator::defaultView('pagination::tailwind');
+        Paginator::currentPathResolver(fn (): string => request()->url());
 
         $response = $this->getJson('/ms/reviews?page=1', ['X-Requested-With' => 'XMLHttpRequest'])->assertOk();
 

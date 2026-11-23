@@ -166,4 +166,39 @@ class CodeAuditFixesTest extends TestCase
 
         $this->assertStringContainsString('<div id="no-results-message" hidden>', $this->get('/en/showcase')->getContent());
     }
+
+    public function test_the_three_pool_pages_share_one_template(): void
+    {
+        // #8 and #17: one view, given the pool by the route
+        foreach (['concrete' => 3, 'vinyl' => 3, 'fibreglass' => 2] as $pool => $photos) {
+            $this->get('/en/'.$pool.'-pools')
+                ->assertOk()
+                ->assertViewIs('pages.pool-type')
+                ->assertViewHas('pool', $pool)
+                ->assertSee(__('strings.'.$pool.'_pool_body'))
+                ->assertSee('photo '.$photos.' of '.$photos)
+                ->assertDontSee('photo '.($photos + 1).' of');
+        }
+
+        $this->assertFileDoesNotExist(resource_path('views/pages/04-pool-type-vinyl.blade.php'));
+        $this->get('/en/vinyl-pools')->assertSee('?interest=Steel+Structure+Vinyl+Pools', false);
+        $this->get('/ms/fibreglass-pools')->assertSee('"name": "Fibreglass Swimming Pool Installation"', false);
+    }
+
+    public function test_pros_and_cons_skip_empty_points(): void
+    {
+        // #9: one card component; empty slots in the lang files don't print an empty bullet
+        $html = Blade::render('<x-our-pools.pros-cons-card pool="vinyl" type="disadvantage" />');
+
+        $this->assertSame(1, substr_count($html, '<li>'));
+        $this->assertStringContainsString(e(__('strings.vinyl_pool_disadvantage_1_title')).':</strong>', $html);
+        $this->assertSame(3, substr_count(Blade::render('<x-our-pools.pros-cons-card pool="concrete" type="advantage" />'), '<li>'));
+    }
+
+    public function test_view_only_routes_use_route_view(): void
+    {
+        $routes = file_get_contents(base_path('routes/web.php'));
+
+        $this->assertDoesNotMatchRegularExpression("/function \(\) \{\s*return view\(/", $routes);
+    }
 }

@@ -20,9 +20,9 @@ class SitemapController extends Controller
     private const PAGES = [
         'homepage' => ['pages.01-homepage', 'weekly', '1.0'],
         'our-pools-main' => ['pages.02-pool-type-main', 'monthly', '0.8'],
-        'concrete-pools-page' => ['pages.03-pool-type-concrete', 'monthly', '0.8'],
-        'vinyl-pools-page' => ['pages.04-pool-type-vinyl', 'monthly', '0.8'],
-        'fibreglass-pools-page' => ['pages.05-pool-type-fibreglass', 'monthly', '0.8'],
+        'concrete-pools-page' => ['pages.pool-type', 'monthly', '0.8'],
+        'vinyl-pools-page' => ['pages.pool-type', 'monthly', '0.8'],
+        'fibreglass-pools-page' => ['pages.pool-type', 'monthly', '0.8'],
         'pool-services-page' => ['pages.06-pool-services', 'monthly', '0.7'],
         'pool-items-page' => ['pages.07-pool-essentials', 'monthly', '0.7'],
         'pool-showcase-gallery' => ['pages.08-pool-showcase-gallery', 'weekly', '0.6'],

@@ -43,9 +43,7 @@ Route::post('/send-email', [ContactFormController::class, 'sendEmail'])
     ->middleware('throttle:5,60')
     ->name('send-email-page');
 
-Route::get('/thank-you', function () {
-    return view('pages.15-thankYouSubmitPage');
-})->name('thank-you');
+Route::view('/thank-you', 'pages.15-thankYouSubmitPage')->name('thank-you');
 
 Route::post('/dismiss-promotion', function () {
     session(['promotion_dismissed' => true]);
@@ -76,39 +74,25 @@ Route::prefix('{locale}')
     ->group(function () {
 
         // Homepage
-        Route::get('/', function () {
-            return view('pages.01-homepage');
-        })->name('homepage');
+        Route::view('/', 'pages.01-homepage')->name('homepage');
 
         // Our Pools (comparison)
-        Route::get('/our-pools', function () {
-            return view('pages.02-pool-type-main');
-        })->name('our-pools-main');
+        Route::view('/our-pools', 'pages.02-pool-type-main')->name('our-pools-main');
 
         // Concrete Pools
-        Route::get('/concrete-pools', function () {
-            return view('pages.03-pool-type-concrete');
-        })->name('concrete-pools-page');
+        Route::view('/concrete-pools', 'pages.pool-type', ['pool' => 'concrete'])->name('concrete-pools-page');
 
         // Vinyl Pools
-        Route::get('/vinyl-pools', function () {
-            return view('pages.04-pool-type-vinyl');
-        })->name('vinyl-pools-page');
+        Route::view('/vinyl-pools', 'pages.pool-type', ['pool' => 'vinyl'])->name('vinyl-pools-page');
 
         // Fibreglass Pools
-        Route::get('/fibreglass-pools', function () {
-            return view('pages.05-pool-type-fibreglass');
-        })->name('fibreglass-pools-page');
+        Route::view('/fibreglass-pools', 'pages.pool-type', ['pool' => 'fibreglass'])->name('fibreglass-pools-page');
 
         // Pool Services
-        Route::get('/our-pool-services', function () {
-            return view('pages.06-pool-services');
-        })->name('pool-services-page');
+        Route::view('/our-pool-services', 'pages.06-pool-services')->name('pool-services-page');
 
         // Pool Items & Equipment
-        Route::get('/pool-items-equipments', function () {
-            return view('pages.07-pool-essentials');
-        })->name('pool-items-page');
+        Route::view('/pool-items-equipments', 'pages.07-pool-essentials')->name('pool-items-page');
 
         // Showcase Gallery
         Route::match(['get', 'post'], '/showcase', [ImageGalleryController::class, 'index'])->name('pool-showcase-gallery');
@@ -121,32 +105,22 @@ Route::prefix('{locale}')
         Route::match(['get', 'post'], '/reviews', [ReviewController::class, 'index'])->name('customer-reviews-page');
 
         // Contact
-        Route::get('/contact-us', function () {
-            return view('pages.10-contact-us');
-        })->name('contact-page');
+        Route::view('/contact-us', 'pages.10-contact-us')->name('contact-page');
 
         // FAQ
-        Route::get('/faq', function () {
-            return view('pages.11-faq');
-        })->name('faq-page');
+        Route::view('/faq', 'pages.11-faq')->name('faq-page');
 
         // Promotions
         Route::get('/promotions', [PromotionController::class, 'index'])->name('promo-page');
 
         // Terms
-        Route::get('/terms', function () {
-            return view('pages.13-terms');
-        })->name('terms-page');
+        Route::view('/terms', 'pages.13-terms')->name('terms-page');
 
         // Privacy
-        Route::get('/privacy', function () {
-            return view('pages.14-privacy');
-        })->name('privacy-page');
+        Route::view('/privacy', 'pages.14-privacy')->name('privacy-page');
 
         // HTML Sitemap
-        Route::get('/sitemap', function () {
-            return view('pages.16-sitemap');
-        })->name('sitemap-page');
+        Route::view('/sitemap', 'pages.16-sitemap')->name('sitemap-page');
     });
 
 // ─── 301 redirects from old unprefixed URLs → /en equivalent ─────────────────
