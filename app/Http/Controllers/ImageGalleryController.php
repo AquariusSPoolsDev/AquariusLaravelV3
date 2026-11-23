@@ -52,10 +52,7 @@ class ImageGalleryController extends Controller
         $translatedTags = $this->getTranslatedTags();
 
         if ($request->ajax()) {
-            return response()->json([
-                'html' => view('components.image-gallery.grid', compact('images', 'galleryId', 'translatedTags'))->render(),
-                'pagination' => (string) $images->links(),
-            ]);
+            return $this->paginatedPartial('components.image-gallery.grid', compact('images', 'galleryId', 'translatedTags'), $images);
         }
 
         // Regular page load

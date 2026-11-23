@@ -37,12 +37,12 @@ $headerSubtitle = 'reviews_subtitle_heading';
 <div class="container">
 
     {{-- Loading indicator --}}
-    <div id="reviews-loading" class="hidden py-12 justify-center items-center gap-3 text-neutral-500">
+    <div id="reviews-loading" hidden class="flex py-12 justify-center items-center gap-3 text-neutral-500">
         <svg class="animate-spin h-6 w-6 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
             <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
         </svg>
-        <span>Loading reviews...</span>
+        <span>{{ __('strings.reviews_loading') }}</span>
     </div>
 
     <div id="reviews-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
@@ -53,47 +53,4 @@ $headerSubtitle = 'reviews_subtitle_heading';
         {{ $reviews->links() }}
     </div>
 </div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const grid = document.getElementById('reviews-grid');
-    const pagination = document.getElementById('reviews-pagination');
-    const loading = document.getElementById('reviews-loading');
-
-    function attachPaginationListeners() {
-        pagination.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', function (e) {
-                e.preventDefault();
-                const url = new URL(this.href);
-                const page = url.searchParams.get('page') || 1;
-                fetchReviews(page);
-            });
-        });
-    }
-
-    function fetchReviews(page) {
-        grid.classList.add('opacity-0', 'pointer-events-none');
-        loading.classList.remove('hidden');
-        loading.classList.add('flex');
-
-        axios.get('{{ route('customer-reviews-page') }}', {
-            params: { page },
-            headers: { 'X-Requested-With': 'XMLHttpRequest' }
-        }).then(response => {
-            grid.innerHTML = response.data.html;
-            pagination.innerHTML = response.data.pagination;
-            attachPaginationListeners();
-            window.scrollTo({ top: grid.offsetTop - 100, behavior: 'smooth' });
-        }).catch(error => {
-            console.error('Error fetching reviews:', error);
-        }).finally(() => {
-            loading.classList.add('hidden');
-            loading.classList.remove('flex');
-            grid.classList.remove('opacity-0', 'pointer-events-none');
-        });
-    }
-
-    attachPaginationListeners();
-});
-</script>
 @endsection

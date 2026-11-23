@@ -670,6 +670,7 @@ return [
     'reviews_avg_rating' => 'Purata Penilaian:',
     'reviews_of_5_star' => 'daripada 5',
     'reviews_based_on' => 'Berdasarkan :total ulasan',
+    'reviews_loading' => 'Memuatkan ulasan...',
     'reviews_view_all' => 'Lihat semua ulasan',
     'reviews_no_review_title' => 'Tiada Ulasan Ditemui',
     'reviews_no_review_body' => 'Belum ada ulasan untuk dipaparkan.',

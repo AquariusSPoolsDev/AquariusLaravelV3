@@ -17,10 +17,7 @@ class ReviewController extends Controller
             ->paginate(12);
 
         if ($request->ajax()) {
-            return response()->json([
-                'html' => view('components.reviews.grid', compact('reviews'))->render(),
-                'pagination' => (string) $reviews->links(),
-            ]);
+            return $this->paginatedPartial('components.reviews.grid', compact('reviews'), $reviews);
         }
 
         return view('pages.09-cust-review', [

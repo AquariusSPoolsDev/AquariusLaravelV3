@@ -1,5 +1,5 @@
-{{-- EXTENDS HOMEPAGE LAYOUT --}}
-@extends('layout.homepage')
+{{-- EXTENDS THE PAGE LAYOUT: no $headerTitle here, so there is no photo header --}}
+@extends('layout.default')
 
 {{-- META TAG PAGE --}}
 @section('seoData')

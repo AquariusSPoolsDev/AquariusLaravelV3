@@ -82,16 +82,22 @@ class LocalePrefixRoutingTest extends TestCase
 
     public function test_reviews_page_ajax_url_uses_current_locale(): void
     {
-        $this->get('/ms/reviews')
-            ->assertOk()
-            ->assertSee("axios.get('".url('/ms/reviews')."'", false);
+        // resources/js/ajax-pagination.js requests the page's own path, so the locale prefix is kept
+        $this->assertStringContainsString('window.axios.get(window.location.pathname', file_get_contents(resource_path('js/ajax-pagination.js')));
+
+        $response = $this->getJson('/ms/reviews?page=1', ['X-Requested-With' => 'XMLHttpRequest'])->assertOk();
+
+        $this->assertStringContainsString(url('/ms/reviews').'?page=2', $response->json('pagination'));
+        $this->assertStringNotContainsString(url('/en/reviews'), $response->json('pagination'));
     }
 
     public function test_promotions_page_ajax_url_uses_current_locale(): void
     {
-        $this->get('/en/promotions')
+        $this->getJson('/en/promotions', ['X-Requested-With' => 'XMLHttpRequest'])
             ->assertOk()
-            ->assertSee("axios.get('".url('/en/promotions')."'", false);
+            ->assertJsonStructure(['html', 'pagination']);
+
+        $this->get('/en/promotions')->assertOk()->assertDontSee('axios.get(', false);
     }
 
     public function test_prefixed_ajax_request_returns_json(): void

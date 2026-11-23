@@ -670,6 +670,7 @@ return [
     'reviews_avg_rating' => 'Average Rating:',
     'reviews_of_5_star' => 'out of 5',
     'reviews_based_on' => 'Based on :total reviews',
+    'reviews_loading' => 'Loading reviews...',
     'reviews_view_all' => 'View all reviews',
     'reviews_no_review_title' => 'No Reviews Found',
     'reviews_no_review_body' => 'No reviews to show yet.',

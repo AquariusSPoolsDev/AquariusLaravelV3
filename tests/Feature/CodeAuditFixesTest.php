@@ -132,4 +132,38 @@ class CodeAuditFixesTest extends TestCase
         $this->assertFileExists(public_path('favicon.ico'));
         $this->assertSame("\x00\x00\x01\x00", substr(file_get_contents(public_path('favicon.ico')), 0, 4));
     }
+
+    public function test_every_page_uses_one_layout_without_inline_scripts(): void
+    {
+        // #6: one layout; the homepage simply has no photo header. Scroll effects live in app.js.
+        $this->assertFileDoesNotExist(resource_path('views/layout/homepage.blade.php'));
+        $this->assertStringContainsString("import './scroll-effects';", file_get_contents(resource_path('js/app.js')));
+
+        $homepage = $this->get('/en')->assertOk()->getContent();
+        $this->assertStringNotContainsString('class="aquarius-header"', $homepage);
+        $this->assertStringContainsString('data-counter="1000"', $homepage);
+
+        foreach (['/en', '/en/faq', '/ms/reviews', '/en/promotions'] as $path) {
+            $html = $this->get($path)->assertOk()->getContent();
+            $this->assertStringNotContainsString('new IntersectionObserver', $html, $path);
+            $this->assertStringNotContainsString("document.addEventListener('DOMContentLoaded'", $html, $path);
+        }
+
+        $this->assertStringContainsString('class="aquarius-header"', $this->get('/en/faq')->getContent());
+    }
+
+    public function test_lists_page_through_one_shared_ajax_helper(): void
+    {
+        // #7: reviews, promotions and the gallery answer AJAX the same way and show translated loaders
+        foreach (['/en/reviews', '/en/promotions', '/en/showcase'] as $path) {
+            $this->getJson($path, ['X-Requested-With' => 'XMLHttpRequest'])->assertOk()->assertJsonStructure(['html', 'pagination']);
+        }
+
+        $reviews = $this->get('/ms/reviews')->assertOk()->getContent();
+        $this->assertStringContainsString('<div id="reviews-loading" hidden', $reviews);
+        $this->assertStringContainsString('Memuatkan ulasan...', $reviews);
+        $this->assertStringNotContainsString('Loading reviews...', $reviews);
+
+        $this->assertStringContainsString('<div id="no-results-message" hidden>', $this->get('/en/showcase')->getContent());
+    }
 }

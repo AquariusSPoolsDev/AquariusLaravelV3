@@ -1,3 +1,4 @@
+import './scroll-effects';
 import './bootstrap';
 import 'preline';
 import Alpine from 'alpinejs';
@@ -7,21 +8,19 @@ Alpine.data('contactForm', contactForm);
 Alpine.start();
 import 'fslightbox';
 
+import { ajaxPagination } from './ajax-pagination';
+
 // core version + navigation, pagination modules:
 import Swiper from 'swiper';
 import { A11y, Navigation, Pagination } from 'swiper/modules';
-window.Swiper = Swiper;
-window.SwiperNavigation = Navigation;
-window.SwiperPagination = Pagination;
-window.SwiperA11y = A11y;
 // import Swiper and modules styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Default one-slide carousel (homepage mobile hero). Promotion sliders set themselves up on the
-    // promotions page (1/2/3 per view); initialising them here as well overrode that with one slide.
+    // Default one-slide carousel (homepage mobile hero). Promotion sliders get their own settings
+    // (1/2/3 per view) in initPromoSwipers below; initialising them here too would override that.
     document.querySelectorAll('.swiper:not(.promo-swiper)').forEach(function (el) {
         // A11y: slide labels ("2 / 5"), named arrow buttons and a polite live region, in the page language
         var a11yText = JSON.parse(document.getElementById('swiper-a11y-messages')?.textContent || '{}');
@@ -63,129 +62,103 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 });
 
-//
-document.addEventListener('DOMContentLoaded', function() {
+// Lists that page through with AJAX: reviews, promotions and the showcase gallery (resources/js/ajax-pagination.js)
+document.addEventListener('DOMContentLoaded', function () {
+    const reviewsGrid = document.getElementById('reviews-grid');
+    if (reviewsGrid) {
+        ajaxPagination({
+            list: reviewsGrid,
+            pagination: document.getElementById('reviews-pagination'),
+            loading: document.getElementById('reviews-loading'),
+            updateUrl: true,
+            scrollToList: true,
+        });
+    }
+
+    const promosList = document.getElementById('promos-list');
+    if (promosList) {
+        initPromoSwipers(promosList);
+        ajaxPagination({
+            list: promosList,
+            pagination: document.getElementById('promos-pagination'),
+            loading: document.getElementById('promos-loading'),
+            updateUrl: true,
+            scrollToList: true,
+            onLoaded: () => initPromoSwipers(promosList),
+        });
+    }
+
     const searchInput = document.getElementById('search-input');
-
-    if (!searchInput) return;
-
-    const tagCheckboxes = document.querySelectorAll('.tag-checkbox');
-    const tagSelect = document.getElementById('multiple-with-conditional-counter-select'); // Updated reference
-    const imageGrid = document.getElementById('image-grid');
-    const paginationContainer = document.getElementById('pagination');
-    const resetButton = document.getElementById('reset-button');
-    const loadingIndicator = document.getElementById('loading-indicator');
-    const noResultsMessage = document.getElementById('no-results-message');
-
-    // Debounce function to limit the rate of function execution
-    function debounce(func, delay) {
-        let timeout;
-        return function(...args) {
-            clearTimeout(timeout);
-            timeout = setTimeout(() => func.apply(this, args), delay);
-        };
+    if (searchInput) {
+        initShowcaseGallery(searchInput);
     }
-
-    // Fetch images based on current filters
-    function fetchImages(page = 1) {
-        // Show loading indicator
-        loadingIndicator.style.display = 'block';
-        noResultsMessage.style.display = 'none'; // Hide no results message
-
-        // Collect selected tags from checkboxes
-        const selectedTagsCheckboxes = Array.from(tagCheckboxes)
-            .filter(checkbox => checkbox.checked)
-            .map(checkbox => checkbox.value);
-
-        // Collect selected tags from the select dropdown
-        const selectedTagsSelect = Array.from(tagSelect.selectedOptions)
-            .map(option => option.value);
-
-        // Combine both selections
-        const selectedTags = [...new Set([...selectedTagsCheckboxes, ...selectedTagsSelect])];
-
-        // Prepare request data
-        const params = {
-            page: page,
-            search: searchInput.value,
-            tags: selectedTags
-        };
-
-        // Current path keeps the /en or /ms locale prefix (e.g. /ms/showcase)
-        axios.get(window.location.pathname, {
-            params: params,
-            headers: {
-                'X-Requested-With': 'XMLHttpRequest'
-            }
-        })
-        .then(response => {
-            imageGrid.innerHTML = response.data.html;
-            paginationContainer.innerHTML = response.data.pagination;
-            attachPaginationListeners();
-
-            // Hide loading indicator after response
-            loadingIndicator.style.display = 'none';
-
-            // Check if there are no images returned
-            if (response.data.html.trim() === '') {
-                noResultsMessage.style.display = 'block'; // Show no results message
-            } else {
-                noResultsMessage.style.display = 'none'; // Hide if there are results
-            }
-
-            // After updating the grid, refresh the lightbox
-            refreshFsLightbox(); // Ensure lightbox is updated with new content
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            loadingIndicator.style.display = 'none'; // Hide loading on error
-        });
-    }
-
-    // Attach pagination listeners
-    function attachPaginationListeners() {
-        document.querySelectorAll('#pagination a').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const url = new URL(this.href);
-                const page = url.searchParams.get('page');
-                fetchImages(page);
-            });
-        });
-    }
-
-    // Debounced version of fetchImages
-    const debouncedFetchImages = debounce(fetchImages, 300); // Adjust delay as needed
-
-    // Add event listeners for search input and tag checkboxes with debounce
-    searchInput.addEventListener('input', debouncedFetchImages);
-    
-    tagCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', debouncedFetchImages);
-    });
-
-    // Event listener for the select dropdown in smaller viewports
-    if (tagSelect) {
-        tagSelect.addEventListener('change', debouncedFetchImages);
-    }
-
-    // Reset button functionality
-    resetButton.addEventListener('click', function() {
-        searchInput.value = ''; // Clear search input
-        
-        tagCheckboxes.forEach(checkbox => checkbox.checked = false); // Uncheck all checkboxes
-        
-        if (tagSelect) {
-            const selectInstance = HSSelect.getInstance(tagSelect, true); // Get instance of HSSelect
-            if (selectInstance) {
-                selectInstance.element.setValue([]); // Clear selected values in the select dropdown
-            }
-        }
-
-        fetchImages(); // Fetch images with default parameters
-    });
-
-    attachPaginationListeners();
 });
 
-//
+/** Promotion sliders: 1 per view on phones, 2 on tablets, 3 on desktops. */
+function initPromoSwipers(root) {
+    const a11yText = JSON.parse(document.getElementById('swiper-a11y-messages')?.textContent || '{}');
+    root.querySelectorAll('.promo-swiper').forEach(function (el) {
+        if (el.swiper) {
+            el.swiper.destroy(true, true);
+        }
+        new Swiper(el, {
+            modules: [A11y, Navigation, Pagination],
+            a11y: Object.assign({ enabled: true }, a11yText),
+            loop: false,
+            watchOverflow: true,
+            slidesPerView: 1,
+            spaceBetween: 16,
+            breakpoints: {
+                768: { slidesPerView: 2, spaceBetween: 16 },
+                1024: { slidesPerView: 3, spaceBetween: 24 },
+            },
+            pagination: { el: el.querySelector('.swiper-pagination'), clickable: true },
+            navigation: { nextEl: el.querySelector('.swiper-button-next'), prevEl: el.querySelector('.swiper-button-prev') },
+        });
+    });
+    if (typeof window.refreshFsLightbox === 'function') {
+        window.refreshFsLightbox();
+    }
+}
+
+/** Showcase: search box and tag filters reload the grid as you type or tick; pagination keeps the filters. */
+function initShowcaseGallery(searchInput) {
+    const tagCheckboxes = document.querySelectorAll('.tag-checkbox');
+    const tagSelect = document.getElementById('multiple-with-conditional-counter-select');
+    const noResultsMessage = document.getElementById('no-results-message');
+
+    const selectedTags = () => [...new Set([
+        ...Array.from(tagCheckboxes).filter((checkbox) => checkbox.checked).map((checkbox) => checkbox.value),
+        ...(tagSelect ? Array.from(tagSelect.selectedOptions).map((option) => option.value) : []),
+    ])];
+
+    const gallery = ajaxPagination({
+        list: document.getElementById('image-grid'),
+        pagination: document.getElementById('pagination'),
+        loading: document.getElementById('loading-indicator'),
+        params: () => ({ search: searchInput.value, tags: selectedTags() }),
+        onLoaded: (data) => {
+            noResultsMessage.hidden = data.html.trim() !== '';
+            window.refreshFsLightbox?.();
+        },
+    });
+
+    let debounceTimer;
+    const reloadFromFirstPage = () => {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => gallery.load(1), 300);
+    };
+
+    searchInput.addEventListener('input', reloadFromFirstPage);
+    tagCheckboxes.forEach((checkbox) => checkbox.addEventListener('change', reloadFromFirstPage));
+    tagSelect?.addEventListener('change', reloadFromFirstPage);
+
+    document.getElementById('reset-button').addEventListener('click', function () {
+        searchInput.value = '';
+        tagCheckboxes.forEach((checkbox) => { checkbox.checked = false; });
+        if (tagSelect) {
+            window.HSSelect?.getInstance(tagSelect, true)?.element.setValue([]);
+        }
+        gallery.load(1);
+    });
+}

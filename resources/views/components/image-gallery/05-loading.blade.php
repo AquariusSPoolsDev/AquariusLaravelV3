@@ -1,4 +1,4 @@
-<div id="loading-indicator" style="display:none;" class="mb-4">
+<div id="loading-indicator" hidden class="mb-4">
     <div class="relative">
         <x-reusables.alert color="info">
             <div class="flex gap-x-2 lg:gap-x-4 items-center">

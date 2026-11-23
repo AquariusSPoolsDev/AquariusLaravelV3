@@ -17,10 +17,7 @@ class PromotionController extends Controller
         $totalActive = $promotions->total();
 
         if ($request->ajax()) {
-            return response()->json([
-                'html' => view('components.promotions.grid', compact('promotions'))->render(),
-                'pagination' => (string) $promotions->links(),
-            ]);
+            return $this->paginatedPartial('components.promotions.grid', compact('promotions'), $promotions);
         }
 
         return view('pages.12-promotions', compact('promotions', 'totalActive'));
