@@ -29,8 +29,8 @@ $headerSubtitle = 'reviews_subtitle_heading';
         <p class="text-neutral-600">{{__('strings.reviews_body_title')}}</p>
     </div>
     <div class="flex flex-wrap gap-3">
-        <x-reusables.google-reviews-pill :avg="$averageRating ?? 0" :total="$totalReviews ?? 0" variant="light" />
-        <x-reusables.facebook-recommendations-pill :recommended="$fbRecommended ?? 0" :total="$fbTotal ?? 0" variant="light" />
+        <x-reusables.google-reviews-pill :avg="$reviewSummary['googleAverage']" :total="$reviewSummary['googleTotal']" variant="light" />
+        <x-reusables.facebook-recommendations-pill :recommended="$reviewSummary['facebookTotal']" :total="$reviewSummary['facebookTotal']" variant="light" />
     </div>
 </div>
 

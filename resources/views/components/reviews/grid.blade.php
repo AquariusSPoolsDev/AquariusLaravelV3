@@ -29,7 +29,7 @@
 
     {{-- Review text --}}
     <div class="review-card-body rich-text">
-        {!! $review->review !!}
+        {!! str($review->review)->sanitizeHtml() !!}
     </div>
 </div>
 @empty

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use Illuminate\View\View;
 
 class ProjectController extends Controller
 {
@@ -16,7 +17,10 @@ class ProjectController extends Controller
         return view('pages.17-projects', compact('projects'));
     }
 
-    public function show(string $slug)
+    /**
+     * Route parameters arrive in order, so the {locale} prefix comes first even though it isn't used here.
+     */
+    public function show(string $locale, string $slug): View
     {
         $project = Project::published()
             ->where('slug', $slug)

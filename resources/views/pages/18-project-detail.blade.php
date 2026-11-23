@@ -13,7 +13,7 @@ $headerSubtitle = 'projects_subtitle_heading';
 {{-- META TAG PAGE --}}
 @section('seoData')
 <x-seo.seo ogPageTitle="{{ $project->title }}"
-    ogDescription="{{ $project->description ?: ($project->location ? $project->title . ', ' . $project->location : $project->title) }}"
+    ogDescription="{{ $project->description ? str($project->description)->stripTags()->squish()->limit(160) : ($project->location ? $project->title . ', ' . $project->location : $project->title) }}"
     ogImage="{{ ($project->gallery_images && count($project->gallery_images)) ? asset('storage/' . $project->gallery_images[0]) : asset('assets/images/pool_header/'.$imageFileLoc) }}" />
 <x-seo.breadcrumb-schema :items="[
     ['name' => 'Notable Projects', 'url' => route('projects-page')],
@@ -78,7 +78,7 @@ $headerSubtitle = 'projects_subtitle_heading';
         {{-- DESCRIPTION --}}
         @if($project->description)
         <div class="prose max-w-full mb-10">
-            {!! $project->description !!}
+            {!! str($project->description)->sanitizeHtml() !!}
         </div>
         @endif
     </div>

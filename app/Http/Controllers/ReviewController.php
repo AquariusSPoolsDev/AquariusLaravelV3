@@ -3,20 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\CustReview;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class ReviewController extends Controller
 {
-    public function index(Request $request)
+    public function index(Request $request): View|JsonResponse
     {
-        $reviews = CustReview::where('is_published', true)
-            ->orderBy('reviewed_at', 'desc')
+        $reviews = CustReview::query()
+            ->published()
+            ->latest('reviewed_at')
             ->paginate(12);
-
-        $averageRating = CustReview::where('is_published', true)->where('source', 'Google Reviews')->avg('rating');
-        $totalReviews = CustReview::where('is_published', true)->where('source', 'Google Reviews')->count();
-        $fbTotal = CustReview::where('is_published', true)->where('source', 'Facebook')->count();
-        $fbRecommended = $fbTotal;
 
         if ($request->ajax()) {
             return response()->json([
@@ -25,6 +23,9 @@ class ReviewController extends Controller
             ]);
         }
 
-        return view('pages.09-cust-review', compact('reviews', 'averageRating', 'totalReviews', 'fbTotal', 'fbRecommended'));
+        return view('pages.09-cust-review', [
+            'reviews' => $reviews,
+            'reviewSummary' => CustReview::platformSummary(),
+        ]);
     }
 }

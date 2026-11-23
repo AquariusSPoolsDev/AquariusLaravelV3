@@ -1,14 +1,16 @@
+@props(['title', 'content', 'image', 'isReversed' => false])
+
 <div class="pool-service-body {{ $isReversed ? 'lg:flex-row-reverse' : '' }}" data-animate data-delay="0">
     <div class="pool-service-image-side">
         <div class="pool-service-relative">
             <div class="pool-service-absolute">
-                <img loading="lazy" decoding="async" class="pool-service-img-content" src="{{ asset($image) }}" alt="{!! $title !!}">
+                <img loading="lazy" decoding="async" class="pool-service-img-content" src="{{ asset($image) }}" alt="{{ $title }}">
             </div>
         </div>
     </div>
     <div class="pool-service-content-side">
         <div>
-            <x-reusables.subheading class="pool-service-title">{!! $title !!}</x-reusables.subheading>
+            <x-reusables.subheading class="pool-service-title">{{ $title }}</x-reusables.subheading>
             @foreach ($content as $paragraph)
                 <p>{{ $paragraph }}</p>
             @endforeach

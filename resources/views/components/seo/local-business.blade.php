@@ -3,7 +3,7 @@
     // CustReview clears this cache whenever a review is saved or deleted.
     $reviewRating = \Illuminate\Support\Facades\Cache::remember(\App\Models\CustReview::RATING_CACHE_KEY, now()->addHour(), function (): array {
         $summary = \App\Models\CustReview::query()
-            ->where('is_published', true)
+            ->published()
             ->toBase()
             ->selectRaw('COUNT(*) as total, AVG(rating) as average')
             ->first();

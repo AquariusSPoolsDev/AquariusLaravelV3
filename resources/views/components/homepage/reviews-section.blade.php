@@ -1,10 +1,8 @@
 @php
 use App\Models\CustReview;
-$reviews = CustReview::where('is_published', true)->orderBy('reviewed_at', 'desc')->take(6)->get();
-$googleAvg = round(CustReview::where('source', 'Google Reviews')->avg('rating'), 1);
-$googleTotal = CustReview::where('source', 'Google Reviews')->count();
-$fbTotal = CustReview::where('source', 'Facebook')->count();
-$fbRecommended = $fbTotal; // All published FB reviews are recommendations
+// Only published reviews count, the same as on the Reviews page
+$reviews = CustReview::query()->published()->latest('reviewed_at')->take(6)->get();
+$reviewSummary = CustReview::platformSummary();
 @endphp
 
 <section class="focus-on-dark bg-linear-to-br from-primary-950 via-primary-800 to-primary-700 relative overflow-hidden">
@@ -15,8 +13,8 @@ $fbRecommended = $fbTotal; // All published FB reviews are recommendations
 
         {{-- Reviews summary pills --}}
         <div class="mt-6 flex flex-wrap justify-center gap-3">
-            <x-reusables.google-reviews-pill :avg="$googleAvg" :total="$googleTotal" variant="dark" />
-            <x-reusables.facebook-recommendations-pill :recommended="$fbRecommended" :total="$fbTotal" variant="dark" />
+            <x-reusables.google-reviews-pill :avg="$reviewSummary['googleAverage']" :total="$reviewSummary['googleTotal']" variant="dark" />
+            <x-reusables.facebook-recommendations-pill :recommended="$reviewSummary['facebookTotal']" :total="$reviewSummary['facebookTotal']" variant="dark" />
         </div>
 
         @if($reviews->isNotEmpty())

@@ -4,12 +4,11 @@
     display: none !important;
 }
 
-@source "../../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php";
-@source "../../../storage/framework/views/*.php";
+/* Paths are relative to this file: ../../ is the project root. Preline's own JS is not scanned on purpose:
+   the one Preline widget in use (the gallery tag select) gets its classes from its Blade file, and scanning
+   Preline adds ~80 unused dark-mode/grey classes. The pagination view is the local copy in views/vendor. */
 @source "../../**/*.blade.php";
 @source "../../**/*.js";
-@source "../../../node_modules/preline/dist/*.js";
-@source "../../../node_modules/preline/src/**/*.{js,ts}";
 
 @import "preline/variants.css";
 

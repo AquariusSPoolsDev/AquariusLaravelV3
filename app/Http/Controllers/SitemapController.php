@@ -65,7 +65,7 @@ class SitemapController extends Controller
 
         $recordsUpdatedAt = [
             'pool-showcase-gallery' => ImageGallery::published()->max('updated_at'),
-            'customer-reviews-page' => CustReview::where('is_published', true)->max('updated_at'),
+            'customer-reviews-page' => CustReview::query()->published()->max('updated_at'),
             'promo-page' => Promotion::max('updated_at'),
             'projects-page' => $latestProjectUpdate,
         ];
