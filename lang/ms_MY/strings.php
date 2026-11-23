@@ -5,8 +5,6 @@ return [
 
     // NAVBAR
     'navbar_homepage' => 'Laman Utama',
-    'navbar_about' => 'Tentang Kami',
-    'navbar_about_us' => 'Tentang Kami',
     'navbar_showroom' => 'Bilik Pameran',
     'navbar_our_pools' => 'Kolam Renang Kami',
     'navbar_our_pools_concrete' => 'Kolam Renang Konkrit',
@@ -54,7 +52,6 @@ return [
     'trust_stats_years' => 'Tahun Pengalaman',
     'trust_stats_pools' => 'Kolam Renang Siap',
     'trust_member_of' => 'Ahli',
-    'trust_btn_about' => 'Ketahui Lebih Lanjut',
     'trust_showroom_more' => 'Ketahui lebih lanjut tentang bilik pameran',
 
     // HOMEPAGE - OUR POOLS SECTION
@@ -122,7 +119,6 @@ return [
     'footer_extra' => 'Lain-lain',
     'footer_pool_showcase' => 'Galeri',
     'footer_projects' => 'Projek Terkemuka',
-    'footer_about_us' => 'Tentang Kami',
     'footer_showroom' => 'Bilik Pameran',
     'footer_contact' => 'Hubungi Kami',
     'footer_contact_title' => 'Hubungi Kami',
@@ -629,24 +625,6 @@ return [
     'showcase_how_to_use_4_body' => 'Tekan butang "Set Semula Carian" untuk mengosongkan carian anda dan mulakan dengan baharu.',
 
     // ABOUT US
-    'about_title_heading' => 'Tentang Kami',
-    'about_subtitle_heading' => 'Lebih 30 tahun. Lebih 1,000 kolam renang. Dibina di Malaysia.',
-    'about_values_pill' => 'Apa Yang Kami Pegang',
-    'about_values_heading' => 'Nilai Kami',
-    'about_value_1_title' => 'Kecemerlangan',
-    'about_value_1_body' => 'Kualiti tanpa kompromi dalam setiap kolam renang yang kami bina.',
-    'about_value_2_title' => 'Integriti',
-    'about_value_2_body' => 'Harga yang jelas dan komunikasi secara jujur sepanjang setiap projek.',
-    'about_value_3_title' => 'Kepuasan Pelanggan',
-    'about_value_3_body' => 'Penyelesaian kolam renang yang disesuaikan untuk setiap bajet dan tujuan.',
-    'about_value_4_title' => 'Inovasi',
-    'about_value_4_body' => 'Lebih 30 tahun berkembang dalam reka bentuk dan pembinaan kolam renang.',
-    'about_value_5_title' => 'Perkhidmatan Menyeluruh',
-    'about_value_5_body' => 'Dari perundingan, pembinaan, penjagaan kolam. Semua di bawah satu bumbung.',
-    'about_value_6_title' => 'Profesionalisme',
-    'about_value_6_body' => 'Bahan binaan yang premium. Pasukan yang mahir. Boleh dipercayai dari mula sehingga selesai.',
-    'about_showroom_pill' => 'Lawati Kami',
-    'about_showroom_heading' => 'Bilik Pameran, Pejabat dan Kedai Kami',
     'about_showroom_body_1' => 'Cara terbaik untuk memilih kolam renang anda adalah dengan melihatnya sendiri. Kami mempunyai tiga kolam pameran saiz penuh di sini. Konkrit, gentian kaca, dan vinil. Bandingkan kemasan dan saiz sebelum membuat keputusan.',
     'about_showroom_body_2' => 'Bilik pameran, pejabat, dan kedai kami semuanya berada di bawah satu bumbung di Johor Bahru, bertentangan dengan Southern University College dan sebelum Paradigm Mall menuju ke bandar Johor Bahru (JB). Singgah semasa waktu perniagaan dan pasukan kami sedia membantu.',
 

@@ -5,8 +5,6 @@ return [
 
     // NAVBAR
     'navbar_homepage' => 'Homepage',
-    'navbar_about' => 'About Us',
-    'navbar_about_us' => 'About Us',
     'navbar_showroom' => 'Showroom',
     'navbar_our_pools' => 'Our Pools',
     'navbar_our_pools_concrete' => 'Concrete Pools',
@@ -54,7 +52,6 @@ return [
     'trust_stats_years' => 'Years of Experience',
     'trust_stats_pools' => 'Pools Completed',
     'trust_member_of' => 'Member of',
-    'trust_btn_about' => 'Learn More About Us',
     'trust_showroom_more' => 'More about the showroom',
 
     // HOMEPAGE - OUR POOLS SECTION
@@ -122,7 +119,6 @@ return [
     'footer_extra' => 'More',
     'footer_pool_showcase' => 'Showcase',
     'footer_projects' => 'Notable Projects',
-    'footer_about_us' => 'About Us',
     'footer_showroom' => 'Showroom',
     'footer_contact' => 'Contact',
     'footer_contact_title' => 'Contact Us',
@@ -629,24 +625,6 @@ return [
     'showcase_how_to_use_4_body' => 'Click the “Reset Filters” button to clear your search and start fresh.',
 
     // ABOUT US
-    'about_title_heading' => 'About Us',
-    'about_subtitle_heading' => 'More than 30 years. Over 1,000 pools. Built in Malaysia.',
-    'about_values_pill' => 'What We Stand For',
-    'about_values_heading' => 'Our Values',
-    'about_value_1_title' => 'Excellence',
-    'about_value_1_body' => 'Uncompromising quality in every pool we build.',
-    'about_value_2_title' => 'Integrity',
-    'about_value_2_body' => 'Clear pricing and honest communication throughout every project.',
-    'about_value_3_title' => 'Customer Satisfaction',
-    'about_value_3_body' => 'Bespoke pool solutions designed for every budget and vision.',
-    'about_value_4_title' => 'Innovation',
-    'about_value_4_body' => 'Over 30 years pushing the boundaries of pool design and construction.',
-    'about_value_5_title' => 'Comprehensive Services',
-    'about_value_5_body' => 'From consultation to construction to aftercare. All under one roof.',
-    'about_value_6_title' => 'Professionalism',
-    'about_value_6_body' => 'Premium materials. Skilled in-house team. Reliable from start to finish.',
-    'about_showroom_pill' => 'Visit Us',
-    'about_showroom_heading' => 'Our Showroom, Office and Shop',
     'about_showroom_body_1' => 'The best way to choose your pool is to see one. We have three full-size display pools on-site. Concrete, fibreglass, and vinyl. Compare finishes and sizes before you decide.',
     'about_showroom_body_2' => 'Our showroom, office, and shop are all under one roof in Johor Bahru, opposite Southern University College and just before Paradigm Mall heading towards JB city. Walk in during business hours and our team will be there to help.',
 

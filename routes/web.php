@@ -80,11 +80,6 @@ Route::prefix('{locale}')
             return view('pages.01-homepage');
         })->name('homepage');
 
-        // About Us
-        Route::get('/about-us', function () {
-            return view('pages.19-about-us');
-        })->name('about-page');
-
         // Our Pools (comparison)
         Route::get('/our-pools', function () {
             return view('pages.02-pool-type-main');
@@ -157,7 +152,6 @@ Route::prefix('{locale}')
 // ─── 301 redirects from old unprefixed URLs → /en equivalent ─────────────────
 
 foreach ([
-    '/about-us',
     '/our-pools',
     '/concrete-pools',
     '/vinyl-pools',

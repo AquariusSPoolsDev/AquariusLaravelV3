@@ -25,7 +25,7 @@ class PageContentIntegrityTest extends TestCase
     }
 
     private const PAGES = [
-        '', '/about-us', '/our-pools', '/concrete-pools', '/vinyl-pools', '/fibreglass-pools',
+        '', '/our-pools', '/concrete-pools', '/vinyl-pools', '/fibreglass-pools',
         '/our-pool-services', '/pool-items-equipments', '/showcase', '/projects', '/reviews',
         '/contact-us', '/faq', '/promotions', '/terms', '/privacy', '/sitemap',
     ];

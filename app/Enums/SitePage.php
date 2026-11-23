@@ -7,13 +7,12 @@ use App\Models\SiteSetting;
 /**
  * Public pages that can be switched off from the admin panel's Page Visibility screen.
  * A hidden page returns 404 (in both languages) and drops out of sitemap.xml.
- * Links to it stay where they are and lead to the 404 page, except About Us and Projects,
- * whose links are also removed.
+ * The navbar drops its link. Other links stay and lead to the 404 page, except the Projects
+ * links and the showroom links to Contact Us, which are removed too.
  */
 enum SitePage: string
 {
     case Homepage = 'homepage';
-    case AboutUs = 'about_us';
     case OurPools = 'our_pools';
     case ConcretePools = 'concrete_pools';
     case VinylPools = 'vinyl_pools';
@@ -34,7 +33,6 @@ enum SitePage: string
     {
         return match ($this) {
             self::Homepage => 'Homepage',
-            self::AboutUs => 'About Us',
             self::OurPools => 'Our Pools (comparison)',
             self::ConcretePools => 'Concrete Pools',
             self::VinylPools => 'Vinyl Pools',
@@ -56,7 +54,7 @@ enum SitePage: string
     public function group(): string
     {
         return match ($this) {
-            self::Homepage, self::AboutUs, self::ContactUs, self::Faq => 'Main pages',
+            self::Homepage, self::ContactUs, self::Faq => 'Main pages',
             self::OurPools, self::ConcretePools, self::VinylPools, self::FibreglassPools => 'Our pools',
             self::PoolServices, self::PoolItems => 'Our services',
             self::Showcase, self::Projects, self::Reviews, self::Promotions => 'Our work & offers',
@@ -71,7 +69,6 @@ enum SitePage: string
     {
         return match ($this) {
             self::Homepage => '/en · The main landing page with the hero video. Switching it off makes aquariusswimmingpools.com itself show "page not found".',
-            self::AboutUs => '/en/about-us · Company story and showroom. Hiding it also removes its links from the menu, footer, homepage and Contact page.',
             self::OurPools => '/en/our-pools · Side-by-side comparison of concrete, vinyl and fibreglass pools.',
             self::ConcretePools => '/en/concrete-pools · Concrete pool build steps, pros and cons, and photos.',
             self::VinylPools => '/en/vinyl-pools · Vinyl pool build steps, pros and cons, and photos.',
@@ -97,7 +94,6 @@ enum SitePage: string
     {
         return match ($this) {
             self::Homepage => ['homepage'],
-            self::AboutUs => ['about-page'],
             self::OurPools => ['our-pools-main'],
             self::ConcretePools => ['concrete-pools-page'],
             self::VinylPools => ['vinyl-pools-page'],
@@ -132,7 +128,7 @@ enum SitePage: string
      */
     public function isVisibleByDefault(): bool
     {
-        return ! in_array($this, [self::AboutUs, self::Projects], true);
+        return $this !== self::Projects;
     }
 
     public function settingKey(): string

@@ -31,7 +31,6 @@ class SitemapController extends Controller
         'promo-page' => ['pages.12-promotions', 'weekly', '0.6'],
         'faq-page' => ['pages.11-faq', 'monthly', '0.6'],
         'contact-page' => ['pages.10-contact-us', 'monthly', '0.6'],
-        'about-page' => ['pages.19-about-us', 'monthly', '0.5'],
     ];
 
     public function index(): Response

@@ -64,9 +64,6 @@
                 <h4 class="aquarius-footer-heading">{{__('strings.footer_contact_title')}}</h4>
 
                 <div class="mt-4 flex flex-col gap-y-4">
-                    @if (\App\Enums\SitePage::AboutUs->isVisible())
-                    <p><a class="aquarius-footer-links" href="{{ route('about-page') }}">{{__('strings.footer_about_us')}}</a></p>
-                    @endif
 
                     @if (\App\Enums\SitePage::ContactUs->isVisible())
                     <p><a class="aquarius-footer-links" href="{{ route('contact-page') }}#showpool">{{__('strings.footer_showroom')}}</a></p>

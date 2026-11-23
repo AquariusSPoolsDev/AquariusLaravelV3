@@ -127,8 +127,6 @@ class NavbarTest extends TestCase
 
     public function test_footer_showroom_link_goes_to_the_contact_page_without_about_us(): void
     {
-        SitePage::AboutUs->setVisible(false);
-
         $this->get('/en/faq')->assertOk()
             ->assertSee('href="'.url('/en/contact-us').'#showpool"', false)
             ->assertDontSee(url('/en/about-us'), false);

@@ -28,10 +28,9 @@ class PageVisibilityTest extends TestCase
         }
     }
 
-    private function hideAboutUsAndProjects(): void
+    private function hideProjects(): void
     {
         $this->showAllPages();
-        SitePage::AboutUs->setVisible(false);
         SitePage::Projects->setVisible(false);
     }
 
@@ -89,7 +88,7 @@ class PageVisibilityTest extends TestCase
 
         foreach (SitePage::cases() as $page) {
             $this->assertSame(
-                ! in_array($page, [SitePage::AboutUs, SitePage::Projects], true),
+                $page !== SitePage::Projects,
                 $page->isVisible(),
                 "{$page->label()} has the wrong default.",
             );
@@ -113,7 +112,6 @@ class PageVisibilityTest extends TestCase
         $this->hideAllPages();
 
         foreach (['en', 'ms'] as $locale) {
-            $this->get("/{$locale}/about-us")->assertNotFound();
             $this->get("/{$locale}/projects")->assertNotFound();
             $this->get("/{$locale}/projects/any-project")->assertNotFound();
         }
@@ -123,20 +121,18 @@ class PageVisibilityTest extends TestCase
     {
         $this->showAllPages();
 
-        $this->get('/en/about-us')->assertOk();
+        $this->get('/en/faq')->assertOk();
         $this->get('/ms/projects')->assertOk();
     }
 
     public function test_links_to_hidden_pages_are_removed(): void
     {
-        $this->hideAboutUsAndProjects();
+        $this->hideProjects();
 
-        $aboutLink = 'href="'.url('/en/about-us');
         $projectsLink = 'href="'.url('/en/projects').'"';
 
-        $this->get('/en')->assertOk()->assertDontSee($aboutLink, false)->assertDontSee($projectsLink, false);
-        $this->get('/en/contact-us')->assertOk()->assertDontSee($aboutLink, false);
-        $this->get('/en/faq')->assertOk()->assertDontSee($aboutLink, false)->assertDontSee($projectsLink, false);
+        $this->get('/en')->assertOk()->assertDontSee($projectsLink, false);
+        $this->get('/en/faq')->assertOk()->assertDontSee($projectsLink, false);
     }
 
     public function test_links_to_visible_pages_are_shown(): void
@@ -145,19 +141,15 @@ class PageVisibilityTest extends TestCase
 
         $this->get('/en')
             ->assertOk()
-            ->assertSee('href="'.url('/en/about-us').'"', false)
             ->assertSee('href="'.url('/en/projects').'"', false);
-
-        $this->get('/en/contact-us')->assertOk()->assertSee('href="'.url('/en/about-us').'#showroom"', false);
     }
 
     public function test_hidden_pages_are_left_out_of_the_sitemap(): void
     {
-        $this->hideAboutUsAndProjects();
+        $this->hideProjects();
 
         $this->get('/sitemap.xml')
             ->assertOk()
-            ->assertDontSee(url('/en/about-us'), false)
             ->assertDontSee(url('/en/projects'), false)
             ->assertSee(url('/en/faq'), false);
 
@@ -165,7 +157,6 @@ class PageVisibilityTest extends TestCase
 
         $this->get('/sitemap.xml')
             ->assertOk()
-            ->assertSee(url('/en/about-us'), false)
             ->assertSee(url('/ms/projects'), false);
     }
 
@@ -175,18 +166,37 @@ class PageVisibilityTest extends TestCase
         $this->actingAsExistingUser('admin@aquariusswimmingpools.com');
 
         Livewire::test(PageVisibility::class)
-            ->assertSchemaStateSet(['about_us' => false, 'projects' => false, 'faq' => false])
-            ->fillForm(['about_us' => true, 'projects' => false, 'faq' => true])
+            ->assertSchemaStateSet(['promotions' => false, 'projects' => false, 'faq' => false])
+            ->fillForm(['promotions' => true, 'projects' => false, 'faq' => true])
             ->call('save')
             ->assertNotified('Page visibility saved');
 
-        $this->assertTrue(SitePage::AboutUs->isVisible());
+        $this->assertTrue(SitePage::Promotions->isVisible());
         $this->assertFalse(SitePage::Projects->isVisible());
         $this->assertTrue(SitePage::Faq->isVisible());
         $this->assertFalse(SitePage::Terms->isVisible());
 
-        $this->get('/en/about-us')->assertOk();
+        $this->get('/en/promotions')->assertOk();
         $this->get('/en/terms')->assertNotFound();
+    }
+
+    public function test_the_dropped_about_us_page_is_gone(): void
+    {
+        $this->showAllPages();
+        SiteSetting::setValue('page_visibility.about_us', true);
+
+        $this->assertNull(SitePage::tryFrom('about_us'));
+        $this->assertFalse(Route::has('about-page'));
+
+        foreach (['', '/en', '/ms'] as $prefix) {
+            $this->get("{$prefix}/about-us")->assertNotFound();
+        }
+
+        $this->get('/sitemap.xml')->assertOk()->assertDontSee('about-us', false);
+
+        foreach (['/en', '/en/contact-us', '/ms/faq'] as $url) {
+            $this->get($url)->assertOk()->assertDontSee('about-us', false);
+        }
     }
 
     public function test_staff_can_open_the_page_visibility_screen(): void

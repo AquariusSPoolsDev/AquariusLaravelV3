@@ -71,9 +71,9 @@ class LocalePrefixRoutingTest extends TestCase
 
     public function test_legacy_url_redirect_without_query_string(): void
     {
-        $this->get('/about-us')
+        $this->get('/faq')
             ->assertMovedPermanently()
-            ->assertRedirect('/en/about-us');
+            ->assertRedirect('/en/faq');
 
         $this->get('/projects/some-project')
             ->assertMovedPermanently()
