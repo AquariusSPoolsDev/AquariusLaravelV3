@@ -6,6 +6,7 @@ use App\Enums\SitePage;
 use App\Models\CustReview;
 use App\Models\Project;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Blade;
 use Tests\Concerns\ShowsAllPages;
 use Tests\TestCase;
@@ -215,6 +216,21 @@ class CodeAuditFixesTest extends TestCase
         SitePage::Projects->setVisible(false);
 
         $this->get('/en/sitemap')->assertOk()->assertDontSee('href="'.route('projects-page', ['locale' => 'en']).'"', false);
+    }
+
+    public function test_pagination_marks_the_current_page_clearly(): void
+    {
+        // Admin (Livewire) tests earlier in the run swap the paginator's view and resolvers; put Laravel's back
+        Paginator::defaultView('pagination::tailwind');
+        Paginator::currentPathResolver(fn (): string => request()->url());
+        Paginator::currentPageResolver(fn (string $pageName = 'page'): int => (int) request()->input($pageName, 1));
+
+        $html = $this->get('/en/reviews?page=2')->assertOk()->getContent();
+        $this->assertMatchesRegularExpression('/<span aria-current="page">\s*<span class="([^"]*)">2<\/span>/', $html);
+        preg_match('/<span aria-current="page">\s*<span class="([^"]*)">2<\/span>/', $html, $current);
+        $this->assertContains('bg-primary-700', explode(' ', $current[1]));
+        $this->assertContains('text-white', explode(' ', $current[1]));
+        $this->assertStringNotContainsString('hover:text-neutral-500', $html);
     }
 
     public function test_view_only_routes_use_route_view(): void
