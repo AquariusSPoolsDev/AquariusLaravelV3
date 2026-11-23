@@ -25,6 +25,17 @@
 
 ## Changelog
 
+### 2026-11-23 — Design clean-up and code audit
+- Homepage "Who we are" became a showroom section (address, hours, Get directions)
+- Accessibility pass (WCAG 2.2 AA, axe 0 violations): skip link, labelled form fields, translated cookie notice, named landmarks
+- One hover/press standard for every link, card, photo and pagination link
+- Contact form checks fields in the browser; the server repeats the checks with the same translated messages
+- Code audit (`code-audit.md`):
+  - one page layout, one pool-page template, one pros/cons card
+  - shared JS for scroll effects and AJAX pagination
+  - dead classes, strings and unused images removed
+- Fixed: project detail pages returned 404; homepage review numbers counted hidden reviews; English-only structured data on Malay pages
+
 ### 2026-06-18 — V3.1
 - Replaced all inline SVG icons with Phosphor Icons across 23 Blade templates
 - Updated icon viewBox from `0 0 24 24` to `0 0 256 256`, switched from stroke-based to fill-based rendering
