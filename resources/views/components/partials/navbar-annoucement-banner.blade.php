@@ -12,18 +12,18 @@ $promotion = Promotion::query()->active()->orderBy('start_time')->first();
         x-transition:leave="transition duration-300"
         x-transition:leave-start="opacity-100 translate-y-0"
         x-transition:leave-end="opacity-0 -translate-y-full">
-        <div class="focus-on-dark bg-primary-600 rounded-lg shadow-sm hover:shadow-lg hover:scale-101 active:scale-99 transition-all duration-200">
+        <div class="focus-on-dark bg-primary-600 rounded-lg shadow-sm">
             <div class="py-2 px-4">
                 <div class="flex items-center">
                     <p class="text-white text-base">
                         <strong>{{__('strings.alert_current_promo')}}:</strong> {{ $promotion->title }}&nbsp;&nbsp;
-                        <a class="underline font-medium hover:no-underline transition-all"
+                        <a class="underline font-medium hover:no-underline active:no-underline transition-all"
                             href="{{ route('promo-page') }}">{{__('strings.alert_learn_more')}}</a>
                     </p>
 
                     <div class="ps-3 ms-auto">
                         <button type="button"
-                            class="inline-flex rounded-lg p-1.5 text-white/80 hover:bg-white/10 focus:bg-white/10"
+                            class="inline-flex rounded-lg p-1.5 text-white/80 transition-all hover:bg-white/10 focus:bg-white/10 active:bg-white/20 active:scale-95"
                             @click="show = false; fetch('{{ route('dismiss-promotion') }}', { method: 'POST', headers: { 'X-CSRF-TOKEN': document.querySelector('meta[name=csrf-token]').content, 'Content-Type': 'application/json' }, body: JSON.stringify({ dismissed: true }) })">
                             <span class="sr-only">{{__('strings.alert_dismiss')}}</span>
                             <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path></svg>

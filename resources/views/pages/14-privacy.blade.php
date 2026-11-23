@@ -137,7 +137,7 @@
             <li>
                 <strong>Google Tag Manager &amp; Google Analytics</strong> — used to collect website usage statistics.
                 Google may process your IP address and browsing behaviour. See
-                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="font-semibold text-neutral-950 underline underline-offset-4 hover:no-underline">Google's Privacy Policy</a>.
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="font-semibold text-neutral-950 underline underline-offset-4 hover:no-underline active:no-underline">Google's Privacy Policy</a>.
             </li>
             <li>
                 <strong>Bunny Fonts</strong> — fonts used on this Website are loaded from a third-party font CDN.
@@ -153,7 +153,7 @@
             <li>
                 <strong>WhatsApp (Meta)</strong> — our website includes a link to our WhatsApp number for direct
                 communication. If you choose to use it, your data is subject to
-                <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" class="font-semibold text-neutral-950 underline underline-offset-4 hover:no-underline">WhatsApp's Privacy Policy</a>.
+                <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" class="font-semibold text-neutral-950 underline underline-offset-4 hover:no-underline active:no-underline">WhatsApp's Privacy Policy</a>.
             </li>
         </ul>
         <p class="mb-4">
@@ -182,8 +182,8 @@
         </ul>
         <p class="mb-4">
             To exercise any of these rights, please contact us by email at
-            <a href="mailto:mail@aquariuspools.com.my" class="font-semibold text-neutral-950 underline underline-offset-4 hover:no-underline">mail@aquariuspools.com.my</a>
-            or via our <a href="{{ route('contact-page') }}" class="font-semibold text-neutral-950 underline underline-offset-4 hover:no-underline">Contact Us</a> page.
+            <a href="mailto:mail@aquariuspools.com.my" class="font-semibold text-neutral-950 underline underline-offset-4 hover:no-underline active:no-underline">mail@aquariuspools.com.my</a>
+            or via our <a href="{{ route('contact-page') }}" class="font-semibold text-neutral-950 underline underline-offset-4 hover:no-underline active:no-underline">Contact Us</a> page.
             We will respond to requests within a reasonable timeframe.
         </p>
     </section>
@@ -203,8 +203,8 @@
         <ul class="list-disc pl-6 space-y-2 mb-4">
             <li><strong>Company:</strong> Aquarius Swimming Pools Sdn Bhd (920548-M)</li>
             <li><strong>Address:</strong> No. 33, Jalan Selatan 3/4, Taman Impian Emas, 81300 Skudai, Johor</li>
-            <li><strong>Email:</strong> <a href="mailto:mail@aquariuspools.com.my" class="font-semibold text-neutral-950 underline underline-offset-4 hover:no-underline">mail@aquariuspools.com.my</a></li>
-            <li><strong>Office:</strong> <a href="tel:+6075953060" class="font-semibold text-neutral-950 underline underline-offset-4 hover:no-underline">+607 595 3060</a></li>
+            <li><strong>Email:</strong> <a href="mailto:mail@aquariuspools.com.my" class="font-semibold text-neutral-950 underline underline-offset-4 hover:no-underline active:no-underline">mail@aquariuspools.com.my</a></li>
+            <li><strong>Office:</strong> <a href="tel:+6075953060" class="font-semibold text-neutral-950 underline underline-offset-4 hover:no-underline active:no-underline">+607 595 3060</a></li>
         </ul>
     </section>
 </div>

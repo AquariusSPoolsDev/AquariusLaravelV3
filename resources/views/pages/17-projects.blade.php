@@ -28,7 +28,7 @@ $headerSubtitle = 'projects_subtitle_heading';
 @if($projects->isNotEmpty())
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         @foreach($projects as $project)
-        <a href="{{ route('project-detail-page', $project->slug) }}" class="group bg-white border border-neutral-200 rounded-lg overflow-hidden h-full break-before-avoid transition-all duration-300 hover:-translate-y-1 hover:border-primary-300 hover:shadow-lg hover:shadow-primary-100">
+        <a href="{{ route('project-detail-page', $project->slug) }}" class="group bg-white border border-neutral-200 rounded-lg overflow-hidden h-full break-before-avoid transition-all duration-300 hover:-translate-y-1 hover:border-primary-300 hover:shadow-lg hover:shadow-primary-100 active:translate-y-0 active:scale-97 active:shadow-none">
 
             {{-- COVER IMAGE --}}
             <div class="aspect-video overflow-hidden bg-neutral-100">
@@ -37,7 +37,7 @@ $headerSubtitle = 'projects_subtitle_heading';
                         src="{{ asset('storage/' . $project->gallery_images[0]) }}"
                         alt="{{ $project->title }}"
                         loading="lazy"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        class="w-full h-full object-cover"
                     >
                 @else
                     <div class="w-full h-full flex items-center justify-center bg-primary-50">

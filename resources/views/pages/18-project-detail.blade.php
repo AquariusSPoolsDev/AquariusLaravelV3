@@ -36,7 +36,7 @@ $headerSubtitle = 'projects_subtitle_heading';
 
 {{-- BACK LINK --}}
 <div class="mb-4">
-    <a href="{{ route('projects-page') }}" class="inline-flex items-center gap-2 text-primary hover:underline hover:underline-offset-4 font-semibold text-base transition-all group">
+    <a href="{{ route('projects-page') }}" class="inline-flex items-center gap-2 text-primary underline-offset-4 hover:underline active:underline font-semibold text-base transition-all group">
         <svg class="w-4 h-4 group-hover:-translate-x-1 transition-all" viewBox="0 0 256 256" fill="currentColor"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg>
         {{ __('strings.projects_back_to_projects') }}
     </a>
@@ -90,7 +90,7 @@ $headerSubtitle = 'projects_subtitle_heading';
         <button
             type="button"
             @click="openModal('{{ $coverSrc }}')"
-            class="pool-service-relative cursor-zoom-in w-full mb-4"
+            class="pool-service-relative transition-all duration-200 hover:outline-3 hover:-outline-offset-3 hover:outline-primary-600 active:scale-97 cursor-zoom-in w-full mb-4"
             aria-label="View image"
         >
             <div class="pool-service-absolute">
@@ -111,7 +111,7 @@ $headerSubtitle = 'projects_subtitle_heading';
                 <button
                     type="button"
                     @click="openModal('{{ $src }}')"
-                    class="pool-service-relative cursor-zoom-in"
+                    class="pool-service-relative transition-all duration-200 hover:outline-3 hover:-outline-offset-3 hover:outline-primary-600 active:scale-97 cursor-zoom-in"
                     aria-label="View image"
                 >
                     <div class="pool-service-absolute">
@@ -153,7 +153,7 @@ $headerSubtitle = 'projects_subtitle_heading';
         >
             <button
                 @click="closeModal()"
-                class="absolute top-3 right-3 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-1.5 transition-colors"
+                class="absolute top-3 right-3 z-10 bg-black/50 hover:bg-black/70 active:bg-black/80 active:scale-95 text-white rounded-full p-1.5 transition-all"
                 aria-label="Close" title="Close"
             >
                 <svg xmlns="http://www.w3.org/2000/svg" class="size-6" viewBox="0 0 256 256" fill="currentColor"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path></svg>

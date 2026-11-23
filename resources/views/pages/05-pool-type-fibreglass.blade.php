@@ -53,11 +53,11 @@ $headerSubtitle = 'fibreglass_pool_subtitle_heading';
 {{-- POOL GALLERY --}}
 <section class="mt-16">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <a href="{{ asset('assets/images/fibreglass/fibreglass-pool-1.jpg') }}" data-fslightbox="fibreglass-pools" class="block bg-info-bg overflow-hidden w-full aspect-4/3 border border-neutral-200 rounded-xl" data-animate data-delay="0">
-            <img src="{{ asset('assets/images/fibreglass/fibreglass-pool-1.jpg') }}" alt="Finished fibreglass pool by Aquarius, photo 1 of 2" loading="lazy" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
+        <a href="{{ asset('assets/images/fibreglass/fibreglass-pool-1.jpg') }}" data-fslightbox="fibreglass-pools" class="block bg-info-bg overflow-hidden w-full aspect-4/3 border border-neutral-200 rounded-xl transition-all duration-200 hover:outline-3 hover:-outline-offset-3 hover:outline-primary-600 active:scale-97" data-animate data-delay="0">
+            <img src="{{ asset('assets/images/fibreglass/fibreglass-pool-1.jpg') }}" alt="Finished fibreglass pool by Aquarius, photo 1 of 2" loading="lazy" class="w-full h-full object-cover">
         </a>
-        <a href="{{ asset('assets/images/fibreglass/fibreglass-pool-2.jpg') }}" data-fslightbox="fibreglass-pools" class="block bg-info-bg overflow-hidden w-full aspect-4/3 border border-neutral-200 rounded-xl" data-animate data-delay="100">
-            <img src="{{ asset('assets/images/fibreglass/fibreglass-pool-2.jpg') }}" alt="Finished fibreglass pool by Aquarius, photo 2 of 2" loading="lazy" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
+        <a href="{{ asset('assets/images/fibreglass/fibreglass-pool-2.jpg') }}" data-fslightbox="fibreglass-pools" class="block bg-info-bg overflow-hidden w-full aspect-4/3 border border-neutral-200 rounded-xl transition-all duration-200 hover:outline-3 hover:-outline-offset-3 hover:outline-primary-600 active:scale-97" data-animate data-delay="100">
+            <img src="{{ asset('assets/images/fibreglass/fibreglass-pool-2.jpg') }}" alt="Finished fibreglass pool by Aquarius, photo 2 of 2" loading="lazy" class="w-full h-full object-cover">
         </a>
     </div>
 </section>

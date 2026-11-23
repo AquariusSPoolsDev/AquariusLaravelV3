@@ -32,15 +32,15 @@ $headerSubtitle = 'pool_item_subtitle_heading';
 <nav aria-label="{{ __('strings.pool_items_nav_label') }}" class="pb-6 mb-12 border-b border-neutral-100">
     <div class="flex flex-wrap gap-2">
         <a href="#core-equipment"
-            class="inline-flex items-center px-4 py-1.5 rounded-full text-base font-semibold font-heading tracking-tight transition-colors bg-primary-700 text-white hover:bg-primary-800">
+            class="inline-flex items-center px-4 py-1.5 rounded-full text-base font-semibold font-heading tracking-tight transition-all bg-primary-700 text-white hover:bg-primary-800 active:bg-primary-900 active:scale-95">
             {{ __('strings.pool_item_nav_core') }}
         </a>
         <a href="#cleaning"
-            class="inline-flex items-center px-4 py-1.5 rounded-full text-base font-semibold font-heading tracking-tight transition-colors bg-primary-50 text-primary-800 hover:bg-primary-100">
+            class="inline-flex items-center px-4 py-1.5 rounded-full text-base font-semibold font-heading tracking-tight transition-all bg-primary-50 text-primary-800 hover:bg-primary-100 active:bg-primary-200 active:scale-95">
             {{ __('strings.pool_item_nav_cleaning') }}
         </a>
         <a href="#chemicals"
-            class="inline-flex items-center px-4 py-1.5 rounded-full text-base font-semibold font-heading tracking-tight transition-colors bg-primary-50 text-primary-800 hover:bg-primary-100">
+            class="inline-flex items-center px-4 py-1.5 rounded-full text-base font-semibold font-heading tracking-tight transition-all bg-primary-50 text-primary-800 hover:bg-primary-100 active:bg-primary-200 active:scale-95">
             {{ __('strings.pool_item_nav_chemicals') }}
         </a>
     </div>

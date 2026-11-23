@@ -16,7 +16,7 @@
             @php $isCurrent = $current === $pool; @endphp
             <{{ $isCurrent ? 'div' : 'a' }}
                 @if ($isCurrent) aria-current="page" data-current-pool @else href="{{ route($details['route']) }}" @endif
-                class="pro-con-card p-0! overflow-hidden block {{ $isCurrent ? 'bg-neutral-50! cursor-default hover:translate-y-0! hover:border-neutral-200! hover:shadow-none!' : 'group active:scale-97! active:border-primary!' }}">
+                class="pro-con-card p-0! overflow-hidden block {{ $isCurrent ? 'bg-neutral-50!' : 'group transition-all duration-300 hover:-translate-y-1 hover:border-primary-300! hover:shadow-lg hover:shadow-primary-100 active:translate-y-0 active:scale-97 active:shadow-none active:border-primary-300!' }}">
                 <div class="flex lg:flex-col">
                     <div class="w-32 lg:w-full lg:h-48 shrink-0">
                         <img loading="lazy" decoding="async" src="{{ asset('assets/images/pool_types/'.$details['image']) }}" alt="" class="w-full h-full object-cover">

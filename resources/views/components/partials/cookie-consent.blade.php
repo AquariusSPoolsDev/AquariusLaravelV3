@@ -37,7 +37,7 @@
 >
     <p class="text-base text-neutral-700 mb-3">
         {{ __('strings.cookie_body') }}
-        <a href="{{ route('privacy-page') }}" class="font-semibold text-neutral-900 underline underline-offset-4 hover:no-underline">{{ __('strings.footer_privacy') }}</a>
+        <a href="{{ route('privacy-page') }}" class="font-semibold text-neutral-900 underline underline-offset-4 hover:no-underline active:no-underline">{{ __('strings.footer_privacy') }}</a>
     </p>
     <div class="flex flex-wrap gap-2">
         <button type="button"

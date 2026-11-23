@@ -17,7 +17,7 @@
                     </button>
                     <div id="home-faq-a-0" class="aquarius-accordion-content" x-show="active === 0" x-cloak x-transition role="region" aria-labelledby="home-faq-q-0">
                         <div class="accordion-inner">
-                            <p>{{ __('strings.faq_different_material_avail_answer_1') }} <a href="{{ route('our-pools-main') }}" class="text-primary-600 underline underline-offset-4 hover:text-primary-700 hover:no-underline">{{ __('strings.faq_different_material_avail_link_text') }}</a> {{ __('strings.faq_different_material_avail_answer_2') }}</p>
+                            <p>{{ __('strings.faq_different_material_avail_answer_1') }} <a href="{{ route('our-pools-main') }}" class="text-primary-600 underline underline-offset-4 hover:text-primary-700 hover:no-underline active:text-primary-700 active:no-underline">{{ __('strings.faq_different_material_avail_link_text') }}</a> {{ __('strings.faq_different_material_avail_answer_2') }}</p>
                         </div>
                     </div>
                 </div>

@@ -2,7 +2,7 @@
     <select id="multiple-with-conditional-counter-select" multiple data-hs-select='{
         "placeholder": "{{__('strings.choose_dropdown')}}",
         "toggleTag": "<button type=\"button\" aria-expanded=\"false\"></button>",
-        "toggleClasses": "hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 relative py-2 ps-4 pe-10 flex gap-x-2 text-nowrap w-full cursor-pointer bg-white border border-neutral-200 rounded-lg text-start text-base focus:outline-none focus:ring-2 focus:ring-primary",
+        "toggleClasses": "hs-select-disabled:pointer-events-none hs-select-disabled:opacity-50 relative py-2 ps-4 pe-10 flex gap-x-2 text-nowrap w-full cursor-pointer bg-white border border-neutral-400 rounded-lg text-start text-base transition-colors hover:border-primary-600 active:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-primary",
         "toggleSeparators": {
           "betweenItemsAndCounter": "&"
         },

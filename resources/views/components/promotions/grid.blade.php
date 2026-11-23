@@ -36,7 +36,7 @@
                     @endphp
                     <div class="swiper-slide">
                         <a data-fslightbox="promotion_{{ $promotion->id }}" href="{{ asset('storage/' . $encodedFile) }}"
-                           class="relative block w-full aspect-square overflow-hidden rounded-xl bg-neutral-100">
+                           class="relative block w-full aspect-square overflow-hidden rounded-xl bg-neutral-100 transition-all duration-200 hover:outline-3 hover:-outline-offset-3 hover:outline-primary-600 active:scale-97">
                             {{-- Square frame, whole image shown: promotion posters carry prices and text that must not be cropped.
                                  A blurred copy of the same image fills any space around it instead of flat bars. --}}
                             <img src="{{ asset('storage/' . $encodedFile) }}"

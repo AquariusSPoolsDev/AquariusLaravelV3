@@ -142,7 +142,7 @@
                     class="mt-0.5 w-4 h-4 shrink-0 appearance-auto rounded accent-primary-600 cursor-pointer {{ $errors->has('cust_agree') ? 'border-error-300' : 'border-neutral-400' }}"
                     {{ old('cust_agree') ? 'checked' : '' }} required>
                 <span class="text-base text-neutral-700">
-                    {{ __('strings.cf_step_3_agree_1') }}<a href="{{ route('privacy-page') }}" class="text-primary-600 underline hover:no-underline font-semibold">{{ __('strings.cf_step_3_privacy_link') }}</a>{{ __('strings.cf_step_3_agree_2') }}
+                    {{ __('strings.cf_step_3_agree_1') }}<a href="{{ route('privacy-page') }}" class="text-primary-600 underline hover:no-underline active:no-underline font-semibold">{{ __('strings.cf_step_3_privacy_link') }}</a>{{ __('strings.cf_step_3_agree_2') }}
                 </span>
             </label>
             @error('cust_agree')

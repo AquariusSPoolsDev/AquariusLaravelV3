@@ -176,7 +176,7 @@
                     </button>
                     <div id="faq-a-4" class="aquarius-accordion-content" x-show="active === 4" x-cloak x-transition role="region" aria-labelledby="faq-q-4">
                         <div class="accordion-inner">
-                            <p>{{__('strings.faq_different_material_avail_answer_1')}} <a href="{{ route('our-pools-main') }}" class="text-primary-600 underline underline-offset-4 hover:text-primary-700 hover:no-underline">{{__('strings.faq_different_material_avail_link_text')}}</a> {{__('strings.faq_different_material_avail_answer_2')}}</p>
+                            <p>{{__('strings.faq_different_material_avail_answer_1')}} <a href="{{ route('our-pools-main') }}" class="text-primary-600 underline underline-offset-4 hover:text-primary-700 hover:no-underline active:text-primary-700 active:no-underline">{{__('strings.faq_different_material_avail_link_text')}}</a> {{__('strings.faq_different_material_avail_answer_2')}}</p>
                         </div>
                     </div>
                 </div>
@@ -207,7 +207,7 @@
                                     <strong class="text-neutral-900">{{ __('strings.faq_kind_maintenance_answer_steps_4') }}</strong> {{ __('strings.faq_kind_maintenance_answer_steps_4_detail') }}
                                 </li>
                             </ul>
-                            <p>{{__('strings.faq_kind_maintenance_answer_2_1')}} <a href="{{ route('contact-page') }}" class="text-primary-600 underline underline-offset-4 hover:text-primary-700 hover:no-underline">{{__('strings.faq_kind_maintenance_answer_2_link_text')}}</a> {{__('strings.faq_kind_maintenance_answer_2_2')}}</p>
+                            <p>{{__('strings.faq_kind_maintenance_answer_2_1')}} <a href="{{ route('contact-page') }}" class="text-primary-600 underline underline-offset-4 hover:text-primary-700 hover:no-underline active:text-primary-700 active:no-underline">{{__('strings.faq_kind_maintenance_answer_2_link_text')}}</a> {{__('strings.faq_kind_maintenance_answer_2_2')}}</p>
                         </div>
                     </div>
                 </div>

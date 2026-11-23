@@ -40,7 +40,7 @@
             <div>
             <div class="flex flex-col gap-4" data-animate data-delay="200">
                 {{-- Large: showroom exterior --}}
-                <{{ $showroomTag }} @if ($showroomHref) href="{{ $showroomHref }}" @endif class="group/img block relative overflow-hidden rounded-xl bg-neutral-100 aspect-video border-2 border-neutral-200 hover:border-primary-600 transition-colors duration-200"><span class="sr-only">{{ __('strings.navbar_visit_showroom') }}: </span>
+                <{{ $showroomTag }} @if ($showroomHref) href="{{ $showroomHref }}" @endif class="group/img block relative overflow-hidden rounded-xl bg-neutral-100 aspect-video border-2 border-neutral-200 transition-all duration-200 hover:outline-3 hover:-outline-offset-3 hover:outline-primary-600 active:scale-97"><span class="sr-only">{{ __('strings.navbar_visit_showroom') }}: </span>
                     <picture>
                         <source srcset="{{ asset('assets/images/homepage/aquarius-showroom-exterior.webp') }}" type="image/webp">
                         <img loading="lazy" src="{{ asset('assets/images/homepage/aquarius-showroom-exterior.jpg') }}" alt="The Aquarius showroom, office and shop in Skudai, from the road" class="w-full h-full object-cover">
@@ -50,19 +50,19 @@
                 <div x-data="{ thumb: 60, offset: 0 }"
                     x-init="const strip = $refs.strip; const update = () => { const max = strip.scrollWidth - strip.clientWidth; thumb = max > 0 ? strip.clientWidth / strip.scrollWidth * 100 : 100; offset = max > 0 ? strip.scrollLeft / max * (100 - thumb) : 0; }; update(); strip.addEventListener('scroll', update, { passive: true }); window.addEventListener('resize', update);">
                 <div x-ref="strip" class="flex gap-4 overflow-x-auto snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:grid lg:grid-cols-3 lg:overflow-visible">
-                    <{{ $showroomTag }} @if ($showroomHref) href="{{ $showroomHref }}" @endif class="group/img block relative shrink-0 snap-start w-[60vw] sm:w-[45vw] lg:w-auto overflow-hidden rounded-xl bg-neutral-100 aspect-4/3 border-2 border-neutral-200 hover:border-primary-600 transition-colors duration-200"><span class="sr-only">{{ __('strings.navbar_visit_showroom') }}: </span>
+                    <{{ $showroomTag }} @if ($showroomHref) href="{{ $showroomHref }}" @endif class="group/img block relative shrink-0 snap-start w-[60vw] sm:w-[45vw] lg:w-auto overflow-hidden rounded-xl bg-neutral-100 aspect-4/3 border-2 border-neutral-200 transition-all duration-200 hover:outline-3 hover:-outline-offset-3 hover:outline-primary-600 active:scale-97"><span class="sr-only">{{ __('strings.navbar_visit_showroom') }}: </span>
                         <picture>
                             <source srcset="{{ asset('assets/images/homepage/aquarius-showroom-concrete.webp') }}" type="image/webp">
                             <img loading="lazy" src="{{ asset('assets/images/homepage/aquarius-showroom-concrete.jpg') }}" alt="Concrete display pool at the Aquarius showroom" class="w-full h-full object-cover">
                         </picture>
                     </{{ $showroomTag }}>
-                    <{{ $showroomTag }} @if ($showroomHref) href="{{ $showroomHref }}" @endif class="group/img block relative shrink-0 snap-start w-[60vw] sm:w-[45vw] lg:w-auto overflow-hidden rounded-xl bg-neutral-100 aspect-4/3 border-2 border-neutral-200 hover:border-primary-600 transition-colors duration-200"><span class="sr-only">{{ __('strings.navbar_visit_showroom') }}: </span>
+                    <{{ $showroomTag }} @if ($showroomHref) href="{{ $showroomHref }}" @endif class="group/img block relative shrink-0 snap-start w-[60vw] sm:w-[45vw] lg:w-auto overflow-hidden rounded-xl bg-neutral-100 aspect-4/3 border-2 border-neutral-200 transition-all duration-200 hover:outline-3 hover:-outline-offset-3 hover:outline-primary-600 active:scale-97"><span class="sr-only">{{ __('strings.navbar_visit_showroom') }}: </span>
                         <picture>
                             <source srcset="{{ asset('assets/images/homepage/aquarius-showroom-vinyl.webp') }}" type="image/webp">
                             <img loading="lazy" src="{{ asset('assets/images/homepage/aquarius-showroom-vinyl.jpg') }}" alt="Vinyl display pool at the Aquarius showroom" class="w-full h-full object-cover">
                         </picture>
                     </{{ $showroomTag }}>
-                    <{{ $showroomTag }} @if ($showroomHref) href="{{ $showroomHref }}" @endif class="group/img block relative shrink-0 snap-start w-[60vw] sm:w-[45vw] lg:w-auto overflow-hidden rounded-xl bg-neutral-100 aspect-4/3 border-2 border-neutral-200 hover:border-primary-600 transition-colors duration-200"><span class="sr-only">{{ __('strings.navbar_visit_showroom') }}: </span>
+                    <{{ $showroomTag }} @if ($showroomHref) href="{{ $showroomHref }}" @endif class="group/img block relative shrink-0 snap-start w-[60vw] sm:w-[45vw] lg:w-auto overflow-hidden rounded-xl bg-neutral-100 aspect-4/3 border-2 border-neutral-200 transition-all duration-200 hover:outline-3 hover:-outline-offset-3 hover:outline-primary-600 active:scale-97"><span class="sr-only">{{ __('strings.navbar_visit_showroom') }}: </span>
                         <picture>
                             <source srcset="{{ asset('assets/images/homepage/aquarius-showroom-fibreglass.webp') }}" type="image/webp">
                             <img loading="lazy" src="{{ asset('assets/images/homepage/aquarius-showroom-fibreglass.jpg') }}" alt="Fibreglass display pool at the Aquarius showroom" class="w-full h-full object-cover">
@@ -98,7 +98,7 @@
                         <span class="sr-only">{{ __('strings.navbar_opens_new_tab') }}</span>
                     </a>
                     @if ($showroomHref)
-                    <a href="{{ $showroomHref }}" class="group text-primary-700 font-semibold underline-offset-4 hover:underline">
+                    <a href="{{ $showroomHref }}" class="group text-primary-700 font-semibold underline-offset-4 hover:underline active:underline">
                         {{ __('strings.trust_showroom_more') }}&nbsp;<svg class="inline-block size-5 align-[-0.25em] transition-transform duration-200 group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path></svg>
                     </a>
                     @endif
