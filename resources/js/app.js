@@ -1,7 +1,9 @@
 import './bootstrap';
 import 'preline';
 import Alpine from 'alpinejs';
+import contactForm from './contact-form';
 window.Alpine = Alpine;
+Alpine.data('contactForm', contactForm);
 Alpine.start();
 import 'fslightbox';
 

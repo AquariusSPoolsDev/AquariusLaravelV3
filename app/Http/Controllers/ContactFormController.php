@@ -21,12 +21,12 @@ class ContactFormController extends Controller
             'cust_name' => 'required|string|max:80',
             'cust_email' => 'required|email|max:80',
             'country_code' => 'required|string|max:10',
-            'cust_phone' => 'required|string|max:20',
-            'cust_pool_interests' => 'nullable|string|max:60',
+            'cust_phone' => ['required', 'string', 'max:20', 'regex:/^[0-9\-\s]+$/'],
+            'cust_pool_interests' => 'required|string|max:60',
             'cust_interest_other' => 'nullable|string|max:120|required_if:cust_pool_interests,Others (Please Specify)',
             'cust_query' => 'nullable|string|max:1000',
             'cust_agree' => 'required|accepted',
-        ]);
+        ], $this->validationMessages());
 
         $recentDuplicate = ContactSubmission::where('email', $data['cust_email'])
             ->where('created_at', '>=', now()->subHours(24))
@@ -54,5 +54,26 @@ class ContactFormController extends Controller
         }
 
         return redirect()->route('thank-you');
+    }
+
+    /**
+     * The same plain, translated messages the browser check shows, so a visitor sees one
+     * wording whichever side catches the problem.
+     *
+     * @return array<string, string>
+     */
+    private function validationMessages(): array
+    {
+        return [
+            'cust_name.required' => __('strings.cf_err_name_required'),
+            'cust_email.required' => __('strings.cf_err_email_required'),
+            'cust_email.email' => __('strings.cf_err_email_invalid'),
+            'cust_phone.required' => __('strings.cf_err_phone_required'),
+            'cust_phone.regex' => __('strings.cf_err_phone_invalid'),
+            'cust_pool_interests.required' => __('strings.cf_err_interest_required'),
+            'cust_interest_other.required_if' => __('strings.cf_err_other_required'),
+            'cust_agree.required' => __('strings.cf_err_agree_required'),
+            'cust_agree.accepted' => __('strings.cf_err_agree_required'),
+        ];
     }
 }

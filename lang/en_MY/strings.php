@@ -799,6 +799,14 @@ return [
     'cf_country_code_label' => 'Country code',
     'cf_others_placeholder' => 'Please describe your enquiry...',
     'cf_query_placeholder' => 'Share any details to help our team prepare...',
+    'cf_err_name_required' => 'Please enter your name.',
+    'cf_err_email_required' => 'Please enter your email address.',
+    'cf_err_email_invalid' => 'Please enter a valid email address, like name@example.com.',
+    'cf_err_phone_required' => 'Please enter your phone number.',
+    'cf_err_phone_invalid' => 'Phone numbers can only have digits, spaces and dashes.',
+    'cf_err_interest_required' => 'Please choose what you\'re interested in.',
+    'cf_err_other_required' => 'Please tell us what you\'re looking for.',
+    'cf_err_agree_required' => 'Please agree to the Privacy Policy so we can reply to you.',
 
     // THANK YOU FOR SUBMISSION
     'submission_accepted_title_heading' => 'Thank You',

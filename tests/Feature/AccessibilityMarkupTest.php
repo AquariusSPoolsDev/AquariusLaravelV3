@@ -60,7 +60,7 @@ class AccessibilityMarkupTest extends TestCase
         $this->assertStringContainsString('autocomplete="tel-national"', $html);
         $this->assertStringContainsString('autocomplete="tel-country-code"', $html);
         $this->assertStringContainsString('<span class="text-error-300" aria-hidden="true">*</span>', $html);
-        $this->assertStringNotContainsString('aria-invalid', $html);
+        $this->assertStringNotContainsString('aria-invalid="true"', $html);
     }
 
     public function test_a_field_with_an_error_points_to_its_message(): void

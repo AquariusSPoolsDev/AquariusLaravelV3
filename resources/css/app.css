@@ -150,6 +150,11 @@
     &:focus {
         border-color: var(--color-primary-600);
     }
+
+    /* a field with a problem keeps a red edge, also while it is being fixed */
+    &[aria-invalid="true"] {
+        border-color: var(--color-error-300);
+    }
 }
 
 /* FORM INPUTS - END */

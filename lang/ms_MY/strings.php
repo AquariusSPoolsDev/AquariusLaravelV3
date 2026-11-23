@@ -799,6 +799,14 @@ return [
     'cf_country_code_label' => 'Kod negara',
     'cf_others_placeholder' => 'Sila terangkan pertanyaan anda...',
     'cf_query_placeholder' => 'Kongsikan butiran untuk membantu pasukan kami bersedia...',
+    'cf_err_name_required' => 'Sila masukkan nama anda.',
+    'cf_err_email_required' => 'Sila masukkan alamat emel anda.',
+    'cf_err_email_invalid' => 'Sila masukkan alamat emel yang sah, seperti name@example.com.',
+    'cf_err_phone_required' => 'Sila masukkan nombor telefon anda.',
+    'cf_err_phone_invalid' => 'Nombor telefon hanya boleh mengandungi angka, ruang dan sengkang.',
+    'cf_err_interest_required' => 'Sila pilih perkara yang anda minati.',
+    'cf_err_other_required' => 'Sila beritahu kami apa yang anda cari.',
+    'cf_err_agree_required' => 'Sila bersetuju dengan Dasar Privasi supaya kami boleh membalas anda.',
 
     // THANK YOU FOR SUBMISSION
     'submission_accepted_title_heading' => 'Terima Kasih',
