@@ -1,6 +1,10 @@
 @php
+use App\Enums\SitePage;
 use App\Models\ImageGallery;
+use App\Models\Project;
 $images = ImageGallery::where('is_published', 1)->where('is_featured', 1)->orderBy('created_at', 'desc')->take(9)->get();
+// The Notable Projects link only shows when that page is switched on and has something to show
+$showProjectsLink = SitePage::Projects->isVisible() && Project::published()->exists();
 @endphp
 
 <section id="showcase" class="bg-white">
@@ -23,11 +27,17 @@ $images = ImageGallery::where('is_published', 1)->where('is_featured', 1)->order
             @endforeach
         </div>
 
-        <div class="mt-10 text-center">
+        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10">
             <a href="{{ route('pool-showcase-gallery') }}" class="aquarius-showcase-btn group">
                 {{__('strings.showcase_btn_gallery')}}
                 <svg class="size-5 transition-transform group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path></svg>
             </a>
+            @if ($showProjectsLink)
+            <a href="{{ route('projects-page') }}" data-homepage-projects-link class="inline-flex items-center gap-2 py-2 text-lg font-semibold text-primary-700 underline-offset-4 hover:underline active:underline transition-all group">
+                {{__('strings.showcase_link_projects')}}
+                <svg class="size-5 transition-transform group-hover:translate-x-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path></svg>
+            </a>
+            @endif
         </div>
         @endif
     </div>

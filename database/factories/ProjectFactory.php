@@ -18,7 +18,21 @@ class ProjectFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'title' => fake()->unique()->words(3, true).' Pool',
+            'location' => fake()->city(),
+            'description' => fake()->paragraph(),
+            'year_completed' => fake()->numberBetween(1995, 2026),
+            'tags' => ['Residential'],
+            'is_published' => false,
+            'sort_order' => 0,
         ];
+    }
+
+    /**
+     * A project that shows on the public site.
+     */
+    public function published(): static
+    {
+        return $this->state(fn (array $attributes): array => ['is_published' => true]);
     }
 }

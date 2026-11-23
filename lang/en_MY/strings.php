@@ -87,6 +87,7 @@ return [
     // HOMEPAGE - SHOWCASE SECTION
     'showcase_heading' => 'Showcase',
     'showcase_btn_gallery' => 'See all finished pools',
+    'showcase_link_projects' => 'See notable projects',
 
     // HOMEPAGE - REVIEWS SECTION
     'reviews_heading' => 'Reviews',

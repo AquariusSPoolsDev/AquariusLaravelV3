@@ -87,6 +87,7 @@ return [
     // HOMEPAGE - SHOWCASE SECTION
     'showcase_heading' => 'Galeri Kolam Renang',
     'showcase_btn_gallery' => 'Lihat semua kolam renang yang siap',
+    'showcase_link_projects' => 'Lihat projek terkemuka',
 
     // HOMEPAGE - REVIEWS SECTION
     'reviews_heading' => 'Ulasan Pelanggan',
