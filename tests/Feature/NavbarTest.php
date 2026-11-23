@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use App\Enums\SitePage;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Tests\Concerns\ShowsAllPages;
 use Tests\TestCase;
 
 /**
@@ -13,15 +14,7 @@ use Tests\TestCase;
 class NavbarTest extends TestCase
 {
     use DatabaseTransactions;
-
-    protected function setUp(): void
-    {
-        parent::setUp();
-
-        foreach (SitePage::cases() as $page) {
-            $page->setVisible(true);
-        }
-    }
+    use ShowsAllPages;
 
     private function navbarHtml(string $path): string
     {

@@ -2,9 +2,9 @@
 
 namespace Tests\Feature;
 
-use App\Enums\SitePage;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use PHPUnit\Framework\Attributes\DataProvider;
+use Tests\Concerns\ShowsAllPages;
 use Tests\TestCase;
 
 /**
@@ -14,15 +14,7 @@ use Tests\TestCase;
 class DecorativeEffectsTest extends TestCase
 {
     use DatabaseTransactions;
-
-    protected function setUp(): void
-    {
-        parent::setUp();
-
-        foreach (SitePage::cases() as $page) {
-            $page->setVisible(true);
-        }
-    }
+    use ShowsAllPages;
 
     /**
      * @return array<string, array{string}>

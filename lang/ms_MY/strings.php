@@ -5,7 +5,6 @@ return [
 
     // NAVBAR
     'navbar_homepage' => 'Laman Utama',
-    'navbar_showroom' => 'Bilik Pameran',
     'navbar_our_pools' => 'Kolam Renang Kami',
     'navbar_our_pools_concrete' => 'Kolam Renang Konkrit',
     'navbar_our_pools_vinyl' => 'Kolam Renang Vinil',
@@ -50,7 +49,6 @@ return [
     'hero_video_play' => 'Main',
 
     // HOMEPAGE - TRUST SECTION
-    'trust_pill' => 'Tentang Kami',
     'trust_heading' => 'Di mana terdapat air, di situ ada kehidupan.',
     'trust_body' => 'Aquarius Swimming Pools telah membina lebih 1,000 kolam renang di seluruh Malaysia dalam tempoh lebih 30 tahun, untuk kediaman dan pembangunan komersial. Kami berpusat di Johor Bahru, dan pasukan kami sendiri menguruskan setiap projek dari perundingan pertama hingga penyerahan.',
     'trust_stats_years' => 'Tahun Pengalaman',
@@ -92,7 +90,6 @@ return [
 
     // HOMEPAGE - REVIEWS SECTION
     'reviews_heading' => 'Ulasan Pelanggan',
-    'reviews_btn_link' => 'Lihat Lagi ulasan',
 
     // HOMEPAGE - CONTACT SECTION
     'contact_heading' => 'Hubungi Kami',
@@ -104,9 +101,6 @@ return [
     'homepage_cta_strip_btn' => 'Tempah Penilaian Percuma',
 
     // HOMEPAGE FAQ
-    'homepage_services_pill' => 'Perkhidmatan Kami',
-    'homepage_showcase_pill' => 'Hasil Kerja Kami',
-    'homepage_faq_pill' => 'Soalan Lazim',
     'homepage_faq_heading' => 'Soalan Lazim',
     'homepage_faq_view_all' => 'Lihat semua soalan lazim',
 
@@ -158,8 +152,6 @@ return [
     'our_pools_fibreglass_overview' => 'Kolam renang gentian kaca tiba sebagai cangkerang siap kilang, diturunkan ke tapak yang digali dan siap dalam masa 5 hingga 7 hari. Dibina untuk tahan 40 hingga 50 tahun dengan penyelenggaraan yang rendah. Aquarius membekal dan memasang pelbagai model gentian kaca sedia ada.',
 
     'our_pools_learn_more' => 'Ketahui Lebih Lanjut',
-    'our_pools_overview_pill' => 'Jenis Kolam Renang',
-    'our_pools_comparison_pill' => 'Ketahui Perbandingannya',
 
     // POOL COMPARISON TABLE
     'pool_comparasion_title_heading' => 'Perbandingan Kolam Renang Konkrit, Vinil & Gentian Kaca',
@@ -225,9 +217,7 @@ return [
     'concrete_pool_subtitle_heading' => 'Dibina mengikut saiz dan bentuk pilihan anda. Masa pembinaan 60 hingga 90 hari. Tahan seumur hidup.',
     'concrete_pool_meta_description' => 'Aquarius membina kolam konkrit tersuai di seluruh Malaysia. Bebas reka bentuk. Pembinaan 60 hingga 90 hari. Berpangkalan di Johor Bahru. Perundingan percuma.',
     'concrete_pool_body' => 'Aquarius Swimming Pools membina kolam renang konkrit mengikut sebarang saiz, bentuk, dan kedalaman, berpangkalan di Johor Bahru dengan lebih 30 tahun pengalaman di seluruh Malaysia. Setiap kolam menggunakan rangka tetulang keluli yang disiapkan dengan pilihan jubin, plaster, kerikil, atau batu. Pilihan termasuk jakuzi bersepadu, kolam cetek, air terjun, dan hiasan air tersuai. Baca lebih lanjut untuk mengetahui cara kolam konkrit dibina, dan sama ada ia sesuai untuk hartanah anda.',
-    'concrete_pool_steps_pill' => 'Proses Pembinaan',
     'concrete_pool_steps_title' => 'Bagaimana Kolam Konkrit Dibina?',
-    'concrete_pool_pros_cons_pill' => 'Kelebihan & Kelemahan',
     'concrete_pool_pros_cons_title' => 'Adakah Kolam Konkrit Sesuai untuk Anda?',
     'concrete_pool_step_1_title' => 'Penggalian',
     'concrete_pool_step_1_description' => 'Pasukan kami menggali kolam mengikut bentuk dan kedalaman yang dirancang.',
@@ -264,9 +254,7 @@ return [
     'vinyl_pool_subtitle_heading' => 'Rangka keluli tahan karat. Jaminan 5 hingga 10 tahun. Dipasang dalam 2 hingga 3 minggu, tidak termasuk masa untuk diperoleh. Jenis kolam paling mampu milik.',
     'vinyl_pool_meta_description' => 'Kolam vinil oleh Aquarius, Johor Bahru. Rangka keluli tahan karat, jaminan 5 hingga 10 tahun. Pemasangan 2 hingga 3 minggu, tidak termasuk masa untuk diperoleh.',
     'vinyl_pool_body' => 'Aquarius Swimming Pools memasang kolam renang vinil di seluruh Malaysia, berpangkalan di Johor Bahru. Setiap kolam menggunakan rangka dinding keluli tahan karat yang dimasukkan ke dalam tanah galian, dilapisi dengan pelapik vinil yang telah disuai. Rangka kami memberikan jaminan 5 hingga 10 tahun, bergantung pada siri. Pemasangan mengambil masa 2 hingga 3 minggu, tidak termasuk masa untuk diperoleh, menjadikan vinil pilihan dalam tanah terpantas selepas gentian kaca. Vinil ialah jenis kolam paling mampu milik yang ditawarkan oleh Aquarius. Baca lebih lanjut untuk mengetahui cara kolam vinil dibina, dan sama ada ia sesuai untuk hartanah anda.',
-    'vinyl_pool_steps_pill' => 'Proses Pembinaan',
     'vinyl_pool_steps_title' => 'Bagaimana Kolam Vinil Dibina?',
-    'vinyl_pool_pros_cons_pill' => 'Kelebihan & Kelemahan',
     'vinyl_pool_pros_cons_title' => 'Adakah Kolam Vinil Sesuai untuk Anda?',
     'vinyl_pool_step_1_title' => 'Penyediaan Tapak',
     'vinyl_pool_step_1_description' => 'Kami meratakan tanah dan membuang batu tajam serta serpihan yang boleh merosakkan pelapik.',
@@ -303,9 +291,7 @@ return [
     'fibreglass_pool_subtitle_heading' => 'Dipasang dalam 5 hingga 7 hari. Penyelenggaraan rendah. Tahan 40 hingga 50 tahun.',
     'fibreglass_pool_meta_description' => 'Aquarius memasang kolam gentian kaca di seluruh Malaysia. Berpusat di Johor Bahru. Pemasangan 5 hingga 7 hari, tahan 40 hingga 50 tahun. Perundingan percuma.',
     'fibreglass_pool_body' => 'Kolam renang gentian kaca dipasang lebih cepat daripada jenis kolam renang lain, siap dalam masa 5 hingga 7 hari. Aquarius Swimming Pools membekal dan memasang kolam renang gentian kaca di seluruh Malaysia, berpusat di Johor Bahru. Setiap kolam dihantar sebagai cengkerang pasang siap, dibina untuk tahan 40 hingga 50 tahun dengan penyelenggaraan yang rendah. Baca selanjutnya untuk mengetahui cara kolam gentian kaca dibina dan sama ada ia sesuai untuk rumah anda.',
-    'fibreglass_pool_steps_pill' => 'Proses Pembinaan',
     'fibreglass_pool_steps_title' => 'Bagaimana Kolam Gentian Kaca Dibina?',
-    'fibreglass_pool_pros_cons_pill' => 'Kelebihan & Kelemahan',
     'fibreglass_pool_pros_cons_title' => 'Adakah Kolam Gentian Kaca Sesuai untuk Anda?',
     'fibreglass_pool_step_1_title' => 'Penandaan & Penggalian',
     'fibreglass_pool_step_1_description' => 'Kami menanda saiz dan bentuk kolam di tapak, kemudian menggali lubang mengikut tanda tersebut.',
@@ -354,7 +340,6 @@ return [
     'pool_service_item_1_title' => 'Reka Bentuk & Pembinaan Kolam Renang',
     'pool_service_item_1_content_1' => 'Kolam renang selalunya menjadi tumpuan sesebuah rumah atau resort, jadi ia perlu kelihatan cantik dan tahan lama.',
     'pool_service_item_1_content_2' => 'Kami mereka bentuk setiap kolam mengikut tapak, bajet dan cara anda merancang untuk menggunakannya, kemudian membinanya supaya tahan lama.',
-    'pool_service_item_1_content_3' => '',
     'pool_service_item_2_title' => 'Pembaikan & Penyelenggaraan Kolam Renang',
     'pool_service_item_2_content_1' => 'Penyelenggaraan berkala memastikan kolam anda selamat untuk berenang dan melindungi pelaburan anda.',
     'pool_service_item_2_content_2' => 'Juruteknik kami sendiri mengendalikan pemeriksaan, pembaikan peralatan dan masalah haus dan lusuh.',
@@ -369,8 +354,6 @@ return [
     'pool_service_item_4_content_3' => 'Tanya kami bahagian yang sesuai untuk kolam anda.',
     'pool_service_item_5_title' => 'Perkhidmatan Selepas Jualan',
     'pool_service_item_5_content_1' => 'Sokongan kami berterusan selepas penyerahan. Kami memberi nasihat percuma untuk sebarang masalah sepanjang hayat kolam anda. Pam dan bahagian lain haus apabila berada di luar, dan sesetengahnya perlu diservis atau diganti. Hubungi kami dan kami akan mengenal pasti serta membaiki kerosakan.',
-    'pool_service_item_5_content_2' => '',
-    'pool_service_item_5_content_3' => '',
 
     // POOL ITEMS
     'pool_item_title_heading' => 'Peralatan & Bahan Kimia Kolam di Johor Bahru',
@@ -429,7 +412,6 @@ return [
     'pool_item_nav_core' => 'Peralatan Utama',
     'pool_item_nav_cleaning' => 'Pembersihan',
     'pool_item_nav_chemicals' => 'Bahan Kimia',
-    'pool_item_core_pill' => 'Peralatan Utama',
     'pool_item_core_title' => 'Pam, Penapis dan Chlorinator',
     'pool_item_core_body' => 'Ketiga-tiga komponen ini bekerjasama untuk memastikan air kolam anda bersih, selamat dan tersanitasi.',
     'pool_item_pump_brief' => 'Mengitar air melalui sistem penapisan, mengagihkan bahan kimia secara sekata, dan mengelakkan air kolam daripada bertakung.',
@@ -437,7 +419,6 @@ return [
     'pool_item_salt_chlorinator_brief' => 'Menukar garam kepada klorin melalui elektrolisis, memberikan sanitasi yang konsisten dengan rasa yang lebih lembut pada kulit dan mata.',
 
     // POOL ESSENTIALS - CLEANING ACCESSORIES SECTION HEADINGS
-    'pool_item_equip_pill' => 'Aksesori Pembersihan',
     'pool_item_equip_title' => 'Peralatan & Aksesori Kolam',
     'pool_item_equip_body' => 'Alat untuk membersihkan dan menguji kolam anda.',
 
@@ -479,7 +460,6 @@ return [
     'pool_item_equip_vacuum_brush_rollers_body' => 'Kepala vakum 14 inci dengan berus sisi bersepadu dan penggelek untuk pembersihan lantai kolam yang menyeluruh. Badan plastik ABS yang kuat untuk ketahanan jangka panjang. Serasi dengan hos vakum standard dan tiang teleskopik.',
 
     // POOL ESSENTIALS - POOL CHEMICALS SECTION HEADINGS
-    'pool_item_chem_pill' => 'Bahan Kimia Kolam',
     'pool_item_chem_title' => 'Bahan Kimia Kolam Renang',
     'pool_item_chem_body' => 'Bahan kimia untuk mengekalkan air kolam yang selamat, bersih dan seimbang.',
 
@@ -643,9 +623,7 @@ return [
     'contact_subtitle_heading' => 'Telefon, WhatsApp atau lawati kolam pameran kami di Johor Bahru.',
     'contact_meta_description' => 'Hubungi Aquarius Swimming Pools di Johor Bahru melalui telefon, WhatsApp, e-mel, atau lawati kolam pameran kami.',
     'contact_fill_body' => 'Isi borang dan pasukan kami akan menghubungi anda.',
-    'contact_visit_showpool_pill' => 'Lawati Kami',
     'contact_visit_showpool_heading' => 'Kunjungi Bilik Pameran Kolam Renang Kami',
-    'contact_visit_showpool_desc' => 'Anda juga boleh melawat kami secara terus di bilik pameran kami semasa waktu perniagaan.',
     'contact_showpool_address_title' => 'Alamat Bilik Pameran',
     'contact_get_directions' => 'Dapatkan arah',
     'contact_business_hours_title' => 'Waktu Perniagaan',
@@ -663,12 +641,8 @@ return [
     'reviews_display_heading' => 'Ulasan',
     'reviews_subtitle_heading' => 'Dengarkan ulasan daripada pelanggan',
     'reviews_meta_description' => 'Pelanggan Aquarius Swimming Pools berkongsi pengalaman membina kolam konkrit, gentian kaca, dan vinil di Johor Bahru dan seluruh Malaysia.',
-    'reviews_pill' => 'Ulasan Pelanggan',
     'reviews_fb_recommended' => 'Disyorkan',
     'reviews_body_title' => 'Dengar terus daripada pelanggan kami tentang pengalaman mereka bersama Aquarius.',
-    'reviews_total_review' => 'jumlah ulasan',
-    'reviews_avg_rating' => 'Purata Penilaian:',
-    'reviews_of_5_star' => 'daripada 5',
     'reviews_based_on' => 'Berdasarkan :total ulasan',
     'reviews_loading' => 'Memuatkan ulasan...',
     'reviews_view_all' => 'Lihat semua ulasan',
@@ -680,7 +654,6 @@ return [
     'faq_display_heading' => 'Soalan Lazim',
     'faq_subtitle_heading' => 'Jawapan tentang pembinaan, penjagaan dan keselamatan kolam renang.',
     'faq_meta_description' => 'Soalan lazim tentang pembinaan kolam renang, bahan, penyelenggaraan, dan keselamatan. Dijawab oleh Aquarius Swimming Pools, Johor Bahru.',
-    'faq_pill' => 'Soalan Lazim',
     'faq_heading_2' => 'Soalan anda, dijawab',
     'faq_content_1' => 'Tiada jawapan yang anda ingin cari? Hubungi pasukan kami dan kami akan cuba membalas kepada anda.',
     'faq_content_2' => '',
@@ -761,8 +734,6 @@ return [
     'terms_display_heading' => 'Terma & Syarat',
     'terms_subtitle_heading' => '',
     'terms_notice_alert' => 'Sila baca terma ini dengan teliti. (English option available)',
-    'terms_date_updated_title' => 'Tarikh Dikemaskini',
-    'terms_date_updated' => '',
 
     // privacy
     'privacy_title_heading' => 'Dasar Privasi',
@@ -795,7 +766,6 @@ return [
     'cf_step_2_interest_label' => 'Minat (Pilih Satu)',
     'cf_step_2_select_an_option' => 'Pilih',
     'cf_step_2_your_question' => 'Soalan anda',
-    'cf_error_summary' => 'Sila semak borang untuk ralat dan cuba lagi.',
     'cf_country_others' => 'Lain-lain',
     'cf_country_code_label' => 'Kod negara',
     'cf_others_placeholder' => 'Sila terangkan pertanyaan anda...',
@@ -902,7 +872,6 @@ return [
     'projects_back_to_projects' => 'Kembali ke Projek',
     'projects_location_label' => 'Lokasi',
     'projects_year_label' => 'Tahun Siap',
-    'projects_view_project' => 'Lihat Projek',
     'projects_get_quote' => 'Tempah Penilaian Percuma',
     'projects_contact_cta_title' => 'Mahukan kolam seperti ini?',
     'projects_contact_cta_body' => 'Beritahu kami tentang ruang anda, dan kami akan merancang pembinaannya bersama anda.',

@@ -34,6 +34,12 @@
         <a class="font-semibold transition-all text-neutral-950 underline underline-offset-4 hover:no-underline active:no-underline"
             href="{{ route('homepage') }}">{{__('strings.navbar_homepage')}}</a>
 
+        {{-- Projects can be switched off on the admin Page Visibility screen; its links disappear with it --}}
+        @if (\App\Enums\SitePage::Projects->isVisible())
+        <a class="font-semibold transition-all text-neutral-950 underline underline-offset-4 hover:no-underline active:no-underline"
+            href="{{ route('projects-page') }}">{{__('strings.footer_projects')}}</a>
+        @endif
+
         <a class="font-semibold transition-all text-neutral-950 underline underline-offset-4 hover:no-underline active:no-underline"
             href="{{ route('privacy-page') }}">{{__('strings.footer_privacy')}}</a>
 

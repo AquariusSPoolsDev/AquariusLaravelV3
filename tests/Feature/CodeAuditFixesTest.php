@@ -7,6 +7,7 @@ use App\Models\CustReview;
 use App\Models\Project;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\Blade;
+use Tests\Concerns\ShowsAllPages;
 use Tests\TestCase;
 
 /**
@@ -18,15 +19,7 @@ use Tests\TestCase;
 class CodeAuditFixesTest extends TestCase
 {
     use DatabaseTransactions;
-
-    protected function setUp(): void
-    {
-        parent::setUp();
-
-        foreach (SitePage::cases() as $page) {
-            $page->setVisible(true);
-        }
-    }
+    use ShowsAllPages;
 
     public function test_tailwind_sources_stay_inside_the_project(): void
     {
@@ -182,7 +175,27 @@ class CodeAuditFixesTest extends TestCase
 
         $this->assertFileDoesNotExist(resource_path('views/pages/04-pool-type-vinyl.blade.php'));
         $this->get('/en/vinyl-pools')->assertSee('?interest=Steel+Structure+Vinyl+Pools', false);
-        $this->get('/ms/fibreglass-pools')->assertSee('"name": "Fibreglass Swimming Pool Installation"', false);
+    }
+
+    public function test_structured_data_names_are_translated_and_plain_text(): void
+    {
+        // #19: breadcrumbs and service names follow the page language, and "&" reaches Google as "&"
+        $schemas = function (string $path): array {
+            preg_match_all('/<script type="application\/ld\+json">(.*?)<\/script>/s', $this->get($path)->assertOk()->getContent(), $matches);
+
+            return collect($matches[1])->map(fn (string $json): array => json_decode($json, true, flags: JSON_THROW_ON_ERROR))->keyBy(fn (array $schema): string => implode(',', (array) ($schema['@type'] ?? '@graph')))->all();
+        };
+
+        $malay = $schemas('/ms/fibreglass-pools');
+        $this->assertSame(__('strings.fibreglass_pool_title_heading', locale: 'ms_MY'), $malay['Service']['name']);
+        $this->assertSame(
+            [__('strings.navbar_homepage', locale: 'ms_MY'), __('strings.our_pools_display_heading', locale: 'ms_MY'), __('strings.fibreglass_pool_display_heading', locale: 'ms_MY')],
+            array_column($malay['BreadcrumbList']['itemListElement'], 'name'),
+        );
+
+        $english = $schemas('/en/pool-items-equipments');
+        $this->assertSame('Pool Items & Equipment', $english['BreadcrumbList']['itemListElement'][1]['name']);
+        $this->assertSame(url('/en'), $english['BreadcrumbList']['itemListElement'][0]['item']);
     }
 
     public function test_pros_and_cons_skip_empty_points(): void
@@ -193,6 +206,15 @@ class CodeAuditFixesTest extends TestCase
         $this->assertSame(1, substr_count($html, '<li>'));
         $this->assertStringContainsString(e(__('strings.vinyl_pool_disadvantage_1_title')).':</strong>', $html);
         $this->assertSame(3, substr_count(Blade::render('<x-our-pools.pros-cons-card pool="concrete" type="advantage" />'), '<li>'));
+    }
+
+    public function test_html_sitemap_lists_projects_only_while_the_page_is_on(): void
+    {
+        $this->get('/en/sitemap')->assertOk()->assertSee('href="'.route('projects-page', ['locale' => 'en']).'"', false);
+
+        SitePage::Projects->setVisible(false);
+
+        $this->get('/en/sitemap')->assertOk()->assertDontSee('href="'.route('projects-page', ['locale' => 'en']).'"', false);
     }
 
     public function test_view_only_routes_use_route_view(): void

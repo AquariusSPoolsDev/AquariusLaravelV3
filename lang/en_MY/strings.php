@@ -5,7 +5,6 @@ return [
 
     // NAVBAR
     'navbar_homepage' => 'Homepage',
-    'navbar_showroom' => 'Showroom',
     'navbar_our_pools' => 'Our Pools',
     'navbar_our_pools_concrete' => 'Concrete Pools',
     'navbar_our_pools_vinyl' => 'Vinyl Pools',
@@ -50,7 +49,6 @@ return [
     'hero_video_play' => 'Play',
 
     // HOMEPAGE - TRUST SECTION
-    'trust_pill' => 'Who We Are',
     'trust_heading' => 'Where there is water, there is life.',
     'trust_body' => 'Aquarius Swimming Pools has built over 1,000 pools across Malaysia in more than 30 years, for homes and commercial developments. We are based in Johor Bahru, and our own team handles each project from the first consultation to handover.',
     'trust_stats_years' => 'Years of Experience',
@@ -92,7 +90,6 @@ return [
 
     // HOMEPAGE - REVIEWS SECTION
     'reviews_heading' => 'Reviews',
-    'reviews_btn_link' => 'View More Reviews',
 
     // HOMEPAGE - CONTACT SECTION
     'contact_heading' => 'Contact Us',
@@ -104,9 +101,6 @@ return [
     'homepage_cta_strip_btn' => 'Book a Free Assessment',
 
     // HOMEPAGE FAQ
-    'homepage_services_pill' => 'What We Offer',
-    'homepage_showcase_pill' => 'Our Work',
-    'homepage_faq_pill' => 'FAQ',
     'homepage_faq_heading' => 'Common Questions',
     'homepage_faq_view_all' => 'View all FAQs',
 
@@ -158,8 +152,6 @@ return [
     'our_pools_fibreglass_overview' => 'Fibreglass pools arrive as a pre-manufactured shell, lowered into the excavated site and ready in 5 to 7 days. Built to last 40 to 50 years with low maintenance. Aquarius supplies and installs a range of ready-made fibreglass models.',
 
     'our_pools_learn_more' => 'Learn More',
-    'our_pools_overview_pill' => 'Pool Types',
-    'our_pools_comparison_pill' => 'Know The Difference',
 
     // POOL COMPARISON TABLE
     'pool_comparasion_title_heading' => 'Concrete, Vinyl & Fibreglass Pools Comparison',
@@ -225,9 +217,7 @@ return [
     'concrete_pool_subtitle_heading' => 'Custom-built to any size or shape. 60 to 90 day build time. Built to last a lifetime.',
     'concrete_pool_meta_description' => 'Aquarius builds custom concrete pools across Malaysia. Any size, shape, or depth. 60 to 90 day build time. Based in Johor Bahru. Free consultation.',
     'concrete_pool_body' => 'Aquarius Swimming Pools builds concrete pools to any size, shape, and depth, based in Johor Bahru with over 30 years of experience across Malaysia. Each pool uses a steel-reinforced framework finished with your choice of tiles, plaster, pebbles, or stone. Options include integrated jacuzzis, wading pools, waterfalls, and custom water features. Read on to see how concrete pools are built, and whether one is right for your property.',
-    'concrete_pool_steps_pill' => 'How it\'s made',
     'concrete_pool_steps_title' => 'How Are Concrete Pools Built?',
-    'concrete_pool_pros_cons_pill' => 'Pros & Cons',
     'concrete_pool_pros_cons_title' => 'Is a Concrete Pool Right for You?',
     'concrete_pool_step_1_title' => 'Excavation',
     'concrete_pool_step_1_description' => 'Our crew digs out the pool to the planned shape and depth.',
@@ -264,9 +254,7 @@ return [
     'vinyl_pool_subtitle_heading' => 'Stainless steel frames. 5 to 10 year warranty. Installed in 2 to 3 weeks, not including ordering time. Most affordable pool type.',
     'vinyl_pool_meta_description' => 'Vinyl pools by Aquarius, Johor Bahru. Stainless steel frames, 5 to 10 year warranty. 2 to 3 week installation, not including ordering time.',
     'vinyl_pool_body' => 'Aquarius Swimming Pools installs vinyl pools across Malaysia, based in Johor Bahru. Each pool uses stainless steel wall frames set into excavated ground, lined with a fitted vinyl liner. Our frames carry a 5 to 10 year warranty, depending on the series. Installation takes 2 to 3 weeks, not including ordering time, making vinyl the fastest in-ground option after fibreglass. Vinyl is the most affordable pool type Aquarius offers. Read on to see how vinyl pools are built, and whether one is right for your property.',
-    'vinyl_pool_steps_pill' => 'How it\'s made',
     'vinyl_pool_steps_title' => 'How Are Vinyl Pools Built?',
-    'vinyl_pool_pros_cons_pill' => 'Pros & Cons',
     'vinyl_pool_pros_cons_title' => 'Is a Vinyl Pool Right for You?',
     'vinyl_pool_step_1_title' => 'Site Preparation',
     'vinyl_pool_step_1_description' => 'We level the ground and clear away sharp stones and debris that could damage the liner.',
@@ -303,9 +291,7 @@ return [
     'fibreglass_pool_subtitle_heading' => 'Installed in 5 to 7 days. Low maintenance. Built to last 40 to 50 years.',
     'fibreglass_pool_meta_description' => 'Aquarius installs fibreglass pools across Malaysia. Based in Johor Bahru. Fast 5 to 7 day installation, 40 to 50 year lifespan. Free consultation.',
     'fibreglass_pool_body' => 'Fibreglass swimming pools install faster than any other pool type, ready in 5 to 7 days. Aquarius Swimming Pools supplies and installs fibreglass pools across Malaysia, based in Johor Bahru. Each pool ships as a pre-manufactured shell, built to last 40 to 50 years with minimal upkeep. Read on to see how fibreglass pools are built, and whether one is the right fit for your home.',
-    'fibreglass_pool_steps_pill' => 'How it\'s made',
     'fibreglass_pool_steps_title' => 'How Are Fibreglass Pools Built?',
-    'fibreglass_pool_pros_cons_pill' => 'Pros & Cons',
     'fibreglass_pool_pros_cons_title' => 'Is a Fibreglass Pool Right for You?',
     'fibreglass_pool_step_1_title' => 'Marking & Excavation',
     'fibreglass_pool_step_1_description' => 'We mark the pool\'s size and shape on site, then dig the hole to those lines.',
@@ -354,7 +340,6 @@ return [
     'pool_service_item_1_title' => 'Design & Construction of Swimming Pools',
     'pool_service_item_1_content_1' => 'A pool is often the centre of a home or resort, so it has to look right and last.',
     'pool_service_item_1_content_2' => 'We design each pool around your site, your budget and how you plan to use it, then build it to last.',
-    'pool_service_item_1_content_3' => '',
     'pool_service_item_2_title' => 'Pool Repair & Maintenance',
     'pool_service_item_2_content_1' => 'Regular maintenance keeps your pool safe to swim in and protects what you spent on it.',
     'pool_service_item_2_content_2' => 'Our own technicians handle check-ups, equipment repairs and wear-and-tear problems.',
@@ -369,8 +354,6 @@ return [
     'pool_service_item_4_content_3' => 'Ask us which parts suit your pool.',
     'pool_service_item_5_title' => 'After Sales Services',
     'pool_service_item_5_content_1' => 'Our support continues after handover. We give free advice on any problem for the life of your pool. Pumps and other parts wear out outdoors, and some need servicing or replacing. Contact us and we will find and fix the fault.',
-    'pool_service_item_5_content_2' => '',
-    'pool_service_item_5_content_3' => '',
 
     // POOL ITEMS
     'pool_item_title_heading' => 'Pool Equipment & Chemicals in Johor Bahru',
@@ -429,7 +412,6 @@ return [
     'pool_item_nav_core' => 'Core Equipment',
     'pool_item_nav_cleaning' => 'Cleaning',
     'pool_item_nav_chemicals' => 'Chemicals',
-    'pool_item_core_pill' => 'Core Equipment',
     'pool_item_core_title' => 'Pump, Filter and Chlorinator',
     'pool_item_core_body' => 'These three components work together to keep your pool water clean, safe, and properly sanitised.',
     'pool_item_pump_brief' => 'Circulates water through the filtration system, distributes chemicals evenly, and keeps the pool water from going stagnant.',
@@ -437,7 +419,6 @@ return [
     'pool_item_salt_chlorinator_brief' => 'Converts salt into chlorine via electrolysis, providing consistent sanitisation with a softer feel on skin and eyes.',
 
     // POOL ESSENTIALS - CLEANING ACCESSORIES SECTION HEADINGS
-    'pool_item_equip_pill' => 'Cleaning Accessories',
     'pool_item_equip_title' => 'Pool Equipment & Accessories',
     'pool_item_equip_body' => 'Tools for cleaning and testing your pool.',
 
@@ -479,7 +460,6 @@ return [
     'pool_item_equip_vacuum_brush_rollers_body' => '14-inch vacuum head with integrated side brushes and rollers for thorough pool floor cleaning. Tough ABS plastic body for long-term durability. Compatible with standard vacuum hoses and telescopic poles.',
 
     // POOL ESSENTIALS - POOL CHEMICALS SECTION HEADINGS
-    'pool_item_chem_pill' => 'Pool Chemicals',
     'pool_item_chem_title' => 'Pool Chemicals',
     'pool_item_chem_body' => 'Chemicals for maintaining safe, clean, and balanced pool water.',
 
@@ -643,9 +623,7 @@ return [
     'contact_subtitle_heading' => 'Call, WhatsApp, or visit our Johor Bahru showroom.',
     'contact_meta_description' => 'Reach Aquarius Swimming Pools in Johor Bahru by phone, WhatsApp, email, or visit our showroom.',
     'contact_fill_body' => 'Fill in the form and our team will get back to you.',
-    'contact_visit_showpool_pill' => 'Visit Us',
     'contact_visit_showpool_heading' => 'Visit Our Showroom',
-    'contact_visit_showpool_desc' => 'You can also visit us in person at our showroom during business hours.',
     'contact_showpool_address_title' => 'Showroom Address',
     'contact_get_directions' => 'Get directions',
     'contact_business_hours_title' => 'Business Hours',
@@ -663,12 +641,8 @@ return [
     'reviews_display_heading' => 'Reviews',
     'reviews_subtitle_heading' => 'See what our customers are saying',
     'reviews_meta_description' => 'Aquarius Swimming Pools customers share their experience building concrete, fibreglass, and vinyl pools in Johor Bahru and across Malaysia.',
-    'reviews_pill' => 'Customer Reviews',
     'reviews_fb_recommended' => 'Recommended',
     'reviews_body_title' => 'Hear directly from our customers about their experience with Aquarius.',
-    'reviews_total_review' => 'reviews total',
-    'reviews_avg_rating' => 'Average Rating:',
-    'reviews_of_5_star' => 'out of 5',
     'reviews_based_on' => 'Based on :total reviews',
     'reviews_loading' => 'Loading reviews...',
     'reviews_view_all' => 'View all reviews',
@@ -680,7 +654,6 @@ return [
     'faq_display_heading' => 'Frequently Asked Questions',
     'faq_subtitle_heading' => 'Answers on building, looking after and keeping a pool safe',
     'faq_meta_description' => 'Common questions about swimming pool construction, materials, maintenance, and safety. Answered by Aquarius Swimming Pools, Johor Bahru.',
-    'faq_pill' => 'FAQ',
     'faq_heading_2' => 'Your questions, answered',
     'faq_content_1' => 'Can\'t find what you need? Contact our team and we\'ll get back to you.',
     'faq_content_2' => '',
@@ -761,8 +734,6 @@ return [
     'terms_display_heading' => 'Terms & Conditions',
     'terms_subtitle_heading' => '',
     'terms_notice_alert' => 'Please read these terms carefully.',
-    'terms_date_updated_title' => 'Date Updated',
-    'terms_date_updated' => '',
 
     // privacy
     'privacy_title_heading' => 'Privacy Policy',
@@ -795,7 +766,6 @@ return [
     'cf_step_2_interest_label' => 'Interest (Choose One)',
     'cf_step_2_select_an_option' => 'Select option',
     'cf_step_2_your_question' => 'Your Query',
-    'cf_error_summary' => 'Please check the form for errors and try again.',
     'cf_country_others' => 'Others',
     'cf_country_code_label' => 'Country code',
     'cf_others_placeholder' => 'Please describe your enquiry...',
@@ -902,7 +872,6 @@ return [
     'projects_back_to_projects' => 'Back to Projects',
     'projects_location_label' => 'Location',
     'projects_year_label' => 'Year Completed',
-    'projects_view_project' => 'View Project',
     'projects_get_quote' => 'Book a Free Assessment',
     'projects_contact_cta_title' => 'Want a pool like this?',
     'projects_contact_cta_body' => 'Tell us about your space, and we\'ll plan the build with you.',

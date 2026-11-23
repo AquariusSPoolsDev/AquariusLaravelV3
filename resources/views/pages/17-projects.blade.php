@@ -18,7 +18,7 @@ $headerSubtitle = 'projects_subtitle_heading';
         ogImage="{{ asset('assets/images/pool_header/'.$imageFileLoc) }}"
     />
     <x-seo.breadcrumb-schema :items="[
-        ['name' => 'Notable Projects', 'url' => route('projects-page')],
+        ['name' => __('strings.projects_display_heading'), 'url' => route('projects-page')],
     ]" />
 @endsection
 

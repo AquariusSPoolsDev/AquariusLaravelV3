@@ -8,8 +8,6 @@
 @php
     $details = [
         'concrete' => [
-            'serviceName' => 'Concrete Swimming Pool Construction',
-            'breadcrumb' => 'Concrete Pools',
             // the contact form's Interest option this page's CTA preselects
             'interest' => 'Tiled Concrete Pools',
             // build-step photos under public/, without extension; steps without a photo yet show text only
@@ -23,8 +21,6 @@
             'photos' => 3,
         ],
         'vinyl' => [
-            'serviceName' => 'Vinyl Swimming Pool Installation',
-            'breadcrumb' => 'Vinyl Pools',
             'interest' => 'Steel Structure Vinyl Pools',
             'steps' => [
                 1 => 'assets/images/vinyl/steps/vinyl-step-1-preparation',
@@ -36,8 +32,6 @@
             'photos' => 3,
         ],
         'fibreglass' => [
-            'serviceName' => 'Fibreglass Swimming Pool Installation',
-            'breadcrumb' => 'Fibreglass Pools',
             'interest' => 'Fibreglass Pools',
             'steps' => [
                 1 => 'assets/images/fibreglass/steps/step-1',
@@ -64,12 +58,12 @@
     ogDescription="{{ __('strings.'.$pool.'_pool_meta_description') }}"
     ogImage="{{ asset('assets/images/pool_header/'.$imageFileLoc) }}" />
 <x-seo.service-schema
-    serviceName="{{ $details['serviceName'] }}"
+    serviceName="{{ __('strings.'.$pool.'_pool_title_heading') }}"
     serviceDescription="{{ __('strings.'.$pool.'_pool_meta_description') }}"
     serviceUrl="{{ route($pageRoute) }}" />
 <x-seo.breadcrumb-schema :items="[
-    ['name' => 'Our Pools', 'url' => route('our-pools-main')],
-    ['name' => $details['breadcrumb'], 'url' => route($pageRoute)],
+    ['name' => __('strings.our_pools_display_heading'), 'url' => route('our-pools-main')],
+    ['name' => __('strings.'.$headerTitle), 'url' => route($pageRoute)],
 ]" />
 @endsection
 

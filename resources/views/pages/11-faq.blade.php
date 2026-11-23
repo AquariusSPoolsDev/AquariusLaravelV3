@@ -19,7 +19,7 @@
     />
     <x-seo.faq-schema />
     <x-seo.breadcrumb-schema :items="[
-        ['name' => 'FAQ', 'url' => route('faq-page')],
+        ['name' => __('strings.faq_display_heading'), 'url' => route('faq-page')],
     ]" />
 @endsection
 

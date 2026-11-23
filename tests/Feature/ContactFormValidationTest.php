@@ -2,10 +2,10 @@
 
 namespace Tests\Feature;
 
-use App\Enums\SitePage;
 use App\Models\ContactSubmission;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\Mail;
+use Tests\Concerns\ShowsAllPages;
 use Tests\TestCase;
 
 /**
@@ -15,14 +15,11 @@ use Tests\TestCase;
 class ContactFormValidationTest extends TestCase
 {
     use DatabaseTransactions;
+    use ShowsAllPages;
 
     protected function setUp(): void
     {
         parent::setUp();
-
-        foreach (SitePage::cases() as $page) {
-            $page->setVisible(true);
-        }
 
         Mail::fake();
     }

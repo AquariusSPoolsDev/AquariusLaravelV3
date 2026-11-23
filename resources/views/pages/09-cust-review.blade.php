@@ -18,7 +18,7 @@ $headerSubtitle = 'reviews_subtitle_heading';
         ogImage="{{ asset('assets/images/pool_header/'.$imageFileLoc) }}"
     />
     <x-seo.breadcrumb-schema :items="[
-        ['name' => 'Customer Reviews', 'url' => route('customer-reviews-page')],
+        ['name' => __('strings.reviews_display_heading'), 'url' => route('customer-reviews-page')],
     ]" />
 @endsection
 

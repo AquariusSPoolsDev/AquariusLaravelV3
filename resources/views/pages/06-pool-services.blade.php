@@ -18,11 +18,11 @@ $headerSubtitle = 'pool_service_subtitle_heading';
         ogImage="{{ asset('assets/images/pool_header/'.$imageFileLoc) }}"
     />
     <x-seo.service-schema
-        serviceName="Swimming Pool Services"
+        serviceName="{{ __('strings.pool_service_title_heading') }}"
         serviceDescription="{{__('strings.pool_service_meta_description')}}"
         serviceUrl="{{ route('pool-services-page') }}" />
     <x-seo.breadcrumb-schema :items="[
-        ['name' => 'Pool Services', 'url' => route('pool-services-page')],
+        ['name' => __('strings.pool_service_display_heading'), 'url' => route('pool-services-page')],
     ]" />
 @endsection
 

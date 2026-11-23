@@ -2,10 +2,10 @@
 
 namespace Tests\Feature;
 
-use App\Enums\SitePage;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\MessageBag;
 use Illuminate\Support\ViewErrorBag;
+use Tests\Concerns\ShowsAllPages;
 use Tests\TestCase;
 
 /**
@@ -16,15 +16,7 @@ use Tests\TestCase;
 class AccessibilityMarkupTest extends TestCase
 {
     use DatabaseTransactions;
-
-    protected function setUp(): void
-    {
-        parent::setUp();
-
-        foreach (SitePage::cases() as $page) {
-            $page->setVisible(true);
-        }
-    }
+    use ShowsAllPages;
 
     public function test_every_page_has_a_skip_link_to_main_content(): void
     {

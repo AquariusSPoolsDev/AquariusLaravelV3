@@ -76,7 +76,7 @@ enum SitePage: string
             self::PoolServices => '/en/our-pool-services · Design and construction, repair and maintenance, renovation, equipment supply and after-sales service.',
             self::PoolItems => '/en/pool-items-equipments · Pumps, filters, chlorinators and pool chemicals.',
             self::Showcase => '/en/showcase · Photo gallery of finished pools, with search and tag filters.',
-            self::Projects => '/en/projects · Featured projects, each with its own page. Hiding it also removes its links from the menu, footer and thank-you page.',
+            self::Projects => '/en/projects · Featured projects, each with its own page. Hiding it also removes its links from the menu, footer, HTML sitemap and thank-you page.',
             self::Reviews => '/en/reviews · Published customer reviews, mostly from Google and Facebook.',
             self::Promotions => '/en/promotions · Current offers. The promotion banner at the top of the site links here.',
             self::ContactUs => '/en/contact-us · Contact form, phone numbers, address and opening hours. The contact form on the homepage keeps working.',

@@ -2,8 +2,8 @@
 
 namespace Tests\Feature;
 
-use App\Enums\SitePage;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Tests\Concerns\ShowsAllPages;
 use Tests\TestCase;
 
 /**
@@ -14,17 +14,9 @@ use Tests\TestCase;
 class InteractionStatesTest extends TestCase
 {
     use DatabaseTransactions;
+    use ShowsAllPages;
 
     private const PHOTO_LINK = 'hover:outline-3 hover:-outline-offset-3 hover:outline-primary-600 active:scale-97';
-
-    protected function setUp(): void
-    {
-        parent::setUp();
-
-        foreach (SitePage::cases() as $page) {
-            $page->setVisible(true);
-        }
-    }
 
     public function test_photos_never_zoom_on_hover(): void
     {

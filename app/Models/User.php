@@ -53,11 +53,6 @@ class User extends Authenticatable implements FilamentUser
         return $this->hasMany(ImageGallery::class, 'uploader_id');
     }
 
-    public function reviews()
-    {
-        return $this->hasMany(Review::class, 'reviewer_id');
-    }
-
     public function promotions()
     {
         return $this->hasMany(Promotion::class, 'uploader_id');

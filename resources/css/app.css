@@ -427,9 +427,6 @@
         }
         
 
-        .aquarius-right-hero-content {
-        }
-
         .hero-strip-container {
             @apply hidden lg:w-full lg:flex lg:items-end lg:justify-center lg:overflow-hidden lg:h-100;
         }
