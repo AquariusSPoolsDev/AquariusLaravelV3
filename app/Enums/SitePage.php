@@ -125,6 +125,15 @@ enum SitePage: string
     }
 
     /**
+     * Pages only an Admin may switch on or off, because hiding them breaks the site for every
+     * visitor (the domain itself, the way to reach us, and the policy the contact form links to).
+     */
+    public function isAdminOnly(): bool
+    {
+        return in_array($this, [self::Homepage, self::ContactUs, self::Privacy], true);
+    }
+
+    /**
      * Unfinished pages start hidden; everything else starts visible.
      */
     public function isVisibleByDefault(): bool

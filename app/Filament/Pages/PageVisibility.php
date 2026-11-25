@@ -3,6 +3,7 @@
 namespace App\Filament\Pages;
 
 use App\Enums\SitePage;
+use App\Models\User;
 use BackedEnum;
 use BezhanSalleh\FilamentShield\Traits\HasPageShield;
 use Filament\Actions\Action;
@@ -58,6 +59,8 @@ class PageVisibility extends Page
                         ->map(fn (SitePage $page): Toggle => Toggle::make($page->value)
                             ->label($page->label())
                             ->helperText($page->description())
+                            ->disabled(! $this->canChange($page))
+                            ->hint($this->canChange($page) ? null : 'Only an Admin can change this')
                             ->onIcon(Heroicon::Eye)
                             ->offIcon(Heroicon::EyeSlash))
                         ->all()))
@@ -70,7 +73,7 @@ class PageVisibility extends Page
         return $schema
             ->components([
                 Callout::make('Heads up: changes go live immediately')
-                    ->description('Saving updates the public website for every visitor straight away. Switching off a page that is already live also drops it from Google, and it can take weeks to rank again after you switch it back on. Take extra care with Homepage, Contact Us and Privacy Policy.')
+                    ->description('Saving updates the public website for every visitor straight away. Switching off a page that is already live also drops it from Google, and it can take weeks to rank again after you switch it back on. Homepage, Contact Us and Privacy Policy can only be switched by an Admin.')
                     ->warning(),
                 Section::make('Public pages')
                     ->description('Turn a page off while its content is unfinished. It shows "page not found" in both languages and Google stops listing it. Links to it stay on the website and lead to "page not found". Turn it back on when it is ready.')
@@ -89,11 +92,26 @@ class PageVisibility extends Page
             ]);
     }
 
+    /**
+     * Staff may switch most pages, but only an Admin may switch the pages the whole site depends on.
+     */
+    private function canChange(SitePage $page): bool
+    {
+        $user = auth()->user();
+
+        return ! $page->isAdminOnly() || ($user instanceof User && $user->hasRole('Admin'));
+    }
+
     public function save(): void
     {
         $data = $this->form->getState();
 
         foreach (SitePage::cases() as $page) {
+            // Locked switches are left out of the form state; skipping them also ignores tampered requests.
+            if (! $this->canChange($page)) {
+                continue;
+            }
+
             $page->setVisible((bool) ($data[$page->value] ?? false));
         }
 

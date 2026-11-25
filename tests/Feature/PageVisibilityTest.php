@@ -228,6 +228,64 @@ class PageVisibilityTest extends TestCase
             ->assertSee('Heads up: changes go live immediately');
     }
 
+    public function test_staff_cannot_change_the_pages_the_whole_site_depends_on(): void
+    {
+        $this->actingAsStaff();
+
+        Livewire::test(PageVisibility::class)
+            ->assertFormFieldDisabled('homepage')
+            ->assertFormFieldDisabled('contact_us')
+            ->assertFormFieldDisabled('privacy')
+            ->assertFormFieldEnabled('projects')
+            ->assertFormFieldEnabled('faq')
+            ->assertSee('Only an Admin can change this');
+    }
+
+    public function test_staff_saving_keeps_the_locked_pages_and_switches_the_others(): void
+    {
+        $this->showAllPages();
+        $this->actingAsStaff();
+
+        // A tampered request that sets the locked switches is ignored for them.
+        Livewire::test(PageVisibility::class)
+            ->set('data.homepage', false)
+            ->set('data.contact_us', false)
+            ->set('data.privacy', false)
+            ->set('data.faq', false)
+            ->call('save')
+            ->assertNotified('Page visibility saved');
+
+        $this->assertTrue(SitePage::Homepage->isVisible());
+        $this->assertTrue(SitePage::ContactUs->isVisible());
+        $this->assertTrue(SitePage::Privacy->isVisible());
+        $this->assertFalse(SitePage::Faq->isVisible());
+        $this->get('/en')->assertOk();
+    }
+
+    public function test_admin_can_still_switch_the_locked_pages(): void
+    {
+        $this->showAllPages();
+        $this->actingAsExistingUser('admin@aquariusswimmingpools.com');
+
+        Livewire::test(PageVisibility::class)
+            ->assertFormFieldEnabled('homepage')
+            ->assertFormFieldEnabled('contact_us')
+            ->assertFormFieldEnabled('privacy')
+            ->fillForm(['privacy' => false])
+            ->call('save')
+            ->assertNotified('Page visibility saved');
+
+        $this->assertFalse(SitePage::Privacy->isVisible());
+        $this->assertTrue(SitePage::Homepage->isVisible());
+    }
+
+    public function test_only_the_homepage_contact_and_privacy_pages_are_admin_only(): void
+    {
+        $adminOnly = array_values(array_filter(SitePage::cases(), fn (SitePage $page): bool => $page->isAdminOnly()));
+
+        $this->assertSame([SitePage::Homepage, SitePage::ContactUs, SitePage::Privacy], $adminOnly);
+    }
+
     public function test_user_without_a_role_cannot_open_the_page_visibility_screen(): void
     {
         Filament::setCurrentPanel('admin');
