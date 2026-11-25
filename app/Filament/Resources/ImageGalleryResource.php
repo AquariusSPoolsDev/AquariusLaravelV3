@@ -67,6 +67,7 @@ class ImageGalleryResource extends Resource
                         }
                     })
                     ->image()
+                    ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/gif', 'image/webp'])
                     ->imageEditor()
                     ->imageEditorAspectRatios([
                         null,

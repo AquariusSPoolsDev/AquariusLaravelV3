@@ -79,6 +79,7 @@ class ProjectForm
                     FileUpload::make('gallery_images')
                         ->label('Project Images')
                         ->image()
+                        ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/gif', 'image/webp'])
                         ->multiple()
                         ->reorderable()
                         ->disk('public')
