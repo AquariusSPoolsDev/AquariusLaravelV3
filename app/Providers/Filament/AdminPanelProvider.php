@@ -86,6 +86,8 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->unsavedChangesAlerts()
             ->favicon(asset('assets/favicon/favicon-16x16.png'))
+            // Browser tab titles read "Page - Aquarius Admin Panel". Set here, not via APP_NAME, which also names the login cookie.
+            ->brandName('Aquarius Admin Panel')
             ->brandLogo(fn () => view('filament.components.logo'))
             ->brandLogoHeight('3rem')
             ->defaultThemeMode(ThemeMode::Light)

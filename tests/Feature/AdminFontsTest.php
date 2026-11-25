@@ -21,6 +21,14 @@ class AdminFontsTest extends TestCase
             ->assertDontSee('Inter Variable', false);
     }
 
+    public function test_admin_tab_titles_name_the_admin_panel(): void
+    {
+        $this->get(Filament::getPanel('admin')->getLoginUrl())->assertOk()
+            ->assertSeeInOrder(['<title>', 'Login', ' - ', 'Aquarius Admin Panel', '</title>'], false);
+
+        $this->assertNotSame('Aquarius Admin Panel', config('app.name'));
+    }
+
     public function test_the_admin_theme_no_longer_sets_lato(): void
     {
         $theme = file_get_contents(resource_path('css/filament/admin/theme.css'));
