@@ -11,15 +11,19 @@ use App\Filament\Resources\UserResource;
 use App\Models\User;
 use BezhanSalleh\FilamentShield\Resources\Roles\RoleResource;
 use Filament\Facades\Filament;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Illuminate\Support\Str;
 use PHPUnit\Framework\Attributes\DataProvider;
 use Tests\TestCase;
 
 /**
- * Read-only tests — phpunit.xml points at the development MySQL database,
- * so these must never use RefreshDatabase or write records.
+ * phpunit.xml points at the development MySQL database, so these must never use RefreshDatabase.
+ * The only write is a throwaway Staff user, rolled back with the test's transaction.
  */
 class AdminPanelPermissionsTest extends TestCase
 {
+    use DatabaseTransactions;
+
     protected function setUp(): void
     {
         parent::setUp();
@@ -64,6 +68,22 @@ class AdminPanelPermissionsTest extends TestCase
     }
 
     /**
+     * Signs in as a throwaway Staff user. It is created inside the test's transaction and rolled back.
+     */
+    private function actingAsStaff(): void
+    {
+        $staff = User::query()->create([
+            'name' => 'Test Staff',
+            'email' => 'test-staff-'.Str::random(10).'@aquariusswimmingpools.com',
+            'password' => Str::password(),
+        ]);
+        $staff->assignRole('Staff');
+
+        Filament::setCurrentPanel('admin');
+        $this->actingAs($staff);
+    }
+
+    /**
      * @param  class-string  $resource
      */
     #[DataProvider('contentResources')]
@@ -80,7 +100,7 @@ class AdminPanelPermissionsTest extends TestCase
     #[DataProvider('contentResources')]
     public function test_staff_can_open_content_resources(string $resource): void
     {
-        $this->actingAsExistingUser('staff1@aquariusswimmingpools.com');
+        $this->actingAsStaff();
 
         $this->get($resource::getUrl('index'))->assertOk();
     }
@@ -91,7 +111,7 @@ class AdminPanelPermissionsTest extends TestCase
     #[DataProvider('userManagementResources')]
     public function test_staff_cannot_open_user_management(string $resource): void
     {
-        $this->actingAsExistingUser('staff1@aquariusswimmingpools.com');
+        $this->actingAsStaff();
 
         $this->get($resource::getUrl('index'))->assertForbidden();
     }
@@ -109,7 +129,7 @@ class AdminPanelPermissionsTest extends TestCase
 
     public function test_staff_cannot_force_delete_content(): void
     {
-        $this->actingAsExistingUser('staff1@aquariusswimmingpools.com');
+        $this->actingAsStaff();
 
         $this->assertFalse(ContactSubmissionResource::canForceDeleteAny());
         $this->assertTrue(ContactSubmissionResource::canDeleteAny());

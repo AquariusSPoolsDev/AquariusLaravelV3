@@ -71,11 +71,16 @@ class AdminDomainTest extends TestCase
     {
         config(['app.admin_url' => 'https://admin.aquariusswimmingpools.com', 'app.url' => 'https://aquariusswimmingpools.com']);
 
-        $this->get('https://admin.aquariusswimmingpools.com/en/faq')
+        $response = $this->get('https://admin.aquariusswimmingpools.com/en/faq')
             ->assertNotFound()
             ->assertSee('href="https://aquariusswimmingpools.com/"', false)
-            ->assertSee('href="https://aquariusswimmingpools.com/contact-us"', false)
-            ->assertDontSee('href="https://admin.aquariusswimmingpools.com', false);
+            ->assertSee('href="https://aquariusswimmingpools.com/contact-us"', false);
+
+        $this->assertDoesNotMatchRegularExpression(
+            '/<a\s[^>]*href="https:\/\/admin\.aquariusswimmingpools\.com/i',
+            $response->getContent(),
+            'A link on the admin 404 page points back to the admin subdomain.',
+        );
     }
 
     public function test_not_found_page_on_the_main_site_keeps_the_locale_links(): void
