@@ -110,13 +110,16 @@ class AdminDashboardWidgetsTest extends TestCase
         $this->assertSame($hiddenTagCount + $toggleLabelCount, substr_count($html, 'x-show="showAllTags"'));
     }
 
-    public function test_stats_are_hidden_for_resources_the_user_cannot_view(): void
+    /**
+     * Since Filament 4.17 a widget whose canView() is false refuses to load at all, instead of
+     * loading empty, so a user who can open none of its resources gets "forbidden".
+     */
+    public function test_stats_widget_is_forbidden_for_a_user_who_cannot_view_its_resources(): void
     {
         $this->actingAs(User::factory()->make(['email' => 'no-role@aquariusswimmingpools.com']));
 
-        Livewire::test(DashboardStatsWidget::class)
-            ->assertOk()
-            ->assertDontSee('Gallery images')
-            ->assertDontSee('Active promotions');
+        $this->assertFalse(DashboardStatsWidget::canView());
+
+        Livewire::test(DashboardStatsWidget::class)->assertForbidden();
     }
 }
