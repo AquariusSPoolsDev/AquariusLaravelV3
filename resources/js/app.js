@@ -126,6 +126,8 @@ function initShowcaseGallery(searchInput) {
     const tagCheckboxes = document.querySelectorAll('.tag-checkbox');
     const tagSelect = document.getElementById('multiple-with-conditional-counter-select');
     const noResultsMessage = document.getElementById('no-results-message');
+    const errorMessage = document.getElementById('gallery-error-message');
+    const status = document.getElementById('gallery-search-status');
 
     const selectedTags = () => [...new Set([
         ...Array.from(tagCheckboxes).filter((checkbox) => checkbox.checked).map((checkbox) => checkbox.value),
@@ -138,8 +140,17 @@ function initShowcaseGallery(searchInput) {
         loading: document.getElementById('loading-indicator'),
         params: () => ({ search: searchInput.value, tags: selectedTags() }),
         onLoaded: (data) => {
-            noResultsMessage.hidden = data.html.trim() !== '';
+            const total = Number(data.total) || 0;
+            noResultsMessage.hidden = total > 0;
+            errorMessage.hidden = true;
+            status.textContent = total === 0 ? status.dataset.none
+                : total === 1 ? status.dataset.one
+                : status.dataset.many.replace(':count', total);
             window.refreshFsLightbox?.();
+        },
+        onError: () => {
+            errorMessage.hidden = false;
+            status.textContent = status.dataset.error;
         },
     });
 

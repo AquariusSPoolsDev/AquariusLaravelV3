@@ -135,6 +135,10 @@ return [
 
     // BOTTOM FIXED BUTTON
     'back_to_top_text' => 'Back to Top',
+
+    // Error pages
+    'error_back_home' => 'Back to Homepage',
+    'error_contact' => 'Contact Us',
     'chat_whatsapp_btn' => 'Chat on WhatsApp',
 
     // HOMEPAGE META
@@ -599,6 +603,9 @@ return [
     'showcase_search_loading' => 'Loading...',
     'showcase_search_loading_desc' => 'This might take a moment. Please wait.',
     'showcase_search_no_result' => 'No results found.',
+    'showcase_search_found_one' => '1 photo found.',
+    'showcase_search_found_many' => ':count photos found.',
+    'showcase_search_error' => 'The photos could not load. Check your internet connection and try again.',
     'showcase_search_placeholder' => 'Search images...',
     'showcase_search_input_title' => 'Search Input',
     'showcase_search_filter_tag_title' => 'Filter by Tags',

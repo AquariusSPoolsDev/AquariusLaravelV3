@@ -113,4 +113,20 @@ return [
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Sender Names
+    |--------------------------------------------------------------------------
+    |
+    | The name shown in the inbox for each kind of email, so staff can tell a
+    | website enquiry from an admin email at a glance. The address is always
+    | the global "from" address above.
+    |
+    */
+
+    'sender_names' => [
+        'enquiries' => 'Aquarius Web',
+        'admin' => 'Aquarius Admin Panel',
+    ],
+
 ];

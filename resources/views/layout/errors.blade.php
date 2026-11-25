@@ -5,6 +5,8 @@
     if (! in_array($errorLocale, ['en', 'ms'], true)) {
         $errorLocale = session('locale') === 'ms_MY' ? 'ms' : 'en';
     }
+    // The app locale may not be set yet either, so the button labels name their language.
+    $errorLangLocale = $errorLocale === 'ms' ? 'ms_MY' : 'en_MY';
 
     // On the admin subdomain the public pages are blocked, so the buttons point at the main site.
     // Unprefixed paths work on the old public site today and 301 to /en/... once the new one is live.
@@ -50,11 +52,11 @@
             <div class="flex flex-wrap items-center justify-center gap-3">
                 <a href="{{ $errorHomeUrl }}"
                     class="py-2.5 px-5.5 inline-flex items-center gap-2 font-bold rounded-lg transition-all text-white bg-primary hover:bg-primary-700 active:bg-primary-800 active:scale-95 focus:bg-primary-700 cursor-pointer">
-                    Back to Homepage
+                    {{ __('strings.error_back_home', [], $errorLangLocale) }}
                 </a>
                 <a href="{{ $errorContactUrl }}"
                     class="py-2.5 px-5.5 inline-flex items-center gap-2 font-bold rounded-lg transition-all border border-neutral-300 bg-white text-neutral-700 hover:bg-neutral-50 hover:border-neutral-400 active:scale-95 cursor-pointer">
-                    Contact Us
+                    {{ __('strings.error_contact', [], $errorLangLocale) }}
                 </a>
             </div>
         </div>

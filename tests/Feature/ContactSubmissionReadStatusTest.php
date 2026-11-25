@@ -93,11 +93,15 @@ class ContactSubmissionReadStatusTest extends TestCase
         $this->assertSame('2', (string) ContactSubmissionResource::getNavigationBadge());
     }
 
-    public function test_user_menu_links_to_the_website(): void
+    /**
+     * The root, not /en: it works on the old public site now and on the new one after launch.
+     */
+    public function test_user_menu_links_to_the_website_home_page(): void
     {
         $this->get('/admin')
             ->assertOk()
             ->assertSee('View website')
-            ->assertSee(route('homepage', ['locale' => 'en']), false);
+            ->assertSee('href="'.rtrim(config('app.url'), '/').'/"', false)
+            ->assertDontSee('href="'.route('homepage', ['locale' => 'en']).'"', false);
     }
 }

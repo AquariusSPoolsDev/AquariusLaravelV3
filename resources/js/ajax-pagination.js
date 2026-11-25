@@ -12,10 +12,11 @@
  * @param {() => object} [options.params]   Extra query values, e.g. search and tags.
  * @param {boolean} [options.updateUrl]     Put ?page=N in the address bar, so reload and share keep the page.
  * @param {boolean} [options.scrollToList]  Scroll back to the top of the list after loading.
- * @param {(data: {html: string}) => void} [options.onLoaded]  Re-run sliders, lightbox, empty state, etc.
+ * @param {(data: {html: string, total: number}) => void} [options.onLoaded]  Re-run sliders, lightbox, empty state, etc.
+ * @param {() => void} [options.onError]   Tell the visitor a load failed (when there is no link to fall back to).
  * @returns {{ load: (page?: number|string, fallbackUrl?: string) => Promise<void> }}
  */
-export function ajaxPagination({ list, pagination, loading, params = () => ({}), updateUrl = false, scrollToList = false, onLoaded = () => {} }) {
+export function ajaxPagination({ list, pagination, loading, params = () => ({}), updateUrl = false, scrollToList = false, onLoaded = () => {}, onError = () => {} }) {
     const reduceMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     const setBusy = (busy) => {
@@ -57,6 +58,8 @@ export function ajaxPagination({ list, pagination, loading, params = () => ({}),
             console.error('Could not load the next page:', error);
             if (fallbackUrl) {
                 window.location.href = fallbackUrl;
+            } else {
+                onError();
             }
         }).finally(() => setBusy(false));
     };

@@ -3,7 +3,7 @@
 namespace Tests\Feature;
 
 use App\Models\User;
-use Filament\Auth\Notifications\ResetPassword;
+use App\Notifications\AdminResetPassword;
 use Filament\Auth\Pages\PasswordReset\RequestPasswordReset;
 use Filament\Facades\Filament;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
@@ -44,7 +44,7 @@ class PasswordResetTest extends TestCase
             ->assertNotified();
 
         $this->assertDatabaseHas('password_reset_tokens', ['email' => $user->email]);
-        Notification::assertSentTo($user, ResetPassword::class);
+        Notification::assertSentTo($user, AdminResetPassword::class);
     }
 
     public function test_unknown_email_does_not_store_a_token(): void

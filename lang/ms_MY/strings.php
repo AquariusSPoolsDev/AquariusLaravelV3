@@ -135,6 +135,10 @@ return [
 
     // BOTTOM FIXED BUTTON
     'back_to_top_text' => 'Kembali ke atas',
+
+    // Error pages
+    'error_back_home' => 'Kembali ke Laman Utama',
+    'error_contact' => 'Hubungi Kami',
     'chat_whatsapp_btn' => 'Tanya di WhatsApp',
 
     // HOMEPAGE META
@@ -599,6 +603,9 @@ return [
     'showcase_search_loading' => 'Memuat...',
     'showcase_search_loading_desc' => 'Ini mungkin mengambil sedikit masa. Sila tunggu.',
     'showcase_search_no_result' => 'Tiada keputusan dijumpai.',
+    'showcase_search_found_one' => '1 gambar dijumpai.',
+    'showcase_search_found_many' => ':count gambar dijumpai.',
+    'showcase_search_error' => 'Gambar tidak dapat dimuatkan. Semak sambungan internet anda dan cuba lagi.',
     'showcase_search_placeholder' => 'Cari gambar...',
     'showcase_search_input_title' => 'Input Carian',
     'showcase_search_filter_tag_title' => 'Saring mengikut tag',

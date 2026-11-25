@@ -18,6 +18,7 @@ abstract class Controller
         return response()->json([
             'html' => view($view, $data)->render(),
             'pagination' => (string) $paginator->links(),
+            'total' => $paginator->total(),
         ]);
     }
 }

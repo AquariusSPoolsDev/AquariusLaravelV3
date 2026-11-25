@@ -77,8 +77,9 @@ class AdminPanelProvider extends PanelProvider
                 'view-website' => Action::make('viewWebsite')
                     ->label('View website')
                     ->icon(Heroicon::OutlinedGlobeAlt)
-                    // The main site's address, not route(): on the admin subdomain route() would point back at the subdomain.
-                    ->url(fn (): string => rtrim(config('app.url'), '/').'/en')
+                    // The main site's home page, not route(): on the admin subdomain route() would point back at the subdomain.
+                    // The root works on the old public site and on the new one (which sends it on to /en).
+                    ->url(fn (): string => rtrim(config('app.url'), '/').'/')
                     ->openUrlInNewTab()
                     // A negative sort places it above the theme switcher, under Profile.
                     ->sort(-1),
