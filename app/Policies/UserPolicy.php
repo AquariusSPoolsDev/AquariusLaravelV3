@@ -2,13 +2,14 @@
 
 namespace App\Policies;
 
-use Illuminate\Foundation\Auth\User as AuthUser;
+use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
+use Illuminate\Foundation\Auth\User as AuthUser;
 
 class UserPolicy
 {
     use HandlesAuthorization;
-    
+
     public function viewAny(AuthUser $authUser): bool
     {
         return $authUser->can('view_any_user');
@@ -29,9 +30,17 @@ class UserPolicy
         return $authUser->can('update_user');
     }
 
-    public function delete(AuthUser $authUser): bool
+    /**
+     * Deleting is permanent, so nobody can delete their own account or the last Admin:
+     * either would leave the admin panel with no one to manage users.
+     */
+    public function delete(AuthUser $authUser, User $user): bool
     {
-        return $authUser->can('delete_user');
+        if (! $authUser->can('delete_user') || $authUser->is($user)) {
+            return false;
+        }
+
+        return ! ($user->hasRole('Admin') && User::role('Admin')->count() <= 1);
     }
 
     public function deleteAny(AuthUser $authUser): bool
@@ -68,5 +77,4 @@ class UserPolicy
     {
         return $authUser->can('reorder_user');
     }
-
 }
