@@ -8,8 +8,8 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
 
 /**
- * The homepage Showcase section links to Notable Projects next to the gallery button,
- * but only when that page is switched on and at least one project is published.
+ * The homepage Showcase section always links to Notable Projects next to the gallery button,
+ * even while that page is switched off or has no published projects.
  */
 class HomepageProjectsLinkTest extends TestCase
 {
@@ -38,27 +38,23 @@ class HomepageProjectsLinkTest extends TestCase
 
     public function test_link_is_in_malay_on_the_malay_homepage(): void
     {
-        SitePage::Projects->setVisible(true);
-        Project::factory()->published()->create();
-
         $this->get('/ms')->assertOk()
             ->assertSee('Lihat projek terkemuka')
             ->assertSee('/ms/projects', false);
     }
 
-    public function test_link_is_hidden_when_the_projects_page_is_off(): void
+    public function test_link_still_shows_when_the_projects_page_is_off(): void
     {
         SitePage::Projects->setVisible(false);
-        Project::factory()->published()->create();
 
-        $this->get('/en')->assertOk()->assertDontSee('data-homepage-projects-link', false);
+        $this->get('/en')->assertOk()->assertSee('data-homepage-projects-link', false);
     }
 
-    public function test_link_is_hidden_when_no_project_is_published(): void
+    public function test_link_still_shows_when_no_project_is_published(): void
     {
         SitePage::Projects->setVisible(true);
         Project::factory()->create();
 
-        $this->get('/en')->assertOk()->assertDontSee('data-homepage-projects-link', false);
+        $this->get('/en')->assertOk()->assertSee('data-homepage-projects-link', false);
     }
 }

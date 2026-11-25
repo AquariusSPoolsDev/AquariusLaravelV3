@@ -9,6 +9,7 @@ use App\Models\User;
 use Filament\Facades\Filament;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Str;
 use Livewire\Livewire;
 use PHPUnit\Framework\Attributes\DataProvider;
 use Tests\TestCase;
@@ -51,6 +52,22 @@ class PageVisibilityTest extends TestCase
 
         Filament::setCurrentPanel('admin');
         $this->actingAs($user);
+    }
+
+    /**
+     * Signs in as a throwaway Staff user. It is created inside the test's transaction and rolled back.
+     */
+    private function actingAsStaff(): void
+    {
+        $staff = User::query()->create([
+            'name' => 'Test Staff',
+            'email' => 'test-staff-'.Str::random(10).'@aquariusswimmingpools.com',
+            'password' => Str::password(),
+        ]);
+        $staff->assignRole('Staff');
+
+        Filament::setCurrentPanel('admin');
+        $this->actingAs($staff);
     }
 
     /**
@@ -131,7 +148,10 @@ class PageVisibilityTest extends TestCase
 
         $projectsLink = 'href="'.url('/en/projects').'"';
 
-        $this->get('/en')->assertOk()->assertDontSee($projectsLink, false);
+        // The homepage Showcase link to Projects always shows (user's choice); the menu and footer links still go.
+        $homepage = $this->get('/en')->assertOk()->getContent();
+        $this->assertSame(1, substr_count($homepage, $projectsLink));
+        $this->assertStringContainsString('data-homepage-projects-link', $homepage);
         $this->get('/en/faq')->assertOk()->assertDontSee($projectsLink, false);
     }
 
@@ -201,7 +221,7 @@ class PageVisibilityTest extends TestCase
 
     public function test_staff_can_open_the_page_visibility_screen(): void
     {
-        $this->actingAsExistingUser('staff1@aquariusswimmingpools.com');
+        $this->actingAsStaff();
 
         $this->get(PageVisibility::getUrl())
             ->assertOk()

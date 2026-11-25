@@ -8,7 +8,8 @@ use App\Models\SiteSetting;
  * Public pages that can be switched off from the admin panel's Page Visibility screen.
  * A hidden page returns 404 (in both languages) and drops out of sitemap.xml.
  * The navbar drops its link. Other links stay and lead to the 404 page, except the Projects
- * links and the showroom links to Contact Us, which are removed too.
+ * links (menu, footer, HTML sitemap, thank-you page) and the showroom links to Contact Us,
+ * which are removed too. The homepage Showcase link to Projects always shows.
  */
 enum SitePage: string
 {
