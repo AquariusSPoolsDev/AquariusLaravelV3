@@ -1,11 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap');
-
 @import '../../../../vendor/filament/filament/resources/css/theme.css';
 
-:root, .fi-root {
-    font-family: 'Lato', ui-sans-serif, system-ui, sans-serif !important;
-}
-
+/* Body text is Figtree, set with ->font() in AdminPanelProvider, which also loads Outfit from Bunny. */
 h1, h2, h3, h4, h5, h6,
 .fi-header-heading,
 .fi-sidebar-header,

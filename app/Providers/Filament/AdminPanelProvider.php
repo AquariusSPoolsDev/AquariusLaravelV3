@@ -38,6 +38,8 @@ class AdminPanelProvider extends PanelProvider
             ->domain(AdminDomain::host())
             ->path(AdminDomain::host() ? '' : 'admin')
             ->viteTheme('resources/css/filament/admin/theme.css')
+            // Same fonts as the public site, from Bunny: Figtree for text, Outfit for headings (see theme.css).
+            ->font('Figtree', url: 'https://fonts.bunny.net/css?family=figtree:400,500,600,700|outfit:400,500,600,700&display=swap')
             ->login()
             ->passwordReset()
             ->profile(EditProfile::class, isSimple: false)
