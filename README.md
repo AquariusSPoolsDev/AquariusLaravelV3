@@ -1,6 +1,10 @@
-# Aquarius Web Project (V3 Beta)
+# Aquarius Web Project (V3)
 
-> **V3.0 Final** will be published on the official website upon completion.
+> **V3.3.0** goes live on the official website at the public launch. The admin panel has run V3.2 since 25 Nov 2026.
+
+## Versions
+
+Each version is a git tag (`v3.2.0`, `v3.3.0`…) on the commit that went live, so any version can be looked up or restored. Small fixes after a release raise the last number (`v3.3.1`); new features raise the middle one (`v3.4.0`).
 
 ## Tech Stack
 
@@ -25,7 +29,29 @@
 
 ## Changelog
 
-### 2026-11-23 — Design clean-up and code audit
+### V3.3.0 — upcoming (public launch)
+- Pages load faster: header photos load first, the homepage video is 1.0 MB (was 5.3 MB), and gallery tiles use small WebP copies (about 66 KB, was about 674 KB)
+- New gallery uploads make their small copy automatically; `php artisan gallery:thumbnails` makes them for older photos
+- Current-promotion badge is easier to read (dark text on orange)
+- Slider arrows are round white buttons with hover and focus states
+- The homepage video has a single Pause/Play control (the "Autoplay" label is gone)
+
+### 2026-11-25 — V3.2 (live on the admin panel)
+Admin fixes, live since 25 Nov:
+- Gallery and project photos accept only JPEG, PNG, GIF and WebP
+- Only an Admin can switch the Homepage, Contact Us and Privacy pages off
+- Nobody can delete their own account or the last Admin
+- Sessions from before a password change go back to the login page
+- Added the `cache_locks` table the database cache needs
+- Security updates: Laravel 12.74, Filament 4.17
+- Emails come from "Aquarius Web" (enquiries) and "Aquarius Admin Panel" (admin); browser tabs read "Page - Aquarius Admin Panel"
+- Admin uses the same fonts as the public site (Figtree and Outfit)
+
+Public site, waiting for the launch:
+- Error page buttons follow the page language; the gallery shows an error message and announces results
+- Showcase section always links to Notable Projects
+
+From 23 Nov (design clean-up and code audit):
 - Homepage "Who we are" became a showroom section (address, hours, Get directions)
 - Accessibility pass (WCAG 2.2 AA, axe 0 violations): skip link, labelled form fields, translated cookie notice, named landmarks
 - One hover/press standard for every link, card, photo and pagination link
