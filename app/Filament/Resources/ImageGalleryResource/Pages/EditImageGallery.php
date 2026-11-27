@@ -6,7 +6,6 @@ use App\Filament\Resources\ImageGalleryResource;
 use App\Models\ImageGallery;
 use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
-use Illuminate\Support\Facades\Storage;
 
 class EditImageGallery extends EditRecord
 {
@@ -28,7 +27,7 @@ class EditImageGallery extends EditRecord
 
         // The form holds "image_gallery/<file>" and the record the bare file name, so compare file names only.
         if ($newImagePath && $oldImagePath && ImageGallery::fileName($newImagePath) !== $oldImagePath) {
-            Storage::disk('public')->delete(ImageGallery::DIRECTORY.'/'.$oldImagePath);
+            ImageGallery::deleteFiles($oldImagePath);
         }
     }
 }

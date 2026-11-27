@@ -24,7 +24,7 @@ class User extends Authenticatable implements FilamentUser
     {
         static::deleting(function (User $user) {
             foreach ($user->imageGalleries as $image) {
-                Storage::disk('public')->delete('image_gallery/'.$image->image_path);
+                ImageGallery::deleteFiles($image->image_path);
             }
             foreach ($user->promotions as $promotion) {
                 foreach ($promotion->file_attachment ?? [] as $path) {
