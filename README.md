@@ -1,10 +1,10 @@
 # Aquarius Web Project (V3)
 
-> **V3.3.0** goes live on the official website at the public launch. The admin panel has run V3.2 since 25 Nov 2026.
+> **V3.0.0** goes live on the official website at the public launch. Until then every version is a beta; the admin panel has run V3.0.0-beta2 since 25 Nov 2026.
 
 ## Versions
 
-Each version is a git tag (`v3.2.0`, `v3.3.0`…) on the commit that went live, so any version can be looked up or restored. Small fixes after a release raise the last number (`v3.3.1`); new features raise the middle one (`v3.4.0`).
+Each version is a git tag on its commit, so any version can be looked up or restored. Before launch: `v3.0.0-beta0` … `v3.0.0-beta3`. The launch is `v3.0.0`. After that, small fixes raise the last number (`v3.0.1`) and new features the middle one (`v3.1.0`).
 
 ## Tech Stack
 
@@ -29,14 +29,14 @@ Each version is a git tag (`v3.2.0`, `v3.3.0`…) on the commit that went live, 
 
 ## Changelog
 
-### V3.3.0 — upcoming (public launch)
+### 2026-11-27 — V3.0.0-beta3
 - Pages load faster: header photos load first, the homepage video is 1.0 MB (was 5.3 MB), and gallery tiles use small WebP copies (about 66 KB, was about 674 KB)
 - New gallery uploads make their small copy automatically; `php artisan gallery:thumbnails` makes them for older photos
 - Current-promotion badge is easier to read (dark text on orange)
 - Slider arrows are round white buttons with hover and focus states
 - The homepage video has a single Pause/Play control (the "Autoplay" label is gone)
 
-### 2026-11-25 — V3.2 (live on the admin panel)
+### 2026-11-25 — V3.0.0-beta2 (live on the admin panel)
 Admin fixes, live since 25 Nov:
 - Gallery and project photos accept only JPEG, PNG, GIF and WebP
 - Only an Admin can switch the Homepage, Contact Us and Privacy pages off
@@ -62,12 +62,12 @@ From 23 Nov (design clean-up and code audit):
   - dead classes, strings and unused images removed
 - Fixed: project detail pages returned 404; homepage review numbers counted hidden reviews; English-only structured data on Malay pages
 
-### 2026-06-18 — V3.1
+### 2026-06-18 — V3.0.0-beta1
 - Replaced all inline SVG icons with Phosphor Icons across 23 Blade templates
 - Updated icon viewBox from `0 0 24 24` to `0 0 256 256`, switched from stroke-based to fill-based rendering
 - Brand icons (Facebook, Instagram, TikTok, WhatsApp, Google) and loading spinners kept unchanged
 
-### 2026-04-16 — V3 Beta
+### 2026-04-16 — V3.0.0-beta0
 - Upgraded Laravel 11 → 12
 - Upgraded Tailwind CSS 3 → 4
 - Upgraded Filament 3 → 4, Shield 3 → 4
