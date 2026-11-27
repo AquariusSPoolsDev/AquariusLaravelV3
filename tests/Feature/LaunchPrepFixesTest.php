@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\Promotion;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
 
@@ -57,5 +58,48 @@ class LaunchPrepFixesTest extends TestCase
         $this->assertStringContainsString('@media (prefers-reduced-motion: reduce)', $css);
         $this->assertSame(1, substr_count($css, '.aquarius-accordion-toggle {'));
         $this->assertStringContainsString(".aquarius-accordion-group-faq,\n.faq-section {", str_replace("\r\n", "\n", $css));
+    }
+
+    public function test_the_page_header_photo_loads_first_not_lazily(): void
+    {
+        $html = $this->get('/en/faq')->assertOk()->getContent();
+
+        $this->assertMatchesRegularExpression('/<img fetchpriority="high" decoding="async" class="aquarius-header-image"/', $html);
+        $this->assertDoesNotMatchRegularExpression('/<img[^>]*loading="lazy"[^>]*class="aquarius-header-image"/', $html);
+    }
+
+    /**
+     * Both sliders share one arrow style: 44px round white buttons set in from the photo edges,
+     * with a hover state and a keyboard focus ring (were flat blue squares flush to the edges).
+     */
+    public function test_slider_arrows_are_round_and_shared_by_both_sliders(): void
+    {
+        $css = str_replace("\r\n", "\n", file_get_contents(resource_path('css/app.css')));
+
+        $this->assertStringContainsString(".hero-mobile-swiper,\n.promo-swiper {\n    --swiper-navigation-size: 44px;\n    --swiper-navigation-sides-offset: 12px;", $css);
+        $this->assertStringContainsString('@apply rounded-full bg-white/85 text-primary-700', $css);
+        $this->assertStringContainsString('focus-visible:outline-primary-700', $css);
+        $this->assertStringNotContainsString('@apply h-10 w-10 bg-primary active:bg-primary-800', $css);
+
+        $this->get('/en')->assertOk()
+            ->assertSee('<div class="swiper-button-prev"></div>', false)
+            ->assertSee('<div class="swiper-button-next"></div>', false);
+    }
+
+    /**
+     * White on secondary-500 was 3.4:1; near-black on secondary-400 is 7.2:1, like the main CTA button.
+     */
+    public function test_the_current_promotion_badge_has_readable_contrast(): void
+    {
+        $promotion = new Promotion([
+            'title' => 'Badge contrast check',
+            'description' => 'Test',
+            'start_time' => now(),
+        ]);
+
+        $html = view('components.promotions.grid', ['promotions' => collect([$promotion])])->render();
+
+        $this->assertStringContainsString('bg-secondary-400 text-neutral-950', $html);
+        $this->assertStringNotContainsString('bg-secondary-500 text-white', $html);
     }
 }

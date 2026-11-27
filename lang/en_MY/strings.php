@@ -44,7 +44,6 @@ return [
     'hero_btn_quote' => 'Book a Free Assessment',
     'hero_btn_explore' => 'Explore Our Pools',
     'video_player_support' => 'Your browser does not support the video tag.',
-    'hero_video_hint' => 'Autoplay',
     'hero_video_pause' => 'Pause',
     'hero_video_play' => 'Play',
 

@@ -44,7 +44,6 @@ return [
     'hero_btn_quote' => 'Tempah Penilaian Percuma',
     'hero_btn_explore' => 'Teroka Kolam Renang Kami',
     'video_player_support' => 'Pelayar anda tidak menyokong teg video.',
-    'hero_video_hint' => 'Automain',
     'hero_video_pause' => 'Jeda',
     'hero_video_play' => 'Main',
 

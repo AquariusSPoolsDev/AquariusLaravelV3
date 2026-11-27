@@ -3,7 +3,8 @@
 <header class="aquarius-header">
     <picture>
         <source srcset="{{ asset('assets/images/pool_header/webp/' . pathinfo($imageFileLoc, PATHINFO_FILENAME) . '.webp') }}" type="image/webp">
-        <img loading="lazy" class="aquarius-header-image" src="{{ asset('assets/images/pool_header/'. $imageFileLoc) }}" alt="">
+        {{-- Top of every inner page and its largest image (LCP), so it loads first, never lazily --}}
+        <img fetchpriority="high" decoding="async" class="aquarius-header-image" src="{{ asset('assets/images/pool_header/'. $imageFileLoc) }}" alt="">
     </picture>
 
     <div class="aquarius-header-overlay"></div>

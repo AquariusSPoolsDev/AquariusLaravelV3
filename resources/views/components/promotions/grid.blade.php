@@ -4,7 +4,7 @@
     {{-- Badge + title --}}
     <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
         <h2 class="font-bold text-neutral-900 text-lg mt-0">{{ $promotion->title }}</h2>
-        <span class="shrink-0 inline-flex items-center py-1 px-3 rounded-full text-base font-semibold bg-secondary-500 text-white">
+        <span class="shrink-0 inline-flex items-center py-1 px-3 rounded-full text-base font-semibold bg-secondary-400 text-neutral-950">
             {{__('strings.promotions_current_promo_badge')}}
         </span>
     </div>

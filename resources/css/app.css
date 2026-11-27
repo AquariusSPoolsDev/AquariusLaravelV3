@@ -355,18 +355,6 @@
     .hero-video-toggle {
         @apply absolute bottom-4 right-4 z-30;
 
-        .hero-video-toast {
-            @apply hs-removing:translate-x-5 hs-removing:opacity-0 transition duration-300 max-w-xs bg-white border border-neutral-200 rounded-full shadow-lg;
-
-            .hero-video-toast-label {
-                @apply text-base text-neutral-700;
-            }
-
-            .toast-close-btn {
-                @apply inline-flex shrink-0 justify-center items-center size-6 rounded-full text-neutral-800 opacity-60 transition-all hover:opacity-100 focus:opacity-100 active:opacity-100 active:scale-95;
-            }
-        }
-
         .hero-video-toggle-btn {
             @apply bg-neutral-800 text-white p-2 rounded-full flex items-center transition-all hover:bg-neutral-700 active:bg-neutral-950 active:scale-95;
         }
@@ -479,20 +467,25 @@
                 .swiper-pagination-bullet-active {
                     @apply bg-white;
                 }
-
-                .swiper-button-prev,
-                .swiper-button-next {
-                    @apply h-10 w-10 bg-primary active:bg-primary-800 transition-all;
-                }
-
-                .swiper-button-prev { @apply left-0; }
-                .swiper-button-next { @apply right-0; }
-
-                .swiper-navigation-icon {
-                    @apply text-white h-6 w-6;
-                }
             }
         }
+    }
+}
+
+/* SLIDER ARROWS (homepage hero slider + promotion posters): round, set in from the edges,
+   light so they cover little of the photo. Size and offset go through Swiper's own variables. */
+.hero-mobile-swiper,
+.promo-swiper {
+    --swiper-navigation-size: 44px;
+    --swiper-navigation-sides-offset: 12px;
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        @apply rounded-full bg-white/85 text-primary-700 shadow-md shadow-neutral-950/25 backdrop-blur-sm transition-all duration-200 hover:bg-white active:scale-95 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-primary-700;
+    }
+
+    .swiper-navigation-icon {
+        @apply h-4 w-4;
     }
 }
 

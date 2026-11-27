@@ -1,28 +1,14 @@
 <section class="aquarius-hero-page-content-section">
     {{-- playsinline lets iPhones autoplay in place; the poster shows until the video can play --}}
     <video id="background-video" autoplay muted loop playsinline poster="{{ asset('assets/images/hero-image/webp/hero-image-1.webp') }}" class="hero-video-bg">
-        <source src="{{ asset('assets/videos/aquarius-homepage-hero-video.mp4') }}" type="video/mp4">
+        <source src="{{ asset('assets/videos/aquarius-homepage-hero-video-720.mp4') }}" type="video/mp4">
         {{ __('strings.video_player_support') }}
     </video>
     <div class="hero-video-overlay"></div>
 
     <div class="hero-video-toggle">
+        {{-- The one video control: required to stop motion that plays for over 5 seconds --}}
         <div class="flex gap-3 items-center m-auto">
-            <div x-data="{ show: true }" x-show="show" class="hero-video-toast">
-                <div class="flex items-center p-1 px-3 gap-2">
-                    <p class="hero-video-toast-label">
-                        {{ __('strings.hero_video_hint') }}
-                    </p>
-
-                    <div class="ms-auto">
-                        <button type="button" class="toast-close-btn" @click="show = false">
-                            <span class="sr-only">{{ __('strings.alert_dismiss') }}</span>
-                            <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor"><path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path></svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
             <button id="play-pause-btn" onclick="togglePlay()"
                 class="hero-video-toggle-btn cursor-pointer">
                 <span id="play-pause-icon">
